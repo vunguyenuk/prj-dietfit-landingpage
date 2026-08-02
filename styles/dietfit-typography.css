@@ -1,0 +1,161 @@
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/be-vietnam-pro-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/be-vietnam-pro-500.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/be-vietnam-pro-600.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/assets/fonts/be-vietnam-pro-700.ttf") format("truetype");
+}
+
+:root {
+  --dietfit-font: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+  --dietfit-type-display: clamp(4.5rem, 8vw, 8.5rem);
+  --dietfit-type-hero: clamp(3rem, 6vw, 6rem);
+  --dietfit-type-section: clamp(2.5rem, 4vw, 4rem);
+  --dietfit-type-subheading: clamp(1.75rem, 2.5vw, 2.5rem);
+  --dietfit-type-body: 1.0625rem;
+  --dietfit-type-meta: 0.875rem;
+  --font-base: var(--dietfit-font);
+}
+
+html,
+body,
+body *,
+button,
+input,
+textarea,
+select {
+  font-family: var(--dietfit-font);
+  font-kerning: normal;
+  font-synthesis: none;
+}
+
+.dietfit-highlights,
+.dietfit-faq,
+.dietfit-final,
+.dietfit-video-section,
+.dietfit-tiktok-section {
+  font-family: var(--dietfit-font);
+}
+
+.dietfit-faq > h2 {
+  font-size: var(--dietfit-type-section);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.032em;
+}
+
+.dietfit-hero-heading {
+  width: min(94vw, 90rem);
+  max-width: none;
+  margin: 0;
+  font-size: var(--dietfit-type-hero);
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-wrap: nowrap;
+}
+
+.dietfit-hero-heading > span {
+  display: block;
+}
+
+.dietfit-card-copy h2 {
+  font-size: var(--dietfit-type-subheading);
+  font-weight: 550;
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+}
+
+.dietfit-card-copy p,
+.dietfit-final-cta p {
+  max-width: 65ch;
+  font-size: var(--dietfit-type-body);
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.006em;
+}
+
+button,
+[role="button"] {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.008em;
+}
+
+.dietfit-faq summary {
+  font-size: 1.125rem;
+  font-weight: 550;
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+}
+
+.dietfit-faq details p {
+  max-width: 65ch;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.dietfit-final-cta h2 {
+  font-size: var(--dietfit-type-hero);
+  font-weight: 650;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+/* Keep supporting section titles clearly below the opening and final CTA. */
+.dietfit-section-heading h2,
+.dietfit-progress-cta h2,
+.dietfit-community__intro h2,
+.dietfit-faq > h2 {
+  font-size: var(--dietfit-type-section);
+}
+
+.dietfit-footer h3,
+.dietfit-footer-legal,
+.dietfit-tiktok-credit {
+  font-family: var(--dietfit-font);
+  font-size: var(--dietfit-type-meta);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --dietfit-type-display: clamp(3.25rem, 15vw, 5rem);
+    --dietfit-type-hero: clamp(2.75rem, 12vw, 4.5rem);
+    --dietfit-type-section: clamp(2.125rem, 8vw, 3rem);
+    --dietfit-type-subheading: 1.5rem;
+    --dietfit-type-body: 1rem;
+  }
+
+  .dietfit-faq summary { font-size: 1rem; }
+
+  .dietfit-hero-heading {
+    width: min(92vw, 36rem);
+    text-wrap: balance;
+  }
+
+}
