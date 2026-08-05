@@ -6,7 +6,7 @@
       slug: "doc-nhan-dinh-duong-tren-bua-an",
       category: "Dinh dưỡng",
       date: "02.08.2026",
-      author: "Đội ngũ DietFit",
+      author: "Đội ngũ Dietfit",
       title: "Đọc nhãn dinh dưỡng mà không cần thuộc lòng mọi con số",
       deck: "Ba thông tin đủ giúp bạn hiểu nhanh một món ăn có hợp với mục tiêu hôm nay hay không.",
       image: "../assets/blog/blog-01.webp",
@@ -17,7 +17,7 @@
         ["h2", "Nhìn vào bức tranh, không phán xét một món"],
         ["p", "Một món nhiều năng lượng không tự động trở thành món xấu. Điều quan trọng là nó nằm ở đâu trong tổng thể ngày ăn, mức vận động và mục tiêu của bạn."],
         ["quote", "Dữ liệu tốt nhất là dữ liệu giúp bạn quyết định dễ hơn, không phải khiến bạn lo hơn."],
-        ["p", "DietFit gom những con số quan trọng vào cùng một màn hình để bạn kiểm tra nhanh, sau đó tiếp tục tận hưởng bữa ăn của mình."]
+        ["p", "Dietfit gom những con số quan trọng vào cùng một màn hình để bạn kiểm tra nhanh, sau đó tiếp tục tận hưởng bữa ăn của mình."]
       ]
     },
     {
@@ -34,11 +34,11 @@
       slug: "giam-can-khong-phai-chuyen-mot-nguoi",
       category: "Cộng đồng",
       date: "23.07.2026",
-      author: "Cộng đồng DietFit",
+      author: "Cộng đồng Dietfit",
       title: "Hành trình thay đổi không nhất thiết phải đi một mình",
       deck: "Một lời hỏi thăm đúng lúc hoặc một nhóm bạn cùng mục tiêu có thể làm mọi thứ nhẹ hơn.",
       image: "../assets/blog/blog-03.webp",
-      body: [["p", "Thay đổi thói quen là công việc cá nhân, nhưng môi trường xung quanh ảnh hưởng rất nhiều đến khả năng duy trì."], ["h2", "Chia sẻ để giảm áp lực"], ["p", "Khi bạn kể về một ngày chưa như ý và nhận lại sự thấu hiểu, cảm giác thất bại sẽ bớt nặng. Bạn có thể quay lại nhịp cũ nhanh hơn."], ["h2", "Tìm người đồng hành phù hợp"], ["p", "Người đồng hành tốt không kiểm soát bữa ăn của bạn. Họ nhắc bạn nhìn vào tiến trình dài hạn và tôn trọng tốc độ riêng."], ["quote", "Cộng đồng tốt không tạo thêm áp lực; cộng đồng tốt giúp bạn có thêm chỗ để thở."], ["p", "Các cộng đồng DietFit là nơi bạn có thể hỏi, chia sẻ và học từ trải nghiệm thật của nhau."]]
+      body: [["p", "Thay đổi thói quen là công việc cá nhân, nhưng môi trường xung quanh ảnh hưởng rất nhiều đến khả năng duy trì."], ["h2", "Chia sẻ để giảm áp lực"], ["p", "Khi bạn kể về một ngày chưa như ý và nhận lại sự thấu hiểu, cảm giác thất bại sẽ bớt nặng. Bạn có thể quay lại nhịp cũ nhanh hơn."], ["h2", "Tìm người đồng hành phù hợp"], ["p", "Người đồng hành tốt không kiểm soát bữa ăn của bạn. Họ nhắc bạn nhìn vào tiến trình dài hạn và tôn trọng tốc độ riêng."], ["quote", "Cộng đồng tốt không tạo thêm áp lực; cộng đồng tốt giúp bạn có thêm chỗ để thở."], ["p", "Các cộng đồng Dietfit là nơi bạn có thể hỏi, chia sẻ và học từ trải nghiệm thật của nhau."]]
     },
     {
       slug: "theo-doi-giup-thay-doi-nhanh-hon",
@@ -64,7 +64,7 @@
       slug: "xay-niem-tin-voi-co-the",
       category: "Tâm lý",
       date: "05.07.2026",
-      author: "Đội ngũ DietFit",
+      author: "Đội ngũ Dietfit",
       title: "Xây lại niềm tin với cơ thể qua những tín hiệu nhỏ",
       deck: "Ăn uống bền vững bắt đầu khi bạn vừa hiểu dữ liệu, vừa lắng nghe cảm giác thật của mình.",
       image: "../assets/blog/blog-06.webp",
@@ -90,7 +90,7 @@
   const slug = new URLSearchParams(window.location.search).get("slug");
   const index = Math.max(0, posts.findIndex(function (item) { return item.slug === slug; }));
   const post = posts[index];
-  document.title = post.title + " — DietFit";
+  document.title = post.title + " — Dietfit";
   document.querySelector("[data-post-meta]").textContent = post.date;
   document.querySelector("[data-post-title]").textContent = post.title;
   const author = document.querySelector("[data-post-author]");

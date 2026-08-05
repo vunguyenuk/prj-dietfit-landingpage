@@ -72,10 +72,11 @@ select {
   width: min(94vw, 90rem);
   max-width: none;
   margin: 0;
-  font-size: var(--dietfit-type-hero);
-  font-weight: 650;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  /* Longer headline than before, so it steps down from the shared hero size. */
+  font-size: clamp(2.25rem, 4.2vw, 4.25rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.032em;
   text-wrap: nowrap;
 }
 
@@ -155,6 +156,7 @@ button,
 
   .dietfit-hero-heading {
     width: min(92vw, 36rem);
+    font-size: clamp(2rem, 8.5vw, 3rem);
     text-wrap: balance;
   }
 

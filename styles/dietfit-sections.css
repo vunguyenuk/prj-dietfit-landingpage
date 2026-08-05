@@ -16,10 +16,17 @@ main { padding-top: 5rem; }
 .dietfit-header-nav {
   --header-edge-inset: clamp(1.5rem, 2vw, 2rem);
   --header-joined-width: min(calc(100vw - 2rem), 24.75rem);
+  --header-height: 3.375rem;
+  --header-cta-height: 2.5rem;
+  --header-shell-border: 1px;
+  /* Same figure the CTA gets above and below it, minus the shell's own border. */
+  --header-cta-inset: calc(
+    (var(--header-height) - var(--header-cta-height)) / 2 - var(--header-shell-border)
+  );
   position: relative;
   width: 100%;
   max-width: none;
-  height: 3.375rem;
+  height: var(--header-height);
   pointer-events: auto;
 }
 
@@ -28,7 +35,7 @@ main { padding-top: 5rem; }
   position: absolute;
   top: 0;
   height: 100%;
-  border: 1px solid rgb(17 11 32 / 12%);
+  border: var(--header-shell-border) solid rgb(17 11 32 / 12%);
   border-radius: 999px;
   box-shadow: 0 4px 18px rgb(17 11 32 / 14%);
 }
@@ -49,7 +56,8 @@ main { padding-top: 5rem; }
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding-inline: 0.75rem;
+  /* Right inset matches the button's vertical gap so the pill nests concentrically. */
+  padding-inline: 1.1rem var(--header-cta-inset);
   background: rgb(255 255 255 / 95%);
   backdrop-filter: blur(18px);
   pointer-events: auto;
@@ -106,21 +114,37 @@ main { padding-top: 5rem; }
 
 .dietfit-button {
   display: inline-flex;
-  min-height: 2.75rem;
+  min-height: 3rem;
   align-items: center;
   justify-content: center;
-  padding: 0.65rem 1.5rem;
+  padding: 0.75rem 1.6rem;
   border-radius: 999px;
-  color: #110b20;
-  background: #dfff35;
+  color: #fff4ee;
+  background: #FE692E;
+  font-size: 0.9375rem;
   font-weight: 600;
   line-height: 1;
   text-decoration: none;
   transition: background-color 180ms ease, transform 180ms ease;
 }
 
-.dietfit-button:hover { background: #ecff82; transform: translateY(-2px); }
-.dietfit-button--compact { min-height: 2rem; padding: 0.45rem 1rem; }
+.dietfit-button:hover { background: #ff7f4c; transform: translateY(-2px); }
+
+/* Header CTA: smaller pill, so the label steps down with it. */
+.dietfit-button--compact {
+  min-height: var(--header-cta-height, 2.5rem);
+  padding: 0.55rem 1.2rem;
+  font-size: 0.875rem;
+  letter-spacing: -0.005em;
+}
+
+/* Header CTA is the one black button on the page. */
+.dietfit-header-cta-shell .dietfit-button {
+  color: #fff4ee;
+  background: #110b20;
+}
+
+.dietfit-header-cta-shell .dietfit-button:hover { background: #2a2140; }
 
 .dietfit-section-heading {
   display: grid;
@@ -616,20 +640,21 @@ main { padding-top: 5rem; }
 
 .dietfit-final-cta .dietfit-button {
   margin-top: 2rem;
-  padding: 0.9rem 1.6rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.6rem;
   border: 0;
   border-radius: 999px;
-  color: #11120f;
-  background: #dfff35;
+  color: #fff4ee;
+  background: #FE692E;
   font-family: var(--dietfit-font);
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 1;
   cursor: pointer;
   transition: transform 180ms ease, background-color 180ms ease;
 }
 
-.dietfit-final-cta .dietfit-button:hover { transform: translateY(-2px); background: #ecff82; }
+.dietfit-final-cta .dietfit-button:hover { transform: translateY(-2px); background: #ff7f4c; }
 
 .dietfit-footer {
   width: min(100%, 80rem);
@@ -696,9 +721,18 @@ main { padding-top: 5rem; }
   .dietfit-scroll-scrub .dietfit-carousel {
     overflow-x: hidden;
     scroll-snap-type: none;
+    flex: 1 1 auto;
+    min-height: 0;
+    align-items: stretch;
+    padding-block: 0 1rem;
   }
 
-  .dietfit-scroll-scrub .dietfit-card { scroll-snap-align: none; }
+  /* Cards fill the pinned viewport instead of overflowing past its top edge. */
+  .dietfit-scroll-scrub .dietfit-card {
+    scroll-snap-align: none;
+    min-height: 0;
+    height: auto;
+  }
 }
 
 /* Let feature imagery breathe vertically on laptop-sized screens. */
@@ -743,8 +777,8 @@ main { padding-top: 5rem; }
 .dietfit-faq > h2 {
   max-width: 18ch;
   margin-inline: auto;
-  font-size: var(--dietfit-type-section);
-  font-weight: 600;
+  font-size: 52px;
+  font-weight: 500;
   line-height: 1.04;
   letter-spacing: -0.035em;
   text-wrap: balance;
@@ -753,10 +787,13 @@ main { padding-top: 5rem; }
 @media (prefers-reduced-motion: reduce) {
   .dietfit-carousel { scroll-behavior: auto; }
 }
+/* Diagonal mesh: white top-left, warm yellow bottom-left, deep orange-red bottom-right. */
 .dietfit-video-section {
-  background-color: #ff6f36;
+  background-color: #ff8a4f;
   background-image:
-    radial-gradient(circle at 12% 8%, rgb(255 255 255 / 72%) 0%, rgb(255 255 255 / 20%) 30%, transparent 52%),
-    linear-gradient(180deg, #fffaf7 0%, #ffe3d8 18%, #ffad8c 46%, #ff6f36 100%);
+    radial-gradient(150% 88% at 30% -18%, #ffffff 0%, #ffffff 40%, rgb(255 255 255 / 0%) 86%),
+    radial-gradient(70% 75% at -12% 104%, rgb(255 255 255 / 78%) 0%, rgb(255 255 255 / 0%) 62%),
+    radial-gradient(95% 90% at -8% 108%, #ffe0ad 0%, rgb(255 224 173 / 0%) 66%),
+    linear-gradient(158deg, #ffffff 0%, #ffffff 18%, #fff6ee 34%, #ffcda6 62%, #ffa670 82%, #ff8a4f 100%);
   padding: 130px 0 130px 0;
 }

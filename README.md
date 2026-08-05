@@ -1,6 +1,6 @@
-# DietFit Landing Page
+# Dietfit Landing Page
 
-Landing page tĩnh của DietFit, có thể mở và chỉnh sửa trực tiếp bằng Visual Studio Code.
+Landing page tĩnh của Dietfit, có thể mở và chỉnh sửa trực tiếp bằng Visual Studio Code.
 
 ## Cấu trúc
 
@@ -8,7 +8,7 @@ Landing page tĩnh của DietFit, có thể mở và chỉnh sửa trực tiếp
 - `blog/`: trang danh sách và trang chi tiết bài viết.
 - `styles/`: typography, hero, section và social feed.
 - `scripts/`: Rive hero, smooth scroll, carousel, TikTok feed và dữ liệu Blog.
-- `assets/`: hình ảnh, font và file Rive của DietFit.
+- `assets/`: hình ảnh, font và file Rive của Dietfit.
 - `vendor/`: runtime Rive và Lenis đã được lưu cục bộ.
 
 ## Chạy local

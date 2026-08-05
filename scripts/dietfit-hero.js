@@ -153,7 +153,7 @@
     try {
       player = new window.rive.Rive({
         canvas,
-        src: assetRoot + 'dietfit-hero.riv?v=20260802-final',
+        src: assetRoot + 'dietfit-hero.riv?v=20260805-4',
         autoplay: false,
         autoBind: true,
         enableRiveAssetCDN: false,
@@ -194,12 +194,12 @@
           frame = requestAnimationFrame(animateScroll);
         },
         onLoadError: function (event) {
-          console.error('Offline DietFit hero failed to load', event);
+          console.error('Offline Dietfit hero failed to load', event);
           hero.classList.remove('rive-ready');
         }
       });
     } catch (error) {
-      console.error('Offline DietFit hero assets failed to load', error);
+      console.error('Offline Dietfit hero assets failed to load', error);
       hero.classList.remove('rive-ready');
     }
   }
@@ -215,7 +215,7 @@
 
   requestScrollUpdate();
   preloadAssets().then(start).catch(function (error) {
-    console.error('Local DietFit hero assets failed to preload', error);
+    console.error('Local Dietfit hero assets failed to preload', error);
     hero.classList.remove('rive-ready');
   });
 })();
