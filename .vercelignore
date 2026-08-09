@@ -1,0 +1,5 @@
+# Reference captures of third-party sites — must never be deployed.
+shinta-clone/
+website-capture/
+
+.DS_Store

@@ -15,7 +15,7 @@ main { padding-top: 5rem; }
 
 .dietfit-header-nav {
   --header-edge-inset: clamp(1.5rem, 2vw, 2rem);
-  --header-joined-width: min(calc(100vw - 2rem), 24.75rem);
+  --header-joined-width: min(calc(100vw - 2rem), 28.5rem);
   --header-height: 3.375rem;
   --header-cta-height: 2.5rem;
   --header-shell-border: 1px;

@@ -1,0 +1,247 @@
+/* ============================================================
+   Header Dietfit — bản standalone, scope kín trong #dietfit-header
+   Dùng cho các trang có CSS nền riêng (vd: /about-us/ clone Framer),
+   nơi không thể nạp dietfit-sections.css vì nó reset body/main.
+   Nội dung rule copy từ dietfit-sections.css + dietfit-hero.css.
+   ============================================================ */
+
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/be-vietnam-pro-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/be-vietnam-pro-500.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../assets/fonts/be-vietnam-pro-600.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Be Vietnam Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/be-vietnam-pro-700.ttf") format("truetype");
+}
+
+#dietfit-header,
+#dietfit-header *,
+.dietfit-skip-link {
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+  font-kerning: normal;
+  font-synthesis: none;
+}
+
+/* ---------- Shell ---------- */
+.dietfit-header-blur {
+  position: fixed;
+  z-index: 2147480000;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 0.5rem;
+  pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.44, 0, 0.56, 1),
+              opacity 0.45s cubic-bezier(0.44, 0, 0.56, 1);
+}
+.dietfit-header-nav {
+  --header-edge-inset: clamp(1.5rem, 2vw, 2rem);
+  --header-joined-width: min(calc(100vw - 2rem), 28.5rem);
+  --header-height: 3.375rem;
+  --header-cta-height: 2.5rem;
+  --header-shell-border: 1px;
+  --header-cta-inset: calc(
+    (var(--header-height) - var(--header-cta-height)) / 2 - var(--header-shell-border)
+  );
+  position: relative;
+  width: 100%;
+  max-width: none;
+  height: var(--header-height);
+  pointer-events: auto;
+}
+
+.dietfit-header-logo-shell,
+.dietfit-header-cta-shell {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border: var(--header-shell-border) solid rgb(17 11 32 / 12%);
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgb(17 11 32 / 14%);
+  transition:
+    transform 460ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 220ms cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 220ms cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 220ms cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.dietfit-header-logo-shell {
+  left: var(--header-edge-inset);
+  width: 142px;
+  overflow: hidden;
+  transform: translateX(calc(50vw - var(--header-edge-inset) - (var(--header-joined-width) / 2)));
+}
+
+.dietfit-header-surface {
+  position: absolute;
+  inset: 0;
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(18px);
+  pointer-events: none;
+}
+
+.dietfit-header-logo-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding-inline: 0.75rem;
+}
+.dietfit-header-logo-content img {
+  display: block;
+  width: 102px;
+  height: 31px;
+}
+
+.dietfit-header-cta-shell {
+  right: var(--header-edge-inset);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-inline: 1.1rem var(--header-cta-inset);
+  background: rgb(255 255 255 / 95%);
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+  transform: translateX(calc(var(--header-edge-inset) + (var(--header-joined-width) / 2) - 50vw));
+}
+
+/* ---------- Pill chung khi chưa tách ---------- */
+#dietfit-header > nav::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: var(--header-joined-width);
+  border: 1px solid rgb(17 11 32 / 12%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 95%);
+  box-shadow: 0 4px 18px rgb(17 11 32 / 14%);
+  backdrop-filter: blur(18px);
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: opacity 180ms cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+#dietfit-header:not(.is-split) .dietfit-header-logo-shell,
+#dietfit-header:not(.is-split) .dietfit-header-cta-shell {
+  border-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+#dietfit-header:not(.is-split) .dietfit-header-surface {
+  background: transparent;
+  backdrop-filter: none;
+}
+#dietfit-header.is-split > nav::before { opacity: 0; }
+#dietfit-header.is-split .dietfit-header-logo-shell,
+#dietfit-header.is-split .dietfit-header-cta-shell { transform: translateX(0); }
+
+/* ---------- Link & button ---------- */
+.dietfit-header-blog-link {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  min-height: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 0.25rem;
+  color: #110b20;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.dietfit-header-blog-link:hover { opacity: 0.62; }
+
+.dietfit-header-cta-shell .dietfit-button {
+  display: inline-flex;
+  min-height: var(--header-cta-height, 2.5rem);
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  color: #fff4ee;
+  background: #110b20;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+.dietfit-header-cta-shell .dietfit-button:hover { background: #2a2140; }
+
+/* ---------- Skip link ---------- */
+.dietfit-skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2147480001;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  color: white;
+  background: #110b20;
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform 180ms ease;
+}
+.dietfit-skip-link:focus { transform: translateY(0); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .dietfit-header-blur { padding-top: 1rem; }
+  .dietfit-header-nav {
+    --header-edge-inset: 1rem;
+    --header-joined-width: calc(100vw - 2rem);
+  }
+  #dietfit-header.is-split > nav::before { opacity: 1; }
+  #dietfit-header.is-split .dietfit-header-logo-shell,
+  #dietfit-header.is-split .dietfit-header-cta-shell {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  #dietfit-header.is-split .dietfit-header-logo-shell {
+    transform: translateX(calc(50vw - var(--header-edge-inset) - (var(--header-joined-width) / 2)));
+  }
+  #dietfit-header.is-split .dietfit-header-cta-shell {
+    transform: translateX(calc(var(--header-edge-inset) + (var(--header-joined-width) / 2) - 50vw));
+  }
+  .dietfit-header-cta-shell .dietfit-header-blog-link[href*="about-us"] { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dietfit-header-blur,
+  .dietfit-header-logo-shell,
+  .dietfit-header-cta-shell { transition-duration: 0.001s; }
+}

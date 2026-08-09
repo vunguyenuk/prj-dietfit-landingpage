@@ -1,0 +1,272 @@
+/* ============================================================
+   Dietfit — About
+   Khôi phục hiệu ứng hover/transition mà bản Framer gốc chạy bằng JS.
+   Dùng !important vì Framer render state ban đầu bằng inline style.
+   ============================================================ */
+
+:root {
+  --dietfit-ease: cubic-bezier(0.44, 0, 0.56, 1);
+  --dietfit-dur: 0.4s;
+
+  /* ---------- Bảng màu Dietfit: ghi đè token hồng/tím của Framer ----------
+     Lấy đúng màu từ assets/team/*.webp để trang khớp với ảnh placeholder. */
+  --dietfit-orange: #FF692E;   /* cam nhấn */
+  --dietfit-peach: #FFD2BD;    /* cam pastel — nền footer, chip, pill */
+  --dietfit-cream: #FFEADF;    /* kem nhạt */
+}
+
+/* ---------- Đồng bộ font với trang home + blog ----------
+   Template Framer đi kèm Open Sauce One và gán --framer-font-family bằng
+   inline style lên từng thẻ text, nên phải ép font-family ở mức !important
+   thì mới thắng được. Home và blog đều dùng Be Vietnam Pro. */
+body,
+body * {
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif !important;
+  font-kerning: normal;
+  font-synthesis: none;
+}
+
+/* Framer có thể hydrate lại social overlay từ component đã export. */
+.framer-jchn7 .framer-1o41kvy,
+.framer-jchn7 .framer-yf2cn7-container,
+.framer-jchn7 .framer-hogxnk-container {
+  display: none !important;
+}
+
+/* Tạo nhịp thở giữa label nhỏ và tiêu đề của từng section. */
+.framer-jchn7 .framer-161japn-container,
+.framer-jchn7 .framer-11fq6bo-container,
+.framer-jchn7 .framer-nlp8ye-container,
+.framer-jchn7 .framer-gz77cy-container {
+  margin-bottom: 12px;
+}
+
+/* Ghi đè token màu (Framer khai báo ở body, dùng qua var() khắp nơi) */
+body,
+:root {
+  /* #ffa8f2 hồng -> cam pastel: nền footer, chip section, pill link footer */
+  --token-b9b29e69-e997-4651-b982-7d2578af98ba: #FFD2BD;
+  /* #aa94ff tím -> cam đậm: nét vẽ trang trí, icon tròn */
+  --token-36691d6b-fd51-40c3-90d4-8c2b90652b0a: #FF692E;
+  /* #ac459d tím sen -> cam cháy: label nhỏ (liên hệ / điều hướng / pháp lý) */
+  --token-0ddbc857-f8b5-4b77-ba78-345cc93c3e71: #C2410C;
+  /* #9ef483 xanh lá -> kem */
+  --token-5a68d921-836c-4fc4-85c6-de30b05a19ab: #FFEADF;
+}
+
+/* Nét vẽ SVG trang trí: token hồng quá nhạt khi làm stroke mảnh -> dùng cam đậm */
+.framer-EkVdp path,
+.framer-IHUU0 path { stroke: var(--dietfit-orange) !important; }
+
+/* Logo footer: dietfit-logo.webp chỉ 162x48 nên không phóng to bằng wordmark
+   wordmark cũ (760px) được — giới hạn lại cho nét. */
+.framer-eSUjv .framer-111e3sr-container {
+  height: 56px !important;
+  aspect-ratio: auto !important;
+  align-self: flex-end !important;
+}
+.framer-eSUjv .framer-111e3sr-container img {
+  object-fit: contain !important;
+  object-position: left center !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dietfit-dur: 0.001s; }
+}
+
+/* Header Dietfit nằm ở styles/dietfit-header-standalone.css */
+
+/* ---------- Nav link hover (còn dùng cho link trong footer) ---------- */
+.framer-OaFgG.framer-v-1s1xu4p .framer-16w8h4c,
+.framer-OaFgG.framer-v-1s1xu4p .framer-b0b0hd,
+.framer-OaFgG.framer-v-1s1xu4p .framer-1p914h4 {
+  transition: opacity var(--dietfit-dur) var(--dietfit-ease),
+              transform var(--dietfit-dur) var(--dietfit-ease);
+}
+.framer-OaFgG.framer-v-1s1xu4p:hover .framer-16w8h4c {
+  opacity: 1 !important;
+  transform: scale(1) rotate(0deg) !important;
+}
+.framer-OaFgG.framer-v-1s1xu4p:hover .framer-b0b0hd {
+  opacity: 0 !important;
+  transform: scale(0.9) rotate(15deg) !important;
+}
+.framer-OaFgG.framer-v-1s1xu4p:hover .framer-1p914h4 {
+  opacity: 1 !important;
+  transform: scale(1) rotate(0deg) !important;
+}
+/* hoán đổi layout (Framer gốc làm bằng class .hover) */
+.framer-OaFgG.framer-v-1s1xu4p:hover .framer-16w8h4c {
+  height: unset !important;
+  width: unset !important;
+  inset: 4px !important;
+  filter: blur(0px) !important;
+}
+.framer-OaFgG.framer-v-1s1xu4p:hover .framer-b0b0hd {
+  z-index: 1 !important;
+  position: absolute !important;
+  top: -25px !important;
+  right: -5px !important;
+}
+.framer-OaFgG.framer-v-1s1xu4p:hover .framer-1p914h4 {
+  bottom: unset !important;
+  right: unset !important;
+  position: relative !important;
+}
+
+/* ---------- Nav CTA "Book a Call" ---------- */
+.framer-TaIwK.framer-v-1sa2ztz .framer-o764od {
+  transition: transform 0.3s var(--dietfit-ease), top 0.3s var(--dietfit-ease);
+}
+.framer-TaIwK.framer-v-1sa2ztz:hover .framer-o764od {
+  top: -4px !important;
+  transform: none !important;
+}
+.framer-TaIwK.framer-v-1sa2ztz:hover.framer-1sa2ztz {
+  padding: 0 0 4px !important;
+}
+
+/* ---------- Button (Book a Call / Subscribe): lớp "After" lật vào ---------- */
+.framer-vJZ6T .framer-6qftc7,
+.framer-vJZ6T .framer-13kov2f {
+  transition: opacity var(--dietfit-dur) var(--dietfit-ease),
+              transform var(--dietfit-dur) var(--dietfit-ease);
+}
+.framer-vJZ6T:hover .framer-13kov2f {
+  opacity: 1 !important;
+  transform: perspective(500px) rotate(0deg) rotateX(0deg) rotateY(0deg) !important;
+}
+.framer-vJZ6T:hover .framer-6qftc7 {
+  opacity: 0 !important;
+  transform: perspective(500px) rotate(-20deg) rotateX(35deg) rotateY(-40deg) !important;
+}
+
+/* ---------- Icon tròn trong button: nở + xoay ---------- */
+.framer-65KkR .framer-1b0oebq,
+.framer-65KkR .framer-rdj03w,
+.framer-tjhZV .framer-1rz942z,
+.framer-tjhZV .framer-ao1gjw {
+  transition: opacity var(--dietfit-dur) var(--dietfit-ease),
+              transform var(--dietfit-dur) var(--dietfit-ease);
+}
+.framer-65KkR:hover .framer-1b0oebq,
+.framer-tjhZV:hover .framer-ao1gjw {
+  opacity: 1 !important;
+  transform: scale(1) rotate(0deg) !important;
+}
+.framer-65KkR:hover .framer-rdj03w,
+.framer-tjhZV:hover .framer-1rz942z {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) rotate(0deg) !important;
+}
+
+/* ---------- Card team: nhấc nhẹ khi hover ---------- */
+.framer-xv1Ye {
+  transition: transform 0.45s var(--dietfit-ease), box-shadow 0.45s var(--dietfit-ease);
+}
+.framer-xv1Ye:hover {
+  transform: translateY(-6px);
+}
+
+/* ---------- Canvas Rive ở section "Dinh dưỡng, nói cho dễ hiểu" ----------
+   Rộng bằng khối ảnh phở ở section trên (460px), nhưng giữ tỉ lệ artboard
+   1397/2096 để không cắt, không bóp, cũng không chừa dải hai bên. */
+.framer-jchn7 .framer-1syeh6v {
+  aspect-ratio: 1397 / 2096 !important;
+  height: auto !important;
+  width: min(100%, 460px) !important;
+  margin-inline: auto;
+}
+.framer-jchn7 .framer-1d4e952 {
+  inset: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+}
+
+/* Ảnh section "Ăn tốt, không phải ăn khổ": khung Framer vốn nằm ngang
+   (1.638) còn ảnh phở là dọc 1086x1448 (0.75) — ép khung theo ảnh để
+   giữ đúng tỉ lệ gốc, không cắt. */
+.framer-jchn7 .framer-9as5da {
+  aspect-ratio: 1086 / 1448 !important;
+  height: auto !important;
+}
+[data-dietfit-mission-rive] {
+  overflow: hidden;
+  border-radius: inherit;
+  background: #F4F4F3;
+}
+.dietfit-mission-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+/* ---------- Cụm ảnh "Ngày nào chúng ta cũng ăn": phóng to ~1.3x ----------
+   Chỉ áp cho tablet/desktop; mobile giữ nguyên bản Framer cho khỏi tràn.
+   Ảnh nào dùng calc(...-Npx) để canh thì N cũng nhân theo, không thì lệch. */
+@media (min-width: 810px) {
+  .framer-jchn7 .framer-1lii50d {          /* Image big — mâm cơm */
+    width: 460px !important;               /* bằng khối ảnh phở & Rive */
+    height: 818px !important;
+    left: calc(50% - 230px) !important;
+  }
+  .framer-jchn7 .framer-z069z4 {           /* Image 2 — phở */
+    width: 338px !important;
+    height: auto !important;
+  }
+  .framer-jchn7 .framer-kh1yq3 {           /* Image 1 — gà nướng */
+    width: 217px !important;
+    height: auto !important;
+  }
+  .framer-jchn7 .framer-18fr05x {          /* Image 4 — bánh gói lá */
+    width: 217px !important;
+    height: 386px !important;
+    left: calc(85.7% - 108.5px) !important;
+  }
+  .framer-jchn7 .framer-1wlxabj {          /* Image 3 — bánh mì */
+    width: 282px !important;
+    height: 212px !important;
+    left: calc(18.2% - 141px) !important;
+  }
+}
+
+/* Viền tách các ảnh chồng nhau — lấy đúng màu nền trang (#F4F4F3) để
+   trông như ảnh được khoét khỏi nền. Dùng box-shadow thay border để
+   không cộng thêm kích thước và vẫn bám theo border-radius sẵn có. */
+.framer-jchn7 .framer-1lii50d {
+  box-shadow: 0 0 0 8px var(--token-36358b80-843b-4b9b-8837-1db6f0179267, #F4F4F3);
+}
+
+.framer-jchn7 .framer-z069z4,
+.framer-jchn7 .framer-kh1yq3,
+.framer-jchn7 .framer-18fr05x,
+.framer-jchn7 .framer-1wlxabj {
+  border-radius: 24px !important;
+  box-shadow: 0 0 0 4px var(--token-36358b80-843b-4b9b-8837-1db6f0179267, #F4F4F3);
+}
+@media (max-width: 809px) {
+  .framer-jchn7 .framer-1lii50d {
+    box-shadow: 0 0 0 5px var(--token-36358b80-843b-4b9b-8837-1db6f0179267, #F4F4F3);
+  }
+
+  .framer-jchn7 .framer-z069z4,
+  .framer-jchn7 .framer-kh1yq3,
+  .framer-jchn7 .framer-18fr05x,
+  .framer-jchn7 .framer-1wlxabj {
+    border-radius: 20px !important;
+    box-shadow: 0 0 0 3px var(--token-36358b80-843b-4b9b-8837-1db6f0179267, #F4F4F3);
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+[data-dietfit-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--dietfit-ease), transform 0.8s var(--dietfit-ease);
+  will-change: opacity, transform;
+}
+[data-dietfit-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}

@@ -1,2 +1,7 @@
 .vercel
 .env*
+.DS_Store
+
+# Reference captures of third-party sites — never ship or commit these.
+shinta-clone/
+website-capture/

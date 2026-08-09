@@ -117,6 +117,14 @@
   opacity: 0.62;
 }
 
+/* The joined header pill only fits two items plus the CTA on small screens,
+   so the About link steps out there. It stays reachable from the footer. */
+@media (max-width: 767px) {
+  .dietfit-header-cta-shell .dietfit-header-blog-link[href*="about-us"] {
+    display: none;
+  }
+}
+
 .dietfit-rive-canvas {
   position: absolute;
   inset: 0;
