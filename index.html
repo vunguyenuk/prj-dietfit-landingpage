@@ -12,11 +12,18 @@
   <meta property="og:image" content="/assets/images/final-cta.png">
   <link rel="icon" href="./assets/images/dietfit-app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="./assets/images/dietfit-app-icon.png">
+  <link rel="preload" href="./vendor/rive/rive.js" as="script" fetchpriority="high">
+  <link rel="preload" href="./vendor/rive/rive.wasm" as="fetch" type="application/wasm" crossorigin
+    fetchpriority="high">
+  <link rel="preload" href="./assets/hero/dietfit-hero-responsive.riv?v=20260809-4" as="fetch"
+    type="application/octet-stream" crossorigin fetchpriority="high" media="(max-width: 1024px)">
+  <link rel="preload" href="./assets/hero/dietfit-hero.riv?v=20260809-4" as="fetch"
+    type="application/octet-stream" crossorigin fetchpriority="high" media="(min-width: 1025px)">
   <link rel="stylesheet" href="./vendor/lenis/lenis.css">
   <link rel="stylesheet" href="./styles/dietfit-typography.css?v=29">
-  <link rel="stylesheet" href="./styles/dietfit-hero.css?v=20260802-4">
-  <link rel="stylesheet" href="./styles/dietfit-sections.css?v=55">
-  <link rel="stylesheet" href="./styles/dietfit-social.css">
+  <link rel="stylesheet" href="./styles/dietfit-hero.css?v=20260809-6">
+  <link rel="stylesheet" href="./styles/dietfit-sections.css?v=56">
+  <link rel="stylesheet" href="./styles/dietfit-social.css?v=5">
 </head>
 
 <body>
@@ -83,7 +90,7 @@
             </div>
           </article>
           <article class="dietfit-card dietfit-card-asset dietfit-card-asset-light-copy"
-            style="--dietfit-card-image:url('/assets/cards/dietfit-card-2-v4.webp');--dietfit-card-position:50% 0%">
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-2-v5.webp');--dietfit-card-position:50% 0%">
             <div class="dietfit-card-copy">
               <h2>Kiểm soát calo trong một màn hình</h2>
               <p>Nắm trọn lượng nạp vào và số dư calo mỗi ngày để căn chỉnh mục tiêu giảm cân dễ dàng hơn.</p>
@@ -132,14 +139,19 @@
         <a class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
           target="_blank" rel="noopener noreferrer">Tải app ngay</a>
       </div>
-      <div class="dietfit-tiktok-viewport" role="region" aria-label="Video trải nghiệm Dietfit từ cộng đồng TikTok">
+      <div class="dietfit-tiktok-viewport" role="region" aria-label="Video trải nghiệm Dietfit từ cộng đồng">
         <div class="dietfit-tiktok-grid">
           <div class="dietfit-tiktok-column">
-            <article class="dietfit-tiktok-card"><iframe
-                data-src="https://www.tiktok.com/player/v1/7650428372425674004?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
-                title="Video Dietfit từ @dietfitvietnam" loading="lazy" allow="autoplay; fullscreen"></iframe><a
-                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@dietfitvietnam/video/7650428372425674004"
-                target="_blank" rel="noopener noreferrer">@dietfitvietnam</a></article>
+            <article class="dietfit-tiktok-card dietfit-facebook-card">
+              <video autoplay muted loop playsinline preload="metadata"
+                poster="./assets/social/nguyen-tra-my-dietfit-facebook.jpg"
+                aria-label="Hành trình slimfit cùng Dietfit của Nguyễn Trà My">
+                <source src="./assets/social/nguyen-tra-my-dietfit-facebook.mp4" type="video/mp4">
+              </video>
+              <a class="dietfit-tiktok-credit"
+                href="https://www.facebook.com/watch/?v=3172002049663567&amp;extid=CL-UNK-UNK-UNK-IOS_GK0T-GK1C&amp;ref=sharing&amp;mibextid=wwXIfr"
+                target="_blank" rel="noopener noreferrer">Nguyễn Trà My · Dietfit Partner</a>
+            </article>
             <article class="dietfit-tiktok-card"><iframe
                 data-src="https://www.tiktok.com/player/v1/7666480953052646677?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
                 title="Video Dietfit từ @phthanhvan1412" loading="lazy" allow="autoplay; fullscreen"></iframe><a
@@ -323,9 +335,9 @@
   <script src="./vendor/rive/rive.js"></script>
   <script src="./vendor/lenis/lenis.min.js"></script>
   <script src="./scripts/dietfit-scroll.js"></script>
-  <script src="./scripts/dietfit-hero.js?v=20260809-9"></script>
+  <script src="./scripts/dietfit-hero.js?v=20260809-14"></script>
   <script src="./scripts/dietfit-sections.js?v=2"></script>
-  <script src="./scripts/dietfit-social.js"></script>
+  <script src="./scripts/dietfit-social.js?v=2"></script>
 </body>
 
 </html>

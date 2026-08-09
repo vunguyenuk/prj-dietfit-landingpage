@@ -19,11 +19,20 @@
   const playerObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       const frame = entry.target.querySelector("iframe");
-      if (!frame) return;
-      if (entry.isIntersecting) {
-        if (!frame.src || frame.src === "about:blank") frame.src = frame.dataset.src;
-      } else if (frame.src && frame.src !== "about:blank") {
-        frame.src = "about:blank";
+      const video = entry.target.querySelector("video");
+      if (frame) {
+        if (entry.isIntersecting) {
+          if (!frame.src || frame.src === "about:blank") frame.src = frame.dataset.src;
+        } else if (frame.src && frame.src !== "about:blank") {
+          frame.src = "about:blank";
+        }
+      }
+      if (video) {
+        if (entry.isIntersecting) {
+          video.play().catch(function () { /* autoplay có thể bị trình duyệt trì hoãn */ });
+        } else {
+          video.pause();
+        }
       }
     });
   }, { root: viewport, rootMargin: "120px 0px", threshold: 0.01 });

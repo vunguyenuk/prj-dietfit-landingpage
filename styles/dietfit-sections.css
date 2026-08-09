@@ -735,10 +735,14 @@ main { padding-top: 5rem; }
   }
 }
 
-/* Let feature imagery breathe vertically on laptop-sized screens. */
-@media (min-width: 1024px) and (max-width: 1599px) {
-  .dietfit-card {
-    min-height: clamp(36rem, 78svh, 52rem);
+/* Kéo card xuống thêm một nhịp trên laptop/tablet ngang. Rule phải thắng
+   trạng thái scroll-scrub phía trên, nơi min-height mặc định bị reset. */
+@media (min-width: 768px) and (max-width: 1440px) {
+  .dietfit-scroll-scrub .dietfit-card {
+    flex: 0 0 min(42rem, calc(100vw - 5rem));
+    min-height: min(56rem, 96svh);
+    height: min(56rem, 96svh);
+    align-self: flex-start;
   }
 }
 

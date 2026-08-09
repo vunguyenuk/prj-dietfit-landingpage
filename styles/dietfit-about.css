@@ -26,13 +26,6 @@ body * {
   font-synthesis: none;
 }
 
-/* Framer có thể hydrate lại social overlay từ component đã export. */
-.framer-jchn7 .framer-1o41kvy,
-.framer-jchn7 .framer-yf2cn7-container,
-.framer-jchn7 .framer-hogxnk-container {
-  display: none !important;
-}
-
 /* Tạo nhịp thở giữa label nhỏ và tiêu đề của từng section. */
 .framer-jchn7 .framer-161japn-container,
 .framer-jchn7 .framer-11fq6bo-container,
@@ -55,20 +48,7 @@ body,
 }
 
 /* Nét vẽ SVG trang trí: token hồng quá nhạt khi làm stroke mảnh -> dùng cam đậm */
-.framer-EkVdp path,
-.framer-IHUU0 path { stroke: var(--dietfit-orange) !important; }
-
-/* Logo footer: dietfit-logo.webp chỉ 162x48 nên không phóng to bằng wordmark
-   wordmark cũ (760px) được — giới hạn lại cho nét. */
-.framer-eSUjv .framer-111e3sr-container {
-  height: 56px !important;
-  aspect-ratio: auto !important;
-  align-self: flex-end !important;
-}
-.framer-eSUjv .framer-111e3sr-container img {
-  object-fit: contain !important;
-  object-position: left center !important;
-}
+.framer-EkVdp path { stroke: var(--dietfit-orange) !important; }
 
 @media (prefers-reduced-motion: reduce) {
   :root { --dietfit-dur: 0.001s; }
@@ -76,96 +56,135 @@ body,
 
 /* Header Dietfit nằm ở styles/dietfit-header-standalone.css */
 
-/* ---------- Nav link hover (còn dùng cho link trong footer) ---------- */
-.framer-OaFgG.framer-v-1s1xu4p .framer-16w8h4c,
-.framer-OaFgG.framer-v-1s1xu4p .framer-b0b0hd,
-.framer-OaFgG.framer-v-1s1xu4p .framer-1p914h4 {
-  transition: opacity var(--dietfit-dur) var(--dietfit-ease),
-              transform var(--dietfit-dur) var(--dietfit-ease);
-}
-.framer-OaFgG.framer-v-1s1xu4p:hover .framer-16w8h4c {
-  opacity: 1 !important;
-  transform: scale(1) rotate(0deg) !important;
-}
-.framer-OaFgG.framer-v-1s1xu4p:hover .framer-b0b0hd {
-  opacity: 0 !important;
-  transform: scale(0.9) rotate(15deg) !important;
-}
-.framer-OaFgG.framer-v-1s1xu4p:hover .framer-1p914h4 {
-  opacity: 1 !important;
-  transform: scale(1) rotate(0deg) !important;
-}
-/* hoán đổi layout (Framer gốc làm bằng class .hover) */
-.framer-OaFgG.framer-v-1s1xu4p:hover .framer-16w8h4c {
-  height: unset !important;
-  width: unset !important;
-  inset: 4px !important;
-  filter: blur(0px) !important;
-}
-.framer-OaFgG.framer-v-1s1xu4p:hover .framer-b0b0hd {
-  z-index: 1 !important;
-  position: absolute !important;
-  top: -25px !important;
-  right: -5px !important;
-}
-.framer-OaFgG.framer-v-1s1xu4p:hover .framer-1p914h4 {
-  bottom: unset !important;
-  right: unset !important;
-  position: relative !important;
-}
-
-/* ---------- Nav CTA "Book a Call" ---------- */
-.framer-TaIwK.framer-v-1sa2ztz .framer-o764od {
-  transition: transform 0.3s var(--dietfit-ease), top 0.3s var(--dietfit-ease);
-}
-.framer-TaIwK.framer-v-1sa2ztz:hover .framer-o764od {
-  top: -4px !important;
-  transform: none !important;
-}
-.framer-TaIwK.framer-v-1sa2ztz:hover.framer-1sa2ztz {
-  padding: 0 0 4px !important;
-}
-
-/* ---------- Button (Book a Call / Subscribe): lớp "After" lật vào ---------- */
-.framer-vJZ6T .framer-6qftc7,
-.framer-vJZ6T .framer-13kov2f {
-  transition: opacity var(--dietfit-dur) var(--dietfit-ease),
-              transform var(--dietfit-dur) var(--dietfit-ease);
-}
-.framer-vJZ6T:hover .framer-13kov2f {
-  opacity: 1 !important;
-  transform: perspective(500px) rotate(0deg) rotateX(0deg) rotateY(0deg) !important;
-}
-.framer-vJZ6T:hover .framer-6qftc7 {
-  opacity: 0 !important;
-  transform: perspective(500px) rotate(-20deg) rotateX(35deg) rotateY(-40deg) !important;
-}
-
 /* ---------- Icon tròn trong button: nở + xoay ---------- */
-.framer-65KkR .framer-1b0oebq,
-.framer-65KkR .framer-rdj03w,
 .framer-tjhZV .framer-1rz942z,
 .framer-tjhZV .framer-ao1gjw {
   transition: opacity var(--dietfit-dur) var(--dietfit-ease),
               transform var(--dietfit-dur) var(--dietfit-ease);
 }
-.framer-65KkR:hover .framer-1b0oebq,
 .framer-tjhZV:hover .framer-ao1gjw {
   opacity: 1 !important;
   transform: scale(1) rotate(0deg) !important;
 }
-.framer-65KkR:hover .framer-rdj03w,
 .framer-tjhZV:hover .framer-1rz942z {
   opacity: 1 !important;
   transform: translate(-50%, -50%) rotate(0deg) !important;
 }
 
-/* ---------- Card team: nhấc nhẹ khi hover ---------- */
+/* ---------- Team: danh sách profile gọn thay cho card ảnh lớn ---------- */
+.framer-jchn7 .framer-e7nlhd {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  column-gap: clamp(32px, 5vw, 72px) !important;
+  row-gap: 32px !important;
+  align-items: start !important;
+}
+
+.framer-jchn7 .framer-e7nlhd > .framer-macvhp,
+.framer-jchn7 .framer-e7nlhd .framer-1p7xyve-container {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-xv1Ye {
+  display: grid !important;
+  grid-template-columns: 72px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 16px !important;
+  width: 100% !important;
+  min-height: 72px !important;
+  height: auto !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-bcv59n {
+  position: relative !important;
+  inset: auto !important;
+  width: 72px !important;
+  height: 72px !important;
+  aspect-ratio: 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-qohqm9,
+.framer-jchn7 .framer-e7nlhd .framer-qohqm9 img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-k58e30 {
+  position: static !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-17tp6f3,
+.framer-jchn7 .framer-e7nlhd .framer-i1u4fz {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-17tp6f3 h4 {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-i1u4fz p {
+  color: var(--token-9390ee0f-6276-43bf-884e-7519f927be6b, #78716c) !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
 .framer-xv1Ye {
   transition: transform 0.45s var(--dietfit-ease), box-shadow 0.45s var(--dietfit-ease);
 }
 .framer-xv1Ye:hover {
   transform: translateY(-6px);
+}
+
+.framer-jchn7 .framer-e7nlhd .framer-xv1Ye:hover {
+  transform: none !important;
+}
+
+@media (max-width: 1024px) {
+  .framer-jchn7 .framer-e7nlhd {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    column-gap: 32px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .framer-jchn7 .framer-e7nlhd {
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 24px !important;
+  }
+
+  .framer-jchn7 .framer-e7nlhd .framer-xv1Ye {
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    min-height: 64px !important;
+    gap: 16px !important;
+  }
+
+  .framer-jchn7 .framer-e7nlhd .framer-bcv59n {
+    width: 64px !important;
+    height: 64px !important;
+  }
 }
 
 /* ---------- Canvas Rive ở section "Dinh dưỡng, nói cho dễ hiểu" ----------
@@ -200,6 +219,51 @@ body,
   width: 100%;
   height: 100%;
   border-radius: inherit;
+}
+
+/* CTA cuối trang: bản export chỉ render variant desktop, nên ép layout
+   một cột trên mobile thay vì để hai card bị bó hẹp cạnh nhau. */
+@media (max-width: 1024px) {
+  .framer-17tus49-container,
+  .framer-1dosg.framer-1wmizdg {
+    width: 100% !important;
+  }
+
+  .framer-1dosg.framer-1wmizdg {
+    padding: 64px 20px !important;
+  }
+
+  .framer-1dosg .framer-1nxo0vt {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 16px !important;
+  }
+
+  .framer-1dosg .framer-1l6r6sf {
+    flex: none !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .framer-1dosg .framer-1ymuarc {
+    align-self: auto !important;
+    aspect-ratio: 16 / 9 !important;
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .framer-1dosg .framer-12bsylg-container,
+  .framer-1dosg .framer-tjhZV {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .framer-1dosg .framer-6nxicm,
+  .framer-1dosg .framer-6nxicm h6 {
+    white-space: nowrap !important;
+    word-break: normal !important;
+  }
 }
 
 /* ---------- Cụm ảnh "Ngày nào chúng ta cũng ăn": phóng to ~1.3x ----------

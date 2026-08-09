@@ -18,8 +18,8 @@
   const compactQuery = window.matchMedia('(max-width: 1024px)');
   function currentHeroFile() {
     return compactQuery.matches
-      ? 'dietfit-hero-responsive.riv?v=20260808-2'
-      : 'dietfit-hero.riv?v=20260808-3';
+      ? 'dietfit-hero-responsive.riv?v=20260809-4'
+      : 'dietfit-hero.riv?v=20260809-4';
   }
 
   const canvas = document.createElement('canvas');
@@ -104,9 +104,10 @@
         }),
         onLoad: function () {
           const stateMachine = player.stateMachineNames[0];
-          const timeline = player.animator.animations.find(function (animation) {
+          const animations = player.animator.animations || [];
+          const timeline = animations.find(function (animation) {
             return animation.name === 'Timeline 1';
-          });
+          }) || animations[0];
           const vm = player.viewModelInstance;
           scrollValue = vm ? vm.number('scrollPercentage') : null;
           if (!scrollValue && stateMachine) {
@@ -122,6 +123,9 @@
             scrollDuration = endFrame / animation.fps;
             player.pause(scrollAnimation);
             player.scrub(scrollAnimation, 0);
+          }
+          if (scrollValue && stateMachine) {
+            player.play(stateMachine);
           }
           player.resizeDrawingSurfaceToCanvas(window.devicePixelRatio || 1);
           if (isMobile && vm) {
