@@ -5,16 +5,94 @@
   if (!viewport || viewport.dataset.enhanced === "true") return;
   viewport.dataset.enhanced = "true";
 
-  const columns = viewport.querySelectorAll(".dietfit-tiktok-column");
-  columns.forEach(function (column) {
-    Array.from(column.children).forEach(function (card) {
-      const clone = card.cloneNode(true);
-      clone.dataset.loopClone = "true";
-      clone.setAttribute("aria-hidden", "true");
-      clone.querySelectorAll("iframe, a").forEach(function (item) { item.tabIndex = -1; });
-      column.appendChild(clone);
+  const columns = Array.from(viewport.querySelectorAll(".dietfit-tiktok-column"));
+  const originalGroups = columns.map(function (column) { return Array.from(column.children); });
+  const cards = originalGroups.flat();
+  const mobileQuery = window.matchMedia("(max-width: 767px)");
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const timers = new Map();
+  const transitionHandlers = new WeakMap();
+  let isSectionVisible = false;
+
+  function clearTimers() {
+    timers.forEach(function (timer) { window.clearTimeout(timer); });
+    timers.clear();
+    columns.forEach(resetColumn);
+  }
+
+  function resetColumn(column) {
+    const handler = transitionHandlers.get(column);
+    if (handler) {
+      column.removeEventListener("transitionend", handler);
+      transitionHandlers.delete(column);
+    }
+    column.classList.remove("is-advancing");
+    column.style.removeProperty("--dietfit-tiktok-step");
+  }
+
+  function distributeCards() {
+    clearTimers();
+    columns.forEach(function (column) {
+      resetColumn(column);
+      column.replaceChildren();
     });
-  });
+
+    if (mobileQuery.matches) {
+      cards.forEach(function (card, index) {
+        columns[index % 2].appendChild(card);
+      });
+    } else {
+      originalGroups.forEach(function (group, index) {
+        group.forEach(function (card) { columns[index].appendChild(card); });
+      });
+    }
+
+    if (isSectionVisible) startCarousel();
+  }
+
+  function advanceColumn(column) {
+    if (document.hidden || reducedMotionQuery.matches || column.children.length < 2) return;
+    const first = column.firstElementChild;
+    const second = first && first.nextElementSibling;
+    if (!first || !second) return;
+
+    const step = second.offsetTop - first.offsetTop;
+    column.style.setProperty("--dietfit-tiktok-step", step + "px");
+    void column.offsetHeight;
+    column.classList.add("is-advancing");
+
+    const finish = function (event) {
+      if (event && event.target !== column) return;
+      column.appendChild(first);
+      resetColumn(column);
+      if (isSectionVisible && !document.hidden && !reducedMotionQuery.matches) {
+        timers.set(column, window.setTimeout(function () {
+          timers.delete(column);
+          advanceColumn(column);
+        }, 32));
+      }
+    };
+    transitionHandlers.set(column, finish);
+    column.addEventListener("transitionend", finish, { once: true });
+  }
+
+  function scheduleColumn(column, delay) {
+    timers.set(column, window.setTimeout(function () {
+      timers.delete(column);
+      if (!isSectionVisible) return;
+      advanceColumn(column);
+    }, delay));
+  }
+
+  function startCarousel() {
+    clearTimers();
+    if (reducedMotionQuery.matches || !isSectionVisible) return;
+    columns.filter(function (column) {
+      return window.getComputedStyle(column).display !== "none";
+    }).forEach(function (column, index) {
+      scheduleColumn(column, 120 + index * 360);
+    });
+  }
 
   const playerObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -40,5 +118,21 @@
   viewport.querySelectorAll(".dietfit-tiktok-card").forEach(function (card) {
     playerObserver.observe(card);
   });
+
+  const sectionObserver = new IntersectionObserver(function (entries) {
+    isSectionVisible = entries[0].isIntersecting;
+    if (isSectionVisible) startCarousel();
+    else clearTimers();
+  }, { threshold: 0.08 });
+
+  sectionObserver.observe(viewport);
+  mobileQuery.addEventListener("change", distributeCards);
+  reducedMotionQuery.addEventListener("change", startCarousel);
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) clearTimers();
+    else if (isSectionVisible) startCarousel();
+  });
+
+  distributeCards();
 
 })();

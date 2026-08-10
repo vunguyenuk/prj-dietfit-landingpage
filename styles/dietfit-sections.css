@@ -748,6 +748,7 @@ main { padding-top: 5rem; }
 
 @media (max-width: 767px) {
   .dietfit-card { flex-basis: calc(100vw - 2.5rem); min-height: 34rem; }
+  .dietfit-card-asset { background-image: var(--dietfit-card-mobile-image, var(--dietfit-card-image)); }
   .dietfit-carousel { padding-inline: 1.25rem; scroll-padding-inline: 1.25rem; }
   .dietfit-final-cta { min-height: 70svh; }
   .dietfit-footer-links { grid-template-columns: repeat(2, 1fr); }

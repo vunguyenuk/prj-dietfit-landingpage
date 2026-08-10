@@ -42,17 +42,20 @@
 }
 
 .dietfit-tiktok-column {
+  --dietfit-tiktok-duration: 24s;
   display: grid;
   gap: clamp(1rem, 1.8vw, 1.75rem);
-  animation: dietfit-tiktok-marquee 48s linear infinite;
+  align-content: start;
+  transform: translate3d(0, 0, 0);
 }
 
 .dietfit-tiktok-column:nth-child(1) { padding-top: clamp(5rem, 8vw, 10rem); }
-.dietfit-tiktok-column:nth-child(2) { animation-duration: 54s; }
+.dietfit-tiktok-column:nth-child(2) { --dietfit-tiktok-duration: 27s; }
 .dietfit-tiktok-column:nth-child(3) { padding-top: clamp(10rem, 16vw, 20rem); }
 
-@keyframes dietfit-tiktok-marquee {
-  to { transform: translateY(calc(-50% - 0.875rem)); }
+.dietfit-tiktok-column.is-advancing {
+  transform: translate3d(0, calc(-1 * var(--dietfit-tiktok-step, 0px)), 0);
+  transition: transform var(--dietfit-tiktok-duration) linear;
 }
 
 .dietfit-tiktok-card {
@@ -117,13 +120,15 @@
     gap: 0.75rem;
   }
 
-  .dietfit-tiktok-column { display: contents; }
+  .dietfit-tiktok-column { --dietfit-tiktok-duration: 20s; gap: 0.75rem; }
+  .dietfit-tiktok-column:nth-child(2) { --dietfit-tiktok-duration: 23s; }
   .dietfit-tiktok-column:nth-child(1),
-  .dietfit-tiktok-column:nth-child(3) { padding-top: 0; }
+  .dietfit-tiktok-column:nth-child(2) { padding-top: 0; }
+  .dietfit-tiktok-column:nth-child(3) { display: none; }
   .dietfit-tiktok-card { border-radius: 0.9rem; }
   .dietfit-tiktok-credit { right: 0.4rem; bottom: 0.4rem; left: 0.4rem; padding: 0.45rem 0.55rem; font-size: 0.62rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dietfit-tiktok-column { animation: none; }
+  .dietfit-tiktok-column { transform: none !important; transition: none !important; }
 }
