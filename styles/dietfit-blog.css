@@ -61,9 +61,11 @@
 .dietfit-post-cover { max-width: 58rem; aspect-ratio: 16 / 10; margin: clamp(3rem, 6vw, 4.5rem) auto; overflow: hidden; border-radius: var(--blog-radius-card); }
 .dietfit-post-cover img { width: 100%; height: 100%; object-fit: cover; }
 .dietfit-post-body { max-width: 43rem; margin-inline: auto; }
-.dietfit-post-body h2 { margin: 3.25rem 0 1rem; font-size: clamp(1.65rem, 2.5vw, 2.15rem); font-weight: 600; line-height: 1.18; letter-spacing: -0.025em; }
-.dietfit-post-body p { margin: 0 0 1.5rem; color: rgb(23 22 20 / 74%); font-size: 1.0625rem; line-height: 1.75; }
-.dietfit-post-body blockquote { margin: 3rem 0; padding: 1.5rem 1.75rem; border-radius: 0.75rem; color: #61200a; background: rgb(255 111 54 / 12%); font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 500; line-height: 1.5; }
+.dietfit-post-body h2 { margin: 2.5rem 0 0.85rem; font-size: clamp(1.65rem, 2.5vw, 2.15rem); font-weight: 600; line-height: 1.18; letter-spacing: -0.025em; }
+.dietfit-post-body p { margin: 0 0 1.15rem; color: rgb(23 22 20 / 74%); font-size: 1.0625rem; line-height: 1.7; }
+/* blockquote: khoảng hở thị giác = margin + padding, nên margin phải nhỏ
+   hơn h2 mới không bị hẫng hai đầu. */
+.dietfit-post-body blockquote { margin: 2.25rem 0; padding: 1.35rem 1.6rem; border-radius: 0.75rem; color: #61200a; background: rgb(255 111 54 / 12%); font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 500; line-height: 1.5; }
 .dietfit-post-more { max-width: 91rem; margin: clamp(8rem, 12vw, 12rem) auto 0; }
 .dietfit-post-more-header { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: clamp(3rem, 6vw, 5rem); }
 .dietfit-post-more-header h2 { margin: 0; font-size: var(--blog-type-section); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
@@ -86,9 +88,9 @@
   .dietfit-post-main { padding: 8rem 1.25rem 5rem; }
   .dietfit-post-author { margin-top: 1.5rem; }
   .dietfit-post-cover { aspect-ratio: 4 / 3; margin: 2.5rem auto 2rem; }
-  .dietfit-post-body h2 { margin: 2rem 0 0.75rem; }
-  .dietfit-post-body p { margin-bottom: 1.25rem; line-height: 1.68; }
-  .dietfit-post-body blockquote { margin: 2rem 0; padding: 1.25rem; line-height: 1.45; }
+  .dietfit-post-body h2 { margin: 1.75rem 0 0.65rem; }
+  .dietfit-post-body p { margin-bottom: 1rem; line-height: 1.65; }
+  .dietfit-post-body blockquote { margin: 1.6rem 0; padding: 1.1rem 1.15rem; line-height: 1.45; }
   .dietfit-post-more { margin-top: 5rem; }
   .dietfit-post-more-header { display: grid; align-items: start; margin-bottom: 2.5rem; }
   .dietfit-post-more-link { justify-self: start; }
