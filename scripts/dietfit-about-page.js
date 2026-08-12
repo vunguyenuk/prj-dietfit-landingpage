@@ -17,17 +17,46 @@
   }
 
   /* ---------- 2. Parallax cụm ảnh món ăn ----------
-     rate    = px dịch chuyển / px cuộn
+     rate      = px dịch chuyển / px cuộn
      anchorRel = vị trí cuộn (so với top của container) mà offset = 0
      Cả hai đo trực tiếp từ scroll-states.json của bản gốc.              */
   var PARALLAX_CONTAINER = '.framer-140uym6';
+  var mobileParallaxQuery = window.matchMedia('(max-width: 809px)');
   var PARALLAX = [
-    { sel: '.framer-z069z4', rate: -0.016987, anchorRel: -1268.6, baseX: '-50%' }, // Image 2
-    { sel: '.framer-1lii50d', rate: 0.027600, anchorRel: -1706.2, baseX: '0px' },  // Image big
-    { sel: '.framer-kh1yq3', rate: -0.076662, anchorRel: -1777.6, baseX: '-50%' }, // Image 1
-    { sel: '.framer-18fr05x', rate: -0.133333, anchorRel: -1291.2, baseX: '0px' }, // Image 4
-    { sel: '.framer-1wlxabj', rate: -0.266667, anchorRel: -1291.2, baseX: '0px' }  // Image 3
+    { sel: '.framer-z069z4', rate: -0.016987, anchorRel: -1268.6, baseX: '-50%' }, // Image 2 — phở, góc trên phải
+    { sel: '.framer-1lii50d', rate: 0.027600, anchorRel: -1706.2, baseX: '0px' },  // Image big — mâm cơm
+    { sel: '.framer-kh1yq3', rate: -0.076662, anchorRel: -1777.6, baseX: '-50%' }, // Image 1 — gà, bên trái
+    { sel: '.framer-18fr05x', rate: -0.133333, anchorRel: -1291.2, baseX: '0px' }, // Image 4 — bánh gói lá, góc dưới phải
+    { sel: '.framer-1wlxabj', rate: -0.266667, anchorRel: -1291.2, baseX: '0px' }  // Image 3 — bánh mì
   ];
+
+  /* ===========================================================
+     BẢNG CHỈNH TAY — CHỈ ÁP CHO MOBILE (màn < 810px)
+     Sửa số ở đây rồi F5. Desktop/tablet không bị ảnh hưởng.
+
+     Vị trí BAN ĐẦU của ảnh nằm ở `top` trong styles/dietfit-about.css
+     (khối @media max-width: 809px). Lúc cụm ảnh vừa ló lên từ đáy màn
+     hình, offset = 0 → ảnh đứng đúng chỗ `top` đó. Cuộn tiếp thì mới
+     cộng dần vào, tối đa bằng `move` khi cụm ảnh vừa khuất khỏi đỉnh.
+
+       move : tổng số px ảnh dịch trong SUỐT lần cuộn qua section.
+                âm    = trôi LÊN   vd -300
+                dương = trôi XUỐNG vd  300
+                0     = đứng yên, dính cứng vào trang
+
+       y    : cộng thêm vào vị trí ban đầu, nếu không muốn sửa CSS.
+              Để 0 thì ảnh đúng bằng `top` trong CSS.
+
+     Muốn ảnh nào chạy ngược chiều thì chỉ cần đổi dấu `move` —
+     không ảnh hưởng vị trí ban đầu.
+     =========================================================== */
+  var MOBILE_TUNE = {
+    '.framer-z069z4':  { y: -100, move: 350 },  // phở      — góc trên phải
+    '.framer-1lii50d': { y: 0, move: -80 },  // mâm cơm  — ảnh lớn ở giữa
+    '.framer-kh1yq3':  { y: -100, move: -300 },  // gà nướng — bên trái
+    '.framer-18fr05x': { y: -100, move: 300 },  // bánh lá  — góc dưới phải
+    '.framer-1wlxabj': { y: -100, move: 300 }   // bánh mì  — góc dưới trái
+  };
 
   // toạ độ document theo layout (miễn nhiễm với transform)
   function layoutTop(el) {
@@ -37,24 +66,45 @@
   }
 
   var parallaxItems = [];
+  var mobileParallax = false;
+  var scrollStart = 0;   // scrollY lúc đỉnh cụm ảnh vừa chạm đáy màn hình
+  var scrollSpan = 1;    // quãng cuộn từ lúc đó tới lúc cụm ảnh khuất hẳn
   function measureParallax() {
     parallaxItems = [];
-    if (reduceMotion) return;
     var container = document.querySelector(PARALLAX_CONTAINER);
-    if (!container) return;
+    if (!container || reduceMotion) return;
+    mobileParallax = mobileParallaxQuery.matches;
     var top = layoutTop(container);
+    var vh = window.innerHeight;
+    scrollStart = top - vh;
+    scrollSpan = Math.max(1, container.offsetHeight + vh);
     PARALLAX.forEach(function (p) {
       var el = document.querySelector(p.sel);
       if (!el) return;
+      var tune = MOBILE_TUNE[p.sel] || {};
       parallaxItems.push({
-        el: el, rate: p.rate, baseX: p.baseX, anchor: top + p.anchorRel
+        el: el,
+        rate: p.rate,
+        baseX: p.baseX,
+        anchor: top + p.anchorRel,
+        tuneY: tune.y || 0,
+        move: tune.move || 0
       });
     });
   }
   function renderParallax(y) {
+    // progress 0 → cụm ảnh vừa ló lên từ đáy màn hình (offset = 0)
+    // progress 1 → cụm ảnh vừa khuất khỏi đỉnh màn hình (offset = move)
+    var progress = 0;
+    if (mobileParallax) {
+      progress = (y - scrollStart) / scrollSpan;
+      progress = progress < 0 ? 0 : (progress > 1 ? 1 : progress);
+    }
     for (var i = 0; i < parallaxItems.length; i++) {
       var it = parallaxItems[i];
-      var ty = it.rate * (y - it.anchor);
+      var ty = mobileParallax
+        ? it.tuneY + progress * it.move
+        : it.rate * (y - it.anchor);
       it.el.style.transform = 'translate(' + it.baseX + ', ' + ty.toFixed(2) + 'px)';
     }
   }

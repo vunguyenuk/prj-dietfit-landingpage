@@ -83,9 +83,14 @@
   .dietfit-blog-grid { grid-template-columns: 1fr; row-gap: 4rem; }
   .dietfit-blog-grid[data-blog-grid]:empty { min-height: 168.15rem; }
   .dietfit-blog-footer-cta { min-height: 60svh; }
-  .dietfit-post-main { padding-top: 9rem; }
-  .dietfit-post-cover { aspect-ratio: 4 / 3; }
-  .dietfit-post-more-header { display: grid; align-items: start; }
+  .dietfit-post-main { padding: 8rem 1.25rem 5rem; }
+  .dietfit-post-author { margin-top: 1.5rem; }
+  .dietfit-post-cover { aspect-ratio: 4 / 3; margin: 2.5rem auto 2rem; }
+  .dietfit-post-body h2 { margin: 2rem 0 0.75rem; }
+  .dietfit-post-body p { margin-bottom: 1.25rem; line-height: 1.68; }
+  .dietfit-post-body blockquote { margin: 2rem 0; padding: 1.25rem; line-height: 1.45; }
+  .dietfit-post-more { margin-top: 5rem; }
+  .dietfit-post-more-header { display: grid; align-items: start; margin-bottom: 2.5rem; }
   .dietfit-post-more-link { justify-self: start; }
 }
 

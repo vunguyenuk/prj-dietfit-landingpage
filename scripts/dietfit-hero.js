@@ -33,7 +33,7 @@
   const compactQuery = window.matchMedia('(max-width: 1024px)');
   function currentHeroFile() {
     return compactQuery.matches
-      ? 'dietfit-hero-responsive.riv?v=20260811-2'
+      ? 'dietfit-hero-responsive.riv?v=20260812-1'
       : 'dietfit-hero.riv?v=20260811-1';
   }
 
@@ -56,9 +56,14 @@
     const rect = hero.getBoundingClientRect();
     const startOffset = 188;
     const travel = Math.max(1, rect.height - window.innerHeight + startOffset);
-    targetScroll = rect.top > startOffset
+    const rawProgress = rect.top > startOffset
       ? 0
       : Math.min(1, Math.max(0, (startOffset - rect.top) / travel));
+    // Mobile/iPad có quãng cuộn ngắn hơn desktop. Curve lũy thừa giữ animation
+    // chậm ở đầu và giữa, nhưng vẫn về đúng frame cuối khi hết hero.
+    targetScroll = compactQuery.matches
+      ? Math.pow(rawProgress, 1.35)
+      : rawProgress;
   }
 
   function updateHeroExpansion() {
@@ -82,9 +87,10 @@
   function animateScroll() {
     if (scrollValue || scrollAnimation) {
       const distance = targetScroll - renderedScroll;
+      const smoothing = compactQuery.matches ? 0.085 : 0.14;
       renderedScroll = Math.abs(distance) < 0.001
         ? targetScroll
-        : renderedScroll + distance * 0.14;
+        : renderedScroll + distance * smoothing;
       if (scrollAnimation) {
         player.scrub(scrollAnimation, renderedScroll * scrollDuration);
       } else {
