@@ -168,15 +168,16 @@
       var L = lines[i];
       var r = L.svg.getBoundingClientRect();
       if (!r.height) continue;
-      // bắt đầu vẽ khi phần tử vào 1/10 dưới màn, xong khi lên tới 1/4 trên
       var span = vh * 0.75 + r.height;
       var p = (vh * 0.9 - r.top) / span;
       p = p < 0 ? 0 : (p > 1 ? 1 : p);
       L.path.setAttribute('stroke-dashoffset', (L.len * (1 - p)).toFixed(2));
+      var fade = p <= 0.72 ? 1 : Math.max(0, 1 - (p - 0.72) / 0.28);
+      L.path.style.opacity = fade.toFixed(3);
     }
   }
 
-  /* ---------- 8. Rive ở section "Dinh dưỡng, nói cho dễ hiểu" ----------
+  /* ---------- 8. Rive ở section "Dinh dưỡng không gì là khó" ----------
      Scrub Timeline 1 theo scroll, cùng cách làm với hero trang chủ:
      tính progress 0..1 rồi lerp cho mượt thay vì nhảy cóc.          */
   var missionRive = null;
@@ -185,10 +186,25 @@
   var missionTarget = 0;
   var missionRendered = 0;
   var missionWrap = null;
+  var missionRuntimePromise = null;
+  var missionFrame = 0;
 
-  function initMissionRive() {
-    missionWrap = document.querySelector('[data-dietfit-mission-rive]');
-    if (!missionWrap || !window.rive) return;
+  function loadMissionRuntime() {
+    if (window.rive) return Promise.resolve();
+    if (missionRuntimePromise) return missionRuntimePromise;
+    missionRuntimePromise = new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      script.src = '/vendor/rive/rive.js';
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = function () { reject(new Error('Không tải được Rive runtime')); };
+      document.head.appendChild(script);
+    });
+    return missionRuntimePromise;
+  }
+
+  function createMissionRive() {
+    if (missionRive || !missionWrap || !window.rive) return;
     var canvas = missionWrap.querySelector('.dietfit-mission-canvas');
     if (!canvas) return;
 
@@ -196,7 +212,7 @@
 
     missionRive = new window.rive.Rive({
       canvas: canvas,
-      src: '/assets/hero/dietfit-about-mobile.riv?v=20260809-1',
+      src: '/assets/hero/dietfit-about-mobile.riv?v=20260811-2',
       autoplay: false,
       autoBind: true,
       enableRiveAssetCDN: false,
@@ -223,11 +239,35 @@
         updateMissionTarget();
         missionRendered = missionTarget;
         if (missionAnim) missionRive.scrub(missionAnim, missionRendered * missionDuration);
+        if (!reduceMotion && !missionFrame) missionFrame = requestAnimationFrame(missionLoop);
       },
       onLoadError: function (e) {
         console.error('Rive mission failed to load', e);
       }
     });
+  }
+
+  function initMissionRive() {
+    missionWrap = document.querySelector('[data-dietfit-mission-rive]');
+    if (!missionWrap) return;
+
+    function load() {
+      loadMissionRuntime().then(createMissionRive).catch(function (error) {
+        console.error('Rive mission runtime failed to load', error);
+      });
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      load();
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      observer.disconnect();
+      load();
+    }, { rootMargin: '600px 0px' });
+    observer.observe(missionWrap);
   }
 
   function updateMissionTarget() {
@@ -268,7 +308,7 @@
   // rAF chạy liên tục để phần lerp của Rive kịp đuổi tới đích
   function missionLoop() {
     renderMission();
-    requestAnimationFrame(missionLoop);
+    missionFrame = requestAnimationFrame(missionLoop);
   }
 
   function boot() {
@@ -280,7 +320,6 @@
     measureParallax();
     measureFooter();
     onScroll();
-    if (!reduceMotion) requestAnimationFrame(missionLoop);
     window.addEventListener('scroll', onScroll, { passive: true });
     var rt;
     window.addEventListener('resize', function () {
@@ -294,6 +333,10 @@
         onScroll();
       }, 200);
     });
+    window.addEventListener('pagehide', function () {
+      if (missionFrame) cancelAnimationFrame(missionFrame);
+      if (missionRive) missionRive.cleanup();
+    }, { once: true });
   }
 
   if (document.readyState === 'loading') {

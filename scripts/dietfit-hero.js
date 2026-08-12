@@ -3,7 +3,7 @@
 
   const hero = document.querySelector('[data-component-name="scrollable-rive-hero"]');
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (!hero || !window.rive || motionQuery.matches) return;
+  if (!hero || motionQuery.matches) return;
 
   const stage = hero.querySelector('.dietfit-hero-stage');
   const header = document.getElementById('dietfit-header');
@@ -12,22 +12,35 @@
 
   // File .riv nhúng sẵn toàn bộ ảnh và font nên không cần preload asset ngoài.
   const assetRoot = '/assets/hero/';
+  let runtimePromise = null;
+
+  function loadRuntime() {
+    if (window.rive) return Promise.resolve();
+    if (runtimePromise) return runtimePromise;
+    runtimePromise = new Promise(function (resolve, reject) {
+      const script = document.createElement('script');
+      script.src = '/vendor/rive/rive.js';
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = function () { reject(new Error('Không tải được Rive runtime')); };
+      document.head.appendChild(script);
+    });
+    return runtimePromise;
+  }
 
   // iPad + mobile (<= 1024px) dùng bản dựng riêng; desktop giữ bản gốc.
   // Chỉ nạp đúng một file để không tải thừa ~5.8MB.
   const compactQuery = window.matchMedia('(max-width: 1024px)');
   function currentHeroFile() {
     return compactQuery.matches
-      ? 'dietfit-hero-responsive.riv?v=20260809-4'
-      : 'dietfit-hero.riv?v=20260809-4';
+      ? 'dietfit-hero-responsive.riv?v=20260811-2'
+      : 'dietfit-hero.riv?v=20260811-1';
   }
 
   const canvas = document.createElement('canvas');
   canvas.className = 'dietfit-rive-canvas';
   canvas.setAttribute('aria-hidden', 'true');
   stage.prepend(canvas);
-
-  window.rive.RuntimeLoader.setWasmUrl('/vendor/rive/rive.wasm');
 
   let scrollValue = null;
   let frame = 0;
@@ -36,7 +49,6 @@
   let scrollDuration = 0;
   let targetScroll = 0;
   let renderedScroll = 0;
-  const isMobile = window.matchMedia('(max-width: 900px)').matches;
 
   function updateScroll() {
     if (!player || (!scrollValue && !scrollAnimation)) return;
@@ -90,6 +102,7 @@
   }
 
   async function start() {
+    window.rive.RuntimeLoader.setWasmUrl('/vendor/rive/rive.wasm');
     try {
       player = new window.rive.Rive({
         canvas,
@@ -128,7 +141,7 @@
             player.play(stateMachine);
           }
           player.resizeDrawingSurfaceToCanvas(window.devicePixelRatio || 1);
-          if (isMobile && vm) {
+          if (compactQuery.matches && vm) {
             const mobileTrigger = vm.trigger('startMobile');
             if (mobileTrigger) mobileTrigger.trigger();
           }
@@ -149,16 +162,25 @@
 
   // Đổi qua/lại ngưỡng 1024px (xoay iPad, kéo cửa sổ) thì nạp lại đúng bản.
   function swapHeroFile() {
+    if (!window.rive) return;
     if (frame) cancelAnimationFrame(frame);
     frame = 0;
-    if (player) player.cleanup();
-    player = null;
     scrollValue = null;
     scrollAnimation = null;
     scrollDuration = 0;
+    targetScroll = 0;
     renderedScroll = 0;
     hero.classList.remove('rive-ready');
-    start();
+    if (player) {
+      player.load({
+        src: assetRoot + currentHeroFile(),
+        autoplay: false,
+        autoBind: true,
+        enableRiveAssetCDN: false
+      });
+    } else {
+      start();
+    }
   }
   if (typeof compactQuery.addEventListener === 'function') {
     compactQuery.addEventListener('change', swapHeroFile);
@@ -174,5 +196,12 @@
   }, { once: true });
 
   requestScrollUpdate();
-  start();
+  // Paint HTML/CSS trước khi compile WASM và parse file Rive lớn.
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      loadRuntime().then(start).catch(function (error) {
+        console.error('Offline Dietfit hero runtime failed to load', error);
+      });
+    });
+  });
 })();

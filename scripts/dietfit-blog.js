@@ -76,12 +76,15 @@
 
   const grid = document.querySelector("[data-blog-grid]");
   if (grid) {
-    grid.innerHTML = posts.map(function (post) {
+    grid.innerHTML = posts.map(function (post, postIndex) {
+      var imagePriority = postIndex === 0
+        ? ' loading="eager" fetchpriority="high"'
+        : ' loading="lazy"';
       return '<a class="dietfit-blog-card" href="' + postUrl(post) + '">' +
-        '<div class="dietfit-blog-card-media"><img src="' + post.image + '" alt="" loading="lazy"></div>' +
+        '<div class="dietfit-blog-card-media"><img src="' + post.image + '" alt=""' + imagePriority + '></div>' +
         '<div class="dietfit-blog-card-meta"><time>' + post.date + '</time></div>' +
         '<h3>' + post.title + '</h3>' +
-        '<div class="dietfit-blog-card-author"><img src="../assets/images/dietfit-app-icon.png" alt=""><span>Bởi ' + post.author + '</span></div></a>';
+        '<div class="dietfit-blog-card-author"><img src="../assets/images/dietfit-app-icon-192.png" alt=""><span>Bởi ' + post.author + '</span></div></a>';
     }).join("");
   }
 
@@ -113,7 +116,7 @@
         '<div class="dietfit-blog-card-media"><img src="' + item.image + '" alt="" loading="lazy"></div>' +
         '<div class="dietfit-blog-card-meta"><time>' + item.date + '</time></div>' +
         '<h3>' + item.title + '</h3>' +
-        '<div class="dietfit-blog-card-author"><img src="../assets/images/dietfit-app-icon.png" alt=""><span>Bởi ' + item.author + '</span></div></a>';
+        '<div class="dietfit-blog-card-author"><img src="../assets/images/dietfit-app-icon-192.png" alt=""><span>Bởi ' + item.author + '</span></div></a>';
     }).join("");
   }
 })();

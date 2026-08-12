@@ -594,7 +594,6 @@ main { padding-top: 5rem; }
 }
 
 .dietfit-final-image {
-  background-image: url("/assets/images/final-cta.png");
   background-position: center 42%;
   background-repeat: no-repeat;
   background-size: cover;

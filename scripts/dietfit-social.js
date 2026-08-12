@@ -107,6 +107,12 @@
       }
       if (video) {
         if (entry.isIntersecting) {
+          const source = video.querySelector("source[data-src]");
+          if (video.dataset.poster && !video.poster) video.poster = video.dataset.poster;
+          if (source && !source.src) {
+            source.src = source.dataset.src;
+            video.load();
+          }
           video.play().catch(function () { /* autoplay có thể bị trình duyệt trì hoãn */ });
         } else {
           video.pause();
@@ -115,12 +121,23 @@
     });
   }, { root: viewport, rootMargin: "120px 0px", threshold: 0.01 });
 
-  viewport.querySelectorAll(".dietfit-tiktok-card").forEach(function (card) {
-    playerObserver.observe(card);
-  });
+  function setPlayersActive(active) {
+    playerObserver.disconnect();
+    cards.forEach(function (card) {
+      if (active) {
+        playerObserver.observe(card);
+        return;
+      }
+      const frame = card.querySelector("iframe");
+      const video = card.querySelector("video");
+      if (frame && frame.src && frame.src !== "about:blank") frame.src = "about:blank";
+      if (video) video.pause();
+    });
+  }
 
   const sectionObserver = new IntersectionObserver(function (entries) {
     isSectionVisible = entries[0].isIntersecting;
+    setPlayersActive(isSectionVisible);
     if (isSectionVisible) startCarousel();
     else clearTimers();
   }, { threshold: 0.08 });

@@ -1,0 +1,147 @@
+/* Shared mobile navigation for Home, About and Blog headers. */
+.dietfit-mobile-menu-toggle,
+.dietfit-mobile-menu {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  html.dietfit-menu-open body {
+    position: fixed;
+    top: var(--dietfit-menu-scroll-offset, 0);
+    right: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #dietfit-header .dietfit-header-nav {
+    --header-edge-inset: 1rem;
+    --header-joined-width: calc(100vw - 2rem);
+  }
+
+  #dietfit-header .dietfit-header-cta-shell {
+    display: none;
+  }
+
+  #dietfit-header .dietfit-mobile-menu-toggle {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    right: 1rem;
+    display: grid;
+    width: var(--header-height, 3.375rem);
+    height: var(--header-height, 3.375rem);
+    padding: 0;
+    border: 0;
+    color: #110b20;
+    background: transparent;
+    place-items: center;
+    pointer-events: auto;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .dietfit-mobile-menu-toggle__icon {
+    position: relative;
+    width: 1.35rem;
+    height: 0.9rem;
+  }
+
+  .dietfit-mobile-menu-toggle__icon::before,
+  .dietfit-mobile-menu-toggle__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transform-origin: center;
+    transition: transform 220ms cubic-bezier(0.25, 1, 0.5, 1), top 220ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .dietfit-mobile-menu-toggle__icon::before { top: 0.15rem; }
+  .dietfit-mobile-menu-toggle__icon::after { top: 0.65rem; }
+
+  #dietfit-header.is-menu-open .dietfit-mobile-menu-toggle__icon::before {
+    top: 0.4rem;
+    transform: rotate(45deg);
+  }
+
+  #dietfit-header.is-menu-open .dietfit-mobile-menu-toggle__icon::after {
+    top: 0.4rem;
+    transform: rotate(-45deg);
+  }
+
+  #dietfit-header .dietfit-mobile-menu {
+    position: absolute;
+    z-index: 3;
+    top: calc(var(--header-height, 3.375rem) + 0.75rem);
+    right: 1rem;
+    left: 1rem;
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.6rem;
+    border: 1px solid rgb(17 11 32 / 12%);
+    border-radius: 1.5rem;
+    background: rgb(255 255 255 / 98%);
+    box-shadow: 0 20px 48px rgb(17 11 32 / 18%);
+    backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.5rem) scale(0.985);
+    transform-origin: top center;
+    transition:
+      opacity 180ms cubic-bezier(0.25, 1, 0.5, 1),
+      transform 220ms cubic-bezier(0.25, 1, 0.5, 1),
+      visibility 0s linear 220ms;
+    pointer-events: none;
+  }
+
+  #dietfit-header.is-menu-open .dietfit-mobile-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition-delay: 0s;
+    pointer-events: auto;
+  }
+
+  .dietfit-mobile-menu__link {
+    display: flex;
+    min-height: 3.25rem;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    color: #110b20;
+    font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    text-decoration: none;
+  }
+
+  .dietfit-mobile-menu__link[aria-current="page"] {
+    background: #fff4ee;
+  }
+
+  .dietfit-mobile-menu__link--cta {
+    justify-content: center;
+    margin-top: 0.25rem;
+    color: #fff4ee;
+    background: #110b20;
+  }
+
+  .dietfit-mobile-menu__link:focus-visible,
+  .dietfit-mobile-menu-toggle:focus-visible {
+    outline: 3px solid #fe692e;
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dietfit-mobile-menu,
+  .dietfit-mobile-menu-toggle__icon::before,
+  .dietfit-mobile-menu-toggle__icon::after {
+    transition-duration: 0.001s !important;
+  }
+}

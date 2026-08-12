@@ -84,6 +84,32 @@
 (function () {
   "use strict";
 
+  const image = document.querySelector('.dietfit-final-image[data-background-src]');
+  if (!image) return;
+
+  function loadBackground() {
+    if (!image.dataset.backgroundSrc) return;
+    image.style.backgroundImage = 'url("' + image.dataset.backgroundSrc + '")';
+    image.removeAttribute('data-background-src');
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    loadBackground();
+    return;
+  }
+
+  const observer = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting) return;
+    observer.disconnect();
+    loadBackground();
+  }, { rootMargin: '800px 0px' });
+
+  observer.observe(image);
+})();
+
+(function () {
+  "use strict";
+
   const section = document.querySelector('.dietfit-progress-cta');
   const sticky = section && section.querySelector('.dietfit-progress-cta__sticky');
   if (!section || !sticky) return;

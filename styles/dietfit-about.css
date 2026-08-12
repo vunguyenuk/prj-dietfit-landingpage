@@ -7,6 +7,10 @@
 :root {
   --dietfit-ease: cubic-bezier(0.44, 0, 0.56, 1);
   --dietfit-dur: 0.4s;
+  --dietfit-line-width: 10px;
+  --dietfit-cta-line-width: 18px;
+  --dietfit-belief-line-width: 1.2px;
+  --dietfit-nutrition-line-width: 0.9px;
 
   /* ---------- Bảng màu Dietfit: ghi đè token hồng/tím của Framer ----------
      Lấy đúng màu từ assets/team/*.webp để trang khớp với ảnh placeholder. */
@@ -47,14 +51,39 @@ body,
   --token-5a68d921-836c-4fc4-85c6-de30b05a19ab: #FFEADF;
 }
 
-/* Nét vẽ SVG trang trí: token hồng quá nhạt khi làm stroke mảnh -> dùng cam đậm */
-.framer-EkVdp path { stroke: var(--dietfit-orange) !important; }
+/* Nét vẽ trang trí nguyên bản: giữ độ dày và đầu nét của từng SVG. */
+.framer-jchn7 .framer-grm3b6-container path[stroke-dasharray],
+.framer-jchn7 .framer-d3qvyj-container path[stroke-dasharray],
+.framer-jchn7 .framer-EkVdp path[stroke-dasharray] {
+  stroke: var(--dietfit-orange) !important;
+}
+
+.framer-jchn7 .framer-EkVdp path[stroke-dasharray] {
+  stroke-width: var(--dietfit-cta-line-width) !important;
+}
+
+.framer-jchn7 .framer-grm3b6-container path[stroke-dasharray] {
+  stroke-width: var(--dietfit-belief-line-width) !important;
+}
+
+.framer-jchn7 .framer-d3qvyj-container path[stroke-dasharray] {
+  stroke-width: var(--dietfit-nutrition-line-width) !important;
+}
+
+/* Line mới của Team dùng visual weight riêng để dễ đọc trên toàn chiều ngang. */
+.framer-jchn7 .dietfit-team-line path {
+  stroke: var(--dietfit-orange) !important;
+  stroke-width: var(--dietfit-line-width) !important;
+  stroke-linecap: butt !important;
+  vector-effect: non-scaling-stroke;
+}
 
 @media (prefers-reduced-motion: reduce) {
   :root { --dietfit-dur: 0.001s; }
 }
 
 /* Header Dietfit nằm ở styles/dietfit-header-standalone.css */
+
 
 /* ---------- Icon tròn trong button: nở + xoay ---------- */
 .framer-tjhZV .framer-1rz942z,
@@ -72,6 +101,32 @@ body,
 }
 
 /* ---------- Team: danh sách profile gọn thay cho card ảnh lớn ---------- */
+.framer-jchn7 .framer-1pxs41y .framer-kv31d0 {
+  gap: 0 !important;
+}
+
+.dietfit-team-line {
+  width: 100%;
+  height: clamp(52px, 5vw, 72px);
+  margin-block: clamp(16px, 2vw, 24px) clamp(28px, 3vw, 40px);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.dietfit-team-line svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.dietfit-team-line path {
+  stroke: var(--dietfit-orange) !important;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
 .framer-jchn7 .framer-e7nlhd {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
@@ -170,6 +225,15 @@ body,
 }
 
 @media (max-width: 600px) {
+  :root {
+    --dietfit-line-width: 7px;
+  }
+
+  .dietfit-team-line {
+    height: 48px;
+    margin-block: 16px 28px;
+  }
+
   .framer-jchn7 .framer-e7nlhd {
     grid-template-columns: minmax(0, 1fr) !important;
     row-gap: 24px !important;
@@ -187,7 +251,13 @@ body,
   }
 }
 
-/* ---------- Canvas Rive ở section "Dinh dưỡng, nói cho dễ hiểu" ----------
+@media (prefers-reduced-motion: reduce) {
+  .dietfit-team-line path {
+    stroke-dashoffset: 0 !important;
+  }
+}
+
+/* ---------- Canvas Rive ở section "Dinh dưỡng không gì là khó" ----------
    Rộng bằng khối ảnh phở ở section trên (460px), nhưng giữ tỉ lệ artboard
    1397/2096 để không cắt, không bóp, cũng không chừa dải hai bên. */
 .framer-jchn7 .framer-1syeh6v {
@@ -202,8 +272,8 @@ body,
   width: auto !important;
 }
 
-/* Ảnh section "Ăn tốt, không phải ăn khổ": khung Framer vốn nằm ngang
-   (1.638) còn ảnh phở là dọc 1086x1448 (0.75) — ép khung theo ảnh để
+/* Ảnh section "Ăn ngon, chứ đừng ăn khổ": khung Framer vốn nằm ngang
+   còn ảnh phở là dọc 1086x1448 — ép khung theo ảnh để
    giữ đúng tỉ lệ gốc, không cắt. */
 .framer-jchn7 .framer-9as5da {
   aspect-ratio: 1086 / 1448 !important;
