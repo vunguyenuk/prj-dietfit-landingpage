@@ -37,6 +37,23 @@
       : 'dietfit-hero.riv?v=20260811-1';
   }
 
+  // Tải sẵn file .riv ngay lập tức, song song với rive.js và rive.wasm.
+  // Trước đây ba thứ này nối đuôi nhau: phải chờ rive.js xong mới biết
+  // đường dẫn wasm, chờ wasm compile xong runtime mới đi lấy .riv —
+  // mà .riv nặng ~6MB nên nó khởi động rất trễ.
+  const heroBuffers = Object.create(null);
+  function prefetchHero(file) {
+    if (heroBuffers[file]) return heroBuffers[file];
+    heroBuffers[file] = fetch(assetRoot + file, { credentials: 'same-origin' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.arrayBuffer();
+      })
+      .catch(function () { return null; });  // hỏng thì rơi về src như cũ
+    return heroBuffers[file];
+  }
+  prefetchHero(currentHeroFile());
+
   const canvas = document.createElement('canvas');
   canvas.className = 'dietfit-rive-canvas';
   canvas.setAttribute('aria-hidden', 'true');
@@ -107,12 +124,30 @@
     requestScrollUpdate();
   }
 
+  // Kéo wasm về ngay khi rive.js sẵn sàng, không đợi file .riv.
+  // setWasmUrl() chỉ ghi nhớ đường dẫn — phải gọi awaitInstance() mới
+  // thực sự phát request, nếu không nó nằm chờ tới lúc new Rive().
+  let wasmReady = null;
+  function initWasm() {
+    if (wasmReady) return wasmReady;
+    const loader = window.rive.RuntimeLoader;
+    loader.setWasmUrl('/vendor/rive/rive.wasm');
+    wasmReady = typeof loader.awaitInstance === 'function'
+      ? loader.awaitInstance().catch(function () { return null; })
+      : Promise.resolve(null);
+    return wasmReady;
+  }
+
   async function start() {
-    window.rive.RuntimeLoader.setWasmUrl('/vendor/rive/rive.wasm');
+    const file = currentHeroFile();
+    // Chạy song song: compile wasm và tải file .riv.
+    const buffer = (await Promise.all([initWasm(), prefetchHero(file)]))[1];
     try {
       player = new window.rive.Rive({
         canvas,
-        src: assetRoot + currentHeroFile(),
+        // Dùng buffer đã tải sẵn; nếu fetch hỏng thì quay về src như cũ.
+        buffer: buffer || undefined,
+        src: buffer ? undefined : assetRoot + file,
         autoplay: false,
         autoBind: true,
         enableRiveAssetCDN: false,
@@ -177,16 +212,17 @@
     targetScroll = 0;
     renderedScroll = 0;
     hero.classList.remove('rive-ready');
-    if (player) {
+    if (!player) { start(); return; }
+    const file = currentHeroFile();
+    prefetchHero(file).then(function (buffer) {
       player.load({
-        src: assetRoot + currentHeroFile(),
+        buffer: buffer || undefined,
+        src: buffer ? undefined : assetRoot + file,
         autoplay: false,
         autoBind: true,
         enableRiveAssetCDN: false
       });
-    } else {
-      start();
-    }
+    });
   }
   if (typeof compactQuery.addEventListener === 'function') {
     compactQuery.addEventListener('change', swapHeroFile);
@@ -202,10 +238,13 @@
   }, { once: true });
 
   requestScrollUpdate();
-  // Paint HTML/CSS trước khi compile WASM và parse file Rive lớn.
+  // Tải rive.js ngay (script async, không chặn paint) để wasm được khởi
+  // động sớm nhất có thể. Chỉ hoãn phần compile + parse file .riv sang
+  // sau 2 frame, cho HTML/CSS kịp vẽ xong trước.
+  const runtimeReady = loadRuntime().then(initWasm);
   requestAnimationFrame(function () {
     requestAnimationFrame(function () {
-      loadRuntime().then(start).catch(function (error) {
+      runtimeReady.then(start).catch(function (error) {
         console.error('Offline Dietfit hero runtime failed to load', error);
       });
     });
