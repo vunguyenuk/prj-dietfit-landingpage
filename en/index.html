@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dietfit — AI Calorie Tracking</title>
+  <meta name="description"
+    content="Food scales are a hassle. Dietfit tracks calories from a single photo — AI recognizes your meal and breaks down its nutrition in seconds.">
+  <meta property="og:title" content="Dietfit — AI Calorie Tracking">
+  <meta property="og:description" content="No guesswork today, a better you tomorrow. Track calories with AI from just one photo.">
+  <meta property="og:image" content="/assets/images/final-cta.webp">
+  <link rel="icon" href="/assets/images/dietfit-app-icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/dietfit-app-icon-192.png">
+  <!-- Rive hero: start the runtime, wasm and the one .riv file from <head>,
+       in parallel with CSS, instead of waiting for JS to run first. -->
+  <link rel="preload" href="/vendor/rive/rive.js" as="script">
+  <link rel="preload" href="/vendor/rive/rive.wasm" as="fetch" type="application/wasm" crossorigin>
+  <link rel="preload" href="/assets/hero/dietfit-hero-en.riv?v=20260918-1" as="fetch" crossorigin media="(min-width: 1025px)">
+  <link rel="preload" href="/assets/hero/dietfit-hero-responsive-en.riv?v=20260918-1" as="fetch" crossorigin media="(max-width: 1024px)">
+  <link rel="stylesheet" href="/vendor/lenis/lenis.css">
+  <link rel="stylesheet" href="/styles/dietfit-typography.css?v=30">
+  <link rel="stylesheet" href="/styles/dietfit-hero.css?v=20260918-1">
+  <link rel="stylesheet" href="/styles/dietfit-sections.css?v=59">
+  <link rel="stylesheet" href="/styles/dietfit-social.css?v=7">
+  <link rel="stylesheet" href="/styles/dietfit-mobile-menu.css?v=1">
+  <link rel="stylesheet" href="/styles/dietfit-lang-switch.css?v=1">
+</head>
+
+<body>
+  <header id="dietfit-header" class="dietfit-header-blur">
+    <div class="dietfit-header-blur-gradient" aria-hidden="true">
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-1"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-2"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-3"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-4"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-5"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-6"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-7"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-8"></div>
+    </div>
+    <div class="dietfit-header-blur-overlay" aria-hidden="true"></div>
+    <nav class="dietfit-header-nav" aria-label="Main navigation">
+      <div class="dietfit-header-logo-shell">
+        <div class="dietfit-header-surface"></div>
+        <div class="dietfit-header-logo-content">
+          <a href="/en/" aria-label="Dietfit home"><img src="/assets/images/dietfit-logo.webp" alt="Dietfit"
+              width="102" height="31"></a>
+        </div>
+      </div>
+      <div class="dietfit-header-cta-shell">
+        <a class="dietfit-header-blog-link" href="/en/about-us/">About</a>
+        <a class="dietfit-header-blog-link" href="/en/blog/">Blog</a>
+        <div class="dietfit-lang-switch" role="group" aria-label="Language"><a href="/" lang="vi" hreflang="vi" aria-label="Tiếng Việt" data-lang-link>VI</a><a href="/en/" lang="en" hreflang="en" aria-current="true" aria-label="English" data-lang-link>EN</a></div><a class="dietfit-button dietfit-button--compact"
+          href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+          rel="noopener noreferrer">Get the app</a>
+      </div>
+      <button class="dietfit-mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"
+        aria-controls="dietfit-mobile-menu" data-dietfit-menu-toggle><span
+          class="dietfit-mobile-menu-toggle__icon" aria-hidden="true"></span></button>
+      <div class="dietfit-mobile-menu" id="dietfit-mobile-menu" aria-hidden="true" data-dietfit-mobile-menu>
+        <a class="dietfit-mobile-menu__link" href="/en/about-us/">About</a>
+        <a class="dietfit-mobile-menu__link" href="/en/blog/">Blog</a>
+        <div class="dietfit-lang-switch" role="group" aria-label="Language"><a href="/" lang="vi" hreflang="vi" data-lang-link>Tiếng Việt</a><a href="/en/" lang="en" hreflang="en" aria-current="true" data-lang-link>English</a></div><a class="dietfit-mobile-menu__link dietfit-mobile-menu__link--cta"
+          href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+          rel="noopener noreferrer">Get the app</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="dietfit-intro container">
+      <h1 class="dietfit-hero-heading"><span>Track calories with AI</span><span>No guesswork today, a better you tomorrow</span></h1>
+      <p>Food scales are a hassle — Dietfit tracks your calories with just a photo!</p>
+      <a class="dietfit-app-store" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+        target="_blank" rel="noopener noreferrer">
+        <img src="/assets/images/apple.svg" alt="" width="24" height="24">
+        <span><small>Download on the</small>App Store</span>
+      </a>
+    </section>
+
+    <div class="dietfit-hero-wrap">
+      <section class="dietfit-rive-hero" data-component-name="scrollable-rive-hero"
+        aria-label="Interactive Dietfit illustration that responds as you scroll">
+        <div class="dietfit-hero-sticky">
+          <div class="dietfit-hero-stage">
+            <div class="dietfit-hero-loading" aria-hidden="true">
+              <picture class="dietfit-hero-poster">
+                <source media="(orientation: portrait)" srcset="/assets/hero/dietfit-hero-poster-mobile.webp" width="780" height="1688">
+                <img src="/assets/hero/dietfit-hero-poster.webp" alt="" width="1920" height="1200" fetchpriority="high" decoding="async">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="dietfit-highlights" aria-label="Dietfit highlights">
+      <div class="dietfit-highlights-sticky">
+        <div class="dietfit-carousel" data-dietfit-carousel>
+          <article class="dietfit-card dietfit-card-asset dietfit-card-asset-light-copy"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-1-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Nutrition, finally clear</h2>
+              <p>Just snap a photo — AI recognizes your food and breaks down its nutrition in seconds.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset dietfit-card-asset-light-copy"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-2-v5.webp');--dietfit-card-mobile-image:url('/assets/cards/dietfit-card-2-mobile-v1.webp');--dietfit-card-position:50% 0%">
+            <div class="dietfit-card-copy">
+              <h2>Calories in one tap</h2>
+              <p>Hit your calorie deficit more easily with a single tap of the camera button</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-3-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Backed by science</h2>
+              <p>Built on BMR, BMI and TDEE to help you create a calorie deficit the scientific way</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-4-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>A reward for discipline</h2>
+              <p>Stay on track for a day and Dietfit rewards you with up to 200 extra calories tomorrow.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-5-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Works with Apple Health</h2>
+              <p>Automatically syncs calories burned so your daily intake adjusts to match.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-6-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Smart progress charts</h2>
+              <p>Clear, visual charts that capture every step of your effort</p>
+            </div>
+          </article>
+        </div>
+        <div class="dietfit-carousel-controls" aria-label="Feature list controls">
+          <button type="button" data-dietfit-prev aria-label="Previous feature">←</button>
+          <button type="button" data-dietfit-next aria-label="Next feature">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="dietfit-tiktok-section" data-dietfit-tiktok-section>
+      <div class="dietfit-section-heading">
+        <h2>You’re not alone on this journey</h2>
+        <p>The Dietfit crew is right here with you — tracking calories and living healthier, every single day.</p>
+        <a class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+          target="_blank" rel="noopener noreferrer">Get the app</a>
+      </div>
+      <div class="dietfit-tiktok-viewport" role="region" aria-label="Dietfit videos from the community">
+        <div class="dietfit-tiktok-grid">
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card dietfit-facebook-card">
+              <video muted loop playsinline preload="none"
+                data-poster="./assets/social/nguyen-tra-my-dietfit-facebook.jpg"
+                aria-label="Nguyễn Trà My’s slim-down journey with Dietfit">
+                <source data-src="/assets/social/nguyen-tra-my-dietfit-facebook.mp4" type="video/mp4">
+              </video>
+              <a class="dietfit-tiktok-credit"
+                href="https://www.facebook.com/watch/?v=3172002049663567&amp;extid=CL-UNK-UNK-UNK-IOS_GK0T-GK1C&amp;ref=sharing&amp;mibextid=wwXIfr"
+                target="_blank" rel="noopener noreferrer">Nguyễn Trà My · Dietfit Partner</a>
+            </article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7666480953052646677?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @phthanhvan1412" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@phthanhvan1412/video/7666480953052646677"
+                target="_blank" rel="noopener noreferrer">@phthanhvan1412</a></article>
+          </div>
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7657920431386627335?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @tunnynguyen" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@tunnynguyen/video/7657920431386627335"
+                target="_blank" rel="noopener noreferrer">@tunnynguyen</a></article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7660807882669296916?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @gaythidoiten1910" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@gaythidoiten1910/video/7660807882669296916"
+                target="_blank" rel="noopener noreferrer">@gaythidoiten1910</a></article>
+          </div>
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7665734390814625044?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @jenmie.xx" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@jenmie.xx/video/7665734390814625044"
+                target="_blank" rel="noopener noreferrer">@jenmie.xx</a></article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7650428372425674004?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @dietfitvietnam" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@dietfitvietnam/video/7650428372425674004"
+                target="_blank" rel="noopener noreferrer">@dietfitvietnam</a></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dietfit-progress-cta" id="dietfit-progress">
+      <div class="dietfit-progress-cta__sticky">
+        <div class="dietfit-progress-cta__content">
+          <h2>You’re more beautiful than you think</h2>
+          <p><strong>You’ll never know how good you can look until you give change a try.</strong><br>Dietfit is always
+            here to keep you motivated and make losing weight easy, so you feel better every day.</p><a class="dietfit-button"
+            href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+            rel="noopener noreferrer">Try Dietfit now</a>
+        </div>
+        <div class="dietfit-progress-cta__gallery" aria-label="A transformation journey with Dietfit">
+          <figure><img src="/assets/images/dietfit-progress-before.webp?v=3" alt="Before the transformation"
+              loading="lazy" width="1688" height="2931"></figure>
+          <figure><img src="/assets/images/dietfit-progress-after.webp?v=3" alt="After the transformation"
+              loading="lazy" width="1688" height="2942"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="dietfit-video-section" id="dietfit-video">
+      <div class="dietfit-section-heading">
+        <h2>Calorie tracking has never been this easy</h2>
+        <p>Let the tech handle the numbers — you just stay happy, live well and track calories with Dietfit.</p><a
+          class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+          target="_blank" rel="noopener noreferrer">Let Dietfit handle it</a>
+      </div>
+      <figure class="dietfit-video-preview" data-youtube-id="ttl5UtDnHFU" data-video-title="Calorie tracking has never been this easy">
+        <button class="dietfit-video-play" type="button" aria-label="Play video: Calorie tracking has never been this easy">
+          <img src="https://i.ytimg.com/vi/ttl5UtDnHFU/maxresdefault.jpg" alt="" loading="lazy" decoding="async"
+            data-fallback-src="https://i.ytimg.com/vi/ttl5UtDnHFU/hqdefault.jpg">
+          <span aria-hidden="true"><img src="/assets/images/play.svg" alt=""></span>
+        </button>
+      </figure>
+    </section>
+
+    <section class="dietfit-community" id="dietfit-community" aria-labelledby="dietfit-community-title">
+      <div class="dietfit-community__intro">
+        <p class="dietfit-community__eyebrow">Dietfit Community</p>
+        <h2 id="dietfit-community-title">Let’s glow up<br>together, every day</h2>
+        <p class="dietfit-community__lead">Hit a rough patch or need a little extra motivation? Come join our community!
+          This is where we look out for each other.</p>
+      </div>
+      <div class="dietfit-community__grid">
+        <a class="dietfit-community__card" href="https://www.facebook.com/groups/2085834865680742" target="_blank"
+          rel="noopener noreferrer">
+          <div class="dietfit-community__media"><img src="/assets/community/community-dietfit-users.webp"
+              alt="Dietfit VN Users group banner" loading="lazy"></div>
+          <div class="dietfit-community__content">
+            <p class="dietfit-community__label">Facebook Group · In Vietnamese</p>
+            <h3>Dietfit VN Users</h3>
+            <p>A place to swap Dietfit tips, share everyday meals and celebrate the small changes that last.</p>
+          </div><span class="dietfit-community__link">Join the community <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="dietfit-community__card" href="https://www.facebook.com/groups/1688403659018395" target="_blank"
+          rel="noopener noreferrer">
+          <div class="dietfit-community__media"><img src="/assets/community/community-weight-loss.webp"
+              alt="Weight Loss Club group banner" loading="lazy"></div>
+          <div class="dietfit-community__content">
+            <p class="dietfit-community__label">Facebook Group · In Vietnamese</p>
+            <h3>Weight Loss Club — Less Fat, Less Sad</h3>
+            <p>Ask questions, find accountability buddies and stay motivated so your weight-loss journey feels lighter.</p>
+          </div><span class="dietfit-community__link">Join the community <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="dietfit-faq" id="dietfit-faq">
+      <h2>Things you might want to know</h2>
+      <div class="dietfit-faq-list">
+        <details>
+          <summary>How is Dietfit different from other calorie trackers?<span aria-hidden="true"></span></summary>
+          <p>Instead of making you log every item, Dietfit uses AI to recognize meals from a photo, estimate calories and
+            macros, score each meal and suggest improvements. You understand what you’re eating faster, without the tedious logging.</p>
+        </details>
+        <details>
+          <summary>Can Dietfit really recognize any food from a photo?<span aria-hidden="true"></span></summary>
+          <p>Dietfit analyzes the food and portions visible in your photo to estimate its nutrition. Clear, well-lit photos
+            that show the whole dish give more accurate results. For harder-to-recognize dishes, you can still describe them
+            by text or voice, or enter them manually.</p>
+        </details>
+        <details>
+          <summary>Do I have to re-enter every food each day?<span aria-hidden="true"></span></summary>
+          <p>No. You can snap a photo, upload one you already have, or describe your meal by text or voice. Foods you eat
+            often are saved, so logging them is even faster next time.</p>
+        </details>
+        <details>
+          <summary>How does Dietfit set my weight-loss calorie goal?<span aria-hidden="true"></span></summary>
+          <p>Dietfit uses your body stats, BMR, BMI, TDEE, activity level and weight goal to calculate the right number of
+            calories for each day. That gives you a concrete target to follow instead of guessing how much you should eat.</p>
+        </details>
+        <details>
+          <summary>What does a meal’s health score mean?<span aria-hidden="true"></span></summary>
+          <p>The health score reflects food quality, the balance between nutrient groups, how complete the nutrition is and
+            your activity for the day. At a glance, you can see what’s working in a meal and what to adjust.</p>
+        </details>
+        <details>
+          <summary>Does exercise change how many calories I can eat?<span aria-hidden="true"></span></summary>
+          <p>Yes. You can log workouts manually or sync Apple Health to track steps, activity and Calories
+            Out. With exercise calorie credit turned on, the calories you burn are added to your daily food goal.</p>
+        </details>
+        <details>
+          <summary>What if I eat less than my goal today?<span aria-hidden="true"></span></summary>
+          <p>Dietfit can roll over up to 200 unused kcal to the next day. That gives you some flexibility without forcing
+            every day to look exactly the same.</p>
+        </details>
+        <details>
+          <summary>How does Dietfit help me track my weight-loss progress?<span aria-hidden="true"></span></summary>
+          <p>You can track your weight, BMI, body-change charts, meal history, calories and macros over time.
+            Instead of fixating on a single up or down day, you see the long-term trend more clearly.</p>
+        </details>
+        <details>
+          <summary>Can I track with friends?<span aria-hidden="true"></span></summary>
+          <p>Yes. Dietfit has a community feed, private groups, invite links and leaderboards so everyone can share meals,
+            tips and progress with each other.</p>
+        </details>
+        <details>
+          <summary>Can I try it before subscribing?<span aria-hidden="true"></span></summary>
+          <p>You can scan a meal before starting your trial, then look through the available plans before deciding
+            to subscribe.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="dietfit-final" data-dietfit-final>
+      <div class="dietfit-final-image" data-background-src="/assets/images/final-cta.webp" aria-hidden="true"></div>
+      <div class="dietfit-final-shade" aria-hidden="true"></div>
+      <div class="dietfit-final-cta">
+        <h2>Eat whatever you like. Just remember to check Dietfit!</h2><a class="dietfit-button"
+          href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+          rel="noopener noreferrer">Get Dietfit now</a>
+      </div>
+      <footer class="dietfit-footer">
+        <div class="dietfit-footer-links">
+          <div>
+            <h3>Product</h3><a href="#main">Features</a><a href="#dietfit-faq">FAQ</a>
+          </div>
+          <div>
+            <h3>Company</h3><a href="/en/about-us/">About Dietfit</a><a href="mailto:marketing@c0x12c.com">Contact</a><a
+              href="mailto:marketing@c0x12c.com">Support</a>
+          </div>
+          <div>
+            <h3>Connect</h3><a href="#dietfit-community">Community</a><a href="https://www.tiktok.com/@dietfitvietnam"
+              target="_blank" rel="noopener noreferrer">TikTok</a>
+          </div>
+        </div>
+        <div class="dietfit-footer-legal"><span>© 2026 Dietfit · All rights reserved</span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="/vendor/lenis/lenis.min.js"></script>
+  <script src="/scripts/dietfit-scroll.js"></script>
+  <script src="/scripts/dietfit-hero.js?v=20260918-1"></script>
+  <script src="/scripts/dietfit-sections.js?v=4"></script>
+  <script src="/scripts/dietfit-social.js?v=6"></script>
+  <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>
+</body>
+
+</html>

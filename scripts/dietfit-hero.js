@@ -11,6 +11,9 @@
   if (!stage) return;
 
   // File .riv nhúng sẵn toàn bộ ảnh và font nên không cần preload asset ngoài.
+  // Ảnh trong .riv đã được nén lại (PNG -> WebP, giữ nguyên kích thước):
+  // ~6.3MB -> ~1.25MB. Nếu export lại từ Rive, nhớ chạy lại bước nén này
+  // hoặc bật nén ảnh trong Rive Editor, rồi đổi ?v= bên dưới và trong <head>.
   const assetRoot = '/assets/hero/';
   let runtimePromise = null;
 
@@ -31,10 +34,12 @@
   // iPad + mobile (<= 1024px) dùng bản dựng riêng; desktop giữ bản gốc.
   // Chỉ nạp đúng một file để không tải thừa ~5.8MB.
   const compactQuery = window.matchMedia('(max-width: 1024px)');
+  // Bản /en/ dùng file -en.riv (chỉ khác dòng chữ "Calculating calories...").
+  const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-en' : '';
   function currentHeroFile() {
     return compactQuery.matches
-      ? 'dietfit-hero-responsive.riv?v=20260812-1'
-      : 'dietfit-hero.riv?v=20260811-1';
+      ? 'dietfit-hero-responsive' + langSuffix + '.riv?v=20260918-1'
+      : 'dietfit-hero' + langSuffix + '.riv?v=20260918-1';
   }
 
   // Tải sẵn file .riv ngay lập tức, song song với rive.js và rive.wasm.

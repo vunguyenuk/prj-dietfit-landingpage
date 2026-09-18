@@ -148,3 +148,42 @@
   reducedMotionQuery.addEventListener('change', measure);
   measure();
 })();
+
+(function () {
+  "use strict";
+
+  // Video YouTube ở section "Track calo chưa bao giờ tiện lợi đến thế".
+  // Chỉ hiện thumbnail + nút play; iframe YouTube (~1MB JS) chỉ được tải khi bấm.
+  const preview = document.querySelector('.dietfit-video-preview[data-youtube-id]');
+  if (!preview) return;
+
+  const button = preview.querySelector('.dietfit-video-play');
+  const thumb = button && button.querySelector('img[data-fallback-src]');
+  if (!button) return;
+
+  // maxresdefault không phải video nào cũng có; YouTube trả ảnh 120x90 thay thế.
+  function useFallback() {
+    if (!thumb || !thumb.dataset.fallbackSrc) return;
+    thumb.src = thumb.dataset.fallbackSrc;
+    thumb.removeAttribute('data-fallback-src');
+  }
+  if (thumb) {
+    thumb.addEventListener('error', useFallback, { once: true });
+    thumb.addEventListener('load', function () {
+      if (thumb.naturalWidth > 0 && thumb.naturalWidth <= 120) useFallback();
+    });
+  }
+
+  button.addEventListener('click', function () {
+    const id = preview.dataset.youtubeId;
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+      '?autoplay=1&rel=0&playsinline=1&modestbranding=1';
+    iframe.title = preview.dataset.videoTitle || 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    preview.replaceChildren(iframe);
+    iframe.focus();
+  });
+})();

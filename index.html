@@ -12,12 +12,19 @@
   <meta property="og:image" content="/assets/images/final-cta.webp">
   <link rel="icon" href="./assets/images/dietfit-app-icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="./assets/images/dietfit-app-icon-192.png">
+  <!-- Rive hero: tải runtime, wasm và đúng một file .riv ngay từ <head>,
+       song song với CSS, thay vì đợi JS chạy xong mới bắt đầu tải. -->
+  <link rel="preload" href="/vendor/rive/rive.js" as="script">
+  <link rel="preload" href="/vendor/rive/rive.wasm" as="fetch" type="application/wasm" crossorigin>
+  <link rel="preload" href="/assets/hero/dietfit-hero.riv?v=20260918-1" as="fetch" crossorigin media="(min-width: 1025px)">
+  <link rel="preload" href="/assets/hero/dietfit-hero-responsive.riv?v=20260918-1" as="fetch" crossorigin media="(max-width: 1024px)">
   <link rel="stylesheet" href="./vendor/lenis/lenis.css">
   <link rel="stylesheet" href="./styles/dietfit-typography.css?v=30">
-  <link rel="stylesheet" href="./styles/dietfit-hero.css?v=20260809-6">
-  <link rel="stylesheet" href="./styles/dietfit-sections.css?v=58">
+  <link rel="stylesheet" href="./styles/dietfit-hero.css?v=20260918-1">
+  <link rel="stylesheet" href="./styles/dietfit-sections.css?v=59">
   <link rel="stylesheet" href="./styles/dietfit-social.css?v=7">
   <link rel="stylesheet" href="./styles/dietfit-mobile-menu.css?v=1">
+  <link rel="stylesheet" href="./styles/dietfit-lang-switch.css?v=1">
 </head>
 
 <body>
@@ -44,7 +51,7 @@
       <div class="dietfit-header-cta-shell">
         <a class="dietfit-header-blog-link" href="./about-us/">Về Dietfit</a>
         <a class="dietfit-header-blog-link" href="./blog/">Blog</a>
-        <a class="dietfit-button dietfit-button--compact"
+        <div class="dietfit-lang-switch" role="group" aria-label="Ngôn ngữ"><a href="/" lang="vi" hreflang="vi" aria-current="true" aria-label="Tiếng Việt" data-lang-link>VI</a><a href="/en/" lang="en" hreflang="en" aria-label="English" data-lang-link>EN</a></div><a class="dietfit-button dietfit-button--compact"
           href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
           rel="noopener noreferrer">Tải app ngay</a>
       </div>
@@ -54,7 +61,7 @@
       <div class="dietfit-mobile-menu" id="dietfit-mobile-menu" aria-hidden="true" data-dietfit-mobile-menu>
         <a class="dietfit-mobile-menu__link" href="./about-us/">Về Dietfit</a>
         <a class="dietfit-mobile-menu__link" href="./blog/">Blog</a>
-        <a class="dietfit-mobile-menu__link dietfit-mobile-menu__link--cta"
+        <div class="dietfit-lang-switch" role="group" aria-label="Ngôn ngữ"><a href="/" lang="vi" hreflang="vi" aria-current="true" data-lang-link>Tiếng Việt</a><a href="/en/" lang="en" hreflang="en" data-lang-link>English</a></div><a class="dietfit-mobile-menu__link dietfit-mobile-menu__link--cta"
           href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
           rel="noopener noreferrer">Tải app ngay</a>
       </div>
@@ -77,7 +84,12 @@
         aria-label="Minh họa Dietfit tương tác theo cuộn trang">
         <div class="dietfit-hero-sticky">
           <div class="dietfit-hero-stage">
-            <div class="dietfit-hero-loading" aria-hidden="true"><span>Dietfit</span></div>
+            <div class="dietfit-hero-loading" aria-hidden="true">
+              <picture class="dietfit-hero-poster">
+                <source media="(orientation: portrait)" srcset="/assets/hero/dietfit-hero-poster-mobile.webp" width="780" height="1688">
+                <img src="/assets/hero/dietfit-hero-poster.webp" alt="" width="1920" height="1200" fetchpriority="high" decoding="async">
+              </picture>
+            </div>
           </div>
         </div>
       </section>
@@ -215,9 +227,13 @@
           class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
           target="_blank" rel="noopener noreferrer">Hãy để Dietfit lo</a>
       </div>
-      <figure class="dietfit-video-preview"><img src="./assets/images/scan-preview.jpg"
-          alt="Xem trước thao tác quét món ăn trên điện thoại" loading="lazy"><span aria-hidden="true"><img
-            src="./assets/images/play.svg" alt=""></span></figure>
+      <figure class="dietfit-video-preview" data-youtube-id="ttl5UtDnHFU" data-video-title="Track calo chưa bao giờ tiện lợi đến thế">
+        <button class="dietfit-video-play" type="button" aria-label="Phát video: Track calo chưa bao giờ tiện lợi đến thế">
+          <img src="https://i.ytimg.com/vi/ttl5UtDnHFU/maxresdefault.jpg" alt="" loading="lazy" decoding="async"
+            data-fallback-src="https://i.ytimg.com/vi/ttl5UtDnHFU/hqdefault.jpg">
+          <span aria-hidden="true"><img src="./assets/images/play.svg" alt=""></span>
+        </button>
+      </figure>
     </section>
 
     <section class="dietfit-community" id="dietfit-community" aria-labelledby="dietfit-community-title">
@@ -338,10 +354,10 @@
 
   <script src="./vendor/lenis/lenis.min.js"></script>
   <script src="./scripts/dietfit-scroll.js"></script>
-  <script src="./scripts/dietfit-hero.js?v=20260813-2"></script>
-  <script src="./scripts/dietfit-sections.js?v=3"></script>
+  <script src="./scripts/dietfit-hero.js?v=20260918-1"></script>
+  <script src="./scripts/dietfit-sections.js?v=4"></script>
   <script src="./scripts/dietfit-social.js?v=6"></script>
-  <script src="./scripts/dietfit-mobile-menu.js?v=2"></script>
+  <script src="./scripts/dietfit-mobile-menu.js?v=3"></script>
 </body>
 
 </html>

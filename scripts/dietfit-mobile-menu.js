@@ -9,6 +9,10 @@
   if (!toggle || !menu) return;
 
   var mobileQuery = window.matchMedia('(max-width: 767px)');
+  var isEnglish = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  var labels = isEnglish
+    ? { open: 'Open menu', close: 'Close menu' }
+    : { open: 'Mở menu', close: 'Đóng menu' };
   var scrollPosition = 0;
 
   function isOpen() {
@@ -22,7 +26,7 @@
     document.documentElement.classList.add('dietfit-menu-open');
     header.classList.add('is-menu-open');
     toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Đóng menu');
+    toggle.setAttribute('aria-label', labels.close);
     menu.setAttribute('aria-hidden', 'false');
   }
 
@@ -30,7 +34,7 @@
     if (!isOpen()) return;
     header.classList.remove('is-menu-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Mở menu');
+    toggle.setAttribute('aria-label', labels.open);
     menu.setAttribute('aria-hidden', 'true');
     document.documentElement.classList.remove('dietfit-menu-open');
     document.body.style.removeProperty('--dietfit-menu-scroll-offset');

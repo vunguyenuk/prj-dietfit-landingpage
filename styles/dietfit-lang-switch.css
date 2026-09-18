@@ -1,0 +1,68 @@
+/* Nút chuyển ngôn ngữ VI / EN — dùng chung cho Home, About và Blog. */
+
+.dietfit-lang-switch {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex: none;
+  padding: 0.1875rem;
+  border-radius: 999px;
+  background: #f3eee9;
+  pointer-events: auto;
+}
+
+.dietfit-lang-switch a {
+  display: inline-grid;
+  min-width: 2.125rem;
+  height: 1.75rem;
+  padding-inline: 0.5rem;
+  border-radius: 999px;
+  color: rgb(17 11 32 / 56%);
+  font-family: "Be Vietnam Pro", Helvetica, Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  place-items: center;
+  transition: color 160ms cubic-bezier(0.25, 1, 0.5, 1), background-color 160ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.dietfit-lang-switch a:hover { color: #110b20; }
+
+.dietfit-lang-switch a[aria-current="true"] {
+  color: #110b20;
+  background: #fff;
+  box-shadow: 0 1px 3px rgb(17 11 32 / 14%);
+}
+
+.dietfit-lang-switch a:focus-visible {
+  outline: 2px solid #fe692e;
+  outline-offset: 1px;
+}
+
+/* Pill header chung = logo (142px) + cụm CTA, nên rộng thêm để chứa nút
+   ngôn ngữ. Nếu đổi chữ trong header, đo lại .dietfit-header-cta-shell. */
+@media (min-width: 768px) {
+  #dietfit-header .dietfit-header-nav {
+    --header-joined-width: min(calc(100vw - 2rem), 33.75rem);
+  }
+
+  html[lang="en"] #dietfit-header .dietfit-header-nav {
+    --header-joined-width: min(calc(100vw - 2rem), 31.75rem);
+  }
+}
+
+/* Bản trong menu mobile: hai lựa chọn đầy đủ tên. */
+.dietfit-mobile-menu .dietfit-lang-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0.25rem 0.25rem 0;
+  padding: 0.25rem;
+}
+
+.dietfit-mobile-menu .dietfit-lang-switch a {
+  height: 2.5rem;
+  font-size: 0.9375rem;
+  letter-spacing: 0;
+}

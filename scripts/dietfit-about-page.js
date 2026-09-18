@@ -262,7 +262,9 @@
 
     missionRive = new window.rive.Rive({
       canvas: canvas,
-      src: '/assets/hero/dietfit-about-mobile.riv?v=20260811-2',
+      src: '/assets/hero/dietfit-about-mobile' +
+        ((document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-en' : '') +
+        '.riv?v=20260918-1',
       autoplay: false,
       autoBind: true,
       enableRiveAssetCDN: false,
