@@ -1,9 +1,39 @@
 {
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "(?<slug>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/en/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "(?<slug>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/en/blog/:slug/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(assets|vendor)/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     }
   ]

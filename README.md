@@ -10,7 +10,7 @@ Landing page tĩnh của Dietfit, có thể mở và chỉnh sửa trực tiếp
 - `scripts/`: Rive hero, smooth scroll, carousel, TikTok feed và dữ liệu Blog.
 - `assets/`: hình ảnh, font và file Rive của Dietfit.
 - `vendor/`: runtime Rive và Lenis đã được lưu cục bộ.
-- `en/`: bản tiếng Anh (US) của Home, About và Blog. Khi sửa nội dung trang tiếng Việt, nhớ sửa cả file tương ứng trong `en/`. Bài blog EN nằm trong `postsEn` ở `scripts/dietfit-blog.js`, dùng chung `slug` với bản VI.
+- `en/`: bản tiếng Anh (US) của Home, About và Blog. Khi sửa nội dung trang tiếng Việt, nhớ sửa cả file tương ứng trong `en/`.
 - Nút chuyển ngôn ngữ: `.dietfit-lang-switch` trong header và menu mobile, style ở `styles/dietfit-lang-switch.css`.
 
 ## Rive hero
@@ -31,3 +31,21 @@ Sau đó mở `http://localhost:8080`.
 
 Không mở trực tiếp `index.html` bằng `file://`, vì asset dùng đường dẫn tuyệt đối từ root và Rive cần được tải qua HTTP.
 # prj-dietfit-landingpage
+
+## SEO & blog
+
+Domain chính thức: `https://dietfit.health` (khai báo trong `tools/build.py`).
+
+- Nội dung blog (VI + EN) nằm trong `content/blog-posts.json`. Mỗi bài có `slug`, `datePublished` và hai bản `vi` / `en`.
+- Sau khi sửa blog, đổi title/description, hoặc sửa FAQ ở trang chủ, chạy:
+
+  ```bash
+  python3 tools/build.py
+  ```
+
+  Lệnh này sinh lại các trang blog tĩnh (`blog/<slug>/`, `en/blog/<slug>/`), chèn khối SEO vào `<head>` của mọi trang (title, description, canonical, hreflang, Open Graph, JSON-LD), và ghi lại `sitemap.xml`, `robots.txt`.
+- Title/description của Home, About, Blog nằm trong `PAGES` ở `tools/build.py`. Không sửa tay trong khối `<!-- SEO:START --> … <!-- SEO:END -->`, vì lần build sau sẽ ghi đè.
+- Giao diện trang blog lấy từ `tools/templates/`.
+- Ảnh chia sẻ mạng xã hội (1200×630) nằm trong `assets/og/`.
+- Link cũ `blog/post.html?slug=…` được chuyển 301 sang URL mới (xem `vercel.json`).
+- Sau khi deploy: vào Google Search Console → thêm property `dietfit.health` → gửi `https://dietfit.health/sitemap.xml`.
