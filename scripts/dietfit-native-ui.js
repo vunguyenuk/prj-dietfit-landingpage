@@ -228,6 +228,31 @@ function runnerPhoneScene() {
 }
 
 
+/* Enlarged UI details use the same sample state as their source screen. */
+function showcase(el,p){
+ const card=$('.df-showcase',el);if(!card)return;
+ const kind=el.dataset.demo;
+ const reveal=reduce.matches?1:kind==='scan'?eOut(seg(p,.25,.34)):kind==='coach'?eOut(seg(p,.08,.2)):1;
+ card.style.setProperty('--showcase-opacity',reveal.toFixed(3));
+ card.style.setProperty('--showcase-lift',`${(1-reveal)*18}px`);
+ if(kind==='scan'){
+  $('[data-showcase-ingredient]',card).hidden=p>=.76;
+  $('[data-showcase-nutrition]',card).hidden=p<.76;
+ }else if(kind==='coach'){
+  $('[data-showcase-question]',card).textContent=p>.44?'What should I eat before bed?':'Is this food healthy?';
+ }
+}
+function syncMealShowcase(){
+ const card=$('.df-showcase--plan'),row=$('#slots .mrow');if(!card||!row)return;
+ const image=$('img.plan-photo',row),mirror=$('[data-showcase-meal]',card);
+ if(mirror.getAttribute('src')!==image.getAttribute('src'))mirror.src=image.getAttribute('src');
+ $('[data-showcase-meal-name]',card).textContent=$('.meal-info>b',row).textContent;
+ $('[data-showcase-kcal]',card).textContent=$('.kc',row).textContent.replace(/[^0-9,]/g,'');
+ const logged=row.classList.contains('logged'),status=$('[data-showcase-meal-status]',card),en=document.documentElement.lang==='en';
+ status.textContent=logged?(en?'Logged in this demo':'Đã ghi nhận trong demo'):(en?'Planned, ready to swap':'Đã lên kế hoạch · Có thể đổi');
+ status.classList.toggle('is-logged',logged);
+}
+
 /* CHAPTER CONTROLLER */
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const scan=phoneFlow(), coach=saraScene(), plan=dayScene(), health=runnerPhoneScene();
@@ -250,9 +275,9 @@ const renderers={scan,coach,health:p=>{
  const line=$('#wgs .wg.m path:nth-of-type(2)'),L=line.getTotalLength();line.style.strokeDasharray=L;line.style.strokeDashoffset=L*(1-seg(p,.5,.85));
 }};
 const chapters=$$('[data-demo]');
-function fit(el){const stage=$('.df-feature-stage',el),device=$('.dv',el);if(el.dataset.demo==='widgets'){const native=$('.df-native',el),board=$('#wgs',el);native.style.width='460px';native.style.transform=`scale(${Math.min(1,stage.clientWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;return}if(!device)return;const k=Math.max(.1,Math.min(stage.clientHeight/832,(stage.clientWidth-12)/395,1.15));device.style.setProperty('--k',k.toFixed(4))}
+function fit(el){const stage=$('.df-feature-stage',el),device=$('.dv',el);if(el.dataset.demo==='widgets'){const native=$('.df-native',el),board=$('#wgs',el);native.style.width='460px';native.style.transform=`scale(${Math.min(1,stage.clientWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;return}if(!device)return;const k=Math.max(.1,Math.min(stage.clientHeight/832,(stage.clientWidth-12)/395,1.15));device.style.setProperty('--k',k.toFixed(4));stage.style.setProperty('--visual-device-width',`${395*k}px`);stage.classList.toggle('is-visual-tight',(stage.clientWidth-395*k)/2<50)}
 function draw(el,p){
- p=clamp(p);el.style.setProperty('--demo-p',p);el.dataset.demoProgress=p.toFixed(3);renderers[el.dataset.demo](p);
+ p=clamp(p);el.style.setProperty('--demo-p',p);el.dataset.demoProgress=p.toFixed(3);renderers[el.dataset.demo](p);showcase(el,p);
  const buttons=$$('[data-demo-seek]',el);let selected=0;buttons.forEach((b,i)=>{if(p>=Number(b.dataset.demoSeek)-.08)selected=i});buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));
 }
 chapters.forEach(el=>{
@@ -270,6 +295,7 @@ chapters.forEach(el=>{
 let raf=0;function render(){raf=0;for(const el of chapters){const box=el.getBoundingClientRect();el.classList.toggle('is-past',box.bottom<=104);if(el.dataset.manual)continue;if(box.bottom<0||box.top>innerHeight)continue;const sticky=$('.df-feature-sticky',el),small=matchMedia('(max-width:700px)').matches,top=small?88:parseFloat(getComputedStyle(sticky).top)||80,copyOffset=small?$('.df-feature-copy',el).offsetHeight+56:0,viewHeight=small?innerHeight-112:sticky.offsetHeight;draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):clamp((top-box.top-copyOffset)/Math.max(1,el.offsetHeight-viewHeight-copyOffset)));}}
 function schedule(){if(!raf)raf=requestAnimationFrame(render)}
 addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});reduce.addEventListener('change',schedule);
+new MutationObserver(syncMealShowcase).observe($('#slots'),{childList:true,subtree:true,attributes:true,attributeFilter:['class']});syncMealShowcase();
 document.fonts.ready.then(()=>chapters.forEach(fit));
 chapters.forEach(el=>draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):0));schedule();
 // Native hash navigation can precede the original v1 carousel's final measurement.

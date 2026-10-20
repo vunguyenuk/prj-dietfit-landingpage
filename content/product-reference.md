@@ -47,3 +47,17 @@ V2's local `runner-camera-v87` and deployed https://dietfit-landing-page-v2.verc
 Progress is driven by document scroll on desktop/tablet/mobile, in either direction. On mobile the copy leaves first and the phone pins at readable size. Stage controls provide a direct alternative, and a resume button returns to scroll control. Reduced-motion mode renders stable screens and retains controls. No timed compact autoplay substitutes for the scroll sequence.
 
 Original hero markup and all hero assets/runtime files are verified byte-identical to the pre-change backup. Both languages are updated. Validation includes source links/IDs/ARIA/FAQ schema, JavaScript syntax, actual browser UI interaction and responsive iframe viewports. Previous `dietfit-product.*` / `dietfit-ui-motion.*` modules remain in Git/source history but are no longer loaded by Home.
+
+## Feature visual context — Everfit reference, 20 October 2026
+
+The supplied local Everfit capture was inspected for feature composition. Its macros feature places a phone in a real food setting with an enlarged macro detail beside it; messaging combines a real people photograph with a pulled-out message. The lesson is contextual imagery plus one useful enlarged detail, rather than changing Dietfit's approved visual system.
+
+Three existing chapters receive a decorative layer in `styles/dietfit-feature-visuals.css`:
+
+- Scan uses the exact same sample meal photo as the phone, plus its chicken/portion detail, then the matching 558 kcal macro summary as the scroll reaches results.
+- Sara uses the original Dietfit woman-with-phone photograph and an enlarged question from the same sample conversation. The question follows the first/follow-up conversation state.
+- Meal Plan uses the existing Dietfit food photograph as illustrative context. Its pulled-out breakfast card mirrors the selected meal image, name, calories and logged state from the actual demo DOM, including after manual Swap/Tick.
+
+These are decorative duplicates (`aria-hidden`, no pointer interception); the complete accessible content and functional controls remain in the phones. Desktop gutters reserve space for the details. Compact/tight layouts remove the duplicate cards and portrait, retain subtle context, and preserve the readable native UI. Opacity/translation follow the existing chapter progress; reduced motion keeps details stable. No Everfit assets, copy, fonts, videos, trackers or scripts were added to the production page. The captured reference is excluded from Git and Vercel deployment.
+
+The v1 page layout, five existing chapter renderers, and original Rive hero remain. Both VI/EN pages are updated.

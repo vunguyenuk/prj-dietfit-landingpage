@@ -13,6 +13,7 @@ Home VI và EN theo ba nguồn rõ ràng:
 **Hero Rive giữ nguyên**: HTML intro/Rive, `scripts/dietfit-hero.js`, `styles/dietfit-hero.css`, toàn bộ file `.riv` và poster không thay đổi. Bạn vẫn có thể thay file export từ Rive như hướng dẫn bên dưới.
 
 - `styles/dietfit-features.css`: bố cục feature theo design system v1.
+- `styles/dietfit-feature-visuals.css`: ảnh bối cảnh và chi tiết UI phóng lớn theo cách Everfit trình bày feature. Thẻ Meal Plan đồng bộ với Swap/Tick; chi tiết Scan/Sara theo tiến độ demo. Giảm chi tiết trang trí trên màn hình nhỏ.
 - `styles/dietfit-native-ui.css`: CSS app v2 được giới hạn trong `.df-native`, giữ font native app riêng.
 - `scripts/dietfit-native-ui.js`: renderer nội dung và controller scroll cho các feature. Dữ liệu mẫu chỉ nằm trong trình duyệt; không gọi AI hoặc ghi vào tài khoản.
 - `assets/product/v2/`: chỉ những ảnh món ăn, mascot, font app và icon cần dùng. Không có hình nền tranh.
