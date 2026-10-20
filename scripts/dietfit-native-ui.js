@@ -2,7 +2,6 @@
 (() => {'use strict';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)),seg=(p,a,b)=>clamp((p-a)/(b-a)),eOut=t=>1-Math.pow(1-t,3),fmt=n=>Math.round(n).toLocaleString('en-US');
-const writeText=(el,value)=>{const text=String(value);if(el.textContent!==text)el.textContent=text;};
 const IC = {
   cancel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>',
   help: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.5"/><path d="M12 16.8h.01" stroke-width="2.2"/></svg>',
@@ -25,8 +24,6 @@ const IC = {
   fat: '<svg viewBox="0 0 16 16" fill="none" stroke="#e0a800" stroke-width="1.3" stroke-linejoin="round"><path d="M1.8 8.5 13.5 3.5l.7 5v4.3H1.8z"/><path d="M1.8 8.5h12.4"/><circle cx="5" cy="10.8" r=".9"/><circle cx="10.5" cy="10.3" r=".7"/></svg>',
 };
 /* ingredient data: [name, grams, popover x, popover y (screen px), crop x%, crop y%, kcal] — crops point at the item inside meal.jpg */
-// Illustrative macro contributions sum to the original sample: 37g carbs, 41g protein, 26g fat.
-const MACROS=[[0,30,15],[28,4,1],[7,0,0],[0,6,5],[0,0,5],[2,1,0]];
 const ING = [
   ['Roast chicken', 120, 229, 318, 60, 36, 250],
   ['Farro', 100, 266, 446, 68, 58, 135],
@@ -38,37 +35,16 @@ const ING = [
 function phoneFlow() {
   const app = $('#app'); if (!app) return () => {};
   $$('[data-ic]', app).forEach(e => { e.innerHTML = IC[e.dataset.ic] || ''; });
-  const portions=ING.map(g=>g[1]);
-  const total=()=>ING.reduce((sum,g,i)=>sum+g[6]*portions[i]/g[1],0);
-  const macros=()=>[0,1,2].map(m=>ING.reduce((sum,g,i)=>sum+MACROS[i][m]*portions[i]/g[1],0));
   const crop = (x, y) => `background-image:url(/assets/product/v2/meal.jpg);background-size:520%;background-position:${x}% ${y}%`;
   const regionColors = ['#b477fd', '#ffac60', '#2ab0f9', '#21cbb2'];
   $('#pops').innerHTML = ING.slice(0, 4).map((g, j) => `<div class="pop" style="left:${g[2]}px;top:${g[3]}px;--region:${regionColors[j]}"><b><span class="pop-name">${g[0]} <small>${g[1]}g</small></span><span class="pop-kcal">${g[6]} <small>kcal</small></span></b><i></i></div>`).join('');
   $('#avs').innerHTML = ING.slice(0, 3).map(g => `<i style="${crop(g[4], g[5])}"></i>`).join('') + `<em>+${ING.length - 3}</em>`;
-  $('#ul').innerHTML = ING.map((g,j) => `<li><i style="${crop(g[4], g[5])}"></i><span>${g[0]}<small class="ingredient-kcal">${g[6]} kcal</small></span><label class="scan-portion"><input type="number" min="0" max="1000" step="5" value="${g[1]}" data-portion="${j}" aria-label="${g[0]} grams"><span>g</span></label></li>`).join('');
+  $('#ul').innerHTML = ING.map(g => `<li><i style="${crop(g[4], g[5])}"></i><span>${g[0]}<small class="ingredient-kcal">${g[6]} kcal</small></span><b>${g[1]}<small>g</small></b></li>`).join('');
   const S = { cam: $('#a-cam'), ana: $('#a-ana'), lst: $('#a-lst'), calc: $('#a-calc'), md: $('#a-md') };
   const pops = $$('.pop', app), lis = $$('#ul li', app), sb = $('#sb'), hi = $('#hi');
   const show = k => Object.entries(S).forEach(([n, el]) => el.classList.toggle('on', n === k));
   const K = { k: $('#mdK'), c: $('#mdC'), p: $('#mdP'), f: $('#mdF'), s: $('#mdS2') };
-  $('#ul').addEventListener('input',event=>{
-    const input=event.target.closest('[data-portion]');if(!input||input.value==='')return;
-    const j=Number(input.dataset.portion),n=Number(input.value);
-    if(!Number.isFinite(n))return;
-    portions[j]=clamp(n,0,1000);input.value=portions[j];
-    $('.ingredient-kcal',input.closest('li')).textContent=`${fmt(ING[j][6]*portions[j]/ING[j][1])} kcal`;
-    app.dataset.mealKcal=String(Math.round(total()));
-    syncPortions();
-  });
-  function syncPortions(){
-    app.dataset.mealKcal=String(Math.round(total()));
-    $$('[data-showcase-total]').forEach(el=>writeText(el,fmt(total())));
-    const m=macros();$$('[data-showcase-macro]').forEach((el,i)=>writeText(el,`${Math.round(m[i])}g`));
-    writeText($('[data-showcase-grams]'),`${portions[0]} g`);
-    writeText($('[data-showcase-chicken]'),fmt(ING[0][6]*portions[0]/ING[0][1]));
-    pops.forEach((el,i)=>{writeText($('.pop-name small',el),`${portions[i]}g`);$('.pop-kcal',el).innerHTML=`${fmt(ING[i][6]*portions[i]/ING[i][1])} <small>kcal</small>`;});
-  }
-  function render(p) {
-    app.dataset.mealKcal=String(Math.round(total()));
+  return function render(p) {
     // zoom of the live camera image (hand moving closer)
     $$('.mealimg', S.cam).forEach(i => i.style.setProperty('--z', 1.12 - .12 * eOut(seg(p, 0, .12))));
     const shot = seg(p, .12, .16);
@@ -84,7 +60,7 @@ function phoneFlow() {
     if (k === 'ana') {
       // white band sweeps the scan box (down, up, down) while the sheet says "Identifying"
       const sw = seg(p, .16, .32), y = Math.sin(sw * Math.PI * 1.5 - Math.PI / 2) * .5 + .5;
-      $('#band').style.transform = `translateY(${y * 418}px)`; $('#band').style.opacity = sw < 1 ? 1 : 0;
+      $('#band').style.top = (-198 + y * 418) + 'px'; $('#band').style.opacity = sw < 1 ? 1 : 0;
       const id = seg(p, .15, .18) * (1 - seg(p, .31, .34)); $('#idf').style.transform = `translateY(${(1 - id) * 115}px)`; $('#masc').style.opacity = id; $('#masc').style.transform = `translateY(calc(-100% + ${(1 - id) * 60}px))`;
       pops.forEach((el, j) => { const a = seg(p, .33 + j * .02, .36 + j * .02); el.style.opacity = a; el.style.transform = `scale(${.6 + .4 * eOut(a)})`; });
       $$('.food-regions path', app).forEach((el, j) => {
@@ -106,18 +82,11 @@ function phoneFlow() {
     }
     if (k === 'md') {
       const m = seg(p, .76, .8); S.md.style.transform = `translateY(${(1 - eOut(m)) * 40}px)`;
-      const n = eOut(seg(p, .8, .88)); const nutrients=macros();writeText(K.k,fmt(total()*n));writeText(K.c,Math.round(nutrients[0]*n));writeText(K.p,Math.round(nutrients[1]*n));writeText(K.f,Math.round(nutrients[2]*n));writeText(K.s,Math.round(78*n));
-      $('#mdPin').style.transform = `translateX(${78*n/100*311}px)`;
+      const n = eOut(seg(p, .8, .88)); K.k.textContent = fmt(558 * n); K.c.textContent = Math.round(37 * n); K.p.textContent = Math.round(41 * n); K.f.textContent = Math.round(26 * n); K.s.textContent = Math.round(78 * n);
+      $('#mdPin').style.left = (78 * n) + '%';
       $('#mdS').style.transform = `translateY(${-eOut(seg(p, .88, 1)) * 250}px)`;
     } else S.md.style.transform = '';
-  }
-  render.resume=()=>{
-    portions.forEach((_,i)=>{portions[i]=ING[i][1];$(`[data-portion="${i}"]`).value=ING[i][1];writeText($('.ingredient-kcal',lis[i]),`${ING[i][6]} kcal`);});
-    const log=$('#a-md .stick .bt');if(log)log.textContent='Log meal';
-    syncPortions();
   };
-  syncPortions();
-  return render;
 }
 
 function saraScene() {
@@ -135,8 +104,6 @@ function saraScene() {
   }).observe(chat);
   const Q = ['Is this food healthy?', 'What should I eat before bed?'];
   function typed(q, a) { const n = Math.round(Q[q].length * clamp(a)); return Q[q].slice(0, n); }
-  let layoutKey='';
-  const scrollLatest=()=>{const off=Math.max(0,scroll.scrollHeight-body.clientHeight);scroll.style.transform=`translateY(${-off}px)`;};
   return function render(p) {
     // timeline: type Q1 → send photo → typing → answer words → type Q2 → send → typing → answer + summary
     const show = [p > .1, p > .1 && p < .19, p >= .19, p > .46, p > .46 && p < .55, p >= .55];
@@ -147,12 +114,12 @@ function saraScene() {
     sum.style.opacity = seg(p, .72, .76); sum.hidden = p < .72;
     let t = '';
     if (p < .1) t = typed(0, seg(p, .02, .09)); else if (p > .37 && p <= .46) t = typed(1, seg(p, .37, .45));
-    writeText(txt,t); ph.hidden = !!t; up.classList.toggle('on', !!t);
+    txt.textContent = t; ph.hidden = !!t; up.classList.toggle('on', !!t);
     inp.classList.toggle('think', (p > .1 && p < .19) || (p > .46 && p < .55));
     chips.style.opacity = p > .34 && p < .37 || p > .76 ? 1 : 0;
-    const chipContent = p > .76 ? '<span>Will eating before bed affect my sleep? →</span><span>How much protein do I need? →</span>' : '<span>How many calories are in this salmon? →</span><span>Log this meal →</span>';
-    if(chips.innerHTML!==chipContent)chips.innerHTML=chipContent;
-    const key=show.join(',')+','+(p>=.72);if(key!==layoutKey){layoutKey=key;requestAnimationFrame(scrollLatest);}
+    chips.innerHTML = p > .76 ? '<span>Will eating before bed affect my sleep? →</span><span>How much protein do I need? →</span>' : '<span>How many calories are in this salmon? →</span><span>Log this meal →</span>';
+    const off = Math.max(0, scroll.scrollHeight - body.clientHeight);
+    scroll.style.transform = `translateY(${-off}px)`;
   };
 }
 
@@ -185,14 +152,14 @@ function dayScene() {
     if (focusAction) $(`.mrow[data-j="${focusRow}"] button[data-a="${focusAction}"]`, host)?.focus({ preventScroll: true });
   }
   let userEdited = false;
-  const manualTimers=new Set();
   host.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; userEdited = true; const j = +b.closest('.mrow').dataset.j;
-    if (b.dataset.a === 'swap') { const r = b.closest('.mrow'); r.classList.add('out'); const timer=setTimeout(() => { manualTimers.delete(timer);st[j].i = (st[j].i + 1) % SLOTS[j].opts.length; st[j].tick = false; draw(); const n = $(`.mrow[data-j="${j}"]`); n.classList.add('out'); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('out'))); }, 220);manualTimers.add(timer); }
+    if (b.dataset.a === 'swap') { const r = b.closest('.mrow'); r.classList.add('out'); setTimeout(() => { st[j].i = (st[j].i + 1) % SLOTS[j].opts.length; st[j].tick = false; draw(); const n = $(`.mrow[data-j="${j}"]`); n.classList.add('out'); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('out'))); }, 220); }
     else { st[j].tick = !st[j].tick; draw(); } });
   draw();
-  const api = { resume(){userEdited=false;manualTimers.forEach(clearTimeout);manualTimers.clear();for(let j=0;j<3;j++)clearTimeout(api['t'+j]);draw();}, set(j, i, tick) { if (userEdited || st[j].i === i && st[j].tick === !!tick) return; const r = $(`.mrow[data-j="${j}"]`); const swap = st[j].i !== i;
+  const api = { set(j, i, tick) { if (userEdited || st[j].i === i && st[j].tick === !!tick) return; const r = $(`.mrow[data-j="${j}"]`); const swap = st[j].i !== i;
       st[j].i = i; st[j].tick = !!tick; if (!swap) { draw(); return; } r && r.classList.add('out'); clearTimeout(api['t' + j]);
       api['t' + j] = setTimeout(() => { draw(); const n = $(`.mrow[data-j="${j}"]`); n.classList.add('out'); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('out'))); }, 200); } };
+  window.__plan = api;
   return api;
 }
 
@@ -257,35 +224,9 @@ function runnerPhoneScene() {
   $('#logDinner').addEventListener('click', () => finishLog());
   $('#undoDinner').addEventListener('click', () => finishLog(true));
   draw();
-  const render=p=>{if(!manual){const next=p>=.8?'pick':'home';if(screen!==next)show(next);}};
-  render.resume=()=>{manual=false;logged=null;selected='D';draw();};
-  return render;
+  return p => { if (!manual) { const next = p >= .8 ? 'pick' : 'home'; if (screen !== next) show(next); } };
 }
 
-
-/* Enlarged UI details use the same sample state as their source screen. */
-function showcase(el,p){
- const card=$('.df-showcase',el);if(!card)return;
- const kind=el.dataset.demo;
- const mealKcal=Number($('#app').dataset.mealKcal);
- if(kind==='scan'){
-  $$('[data-showcase-total]',card).forEach(el=>writeText(el,fmt(mealKcal)));
-  $('[data-showcase-ingredient]',card).hidden=p>=.76;
-  $('[data-showcase-nutrition]',card).hidden=p<.76;
- }else if(kind==='coach'){
-  $('[data-showcase-question]',card).textContent=p>.44?'What should I eat before bed?':'Is this food healthy?';
- }
-}
-function syncMealShowcase(){
- const card=$('.df-showcase--plan'),row=$('#slots .mrow');if(!card||!row)return;
- const image=$('img.plan-photo',row),mirror=$('[data-showcase-meal]',card);
- if(mirror.getAttribute('src')!==image.getAttribute('src'))mirror.src=image.getAttribute('src');
- $('[data-showcase-meal-name]',card).textContent=$('.meal-info>b',row).textContent;
- $('[data-showcase-kcal]',card).textContent=$('.kc',row).textContent.replace(/[^0-9,]/g,'');
- const logged=row.classList.contains('logged'),status=$('[data-showcase-meal-status]',card),en=document.documentElement.lang==='en';
- status.textContent=logged?(en?'Logged in this demo':'Đã ghi nhận trong demo'):(en?'Planned, ready to swap':'Đã lên kế hoạch · Có thể đổi');
- status.classList.toggle('is-logged',logged);
-}
 
 /* CHAPTER CONTROLLER */
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
@@ -309,64 +250,26 @@ const renderers={scan,coach,health:p=>{
  const line=$('#wgs .wg.m path:nth-of-type(2)'),L=line.getTotalLength();line.style.strokeDasharray=L;line.style.strokeDashoffset=L*(1-seg(p,.5,.85));
 }};
 const chapters=$$('[data-demo]');
-function fit(el){const stage=$('.df-feature-stage',el),device=$('.dv',el);if(el.dataset.demo==='widgets'){const native=$('.df-native',el),board=$('#wgs',el);native.style.width='460px';native.style.transform=`scale(${Math.min(1,stage.clientWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;return}if(!device)return;const k=Math.max(.1,Math.min(stage.clientHeight/832,(stage.clientWidth-12)/395,1.15));device.style.setProperty('--k',k.toFixed(4));stage.style.setProperty('--visual-device-width',`${395*k}px`);stage.classList.toggle('is-visual-tight',(stage.clientWidth-395*k)/2<50)}
-const narratives={
- vi:{
-  scan:[null,'Deep Scan nhận diện từng nguyên liệu ngay trên ảnh. Bạn thấy rõ món nào đang được tính trong bữa ăn.','Kiểm tra khẩu phần trước khi ghi nhận. Trong demo này, bạn có thể sửa số gram rồi xem kết quả thay đổi.','Calo và macro được tổng hợp từ từng nguyên liệu. Một góc nhìn rõ hơn về bữa ăn, trước khi đưa vào nhật ký.'],
-  coach:[null,'Sara trả lời trong ngữ cảnh câu hỏi và bữa ăn bạn vừa gửi. Bạn có thể tiếp tục hỏi thay vì bắt đầu lại.','Một câu hỏi tiếp theo, trong cùng cuộc trò chuyện. Sara đặt bữa ăn cạnh mục tiêu và hoạt động của bạn.','Cuộc trò chuyện được nối với bức tranh trong ngày: bữa đã log, năng lượng và điều bạn muốn cải thiện.'],
-  plan:[null,'Chưa hợp khẩu vị? Đổi một món, xem lại năng lượng của kế hoạch và giữ những bữa còn lại.','Lên kế hoạch và ghi nhận là hai bước riêng. Tick bữa đã ăn để theo dõi những gì bạn thực sự dùng trong ngày.'],
-  health:[null,'Từ hoạt động hôm nay đến bữa ăn tiếp theo. Thử chọn một gợi ý từ Sara rồi ghi nhận vào nhật ký ngay trong demo.'],
-  widgets:[null,'Chuỗi ngày log giúp bạn nhìn thấy sự đều đặn. Những bước nhỏ được ghi nhận, từng ngày một.','Xu hướng được tổng hợp từ nhật ký của bạn. Một góc nhìn để điều chỉnh thói quen, không phải lời hứa về kết quả.']
- },
- en:{
-  scan:[null,'Deep Scan identifies ingredients directly in the photo, so you can see what is included in the meal.','Review portions before logging. In this sample, change the grams and watch the result update.','Calories and macros come together from the individual ingredients. See the whole meal before adding it to your log.'],
-  coach:[null,'Sara answers in the context of the question and meal you shared. Keep the conversation going with a follow-up.','Another question, in the same conversation. Sara connects your meals with your goals and activity.','The conversation connects to your day: logged meals, energy and the habits you want to improve.'],
-  plan:[null,'Not what you feel like eating? Swap one meal, review the energy total and keep the rest of the plan.','Planning and logging are separate steps. Tick the meals you actually ate to keep your day’s log up to date.'],
-  health:[null,'From today’s activity to your next meal. Try a suggestion from Sara and add it to the sample log.'],
-  widgets:[null,'Your streak makes consistency visible. Small steps count, one day at a time.','Your logs reveal a trend you can use to adjust your habits. A useful perspective, rather than a promised outcome.']
- }
-};
+function fit(el){const stage=$('.df-feature-stage',el),device=$('.dv',el);if(el.dataset.demo==='widgets'){const native=$('.df-native',el),board=$('#wgs',el);native.style.width='460px';native.style.transform=`scale(${Math.min(1,stage.clientWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;return}if(!device)return;const k=Math.max(.1,Math.min(stage.clientHeight/832,(stage.clientWidth-12)/395,1.15));device.style.setProperty('--k',k.toFixed(4))}
 function draw(el,p){
- p=clamp(p);el.style.setProperty('--demo-p',p);el.dataset.demoProgress=p.toFixed(3);renderers[el.dataset.demo](p);showcase(el,p);
+ p=clamp(p);el.style.setProperty('--demo-p',p);el.dataset.demoProgress=p.toFixed(3);renderers[el.dataset.demo](p);
  const buttons=$$('[data-demo-seek]',el);let selected=0;buttons.forEach((b,i)=>{if(p>=Number(b.dataset.demoSeek)-.08)selected=i});buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));
- const body=$('.df-feature-body',el);if(!body.dataset.original)body.dataset.original=body.textContent;
- const language=document.documentElement.lang==='en'?'en':'vi';
- writeText(body,narratives[language][el.dataset.demo][selected]||body.dataset.original);
 }
 chapters.forEach(el=>{
  fit(el);new ResizeObserver(()=>{fit(el);schedule()}).observe($('.df-feature-stage',el));
- const seek=p=>{if(el.dataset.demo==='plan')plan.resume();if(el.dataset.demo==='health')health.resume();el.dataset.manual='true';$('.df-resume',el).hidden=false;if(el.dataset.demo==='health'){$('#gLeft').textContent='1,869';$('#gCons').textContent='460';$('#gArc').setAttribute('stroke-dasharray','80.25 100');$$('#home .week span,#home .act>div').forEach(e=>{e.style.opacity=1;e.style.transform='none'})}draw(el,p)};
+ const seek=p=>{el.dataset.manual='true';$('.df-resume',el).hidden=false;if(el.dataset.demo==='health'){$('#gLeft').textContent='1,869';$('#gCons').textContent='460';$('#gArc').setAttribute('stroke-dasharray','80.25 100');$$('#home .week span,#home .act>div').forEach(e=>{e.style.opacity=1;e.style.transform='none'})}draw(el,p)};
  $$('[data-demo-seek]',el).forEach(button=>button.addEventListener('click',()=>seek(+button.dataset.demoSeek)));
- $('.df-resume',el).addEventListener('click',()=>{if(el.dataset.demo==='scan')scan.resume();if(el.dataset.demo==='plan')plan.resume();if(el.dataset.demo==='health')health.resume();delete el.dataset.manual;$('.df-resume',el).hidden=true;schedule()});
- $('.df-native',el).addEventListener('pointerdown',event=>{if(!event.target.closest('button,input,[role=tab]'))return;el.dataset.manual='true';$('.df-resume',el).hidden=false},{capture:true});
+ $('.df-resume',el).addEventListener('click',()=>{delete el.dataset.manual;$('.df-resume',el).hidden=true;schedule()});
+ $('.df-native',el).addEventListener('pointerdown',()=>{el.dataset.manual='true';$('.df-resume',el).hidden=false},{capture:true});
  $('.df-native',el).addEventListener('focusin',()=>{el.dataset.manual='true';$('.df-resume',el).hidden=false});
  if(el.dataset.demo==='scan'){
-  const actions=[['#shut','Capture meal',.23],['#a-ana .bt','Review ingredients',.55],['#a-lst .bt:not(.l)','Calculate nutrition',.88],['#a-md .stick .bt','Log sample meal',.98]];
+  const actions=[['#shut','Capture meal',.23],['#a-ana .bt','Review ingredients',.55],['#a-lst .bt:not(.l)','Calculate nutrition',.86],['#a-md .stick .bt','Log sample meal',.98]];
   actions.forEach(([selector,label,p])=>{const old=$(selector,el),b=document.createElement('button');b.className=old.className;b.id=old.id;b.type='button';b.innerHTML=old.innerHTML;b.setAttribute('aria-label',label);old.replaceWith(b);b.addEventListener('click',()=>{seek(p);if(p===.98)b.textContent='Logged in demo ✓'})});
  }
 });
-let raf=0;
-function render(){
- raf=0;
- const small=matchMedia('(max-width:700px)').matches;
- // Measure chapters together before any renderer changes text, classes or transforms.
- const frames=chapters.map(el=>{
-  const box=el.getBoundingClientRect(),sticky=$('.df-feature-sticky',el);
-  const top=small?88:parseFloat(getComputedStyle(sticky).top)||80;
-  const copyOffset=small?$('.df-feature-copy',el).offsetHeight+56:0;
-  const viewHeight=small?innerHeight-112:sticky.offsetHeight;
-  return {el,past:box.bottom<=104,visible:box.bottom>=0&&box.top<=innerHeight,
-   p:clamp((top-box.top-copyOffset)/Math.max(1,el.offsetHeight-viewHeight-copyOffset))};
- });
- frames.forEach(({el,past,visible,p})=>{
-  el.classList.toggle('is-past',past);
-  if(!visible||el.dataset.manual)return;
-  draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):p);
- });
-}
+let raf=0;function render(){raf=0;for(const el of chapters){const box=el.getBoundingClientRect();el.classList.toggle('is-past',box.bottom<=104);if(el.dataset.manual)continue;if(box.bottom<0||box.top>innerHeight)continue;const sticky=$('.df-feature-sticky',el),small=matchMedia('(max-width:700px)').matches,top=small?88:parseFloat(getComputedStyle(sticky).top)||80,copyOffset=small?$('.df-feature-copy',el).offsetHeight+56:0,viewHeight=small?innerHeight-112:sticky.offsetHeight;draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):clamp((top-box.top-copyOffset)/Math.max(1,el.offsetHeight-viewHeight-copyOffset)));}}
 function schedule(){if(!raf)raf=requestAnimationFrame(render)}
 addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});reduce.addEventListener('change',schedule);
-new MutationObserver(syncMealShowcase).observe($('#slots'),{childList:true,subtree:true,attributes:true,attributeFilter:['class']});syncMealShowcase();
 document.fonts.ready.then(()=>chapters.forEach(fit));
 chapters.forEach(el=>draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):0));schedule();
 // Native hash navigation can precede the original v1 carousel's final measurement.
