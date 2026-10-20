@@ -72,10 +72,10 @@ Domain chính thức: `https://dietfit.health` (khai báo trong `tools/build.py`
 - Sau khi deploy: vào Google Search Console → thêm property `dietfit.health` → gửi `https://dietfit.health/sitemap.xml`.
 
 
-## Các chương tranh và tương tác khi cuộn
+## Chuyển động UI theo cuộn
 
-- `styles/dietfit-art-story.css`, `scripts/dietfit-art-story.js`: lớp tranh cổ điển và chuyển động của các phần Scan, Sara, vận động.
-- Tranh gốc từ v2 được giữ trong `assets/product/art/`; không cắt nhỏ nhân vật để animate.
-- Desktop rộng: cuộn qua ba bước sẽ đổi trạng thái Scan. Khi bấm hoặc sửa demo, cuộn không can thiệp nữa cho đến khi tải lại trang.
-- Mobile/iPad: bố cục cuộn tự nhiên, thao tác demo bằng nút. `prefers-reduced-motion` giữ bản tĩnh với đầy đủ tương tác.
-- Hero Rive độc lập và không bị thay đổi bởi các file này.
+- `styles/dietfit-ui-motion.css`, `scripts/dietfit-ui-motion.js`: chuyển động điện thoại, từng bữa trong Meal Plan và bảng sức khỏe; giữ nguyên theme, ảnh người và mascot.
+- V2 chỉ là tham khảo cách scroll trigger, không dùng tranh cổ điển của v2.
+- Desktop rộng và cao giữ điện thoại Scan khi cuộn ba bước. Mobile/màn hình thấp cuộn tự nhiên, vẫn có chuyển động nhẹ và đầy đủ nút demo.
+- Bấm hoặc chỉnh demo sẽ giành quyền điều khiển từ scroll; `prefers-reduced-motion` tắt chuyển động.
+- Hero Rive độc lập, không thay đổi.

@@ -53,7 +53,7 @@
   const takeScanControl = event => {
     if(event.target.closest('button,input')) {
       scanChapter.dataset.scanManual = 'true';
-      const index = scanChapter.querySelector('.df-scene-index b');
+      const index = scanChapter.querySelector('.df-scroll-status');
       if(index) index.textContent = t('Bạn điều khiển','Your turn');
     }
   };

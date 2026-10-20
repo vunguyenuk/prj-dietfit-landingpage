@@ -44,14 +44,8 @@ The supplied local Gaia capture was reviewed for composition: characters peek at
 Both VI and EN home pages share this composition. Existing raster mascots stay at or below their source dimensions. The original Rive hero, demo logic, About and Blog pages remain unchanged. The supplied Gaia capture stays untracked as a reference folder and is not part of the production change.
 
 
-## Classical art and scroll chapters — 20 October 2026
+## UI motion in the original visual theme — 20 October 2026
 
-The original v2 artwork is reused byte-for-byte in `assets/product/art/`: taverna, seated couple, kitchen, stadium and runner. No character body parts are cut, warped or regenerated. The Rive hero and previous lifestyle/community imagery remain intact.
+The visual direction is the original project theme: Dietfit orange, warm neutrals, Be Vietnam Pro, lifestyle photography and Sara. The user clarified that v2 is a reference for scroll behavior only. Its Neoclassical/Renaissance paintings are not used; the temporary painting assets and modules have been removed.
 
-`styles/dietfit-art-story.css` and `scripts/dietfit-art-story.js` add three product chapters:
-
-- Scan: a layered taverna scene beside a sticky phone. On wide screens, scrolling the narrative steps progresses capture → identification → ingredient review, in either direction. Any pointer, keyboard, focus or input interaction with the demo hands control to the visitor until reload, preserving edited quantities and the active view.
-- Sara: the original kitchen painting beside the real interactive conversation demo; subtle camera translation and device entrance follow scroll position.
-- Activity: the stadium and intact Marcus runner beside the existing health and progress controls.
-
-Only visible chapters update, scroll work is batched into animation frames, and visual updates use transforms. Mobile/tablet use normal document flow, with no sticky long-scroll sequence or automatic Scan stage changes. Reduced-motion preferences disable camera/device movement and scroll-driven Scan changes, retaining all manual controls. No scroll library or new dependency was added.
+`styles/dietfit-ui-motion.css` and `scripts/dietfit-ui-motion.js` animate only existing product UI: phones glide, gently rotate and approach their final scale; Meal Plan rows enter in sequence; the health board rises into view. Tall, wide desktop viewports also pin the Scan phone while narrative steps progress capture → identify → edit. Shorter screens and mobile use ordinary document flow with gentler movement and manual Scan controls. Any interaction takes priority over scroll animation; edited food quantities and selected views persist. Reduced-motion preferences disable this choreography. Existing Rive hero, photographs, mascot placements and working demos are preserved.

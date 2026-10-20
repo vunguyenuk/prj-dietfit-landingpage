@@ -1,0 +1,29 @@
+/* Scroll choreography for product UI only. Brand styling and hero Rive stay independent. */
+[data-ui-chapter] { --df-phone-lift: 0px; --df-phone-roll: 0deg; --df-phone-yaw: 0deg; --df-phone-scale: 1; --df-board-lift: 0px; }
+.df-scroll-cue { display: none; align-items: center; justify-content: space-between; gap: 16px; color: #a94522; font-size: .75rem; font-weight: 500; }
+.df-scroll-status { white-space: nowrap; }
+.df-ui-motion-enabled [data-ui-chapter] .df-phone {
+  transform: perspective(1200px) translate3d(0,var(--df-phone-lift),0) rotateY(var(--df-phone-yaw)) rotateZ(var(--df-phone-roll)) scale(var(--df-phone-scale));
+  transform-origin: 50% 50%;
+}
+.df-ui-motion-enabled [data-ui-chapter="health"] .df-health-board { transform: translate3d(0,var(--df-board-lift),0); }
+.df-ui-motion-enabled [data-ui-chapter="plan"] .df-meal-slot { opacity: var(--df-row-opacity,1); transform: translate3d(0,var(--df-row-lift,0px),0); }
+[data-ui-chapter="plan"][data-ui-manual="true"] .df-meal-slot { opacity: 1; transform: none; }
+@media (min-width: 1101px) and (min-height: 900px) and (prefers-reduced-motion: no-preference) {
+  .df-ui-motion-enabled .df-scan > .df-split { align-items: start; }
+  .df-ui-motion-enabled .df-scan .df-copy { padding-block: 24px; }
+  .df-ui-motion-enabled .df-scan .df-scroll-cue { display: flex; }
+  .df-ui-motion-enabled .df-scan .df-stage-option { min-height: clamp(164px,22svh,220px); }
+  .df-ui-motion-enabled .df-scan .df-demo-display { position: sticky; top: 108px; padding: 24px 24px 20px; gap: 14px; }
+  .df-ui-motion-enabled .df-scan .df-phone { width: min(340px,calc((100svh - 340px) * .475)); }
+  .df-ui-motion-enabled .df-scan .df-guide-tip { padding-top: 0; }
+  .df-ui-motion-enabled .df-scan .df-guide-tip img { width: 44px; height: 59px; flex-basis: 44px; }
+  .df-ui-motion-enabled .df-scan .df-guide-tip strong { font-size: .76rem; }
+  .df-ui-motion-enabled .df-scan .df-guide-tip p { font-size: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-ui-chapter] .df-phone,
+  [data-ui-chapter="health"] .df-health-board,
+  [data-ui-chapter="plan"] .df-meal-slot { transform: none !important; opacity: 1 !important; }
+  .df-scroll-cue { display: none !important; }
+}
