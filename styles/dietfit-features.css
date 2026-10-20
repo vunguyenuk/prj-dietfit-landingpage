@@ -4,14 +4,11 @@
 .dietfit-product :is(h2,p,figure){margin:0}
 .dietfit-product [hidden]{display:none!important}
 .dietfit-product button:focus-visible,.dietfit-product a:focus-visible{outline:3px solid #FE692E;outline-offset:5px}
-.df-feature-intro{padding-block:clamp(64px,8vw,120px) 32px;text-align:center}
-.df-feature-intro .dietfit-section-heading{margin-inline:auto}
+.df-feature-intro{scroll-margin-top:96px;padding-block:clamp(48px,6vw,80px) 24px;text-align:center}
 .df-feature-intro h2,.df-feature-copy h2{font-size:var(--dietfit-type-section);font-weight:500;line-height:1.08;letter-spacing:-.05em;text-wrap:balance}
 .df-feature-intro h2 em{font-style:normal;color:#FE692E}
 .df-kicker{font-size:.8125rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:#6c6675}
-.df-feature-nav{display:flex;justify-content:center;gap:12px 28px;flex-wrap:wrap;margin-top:36px}
-.df-feature-nav a{font-size:.875rem;color:#110b20;text-decoration:none;text-underline-offset:6px}
-.df-feature-nav a:hover{text-decoration:underline;text-decoration-color:#FE692E}
+
 .df-feature{position:relative;scroll-margin-top:88px;min-height:220svh}
 .df-feature--scan{min-height:340svh}.df-feature--coach{min-height:300svh}.df-feature--widgets{min-height:180svh}
 .df-feature-sticky{position:sticky;top:80px;min-height:calc(100svh - 96px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(48px,7vw,112px);padding:32px clamp(0px,2vw,32px)}
@@ -21,13 +18,9 @@
 .df-feature-stage{position:relative;min-width:0;width:100%;height:min(960px,calc(100svh - 152px));display:grid;place-items:center}
 .df-feature-stage>.df-native{display:grid;place-items:center;max-width:100%;width:100%;height:100%}
 .df-feature.is-flipped .df-feature-stage{grid-column:1;grid-row:1}.df-feature.is-flipped .df-feature-copy{grid-column:2;grid-row:1}
-.df-feature-steps{display:flex;flex-wrap:wrap;gap:8px 20px;padding-top:8px;max-width:450px}
-.df-feature-steps button{min-height:44px;border:0;border-bottom:1px solid transparent;padding:8px 0;background:none;font:500 .8125rem/1.4 var(--dietfit-font);text-align:left;color:#89838f;cursor:pointer}
-.df-feature-steps button span{font-size:.6875rem;margin-right:6px;font-weight:400}
-.df-feature-steps button[aria-pressed=true]{color:#110b20;border-bottom-color:#FE692E}
-.df-feature-guidance{font-size:.75rem;line-height:1.65;color:#89838f}
-.df-resume{display:block;margin-top:8px;border:0;background:none;padding:0;font:inherit;color:#ad410f;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.df-chapter-progress{width:72px;height:2px;background:#eeeaf0;overflow:hidden}.df-chapter-progress i{display:block;width:100%;height:100%;background:#FE692E;transform:scaleX(var(--demo-p,0));transform-origin:left}
+
+.df-resume{justify-self:start;min-height:44px;border:0;background:none;padding:8px 0;font:400 .875rem/1.5 var(--dietfit-font);color:#ad410f;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+
 .df-feature-peek{position:absolute;width:100px;height:auto;right:0;bottom:6%;object-fit:contain;transform:rotate(-8deg);pointer-events:none}
 .df-feature--plan .df-feature-peek{left:0;right:auto;bottom:14%;width:85px;transform:rotate(8deg)}
 .df-feature--widgets .df-feature-stage{height:auto;min-height:540px;padding:24px 12px}
@@ -40,21 +33,20 @@
  .df-feature--widgets .df-native .wg{padding:16px;min-height:160px;gap:12px}.df-feature--widgets .df-native .wg small,.df-feature--widgets .df-native .wg em{font-size:12px}.df-feature--widgets .df-native .wg b{font-size:26px}.df-feature--widgets .df-native .wg .big{font-size:64px}
 }
 @media(max-width:700px){
- .df-feature-intro{padding-top:64px}.df-feature-nav{gap:8px 20px}
+ .df-feature-intro{padding-top:64px}
  .df-feature{scroll-margin-top:72px;min-height:210svh}.df-feature--scan{min-height:320svh}.df-feature--coach{min-height:280svh}
  .df-feature-sticky{width:calc(100% - 32px);top:68px;min-height:calc(100svh - 76px);padding:12px 0;gap:12px;grid-template-columns:1fr;grid-template-rows:auto 1fr;align-content:start}
  .df-feature-copy,.df-feature.is-flipped .df-feature-copy{grid-column:1;grid-row:1;justify-self:start;gap:10px;width:100%;max-width:560px}
  .df-feature-copy h2{font-size:clamp(1.65rem,6.2vw,2.4rem);line-height:1.08;letter-spacing:-.04em}.df-feature-copy h2 br{display:none}.df-feature-copy h2 br::after{content:' '}
  .df-kicker{font-size:.625rem}.df-feature-body{font-size:.8125rem;line-height:1.5;max-width:54ch}
- .df-feature-steps{padding:0;gap:0 16px}.df-feature-steps button{font-size:.6875rem;padding:4px 0;min-height:32px}.df-feature-steps button span{font-size:.6rem}
- .df-feature-guidance{font-size:.625rem}.df-feature-guidance .df-resume{display:inline;margin-left:8px;margin-top:0}.df-chapter-progress{display:none}
+
  .df-feature-stage,.df-feature.is-flipped .df-feature-stage{grid-column:1;grid-row:2;height:calc(100svh - 300px);min-height:250px;max-height:620px;align-self:center}
  .df-feature-peek{width:60px;right:8%;bottom:8%;}.df-feature--plan .df-feature-peek{width:58px;left:8%;bottom:10%}
  .df-feature--widgets .df-feature-stage{min-height:0;height:calc(100svh - 300px);padding:0}.df-feature--widgets .df-native{max-width:340px}.df-feature--widgets .df-native .wg-grid{gap:10px}.df-feature--widgets .df-native .wg{border-radius:20px;min-height:115px;padding:14px;gap:8px}.df-feature--widgets .df-native .wg .big{font-size:48px}.df-feature--widgets .df-native .wg b{font-size:25px}.df-feature--widgets .df-native .wg small,.df-feature--widgets .df-native .wg em{font-size:10px}.df-feature--widgets .df-native .wg.m{min-height:130px}.df-feature--widgets .df-native .wg.m svg{height:60px}.df-feature--widgets .df-native .wg .lg{font-size:9px}.df-feature--widgets .df-native .wg.ph{min-height:90px}.df-feature--widgets .df-feature-peek{width:65px;right:0;bottom:0}
 }
 @media(max-height:700px) and (min-width:701px){.df-feature-copy{gap:14px}.df-feature-copy h2{font-size:2.5rem}.df-feature-body{font-size:.9375rem}.df-feature-stage{height:calc(100svh - 140px)}}
 @media(prefers-reduced-motion:reduce){
- .df-feature{min-height:0;padding-block:48px}.df-feature-sticky{position:relative;top:auto;min-height:0}.df-feature-stage{height:620px;max-height:none}.df-feature-peek{transform:none}.df-chapter-progress{display:none}
+ .df-feature{min-height:0;padding-block:48px}.df-feature-sticky{position:relative;top:auto;min-height:0}.df-feature-stage{height:620px;max-height:none}.df-feature-peek{transform:none}
 }
 @media(max-width:700px) and (prefers-reduced-motion:no-preference){
  .df-feature-sticky{height:calc(100svh - 80px);min-height:0;grid-template-rows:auto minmax(0,1fr)}
@@ -78,3 +70,5 @@
 .df-feature--widgets .df-feature-stage>.df-native{height:auto;transform-origin:center}
 @media(max-width:700px) and (prefers-reduced-motion:no-preference){.df-feature--widgets .df-feature-stage{height:calc(100svh - 112px)}}
 .df-feature--widgets .df-feature-stage{grid-template-rows:minmax(0,1fr)}
+
+.df-feature-sample-note{padding-block:24px 48px;text-align:center;font-size:.875rem;line-height:1.6;color:#625d6b}

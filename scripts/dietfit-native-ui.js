@@ -152,11 +152,12 @@ function dayScene() {
     if (focusAction) $(`.mrow[data-j="${focusRow}"] button[data-a="${focusAction}"]`, host)?.focus({ preventScroll: true });
   }
   let userEdited = false;
+  const manualTimers=new Set();
   host.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; userEdited = true; const j = +b.closest('.mrow').dataset.j;
-    if (b.dataset.a === 'swap') { const r = b.closest('.mrow'); r.classList.add('out'); setTimeout(() => { st[j].i = (st[j].i + 1) % SLOTS[j].opts.length; st[j].tick = false; draw(); const n = $(`.mrow[data-j="${j}"]`); n.classList.add('out'); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('out'))); }, 220); }
+    if (b.dataset.a === 'swap') { const r = b.closest('.mrow'); r.classList.add('out'); const timer=setTimeout(() => { manualTimers.delete(timer);st[j].i = (st[j].i + 1) % SLOTS[j].opts.length; st[j].tick = false; draw(); const n = $(`.mrow[data-j="${j}"]`); n.classList.add('out'); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('out'))); }, 220);manualTimers.add(timer); }
     else { st[j].tick = !st[j].tick; draw(); } });
   draw();
-  const api = { set(j, i, tick) { if (userEdited || st[j].i === i && st[j].tick === !!tick) return; const r = $(`.mrow[data-j="${j}"]`); const swap = st[j].i !== i;
+  const api = { resume(){userEdited=false;manualTimers.forEach(clearTimeout);manualTimers.clear();for(let j=0;j<3;j++)clearTimeout(api['t'+j]);draw();}, set(j, i, tick) { if (userEdited || st[j].i === i && st[j].tick === !!tick) return; const r = $(`.mrow[data-j="${j}"]`); const swap = st[j].i !== i;
       st[j].i = i; st[j].tick = !!tick; if (!swap) { draw(); return; } r && r.classList.add('out'); clearTimeout(api['t' + j]);
       api['t' + j] = setTimeout(() => { draw(); const n = $(`.mrow[data-j="${j}"]`); n.classList.add('out'); requestAnimationFrame(() => requestAnimationFrame(() => n.classList.remove('out'))); }, 200); } };
   window.__plan = api;
@@ -224,7 +225,9 @@ function runnerPhoneScene() {
   $('#logDinner').addEventListener('click', () => finishLog());
   $('#undoDinner').addEventListener('click', () => finishLog(true));
   draw();
-  return p => { if (!manual) { const next = p >= .8 ? 'pick' : 'home'; if (screen !== next) show(next); } };
+  const render=p=>{if(!manual){const next=p>=.8?'pick':'home';if(screen!==next)show(next);}};
+  render.resume=()=>{manual=false;logged=null;selected='D';draw();};
+  return render;
 }
 
 
@@ -253,14 +256,12 @@ const chapters=$$('[data-demo]');
 function fit(el){const stage=$('.df-feature-stage',el),device=$('.dv',el);if(el.dataset.demo==='widgets'){const native=$('.df-native',el),board=$('#wgs',el);native.style.width='460px';native.style.transform=`scale(${Math.min(1,stage.clientWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;return}if(!device)return;const k=Math.max(.1,Math.min(stage.clientHeight/832,(stage.clientWidth-12)/395,1.15));device.style.setProperty('--k',k.toFixed(4))}
 function draw(el,p){
  p=clamp(p);el.style.setProperty('--demo-p',p);el.dataset.demoProgress=p.toFixed(3);renderers[el.dataset.demo](p);
- const buttons=$$('[data-demo-seek]',el);let selected=0;buttons.forEach((b,i)=>{if(p>=Number(b.dataset.demoSeek)-.08)selected=i});buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===selected)));
 }
 chapters.forEach(el=>{
  fit(el);new ResizeObserver(()=>{fit(el);schedule()}).observe($('.df-feature-stage',el));
  const seek=p=>{el.dataset.manual='true';$('.df-resume',el).hidden=false;if(el.dataset.demo==='health'){$('#gLeft').textContent='1,869';$('#gCons').textContent='460';$('#gArc').setAttribute('stroke-dasharray','80.25 100');$$('#home .week span,#home .act>div').forEach(e=>{e.style.opacity=1;e.style.transform='none'})}draw(el,p)};
- $$('[data-demo-seek]',el).forEach(button=>button.addEventListener('click',()=>seek(+button.dataset.demoSeek)));
- $('.df-resume',el).addEventListener('click',()=>{delete el.dataset.manual;$('.df-resume',el).hidden=true;schedule()});
- $('.df-native',el).addEventListener('pointerdown',()=>{el.dataset.manual='true';$('.df-resume',el).hidden=false},{capture:true});
+ $('.df-resume',el).addEventListener('click',()=>{if(el.dataset.demo==='plan')plan.resume();if(el.dataset.demo==='health')health.resume();delete el.dataset.manual;$('.df-resume',el).hidden=true;schedule()});
+ $('.df-native',el).addEventListener('pointerdown',event=>{if(!event.target.closest('button,input,[role=tab]'))return;el.dataset.manual='true';$('.df-resume',el).hidden=false},{capture:true});
  $('.df-native',el).addEventListener('focusin',()=>{el.dataset.manual='true';$('.df-resume',el).hidden=false});
  if(el.dataset.demo==='scan'){
   const actions=[['#shut','Capture meal',.23],['#a-ana .bt','Review ingredients',.55],['#a-lst .bt:not(.l)','Calculate nutrition',.86],['#a-md .stick .bt','Log sample meal',.98]];
@@ -274,13 +275,13 @@ document.fonts.ready.then(()=>chapters.forEach(fit));
 chapters.forEach(el=>draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):0));schedule();
 // Native hash navigation can precede the original v1 carousel's final measurement.
 // Align once after fonts/load, and always yield to the visitor's input.
-if(/^#dietfit-(scan|sara|plan|activity|widgets)$/.test(location.hash)){
+if(/^#dietfit-(product|scan|sara|plan|activity|widgets)$/.test(location.hash)){
  const initialHash=location.hash;let navigated=false;
  ['wheel','touchstart','keydown','pointerdown'].forEach(type=>addEventListener(type,()=>{navigated=true},{once:true,passive:true}));
  const align=()=>document.fonts.ready.then(()=>requestAnimationFrame(()=>{
   if(navigated||location.hash!==initialHash)return;
   const target=document.querySelector(initialHash);
-  if(window.dietfitLenis){window.dietfitLenis.resize();window.dietfitLenis.scrollTo(target,{immediate:true,offset:matchMedia('(max-width:700px)').matches?-72:0})}else target.scrollIntoView();
+  if(window.dietfitLenis){window.dietfitLenis.resize();window.dietfitLenis.scrollTo(target,{immediate:true,offset:matchMedia('(max-width:700px)').matches?-72:initialHash==='#dietfit-product'?-96:0})}else target.scrollIntoView();
   schedule();
  }));
  if(document.readyState==='complete')align();else addEventListener('load',align,{once:true});

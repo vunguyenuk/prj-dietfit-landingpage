@@ -17,8 +17,8 @@ Home VI và EN theo ba nguồn rõ ràng:
 - `scripts/dietfit-native-ui.js`: renderer nội dung và controller scroll cho các feature. Dữ liệu mẫu chỉ nằm trong trình duyệt; không gọi AI hoặc ghi vào tài khoản.
 - `assets/product/v2/`: chỉ những ảnh món ăn, mascot, font app và icon cần dùng. Không có hình nền tranh.
 - Các file `dietfit-product.*` và `dietfit-ui-motion.*` của lượt trước không được Home tải nữa. Lịch sử Git giữ các mốc cũ để phục hồi/đối chiếu.
-- Bấm một bước demo hoặc một control trong app sẽ ưu tiên thao tác của bạn; nút “Theo cuộn lại” tiếp tục tour. Scan có các sheet từ camera đến kết quả 558 kcal. Sara gõ câu hỏi, gửi ảnh, hiện phản hồi và summary theo scroll. Meal Plan đổi món/tick; Home chọn và log bữa tối.
-- Trên mobile, phần mô tả cuộn lên trước rồi điện thoại được giữ ở kích thước dễ xem. Reduced motion giữ các màn hình và nút chọn bước, không chạy chuỗi chuyển động.
+- Cuộn để xem nội dung trong app. Các thanh chọn bước 01–04 và hướng dẫn lặp lại bên ngoài đã bỏ; thao tác trực tiếp trong app sẽ tạm dừng tour, khi đó mới hiện nút “Tiếp tục theo cuộn”. Chú thích dữ liệu mẫu chỉ xuất hiện một lần cuối nhóm feature. Scan có các sheet từ camera đến kết quả 558 kcal. Sara gõ câu hỏi, gửi ảnh, hiện phản hồi và summary theo scroll. Meal Plan đổi món/tick; Home chọn và log bữa tối.
+- Trên mobile, phần mô tả cuộn lên trước rồi điện thoại được giữ ở kích thước dễ xem. Reduced motion hiển thị các trạng thái nội dung tĩnh và giữ thao tác trong app, không chạy chuỗi chuyển động.
 
 Chạy đúng project này:
 
