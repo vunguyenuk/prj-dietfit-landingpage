@@ -49,3 +49,12 @@ Both VI and EN home pages share this composition. Existing raster mascots stay a
 The visual direction is the original project theme: Dietfit orange, warm neutrals, Be Vietnam Pro, lifestyle photography and Sara. The user clarified that v2 is a reference for scroll behavior only. Its Neoclassical/Renaissance paintings are not used; the temporary painting assets and modules have been removed.
 
 `styles/dietfit-ui-motion.css` and `scripts/dietfit-ui-motion.js` animate only existing product UI: phones glide, gently rotate and approach their final scale; Meal Plan rows enter in sequence; the health board rises into view. Tall, wide desktop viewports also pin the Scan phone while narrative steps progress capture → identify → edit. Shorter screens and mobile use ordinary document flow with gentler movement and manual Scan controls. Any interaction takes priority over scroll animation; edited food quantities and selected views persist. Reduced-motion preferences disable this choreography. Existing Rive hero, photographs, mascot placements and working demos are preserved.
+
+
+## Visible UI choreography and visual rhythm — 20 October 2026
+
+Revision `product-story-v5-ui-choreography` replaces the subtle whole-phone tilt with layered product demonstrations. Scan uses a peach stage with ingredient and nutrition pullouts; Sara uses Dietfit's ink-purple brand color and three narrative conversation controls; Meal Plan assembles a total and two meal pullouts beside the phone. These are existing app values, not fabricated testimonials. Nutrition and Meal Plan pullouts update from the same quantities and meal selections as the phone.
+
+Wide desktop viewports pin each device stage at a size that fits its viewport, including 1280×720. Scrolling advances Scan states and Sara conversations in either direction. On compact/tablet layouts, a sufficiently visible phone starts a short sample sequence; leaving the viewport or hiding the page cancels pending transitions. Pointer, keyboard focus, clicks and input give the visitor control and stop automatic changes. Ingredient labels, sheets, chat messages and meal swaps have visible, finite transitions. Reduced-motion preferences retain all content and manual controls without movement.
+
+The original Be Vietnam Pro typography, orange palette, photographs, community, mascot and Rive hero remain. No classical paintings or additional animation dependencies are used. Port 4173 is the separate v2 reference; this project's preview is port 4180.

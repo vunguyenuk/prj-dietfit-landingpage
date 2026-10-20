@@ -137,10 +137,23 @@
       b.textContent = c.values[i]; span.textContent = label; div.append(b,span); stats.append(div);
     });
     $$('[data-chat-choice]').forEach(button => button.setAttribute('aria-pressed',String(+button.dataset.chatChoice === index)));
-    const bubble = $('.df-chat-bubble'); bubble.classList.remove('is-updating');
-    requestAnimationFrame(() => bubble.classList.add('is-updating'));
+    $$('[data-sara-stage]').forEach(button => button.setAttribute('aria-pressed',String(+button.dataset.saraStage === index)));
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const entrance = (element,delay,distance) => {
+        if(!element.animate) return;
+        element.getAnimations?.().forEach(animation => animation.cancel());
+        element.animate([{opacity:.15,transform:`translateY(${distance}px)`},{opacity:1,transform:'translateY(0)'}],{duration:360,delay,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'});
+      };
+      entrance($('#df-chat-question'),0,12);
+      entrance($('.df-chat-bubble'),100,20);
+      entrance(stats,220,10);
+    }
   }
   $$('[data-chat-choice]').forEach(button => button.addEventListener('click',() => showConversation(+button.dataset.chatChoice)));
+  $$('[data-sara-stage]').forEach(button => button.addEventListener('click',() => showConversation(+button.dataset.saraStage)));
+  $('#dietfit-sara').addEventListener('dietfit:coach-choice',event => {
+    if($('#dietfit-sara').dataset.uiManual !== 'true' && Number.isInteger(event.detail) && event.detail>=0 && event.detail<conversations.length) showConversation(event.detail);
+  });
 
   const mealOptions = [
     [{id:'E',name:t('Taco ba vị','Street tacos, three ways'),kcal:430,n:5},{id:'A',name:t('Bò bít tết và trứng','Brunch plate with eggs & steak'),kcal:800,n:6}],
@@ -164,12 +177,22 @@
       button.setAttribute('aria-label',t(`${state.logged?'Bỏ ghi nhận':'Ghi nhận'} ${meal.name}`,`${state.logged?'Unlog':'Log'} ${meal.name}`));
     });
     $('#df-plan-total').textContent = `${fmt(planned)} kcal`;
+    $$('[data-plan-sum]').forEach(node => { node.textContent = `${fmt(planned)} kcal`; });
+    $$('[data-meal-mirror]').forEach(mirror => {
+      const i=+mirror.dataset.mealMirror, meal=mealOptions[i][meals[i].option];
+      mirror.querySelector('img').src=`/assets/product/meals/${meal.id}-photo.jpg`;
+      mirror.querySelector('strong').textContent=meal.name;
+      mirror.querySelector('small').textContent=`${meal.kcal} kcal`;
+    });
     $('#df-plan-logged').textContent = t(`Đã ghi nhận ${fmt(logged)} kcal trong bản demo.`,`${fmt(logged)} kcal logged in this demo.`);
     if(announce) $('#df-product-status').textContent = $('#df-plan-logged').textContent;
   }
   $$('[data-meal-swap]').forEach(button => button.addEventListener('click',() => {
     const i = +button.closest('[data-meal-slot]').dataset.mealSlot;
     meals[i].option = 1 - meals[i].option; meals[i].logged = false; updatePlan(true);
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      $(`[data-meal-slot="${i}"] .df-meal-card`).animate?.([{opacity:.35,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:280,easing:'cubic-bezier(.22,1,.36,1)'});
+    }
   }));
   $$('[data-meal-log]').forEach(button => button.addEventListener('click',() => {
     const i = +button.closest('[data-meal-slot]').dataset.mealSlot;

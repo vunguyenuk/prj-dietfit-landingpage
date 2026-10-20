@@ -76,6 +76,6 @@ Domain chính thức: `https://dietfit.health` (khai báo trong `tools/build.py`
 
 - `styles/dietfit-ui-motion.css`, `scripts/dietfit-ui-motion.js`: chuyển động điện thoại, từng bữa trong Meal Plan và bảng sức khỏe; giữ nguyên theme, ảnh người và mascot.
 - V2 chỉ là tham khảo cách scroll trigger, không dùng tranh cổ điển của v2.
-- Desktop rộng và cao giữ điện thoại Scan khi cuộn ba bước. Mobile/màn hình thấp cuộn tự nhiên, vẫn có chuyển động nhẹ và đầy đủ nút demo.
+- Desktop rộng giữ điện thoại Scan/Sara khi cuộn qua ba bước, kể cả khung 1280×720. Mobile/iPad cuộn tự nhiên; khi điện thoại vào vùng nhìn, demo phát từng bước và dừng khi bạn thao tác hoặc rời vùng nhìn.
 - Bấm hoặc chỉnh demo sẽ giành quyền điều khiển từ scroll; `prefers-reduced-motion` tắt chuyển động.
 - Hero Rive độc lập, không thay đổi.

@@ -168,9 +168,9 @@
   <link rel="stylesheet" href="./styles/dietfit-social.css?v=7">
   <link rel="stylesheet" href="./styles/dietfit-mobile-menu.css?v=1">
   <link rel="stylesheet" href="./styles/dietfit-lang-switch.css?v=1">
-  <meta name="dietfit-source-revision" content="product-story-v4-ui-motion">
+  <meta name="dietfit-source-revision" content="product-story-v5-ui-choreography">
   <link rel="stylesheet" href="/styles/dietfit-product.css?v=2">
-  <link rel="stylesheet" href="/styles/dietfit-ui-motion.css?v=1">
+  <link rel="stylesheet" href="/styles/dietfit-ui-motion.css?v=2">
 </head>
 
 <body>
@@ -322,7 +322,7 @@
           </nav>
         </div>
       </section>
-      <section class="df-section df-scan" data-ui-chapter="scan" id="dietfit-scan" aria-labelledby="df-scan-title">
+      <section class="df-section df-scan df-ui-story" data-ui-chapter="scan" id="dietfit-scan" aria-labelledby="df-scan-title">
         <div class="df-container df-split">
           <div class="df-copy">
             <span class="df-eyebrow">
@@ -395,6 +395,10 @@
             <span class="df-demo-tag">
               Bấm để thử · Deep Scan
             </span>
+            <div class="df-stage-accents" aria-hidden="true">
+              <div class="df-ui-pull df-ingredient-pull"><span class="df-pull-kicker">Deep Scan</span><strong>4</strong><span>nguyên liệu, nhìn rõ từng phần</span><i class="df-pull-dots"><b></b><b></b><b></b><b></b></i></div>
+              <div class="df-ui-pull df-nutrition-pull"><span class="df-pull-kicker">Bữa ăn mẫu</span><strong><span data-total="kcal">358</span> <small>kcal</small></strong><div><span><b data-total="protein">28</b> g<small>Protein</small></span><span><b data-total="carbs">50</b> g<small>Carbs</small></span><span><b data-total="fat">5</b> g<small>Fat</small></span></div></div>
+            </div>
             <div class="df-phone" aria-label="Bản demo tương tác Deep Scan">
               <div class="df-status" aria-hidden="true">
                 <span>
@@ -415,7 +419,7 @@
                 <div data-scan-view="capture">
                   <div class="df-camera-shade">
                   </div>
-                  <div class="df-camera-corners">
+                  <div class="df-camera-corners"><i class="df-scan-sweep" aria-hidden="true"></i>
                   </div>
                   <div class="df-scan-toolbar">
                     <button class="df-icon-btn" type="button" data-scan-reset aria-label="Đặt lại demo">
@@ -697,14 +701,18 @@
           </div>
         </div>
       </section>
-      <section class="df-section df-coach" data-ui-chapter="coach" id="dietfit-sara" aria-labelledby="df-sara-title">
+      <section class="df-section df-coach df-ui-story" data-ui-chapter="coach" id="dietfit-sara" aria-labelledby="df-sara-title">
         <div class="df-container">
           <div class="df-split">
             <div class="df-demo-display">
               <span class="df-demo-tag">
                 Chọn câu hỏi · xem cách Sara trả lời
               </span>
-              <div class="df-phone" aria-label="Hội thoại minh hoạ với Sara">
+              <div class="df-stage-accents df-sara-accents" aria-hidden="true">
+              <div class="df-ui-pull df-context-pull"><span class="df-pull-kicker">Hiểu bức tranh đầy đủ</span><strong>Không chỉ calo.</strong><span>Bữa ăn đã log</span><span>Mục tiêu của bạn</span><span>Vận động & giấc ngủ</span></div>
+              <figure class="df-stage-sara"><img src="/assets/product/mascot/sara-phone.png" alt="" width="131" height="175" loading="lazy"><figcaption>Sara, cùng bạn nối các dữ liệu.</figcaption></figure>
+            </div>
+            <div class="df-phone" aria-label="Hội thoại minh hoạ với Sara">
                 <div class="df-status" aria-hidden="true">
                   <span>
                     9:41
@@ -803,6 +811,7 @@
               <p class="df-lead">
                 “Hôm nay mình thế nào?” không chỉ là một câu hỏi về calo. Sara nhìn mục tiêu, bữa đã ăn và vận động bạn chia sẻ để đặt câu trả lời vào đúng ngày của bạn.
               </p>
+              <div class="df-sara-steps" aria-label="Khám phá hội thoại Sara"><button type="button" data-sara-stage="0" aria-pressed="true"><span>01</span><span><strong>Tổng kết hôm nay</strong><small>Bữa ăn, vận động và giấc ngủ trong cùng một câu trả lời.</small></span><b aria-hidden="true">↗</b></button><button type="button" data-sara-stage="1" aria-pressed="false"><span>02</span><span><strong>Hiểu bữa vừa ăn</strong><small>Đặt món ăn bên cạnh mục tiêu của chính bạn.</small></span><b aria-hidden="true">↗</b></button><button type="button" data-sara-stage="2" aria-pressed="false"><span>03</span><span><strong>Nhìn cả giấc ngủ</strong><small>Thêm ngữ cảnh để những con số có ý nghĩa hơn.</small></span><b aria-hidden="true">↗</b></button></div>
               <div class="df-contexts">
                 <span>
                   Mục tiêu của bạn
@@ -815,7 +824,6 @@
                 </span>
               </div>
               <div class="df-coach-profile">
-                <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, người bạn AI của Dietfit" width="131" height="175" loading="lazy">
                 <div>
                   <strong>
                     Không cần tự nối mọi con số.
@@ -861,7 +869,7 @@
           </div>
         </div>
       </section>
-      <section class="df-section df-plan" data-ui-chapter="plan" id="dietfit-plan" aria-labelledby="df-plan-title">
+      <section class="df-section df-plan df-ui-story" data-ui-chapter="plan" id="dietfit-plan" aria-labelledby="df-plan-title">
         <div class="df-container df-split">
           <div class="df-copy">
             <span class="df-eyebrow">
@@ -921,6 +929,11 @@
             <span class="df-demo-tag">
               Thử đổi món hoặc bấm + để log
             </span>
+            <div class="df-stage-accents df-plan-accents" aria-hidden="true">
+              <div class="df-ui-pull df-plan-total-pull"><span class="df-pull-kicker">Kế hoạch hôm nay</span><strong data-plan-sum>1.473 kcal</strong><small>Có thể đổi cho hợp ngày của bạn</small></div>
+              <div class="df-ui-pull df-meal-pull" data-meal-mirror="0"><img src="/assets/product/meals/E-photo.jpg" alt="" width="64" height="64" loading="lazy"><div><span>Bữa sáng</span><strong>Taco ba vị</strong><small>430 kcal</small></div></div>
+              <div class="df-ui-pull df-meal-pull" data-meal-mirror="1"><img src="/assets/product/meals/P-photo.jpg" alt="" width="64" height="64" loading="lazy"><div><span>Bữa trưa</span><strong>Tôm và cơm nếp cẩm</strong><small>358 kcal</small></div></div>
+            </div>
             <div class="df-phone" aria-label="Bản demo meal plan có thể đổi món và ghi nhận">
               <div class="df-status" aria-hidden="true">
                 <span>
@@ -1688,8 +1701,8 @@
   <script src="./vendor/lenis/lenis.min.js"></script>
   <script src="./scripts/dietfit-scroll.js"></script>
   <script src="./scripts/dietfit-hero.js?v=20260918-1"></script>
-  <script src="/scripts/dietfit-product.js?v=3"></script>
-  <script src="/scripts/dietfit-ui-motion.js?v=1"></script>
+  <script src="/scripts/dietfit-product.js?v=4"></script>
+  <script src="/scripts/dietfit-ui-motion.js?v=2"></script>
   <script src="./scripts/dietfit-mobile-menu.js?v=3"></script>
 </body>
 

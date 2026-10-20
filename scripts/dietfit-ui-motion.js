@@ -1,72 +1,103 @@
-/* Reuse v2's scroll-led product storytelling, in the original Dietfit visual theme. */
+/* Scroll-led app demonstrations. All state changes use sample data and yield to manual input. */
 (() => {
   'use strict';
-  const root = document.querySelector('.dietfit-product');
-  if (!root || !('IntersectionObserver' in window)) return;
-  const chapters = [...root.querySelectorAll('[data-ui-chapter]')];
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  const compact = matchMedia('(max-width: 767px)');
-  const pinnedScan = matchMedia('(min-width: 1101px) and (min-height: 900px)');
-  const active = new Set();
-  const clamp = value => Math.max(0,Math.min(1,value));
-  const owned = ['--df-phone-lift','--df-phone-roll','--df-phone-yaw','--df-phone-scale','--df-board-lift'];
-  let frame = 0;
-  chapters.forEach(chapter => {
-    const takeControl = event => {
-      if (event.target.closest('button,input,a')) chapter.dataset.uiManual = 'true';
+  const root=document.querySelector('.dietfit-product');
+  if(!root || !('IntersectionObserver' in window)) return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)'), compact=matchMedia('(max-width:767px)'), wide=matchMedia('(min-width:1101px)');
+  const chapters=[...root.querySelectorAll('[data-ui-chapter]')].map(element=>({element,kind:element.dataset.uiChapter,panel:element.querySelector('.df-demo-display,.df-health-board'),pulls:[...element.querySelectorAll('.df-ui-pull')],steps:[...element.querySelectorAll('[data-scan-stage],[data-sara-stage]')],timers:[],started:false,phoneVisible:false}));
+  const active=new Set(), clamp=n=>Math.max(0,Math.min(1,n));
+  const owned=['--df-phone-x','--df-phone-lift','--df-phone-roll','--df-phone-yaw','--df-phone-scale','--df-board-lift','--df-sweep'];
+  let frame=0;
+  const isManual=chapter=>chapter.element.dataset.uiManual==='true' || chapter.element.dataset.scanManual==='true';
+  const stopTimers=chapter=>{chapter.timers.forEach(clearTimeout);chapter.timers=[];};
+  function selectStep(chapter,index) {
+    if(isManual(chapter) || reduce.matches) return;
+    if(chapter.element.dataset.motionStep===String(index)) return;
+    chapter.element.dataset.motionStep=String(index);
+    if(chapter.kind==='scan') {
+      const status=chapter.element.querySelector('.df-scroll-status');
+      if(status) status.textContent=`0${index+1} / 03`;
+      chapter.element.dispatchEvent(new CustomEvent('dietfit:scan-step',{detail:['capture','identify','edit'][index]}));
+    } else if(chapter.kind==='coach') chapter.element.dispatchEvent(new CustomEvent('dietfit:coach-choice',{detail:index}));
+  }
+  function playCompactDemo(chapter) {
+    if(chapter.started || wide.matches || reduce.matches || isManual(chapter)) return;
+    chapter.started=true;
+    selectStep(chapter,0);
+    const delays=chapter.kind==='scan' ? [1000,3000] : [3600,7200];
+    delays.forEach((delay,i)=>chapter.timers.push(setTimeout(()=>{
+      if(chapter.phoneVisible && !document.hidden && !wide.matches) selectStep(chapter,i+1);
+    },delay)));
+  }
+  chapters.forEach(chapter=>{
+    const takeControl=event=>{
+      if(event.target.closest('button,input,a')) {chapter.element.dataset.uiManual='true';stopTimers(chapter);}
     };
-    chapter.addEventListener('pointerdown',takeControl);
-    chapter.addEventListener('focusin',takeControl);
-    chapter.addEventListener('click',takeControl,true);
-    chapter.addEventListener('input',takeControl,true);
+    ['pointerdown','focusin','click','input'].forEach(type=>chapter.element.addEventListener(type,takeControl,true));
   });
   function render() {
-    frame = 0;
+    frame=0;
     root.classList.toggle('df-ui-motion-enabled',!reduce.matches);
-    for (const chapter of chapters) {
-      const rows = [...chapter.querySelectorAll('.df-meal-slot')];
-      if (reduce.matches) {
-        owned.forEach(name => chapter.style.removeProperty(name));
-        rows.forEach(row => { row.style.removeProperty('--df-row-opacity'); row.style.removeProperty('--df-row-lift'); });
+    for(const chapter of chapters) {
+      const el=chapter.element;
+      if(reduce.matches) {
+        stopTimers(chapter);
+        owned.forEach(name=>el.style.removeProperty(name));
+        chapter.pulls.forEach(pull=>['--df-pull-opacity','--df-pull-x','--df-pull-y','--df-pull-turn'].forEach(name=>pull.style.removeProperty(name)));
         continue;
       }
-      if(!active.has(chapter) || chapter.dataset.uiManual === 'true' || chapter.dataset.scanManual === 'true') continue;
-      const panel = chapter.querySelector('.df-demo-display,.df-health-board');
-      const rect = panel.getBoundingClientRect();
-      const progress = clamp((innerHeight - rect.top)/(innerHeight + rect.height));
-      const enter = clamp(progress/0.58);
-      const remain = 1-enter;
-      const small = compact.matches;
-      chapter.style.setProperty('--df-phone-lift',`${(remain*(small?14:42)).toFixed(2)}px`);
-      chapter.style.setProperty('--df-phone-roll',`${(-remain*(small ? .8 : 3)).toFixed(2)}deg`);
-      chapter.style.setProperty('--df-phone-yaw',`${(remain*(small?0:10)).toFixed(2)}deg`);
-      chapter.style.setProperty('--df-phone-scale',(1-remain*(small ? .015 : .065)).toFixed(4));
-      chapter.style.setProperty('--df-board-lift',`${(remain*(small?12:28)).toFixed(2)}px`);
-      rows.forEach((row,i) => {
-        const reveal = clamp(progress*2.4-i*.14);
-        row.style.setProperty('--df-row-opacity',(.55+reveal*.45).toFixed(3));
-        row.style.setProperty('--df-row-lift',`${((1-reveal)*18).toFixed(2)}px`);
+      if(!active.has(el) || isManual(chapter)) continue;
+      const section=el.getBoundingClientRect(), panel=chapter.panel.getBoundingClientRect();
+      const progress=clamp((innerHeight-panel.top)/(innerHeight+panel.height));
+      const entry=clamp((progress-.06)/.5), remain=1-entry, small=compact.matches;
+      el.style.setProperty('--df-phone-x',`${(remain*(small?0:38)).toFixed(2)}px`);
+      el.style.setProperty('--df-phone-lift',`${(remain*(small?22:58)).toFixed(2)}px`);
+      el.style.setProperty('--df-phone-roll',`${(-remain*(small?1.2:5)).toFixed(2)}deg`);
+      el.style.setProperty('--df-phone-yaw',`${(remain*(small?0:14)).toFixed(2)}deg`);
+      el.style.setProperty('--df-phone-scale',(1-remain*(small ? .035 : .12)).toFixed(4));
+      el.style.setProperty('--df-board-lift',`${(remain*(small?18:40)).toFixed(2)}px`);
+      el.style.setProperty('--df-sweep',clamp((innerHeight-section.top)/(section.height||1)).toFixed(3));
+      chapter.pulls.forEach((pull,i)=>{
+        const reveal=clamp((progress-.08)*2.8-i*.12);
+        pull.style.setProperty('--df-pull-opacity',(.25+.75*reveal).toFixed(3));
+        pull.style.setProperty('--df-pull-x',`${((1-reveal)*-24).toFixed(2)}px`);
+        pull.style.setProperty('--df-pull-y',`${((1-reveal)*28).toFixed(2)}px`);
+        pull.style.setProperty('--df-pull-turn',`${((1-reveal)*(i%2?3:-3)).toFixed(2)}deg`);
       });
-      if(chapter.dataset.uiChapter !== 'scan' || !pinnedScan.matches) continue;
-      const steps = [...chapter.querySelectorAll('[data-scan-stage]')];
-      let current = 0;
-      steps.forEach((step,i) => { if(step.getBoundingClientRect().top < innerHeight*.62) current=i; });
-      const state = steps[current].dataset.scanStage;
-      chapter.querySelector('.df-scroll-status').textContent = `0${current+1} / 03`;
-      if(chapter.dataset.motionStep !== state) {
-        chapter.dataset.motionStep = state;
-        chapter.dispatchEvent(new CustomEvent('dietfit:scan-step',{detail:state}));
-      }
+      if(!wide.matches || !chapter.steps.length) continue;
+      let index=0;
+      chapter.steps.forEach((step,i)=>{if(step.getBoundingClientRect().top<innerHeight*.6) index=i;});
+      selectStep(chapter,index);
     }
   }
-  function schedule() { if(!frame) frame=requestAnimationFrame(render); }
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { if(entry.isIntersecting) active.add(entry.target); else active.delete(entry.target); });
-    schedule();
-  },{rootMargin:'120px 0px',threshold:0});
-  chapters.forEach(chapter => observer.observe(chapter));
+  function schedule(){if(!frame)frame=requestAnimationFrame(render);}
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{if(entry.isIntersecting)active.add(entry.target);else active.delete(entry.target);});schedule();
+  },{rootMargin:'160px 0px',threshold:0});
+  const phoneObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      const chapter=chapters.find(item=>item.element.contains(entry.target));
+      chapter.phoneVisible=entry.isIntersecting && entry.intersectionRatio>=.6;
+      chapter.element.classList.toggle('is-demo-in-view',chapter.phoneVisible);
+      if(chapter.phoneVisible && wide.matches && chapter.kind==='coach' && !isManual(chapter) && !reduce.matches) {
+        chapter.element.dispatchEvent(new CustomEvent('dietfit:coach-choice',{detail:Number(chapter.element.dataset.motionStep)||0}));
+      }
+      if(chapter.phoneVisible) playCompactDemo(chapter);
+      else {stopTimers(chapter);chapter.started=false;}
+    });
+  },{threshold:[0,.6]});
+  chapters.forEach(chapter=>{
+    observer.observe(chapter.element);
+    if(['scan','coach'].includes(chapter.kind))phoneObserver.observe(chapter.element.querySelector('.df-phone'));
+  });
+  document.addEventListener('visibilitychange',()=>{
+    chapters.forEach(chapter=>{
+      if(document.hidden){stopTimers(chapter);chapter.started=false;}
+      else if(chapter.phoneVisible)playCompactDemo(chapter);
+    });
+  });
   window.addEventListener('scroll',schedule,{passive:true});
   window.addEventListener('resize',schedule,{passive:true});
-  [reduce,compact,pinnedScan].forEach(query => query.addEventListener('change',schedule));
+  [reduce,compact,wide].forEach(query=>query.addEventListener('change',schedule));
   render();
 })();
