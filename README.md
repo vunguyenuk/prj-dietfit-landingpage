@@ -70,3 +70,12 @@ Domain chính thức: `https://dietfit.health` (khai báo trong `tools/build.py`
 - Ảnh chia sẻ mạng xã hội (1200×630) nằm trong `assets/og/`.
 - Link cũ `blog/post.html?slug=…` được chuyển 301 sang URL mới (xem `vercel.json`).
 - Sau khi deploy: vào Google Search Console → thêm property `dietfit.health` → gửi `https://dietfit.health/sitemap.xml`.
+
+
+## Các chương tranh và tương tác khi cuộn
+
+- `styles/dietfit-art-story.css`, `scripts/dietfit-art-story.js`: lớp tranh cổ điển và chuyển động của các phần Scan, Sara, vận động.
+- Tranh gốc từ v2 được giữ trong `assets/product/art/`; không cắt nhỏ nhân vật để animate.
+- Desktop rộng: cuộn qua ba bước sẽ đổi trạng thái Scan. Khi bấm hoặc sửa demo, cuộn không can thiệp nữa cho đến khi tải lại trang.
+- Mobile/iPad: bố cục cuộn tự nhiên, thao tác demo bằng nút. `prefers-reduced-motion` giữ bản tĩnh với đầy đủ tương tác.
+- Hero Rive độc lập và không bị thay đổi bởi các file này.

@@ -42,3 +42,16 @@ The supplied local Gaia capture was reviewed for composition: characters peek at
 - Download: restore an everyday phone-use scene beside the CTA, with Sara saying goodbye.
 
 Both VI and EN home pages share this composition. Existing raster mascots stay at or below their source dimensions. The original Rive hero, demo logic, About and Blog pages remain unchanged. The supplied Gaia capture stays untracked as a reference folder and is not part of the production change.
+
+
+## Classical art and scroll chapters — 20 October 2026
+
+The original v2 artwork is reused byte-for-byte in `assets/product/art/`: taverna, seated couple, kitchen, stadium and runner. No character body parts are cut, warped or regenerated. The Rive hero and previous lifestyle/community imagery remain intact.
+
+`styles/dietfit-art-story.css` and `scripts/dietfit-art-story.js` add three product chapters:
+
+- Scan: a layered taverna scene beside a sticky phone. On wide screens, scrolling the narrative steps progresses capture → identification → ingredient review, in either direction. Any pointer, keyboard, focus or input interaction with the demo hands control to the visitor until reload, preserving edited quantities and the active view.
+- Sara: the original kitchen painting beside the real interactive conversation demo; subtle camera translation and device entrance follow scroll position.
+- Activity: the stadium and intact Marcus runner beside the existing health and progress controls.
+
+Only visible chapters update, scroll work is batched into animation frames, and visual updates use transforms. Mobile/tablet use normal document flow, with no sticky long-scroll sequence or automatic Scan stage changes. Reduced-motion preferences disable camera/device movement and scroll-driven Scan changes, retaining all manual controls. No scroll library or new dependency was added.

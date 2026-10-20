@@ -49,6 +49,22 @@
       edit:t('Chỉnh khối lượng nguyên liệu để cập nhật calo và macro.','Edit ingredient weights to update calories and macros.')
     }[state];
   }
+  const scanChapter = $('#dietfit-scan');
+  const takeScanControl = event => {
+    if(event.target.closest('button,input')) {
+      scanChapter.dataset.scanManual = 'true';
+      const index = scanChapter.querySelector('.df-scene-index b');
+      if(index) index.textContent = t('Bạn điều khiển','Your turn');
+    }
+  };
+  scanChapter.addEventListener('pointerdown', takeScanControl);
+  scanChapter.addEventListener('click', takeScanControl, true);
+  scanChapter.addEventListener('keydown', takeScanControl);
+  scanChapter.addEventListener('focusin', takeScanControl);
+  scanChapter.addEventListener('input', takeScanControl, true);
+  scanChapter.addEventListener('dietfit:scan-step', event => {
+    if(scanChapter.dataset.scanManual !== 'true' && ['capture','identify','edit'].includes(event.detail) && scanState !== event.detail) showScan(event.detail);
+  });
   stageButtons.forEach(button => button.addEventListener('click',() => {
     showScan(button.dataset.scanStage);
     if(matchMedia('(max-width: 767px)').matches) {
