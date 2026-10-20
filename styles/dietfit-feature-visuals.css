@@ -1,64 +1,51 @@
-/* Everfit's composition lesson: real context + an enlarged, relevant UI detail.
-   The approved v1/Gaia layout and every native phone viewport stay intact. */
-.df-feature-stage--visual{isolation:isolate;--visual-device-shift:44px}
-.df-feature-stage--visual>.df-visual-device{position:relative;z-index:2;translate:var(--visual-device-shift) 0}
-.df-visual-field{position:absolute;z-index:0;inset:7% -6px 7%;border-radius:34px;overflow:hidden;pointer-events:none;background:#fff2e7}
-.df-visual-field img{width:100%;height:100%;object-fit:cover;display:block}
-.df-visual-field--food img{opacity:.35;object-position:40% 50%;transform:scale(1.35)}
-.df-visual-field--food>span{position:absolute;inset:0;background:linear-gradient(120deg,#fff6ecad,#fff6ec33 45%,#fff6ec88)}
-.df-visual-field--plan{background:#fff1e7;inset:9% -6px 6%}
-.df-visual-field--plan img{object-position:50% 68%;opacity:.47}
-.df-visual-field--plan>span{position:absolute;inset:0;background:linear-gradient(110deg,#fff2e7b3,#fff8f044 65%)}
-.df-feature--coach .df-feature-stage--visual{--visual-device-shift:-44px}
-.df-visual-field--coach{background:#f4f1ea;inset:14% 14px 10%;z-index:0}
-.df-visual-portrait{position:absolute;z-index:1;right:-8px;top:3%;width:37%;height:58%;overflow:hidden;border-radius:90px 90px 24px 24px;pointer-events:none}
-.df-visual-portrait img{display:block;width:100%;height:100%;object-fit:cover;object-position:52% 55%}
-.df-showcase{position:absolute;z-index:3;width:176px;padding:18px;border:1px solid #eee7df;border-radius:22px;background:#fffcf8;box-shadow:0 14px 35px -16px #3823153d;pointer-events:none;line-height:1.45;text-align:left;opacity:var(--showcase-opacity,1);transform:translateY(var(--showcase-lift,0px));}
-.df-showcase--scan{left:-26px;top:32%;max-width:calc((100% - var(--visual-device-width,280px))/2 + 52px)}
-.df-showcase-label{display:block;font-size:.68rem;font-weight:500;line-height:1.5;color:#756956;letter-spacing:-.01em}
-.df-showcase-food{display:flex;align-items:center;gap:9px;margin-block:16px 12px;font-size:.75rem;font-weight:500;line-height:1.35}
-.df-showcase-food>img{width:44px;height:50px;object-fit:cover;object-position:60% 30%;border-radius:12px;flex:none}
-.df-showcase-food small{display:block;margin-top:4px;color:#8f8173;font-size:.6875rem;font-weight:400}
-.df-showcase-number{display:block;color:#110b20;font-size:2rem;font-weight:500;line-height:1.2;letter-spacing:-.045em;font-variant-numeric:tabular-nums}
-.df-showcase-number small{font-size:.75rem;font-weight:400;letter-spacing:normal;color:#8a776a}
-.df-showcase-rule{display:block;height:1px;background:#eae1d6;margin-block:13px 10px}
-.df-showcase p{font-size:.6875rem;color:#8a776a;line-height:1.55}
-.df-showcase-macros{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:14px;font-size:.5rem;color:#8a776a}
-.df-showcase-macros b{display:block;font-size:.75rem;font-weight:500;color:#110b20;margin-bottom:3px}
-.df-showcase-macros span::before{content:'';display:block;width:22px;height:3px;background:#FE692E;border-radius:3px;margin-bottom:9px}
-.df-showcase-macros span:nth-child(2)::before{background:#9bbb4c}.df-showcase-macros span:nth-child(3)::before{background:#e8b04b}
-.df-showcase [data-showcase-nutrition]>.df-showcase-number{margin-top:14px}
-.df-showcase--coach{right:-18px;bottom:12%;max-width:calc((100% - var(--visual-device-width,280px))/2 + 46px)}
-.df-showcase-sara{display:flex;align-items:center;gap:8px;color:#110b20;font-size:.8125rem;font-weight:500}
-.df-showcase-sara>img{object-fit:contain;width:28px;height:34px}
-.df-showcase-sara small{display:block;font-size:.5625rem;font-weight:400;color:#8a776a;margin-top:2px}
-.df-showcase .df-showcase-question{font-size:.9375rem;font-weight:500;color:#110b20;line-height:1.4;letter-spacing:-.03em;margin-top:12px}
-.df-showcase--plan{left:-26px;top:27%;max-width:calc((100% - var(--visual-device-width,280px))/2 + 52px)}
-.df-showcase-meal{display:block;width:100%;height:96px;object-fit:cover;border-radius:14px;margin-block:12px}
-.df-showcase-meal-name{display:block;color:#110b20;font-weight:500;font-size:.75rem;line-height:1.4;margin-bottom:10px}
-.df-showcase--plan .df-showcase-number{font-size:1.7rem}
-.df-showcase-meal-status{display:block;color:#8a776a;font-size:.6rem;line-height:1.5;margin-top:10px}
-.df-showcase-meal-status.is-logged{color:#39814d}
-.df-feature-stage--visual>.df-feature-peek{z-index:4;right:auto;left:8px;bottom:5%;width:78px}
-.df-feature--plan .df-feature-stage--visual>.df-feature-peek{left:16px;bottom:5%;width:76px}
-@media(min-width:1800px){.df-feature-stage--visual{--visual-device-shift:62px}.df-feature--coach .df-feature-stage--visual{--visual-device-shift:-62px}.df-showcase--scan,.df-showcase--plan{left:-30px;max-width:calc((100% - var(--visual-device-width,280px))/2 + 76px)}.df-showcase--coach{right:-30px;max-width:calc((100% - var(--visual-device-width,280px))/2 + 76px)}}
-@media(max-width:1100px){
- .df-feature-stage--visual,.df-feature--coach .df-feature-stage--visual{--visual-device-shift:0px}
- .df-visual-field{inset:8% -6px;border-radius:28px}.df-visual-portrait{right:-6px;top:4%;width:33%;height:43%;z-index:0}
- .df-showcase{display:none}
- .df-feature-stage--visual>.df-feature-peek{left:-12px;bottom:2%;width:65px}
-}
+/* One device, one context image, one readable product detail.
+   Page tokens follow the approved v1. Native phone geometry remains unchanged. */
+.dietfit-product{--feature-ink:#110b20;--feature-muted:#625d6b;--feature-line:#e6e2e8;--feature-paper:#fff;--feature-radius:24px}
+.df-feature-stage--visual{isolation:isolate}
+.df-feature-stage--visual>.df-visual-device{position:relative;z-index:2;pointer-events:none}
+.df-visual-device .app{pointer-events:auto}
+.df-visual-portrait,.df-visual-field--plan{position:absolute;z-index:0;right:0;top:12%;width:46%;height:70%;border-radius:var(--feature-radius);overflow:hidden;pointer-events:none}
+.df-visual-portrait img,.df-visual-field--plan img{display:block;width:100%;height:100%;object-fit:cover;opacity:1}
+.df-visual-portrait img{object-position:58% 55%}
+.df-visual-field--plan{left:0;right:auto;top:15%;height:64%;width:48%}
+.df-visual-field--plan img{object-position:48% 65%}
+.df-visual-field--plan>span{display:none}
+.df-feature-stage--visual .df-feature-peek{display:none}
+.df-showcase{position:relative;max-width:440px;width:100%;padding:20px 0 0;border-top:1px solid var(--feature-line);color:var(--feature-ink);background:none;pointer-events:none;line-height:1.5;font-size:.875rem}
+.df-showcase-label{display:block;font-size:.875rem;font-weight:500;color:var(--feature-muted);margin-bottom:12px}
+.df-showcase--scan>[data-showcase-ingredient]{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 24px}
+.df-showcase--scan .df-showcase-label{grid-column:1/-1;margin:0}
+.df-showcase-food{display:flex;align-items:center;gap:12px;font-size:1rem;font-weight:500}
+.df-showcase-food-crop{display:block;flex:none;width:48px;height:52px;border-radius:12px;background:url('/assets/product/v2/meal.jpg') 60% 36% / 520%}
+.df-showcase-food small{display:block;font-size:.875rem;font-weight:400;color:var(--feature-muted)}
+.df-showcase-number{display:block;font-size:2rem;font-weight:500;line-height:1.2;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.df-showcase-number small{font-size:.875rem;font-weight:400;letter-spacing:normal;color:var(--feature-muted)}
+.df-showcase-rule{display:none}
+.df-showcase p{font-size:.875rem;color:var(--feature-muted)}
+.df-showcase--scan p{grid-column:1/-1;margin-top:4px}
+.df-showcase--scan>[data-showcase-nutrition]{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:12px 24px}
+.df-showcase--scan [data-showcase-nutrition]>.df-showcase-label{grid-column:1/-1;margin:0}
+.df-showcase-macros{display:flex;justify-content:space-between;gap:16px;font-size:.875rem;color:var(--feature-muted)}
+.df-showcase-macros b{display:block;font-size:1rem;color:var(--feature-ink);font-weight:500}
+.df-showcase--coach{display:grid;grid-template-columns:auto 1fr;column-gap:20px;align-items:center}
+.df-showcase-sara{display:flex;align-items:center;gap:10px;font-size:.9375rem;font-weight:500}
+.df-showcase-sara img{display:block;width:36px;height:42px;object-fit:contain}
+.df-showcase-sara small{display:block;font-size:.875rem;font-weight:400;color:var(--feature-muted)}
+.df-showcase .df-showcase-question{font-size:1rem;color:var(--feature-ink);font-weight:500;line-height:1.5}
+.df-showcase--coach>p:last-child{grid-column:1/-1;margin-top:12px}
+.df-showcase--plan{display:grid;grid-template-columns:72px 1fr auto;gap:8px 16px;align-items:center}
+.df-showcase--plan>.df-showcase-label{grid-column:1/-1;margin:0 0 4px}
+.df-showcase-meal{display:block;width:72px;height:72px;border-radius:12px;object-fit:cover;grid-column:1;grid-row:2/span 2}
+.df-showcase-meal-name{font-size:.9375rem;font-weight:500;line-height:1.5;grid-column:2;grid-row:2}
+.df-showcase--plan .df-showcase-number{grid-column:3;grid-row:2/span 2;font-size:1.75rem;white-space:nowrap}
+.df-showcase-meal-status{grid-column:2;font-size:.875rem;color:var(--feature-muted)}
+.df-showcase-meal-status.is-logged{color:#28613b}
+@media(min-width:1101px){.df-feature--coach .df-visual-device{justify-items:start}.df-feature--plan .df-visual-device{justify-items:end}}
+@media(max-width:1100px){.df-visual-portrait,.df-visual-field--plan{display:none}}
 @media(max-width:700px){
- .df-visual-field{inset:6% -5px;border-radius:28px}.df-visual-field img{opacity:.2}
- .df-visual-field--coach{inset:12% -5px 6%}.df-visual-portrait{right:-3px;top:2%;width:34%;height:35%;opacity:.7}
- .df-feature-stage--visual>.df-feature-peek,.df-feature--plan .df-feature-stage--visual>.df-feature-peek{left:-5px;bottom:7%;width:54px}
+ .df-showcase{padding-top:16px;max-width:none}.df-showcase-number{font-size:1.75rem}
+ .df-showcase--scan>[data-showcase-ingredient],.df-showcase--scan>[data-showcase-nutrition]{gap:8px 16px}
+ .df-showcase--coach{column-gap:16px}.df-showcase-meal{width:56px;height:56px}
+ .df-showcase--plan{grid-template-columns:56px minmax(0,1fr) auto;gap:6px 12px}
+ .df-showcase--plan .df-showcase-number{font-size:1.5rem}.df-showcase-meal-name,.df-showcase-meal-status{font-size:.875rem}
 }
-@media(prefers-reduced-motion:reduce){.df-showcase{opacity:1;transform:none}.df-visual-device{translate:var(--visual-device-shift) 0}}
-.df-feature-stage--visual.is-visual-tight{--visual-device-shift:0px}
-.df-feature-stage--visual.is-visual-tight .df-showcase{display:none}
-.df-showcase-food-crop{display:block;width:44px;height:50px;border-radius:12px;flex:none;background:url('/assets/product/v2/meal.jpg') 60% 36% / 520%}
-.df-visual-device{pointer-events:none}.df-visual-device .app{pointer-events:auto}
-.df-showcase-food{flex-wrap:wrap}
-@media(max-width:1100px){.df-visual-portrait{display:none}}
-.df-feature-stage--visual.is-visual-tight>.df-feature-peek{display:none}
-@media(max-width:1100px){.df-feature-stage--visual>.df-feature-peek{display:none}}

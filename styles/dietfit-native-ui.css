@@ -411,7 +411,6 @@
 .df-native .wg{min-height:188px;box-shadow:0 4px 28px #110b200d;border:1px solid #110b2010;border-radius:30px;padding:20px;background:#fff;gap:18px;backdrop-filter:none}
 .df-native .wg b{font-size:32px}.df-native .wg b span{font-size:17px}.df-native .wg small,.df-native .wg em{font-size:14px}.df-native .wg small img{width:22px;height:22px}.df-native .wg .big{font-size:76px}.df-native .wg.dk{background:#2b292e;color:white}.df-native .wg.dk small,.df-native .wg.dk em{color:#c2bfc7}.df-native .wg.m{min-height:220px}.df-native .wg.m svg{height:100px}.df-native .wg .lg{font-size:12px;flex-wrap:wrap}.df-native .wg.ph{min-height:200px;padding:0}.df-native .wg.ph b{font-size:22px}
 .df-native .app :is(.plan-h .ic img){width:24px;height:24px}.df-native .app .food-regions{height:auto}.df-native .app .md .nm h4{font-kerning:normal;font-variant-ligatures:none}
-.df-native .ingredient-edit{width:62px;padding:5px 2px;border:1px solid #ddd;border-radius:8px;text-align:right;font-size:16px}.df-native .app .lst li{cursor:pointer}
 @media(prefers-reduced-motion:reduce){.df-native *,.df-native *::before,.df-native *::after{animation:none!important;transition:none!important}}
 /* Final component fixes from the deployed v2; retain the native app meal-name face. */
 .df-native .app .pop b{display:grid;gap:2px;background:rgba(17,17,17,.78);padding:7px 10px;font-weight:500}
@@ -429,3 +428,16 @@
 /* Keep the identifying mascot above its bottom sheet rather than over the status text. */
 .df-native .app .mascot{top:697px;width:118px;height:118px;margin-left:-59px}
 .df-native .app .plan-photo{width:54px;height:54px;border-radius:12px;align-self:start}
+/* Review portions is a real bounded sample interaction. */
+.df-native .app .lst li{cursor:default}
+.df-native .scan-portion{display:flex;gap:5px;align-items:center;flex:none;font-size:14px;color:#625d6b}
+.df-native .scan-portion input{width:66px;height:48px;padding:6px;border:1px solid #d6d2d8;border-radius:12px;text-align:right;font:500 16px/1.4 'GT Standard L',sans-serif;color:#111;background:#fff}
+.df-native .scan-portion input:focus-visible{outline:3px solid #ad410f;outline-offset:2px}
+.df-native .scan-review-label{display:flex;align-items:center;justify-content:center;flex:1;font:400 14px/1.5 'GT Standard L',sans-serif;color:#625d6b}
+.df-native .app .bandclip .band{top:-198px}
+.df-native .app #mdPin{left:0!important}
+
+/* Expand interaction areas inside the scaled device without resizing its reference UI. */
+.df-native :is(.mrow button,.run-nav button,.pk-opt,#askDinner,#logDinner,#undoDinner){position:relative}
+.df-native :is(.mrow button,.run-nav button,.pk-opt,#askDinner,#logDinner,#undoDinner)::after{content:"";position:absolute;top:50%;left:50%;width:100%;height:100%;min-width:calc(44px / var(--k,1));min-height:calc(44px / var(--k,1));transform:translate(-50%,-50%)}
+.df-native .scan-portion input{min-height:calc(44px / var(--k,1))}
