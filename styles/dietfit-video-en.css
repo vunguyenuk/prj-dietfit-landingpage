@@ -1,0 +1,124 @@
+/* EN composition follows the supplied SVG; original Dietfit mascot artwork. */
+.dietfit-video-section--en {
+  --easy-cream: #fffcf3;
+  --easy-coral: #ffa682;
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(760px, 51.5625vw, 990px);
+  padding: 100px 48px 0;
+  scroll-margin-top: 100px;
+  background: var(--easy-cream);
+  color: #110b20;
+}
+
+.dietfit-video-section--en::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 clamp(16px, 1.25vw, 24px) 15.15%;
+  border-radius: clamp(32px, 2.45vw, 47px);
+  background: var(--easy-coral);
+}
+
+.dietfit-easy__copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 400fr) minmax(0, 650fr);
+  gap: clamp(64px, 7.8125vw, 150px);
+  width: min(100%, 1200px);
+  margin-inline: auto;
+  align-items: start;
+}
+
+.dietfit-easy__copy h2 {
+  max-width: 13ch;
+  margin: 0;
+  font-size: clamp(36px, 2.5vw, 48px);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.dietfit-easy__description {
+  display: grid;
+  justify-items: start;
+  gap: 32px;
+  padding-top: 4px;
+}
+
+.dietfit-easy__description p {
+  max-width: 44ch;
+  margin: 0;
+  font-size: clamp(18px, 1.25vw, 24px);
+  line-height: 1.6;
+}
+
+.dietfit-easy__description .dietfit-button {
+  color: var(--easy-cream);
+  background: #110b20;
+}
+
+.dietfit-easy__description .dietfit-button:hover {
+  background: #35273e;
+}
+
+.dietfit-easy__mascots {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  width: min(100%, 1140px);
+  margin-inline: auto;
+  padding-bottom: 8px;
+  pointer-events: none;
+}
+
+.dietfit-easy__mascot {
+  display: block;
+  flex: 0 0 auto;
+  width: 38%;
+  height: auto;
+  object-fit: contain;
+}
+
+.dietfit-easy__mascot--meal { margin-right: -10%; }
+.dietfit-easy__mascot--workout { width: 44%; }
+.dietfit-easy__mascot--phone { margin-left: -10%; }
+
+@media (max-width: 767px) {
+  .dietfit-video-section--en {
+    min-height: 680px;
+    padding: 96px 36px 0;
+  }
+
+  .dietfit-video-section--en::before {
+    inset: 0 12px 68px;
+    border-radius: 32px;
+  }
+
+  .dietfit-easy__copy {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .dietfit-easy__copy h2 {
+    max-width: 16ch;
+    font-size: clamp(32px, 7vw, 42px);
+  }
+
+  .dietfit-easy__description { gap: 24px; padding: 0; }
+  .dietfit-easy__description p { font-size: 18px; line-height: 1.55; }
+  .dietfit-easy__mascots { bottom: 24px; width: min(100%, 440px); }
+  .dietfit-easy__mascot { width: 50%; }
+  .dietfit-easy__mascot--meal { position: relative; z-index: 1; margin-right: -30%; }
+  .dietfit-easy__mascot--workout { width: 60%; }
+  .dietfit-easy__mascot--phone { margin-left: -30%; }
+}
+
+@media (max-width: 380px) {
+  .dietfit-video-section--en { padding-inline: 28px; }
+  .dietfit-easy__description p { font-size: 17px; }
+}

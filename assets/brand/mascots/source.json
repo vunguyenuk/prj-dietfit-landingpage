@@ -1,0 +1,32 @@
+{
+  "fileKey": "odztdu7h0azn0pe8ywSkRL",
+  "sourceNode": "26398:24037",
+  "sourceUrl": "https://www.figma.com/design/odztdu7h0azn0pe8ywSkRL/Dietfit-Brand-Guidelines--re-brand-2026-?node-id=26398-24037",
+  "assets": [
+    {
+      "file": "eating-salad.png",
+      "nodeId": "26398:24142",
+      "imageNodeId": "26398:24145",
+      "name": "eating/salad",
+      "width": 2000,
+      "height": 2000
+    },
+    {
+      "file": "workout-weightlifting.png",
+      "nodeId": "26398:24170",
+      "imageNodeId": "26398:24172",
+      "name": "workout/weightlifting",
+      "width": 2000,
+      "height": 2000
+    },
+    {
+      "file": "daily-scrolling.png",
+      "nodeId": "26398:24282",
+      "imageNodeId": "26398:24284",
+      "name": "daily/scrolling",
+      "width": 2000,
+      "height": 2000
+    }
+  ],
+  "status": "Original transparent Figma PNG assets used in the EN mascot section. SVG supplied by the user defines composition; current Dietfit wording is preserved."
+}
