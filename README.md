@@ -2,6 +2,27 @@
 
 Landing page tĩnh của Dietfit, có thể mở và chỉnh sửa trực tiếp bằng Visual Studio Code.
 
+## Product story — 20/10/2026
+
+Trang Home VI và EN đã được tổ chức lại theo mạch: hiểu bữa ăn → kiểm tra nguyên liệu → Sara hiểu ngữ cảnh → meal plan → vận động và tiến độ → động lực → video app → cộng đồng → FAQ.
+
+- Giữ theme cam, trắng ấm, Be Vietnam Pro và mascot Sara. Tham khảo cách [0xcal](https://0xcal.app/) giải thích sản phẩm bằng các ví dụ cụ thể; không dùng số liệu accuracy, benchmark, testimonial hoặc cam kết của họ cho Dietfit.
+- **Hero Rive được giữ nguyên**: markup intro/Rive, `scripts/dietfit-hero.js`, `styles/dietfit-hero.css`, toàn bộ `.riv` và poster không thay đổi. Bạn vẫn export file Rive thay thế như hướng dẫn bên dưới.
+- Nội dung mới nằm trực tiếp trong `index.html` và `en/index.html`, bên dưới comment `PRODUCT STORY`.
+- `styles/dietfit-product.css`: bố cục và giao diện phần product story, được scope trong `.dietfit-product`.
+- `scripts/dietfit-product.js`: demo Deep Scan (chọn nguyên liệu, sửa gram, lưu thử), hội thoại Sara mẫu, đổi món/log Meal Plan, đổi khoảng thời gian biểu đồ và streak demo. Mọi trạng thái chỉ ở trình duyệt; không gọi AI, không gửi dữ liệu và không ghi vào tài khoản.
+- `assets/product/`: mascot và ảnh món ăn được tái sử dụng từ landing v2; ba video app do Dietfit cung cấp, đã cắt đoạn, tắt âm thanh và nén H.264. Video chỉ tải khi người xem bấm phát.
+- Các bản demo được ghi rõ là dữ liệu mẫu. Kết quả dinh dưỡng được trình bày là ước tính; Sara không thay thế tư vấn y tế.
+- Tài liệu nguồn và giới hạn đối chiếu được ghi trong `content/product-reference.md`.
+
+Preview dự án này riêng với landing v2:
+
+```bash
+python3 -m http.server 4180 --bind 127.0.0.1 --directory /Users/vunguyen/Desktop/prj-dietfit-landingpage
+```
+
+Mở `http://127.0.0.1:4180/` hoặc `/en/`. Cổng 4173 vẫn dành cho landing v2.
+
 ## Cấu trúc
 
 - `index.html`: nội dung và thứ tự các section.

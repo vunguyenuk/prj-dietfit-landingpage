@@ -44,9 +44,9 @@ PAGES = {
             "path": "/",
             "file": "index.html",
             "title": "Dietfit – App đếm calo bằng AI, chụp ảnh là biết calo",
-            "description": "Dietfit là app đếm calo bằng AI cho người Việt: chụp ảnh món ăn, AI nhận diện và tính calo, macro trong vài giây. Theo dõi cân nặng, BMR, TDEE dễ dàng.",
+            "description": "Hiểu bữa ăn cùng Dietfit: Deep Scan tách từng nguyên liệu, chỉnh khẩu phần, hỏi Sara AI Coach, lên meal plan và theo dõi vận động, tiến độ mỗi ngày.",
             "og_title": "Dietfit – Track calo bằng AI, không lo ăn sai",
-            "og_description": "Không cần cân tiểu ly. Chụp một tấm ảnh, Dietfit tính calo và dinh dưỡng cho bạn chỉ trong vài giây.",
+            "og_description": "Từ ảnh bữa ăn đến từng nguyên liệu. Thử Deep Scan, hỏi Sara AI Coach và khám phá cách Dietfit kết nối bữa ăn, vận động và mục tiêu của bạn.",
             "image": "/assets/og/og-home.jpg",
             "image_alt": "Nhóm bạn trẻ vui vẻ cầm đồ ăn — Dietfit, app đếm calo bằng AI",
         },
@@ -54,9 +54,9 @@ PAGES = {
             "path": "/en/",
             "file": "en/index.html",
             "title": "Dietfit – AI Calorie Tracker: Snap a Photo, Count Calories",
-            "description": "Dietfit is an AI calorie counter: snap a photo of your meal and get calories and macros in seconds. Track your weight, BMR and TDEE — no food scale needed.",
+            "description": "Understand your meals with Dietfit. Review Deep Scan ingredients, edit portions, ask Sara AI Coach, plan meals, and follow your activity and progress.",
             "og_title": "Dietfit – Track calories with AI, no guesswork",
-            "og_description": "No food scale needed. Snap one photo and Dietfit works out the calories and nutrition for you in seconds.",
+            "og_description": "From a meal photo to individual ingredients. Try Deep Scan, meet Sara AI Coach and see how Dietfit connects your meals, activity and goal.",
             "image": "/assets/og/og-home.jpg",
             "image_alt": "Friends laughing and holding food — Dietfit, the AI calorie tracker",
         },
@@ -228,7 +228,7 @@ def inject(page_html, block):
 # Trang chủ: FAQ lấy trực tiếp từ HTML để luôn khớp với nội dung hiển thị.
 # --------------------------------------------------------------------------
 def faq_from_html(page_html):
-    items = re.findall(r"<summary>(.*?)<span[^>]*></span></summary>\s*<p>(.*?)</p>", page_html, re.S)
+    items = re.findall(r"<summary>(.*?)</summary>\s*<p>(.*?)</p>", page_html, re.S)
     clean = lambda s: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).strip()
     return [
         {"@type": "Question", "name": clean(q), "acceptedAnswer": {"@type": "Answer", "text": clean(a)}}
