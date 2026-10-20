@@ -17,7 +17,8 @@ Content progression was informed by https://0xcal.app/ (reviewed 20 October 2026
 
 ## Evidence boundaries
 
-- The Figma connector reported missing access to file `ME5fBUsja6zeetzKPGUZPE`. No Figma node was invented, and the implementation does not claim a pixel-perfect match to inaccessible frames. The app UI is grounded in the supplied recordings and landing v2.
+- The supplied Figma page is [Scan Meal Flow + Meal Detail](https://www.figma.com/design/ME5fBUsja6zeetzKPGUZPE/Prj-DietFit---Production-Sync?node-id=25395-22061). Its public web view is accessible. Visual review found Ingredients (`36888:104806`, 375×812) and a Meal Detail group containing both Current and New variants (`30487:121567`). The Ingredients design shows food pins with gram weights, ingredient thumbnails and a calculate-calories action; the supplied newer recording shows outlines and calories per ingredient. The website demonstration intentionally follows the supplied recording/v2 flow, as requested, rather than combining states from different variants.
+- The Figma connector still rejects `get_design_context` for this file because its authenticated account lacks edit access. No exact design-token or asset export is claimed. Browser viewing does not provide the missing connector permissions; precise Figma implementation remains pending that access.
 - Ingredient weights and macros in interactive examples are sample values. Calorie changes are proportional to edited weights; no accuracy percentage is claimed.
 - Home values (2,329 goal, 460 consumed, 7,698 steps, 1h 24m run, 7h 16m sleep) are demo context from v2/the recording. The weight graph is clearly labeled illustrative and is not a user result or a weight-loss promise.
 - A meal plan does not count as a logged meal until the visitor presses its log button. Swapping a previously logged sample clears that meal's logged state.
