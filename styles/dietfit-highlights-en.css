@@ -1,0 +1,60 @@
+/* English-only art direction. VI continues to use the original flattened cards.
+   Text and charts are inline SVG, so they inherit the site's Be Vietnam Pro font. */
+.dietfit-highlights--en .dietfit-card-en {
+  isolation: isolate;
+  aspect-ratio: 4 / 5;
+  min-height: 0;
+  height: auto;
+  background-color: #d7d1c9;
+}
+.dietfit-card-en .dietfit-card-copy { padding: clamp(1.5rem, 2.8vw, 2.5rem); }
+.dietfit-card-en .dietfit-card-copy h2 { max-width: 24ch; }
+.dietfit-card-en .dietfit-card-copy p { max-width: 42ch; }
+.dietfit-card-en .df-card-ui {
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+  font-family: var(--dietfit-font);
+  font-variant-numeric: tabular-nums;
+}
+.dietfit-card-en.df-highlight--dashboard { background: linear-gradient(160deg, #fff2e9, #fffcfa 80%); }
+.dietfit-card-en .df-card-ui--dashboard { top: 31%; bottom: auto; }
+.dietfit-card-en.df-highlight--nutrition::before {
+  background: linear-gradient(180deg, rgb(246 239 232 / 94%), rgb(246 239 232 / 48%) 25%, transparent 45%);
+}
+.dietfit-card-en.df-highlight--science::before,
+.dietfit-card-en.df-highlight--streak::before,
+.dietfit-card-en.df-highlight--health::before,
+.dietfit-card-en.df-highlight--progress::before {
+  background: linear-gradient(180deg, rgb(17 11 32 / 65%), rgb(17 11 32 / 22%) 29%, transparent 46%);
+}
+@media (min-width: 768px) {
+  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-carousel { flex: 0 1 auto; }
+  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en {
+    flex: 0 0 min(42rem, calc(100vw - 5rem), calc((100svh - 10rem) * .8));
+    height: auto;
+    min-height: 0;
+    align-self: stretch;
+  }
+}
+@media (max-width: 767px) {
+  .dietfit-highlights--en .dietfit-card-en { aspect-ratio: 5 / 8; }
+  .dietfit-card-en .dietfit-card-copy { padding: 1.5rem; gap: .65rem; }
+  .dietfit-card-en .dietfit-card-copy h2 { font-size: 1.65rem; }
+  .dietfit-card-en .dietfit-card-copy p { font-size: .95rem; line-height: 1.5; }
+  .dietfit-card-en .df-card-ui--dashboard { top: 33%; }
+}
+.dietfit-card-en .df-card-photo-ui {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  font-family: var(--dietfit-font);
+}

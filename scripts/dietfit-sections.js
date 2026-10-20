@@ -20,18 +20,32 @@
 
   function updateControls() {
     previous.disabled = carousel.scrollLeft <= 2;
-    next.disabled = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 2;
+    if (highlights && highlights.classList.contains('dietfit-highlights--en')) {
+      const items = cards();
+      const padding = parseFloat(getComputedStyle(carousel).scrollPaddingLeft) || 0;
+      const lastPosition = items.length ? items[items.length - 1].offsetLeft - padding : 0;
+      const end = Math.min(lastPosition, carousel.scrollWidth - carousel.clientWidth);
+      next.disabled = carousel.scrollLeft >= end - 2;
+    } else {
+      next.disabled = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 2;
+    }
   }
 
   function move(direction) {
     const items = cards();
     const current = carousel.scrollLeft;
     const padding = parseFloat(getComputedStyle(carousel).scrollPaddingLeft) || 0;
+    // EN card widths adapt to viewport height. Ignore the small end-padding
+    // offset so a mobile Previous click moves to the preceding card immediately.
+    const isEnglishHighlights = highlights && highlights.classList.contains('dietfit-highlights--en');
+    const tolerance = isEnglishHighlights ? 24 : 2;
     const target = direction > 0
-      ? items.find(function (card) { return card.offsetLeft - padding > current + 2; })
-      : items.reverse().find(function (card) { return card.offsetLeft - padding < current - 2; });
+      ? items.find(function (card) { return card.offsetLeft - padding > current + tolerance; })
+      : items.reverse().find(function (card) { return card.offsetLeft - padding < current - tolerance; });
     if (!target) return;
-    const targetLeft = target.offsetLeft - padding;
+    const targetLeft = isEnglishHighlights
+      ? Math.min(Math.max(0, target.offsetLeft - padding), Math.max(0, carousel.scrollWidth - carousel.clientWidth))
+      : target.offsetLeft - padding;
     if (scrubEnabled && highlights && sticky) {
       const sectionTop = highlights.getBoundingClientRect().top + window.scrollY;
       const verticalRange = highlights.offsetHeight - sticky.offsetHeight;
