@@ -32,12 +32,17 @@
 .df-text-link { display: inline-flex; align-items: center; gap: 12px; color: var(--df-ink); font-weight: 600; font-size: .9rem; text-decoration: none; }
 .df-text-link:hover .df-arrow { transform: translateX(3px); }
 .df-introduction { padding-top: 5rem; }
-.df-welcome { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
+.df-welcome { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(40px,6vw,96px); }
 .df-welcome h2 { max-width: 15ch; }
 .df-welcome .df-lead { margin-top: 1.5rem; max-width: 58ch; }
-.df-mascot-intro { display: grid; justify-items: center; gap: 16px; width: 180px; }
-.df-mascot-intro img { display: block; width: 131px; height: 175px; object-fit: contain; }
-.df-mascot-intro figcaption { padding: 7px 14px; border: 1px solid #e5d4c8; border-radius: 99px; font-size: .72rem; font-weight: 500; }
+/* People carry the everyday story; Sara appears beside an action or transition. */
+.df-life-intro { min-width: 0; }
+.df-life-photo { display: block; width: 100%; height: auto; aspect-ratio: 5/4; object-fit: cover; object-position: 50% 36%; border-radius: 32px; }
+.df-guide-welcome { position: relative; display: grid; grid-template-columns: 1fr 88px; align-items: end; gap: 12px; margin: -52px 20px 0 !important; }
+.df-guide-welcome > span { display: grid; gap: 6px; padding: 16px 20px; border: 1px solid #f0dfd2; border-radius: 20px 20px 4px 20px; background: var(--df-paper); }
+.df-guide-welcome small { color: #a94522; font-size: .68rem; font-weight: 500; }
+.df-guide-welcome strong { font-size: .86rem; font-weight: 500; line-height: 1.5; }
+.df-guide-welcome img { display: block; width: 88px; height: 118px; object-fit: contain; }
 .df-story-nav { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--df-line); }
 .df-story-nav a { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 14px; color: inherit; text-decoration: none; }
 .df-story-nav .df-n { color: #a94522; font-size: .8rem; padding-top: 4px; }
@@ -60,6 +65,10 @@
 .df-demo-tag { display: flex; align-items: center; gap: 7px; color: #8a523b; font-size: .7rem; font-weight: 500; letter-spacing: .03em; }
 .df-demo-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #a94522; }
 .df-demo-display > .df-note { text-align: center; max-width: 38ch; }
+.df-guide-tip { display: flex; align-items: center; gap: 16px; width: min(100%,340px); padding-top: 8px; }
+.df-guide-tip img { flex: 0 0 58px; width: 58px; height: 78px; object-fit: contain; }
+.df-guide-tip strong { display: block; font-size: .83rem; font-weight: 600; margin-bottom: 5px; }
+.df-guide-tip p { color: #79523e; font-size: .76rem; line-height: 1.6; }
 .df-phone {
   position: relative; width: 340px; max-width: 100%; aspect-ratio: 395/832; overflow: hidden;
   border: 7px solid #1d1b19; border-radius: 46px; background: #fff;
@@ -230,7 +239,11 @@
 .df-motivation .df-lead { color: #612914; }
 .df-habit-aside { max-width: 49ch; color: #612914; font-size: .86rem; line-height: 1.7; }
 .df-motivation-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center; }
-.df-motivation .df-coach-profile img { width: 110px; height: 140px; }
+.df-habit-encouragement { font-size: .95rem; font-weight: 600; }
+.df-habit-scene { min-width: 0; }
+.df-guide-cheer { display: flex; align-items: center; justify-content: end; gap: 16px; padding-inline: 24px; margin-bottom: -16px !important; position: relative; z-index: 1; pointer-events: none; }
+.df-guide-cheer img { width: 106px; height: 119px; object-fit: contain; transform: rotate(5deg); }
+.df-guide-cheer figcaption { max-width: 21ch; padding: 14px 18px; border-radius: 18px 18px 3px 18px; background: #fff8f0; font-size: .8rem; font-weight: 500; line-height: 1.6; }
 .df-habit-ui { padding: 32px; border-radius: 32px; background: #fff8f0; }
 .df-habit-head { display: flex; gap: 20px; justify-content: space-between; align-items: center; }
 .df-habit-head strong { font-size: 3rem; letter-spacing: -.06em; line-height: 1; font-weight: 600; }
@@ -263,6 +276,15 @@
 .df-community { background: #fff8f0; }
 .df-community-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
 .df-community-heading .df-lead { margin-bottom: 4px; }
+.df-community-life { display: grid; grid-template-columns: 1.65fr .65fr; gap: 48px; align-items: start; margin-top: 48px; }
+.df-friends-story > img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 28px; }
+.df-friends-story figcaption { display: grid; gap: 8px; padding-top: 24px; }
+.df-friends-story figcaption strong { font-size: clamp(1.2rem,2vw,1.65rem); font-weight: 500; letter-spacing: -.035em; }
+.df-friends-story figcaption span { color: var(--df-muted); font-size: .87rem; }
+.df-partner-story { min-width: 0; }
+.df-partner-story video { display: block; width: 100%; aspect-ratio: 9/16; object-fit: contain; border-radius: 24px; background: #211c19; }
+.df-partner-label { margin-top: 20px !important; color: var(--df-muted); font-size: .75rem; }
+.df-partner-story .df-text-link { margin-top: 8px; font-size: .8rem; line-height: 1.6; }
 .df-community-links { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
 .df-community-links a { display: grid; grid-template-columns: 90px 1fr auto; gap: 24px; align-items: center; padding-block: 24px; border-top: 1px solid #e2d6c9; border-bottom: 1px solid #e2d6c9; text-decoration: none; color: inherit; }
 .df-community-links img { width: 90px; height: 90px; object-fit: cover; border-radius: 18px; }
@@ -279,10 +301,16 @@
 .df-faq details[open] summary::after { content: '−'; }
 .df-faq details p { max-width: 62ch; padding-bottom: 24px; color: var(--df-muted); font-size: .9rem; }
 .df-download { padding: 0 0 48px; background: #fff; }
-.df-download-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; padding: clamp(32px,6vw,80px); border-radius: 40px; background: #ffe4d3; }
+.df-download-inner { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; overflow: hidden; border-radius: 40px; background: #ffe4d3; }
+.df-download-copy { padding: clamp(32px,5vw,72px); }
+.df-download-scene { position: relative; min-width: 0; min-height: 480px; }
+.df-download-scene .df-download-photo { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 52% 50%; }
+.df-guide-farewell { position: absolute; inset: auto 24px 24px; display: flex; align-items: end; gap: 16px; }
+.df-guide-farewell img { width: 98px; height: 110px; object-fit: contain; flex: 0 0 auto; }
+.df-guide-farewell > span { padding: 16px 20px; border-radius: 18px 18px 18px 3px; background: #fffbf7; color: var(--df-ink); font-size: .83rem; font-weight: 500; line-height: 1.6; }
+.df-guide-farewell small { display: block; margin-top: 5px; color: #a94522; font-size: .68rem; }
 .df-download h2 { max-width: 14ch; }
 .df-download .df-lead { margin: 24px 0; }
-.df-download img { width: 156px; height: 175px; object-fit: contain; }
 .df-footer { padding: 48px 0 32px; background: #fff; }
 .df-footer-top { display: flex; align-items: start; justify-content: space-between; gap: 48px; }
 .df-footer-brand img { width: 132px; height: auto; }
@@ -303,6 +331,7 @@
   .df-health-board { padding: 32px; gap: 32px; }
   .df-motivation-grid { gap: 40px; }
   .df-faq-layout { gap: 48px; }
+  .df-community-life { gap: 32px; }
   .df-community-links a { grid-template-columns: 64px 1fr auto; gap: 16px; }
   .df-community-links img { width: 64px; height: 64px; }
 }
@@ -312,8 +341,11 @@
   .dietfit-product h2 { font-size: clamp(2.1rem,8.7vw,3.25rem); letter-spacing: -.045em; }
   .df-welcome { grid-template-columns: 1fr; gap: 32px; }
   .df-welcome h2 { max-width: 15ch; }
-  .df-mascot-intro { grid-template-columns: auto 1fr; justify-items: start; align-items: center; gap: 18px; width: auto; }
-  .df-mascot-intro img { width: 73px; height: 98px; }
+  .df-life-photo { aspect-ratio: 5/4; border-radius: 24px; }
+  .df-guide-welcome { margin: -40px 14px 0 !important; grid-template-columns: 1fr 70px; gap: 10px; }
+  .df-guide-welcome > span { padding: 14px 16px; }
+  .df-guide-welcome img { width: 70px; height: 94px; }
+  .df-guide-welcome strong { font-size: .78rem; }
   .df-story-nav { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; padding-top: 24px; }
   .df-story-nav a { gap: 14px; }
   .df-story-nav strong { font-size: .95rem; }
@@ -346,12 +378,23 @@
   .df-recording-media { padding: 20px; }
   .df-recording video { max-width: 210px; }
   .df-community-heading { grid-template-columns: 1fr; gap: 24px; }
+  .df-community-life { grid-template-columns: 1fr; gap: 40px; margin-top: 32px; }
+  .df-friends-story > img { border-radius: 24px; }
+  .df-friends-story figcaption { padding-top: 20px; }
+  .df-partner-story { width: min(100%,280px); justify-self: center; }
+  .df-guide-cheer { padding-inline: 12px; gap: 12px; }
+  .df-guide-cheer img { width: 90px; height: 101px; }
+  .df-guide-cheer figcaption { font-size: .76rem; }
   .df-community-links { grid-template-columns: 1fr; gap: 0; margin-top: 32px; }
   .df-community-links a + a { border-top: 0; }
   .df-faq-layout { grid-template-columns: 1fr; gap: 32px; }
   .df-faq summary { font-size: .94rem; padding-block: 20px; }
-  .df-download-inner { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; border-radius: 28px; }
-  .df-download img { width: 110px; height: 124px; }
+  .df-download-inner { grid-template-columns: 1fr; border-radius: 28px; }
+  .df-download-copy { padding: 36px 24px; }
+  .df-download-scene { min-height: 300px; }
+  .df-guide-farewell { inset: auto 16px 16px; gap: 12px; }
+  .df-guide-farewell img { width: 76px; height: 85px; }
+  .df-guide-farewell > span { padding: 12px 16px; font-size: .76rem; }
   .df-footer-top { display: grid; gap: 24px; }
   .df-footer-nav { gap: 18px; }
   .df-footer-legal { display: grid; gap: 8px; margin-top: 32px; }

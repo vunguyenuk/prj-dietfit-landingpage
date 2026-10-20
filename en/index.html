@@ -168,8 +168,8 @@
   <link rel="stylesheet" href="/styles/dietfit-social.css?v=7">
   <link rel="stylesheet" href="/styles/dietfit-mobile-menu.css?v=1">
   <link rel="stylesheet" href="/styles/dietfit-lang-switch.css?v=1">
-  <meta name="dietfit-source-revision" content="product-story-v1">
-  <link rel="stylesheet" href="/styles/dietfit-product.css?v=1">
+  <meta name="dietfit-source-revision" content="product-story-v2-people">
+  <link rel="stylesheet" href="/styles/dietfit-product.css?v=2">
 </head>
 
 <body>
@@ -261,10 +261,11 @@
                 Go beyond counting calories. Dietfit brings your food, activity and goal together, giving everyday choices more context. Let Sara show you around.
               </p>
             </div>
-            <figure class="df-mascot-intro">
-              <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, your Dietfit AI companion" width="131" height="175" loading="lazy">
-              <figcaption>
-                Sara · Your AI Coach
+            <figure class="df-life-intro">
+              <img class="df-life-photo" src="/assets/cards/dietfit-card-1-v4.webp" alt="A woman smiling while checking her phone" width="1280" height="1600" loading="lazy" decoding="async">
+              <figcaption class="df-guide-welcome">
+                <span><small>Sara · AI Coach</small><strong>Let’s start with your next meal.</strong></span>
+                <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, your Dietfit AI companion" width="131" height="175" loading="lazy" decoding="async">
               </figcaption>
             </figure>
           </div>
@@ -686,9 +687,11 @@
               <span class="df-home-line" aria-hidden="true">
               </span>
             </div>
-            <p class="df-note">
-              Try the feature · sample meal
-            </p>
+            <aside class="df-guide-tip" aria-label="A tip from Sara">
+              <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, your Dietfit AI companion" width="131" height="175" loading="lazy" decoding="async">
+              <div><strong>Try it with Sara</strong><p>Take a sample scan, then tap an ingredient to inspect it.</p></div>
+            </aside>
+            <p class="df-note">Interactive example · sample meal</p>
           </div>
         </div>
       </section>
@@ -1247,94 +1250,90 @@
             <p class="df-lead">
               One meal logged. One streak kept. Challenges and Fitpoints give small daily actions a little more joy, with Sara by your side.
             </p>
-            <div class="df-coach-profile">
-              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy">
-              <div>
-                <strong>
-                  Every return counts.
-                </strong>
-                <span>
-                  Streaks · Challenges · Fitpoints
-                </span>
-              </div>
-            </div>
+            <p class="df-habit-encouragement">Every time you come back counts.</p>
             <p class="df-habit-aside">On your Home Screen: check calories and macros with Standard Widget, or share progress with someone you choose using Widget 1:1.</p>
           </div>
-          <div class="df-habit-ui">
-            <div class="df-habit-head">
-              <div>
-                <strong>
-                  <span id="df-streak-count">
-                    6
-                  </span>
-                  days
-                </strong>
-                <small>
-                  Your streak
-                </small>
+          <div class="df-habit-scene">
+            <figure class="df-guide-cheer">
+              <figcaption>One meal at a time. You’ve got this!</figcaption>
+              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy" decoding="async">
+            </figure>
+            <div class="df-habit-ui">
+              <div class="df-habit-head">
+                <div>
+                  <strong>
+                    <span id="df-streak-count">
+                      6
+                    </span>
+                    days
+                  </strong>
+                  <small>
+                    Your streak
+                  </small>
+                </div>
+                <span class="df-demo-tag">
+                  Demo
+                </span>
               </div>
-              <span class="df-demo-tag">
-                Demo
-              </span>
+              <div class="df-streak-days">
+                <span >
+                  Sun
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  Mon
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  Tue
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  Wed
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  Thu
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  Fri
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span id="df-streak-today">
+                  Sat
+                  <b>
+                    +
+                  </b>
+                </span>
+              </div>
+              <button type="button" id="df-habit-log" aria-pressed="false">
+                Try logging today’s meal →
+              </button>
+              <div class="df-habit-foot">
+                <span id="df-habit-reward">
+                  Challenge: log today’s meal
+                </span>
+                <span>
+                  Fitpoints ✦
+                </span>
+              </div>
+              <p class="df-note">
+                In the app, Fitpoints can be used for Streak Shield and Restore. This demo does not add account rewards.
+              </p>
             </div>
-            <div class="df-streak-days">
-              <span >
-                Sun
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                Mon
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                Tue
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                Wed
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                Thu
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                Fri
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span id="df-streak-today">
-                Sat
-                <b>
-                  +
-                </b>
-              </span>
-            </div>
-            <button type="button" id="df-habit-log" aria-pressed="false">
-              Try logging today’s meal →
-            </button>
-            <div class="df-habit-foot">
-              <span id="df-habit-reward">
-                Challenge: log today’s meal
-              </span>
-              <span>
-                Fitpoints ✦
-              </span>
-            </div>
-            <p class="df-note">
-              In the app, Fitpoints can be used for Streak Shield and Restore. This demo does not add account rewards.
-            </p>
           </div>
         </div>
       </section>
@@ -1491,6 +1490,19 @@
               Share a meal, ask a question, find some encouragement. The in-app Social Feed is available for the community in Vietnam. You can also meet the Dietfit community here.
             </p>
           </div>
+          <div class="df-community-life">
+            <figure class="df-friends-story">
+              <img src="/assets/images/final-cta.webp" alt="Friends enjoying food together outdoors" width="1448" height="1086" loading="lazy" decoding="async">
+              <figcaption><strong>Good food. Good company. Your own pace.</strong><span>Better habits can still leave room for meals with friends.</span></figcaption>
+            </figure>
+            <article class="df-partner-story">
+              <video controls playsinline preload="none" poster="/assets/social/nguyen-tra-my-dietfit-facebook.jpg" data-product-recording aria-label="Food diary video from Nguyễn Trà My, Dietfit Partner">
+                <source src="/assets/social/nguyen-tra-my-dietfit-facebook.mp4" type="video/mp4">
+              </video>
+              <p class="df-partner-label">A glimpse into a food diary</p>
+              <a class="df-text-link" href="https://www.facebook.com/watch/?v=3172002049663567" target="_blank" rel="noopener noreferrer">Nguyễn Trà My · Dietfit Partner <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
           <div class="df-community-links">
             <a href="https://www.facebook.com/groups/2085834865680742" target="_blank" rel="noopener noreferrer">
               <img src="/assets/community/community-dietfit-users.webp" alt="" width="90" height="90" loading="lazy">
@@ -1604,7 +1616,7 @@
       </section>
       <section class="df-download" aria-labelledby="df-download-title">
         <div class="df-container df-download-inner">
-          <div>
+          <div class="df-download-copy">
             <span class="df-eyebrow">
               With Sara, start at your next meal
             </span>
@@ -1622,7 +1634,13 @@
               Get Dietfit for iPhone ↗
             </a>
           </div>
-          <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy">
+          <figure class="df-download-scene">
+            <img class="df-download-photo" src="/assets/images/dietfit-about-cta-v2.webp" alt="A man relaxing on a sofa while checking his phone" width="1672" height="941" loading="lazy" decoding="async">
+            <figcaption class="df-guide-farewell">
+              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy" decoding="async">
+              <span>See you at your next meal!<small>Sara · Dietfit</small></span>
+            </figcaption>
+          </figure>
         </div>
       </section>
       <footer class="df-footer">

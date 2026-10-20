@@ -28,3 +28,17 @@ Content progression was informed by https://0xcal.app/ (reviewed 20 October 2026
 ## Editing and validation
 
 Both home pages contain editable semantic HTML; the script only controls the demonstrations. Keep their content synchronized. Rebuild SEO/FAQ data with `python3 tools/build.py` after content changes. Verify the original Rive files, script, stylesheet and hero markup remain unchanged when editing the product story.
+
+
+## Mascot and human imagery pass — 20 October 2026
+
+The supplied local Gaia capture was reviewed for composition: characters peek at section edges, direct attention to a product action, and change scale with their role. Dietfit keeps its own palette, typography, Sara artwork and product UI; no Gaia brand assets or scripts are included.
+
+- Introduction: restore the original high-resolution woman-with-phone photograph, with Sara greeting the visitor at its lower edge.
+- Scan: place Sara below the phone as an instruction companion, clear of the interactive UI.
+- Coach: retain Sara as the conversation identity and contextual guide.
+- Motivation: move Sara onto the edge of the streak board with an encouraging speech bubble.
+- Community: restore the original group photograph and Nguyễn Trà My partner video, retaining attribution and native playback controls. Lifestyle photography is illustrative; no fabricated testimonial or result is added.
+- Download: restore an everyday phone-use scene beside the CTA, with Sara saying goodbye.
+
+Both VI and EN home pages share this composition. Existing raster mascots stay at or below their source dimensions. The original Rive hero, demo logic, About and Blog pages remain unchanged. The supplied Gaia capture stays untracked as a reference folder and is not part of the production change.

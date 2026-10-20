@@ -168,8 +168,8 @@
   <link rel="stylesheet" href="./styles/dietfit-social.css?v=7">
   <link rel="stylesheet" href="./styles/dietfit-mobile-menu.css?v=1">
   <link rel="stylesheet" href="./styles/dietfit-lang-switch.css?v=1">
-  <meta name="dietfit-source-revision" content="product-story-v1">
-  <link rel="stylesheet" href="/styles/dietfit-product.css?v=1">
+  <meta name="dietfit-source-revision" content="product-story-v2-people">
+  <link rel="stylesheet" href="/styles/dietfit-product.css?v=2">
 </head>
 
 <body>
@@ -261,10 +261,11 @@
                 Không dừng lại ở việc đếm calo. Dietfit nối bữa ăn, vận động và mục tiêu của bạn để mỗi lựa chọn đều có thêm cơ sở. Cùng Sara xem thử nhé.
               </p>
             </div>
-            <figure class="df-mascot-intro">
-              <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, người bạn AI của Dietfit" width="131" height="175" loading="lazy">
-              <figcaption>
-                Sara · AI Coach của bạn
+            <figure class="df-life-intro">
+              <img class="df-life-photo" src="/assets/cards/dietfit-card-1-v4.webp" alt="Cô gái mỉm cười khi xem điện thoại" width="1280" height="1600" loading="lazy" decoding="async">
+              <figcaption class="df-guide-welcome">
+                <span><small>Sara · AI Coach</small><strong>Bắt đầu từ bữa ăn của bạn nhé.</strong></span>
+                <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, người bạn AI của Dietfit" width="131" height="175" loading="lazy" decoding="async">
               </figcaption>
             </figure>
           </div>
@@ -686,9 +687,11 @@
               <span class="df-home-line" aria-hidden="true">
               </span>
             </div>
-            <p class="df-note">
-              Trải nghiệm tính năng · bữa ăn mẫu
-            </p>
+            <aside class="df-guide-tip" aria-label="Gợi ý từ Sara">
+              <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, người bạn AI của Dietfit" width="131" height="175" loading="lazy" decoding="async">
+              <div><strong>Thử ngay cùng Sara</strong><p>Chụp thử, rồi chạm từng nguyên liệu để kiểm tra nhé.</p></div>
+            </aside>
+            <p class="df-note">Trải nghiệm tính năng · bữa ăn mẫu</p>
           </div>
         </div>
       </section>
@@ -1247,94 +1250,90 @@
             <p class="df-lead">
               Một bữa được log. Một streak được giữ. Thử thách và Fitpoints giúp những việc nhỏ hằng ngày có thêm niềm vui, cùng người bạn Sara luôn ở bên.
             </p>
-            <div class="df-coach-profile">
-              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, người bạn AI của Dietfit" width="156" height="175" loading="lazy">
-              <div>
-                <strong>
-                  Mỗi lần quay lại đều đáng ghi nhận.
-                </strong>
-                <span>
-                  Streak · Challenges · Fitpoints
-                </span>
-              </div>
-            </div>
+            <p class="df-habit-encouragement">Mỗi lần quay lại đều đáng ghi nhận.</p>
             <p class="df-habit-aside">Ngay trên Home Screen: xem calo, macro với Standard Widget, hoặc chia sẻ tiến độ với người bạn chọn qua Widget 1:1.</p>
           </div>
-          <div class="df-habit-ui">
-            <div class="df-habit-head">
-              <div>
-                <strong>
-                  <span id="df-streak-count">
-                    6
-                  </span>
-                  ngày
-                </strong>
-                <small>
-                  Streak của bạn
-                </small>
+          <div class="df-habit-scene">
+            <figure class="df-guide-cheer">
+              <figcaption>Từng bữa một, mình làm được!</figcaption>
+              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, người bạn AI của Dietfit" width="156" height="175" loading="lazy" decoding="async">
+            </figure>
+            <div class="df-habit-ui">
+              <div class="df-habit-head">
+                <div>
+                  <strong>
+                    <span id="df-streak-count">
+                      6
+                    </span>
+                    ngày
+                  </strong>
+                  <small>
+                    Streak của bạn
+                  </small>
+                </div>
+                <span class="df-demo-tag">
+                  Bản demo
+                </span>
               </div>
-              <span class="df-demo-tag">
-                Bản demo
-              </span>
+              <div class="df-streak-days">
+                <span >
+                  CN
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  T2
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  T3
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  T4
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  T5
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span >
+                  T6
+                  <b>
+                    ✓
+                  </b>
+                </span>
+                <span id="df-streak-today">
+                  T7
+                  <b>
+                    +
+                  </b>
+                </span>
+              </div>
+              <button type="button" id="df-habit-log" aria-pressed="false">
+                Log thử bữa hôm nay →
+              </button>
+              <div class="df-habit-foot">
+                <span id="df-habit-reward">
+                  Thử thách: log bữa hôm nay
+                </span>
+                <span>
+                  Fitpoints ✦
+                </span>
+              </div>
+              <p class="df-note">
+                Trong app, bạn có thể dùng Fitpoints cho Streak Shield và Restore. Demo không tạo phần thưởng trên tài khoản.
+              </p>
             </div>
-            <div class="df-streak-days">
-              <span >
-                CN
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                T2
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                T3
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                T4
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                T5
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span >
-                T6
-                <b>
-                  ✓
-                </b>
-              </span>
-              <span id="df-streak-today">
-                T7
-                <b>
-                  +
-                </b>
-              </span>
-            </div>
-            <button type="button" id="df-habit-log" aria-pressed="false">
-              Log thử bữa hôm nay →
-            </button>
-            <div class="df-habit-foot">
-              <span id="df-habit-reward">
-                Thử thách: log bữa hôm nay
-              </span>
-              <span>
-                Fitpoints ✦
-              </span>
-            </div>
-            <p class="df-note">
-              Trong app, bạn có thể dùng Fitpoints cho Streak Shield và Restore. Demo không tạo phần thưởng trên tài khoản.
-            </p>
           </div>
         </div>
       </section>
@@ -1491,6 +1490,19 @@
               Chia sẻ bữa ăn, hỏi điều chưa rõ, tìm thêm động lực. Social Feed trong app dành cho cộng đồng tại Việt Nam. Bạn cũng có thể gặp những người bạn của Dietfit ở đây.
             </p>
           </div>
+          <div class="df-community-life">
+            <figure class="df-friends-story">
+              <img src="/assets/images/final-cta.webp" alt="Nhóm bạn cùng thưởng thức bữa ăn ngoài trời" width="1448" height="1086" loading="lazy" decoding="async">
+              <figcaption><strong>Ăn ngon. Sống vui. Đi cùng nhau.</strong><span>Thói quen tốt vẫn có chỗ cho những bữa ăn cùng bạn bè.</span></figcaption>
+            </figure>
+            <article class="df-partner-story">
+              <video controls playsinline preload="none" poster="/assets/social/nguyen-tra-my-dietfit-facebook.jpg" data-product-recording aria-label="Video nhật ký ăn uống của Nguyễn Trà My, Dietfit Partner">
+                <source src="/assets/social/nguyen-tra-my-dietfit-facebook.mp4" type="video/mp4">
+              </video>
+              <p class="df-partner-label">Một góc nhật ký ăn uống</p>
+              <a class="df-text-link" href="https://www.facebook.com/watch/?v=3172002049663567" target="_blank" rel="noopener noreferrer">Nguyễn Trà My · Dietfit Partner <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
           <div class="df-community-links">
             <a href="https://www.facebook.com/groups/2085834865680742" target="_blank" rel="noopener noreferrer">
               <img src="/assets/community/community-dietfit-users.webp" alt="" width="90" height="90" loading="lazy">
@@ -1604,7 +1616,7 @@
       </section>
       <section class="df-download" aria-labelledby="df-download-title">
         <div class="df-container df-download-inner">
-          <div>
+          <div class="df-download-copy">
             <span class="df-eyebrow">
               Cùng Sara, bắt đầu từ bữa tới
             </span>
@@ -1622,7 +1634,13 @@
               Tải Dietfit cho iPhone ↗
             </a>
           </div>
-          <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, người bạn AI của Dietfit" width="156" height="175" loading="lazy">
+          <figure class="df-download-scene">
+            <img class="df-download-photo" src="/assets/images/dietfit-about-cta-v2.webp" alt="Chàng trai ngồi thư giãn trên sofa, xem điện thoại" width="1672" height="941" loading="lazy" decoding="async">
+            <figcaption class="df-guide-farewell">
+              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, người bạn AI của Dietfit" width="156" height="175" loading="lazy" decoding="async">
+              <span>Bữa tới, gặp nhau nhé!<small>Sara · Dietfit</small></span>
+            </figcaption>
+          </figure>
         </div>
       </section>
       <footer class="df-footer">

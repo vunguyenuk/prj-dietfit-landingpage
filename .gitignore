@@ -5,3 +5,6 @@
 # Reference captures of third-party sites — never ship or commit these.
 shinta-clone/
 website-capture/
+
+# Supplied Gaia composition reference.
+gaiababy-app-2026-10-20T05-25-29-151Z/
