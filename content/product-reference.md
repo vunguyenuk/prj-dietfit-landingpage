@@ -19,10 +19,10 @@ Content progression was informed by https://0xcal.app/ (reviewed 20 October 2026
 
 - The supplied Figma page is [Scan Meal Flow + Meal Detail](https://www.figma.com/design/ME5fBUsja6zeetzKPGUZPE/Prj-DietFit---Production-Sync?node-id=25395-22061). Its public web view is accessible. Visual review found Ingredients (`36888:104806`, 375×812) and a Meal Detail group containing both Current and New variants (`30487:121567`). The Ingredients design shows food pins with gram weights, ingredient thumbnails and a calculate-calories action; the supplied newer recording shows outlines and calories per ingredient. The website demonstration intentionally follows the supplied recording/v2 flow, as requested, rather than combining states from different variants.
 - The Figma connector still rejects `get_design_context` for this file because its authenticated account lacks edit access. No exact design-token or asset export is claimed. Browser viewing does not provide the missing connector permissions; precise Figma implementation remains pending that access.
-- Ingredient weights and macros in interactive examples are sample values. Calorie changes are proportional to edited weights; no accuracy percentage is claimed.
+- Ingredient weights and macros in the UI replay are sample values; no accuracy percentage is claimed.
 - Home values (2,329 goal, 460 consumed, 7,698 steps, 1h 24m run, 7h 16m sleep) are demo context from v2/the recording. The weight graph is clearly labeled illustrative and is not a user result or a weight-loss promise.
 - A meal plan does not count as a logged meal until the visitor presses its log button. Swapping a previously logged sample clears that meal's logged state.
-- Streak interaction changes sample browser state only. It does not grant real Fitpoints or modify an account.
+- Streaks and projections shown in the widget are sample values, not real account rewards or guaranteed results.
 - Community destinations remain the Dietfit links present in the original project. There are no invented reviews, expert endorsements, growth figures or benchmark claims.
 
 ## Editing and validation
@@ -30,31 +30,20 @@ Content progression was informed by https://0xcal.app/ (reviewed 20 October 2026
 Both home pages contain editable semantic HTML; the script only controls the demonstrations. Keep their content synchronized. Rebuild SEO/FAQ data with `python3 tools/build.py` after content changes. Verify the original Rive files, script, stylesheet and hero markup remain unchanged when editing the product story.
 
 
-## Mascot and human imagery pass — 20 October 2026
+## Final reference contract — 20 October 2026
 
-The supplied local Gaia capture was reviewed for composition: characters peek at section edges, direct attention to a product action, and change scale with their role. Dietfit keeps its own palette, typography, Sara artwork and product UI; no Gaia brand assets or scripts are included.
+The user rejected the later visual reinterpretations. The current revision restores v1's actual page components and design system from `909d84a`: white backgrounds, Dietfit orange, Be Vietnam Pro, original people/photo carousel, social content, progress imagery, community and photo footer. The FAQ uses the existing v1 layout with six fact-checked product answers. The carousel reward copy now describes streaks/challenges/Fitpoints rather than the old calorie rollover claim.
 
-- Introduction: restore the original high-resolution woman-with-phone photograph, with Sara greeting the visitor at its lower edge.
-- Scan: place Sara below the phone as an instruction companion, clear of the interactive UI.
-- Coach: retain Sara as the conversation identity and contextual guide.
-- Motivation: move Sara onto the edge of the streak board with an encouraging speech bubble.
-- Community: restore the original group photograph and Nguyễn Trà My partner video, retaining attribution and native playback controls. Lifestyle photography is illustrative; no fabricated testimonial or result is added.
-- Download: restore an everyday phone-use scene beside the CTA, with Sara saying goodbye.
+Gaia supplies composition only: alternating text/device columns and Sara at selected outside edges. No Gaia assets, colors, fonts or scripts ship.
 
-Both VI and EN home pages share this composition. Existing raster mascots stay at or below their source dimensions. The original Rive hero, demo logic, About and Blog pages remain unchanged. The supplied Gaia capture stays untracked as a reference folder and is not part of the production change.
+V2's local `runner-camera-v87` and deployed https://dietfit-landing-page-v2.vercel.app/ supply the app UI and internal timelines. `dietfit-native-ui.js` adapts `phoneFlow`, `saraScene`, `dayScene`, and `runnerPhoneScene` from v2 `app.js`; CSS preserves the 395×832 device / 375×812 app coordinates inside `.df-native`. Only required food photos, app type, icon and mascot assets are copied. No global v2 stage, wheel hijacking, painted scenery, historical characters or orb page theme is imported.
 
+- Scan: camera → scanning band → colored ingredient paths/popovers → ingredient sheet → calculating → nutrition details/scroll. The plate photo, labels and 558 kcal result refer to the same sample meal.
+- Sara: typed question → sent sashimi photo → typing → word reveal → follow-up → daily summary. Sample recorded conversation, not a live AI chat.
+- Meal Plan: scroll swaps breakfast/lunch/dinner and demonstrates logging; direct Swap/Tick controls take priority. A planned meal is not counted as logged until ticked.
+- Connected Health: counters/arc/activity cards then dinner suggestions; tab selection, meal selection, log and undo use the original functional demo.
+- Widgets: staggered reveals, macro bars and trend stroke tied to chapter progress.
 
-## UI motion in the original visual theme — 20 October 2026
+Progress is driven by document scroll on desktop/tablet/mobile, in either direction. On mobile the copy leaves first and the phone pins at readable size. Stage controls provide a direct alternative, and a resume button returns to scroll control. Reduced-motion mode renders stable screens and retains controls. No timed compact autoplay substitutes for the scroll sequence.
 
-The visual direction is the original project theme: Dietfit orange, warm neutrals, Be Vietnam Pro, lifestyle photography and Sara. The user clarified that v2 is a reference for scroll behavior only. Its Neoclassical/Renaissance paintings are not used; the temporary painting assets and modules have been removed.
-
-`styles/dietfit-ui-motion.css` and `scripts/dietfit-ui-motion.js` animate only existing product UI: phones glide, gently rotate and approach their final scale; Meal Plan rows enter in sequence; the health board rises into view. Tall, wide desktop viewports also pin the Scan phone while narrative steps progress capture → identify → edit. Shorter screens and mobile use ordinary document flow with gentler movement and manual Scan controls. Any interaction takes priority over scroll animation; edited food quantities and selected views persist. Reduced-motion preferences disable this choreography. Existing Rive hero, photographs, mascot placements and working demos are preserved.
-
-
-## Visible UI choreography and visual rhythm — 20 October 2026
-
-Revision `product-story-v5-ui-choreography` replaces the subtle whole-phone tilt with layered product demonstrations. Scan uses a peach stage with ingredient and nutrition pullouts; Sara uses Dietfit's ink-purple brand color and three narrative conversation controls; Meal Plan assembles a total and two meal pullouts beside the phone. These are existing app values, not fabricated testimonials. Nutrition and Meal Plan pullouts update from the same quantities and meal selections as the phone.
-
-Wide desktop viewports pin each device stage at a size that fits its viewport, including 1280×720. Scrolling advances Scan states and Sara conversations in either direction. On compact/tablet layouts, a sufficiently visible phone starts a short sample sequence; leaving the viewport or hiding the page cancels pending transitions. Pointer, keyboard focus, clicks and input give the visitor control and stop automatic changes. Ingredient labels, sheets, chat messages and meal swaps have visible, finite transitions. Reduced-motion preferences retain all content and manual controls without movement.
-
-The original Be Vietnam Pro typography, orange palette, photographs, community, mascot and Rive hero remain. No classical paintings or additional animation dependencies are used. Port 4173 is the separate v2 reference; this project's preview is port 4180.
+Original hero markup and all hero assets/runtime files are verified byte-identical to the pre-change backup. Both languages are updated. Validation includes source links/IDs/ARIA/FAQ schema, JavaScript syntax, actual browser UI interaction and responsive iframe viewports. Previous `dietfit-product.*` / `dietfit-ui-motion.*` modules remain in Git/source history but are no longer loaded by Home.

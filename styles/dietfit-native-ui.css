@@ -1,0 +1,431 @@
+@font-face{font-family:"GT Standard L";font-weight:400;font-style:normal;font-display:swap;src:url("/assets/product/v2/GTStandardL-Regular.woff2") format("woff2")}
+@font-face{font-family:"GT Standard L";font-weight:500;font-style:normal;font-display:swap;src:url("/assets/product/v2/GTStandardL-Medium.woff2") format("woff2")}
+/* App screen geometry and visual tokens are taken from v2 (runner-camera-v87).
+   Intentionally isolated: no v2 page styling, paintings or stage controller. */
+.df-native{--f-app:"GT Standard L",Arial,sans-serif;--f-sans:var(--f-app);--brand:#FE692E;--df-orange-60:#FE692E;--app-ink:#111;position:relative;color:#111;font-family:var(--f-app)}
+.df-native *{box-sizing:border-box;font-family:var(--f-app);letter-spacing:normal}
+.df-native :is(h4,h5,p,figure){margin:0}.df-native :is(button,input){font:inherit}.df-native button{border:0;cursor:pointer;background:transparent;padding:0;color:inherit}.df-native img{display:block;max-width:100%;height:auto}.df-native [hidden]{display:none!important}
+.df-native .pick .pk-h{display:flex;gap:10px;align-items:center}
+.df-native .pick .pk-h img{width:34px}
+.df-native .pick .pk-h b{display:block;font-size:14px}
+.df-native .pick .pk-h small{font-size:11px;color:#8d8882}
+.df-native .pk-q{margin:14px 0 10px;font-size:15px;font-weight:600}
+.df-native .pk-opt{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:10px;border-radius:14px;border:1px solid #ece8e2;margin-top:8px}
+.df-native .pk-opt img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.df-native .pk-opt b{display:block;font-size:13.5px}
+.df-native .pk-opt small{font-size:11.5px;color:#7c7873}
+.df-native .pk-opt em{font-style:normal;font-size:11px;font-weight:600;padding:5px 9px;border-radius:999px;background:#e6f0dc;color:#3f6d22;white-space:nowrap}
+.df-native .pk-opt em.dim{background:#f1efec;color:#8d8882}
+.df-native .pk-opt.good{border-color:#a7c98a;background:#f7fbf3}
+.df-native .wg-grid{position:absolute;right:max(5vw,var(--gr));bottom:7vh;display:grid;grid-template-columns:150px 150px;grid-auto-rows:150px;gap:16px;z-index:3}
+.df-native .wg{background:rgba(255,255,255,.92);color:#1d1c1a;border-radius:28px;padding:14px;display:grid;align-content:space-between;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.df-native .wg small{display:flex;align-items:center;gap:6px;font-size:11px;color:#7c7873}
+.df-native .wg small img{width:16px;height:16px;border-radius:4px}
+.df-native .wg b{font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.df-native .wg b span{font-size:12px;color:#8d8882;font-weight:400}
+.df-native .wg em{font-style:normal;font-size:11px;color:#6d6a66}
+.df-native .wg .mm{display:grid;gap:4px}
+.df-native .wg .mm i{display:block;height:5px;border-radius:3px}
+.df-native .wg.dk{background:rgba(20,24,34,.88);color:#fff}
+.df-native .wg.dk small,.df-native .wg.dk em{color:#b9bfcc}
+.df-native .wg .big{font-size:56px;line-height:.9;font-weight:500}
+.df-native .wg.m{grid-column:span 2;gap:6px}
+.df-native .wg.m svg{width:100%;height:auto}
+.df-native .wg .lg{display:flex;gap:14px;font-size:10.5px;color:#4d4a46}
+.df-native .wg .lg i{display:inline-block;width:10px;height:3px;border-radius:2px;margin-right:5px;vertical-align:middle}
+.df-native .wg.ph{padding:0;overflow:hidden;position:relative}
+.df-native .wg.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.df-native .chatapp{position:absolute;inset:0;display:flex;flex-direction:column;color:var(--app-ink);font-family:var(--f-sans);--cu:1px}
+.df-native .ca-top{display:flex;align-items:center;gap:calc(14*var(--cu));padding:calc(18*var(--cu)) calc(18*var(--cu)) calc(10*var(--cu));background:#fff;border-bottom:1px solid #f1eee9}
+.df-native .ca-top .hb{width:calc(18*var(--cu));display:grid;gap:calc(4*var(--cu))}
+.df-native .ca-top .hb b{height:1.6px;background:#222}
+.df-native .ca-top .t b{display:block;font-size:calc(24*var(--cu));font-weight:600;letter-spacing:-.02em;line-height:1}
+.df-native .ca-top .t span{font-size:calc(12.5*var(--cu));color:#7c7873}
+.df-native .ca-top .ic{margin-left:auto;display:flex;gap:calc(16*var(--cu))}
+.df-native .ca-top .ic svg{width:calc(20*var(--cu));height:calc(20*var(--cu))}
+.df-native .ca-body{flex:1;position:relative;overflow:hidden;background:#fff}
+.df-native .ca-scroll{position:absolute;left:0;right:0;top:0;padding:calc(14*var(--cu)) calc(14*var(--cu)) calc(30*var(--cu));display:flex;flex-direction:column;gap:calc(12*var(--cu));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.df-native .m-me{align-self:flex-end;background:#1d1c1a;color:#fff;border-radius:calc(22*var(--cu));padding:calc(10*var(--cu)) calc(16*var(--cu));font-size:calc(14*var(--cu));max-width:78%}
+.df-native .m-me.photo{padding:calc(10*var(--cu));border-radius:calc(20*var(--cu));display:grid;gap:calc(8*var(--cu));justify-items:end}
+.df-native .m-me.photo span{padding-right:calc(6*var(--cu))}
+.df-native .m-me.photo img{width:calc(190*var(--cu));border-radius:calc(12*var(--cu))}
+.df-native .m-sa{display:grid;grid-template-columns:calc(30*var(--cu)) 1fr;gap:calc(8*var(--cu));align-items:start}
+.df-native .m-sa .av{width:calc(30*var(--cu));margin-top:calc(4*var(--cu))}
+.df-native .m-sa .bub{border:1px solid #efece7;border-radius:calc(16*var(--cu));padding:calc(12*var(--cu)) calc(14*var(--cu));font-size:calc(13.5*var(--cu));line-height:1.45;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.df-native .m-sa .fb{display:flex;gap:calc(12*var(--cu));margin:calc(8*var(--cu)) 0 0 calc(4*var(--cu));font-size:calc(13*var(--cu))}
+.df-native .m-sa .fb svg{width:calc(14*var(--cu));height:calc(14*var(--cu))}
+.df-native .typing{display:inline-flex;gap:calc(4*var(--cu));padding:calc(12*var(--cu)) calc(14*var(--cu));border-radius:999px;background:#f3f1ee}
+.df-native .typing i{width:calc(5*var(--cu));height:calc(5*var(--cu));border-radius:50%;background:#555;animation:df-native-typing 1s infinite}
+.df-native .typing i:nth-child(2){animation-delay:.15s}
+.df-native .typing i:nth-child(3){animation-delay:.3s}
+@keyframes df-native-typing{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.df-native .sum{border:1px solid #ebe7e1;border-radius:calc(14*var(--cu));padding:calc(12*var(--cu));display:grid;gap:calc(10*var(--cu));margin-top:calc(10*var(--cu))}
+.df-native .sum .h{display:flex;justify-content:space-between;font-size:calc(12*var(--cu));font-weight:600}
+.df-native .sum .h span{font-weight:400;color:#7c7873}
+.df-native .sum .two{display:grid;grid-template-columns:1fr 1fr;gap:calc(8*var(--cu))}
+.df-native .sum .two div{background:#f7f5f2;border-radius:calc(10*var(--cu));padding:calc(10*var(--cu))}
+.df-native .sum .two b{font-size:calc(19*var(--cu));font-weight:600;font-variant-numeric:tabular-nums}
+.df-native .sum .two b small{font-size:calc(11*var(--cu));font-weight:400;color:#7c7873;margin-left:3px}
+.df-native .sum .two span{display:block;font-size:calc(11*var(--cu));color:#4d4a46;margin-top:2px}
+.df-native .sum .two em{display:block;font-style:normal;font-size:calc(10*var(--cu));color:#9a958f}
+.df-native .sum .ln{display:flex;justify-content:space-between;font-size:calc(11.5*var(--cu));color:#4d4a46}
+.df-native .sum .ln b{font-weight:600;color:#1d1c1a}
+.df-native .chips{display:flex;gap:calc(8*var(--cu));padding:0 calc(14*var(--cu)) calc(10*var(--cu));overflow:hidden;background:#fff}
+.df-native .chips span{flex:none;border:1px solid #e6e2dc;border-radius:calc(12*var(--cu));padding:calc(9*var(--cu)) calc(12*var(--cu));font-size:calc(12*var(--cu));font-weight:500;white-space:nowrap}
+.df-native .ca-in{margin:0 calc(12*var(--cu));position:relative;border:1px solid #e6e2dc;border-radius:calc(18*var(--cu));padding:calc(12*var(--cu)) calc(14*var(--cu));display:flex;align-items:center;gap:calc(10*var(--cu));font-size:calc(14*var(--cu));color:#9a958f;background:#fff}
+.df-native .ca-in svg{width:calc(17*var(--cu));height:calc(17*var(--cu));color:#6d6a66}
+.df-native .ca-in .up{margin-left:auto;width:calc(26*var(--cu));height:calc(26*var(--cu));border-radius:50%;background:#efedea;display:grid;place-items:center;color:#9a958f}
+.df-native .ca-in .up.on{background:#1d1c1a;color:#fff}
+.df-native .ca-in .txt{color:#1d1c1a}
+.df-native .ca-in .glow{position:absolute;inset:-1.5px;border-radius:inherit;pointer-events:none;opacity:0;
+  background:conic-gradient(from var(--df-chat-angle,0deg),transparent 0 55%,#f2672e 75%,#ffb37a 82%,transparent 92%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:1.5px}
+.df-native .ca-in.think .glow{opacity:1;animation:df-native-glow 1.6s linear infinite}
+@property --df-chat-angle{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes df-native-glow{to{--df-chat-angle:360deg}}
+.df-native .ca-disc{text-align:center;font-size:calc(10.5*var(--cu));color:#8d8882;padding:calc(8*var(--cu)) calc(30*var(--cu)) calc(14*var(--cu));background:#fff}
+.df-native .hide{opacity:0;transform:translateY(10px)}
+.df-native .m-in{transition:opacity .45s,transform .45s}
+.df-native .day-right{display:grid;gap:34px}
+.df-native .panel{background:#fff;color:var(--app-ink);border-radius:22px;padding:20px;box-shadow:0 30px 60px -30px rgba(60,10,0,.55)}
+.df-native .ph-head{display:flex;align-items:center;gap:10px}
+.df-native .ph-head .av{width:34px;height:34px;border-radius:50%;background:#f3e3d6;overflow:hidden}
+.df-native .ph-head .av img{width:120%;margin:-2px 0 0 -10%}
+.df-native .ph-head small{display:block;font-size:11px;color:#8d8882}
+.df-native .ph-head b{font-size:14px}
+.df-native .ph-head .ic{margin-left:auto;display:flex;gap:10px;color:var(--brand)}
+.df-native .ph-head .ic svg{width:18px;height:18px}
+.df-native .week{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:11px;color:#6d6a66;gap:4px;margin-top:18px}
+.df-native .week i{display:grid;place-items:center;width:30px;height:30px;margin:6px auto 0;border-radius:50%;border:2px solid #e45a4a;font-style:normal;font-size:12px;color:#1d1c1a;font-weight:500}
+.df-native .week .on i{border-color:#1d1c1a;background:#f3f1ee}
+.df-native .gauge-wrap{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;margin-top:20px;border-top:1px solid #f0ede8;padding-top:18px}
+.df-native .gauge{width:170px;height:120px}
+.df-native .gstat{display:grid;gap:12px;font-size:12px;color:#7c7873}
+.df-native .gstat b{display:block;font-size:20px;color:#1d1c1a;font-weight:600;font-variant-numeric:tabular-nums}
+.df-native .act{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.df-native .act div{background:#f7f5f2;border-radius:12px;padding:10px 12px;font-size:11px;color:#7c7873}
+.df-native .act b{display:block;font-size:20px;color:#1d1c1a;font-weight:600;margin-top:2px}
+.df-native .act svg{width:16px;height:16px;margin-bottom:6px}
+.df-native .plan-h{display:flex;justify-content:space-between;align-items:center}
+.df-native .plan-h b{font-size:20px;font-weight:600;letter-spacing:-.02em}
+.df-native .plan-h small{display:block;font-size:11px;color:#8d8882;font-weight:400;letter-spacing:0}
+.df-native .plan-h .ic{display:flex;gap:12px;color:#6d6a66}
+.df-native .plan-h .ic svg{width:18px;height:18px}
+.df-native .slot{margin-top:14px}
+.df-native .slot>small{display:flex;align-items:center;gap:6px;font-size:11px;color:#6d6a66;font-weight:500}
+.df-native .mrow{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;margin-top:8px;padding:10px;border-radius:14px;background:#faf8f6;transition:opacity .25s,transform .25s}
+.df-native .mrow img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.df-native .mrow b{font-size:13.5px;font-weight:600;display:block}
+.df-native .mrow .kc{font-size:12px;color:#4d4a46;display:flex;gap:4px;align-items:center}
+.df-native .mrow .mm{font-size:10.5px;color:#9a958f;margin-top:1px}
+.df-native .mrow button{font-size:12px;font-weight:500;color:var(--brand);text-decoration:underline;text-underline-offset:3px}
+.df-native .mrow.out{opacity:0;transform:translateX(16px)}
+.df-native .plan-foot{display:flex;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid #f0ede8;font-size:12px;color:#6d6a66}
+.df-native .plan-foot b{color:#1d1c1a}
+.df-native .dv{--k:1;position:relative;width:calc(395px*var(--k));height:calc(832px*var(--k));flex:none}
+.df-native .dv-b{position:absolute;inset:0;border-radius:calc(64px*var(--k));background:#0d0d0d;box-shadow:0 0 0 calc(1.5px*var(--k)) #3a3a3a inset,0 40px 90px -30px rgba(0,0,0,.55),0 18px 40px -20px rgba(0,0,0,.4)}
+.df-native .app{position:absolute;left:calc(10px*var(--k));top:calc(10px*var(--k));width:375px;height:812px;transform:scale(var(--k));transform-origin:0 0;border-radius:54px;overflow:hidden;background:#000;
+  font-family:var(--f-sans);color:#111;-webkit-font-smoothing:antialiased;isolation:isolate}
+.df-native .app *{box-sizing:border-box}
+.df-native .app .scr{position:absolute;inset:0;opacity:0}
+.df-native .app .scr.on{opacity:1}
+.df-native .app .sb{position:absolute;left:0;right:0;top:0;height:54px;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:0 34px 0 52px;font:600 17px/22px 'GT Standard L',system-ui,sans-serif;color:#fff;pointer-events:none;transition:color .3s}
+.df-native .app .sb.dk{color:#000}
+.df-native .app .sb .lv{display:flex;gap:7px;align-items:center}
+.df-native .app .sb svg{display:block;fill:currentColor}
+.df-native .app .sb .bat{width:25px;height:12px;border:1px solid currentColor;border-radius:4px;opacity:.95;position:relative}
+.df-native .app .sb .bat::before{content:"";position:absolute;inset:1.5px;right:2.5px;background:currentColor;border-radius:2px}
+.df-native .app .sb .bat::after{content:"";position:absolute;right:-3.5px;top:3.5px;width:1.5px;height:4px;background:currentColor;opacity:.45;border-radius:0 1px 1px 0}
+.df-native .app .hi{position:absolute;left:50%;bottom:8px;width:139px;height:5px;margin-left:-69.5px;border-radius:100px;background:#fff;z-index:31}
+.df-native .app .hi.dk{background:#111}
+.df-native .app .cap{position:absolute;inset:0;overflow:hidden;background:#111}
+.df-native .app .cap img{position:absolute;left:50%;top:365px;width:420px;max-width:none;transform:translate(-50%,-45%) scale(var(--z,1));transform-origin:50% 45%}
+.df-native .app .ibtn{width:44px;height:44px;border-radius:1000px;background:rgba(17,17,17,.3);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:grid;place-items:center;color:#fff;flex:none}
+.df-native .app .ibtn.s{width:36px;height:36px;background:#f2f2f2;color:#111}
+.df-native .app .ibtn svg{width:24px;height:24px}
+.df-native .app .ibtn.s svg{width:16px;height:16px}
+.df-native .app .tb{position:absolute;left:0;top:54px;width:375px;padding:0 16px;height:48px;display:flex;align-items:center;justify-content:space-between;z-index:20}
+.df-native .app .seg{height:44px;padding:2px;border-radius:1000px;background:rgba(17,17,17,.3);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex}
+.df-native .app .seg span{width:80px;height:40px;border-radius:1000px;display:grid;place-items:center;font:500 14px/20px 'GT Standard L';color:#fff}
+.df-native .app .seg span:nth-child(2){opacity:.7}
+.df-native .app .seg span.on{background:#fff;color:#111;opacity:1}
+.df-native .app .corners{position:absolute;left:15px;top:151px;width:345px;height:428px;pointer-events:none}
+.df-native .app .recent{position:absolute;left:50%;top:632px;transform:translateX(-50%);height:48px;padding:8px 16px 8px 8px;border-radius:1000px;background:rgba(17,17,17,.3);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:center;gap:8px;color:#fff;font:500 14px/20px 'GT Standard L';white-space:nowrap}
+.df-native .app .recent .th{display:flex}
+.df-native .app .recent .th i{width:32px;height:32px;border-radius:50%;border:1px solid #fff;background-size:cover;background-position:center;margin-right:-12px}
+.df-native .app .recent .th i:last-child{margin-right:0}
+.df-native .app .recent svg{width:16px;height:16px}
+.df-native .app .bot{position:absolute;left:0;bottom:0;width:375px;padding:24px 32px 32px;display:flex;justify-content:space-between;align-items:center}
+.df-native .app .shut{width:68px;height:68px;border-radius:50%;border:4px solid #fff;display:grid;place-items:center}
+.df-native .app .shut i{width:54px;height:54px;border-radius:50%;background:#fff;transition:transform .15s}
+.df-native .app .flash{position:absolute;inset:0;background:#fff;opacity:0;z-index:25;pointer-events:none}
+.df-native .app .dim{position:absolute;inset:0;pointer-events:none;background:rgba(0,0,0,.55);-webkit-mask:linear-gradient(#000,#000) ,linear-gradient(#000,#000);-webkit-mask-composite:xor;mask-composite:exclude;
+  -webkit-mask-size:100% 100%,335px 418px;-webkit-mask-position:0 0,20px 156px;-webkit-mask-repeat:no-repeat;mask-size:100% 100%,335px 418px;mask-position:0 0,20px 156px;mask-repeat:no-repeat}
+.df-native .app .hole{position:absolute;left:20px;top:156px;width:335px;height:418px;border-radius:32px;box-shadow:0 0 0 400px rgba(0,0,0,.5);pointer-events:none}
+.df-native .app .band{position:absolute;left:20px;width:335px;height:198px;border-top:4px solid #fff;background:linear-gradient(rgba(255,255,255,.8),rgba(250,250,250,.08));top:376px}
+.df-native .app .bandclip{position:absolute;left:20px;top:156px;width:335px;height:418px;border-radius:32px;overflow:hidden}
+.df-native .app .bandclip .band{left:0}
+.df-native .app .mascot{position:absolute;left:50%;width:140px;height:140px;margin-left:-69.5px;top:806px;transform:translateY(-100%);object-fit:contain;pointer-events:none}
+.df-native .app .sheet{position:absolute;left:0;bottom:0;width:375px;background:#fff;border-radius:32px 32px 0 0}
+.df-native .app .grab{width:28px;height:4px;border-radius:100px;background:#f2f2f2;margin:8px auto}
+.df-native .app .idf{height:115px;display:flex;flex-direction:column;align-items:center}
+.df-native .app .idf .w{display:flex;gap:16px;align-items:center;justify-content:center;padding:16px;font:500 20px/26px 'GT Standard L';color:#111;white-space:nowrap}
+.df-native .app .ai{width:24px;height:24px;flex:none}
+.df-native .app .pop{position:absolute;display:flex;flex-direction:column;align-items:center;gap:8px;filter:drop-shadow(0 0 6px rgba(17,17,17,.05));transform-origin:50% 100%;translate:-50% calc(-100% + 8px)}
+.df-native .app .pop b{position:relative;display:block;padding:8px 12px;border-radius:8px;background:rgba(17,17,17,.4);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);font:600 13px/16px 'GT Standard L';color:#fff;white-space:nowrap}
+.df-native .app .pop b::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-7px;border:7px solid transparent;border-bottom:0;border-top-color:rgba(17,17,17,.4)}
+.df-native .app .pop i{width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.35),0 2px 6px rgba(0,0,0,.25)}
+.df-native .app .dsh{height:169px}
+.df-native .app .dsh .wr{padding:0 16px 16px;display:flex;flex-direction:column;gap:16px}
+.df-native .app .dsh h5{margin:0;font:500 18px/24px 'GT Standard L';color:#111}
+.df-native .app .dsh .rw{display:flex;justify-content:space-between;align-items:flex-end}
+.df-native .app .avs{display:flex}
+.df-native .app .avs i{width:48px;height:48px;border-radius:100px;border:2px solid #fff;margin-right:-15px;background-size:cover;background-position:center}
+.df-native .app .avs em{width:48px;height:48px;border-radius:100px;border:2px solid #fff;background:#f2f2f2;display:grid;place-items:center;font:500 16px/24px 'GT Standard L';color:#6a6a6a;font-style:normal}
+.df-native .app .bt{height:56px;padding:16px 24px;border-radius:1000px;background:#1c1c1c;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px/24px 'GT Standard L';white-space:nowrap}
+.df-native .app .bt.l{background:#f2f2f2;color:#111}
+.df-native .app .bt svg{width:24px;height:24px}
+.df-native .app .ov{position:absolute;inset:0;background:rgba(17,17,17,.3)}
+.df-native .app .lst{top:54px;height:758px}
+.df-native .app .lst .hd{position:absolute;left:16px;top:40px;width:343px;display:flex;flex-direction:column;gap:8px}
+.df-native .app .lst .hd .t{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.df-native .app .lst .hd h4{margin:0;font:500 24px/32px 'GT Standard L';color:#111;display:flex;gap:8px;align-items:center;white-space:nowrap}
+.df-native .app .lst .hd h4 svg{width:16px;height:16px}
+.df-native .app .lst .hd small{font:500 14px/20px 'GT Standard L';color:#a3a3a3}
+.df-native .app .ib24{width:24px;height:24px;border-radius:1000px;background:#f2f2f2;display:grid;place-items:center}
+.df-native .app .ib24 svg{width:16px;height:16px}
+.df-native .app .lst .bd{position:absolute;left:16px;top:120px;width:343px;display:flex;flex-direction:column;gap:24px;align-items:center}
+.df-native .app .lst .st{width:100%;display:flex;align-items:center;justify-content:space-between}
+.df-native .app .lst .st span{display:flex;align-items:center;gap:4px;font:500 14px/20px 'GT Standard L';color:#6a6a6a}
+.df-native .app .lst .st span svg{width:16px;height:16px}
+.df-native .app .lst .st em{display:flex;align-items:center;gap:8px;height:44px;padding:0 16px;font:500 14px/20px 'GT Standard L';color:#111;font-style:normal}
+.df-native .app .lst .st em svg{width:24px;height:24px}
+.df-native .app .lst ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;width:343px}
+.df-native .app .lst li{display:flex;align-items:center;gap:12px;padding:12px 0}
+.df-native .app .lst li i{width:40px;height:40px;border-radius:50%;background-size:cover;background-position:center;flex:none}
+.df-native .app .lst li span{flex:1;font:400 16px/24px 'GT Standard L';color:#111}
+.df-native .app .lst li b{width:90px;height:48px;border:1px solid #f2f2f2;border-radius:12px;display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:0 8px;font:500 16px/24px 'GT Standard L';color:#111}
+.df-native .app .lst li b small{font:400 14px/20px 'GT Standard L';color:#6a6a6a}
+.df-native .app .lst .hint{margin:0;font:400 13px/16px 'GT Standard L';color:#6a6a6a;text-align:center}
+.df-native .app .dock{position:absolute;left:0;bottom:0;width:375px;background:linear-gradient(rgba(255,255,255,0),#fff 30%)}
+.df-native .app .dock .wr{display:flex;gap:12px;padding:16px;background:#fff}
+.df-native .app .dock .bt{flex:1}
+.df-native .app .dock .hs{height:21px;position:relative}
+.df-native .app .calc{background:#fff}
+.df-native .app .calc .back{position:absolute;left:16px;top:66px}
+.df-native .app .card{position:absolute;left:20px;top:156px;width:335px;height:418px;border-radius:32px;overflow:hidden}
+.df-native .app .card img{position:absolute;left:50%;top:50%;width:420px;max-width:none;transform:translate(-50%,-45%)}
+.df-native .app .card .ring{position:absolute;inset:0;border:6px solid #cb9b6c;border-radius:32px}
+.df-native .app .chk{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.df-native .app .chk svg{width:38px;height:38px}
+.df-native .app .chk path{stroke-dasharray:40;stroke-dashoffset:40}
+.df-native .app .egg{position:absolute;left:185px;top:446px;width:195px;height:195px;object-fit:contain}
+.df-native .app .calc .msg{position:absolute;left:50%;top:622px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;font:500 20px/26px 'GT Standard L';color:#111;white-space:nowrap}
+.df-native .app .md{background:linear-gradient(#faf6f0,#fff)}
+.df-native .app .md .scroll{position:absolute;left:0;top:0;width:375px}
+.df-native .app .md .hero{position:relative;height:468px;overflow:hidden}
+.df-native .app .md .hero img{position:absolute;left:50%;top:50%;width:470px;max-width:none;transform:translate(-50%,-45%)}
+.df-native .app .md .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:103px;background:linear-gradient(rgba(250,246,240,0),#faf6f0)}
+.df-native .app .cards{position:relative;margin:-153px 8px 0;display:flex;flex-direction:column;gap:12px;padding-bottom:130px}
+.df-native .app .cd{background:#fff;border-radius:24px;padding:24px 16px;display:flex;flex-direction:column;gap:24px}
+.df-native .app .cd .bdg{align-self:flex-start;height:28px;padding:0 12px;border-radius:1000px;background:#fafafa;display:flex;align-items:center;font:500 14px/20px 'GT Standard L';color:#111}
+.df-native .app .cd .nm{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.df-native .app .cd .nm h4{margin:0;font:600 24px/32px 'GT Standard L';color:#111}
+.df-native .app .stp{display:flex;align-items:center;gap:12px}
+.df-native .app .stp .v{width:64px;height:40px;border:1px solid #f2f2f2;border-radius:12px;display:grid;place-items:center;font:600 18px/24px 'GT Standard L'}
+.df-native .app .cal{height:80px;border:1px solid #f2f2f2;border-radius:16px;padding:16px 12px;display:flex;align-items:center;gap:8px}
+.df-native .app .cal svg{width:28px;height:28px}
+.df-native .app .cal b{font:600 32px/40px 'GT Standard L';color:#111}
+.df-native .app .cal span{font:400 16px/24px 'GT Standard L';color:#6a6a6a}
+.df-native .app .mac{display:flex;gap:8px}
+.df-native .app .mac div{flex:1;border:1px solid #f2f2f2;border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.df-native .app .mac small{display:flex;align-items:center;gap:4px;font:400 12px/16px 'GT Standard L';color:#6a6a6a}
+.df-native .app .mac small svg{width:16px;height:16px}
+.df-native .app .mac b{font:500 16px/24px 'GT Standard L';color:#111}
+.df-native .app .dots{display:flex;gap:8px;justify-content:center}
+.df-native .app .dots i{width:6px;height:6px;border-radius:9px;background:rgba(17,17,17,.1)}
+.df-native .app .dots i:first-child{background:#1c1c1c}
+.df-native .app .cd .sc{display:flex;justify-content:space-between;align-items:center}
+.df-native .app .cd .sc span{display:flex;align-items:center;gap:4px;font:600 16px/24px 'GT Standard L'}
+.df-native .app .cd .sc span svg{width:16px;height:16px}
+.df-native .app .cd .sc em{font:600 32px/40px 'GT Standard L';color:#111;font-style:normal}
+.df-native .app .cd .sc em small{font:500 16px/24px 'GT Standard L';color:#a3a3a3}
+.df-native .app .bar3{position:relative;display:flex;gap:4px}
+.df-native .app .bar3 i{flex:1;height:4px;border-radius:1000px;background:#f2f2f2}
+.df-native .app .bar3 i.r{background:#dc2626}
+.df-native .app .bar3 i.y{background:#f59e0b}
+.df-native .app .bar3 i.g{background:#16a34a}
+.df-native .app .bar3 b{position:absolute;top:50%;width:4px;height:16px;margin:-8px 0 0 -2px;border-radius:1000px;background:#111}
+.df-native .app .cd p{margin:0;font:400 14px/20px 'GT Standard L';color:#6a6a6a}
+.df-native .app .pos{align-self:flex-start;height:28px;padding:0 12px;border-radius:1000px;background:#f0fdf4;color:#16a34a;display:flex;align-items:center;font:500 14px/20px 'GT Standard L'}
+.df-native .app .ghost{align-self:flex-start;height:44px;padding:0 16px;border-radius:1000px;border:1px solid #e3e3e3;display:flex;align-items:center;gap:8px;font:500 14px/20px 'GT Standard L'}
+.df-native .app .ghost svg{width:24px;height:24px}
+.df-native .app .md .tb2{position:absolute;left:0;top:54px;width:375px;height:48px;padding:0 16px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.df-native .app .md .tb2 div{display:flex;gap:16px}
+.df-native .app .md .stick{position:absolute;left:0;bottom:0;width:375px;background:#fff;padding:16px 16px 32px}
+.df-native .app .md .stick .bt{width:100%;background:#000}
+.df-native .panel,.df-native .chatapp,.df-native .wg,.df-native #plan,.df-native .glass{font-family:var(--f-app)}
+.df-native .panel{border-radius:24px;color:#111}
+.df-native .panel small,.df-native .panel .pk-n{color:#6a6a6a}
+.df-native .wg{border-radius:24px;color:#111}
+.df-native .wg small,.df-native .wg em{color:#6a6a6a}
+.df-native .pk-opt{border-color:#f2f2f2!important;border-radius:16px}
+.df-native .pk-opt.good{background:#fff!important;border-color:#1c1c1c!important}
+.df-native .pk-opt.good em{background:#1c1c1c!important;color:#fff!important}
+.df-native .pk-opt.good.lit{box-shadow:0 0 0 2px #1c1c1c}
+.df-native .ca-in{border-radius:1000px}
+.df-native .m-me{background:#f2f2f2!important;color:#111!important}
+.df-native .plan-h b,.df-native .slot b{color:#111}
+.df-native .run-app{background:#fff;color:#1d1c1a}
+.df-native .run-island{position:absolute;top:12px;left:50%;width:112px;height:31px;border-radius:24px;background:#0d0d0d;transform:translateX(-50%);z-index:31}
+.df-native .run-pages{position:absolute;inset:64px 0 91px}
+.df-native .run-app .panel{
+  position:absolute;inset:0;padding:14px 20px 20px;border-radius:0;box-shadow:none;
+  overflow:hidden;
+  opacity:1;transform:none;
+}
+.df-native .run-screen:not([hidden]){animation:run-screen-in .28s cubic-bezier(.22,1,.36,1)}
+@keyframes run-screen-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.df-native .run-app .ph-head .av{width:44px;height:44px}
+.df-native .run-app .ph-head small{font-size:13px}
+.df-native .run-app .ph-head b{font-size:19px}
+.df-native .run-app .week{margin-top:26px;font-size:12px}
+.df-native .run-app .week i{width:34px;height:34px;font-size:13px}
+.df-native .run-app .gauge-wrap{margin-top:24px;padding-top:24px;gap:20px}
+.df-native .run-app .gauge{width:176px;height:125px}
+.df-native .run-app #gArc{transition:stroke-dasharray .28s cubic-bezier(.22,1,.36,1)}
+.df-native .run-app .gstat{font-size:13px;gap:14px}
+.df-native .run-app .gstat b{font-size:25px}
+.df-native .run-app .act{margin-top:24px;gap:8px}
+.df-native .run-app .act div{padding:14px 9px;font-size:12px}
+.df-native .run-app .act b{font-size:19px;white-space:nowrap}
+.df-native .run-app .act svg{width:20px;height:20px;margin-bottom:10px}
+.df-native .run-cta{
+  display:flex;justify-content:center;align-items:center;gap:12px;width:100%;min-height:50px;
+  margin:24px 0 0;padding:12px 16px;border:0;border-radius:16px;
+  background:#1c1c1c;color:#fff;font:500 14px/1.4 var(--f-app);cursor:pointer;
+  transition:transform .15s,background .15s;
+}
+.df-native .run-cta:hover{background:#38342f}
+.df-native .run-cta:active{transform:scale(.98)}
+.df-native .run-app button:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+.df-native .run-app .pk-h img{width:40px}
+.df-native .run-app .pk-h b{font-size:19px}
+.df-native .run-app .pk-h small{font-size:12px}
+.df-native .run-app .pk-q{font-size:20px;line-height:1.35;margin:24px 0 18px;font-weight:600}
+.df-native .run-app .pk-opt{
+  width:100%;grid-template-columns:62px minmax(0,1fr);gap:8px 12px;
+  padding:12px;margin-top:12px;text-align:left;font:inherit;color:inherit;
+  background:#fff;cursor:pointer;transition:box-shadow .18s,transform .18s;
+}
+.df-native .run-app .pk-opt:hover{transform:translateY(-2px)}
+.df-native .run-app .pk-opt[aria-pressed="true"]{box-shadow:0 0 0 2px #1c1c1c}
+.df-native .run-app .pk-opt img{width:62px;height:62px;grid-row:span 2}
+.df-native .run-app .pk-opt b{font-size:14px;line-height:1.4}
+.df-native .run-app .pk-opt small{font-size:11px;display:block;margin-top:5px}
+.df-native .run-app .pk-opt em{grid-column:2;justify-self:start;font-size:10px;padding:4px 8px}
+.df-native .run-app .pk-opt em.dim{position:static;inset:auto;pointer-events:auto;-webkit-mask:none;mask:none}
+.df-native .run-app .pk-a{margin:18px 0 0;padding:14px;font-size:13px;line-height:1.6;color:#3d3a36}
+.df-native .run-app .pk-n{display:block;font-size:10px;line-height:1.5;margin-top:14px}
+.df-native .run-app #logDinner{margin-top:16px}
+.df-native .run-nav{
+  position:absolute;bottom:24px;left:20px;right:20px;height:60px;border-top:1px solid #eeeae5;
+  display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#fff;
+}
+.df-native .run-nav button{
+  border:0;background:none;color:#88827b;font:500 11px/1 var(--f-app);cursor:pointer;
+  display:grid;justify-items:center;align-content:center;gap:6px;
+}
+.df-native .run-nav button[aria-selected="true"]{color:#1c1c1c;background:#f7f5f2;border-radius:14px}
+.df-native .run-nav svg,.df-native .run-nav img{width:24px;height:24px;object-fit:contain}
+.df-native .run-home-indicator{position:absolute;bottom:8px;left:50%;width:125px;height:5px;border-radius:4px;background:#1c1c1c;transform:translateX(-50%)}
+.df-native .run-logged{display:flex;align-items:center;gap:10px;margin-top:18px;padding:12px 0;border-top:1px solid #eeeae5}
+.df-native .run-logged img{width:46px;height:46px;border-radius:12px;object-fit:cover}
+.df-native .run-logged span{flex:1;font-size:11px;line-height:1.5}
+.df-native .run-logged small{display:block;color:#6d6a66}
+.df-native .run-logged b{display:block;font-size:12px;font-weight:500}
+.df-native .run-logged button{background:#f7f5f2;border:0;border-radius:8px;min-height:44px;padding:8px;font:inherit;color:#1c1c1c;cursor:pointer}
+.df-native .run-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.df-native .app .food-regions{
+  position:absolute;left:50%;top:365px;width:420px;height:auto;max-width:none;aspect-ratio:848/1264;
+  transform:translate(-50%,-45%);overflow:visible;pointer-events:none;
+}
+.df-native .food-regions path{fill:var(--region);fill-opacity:.08;stroke:var(--region);stroke-width:3;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0}
+.df-native #a-ana.identified .hole{box-shadow:0 0 0 400px rgba(0,0,0,.25)}
+.df-native #a-ana .pop i{background:var(--region);width:12px;height:12px;box-shadow:0 0 0 3px rgba(255,255,255,.85),0 2px 6px rgba(0,0,0,.25)}
+.df-native #a-ana .pop b{background:rgba(17,17,17,.72)}
+.df-native .plan-app{background:#fff}
+.df-native #plan{
+  position:absolute;inset:54px 0 24px;display:flex;flex-direction:column;
+  background:linear-gradient(155deg,#fff4ed 0%,#f8fafc 18%,#fff 38%);
+  padding:16px;border:0;border-radius:0;box-shadow:none;overflow:hidden;
+}
+.df-native .plan-h{gap:12px;margin:0 0 20px;flex-shrink:0;align-items:center}
+.df-native .plan-h b{font-size:28px;line-height:36px;font-weight:600}
+.df-native .plan-h small{font-size:12px;line-height:20px;margin-top:4px}
+.df-native .plan-h .ic{gap:20px;align-items:center}
+.df-native .plan-h .ic img{flex:none;max-width:none}
+.df-native #slots{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:12px;flex:1;min-height:0;overflow:hidden;padding:3px}
+.df-native .slot{margin:0;min-width:0;min-height:0;display:flex;flex-direction:column}
+.df-native .slot>small{font-size:13px;gap:8px;margin-bottom:6px}
+.df-native .slot>small>span{font-size:22px;line-height:1;color:#c7804e}
+.df-native .mrow{
+  grid-template-columns:54px minmax(0,1fr);padding:10px;gap:6px 12px;margin:0;flex:1;align-content:center;
+  background:#fff;border:1px solid #f2f2f2;border-radius:16px;
+}
+.df-native .plan-photo{width:54px;height:54px;object-fit:cover;border-radius:12px;align-self:start;grid-row:span 2}
+.df-native .meal-info{min-width:0;display:grid;gap:4px}
+.df-native .mrow b{font-size:14px;font-weight:500;line-height:20px}
+.df-native .mrow .kc{font-size:14px;font-weight:500;color:#111;gap:4px}
+.df-native .kc img{width:16px;height:16px;border-radius:0;flex:none}
+.df-native .mrow .mm{font-size:10px;line-height:14px;color:#6a6a6a;margin:0}
+.df-native .meal-actions{grid-column:2;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.df-native .mrow button{min-height:44px;padding:8px;font:500 12px/1.4 var(--f-app);color:#111;white-space:nowrap}
+.df-native .mrow button[data-a="tick"]{text-decoration:none;border:1px solid #e6e2dc;border-radius:100px;padding-inline:14px}
+.df-native .mrow button[aria-pressed="true"]{background:#1c1c1c;color:#fff;border-color:#1c1c1c}
+.df-native .mrow.logged{border-color:#d3c8b8;background:#fdfbf7}
+.df-native button:focus-visible,.df-native #slots:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+.df-native .plan-progress{flex-shrink:0;height:4px;background:#eee9e1;border-radius:8px;margin-top:16px;overflow:hidden}
+.df-native .plan-progress i{display:block;height:100%;background:#1c1c1c;transform:scaleX(var(--logged,0));transform-origin:left;transition:transform .25s cubic-bezier(.22,1,.36,1)}
+.df-native .plan-foot{flex-shrink:0;font-size:12px;margin-top:12px;padding-top:0;border:0;gap:16px}
+.df-native .coach-app{background:#fff}
+.df-native .chatapp{inset:54px 0 24px;font-family:var(--f-app)}
+.df-native .ca-top{flex-shrink:0}
+.df-native .ca-disc{padding-bottom:10px;flex-shrink:0}
+.df-native .ca-in{flex-shrink:0}
+.df-native .run-app .week{margin-top:18px}
+.df-native .run-app .gauge-wrap{margin-top:18px;padding-top:18px}
+.df-native .run-app .act{margin-top:18px}
+.df-native .run-app .act div{padding-block:12px}
+.df-native .run-app #askDinner{margin-top:18px}
+.df-native .plan-app ::-webkit-scrollbar,.df-native .run-app ::-webkit-scrollbar,.df-native .coach-app ::-webkit-scrollbar{display:none}
+.df-native .run-app .gstat b,.df-native .run-app .act b,.df-native #planSum,.df-native #wgs .motion-total{font-variant-numeric:tabular-nums}
+.df-native #wgs .motion-total{font:inherit;color:inherit}
+
+.df-native .sheet{opacity:1;transform:none;padding:0;box-shadow:none;right:auto}
+.df-native .app .scr{visibility:hidden;pointer-events:none}.df-native .app .scr.on{visibility:visible;pointer-events:auto}
+.df-native .app .sheet small{letter-spacing:normal;text-transform:none}
+.df-native .app .lst .st{position:static;opacity:1}
+.df-native .m-me.photo img{height:auto}.df-native .dv-b{box-shadow:0 0 0 calc(1.5px*var(--k)) #3a3a3a inset,0 26px 60px -34px #110b2066}
+.df-native .wg-grid{position:relative;inset:auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:16px;width:100%;max-width:460px}
+.df-native .wg{min-height:188px;box-shadow:0 4px 28px #110b200d;border:1px solid #110b2010;border-radius:30px;padding:20px;background:#fff;gap:18px;backdrop-filter:none}
+.df-native .wg b{font-size:32px}.df-native .wg b span{font-size:17px}.df-native .wg small,.df-native .wg em{font-size:14px}.df-native .wg small img{width:22px;height:22px}.df-native .wg .big{font-size:76px}.df-native .wg.dk{background:#2b292e;color:white}.df-native .wg.dk small,.df-native .wg.dk em{color:#c2bfc7}.df-native .wg.m{min-height:220px}.df-native .wg.m svg{height:100px}.df-native .wg .lg{font-size:12px;flex-wrap:wrap}.df-native .wg.ph{min-height:200px;padding:0}.df-native .wg.ph b{font-size:22px}
+.df-native .app :is(.plan-h .ic img){width:24px;height:24px}.df-native .app .food-regions{height:auto}.df-native .app .md .nm h4{font-kerning:normal;font-variant-ligatures:none}
+.df-native .ingredient-edit{width:62px;padding:5px 2px;border:1px solid #ddd;border-radius:8px;text-align:right;font-size:16px}.df-native .app .lst li{cursor:pointer}
+@media(prefers-reduced-motion:reduce){.df-native *,.df-native *::before,.df-native *::after{animation:none!important;transition:none!important}}
+/* Final component fixes from the deployed v2; retain the native app meal-name face. */
+.df-native .app .pop b{display:grid;gap:2px;background:rgba(17,17,17,.78);padding:7px 10px;font-weight:500}
+.df-native .app .pop-name{display:block;font-size:12px;line-height:16px}
+.df-native .app .pop-name small{font:inherit;opacity:.8}
+.df-native .app .pop-kcal{display:block;font-size:15px;line-height:18px;font-variant-numeric:tabular-nums}
+.df-native .app .pop-kcal small{font-size:11px;font-weight:400}
+.df-native .app .lst .ingredient-kcal{display:block;font-size:12px;font-weight:400;color:#6a6a6a;line-height:18px}
+.df-native .app .cd .nm{align-items:center;gap:12px}
+.df-native .app .cd .nm h4{flex:1;min-width:0}
+.df-native .app .cd .stp,.df-native .app .cd .stp .ib24{flex:none;align-items:center}
+.df-native .app .pop b::after{border-top-color:rgba(17,17,17,.78)}
+.df-native .app .cd .nm h4,.df-native .app .lst .hd h4,.df-native .app .dsh h5{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-kerning:normal;letter-spacing:-.015em}
+.df-native svg{display:block;max-width:100%}
+/* Keep the identifying mascot above its bottom sheet rather than over the status text. */
+.df-native .app .mascot{top:697px;width:118px;height:118px;margin-left:-59px}
+.df-native .app .plan-photo{width:54px;height:54px;border-radius:12px;align-self:start}

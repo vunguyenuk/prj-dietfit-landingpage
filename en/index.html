@@ -168,9 +168,9 @@
   <link rel="stylesheet" href="/styles/dietfit-social.css?v=7">
   <link rel="stylesheet" href="/styles/dietfit-mobile-menu.css?v=1">
   <link rel="stylesheet" href="/styles/dietfit-lang-switch.css?v=1">
-  <meta name="dietfit-source-revision" content="product-story-v5-ui-choreography">
-  <link rel="stylesheet" href="/styles/dietfit-product.css?v=2">
-  <link rel="stylesheet" href="/styles/dietfit-ui-motion.css?v=2">
+  <meta name="dietfit-source-revision" content="v1-gaia-v2-native-v6">
+  <link rel="stylesheet" href="/styles/dietfit-features.css?v=6">
+  <link rel="stylesheet" href="/styles/dietfit-native-ui.css?v=6">
 </head>
 
 <body>
@@ -242,1331 +242,352 @@
     </div>
 
 
-    <!-- PRODUCT STORY: editable HTML; sample interactions in dietfit-product.js. -->
+    <!-- PRODUCT STORY: v1 design + Gaia feature composition + isolated v2 app renderers. -->
+    <section class="dietfit-highlights" aria-label="Dietfit highlights">
+      <div class="dietfit-highlights-sticky">
+        <div class="dietfit-carousel" data-dietfit-carousel>
+          <article class="dietfit-card dietfit-card-asset dietfit-card-asset-light-copy"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-1-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Nutrition, finally clear</h2>
+              <p>Just snap a photo — AI recognizes your food and breaks down its nutrition in seconds.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset dietfit-card-asset-light-copy"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-2-v5.webp');--dietfit-card-mobile-image:url('/assets/cards/dietfit-card-2-mobile-v1.webp');--dietfit-card-position:50% 0%">
+            <div class="dietfit-card-copy">
+              <h2>Calories in one tap</h2>
+              <p>Hit your calorie deficit more easily with a single tap of the camera button</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-3-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Backed by science</h2>
+              <p>Built on BMR, BMI and TDEE to help you create a calorie deficit the scientific way</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-4-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>A reward for discipline</h2>
+              <p>Log meals, keep your streak and complete challenges to earn Fitpoints.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-5-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Works with Apple Health</h2>
+              <p>Automatically syncs calories burned so your daily intake adjusts to match.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-asset"
+            style="--dietfit-card-image:url('/assets/cards/dietfit-card-6-v4.webp')">
+            <div class="dietfit-card-copy">
+              <h2>Smart progress charts</h2>
+              <p>Clear, visual charts that capture every step of your effort</p>
+            </div>
+          </article>
+        </div>
+        <div class="dietfit-carousel-controls" aria-label="Feature list controls">
+          <button type="button" data-dietfit-prev aria-label="Previous feature">←</button>
+          <button type="button" data-dietfit-next aria-label="Next feature">→</button>
+        </div>
+      </div>
+    </section>
+
     <div class="dietfit-product">
-      <p class="df-a11y-status" id="df-product-status" role="status" aria-live="polite">
-      </p>
-      <section class="df-section df-introduction" id="dietfit-product" aria-labelledby="df-welcome-title">
-        <div class="df-container">
-          <div class="df-welcome">
-            <div>
-              <span class="df-eyebrow">
-                Less guessing. More understanding.
-              </span>
-              <h2 id="df-welcome-title">
-                Understand your meals.
-                <br>
-                Understand yourself.
-              </h2>
-              <p class="df-lead">
-                Go beyond counting calories. Dietfit brings your food, activity and goal together, giving everyday choices more context. Let Sara show you around.
-              </p>
-            </div>
-            <figure class="df-life-intro">
-              <img class="df-life-photo" src="/assets/cards/dietfit-card-1-v4.webp" alt="A woman smiling while checking her phone" width="1280" height="1600" loading="lazy" decoding="async">
-              <figcaption class="df-guide-welcome">
-                <span><small>Sara · AI Coach</small><strong>Let’s start with your next meal.</strong></span>
-                <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, your Dietfit AI companion" width="131" height="175" loading="lazy" decoding="async">
-              </figcaption>
-            </figure>
-          </div>
-          <nav class="df-story-nav" aria-label="Explore Dietfit">
-            <a href="#dietfit-scan">
-              <span class="df-n">
-                01
-              </span>
-              <span>
-                <strong>
-                  What’s in your meal?
-                </strong>
-                <small>
-                  From photo to ingredients
-                </small>
-              </span>
-              <span class="df-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-            <a href="#dietfit-sara">
-              <span class="df-n">
-                02
-              </span>
-              <span>
-                <strong>
-                  What works for you?
-                </strong>
-                <small>
-                  Guidance with context from Sara
-                </small>
-              </span>
-              <span class="df-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-            <a href="#dietfit-plan">
-              <span class="df-n">
-                03
-              </span>
-              <span>
-                <strong>
-                  What about tomorrow?
-                </strong>
-                <small>
-                  A flexible plan you can follow
-                </small>
-              </span>
-              <span class="df-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-          </nav>
+    <section class="df-feature-intro container" id="dietfit-product"><div class="dietfit-section-heading"><p class="df-kicker">A little help for your everyday</p><h2>Know your food.<span class="df-title-break"> </span><em>Find your own rhythm.</em></h2><p>From your first meal log to the habits you keep. See how Dietfit and Sara fit into your day.</p></div><nav class="df-feature-nav" aria-label="Product features"><a href="#dietfit-scan">Deep Scan</a><a href="#dietfit-sara">Sara</a><a href="#dietfit-plan">Meal Plan</a><a href="#dietfit-activity">Health</a><a href="#dietfit-widgets">Widgets</a></nav></section>
+<section class="df-feature df-feature--scan" id="dietfit-scan" data-demo="scan" aria-labelledby="df-scan-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Deep Scan</p><h2 id="df-scan-title">One photo.<span class="df-title-break"> </span>Every ingredient.</h2><p class="df-feature-body">Deep Scan finds the ingredients in your photo. Review the portions and see where the calories come from before you log.</p><div class="df-feature-steps" aria-label="Demo stages"><button type="button" data-demo-seek="0.04" aria-pressed="false"><span>01</span>Capture</button><button type="button" data-demo-seek="0.36" aria-pressed="false"><span>02</span>Identify</button><button type="button" data-demo-seek="0.55" aria-pressed="false"><span>03</span>Ingredients</button><button type="button" data-demo-seek="0.88" aria-pressed="false"><span>04</span>Nutrition</button></div><p class="df-feature-guidance">Sample data · Scroll to explore, tap to try. <button type="button" class="df-resume" hidden>Resume scroll ↻</button></p><span class="df-chapter-progress" aria-hidden="true"><i></i></span></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="dv"><div class="dv-b"></div>
+<div class="app" id="app" aria-label="DietFit app: scanning a meal">
+  <div class="sb" id="sb"><span>9:41</span><span class="lv"><svg width="19" height="12" viewBox="0 0 19 12"><rect x="0" y="8" width="3.2" height="4" rx="1"/><rect x="5" y="5.5" width="3.2" height="6.5" rx="1"/><rect x="10" y="3" width="3.2" height="9" rx="1"/><rect x="15" y="0" width="3.2" height="12" rx="1"/></svg><svg width="17" height="12" viewBox="0 0 17 12"><path d="M8.5 2.3c2.4 0 4.6.9 6.2 2.5l1.2-1.2A10.4 10.4 0 0 0 8.5.6 10.4 10.4 0 0 0 1.1 3.6l1.2 1.2a8.7 8.7 0 0 1 6.2-2.5Zm0 3.4c1.5 0 2.8.5 3.8 1.5l1.2-1.2a7.1 7.1 0 0 0-10 0l1.2 1.2c1-1 2.3-1.5 3.8-1.5Zm0 3.4c.6 0 1.1.2 1.5.6L8.5 11.2 7 9.7c.4-.4.9-.6 1.5-.6Z"/></svg><i class="bat"></i></span></div>
+
+  <!-- 1 · Food Scan (camera) -->
+  <div class="scr on" id="a-cam">
+    <div class="cap"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt="The plate seen through the DietFit camera"></div>
+    <svg class="corners" viewBox="0 0 345 428" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"><path d="M5 46V30A25 25 0 0 1 30 5h16M299 5h16a25 25 0 0 1 25 25v16M340 382v16a25 25 0 0 1-25 25h-16M46 423H30A25 25 0 0 1 5 398v-16"/></svg>
+    <div class="tb"><span class="ibtn" data-ic="cancel"></span><div class="seg"><span class="on">Food</span><span>Label</span></div><span class="ibtn" data-ic="help"></span></div>
+    <div class="recent"><span class="th"><i style="background-image:url(/assets/product/v2/scan/D-photo.jpg)"></i><i style="background-image:url(/assets/product/v2/scan/A-photo.jpg)"></i><i style="background-image:url(/assets/product/v2/scan/C-photo.jpg)"></i></span>Recent meals<span data-ic="chev"></span></div>
+    <div class="bot"><span class="ibtn" data-ic="imgadd"></span><span class="shut" id="shut"><i></i></span><span class="ibtn" data-ic="flashoff"></span></div>
+  </div>
+
+  <!-- 2 · Analyzing + 3 · Ingredients (same capture, dimmed outside the scan box) -->
+  <div class="scr" id="a-ana">
+    <div class="cap"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""><svg class="food-regions" viewBox="0 0 848 1264" aria-label="Ingredient outlines around the chicken, farro, figs, eggs, olives and greens">
+      <path data-food="0" pathLength="1" style="--region:#b477fd" d="M349 354C387 340 440 365 477 374C530 381 594 405 624 436C654 466 664 512 661 550L676 616C685 649 715 663 705 687C699 710 666 712 644 694L618 644L594 590C573 573 546 563 529 541C507 565 480 585 438 584C390 582 357 557 350 522L338 430C329 397 330 368 349 354Z"/>
+      <path data-food="1" pathLength="1" style="--region:#ffac60" d="M460 635C492 614 555 618 599 630C647 646 685 682 703 738C724 798 698 863 649 904C611 932 546 938 498 916C470 897 464 864 455 826C436 776 423 733 433 689C436 666 443 650 460 635Z"/>
+      <path data-food="2" pathLength="1" style="--region:#2ab0f9" d="M184 434C203 431 209 444 228 445C282 435 329 461 339 502C349 550 320 584 280 590C239 594 202 560 191 519C183 495 191 470 182 454Z M120 553C139 544 149 561 168 564C216 553 264 586 269 627C277 672 251 708 213 715C172 720 134 691 122 652C112 619 124 590 120 553Z"/>
+      <path data-food="3" pathLength="1" style="--region:#21cbb2" d="M260 697C293 683 327 692 347 718C373 750 359 796 339 826C317 856 286 864 254 856C215 848 195 825 201 790C205 754 229 715 260 697Z M365 787C402 774 431 795 443 829C459 870 444 914 414 938C388 959 351 958 322 946C293 933 286 902 294 869C302 832 333 798 365 787Z"/>
+      <path data-food="4" pathLength="1" style="--region:#abc53e" d="M442 660C463 642 492 649 497 667C500 685 482 699 459 700C438 700 427 680 442 660Z M527 732C549 718 575 731 585 748C596 770 581 785 559 782C535 780 512 752 527 732Z M628 803C644 784 667 792 670 812C673 834 652 856 635 849C616 841 616 821 628 803Z M508 890C526 877 552 877 565 890C579 907 558 927 536 929C509 935 489 911 508 890Z"/>
+      <path data-food="5" pathLength="1" style="--region:#f563a7" d="M296 617L314 594L337 613L351 602L374 629L389 609L408 641L430 631L445 667L421 681L439 710L418 731L437 757L419 778L399 768L374 780L344 774L347 742L321 722L295 734L271 717L281 688L261 673L287 653Z"/>
+    </svg></div>
+    <div class="hole"></div>
+    <div class="bandclip"><div class="band" id="band"></div></div>
+    <div class="tb"><span class="ibtn s" data-ic="cancel"></span></div>
+    <div id="pops"></div>
+    <div class="sheet idf" id="idf"><div class="w"><span class="ai" data-ic="ai"></span><span>Identifying your meal…</span></div></div>
+    <img class="mascot" id="masc" src="/assets/product/v2/egg-phone.png" alt="">
+    <div class="sheet dsh" id="dsh"><div class="grab"></div><div class="wr"><h5 id="dname">Chicken with farro</h5>
+      <div class="rw"><span class="avs" id="avs"></span><span class="bt">Calculate calories<span data-ic="arrowR"></span></span></div></div></div>
+  </div>
+
+  <!-- 4 · Ingredients sheet -->
+  <div class="scr" id="a-lst">
+    <div class="cap"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""></div><div class="hole"></div>
+    <div class="ov"></div>
+    <div class="sheet lst" id="lst"><div class="grab"></div>
+      <div class="hd"><div class="t"><h4>Chicken with farro <span data-ic="edit"></span></h4><span class="ib24" data-ic="trash"></span></div><small>Today, 8:41 PM</small></div>
+      <div class="bd"><div class="st"><span>Ingredients <span data-ic="info"></span></span><em><span data-ic="add"></span>Add</em></div>
+        <ul id="ul"></ul>
+        <p class="hint">Tap an ingredient to edit it.<span class="df-title-break"> </span>Swipe left to delete.</p></div>
+      <div class="dock"><div class="wr"><span class="bt l"><span data-ic="ai"></span>Edit with AI</span><span class="bt">Calculate<span data-ic="arrowR"></span></span></div><div class="hs"></div></div>
+    </div>
+  </div>
+
+  <!-- 5 · Calculating -->
+  <div class="scr calc" id="a-calc">
+    <div class="back"><span class="ibtn s" data-ic="arrowL"></span></div>
+    <div class="card" id="ccard"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""><span class="chk" id="chk"><svg viewBox="0 0 38 38" fill="none" stroke="#111" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19.5l7 7 13-14"/></svg></span><i class="ring"></i></div>
+    <img class="egg" id="cegg" src="/assets/product/v2/egg-proud.png" alt="">
+    <div class="msg"><span class="ai" data-ic="ai"></span><span id="cmsg">Calculating calories &amp; nutrition…</span></div>
+  </div>
+
+  <!-- 6 · Meal Detail -->
+  <div class="scr md" id="a-md">
+    <div class="scroll" id="mdS">
+      <div class="hero"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""></div>
+      <div class="cards">
+        <div class="cd">
+          <span class="bdg">8:41 PM</span>
+          <div class="nm"><h4>Chicken with farro</h4><span class="stp"><span class="ib24" data-ic="remove"></span><span class="v">1</span><span class="ib24" data-ic="add"></span></span></div>
+          <div class="cal"><span data-ic="flame"></span><b id="mdK">558</b><span>kcal</span></div>
+          <div class="mac"><div><small><span data-ic="carb"></span>Carbs</small><b><span id="mdC">37</span>g</b></div><div><small><span data-ic="prot"></span>Protein</small><b><span id="mdP">41</span>g</b></div><div><small><span data-ic="fat"></span>Fat</small><b><span id="mdF">26</span>g</b></div></div>
+          <div class="dots"><i></i><i></i></div>
         </div>
-      </section>
-      <section class="df-section df-scan df-ui-story" data-ui-chapter="scan" id="dietfit-scan" aria-labelledby="df-scan-title">
-        <div class="df-container df-split">
-          <div class="df-copy">
-            <span class="df-eyebrow">
-              01 / Deep Scan
-            </span>
-            <h2 id="df-scan-title">
-              More than a number.
-              <br>
-              A meal you can understand.
-            </h2>
-            <p class="df-lead">
-              There is more to a plate than a calorie total. Deep Scan identifies and outlines individual ingredients, with calories for each. Review first, then log.
-            </p>
-            <p class="df-scroll-cue"><span>Scroll to explore · Tap to take over</span><span class="df-scroll-status" aria-hidden="true">01 / 03</span></p>
-            <div class="df-stage-options" aria-label="Try the Deep Scan steps">
-              <button class="df-stage-option" type="button" data-scan-stage="capture" aria-pressed="true" aria-controls="df-scan-app">
-                <span>
-                  01
-                </span>
-                <span>
-                  <strong>
-                    Capture your meal
-                  </strong>
-                  <small>
-                    Start with a photo, right in the app.
-                  </small>
-                </span>
-                <span class="df-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </button>
-              <button class="df-stage-option" type="button" data-scan-stage="identify" aria-pressed="false" aria-controls="df-scan-app">
-                <span>
-                  02
-                </span>
-                <span>
-                  <strong>
-                    See each ingredient
-                  </strong>
-                  <small>
-                    Deep Scan outlines foods with calories for each ingredient.
-                  </small>
-                </span>
-                <span class="df-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </button>
-              <button class="df-stage-option" type="button" data-scan-stage="edit" aria-pressed="false" aria-controls="df-scan-app">
-                <span>
-                  03
-                </span>
-                <span>
-                  <strong>
-                    Review before you log
-                  </strong>
-                  <small>
-                    Change a weight. Calories and macros update with it.
-                  </small>
-                </span>
-                <span class="df-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </button>
-            </div>
-            <p class="df-note">
-              Try it here: press the shutter, pick an ingredient or edit its grams. Values are illustrative estimates, not exact measurements.
-            </p>
-          </div>
-          <div class="df-demo-display">
-            <span class="df-demo-tag">
-              Click to try · Deep Scan
-            </span>
-            <div class="df-stage-accents" aria-hidden="true">
-              <div class="df-ui-pull df-ingredient-pull"><span class="df-pull-kicker">Deep Scan</span><strong>4</strong><span>ingredients, each one visible</span><i class="df-pull-dots"><b></b><b></b><b></b><b></b></i></div>
-              <div class="df-ui-pull df-nutrition-pull"><span class="df-pull-kicker">Sample meal</span><strong><span data-total="kcal">358</span> <small>kcal</small></strong><div><span><b data-total="protein">28</b> g<small>Protein</small></span><span><b data-total="carbs">50</b> g<small>Carbs</small></span><span><b data-total="fat">5</b> g<small>Fat</small></span></div></div>
-            </div>
-            <div class="df-phone" aria-label="Interactive Deep Scan demonstration">
-              <div class="df-status" aria-hidden="true">
-                <span>
-                  9:41
-                </span>
-                <span class="df-island">
-                </span>
-                <span class="df-status-icons">
-                  <svg viewBox="0 0 30 12" fill="currentColor">
-                    <path d="M1 9h3v3H1zM6 6h3v6H6zM11 3h3v9h-3zM16 0h3v12h-3zM23 4q3-3 6 0l-1 1q-2-2-4 0zM24 7q2-2 4 0l-2 3z"/>
-                  </svg>
-                  <i class="df-battery">
-                  </i>
-                </span>
-              </div>
-              <div class="df-scan-app" id="df-scan-app" data-state="capture">
-                <img class="df-scan-photo" id="df-scan-photo" src="/assets/product/meals/P-photo.jpg" alt="Steamed shrimp, black sticky rice, egg white and zucchini" width="648" height="800" loading="lazy">
-                <div data-scan-view="capture">
-                  <div class="df-camera-shade">
-                  </div>
-                  <div class="df-camera-corners"><i class="df-scan-sweep" aria-hidden="true"></i>
-                  </div>
-                  <div class="df-scan-toolbar">
-                    <button class="df-icon-btn" type="button" data-scan-reset aria-label="Reset demo">
-                      ×
-                    </button>
-                    <span class="df-scan-mode">
-                      Deep Scan
-                    </span>
-                    <button class="df-icon-btn" type="button" id="df-scan-help-button" aria-expanded="false" aria-controls="df-scan-help" aria-label="Demo help">
-                      ?
-                    </button>
-                  </div>
-                  <p class="df-scan-hint" id="df-scan-help" hidden>
-                    This is a sample meal. Press the shutter to inspect its ingredients; the demo does not access your camera.
-                  </p>
-                  <div class="df-camera-controls">
-                    <p>
-                      <span>
-                        Food
-                      </span>
-                      <span>
-                        Label
-                      </span>
-                    </p>
-                    <button class="df-shutter" id="df-shutter" type="button" aria-label="Scan the sample meal">
-                    </button>
-                  </div>
-                </div>
-                <div data-scan-view="identify" hidden>
-                  <svg class="df-ingredient-outlines" viewBox="0 0 648 800" aria-hidden="true">
-                    <ellipse data-region="0" cx="183" cy="330" rx="120" ry="126" fill="#de9d32" stroke="#de9d32"/>
-                    <ellipse data-region="1" cx="381" cy="232" rx="124" ry="99" fill="#5ac5e0" stroke="#5ac5e0"/>
-                    <ellipse data-region="2" cx="185" cy="526" rx="107" ry="95" fill="#e69db9" stroke="#e69db9"/>
-                    <ellipse data-region="3" cx="433" cy="458" rx="137" ry="163" fill="#9fb948" stroke="#9fb948"/>
-                  </svg>
-                  <button class="df-food-label" type="button" data-food="0" aria-pressed="false">
-                    <span>
-                      Black sticky rice
-                    </span>
-                    <strong>
-                      <span data-food-calories>
-                        240
-                      </span>
-                      <small>
-                        kcal
-                      </small>
-                    </strong>
-                  </button>
-                  <button class="df-food-label" type="button" data-food="1" aria-pressed="false">
-                    <span>
-                      Steamed shrimp
-                    </span>
-                    <strong>
-                      <span data-food-calories>
-                        65
-                      </span>
-                      <small>
-                        kcal
-                      </small>
-                    </strong>
-                  </button>
-                  <button class="df-food-label" type="button" data-food="2" aria-pressed="false">
-                    <span>
-                      Egg white
-                    </span>
-                    <strong>
-                      <span data-food-calories>
-                        35
-                      </span>
-                      <small>
-                        kcal
-                      </small>
-                    </strong>
-                  </button>
-                  <button class="df-food-label" type="button" data-food="3" aria-pressed="false">
-                    <span>
-                      Sliced zucchini
-                    </span>
-                    <strong>
-                      <span data-food-calories>
-                        18
-                      </span>
-                      <small>
-                        kcal
-                      </small>
-                    </strong>
-                  </button>
-                  <div class="df-scan-sheet">
-                    <div class="df-grab">
-                    </div>
-                    <p class="df-screen-eyebrow" id="df-selected-food">
-                      4 ingredients · tap a label
-                    </p>
-                    <div class="df-scan-result">
-                      <h4>
-                        Shrimp &amp; black sticky rice
-                      </h4>
-                      <div>
-                        <b data-total="kcal">
-                          358
-                        </b>
-                        <small>
-                          kcal
-                        </small>
-                      </div>
-                    </div>
-                    <div class="df-macros">
-                      <span>
-                        Protein
-                        <b>
-                          <span data-total="protein">
-                            28
-                          </span>
-                          g
-                        </b>
-                      </span>
-                      <span>
-                        Carbs
-                        <b>
-                          <span data-total="carbs">
-                            50
-                          </span>
-                          g
-                        </b>
-                      </span>
-                      <span>
-                        Fat
-                        <b>
-                          <span data-total="fat">
-                            5
-                          </span>
-                          g
-                        </b>
-                      </span>
-                    </div>
-                    <button class="df-app-btn" id="df-scan-next" type="button">
-                      Review ingredients →
-                    </button>
-                  </div>
-                </div>
-                <div class="df-edit-view" data-scan-view="edit" hidden>
-                  <div class="df-app-title">
-                    <h4>
-                      Ingredients
-                    </h4>
-                    <button type="button" class="df-icon-btn" data-scan-reset aria-label="Start over">
-                      ↺
-                    </button>
-                  </div>
-                  <div class="df-edit-thumb">
-                    <img src="/assets/product/meals/P-photo.jpg" alt="" width="648" height="800" loading="lazy">
-                    <div>
-                      <h4>
-                        Your lunch
-                      </h4>
-                      <p>
-                        Deep Scan · 4 ingredients
-                      </p>
-                    </div>
-                  </div>
-                  <div class="df-edit-list">
-                    <div>
-                      <span>
-                        Black sticky rice
-                        <br>
-                        <small>
-                          240 kcal / 150 g
-                        </small>
-                      </span>
-                      <label>
-                        <input type="number" inputmode="numeric" min="0" max="500" step="1" value="150" data-food-input="0" aria-label="Weight of Black sticky rice">
-                        <small>
-                          g
-                        </small>
-                      </label>
-                    </div>
-                    <div>
-                      <span>
-                        Steamed shrimp
-                        <br>
-                        <small>
-                          65 kcal / 75 g
-                        </small>
-                      </span>
-                      <label>
-                        <input type="number" inputmode="numeric" min="0" max="500" step="1" value="75" data-food-input="1" aria-label="Weight of Steamed shrimp">
-                        <small>
-                          g
-                        </small>
-                      </label>
-                    </div>
-                    <div>
-                      <span>
-                        Egg white
-                        <br>
-                        <small>
-                          35 kcal / 65 g
-                        </small>
-                      </span>
-                      <label>
-                        <input type="number" inputmode="numeric" min="0" max="500" step="1" value="65" data-food-input="2" aria-label="Weight of Egg white">
-                        <small>
-                          g
-                        </small>
-                      </label>
-                    </div>
-                    <div>
-                      <span>
-                        Sliced zucchini
-                        <br>
-                        <small>
-                          18 kcal / 100 g
-                        </small>
-                      </span>
-                      <label>
-                        <input type="number" inputmode="numeric" min="0" max="500" step="1" value="100" data-food-input="3" aria-label="Weight of Sliced zucchini">
-                        <small>
-                          g
-                        </small>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="df-edit-total">
-                    <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy">
-                    <strong data-total="kcal">
-                      358
-                    </strong>
-                    <small>
-                      kcal
-                    </small>
-                  </div>
-                  <div class="df-macros">
-                    <span>
-                      Protein
-                      <b>
-                        <span data-total="protein">
-                          28
-                        </span>
-                        g
-                      </b>
-                    </span>
-                    <span>
-                      Carbs
-                      <b>
-                        <span data-total="carbs">
-                          50
-                        </span>
-                        g
-                      </b>
-                    </span>
-                    <span>
-                      Fat
-                      <b>
-                        <span data-total="fat">
-                          5
-                        </span>
-                        g
-                      </b>
-                    </span>
-                  </div>
-                  <p class="df-note">
-                    Estimated values. Review and edit before saving.
-                  </p>
-                  <button type="button" class="df-app-btn" id="df-save-meal">
-                    Save meal →
-                  </button>
-                  <p class="df-save-status" id="df-scan-save-status" role="status">
-                  </p>
-                </div>
-              </div>
-              <span class="df-home-line" aria-hidden="true">
-              </span>
-            </div>
-            <aside class="df-guide-tip" aria-label="A tip from Sara">
-              <img class="" src="/assets/product/mascot/sara-phone.png" alt="Sara, your Dietfit AI companion" width="131" height="175" loading="lazy" decoding="async">
-              <div><strong>Try it with Sara</strong><p>Take a sample scan, then tap an ingredient to inspect it.</p></div>
-            </aside>
-            <p class="df-note">Interactive example · sample meal</p>
-          </div>
+        <div class="cd">
+          <div class="sc"><span>Meal score <span data-ic="info"></span></span><em><span id="mdS2">78</span><small>/100</small></em></div>
+          <div class="bar3"><i class="r"></i><i class="y"></i><i class="g"></i><b id="mdPin" style="left:78%"></b></div>
+          <p>A balanced plate: plenty of protein from the chicken and egg, fiber from the farro and greens. The skin and olives bring most of the fat. Fine for tonight; go lighter at lunch tomorrow.</p>
+          <span class="pos">High in protein</span>
+          <span class="ghost"><span data-ic="ai"></span>Ask Sara about this meal</span>
         </div>
-      </section>
-      <section class="df-section df-coach df-ui-story" data-ui-chapter="coach" id="dietfit-sara" aria-labelledby="df-sara-title">
-        <div class="df-container">
-          <div class="df-split">
-            <div class="df-demo-display">
-              <span class="df-demo-tag">
-                Choose a question · see Sara’s response
-              </span>
-              <div class="df-stage-accents df-sara-accents" aria-hidden="true">
-              <div class="df-ui-pull df-context-pull"><span class="df-pull-kicker">The bigger picture</span><strong>More than calories.</strong><span>Your food log</span><span>Your own goal</span><span>Activity & sleep</span></div>
-              <figure class="df-stage-sara"><img src="/assets/product/mascot/sara-phone.png" alt="" width="131" height="175" loading="lazy"><figcaption>Sara connects the dots with you.</figcaption></figure>
-            </div>
-            <div class="df-phone" aria-label="Illustrative conversation with Sara">
-                <div class="df-status" aria-hidden="true">
-                  <span>
-                    9:41
-                  </span>
-                  <span class="df-island">
-                  </span>
-                  <span class="df-status-icons">
-                    <svg viewBox="0 0 30 12" fill="currentColor">
-                      <path d="M1 9h3v3H1zM6 6h3v6H6zM11 3h3v9h-3zM16 0h3v12h-3zM23 4q3-3 6 0l-1 1q-2-2-4 0zM24 7q2-2 4 0l-2 3z"/>
-                    </svg>
-                    <i class="df-battery">
-                    </i>
-                  </span>
-                </div>
-                <div class="df-chat-app">
-                  <div class="df-chat-top">
-                    <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy">
-                    <div>
-                      <h4>
-                        Sara
-                      </h4>
-                      <small>
-                        Your AI Coach
-                      </small>
-                    </div>
-                    <span aria-hidden="true">
-                      ☰
-                    </span>
-                  </div>
-                  <div class="df-chat-body">
-                    <p class="df-chat-question" id="df-chat-question">
-                      Show me some stats today.
-                    </p>
-                    <div class="df-chat-answer">
-                      <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy">
-                      <div>
-                        <div class="df-chat-bubble">
-                          <p id="df-chat-answer">
-                            Sara puts your meals, activity and goal into the same conversation.
-                          </p>
-                          <div class="df-chat-stats" id="df-chat-stats">
-                          </div>
-                        </div>
-                        <p class="df-feedback" aria-hidden="true">
-                          ✦   ♡
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="df-chat-choices" aria-label="Choose a sample conversation">
-                    <button type="button" data-chat-choice="0" aria-pressed="true">
-                      Today’s summary
-                      <span aria-hidden="true">
-                        →
-                      </span>
-                    </button>
-                    <button type="button" data-chat-choice="1" aria-pressed="false">
-                      Review a meal
-                      <span aria-hidden="true">
-                        →
-                      </span>
-                    </button>
-                    <button type="button" data-chat-choice="2" aria-pressed="false">
-                      Ask about sleep
-                      <span aria-hidden="true">
-                        →
-                      </span>
-                    </button>
-                  </div>
-                  <div class="df-chat-input" aria-hidden="true">
-                    Choose a question above
-                    <span>
-                      ↑
-                    </span>
-                  </div>
-                  <p class="df-chat-disclaimer">
-                    AI can make mistakes. Not medical advice.
-                  </p>
-                </div>
-                <span class="df-home-line" aria-hidden="true">
-                </span>
-              </div>
-              <p class="df-note">
-                Sample conversation based on the app recording. No live AI connection.
-              </p>
-            </div>
-            <div class="df-copy">
-              <span class="df-eyebrow">
-                02 / Sara, your AI Coach
-              </span>
-              <h2 id="df-sara-title">
-                Better guidance.
-                <br>
-                Because it knows your context.
-              </h2>
-              <p class="df-lead">
-                “How am I doing today?” is about more than calories. Sara looks at the goal, meals and activity you share to put the answer in the context of your day.
-              </p>
-              <div class="df-sara-steps" aria-label="Explore Sara conversations"><button type="button" data-sara-stage="0" aria-pressed="true"><span>01</span><span><strong>Your day, together</strong><small>Meals, movement and sleep in one answer.</small></span><b aria-hidden="true">↗</b></button><button type="button" data-sara-stage="1" aria-pressed="false"><span>02</span><span><strong>Understand a meal</strong><small>See your meal in the context of your own goal.</small></span><b aria-hidden="true">↗</b></button><button type="button" data-sara-stage="2" aria-pressed="false"><span>03</span><span><strong>Look beyond food</strong><small>More context makes the numbers more useful.</small></span><b aria-hidden="true">↗</b></button></div>
-              <div class="df-contexts">
-                <span>
-                  Your goal
-                </span>
-                <span>
-                  Your food log
-                </span>
-                <span>
-                  Synced activity
-                </span>
-              </div>
-              <div class="df-coach-profile">
-                <div>
-                  <strong>
-                    You don’t have to connect every dot.
-                  </strong>
-                  <span>
-                    Sara helps you see a fuller picture.
-                  </span>
-                </div>
-              </div>
-              <a href="#dietfit-recordings" class="df-text-link">
-                Watch a real app conversation
-                <span class="df-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="df-trust-strip">
-            <div>
-              <strong>
-                See what makes up the number
-              </strong>
-              <p>
-                Calories are broken down by ingredient so you can inspect them.
-              </p>
-            </div>
-            <div>
-              <strong>
-                You stay in control
-              </strong>
-              <p>
-                Correct a name, portion or meal before it goes into your log.
-              </p>
-            </div>
-            <div>
-              <strong>
-                Understand the limits of AI
-              </strong>
-              <p>
-                Results are estimates. Sara supports choices and does not replace a doctor.
-              </p>
-            </div>
-          </div>
+      </div>
+    </div>
+    <div class="tb2"><span class="ibtn" data-ic="arrowL"></span><div><span class="ibtn" data-ic="share"></span><span class="ibtn" data-ic="more"></span></div></div>
+    <div class="stick"><span class="bt">Log meal</span></div>
+  </div>
+  <div class="flash" id="flash"></div>
+  <i class="hi" id="hi"></i>
+</div></div></div><img class="df-feature-peek" src="/assets/product/mascot/sara-phone.png" alt="" width="131" height="175" loading="lazy"></div></div></section>
+<section class="df-feature df-feature--coach is-flipped" id="dietfit-sara" data-demo="coach" aria-labelledby="df-coach-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">AI Coach</p><h2 id="df-coach-title">A little unsure?<span class="df-title-break"> </span>Ask Sara.</h2><p class="df-feature-body">Send a food photo or ask what to eat tonight. Sara brings your goal, meal log and synced activity into the conversation.</p><div class="df-feature-steps" aria-label="Demo stages"><button type="button" data-demo-seek="0.13" aria-pressed="false"><span>01</span>Send a photo</button><button type="button" data-demo-seek="0.32" aria-pressed="false"><span>02</span>Sara replies</button><button type="button" data-demo-seek="0.49" aria-pressed="false"><span>03</span>Ask a follow-up</button><button type="button" data-demo-seek="0.79" aria-pressed="false"><span>04</span>Your day in context</button></div><p class="df-feature-guidance">Sample data · Scroll to explore, tap to try. <button type="button" class="df-resume" hidden>Resume scroll ↻</button></p><span class="df-chapter-progress" aria-hidden="true"><i></i></span></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="coachDevice"><div class="dv-b"></div>
+      <div class="app coach-app" role="group" aria-label="DietFit app: conversation with Sara">
+        <div class="sb dk" aria-hidden="true"><span>9:41</span><span class="lv">•••• <i class="bat"></i></span></div>
+        <div class="run-island" aria-hidden="true"></div>
+        <div class="chatapp" id="chat">
+          <div class="ca-top"><span class="hb"><b></b><b></b><b></b></span><span class="t"><b>Sara</b><span>Your AI Coach</span></span>
+            <span class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h12M8 6V4h4v2M5.5 6l.8 10h7.4l.8-10"/></svg><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.5C8 4 5 4 3 4.5v11c2-.5 5-.5 7 1 2-1.5 5-1.5 7-1v-11c-2-.5-5-.5-7 1Zm0 0v11"/></svg></span></div>
+          <div class="ca-body"><div class="ca-scroll" id="caScroll">
+            <div class="m-me photo m-in" data-s="0"><span>Is this food healthy?</span><img src="/assets/product/v2/salmon.jpg" alt="Salmon sashimi on a glass plate"></div>
+            <div class="m-sa m-in" data-s="1" data-type="1"><img class="av" src="/assets/product/v2/egg-proud.png" alt=""><div><span class="typing"><i></i><i></i><i></i></span></div></div>
+            <div class="m-sa m-in" data-s="2"><img class="av" src="/assets/product/v2/egg-proud.png" alt=""><div><div class="bub" data-words>Yes, absolutely. Salmon sashimi is packed with high-quality protein, omega-3 fatty acids, and essential micronutrients, making it a great nutrient-dense choice. Pairing it with some carbs and healthy fats will help hit your calorie and muscle-building goals.</div>
+              <div class="fb"><svg viewBox="0 0 16 16" fill="#f2b13a"><path d="M5 7l3-5c1 0 1.6.7 1.4 1.8L9 6h4c.8 0 1.3.7 1.1 1.4l-1.3 5c-.2.6-.7 1-1.3 1H5z"/><rect x="1.5" y="7" width="2.5" height="6.5" rx=".6"/></svg><svg viewBox="0 0 16 16" fill="#e8a33a"><path d="M11 9l-3 5c-1 0-1.6-.7-1.4-1.8L7 10H3c-.8 0-1.3-.7-1.1-1.4l1.3-5c.2-.6.7-1 1.3-1H11z"/><rect x="12" y="2.5" width="2.5" height="6.5" rx=".6"/></svg><svg viewBox="0 0 16 16" fill="none" stroke="#8d8882" stroke-width="1.3"><rect x="5" y="5" width="8.5" height="8.5" rx="1.6"/><path d="M11 3.2V3a1.5 1.5 0 0 0-1.5-1.5h-6A1.5 1.5 0 0 0 2 3v6a1.5 1.5 0 0 0 1.5 1.5h.3"/></svg></div></div></div>
+            <div class="m-me m-in" data-s="3">What should I eat before bed?</div>
+            <div class="m-sa m-in" data-s="4" data-type="1"><img class="av" src="/assets/product/v2/egg-proud.png" alt=""><div><span class="typing"><i></i><i></i><i></i></span></div></div>
+            <div class="m-sa m-in" data-s="5"><img class="av" src="/assets/product/v2/egg-proud.png" alt=""><div><div class="bub"><span data-words>Since it's late and you're aiming to gain weight, go for something quick, protein-dense, and easy to digest. A bowl of Greek yogurt with a banana and peanut butter will easily add 300–500 quality calories and 25–35g of protein right before sleep.</span>
+              <div class="sum"><div class="h"><span style="color:#1d1c1a;font-weight:600">Today's Summary</span><span>Today</span></div>
+                <div class="two"><div><b>460<small>kcal</small></b><span>Eaten</span><em>of 2,910 goal</em></div><div><b>7,698</b><span>Steps</span><em>of 10,000 goal</em></div></div>
+                <div class="ln"><span>Active energy</span><b>102 kcal</b></div><div class="ln"><span>Sleep</span><b>7h 16m / 7h</b></div><div class="ln"><span>Workouts</span><b>running · 1h 24m</b></div></div></div></div></div>
+          </div></div>
+          <div class="chips" id="caChips"><span>Will eating before bed affect my sleep? →</span><span>How much protein do I need? →</span></div>
+          <div class="ca-in" id="caIn"><i class="glow"></i><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12.5 7.5l-5 5a2.5 2.5 0 0 1-3.5-3.5l6-6a1.7 1.7 0 0 1 2.4 2.4l-5.8 5.8"/></svg><span class="txt" id="caTxt"></span><span id="caPh">Ask Sara anything</span><span class="up" id="caUp"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" width="12"><path d="M7 11.5v-9M3 6l4-3.5L11 6"/></svg></span></div>
+          <div class="ca-disc">⚠ AI can make mistakes. For medical or health advice, talk to your doctor.</div>
         </div>
-      </section>
-      <section class="df-section df-plan df-ui-story" data-ui-chapter="plan" id="dietfit-plan" aria-labelledby="df-plan-title">
-        <div class="df-container df-split">
-          <div class="df-copy">
-            <span class="df-eyebrow">
-              03 / Meal Plan
-            </span>
-            <h2 id="df-plan-title">
-              What’s for tomorrow?
-              <br>
-              One less thing to figure out.
-            </h2>
-            <p class="df-lead">
-              From your goal to the next meal. Review the plan, swap what doesn’t fit, and log what you actually eat. A plan that works with your day.
-            </p>
-            <div class="df-plan-facts">
-              <div>
-                <span class="df-arrow" aria-hidden="true">
-                  1
-                </span>
-                <div>
-                  <strong>
-                    Swap to suit your day
-                  </strong>
-                  <p>
-                    Keep the plan flexible when your schedule or preferences change.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <span class="df-arrow" aria-hidden="true">
-                  2
-                </span>
-                <div>
-                  <strong>
-                    A plan becomes a log when you tick it
-                  </strong>
-                  <p>
-                    A planned meal is recorded when you confirm you ate it.
-                  </p>
-                </div>
-              </div>
-              <div>
-                <span class="df-arrow" aria-hidden="true">
-                  3
-                </span>
-                <div>
-                  <strong>
-                    Come back to your favorites
-                  </strong>
-                  <p>
-                    Saved Meals lets you log a frequent meal without scanning it again.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="df-demo-display">
-            <span class="df-demo-tag">
-              Try swapping a meal or press + to log it
-            </span>
-            <div class="df-stage-accents df-plan-accents" aria-hidden="true">
-              <div class="df-ui-pull df-plan-total-pull"><span class="df-pull-kicker">Today’s plan</span><strong data-plan-sum>1,473 kcal</strong><small>Flexible enough for your day</small></div>
-              <div class="df-ui-pull df-meal-pull" data-meal-mirror="0"><img src="/assets/product/meals/E-photo.jpg" alt="" width="64" height="64" loading="lazy"><div><span>Breakfast</span><strong>Street tacos, three ways</strong><small>430 kcal</small></div></div>
-              <div class="df-ui-pull df-meal-pull" data-meal-mirror="1"><img src="/assets/product/meals/P-photo.jpg" alt="" width="64" height="64" loading="lazy"><div><span>Lunch</span><strong>Shrimp & black sticky rice</strong><small>358 kcal</small></div></div>
-            </div>
-            <div class="df-phone" aria-label="Meal plan demo with meal swapping and logging">
-              <div class="df-status" aria-hidden="true">
-                <span>
-                  9:41
-                </span>
-                <span class="df-island">
-                </span>
-                <span class="df-status-icons">
-                  <svg viewBox="0 0 30 12" fill="currentColor">
-                    <path d="M1 9h3v3H1zM6 6h3v6H6zM11 3h3v9h-3zM16 0h3v12h-3zM23 4q3-3 6 0l-1 1q-2-2-4 0zM24 7q2-2 4 0l-2 3z"/>
-                  </svg>
-                  <i class="df-battery">
-                  </i>
-                </span>
-              </div>
-              <div class="df-plan-app">
-                <div class="df-app-title">
-                  <div>
-                    <h4>
-                      Meal Plan
-                    </h4>
-                    <small>
-                      Your meal plan
-                    </small>
-                  </div>
-                  <span aria-hidden="true">
-                    ☷
-                  </span>
-                </div>
-                <div class="df-week">
-                  <span class="">
-                    Sun
-                    <b>
-                      27
-                    </b>
-                  </span>
-                  <span class="">
-                    Mon
-                    <b>
-                      28
-                    </b>
-                  </span>
-                  <span class="">
-                    Tue
-                    <b>
-                      29
-                    </b>
-                  </span>
-                  <span class="">
-                    Wed
-                    <b>
-                      30
-                    </b>
-                  </span>
-                  <span class="">
-                    Thu
-                    <b>
-                      1
-                    </b>
-                  </span>
-                  <span class="">
-                    Fri
-                    <b>
-                      2
-                    </b>
-                  </span>
-                  <span class="is-today">
-                    Sat
-                    <b>
-                      3
-                    </b>
-                  </span>
-                </div>
-                <div class="df-plan-summary">
-                  <span>
-                    Planned today
-                  </span>
-                  <strong id="df-plan-total">
-                    1.473 kcal
-                  </strong>
-                </div>
-                <div class="df-meal-slot" data-meal-slot="0">
-                  <h5>
-                    Breakfast
-                  </h5>
-                  <div class="df-meal-card">
-                    <img src="/assets/product/meals/E-photo.jpg" alt="Street tacos, three ways" width="90" height="90" loading="lazy">
-                    <div class="df-meal-info">
-                      <h4>
-                        Street tacos, three ways
-                      </h4>
-                      <p data-meal-kcal>
-                        430 kcal
-                      </p>
-                      <small>
-                        5 ingredients · Deep Scan
-                      </small>
-                      <button type="button" data-meal-swap>
-                        Swap meal
-                      </button>
-                    </div>
-                    <button type="button" class="df-meal-check" data-meal-log aria-pressed="false" aria-label="Log Street tacos, three ways">
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div class="df-meal-slot" data-meal-slot="1">
-                  <h5>
-                    Lunch
-                  </h5>
-                  <div class="df-meal-card">
-                    <img src="/assets/product/meals/P-photo.jpg" alt="Shrimp & black sticky rice" width="90" height="90" loading="lazy">
-                    <div class="df-meal-info">
-                      <h4>
-                        Shrimp &amp; black sticky rice
-                      </h4>
-                      <p data-meal-kcal>
-                        358 kcal
-                      </p>
-                      <small>
-                        4 ingredients · Deep Scan
-                      </small>
-                      <button type="button" data-meal-swap>
-                        Swap meal
-                      </button>
-                    </div>
-                    <button type="button" class="df-meal-check" data-meal-log aria-pressed="false" aria-label="Log Shrimp & black sticky rice">
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div class="df-meal-slot" data-meal-slot="2">
-                  <h5>
-                    Dinner
-                  </h5>
-                  <div class="df-meal-card">
-                    <img src="/assets/product/meals/D-photo.jpg" alt="Chicken & lamb kabob plate" width="90" height="90" loading="lazy">
-                    <div class="df-meal-info">
-                      <h4>
-                        Chicken &amp; lamb kabob plate
-                      </h4>
-                      <p data-meal-kcal>
-                        685 kcal
-                      </p>
-                      <small>
-                        6 ingredients · Deep Scan
-                      </small>
-                      <button type="button" data-meal-swap>
-                        Swap meal
-                      </button>
-                    </div>
-                    <button type="button" class="df-meal-check" data-meal-log aria-pressed="false" aria-label="Log Chicken & lamb kabob plate">
-                      +
-                    </button>
-                  </div>
-                </div>
-                <p class="df-plan-live" id="df-plan-logged" role="status">
-                  No meals logged in this demo yet.
-                </p>
-              </div>
-              <span class="df-home-line" aria-hidden="true">
-              </span>
-            </div>
-            <p class="df-note">
-              Meals and values in this demo illustrate the feature.
-            </p>
-          </div>
+        <i class="run-home-indicator" aria-hidden="true"></i>
+      </div></div></div></div></div></section>
+<section class="df-feature df-feature--plan" id="dietfit-plan" data-demo="plan" aria-labelledby="df-plan-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Meal Plan</p><h2 id="df-plan-title">Made for your goal.<span class="df-title-break"> </span>Room for your taste.</h2><p class="df-feature-body">A plan that can change with you. Swap a meal that doesn’t suit you, then tick what you ate. Planning a meal doesn’t log it.</p><div class="df-feature-steps" aria-label="Demo stages"><button type="button" data-demo-seek="0.2" aria-pressed="false"><span>01</span>Today’s plan</button><button type="button" data-demo-seek="0.58" aria-pressed="false"><span>02</span>Swap a meal</button><button type="button" data-demo-seek="0.96" aria-pressed="false"><span>03</span>Log what you ate</button></div><p class="df-feature-guidance">Sample data · Scroll to explore, tap to try. <button type="button" class="df-resume" hidden>Resume scroll ↻</button></p><span class="df-chapter-progress" aria-hidden="true"><i></i></span></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="planDevice"><div class="dv-b"></div>
+    <div class="app plan-app" role="group" aria-label="DietFit app: interactive meal plan">
+      <div class="sb dk" aria-hidden="true"><span>9:41</span><span class="lv">•••• <i class="bat"></i></span></div>
+      <div class="run-island" aria-hidden="true"></div>
+      <div class="panel" id="plan">
+        <div class="plan-h"><b>Meal plan<small>Today · goal 2,910 kcal</small></b><span class="ic" aria-hidden="true"><img src="/assets/product/v2/icons/exchange.svg" alt=""><img src="/assets/product/v2/icons/note.svg" alt=""></span></div>
+        <div id="slots" role="group" aria-label="Planned meals"></div>
+        <div class="plan-progress" role="progressbar" aria-label="Meals logged" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><i></i></div>
+        <div class="plan-foot"><span>Planned <b class="mono" id="planSum">1,843</b> kcal</span><span>Ticked <b class="mono" id="planTick">0</b> of 3</span></div>
+      </div>
+      <i class="run-home-indicator" aria-hidden="true"></i>
+    </div></div></div><img class="df-feature-peek" src="/assets/product/mascot/sara-happy.png" alt="" width="131" height="175" loading="lazy"></div></div></section>
+<section class="df-feature df-feature--health is-flipped" id="dietfit-activity" data-demo="health" aria-labelledby="df-health-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Connected Health</p><h2 id="df-health-title">Food and activity.<span class="df-title-break"> </span>The same picture.</h2><p class="df-feature-body">Your steps, workouts and active energy sit beside your meals. Give Sara context for your next food choice.</p><div class="df-feature-steps" aria-label="Demo stages"><button type="button" data-demo-seek="0.2" aria-pressed="false"><span>01</span>Review your activity</button><button type="button" data-demo-seek="0.9" aria-pressed="false"><span>02</span>Find your dinner</button></div><p class="df-feature-guidance">Sample data · Scroll to explore, tap to try. <button type="button" class="df-resume" hidden>Resume scroll ↻</button></p><span class="df-chapter-progress" aria-hidden="true"><i></i></span></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="runDevice"><div class="dv-b"></div>
+    <div class="app run-app" id="activityApp" role="group" aria-label="Interactive DietFit activity and dinner demo">
+      <div class="sb dk" aria-hidden="true"><span>9:41</span><span class="lv">•••• <i class="bat"></i></span></div>
+      <div class="run-island" aria-hidden="true"></div>
+      <div class="run-pages">
+      <div class="panel run-screen" id="home" role="tabpanel" aria-labelledby="runHomeTab">
+        <div class="ph-head"><span class="av"><img src="/assets/product/v2/egg-phone.png" alt=""></span><span><small>Good evening</small><b>Marcus</b></span>
+          <span class="ic"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2c1.5 3 4.5 4.6 4.5 8.6A4.5 4.5 0 0 1 10 15a4.5 4.5 0 0 1-4.5-4.4c0-2 1-3.2 1.8-4 .3 1.4 1 2.2 1.7 2.4C9 7 9.6 4.4 10 2Z"/></svg></span></div>
+        <div class="week" id="week"></div>
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 170 120" role="img" aria-label="1,869 calories left of a 2,329 goal">
+            <path d="M18 104a67 67 0 1 1 134 0" fill="none" stroke="#efede9" stroke-width="12" stroke-linecap="round"/>
+            <path id="gArc" d="M18 104a67 67 0 1 1 134 0" fill="none" stroke="#1d1c1a" stroke-width="12" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+            <text x="85" y="88" text-anchor="middle" font-family="GT Standard L, Arial" font-weight="600" font-size="30" fill="#1d1c1a" id="gLeft">1,869</text>
+            <text x="85" y="106" text-anchor="middle" font-family="GT Standard L, Arial" font-size="11" fill="#7c7873">Calories left</text>
+          </svg>
+          <div class="gstat"><span>Goal<b>2,329</b></span><span>Consumed<b id="gCons">460</b></span></div>
         </div>
-      </section>
-      <section class="df-section df-health" data-ui-chapter="health" id="dietfit-progress" aria-labelledby="df-health-title">
-        <div class="df-container">
-          <div class="df-health-top">
-            <div>
-              <span class="df-eyebrow">
-                Your day, in context
-              </span>
-              <h2 id="df-health-title">
-                Food in. Activity out.
-                <br>
-                See the bigger picture.
-              </h2>
-            </div>
-            <p class="df-lead">
-              Food is one part of your day. Put calories in beside synced activity, then follow your own trend over time.
-            </p>
-          </div>
-          <div class="df-health-board">
-            <div class="df-home-preview">
-              <div class="df-app-title">
-                <div>
-                  <small>
-                    Good evening
-                  </small>
-                  <h4>
-                    Marcus
-                  </h4>
-                </div>
-                <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy">
-              </div>
-              <div class="df-home-gauge">
-                <div class="df-gauge">
-                  <svg viewBox="0 0 200 120" aria-hidden="true">
-                    <path d="M15 105 A85 85 0 0 1 185 105"/>
-                    <path d="M15 105 A85 85 0 0 1 185 105" pathLength="100" stroke-dasharray="80 100"/>
-                  </svg>
-                  <div>
-                    <strong>
-                      1,869
-                    </strong>
-                    <span>
-                      Calories left
-                    </span>
-                  </div>
-                </div>
-                <div class="df-home-budget">
-                  <div>
-                    <small>
-                      Goal
-                    </small>
-                    <b>
-                      2,329
-                    </b>
-                  </div>
-                  <div>
-                    <small>
-                      Consumed
-                    </small>
-                    <b>
-                      460
-                    </b>
-                  </div>
-                </div>
-              </div>
-              <div class="df-activities">
-                <div>
-                  <i aria-hidden="true">
-                    ↟
-                  </i>
-                  <small>
-                    Steps
-                  </small>
-                  <b>
-                    7,698
-                  </b>
-                </div>
-                <div>
-                  <i aria-hidden="true">
-                    ↗
-                  </i>
-                  <small>
-                    Running
-                  </small>
-                  <b>
-                    1h 24m
-                  </b>
-                </div>
-                <div>
-                  <i aria-hidden="true">
-                    ♥
-                  </i>
-                  <small>
-                    Heart rate
-                  </small>
-                  <b>
-                    86
-                  </b>
-                </div>
-              </div>
-            </div>
-            <div class="df-progress-preview">
-              <div class="df-progress-title">
-                <h4>
-                  Weight trend
-                </h4>
-                <div class="df-chart-controls" role="group" aria-label="Time range">
-                  <button type="button" data-chart-range="week" aria-pressed="true">
-                    7 days
-                  </button>
-                  <button type="button" data-chart-range="month" aria-pressed="false">
-                    30 days
-                  </button>
-                </div>
-              </div>
-              <p class="df-chart-value">
-                71.8
-                <small>
-                  kg
-                </small>
-              </p>
-              <svg class="df-progress-chart" id="df-progress-svg" viewBox="0 0 390 130" role="img" aria-label="Illustrative 7-day weight trend, ending at 71.8 kg.">
-                <path d="M0 25H390 M0 65H390 M0 105H390" fill="none" stroke="#eee9e2"/>
-                <polyline id="df-chart-line" points="0,30 65,48 130,42 195,70 260,64 325,91 390,100" fill="none" stroke="#d95d2b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="390" cy="100" r="5" fill="#d95d2b"/>
-              </svg>
-              <div class="df-chart-labels">
-                <span id="df-chart-start">
-                  7 days ago
-                </span>
-                <span>
-                  Today
-                </span>
-              </div>
-              <p class="df-note">
-                Look at the trend, not one day in isolation. The chart uses sample data, not a promised result.
-              </p>
-            </div>
-          </div>
-          <div class="df-health-caption">
-            <p class="df-note">
-              Connect the health apps you choose. Burned calories are estimates and depend on the synced source.
-            </p>
-            <span class="df-note">
-              Apple Health · Health apps &amp; devices
-            </span>
-          </div>
+        <div class="act">
+          <div><svg viewBox="0 0 16 16" fill="#6fae4a"><circle cx="9" cy="2.5" r="1.6"/><path d="M8 5l-3 3 1 1 2-1.5V10l-2 4h1.6L9 11l1.5 3H12l-2-4.5V7l1.5 1.5H14V7l-2.5-2z"/></svg>Steps<b>7,698</b></div>
+          <div><svg viewBox="0 0 16 16" fill="#f2a23a"><rect x="1" y="6" width="3" height="4" rx="1"/><rect x="12" y="6" width="3" height="4" rx="1"/><rect x="4" y="4" width="2" height="8" rx="1"/><rect x="10" y="4" width="2" height="8" rx="1"/><rect x="6" y="7.3" width="4" height="1.4"/></svg>Running<b>1h 24m</b></div>
+          <div><svg viewBox="0 0 16 16" fill="#e8574a"><path d="M8 14S1.5 10 1.5 5.6A3.3 3.3 0 0 1 8 4a3.3 3.3 0 0 1 6.5 1.6C14.5 10 8 14 8 14Z"/></svg>Heart rate<b>86</b></div>
         </div>
-      </section>
-      <section class="df-section df-motivation" id="dietfit-motivation" aria-labelledby="df-habit-title">
-        <div class="df-container df-motivation-grid">
-          <div class="df-copy">
-            <span class="df-eyebrow">
-              A little encouragement, every day
-            </span>
-            <h2 id="df-habit-title">
-              You don’t need perfect.
-              <br>
-              Just keep showing up.
-            </h2>
-            <p class="df-lead">
-              One meal logged. One streak kept. Challenges and Fitpoints give small daily actions a little more joy, with Sara by your side.
-            </p>
-            <p class="df-habit-encouragement">Every time you come back counts.</p>
-            <p class="df-habit-aside">On your Home Screen: check calories and macros with Standard Widget, or share progress with someone you choose using Widget 1:1.</p>
-          </div>
-          <div class="df-habit-scene">
-            <figure class="df-guide-cheer">
-              <figcaption>One meal at a time. You’ve got this!</figcaption>
-              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy" decoding="async">
-            </figure>
-            <div class="df-habit-ui">
-              <div class="df-habit-head">
-                <div>
-                  <strong>
-                    <span id="df-streak-count">
-                      6
-                    </span>
-                    days
-                  </strong>
-                  <small>
-                    Your streak
-                  </small>
-                </div>
-                <span class="df-demo-tag">
-                  Demo
-                </span>
-              </div>
-              <div class="df-streak-days">
-                <span >
-                  Sun
-                  <b>
-                    ✓
-                  </b>
-                </span>
-                <span >
-                  Mon
-                  <b>
-                    ✓
-                  </b>
-                </span>
-                <span >
-                  Tue
-                  <b>
-                    ✓
-                  </b>
-                </span>
-                <span >
-                  Wed
-                  <b>
-                    ✓
-                  </b>
-                </span>
-                <span >
-                  Thu
-                  <b>
-                    ✓
-                  </b>
-                </span>
-                <span >
-                  Fri
-                  <b>
-                    ✓
-                  </b>
-                </span>
-                <span id="df-streak-today">
-                  Sat
-                  <b>
-                    +
-                  </b>
-                </span>
-              </div>
-              <button type="button" id="df-habit-log" aria-pressed="false">
-                Try logging today’s meal →
-              </button>
-              <div class="df-habit-foot">
-                <span id="df-habit-reward">
-                  Challenge: log today’s meal
-                </span>
-                <span>
-                  Fitpoints ✦
-                </span>
-              </div>
-              <p class="df-note">
-                In the app, Fitpoints can be used for Streak Shield and Restore. This demo does not add account rewards.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="df-section df-extras" aria-labelledby="df-extras-title">
-        <div class="df-container">
-          <div class="df-heading">
-            <span class="df-eyebrow">
-              One ecosystem, built around you
-            </span>
-            <h2 id="df-extras-title">
-              From your first meal
-              <br>
-              to a lasting habit.
-            </h2>
-            <p class="df-lead">
-              Each part connects back to the same idea: understand what is working for you.
-            </p>
-          </div>
-          <div class="df-ecosystem">
-            <article>
-              <h3>
-                Start with you
-              </h3>
-              <p>
-                Personalized onboarding starts with your goal. Your first meal begins a streak; log three days to unlock Progress.
-              </p>
-              <ul>
-                <li>
-                  Onboarding
-                </li>
-                <li>
-                  Progress
-                </li>
-              </ul>
-            </article>
-            <article>
-              <h3>
-                Food Story &amp; Report
-              </h3>
-              <p>
-                Revisit meals, activity and weight in a timeline. Weekly and monthly reports make long-term habits easier to see.
-              </p>
-              <ul>
-                <li>
-                  Food Story
-                </li>
-                <li>
-                  Report
-                </li>
-                <li>
-                  PDF
-                </li>
-              </ul>
-            </article>
-            <article>
-              <h3>
-                Fasting &amp; Saved Meals
-              </h3>
-              <p>
-                Follow your eating window, history and fasting streak. Save frequent meals to make the next log faster.
-              </p>
-              <ul>
-                <li>
-                  Fasting
-                </li>
-                <li>
-                  Saved Meals
-                </li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section class="df-section df-recordings dietfit-video-section" id="dietfit-recordings" aria-labelledby="df-recording-title">
-        <div class="df-container">
-          <div class="df-recording-intro">
-            <h3 id="df-recording-title">
-              See it for yourself.
-              <br>
-              Inside the Dietfit app.
-            </h3>
-            <p class="df-note">
-              Screen recordings supplied by Dietfit.
-              <br>
-              Press play to watch the actual app flow.
-            </p>
-          </div>
-          <div class="df-recording-grid">
-            <figure class="df-recording">
-              <div class="df-recording-media">
-                <video controls playsinline preload="none" poster="/assets/product/recordings/deep-scan.jpg" data-product-recording aria-label="From photo to ingredients">
-                  <source src="/assets/product/recordings/deep-scan.mp4" type="video/mp4">
-                  Your browser does not support video.
-                </video>
-              </div>
-              <figcaption>
-                <h4>
-                  From photo to ingredients
-                </h4>
-                <p>
-                  Deep Scan on a real meal in the app.
-                </p>
-              </figcaption>
-            </figure>
-            <figure class="df-recording">
-              <div class="df-recording-media">
-                <video controls playsinline preload="none" poster="/assets/product/recordings/quick-and-deep.jpg" data-product-recording aria-label="Two scan modes, one app">
-                  <source src="/assets/product/recordings/quick-and-deep.mp4" type="video/mp4">
-                  Your browser does not support video.
-                </video>
-              </div>
-              <figcaption>
-                <h4>
-                  Two scan modes, one app
-                </h4>
-                <p>
-                  Quick Scan and the Deep Scan introduction.
-                </p>
-              </figcaption>
-            </figure>
-            <figure class="df-recording">
-              <div class="df-recording-media">
-                <video controls playsinline preload="none" poster="/assets/product/recordings/sara-context.jpg" data-product-recording aria-label="A conversation with Sara">
-                  <source src="/assets/product/recordings/sara-context.mp4" type="video/mp4">
-                  Your browser does not support video.
-                </video>
-              </div>
-              <figcaption>
-                <h4>
-                  A conversation with Sara
-                </h4>
-                <p>
-                  Recorded conversation about activity and sleep.
-                </p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-      <section class="df-section df-community" id="dietfit-community" aria-labelledby="df-community-title">
-        <div class="df-container">
-          <div class="df-community-heading">
-            <div>
-              <span class="df-eyebrow">
-                Dietfit community in Vietnam
-              </span>
-              <h2 id="df-community-title">
-                A little company.
-                <br>
-                A little more encouragement.
-              </h2>
-            </div>
-            <p class="df-lead">
-              Share a meal, ask a question, find some encouragement. The in-app Social Feed is available for the community in Vietnam. You can also meet the Dietfit community here.
-            </p>
-          </div>
-          <div class="df-community-life">
-            <figure class="df-friends-story">
-              <img src="/assets/images/final-cta.webp" alt="Friends enjoying food together outdoors" width="1448" height="1086" loading="lazy" decoding="async">
-              <figcaption><strong>Good food. Good company. Your own pace.</strong><span>Better habits can still leave room for meals with friends.</span></figcaption>
-            </figure>
-            <article class="df-partner-story">
-              <video controls playsinline preload="none" poster="/assets/social/nguyen-tra-my-dietfit-facebook.jpg" data-product-recording aria-label="Food diary video from Nguyễn Trà My, Dietfit Partner">
-                <source src="/assets/social/nguyen-tra-my-dietfit-facebook.mp4" type="video/mp4">
+        <button class="run-cta" id="askDinner">Ask Sara about dinner <span aria-hidden="true">→</span></button>
+        <div class="run-logged" id="runLogged" hidden><img id="runLoggedPhoto" src="/assets/product/v2/scan/D-photo.jpg" alt=""><span><small>Dinner logged</small><b id="runLoggedName"></b></span><button id="undoDinner">Undo</button></div>
+      </div>
+      <div class="panel pick run-screen" id="pick" role="tabpanel" aria-labelledby="runSaraTab" hidden>
+        <div class="pk-h"><img src="/assets/product/v2/egg-proud.png" alt=""><span><b>Sara</b><small>After today's run · 1h 24m</small></span></div>
+        <p class="pk-q">Long run tomorrow. Which dinner tonight?</p>
+        <button class="pk-opt good" data-dinner="D" aria-pressed="true"><img src="/assets/product/v2/scan/D-photo.jpg" alt=""><span><b>Kabob platter with rice</b><small>685 kcal · rice, chicken, lamb, salad</small></span><em>Better pick</em></button>
+        <button class="pk-opt" data-dinner="A" aria-pressed="false"><img src="/assets/product/v2/scan/A-photo.jpg" alt=""><span><b>Steak &amp; eggs brunch plate</b><small>800 kcal · steak, eggs, potatoes</small></span><em class="dim">Rest-day meal</em></button>
+        <p class="pk-a">You burned about 428 kcal today. The kabob platter gives you more carbs from the rice for tomorrow and is lighter on fat than the brunch plate. Drink water with it.</p>
+        <button class="run-cta" id="logDinner">Log dinner · 685 kcal</button>
+        <small class="pk-n">Sample guidance. Sara's suggestions come from what you log and sync.</small>
+      </div>
+      </div>
+      <div class="run-nav" role="tablist" aria-label="DietFit demo screens">
+        <button id="runHomeTab" role="tab" aria-selected="true" aria-controls="home" data-run-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/></svg>Home</button>
+        <button id="runSaraTab" role="tab" aria-selected="false" aria-controls="pick" tabindex="-1" data-run-tab="pick"><img src="/assets/product/v2/egg-proud.png" alt="">Sara</button>
+      </div>
+      <span class="run-announcement" role="status" id="runAnnouncement"></span>
+      <i class="run-home-indicator" aria-hidden="true"></i>
+    </div></div></div></div></div></section>
+<section class="df-feature df-feature--widgets" id="dietfit-widgets" data-demo="widgets" aria-labelledby="df-widgets-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Widgets & Streaks</p><h2 id="df-widgets-title">A quick glance.<span class="df-title-break"> </span>A little more momentum.</h2><p class="df-feature-body">Today’s calories, your logging streak and trends from your journal. A little context on your Home Screen, without opening the app every time.</p><div class="df-feature-steps" aria-label="Demo stages"><button type="button" data-demo-seek="0.3" aria-pressed="false"><span>01</span>Today</button><button type="button" data-demo-seek="0.5" aria-pressed="false"><span>02</span>Your streak</button><button type="button" data-demo-seek="0.9" aria-pressed="false"><span>03</span>Your trend</button></div><p class="df-feature-guidance">Sample data · Scroll to explore, tap to try. <button type="button" class="df-resume" hidden>Resume scroll ↻</button></p><span class="df-chapter-progress" aria-hidden="true"><i></i></span></div><div class="df-feature-stage"><div class="df-native"><div class="wg-grid" id="wgs">
+      <div class="wg s"><small><img src="/assets/product/v2/logo-mark.png" alt="">Today</small><b>1,094<span> / 1,900</span></b><div class="mm"><i style="width:62%;background:#f2672e"></i><i style="width:48%;background:#9bbb4c"></i><i style="width:71%;background:#e8b04b"></i></div><em>806 kcal left</em></div>
+      <div class="wg s dk"><small>Streak</small><b class="big">12</b><em>days logged · 2 shields</em></div>
+      <div class="wg m"><small><img src="/assets/product/v2/logo-mark.png" alt="">At this pace · next 30 days</small>
+        <svg viewBox="-6 0 312 110" preserveAspectRatio="none" role="img" aria-label="Projected weight trend: current habits versus with your meal plan"><line x1="0" y1="96" x2="300" y2="96" stroke="#e7e3dc"/><path d="M0 40 C60 38 120 34 180 30 S260 22 300 20" fill="none" stroke="#c9c3ba" stroke-width="2.5" stroke-dasharray="5 5"/><path d="M0 40 C60 46 120 56 180 64 S260 76 300 80" fill="none" stroke="var(--df-orange-60)" stroke-width="3"/><circle cx="300" cy="80" r="4.5" fill="var(--df-orange-60)"/><circle cx="300" cy="20" r="4" fill="#c9c3ba"/></svg>
+        <div class="lg"><span><i style="background:#c9c3ba"></i>Current habits</span><span><i style="background:var(--df-orange-60)"></i>With your meal plan</span></div><em>A projection from your logs, not a promise.</em></div>
+      <div class="wg s ph"><img src="/assets/product/v2/meal.jpg" alt=""><span><small>Dinner · 8:41</small><b>558 kcal</b></span></div>
+    </div></div><img class="df-feature-peek" src="/assets/product/mascot/sara-happy.png" alt="" width="131" height="175" loading="lazy"></div></div></section>
+</div>
+    <section class="dietfit-tiktok-section" data-dietfit-tiktok-section>
+      <div class="dietfit-section-heading">
+        <h2>You’re not alone on this journey</h2>
+        <p>The Dietfit crew is right here with you — tracking calories and living healthier, every single day.</p>
+        <a class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+          target="_blank" rel="noopener noreferrer">Get the app</a>
+      </div>
+      <div class="dietfit-tiktok-viewport" role="region" aria-label="Dietfit videos from the community">
+        <div class="dietfit-tiktok-grid">
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card dietfit-facebook-card">
+              <video muted loop playsinline preload="none"
+                data-poster="./assets/social/nguyen-tra-my-dietfit-facebook.jpg"
+                aria-label="Nguyễn Trà My’s slim-down journey with Dietfit">
+                <source data-src="/assets/social/nguyen-tra-my-dietfit-facebook.mp4" type="video/mp4">
               </video>
-              <p class="df-partner-label">A glimpse into a food diary</p>
-              <a class="df-text-link" href="https://www.facebook.com/watch/?v=3172002049663567" target="_blank" rel="noopener noreferrer">Nguyễn Trà My · Dietfit Partner <span aria-hidden="true">↗</span></a>
+              <a class="dietfit-tiktok-credit"
+                href="https://www.facebook.com/watch/?v=3172002049663567&amp;extid=CL-UNK-UNK-UNK-IOS_GK0T-GK1C&amp;ref=sharing&amp;mibextid=wwXIfr"
+                target="_blank" rel="noopener noreferrer">Nguyễn Trà My · Dietfit Partner</a>
             </article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7666480953052646677?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @phthanhvan1412" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@phthanhvan1412/video/7666480953052646677"
+                target="_blank" rel="noopener noreferrer">@phthanhvan1412</a></article>
           </div>
-          <div class="df-community-links">
-            <a href="https://www.facebook.com/groups/2085834865680742" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/community/community-dietfit-users.webp" alt="" width="90" height="90" loading="lazy">
-              <span>
-                <strong>
-                  Dietfit Vietnam community
-                </strong>
-                <small>
-                  App questions and everyday meals.
-                </small>
-              </span>
-              <span class="df-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-            <a href="https://www.facebook.com/groups/1688403659018395" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/community/community-weight-loss.webp" alt="" width="90" height="90" loading="lazy">
-              <span>
-                <strong>
-                  A community for your health journey
-                </strong>
-                <small>
-                  Find encouragement and a little company.
-                </small>
-              </span>
-              <span class="df-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </a>
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7657920431386627335?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @tunnynguyen" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@tunnynguyen/video/7657920431386627335"
+                target="_blank" rel="noopener noreferrer">@tunnynguyen</a></article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7660807882669296916?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @gaythidoiten1910" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@gaythidoiten1910/video/7660807882669296916"
+                target="_blank" rel="noopener noreferrer">@gaythidoiten1910</a></article>
+          </div>
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7665734390814625044?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @jenmie.xx" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@jenmie.xx/video/7665734390814625044"
+                target="_blank" rel="noopener noreferrer">@jenmie.xx</a></article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7650428372425674004?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Dietfit video by @dietfitvietnam" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@dietfitvietnam/video/7650428372425674004"
+                target="_blank" rel="noopener noreferrer">@dietfitvietnam</a></article>
           </div>
         </div>
-      </section>
-      <section class="df-section df-faq" id="dietfit-faq" aria-labelledby="df-faq-title">
-        <div class="df-container df-faq-layout">
-          <div class="df-copy">
-            <span class="df-eyebrow">
-              A little clarity, before you start
-            </span>
-            <h2 id="df-faq-title">
-              Things worth
-              <br>
-              knowing.
-            </h2>
-            <p class="df-lead">
-              Understand how Dietfit works, including where AI can get it wrong.
-            </p>
-          </div>
-          <div>
-            <details>
+      </div>
+    </section>
+
+    <section class="dietfit-progress-cta" id="dietfit-progress">
+      <div class="dietfit-progress-cta__sticky">
+        <div class="dietfit-progress-cta__content">
+          <h2>You’re more beautiful than you think</h2>
+          <p><strong>You’ll never know how good you can look until you give change a try.</strong><br>Dietfit is always
+            here to keep you motivated and make losing weight easy, so you feel better every day.</p><a class="dietfit-button"
+            href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+            rel="noopener noreferrer">Try Dietfit now</a>
+        </div>
+        <div class="dietfit-progress-cta__gallery" aria-label="A transformation journey with Dietfit">
+          <figure><img src="/assets/images/dietfit-progress-before.webp?v=3" alt="Before the transformation"
+              loading="lazy" width="1688" height="2931"></figure>
+          <figure><img src="/assets/images/dietfit-progress-after.webp?v=3" alt="After the transformation"
+              loading="lazy" width="1688" height="2942"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="dietfit-video-section" id="dietfit-video">
+      <div class="dietfit-section-heading">
+        <h2>Calorie tracking has never been this easy</h2>
+        <p>Let the tech handle the numbers — you just stay happy, live well and track calories with Dietfit.</p><a
+          class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+          target="_blank" rel="noopener noreferrer">Let Dietfit handle it</a>
+      </div>
+      <figure class="dietfit-video-preview" data-youtube-id="fYZWilyeuHM" data-video-title="Calorie tracking has never been this easy">
+        <button class="dietfit-video-play" type="button" aria-label="Play video: Calorie tracking has never been this easy">
+          <img src="https://i.ytimg.com/vi/fYZWilyeuHM/maxresdefault.jpg" alt="" loading="lazy" decoding="async"
+            data-fallback-src="https://i.ytimg.com/vi/fYZWilyeuHM/hqdefault.jpg">
+          <span aria-hidden="true"><img src="/assets/images/play.svg" alt=""></span>
+        </button>
+      </figure>
+    </section>
+
+    <section class="dietfit-community" id="dietfit-community" aria-labelledby="dietfit-community-title">
+      <div class="dietfit-community__intro">
+        <p class="dietfit-community__eyebrow">Dietfit Community</p>
+        <h2 id="dietfit-community-title">Let’s glow up<br>together, every day</h2>
+        <p class="dietfit-community__lead">Hit a rough patch or need a little extra motivation? Come join our community!
+          This is where we look out for each other.</p>
+      </div>
+      <div class="dietfit-community__grid">
+        <a class="dietfit-community__card" href="https://www.facebook.com/groups/2085834865680742" target="_blank"
+          rel="noopener noreferrer">
+          <div class="dietfit-community__media"><img src="/assets/community/community-dietfit-users.webp"
+              alt="Dietfit VN Users group banner" loading="lazy"></div>
+          <div class="dietfit-community__content">
+            <p class="dietfit-community__label">Facebook Group · In Vietnamese</p>
+            <h3>Dietfit VN Users</h3>
+            <p>A place to swap Dietfit tips, share everyday meals and celebrate the small changes that last.</p>
+          </div><span class="dietfit-community__link">Join the community <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="dietfit-community__card" href="https://www.facebook.com/groups/1688403659018395" target="_blank"
+          rel="noopener noreferrer">
+          <div class="dietfit-community__media"><img src="/assets/community/community-weight-loss.webp"
+              alt="Weight Loss Club group banner" loading="lazy"></div>
+          <div class="dietfit-community__content">
+            <p class="dietfit-community__label">Facebook Group · In Vietnamese</p>
+            <h3>Weight Loss Club — Less Fat, Less Sad</h3>
+            <p>Ask questions, find accountability buddies and stay motivated so your weight-loss journey feels lighter.</p>
+          </div><span class="dietfit-community__link">Join the community <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+
+<section class="dietfit-faq" id="dietfit-faq"><h2>A few things you might wonder</h2><div class="dietfit-faq-list"><details>
               <summary>
                 Are photo-based calorie estimates exact?
                 <span aria-hidden="true">
@@ -1575,8 +596,7 @@
               <p>
                 No. Results depend on the photo and the visible ingredients and portions. Oils, sauces and hidden ingredients can be difficult to identify. Deep Scan lets you review ingredients and edit weights before logging.
               </p>
-            </details>
-            <details>
+            </details><details>
               <summary>
                 How do Quick Scan and Deep Scan differ?
                 <span aria-hidden="true">
@@ -1585,8 +605,7 @@
               <p>
                 Quick Scan helps you log quickly. Deep Scan goes further: it outlines foods and shows individual ingredients and their calories. You can correct names or edit ingredients before saving.
               </p>
-            </details>
-            <details>
+            </details><details>
               <summary>
                 What does Sara use to answer my questions?
                 <span aria-hidden="true">
@@ -1595,8 +614,7 @@
               <p>
                 Your goal and onboarding answers, meals you log, and activity from the health apps you choose to connect. What you share helps Sara offer guidance with more context.
               </p>
-            </details>
-            <details>
+            </details><details>
               <summary>
                 Does a meal plan automatically log my meals?
                 <span aria-hidden="true">
@@ -1605,8 +623,7 @@
               <p>
                 No. A meal plan is a plan. Tick or log the meal you actually ate to record it. You can also swap meals, generate a new plan and review the history.
               </p>
-            </details>
-            <details>
+            </details><details>
               <summary>
                 Where can I connect activity data from?
                 <span aria-hidden="true">
@@ -1615,8 +632,7 @@
               <p>
                 Dietfit connects with health apps and devices you use, such as Apple Health and Apple Watch. Activity sits beside calories in so you can follow food and movement together. Availability depends on the connections you enable in the app.
               </p>
-            </details>
-            <details>
+            </details><details>
               <summary>
                 Does Sara replace a medical professional?
                 <span aria-hidden="true">
@@ -1625,85 +641,41 @@
               <p>
                 No. Sara is an AI coach that helps you understand meals and habits. Values are estimates, and guidance does not replace medical diagnosis, treatment or advice.
               </p>
-            </details>
+            </details></div></section>
+    <section class="dietfit-final" data-dietfit-final>
+      <div class="dietfit-final-image" data-background-src="/assets/images/final-cta.webp" aria-hidden="true"></div>
+      <div class="dietfit-final-shade" aria-hidden="true"></div>
+      <div class="dietfit-final-cta">
+        <h2>Eat whatever you like. Just remember to check Dietfit!</h2><a class="dietfit-button"
+          href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+          rel="noopener noreferrer">Get Dietfit now</a>
+      </div>
+      <footer class="dietfit-footer">
+        <div class="dietfit-footer-links">
+          <div>
+            <h3>Product</h3><a href="#main">Features</a><a href="#dietfit-faq">FAQ</a>
+          </div>
+          <div>
+            <h3>Company</h3><a href="/en/about-us/">About Dietfit</a><a href="mailto:marketing@c0x12c.com">Contact</a><a
+              href="mailto:marketing@c0x12c.com">Support</a>
+          </div>
+          <div>
+            <h3>Connect</h3><a href="#dietfit-community">Community</a><a href="https://www.tiktok.com/@dietfitvietnam"
+              target="_blank" rel="noopener noreferrer">TikTok</a>
           </div>
         </div>
-      </section>
-      <section class="df-download" aria-labelledby="df-download-title">
-        <div class="df-container df-download-inner">
-          <div class="df-download-copy">
-            <span class="df-eyebrow">
-              With Sara, start at your next meal
-            </span>
-            <h2 id="df-download-title">
-              Eat well.
-              <br>
-              Understand a little more every day.
-            </h2>
-            <p class="df-lead">
-              Snap a meal. Review its ingredients.
-              <br>
-              Let Dietfit help connect the next steps.
-            </p>
-            <a class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank" rel="noopener noreferrer">
-              Get Dietfit for iPhone ↗
-            </a>
-          </div>
-          <figure class="df-download-scene">
-            <img class="df-download-photo" src="/assets/images/dietfit-about-cta-v2.webp" alt="A man relaxing on a sofa while checking his phone" width="1672" height="941" loading="lazy" decoding="async">
-            <figcaption class="df-guide-farewell">
-              <img class="" src="/assets/product/mascot/sara-happy.png" alt="Sara, your Dietfit AI companion" width="156" height="175" loading="lazy" decoding="async">
-              <span>See you at your next meal!<small>Sara · Dietfit</small></span>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-      <footer class="df-footer">
-        <div class="df-container">
-          <div class="df-footer-top">
-            <div class="df-footer-brand">
-              <img src="/assets/images/dietfit-logo.webp" alt="Dietfit" width="132" height="40" loading="lazy">
-              <p>
-                Understand your meals. Find your own healthy habits.
-              </p>
-            </div>
-            <nav class="df-footer-nav" aria-label="Footer navigation">
-              <a href="#dietfit-product">
-                Features
-              </a>
-              <a href="/en/about-us/">
-                About Dietfit
-              </a>
-              <a href="/en/blog/">
-                Blog
-              </a>
-              <a href="#dietfit-faq">
-                FAQ
-              </a>
-              <a href="mailto:marketing@c0x12c.com">
-                Contact
-              </a>
-            </nav>
-          </div>
-          <div class="df-footer-legal">
-            <span>
-              © 2026 Dietfit
-            </span>
-            <span>
-              Nutrition values are estimates. Sara does not replace medical advice.
-            </span>
-          </div>
-        </div>
+        <div class="dietfit-footer-legal"><span>© 2026 Dietfit · All rights reserved</span><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
       </footer>
-    </div>
+    </section>
   </main>
 
   <script src="/vendor/lenis/lenis.min.js"></script>
   <script src="/scripts/dietfit-scroll.js"></script>
   <script src="/scripts/dietfit-hero.js?v=20260918-1"></script>
-  <script src="/scripts/dietfit-product.js?v=4"></script>
-  <script src="/scripts/dietfit-ui-motion.js?v=2"></script>
+  <script src="/scripts/dietfit-sections.js?v=4"></script>
+  <script src="/scripts/dietfit-social.js?v=6"></script>
   <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>
+  <script src="/scripts/dietfit-native-ui.js?v=6"></script>
 </body>
 
 </html>

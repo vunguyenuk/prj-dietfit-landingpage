@@ -2,26 +2,31 @@
 
 Landing page tĩnh của Dietfit, có thể mở và chỉnh sửa trực tiếp bằng Visual Studio Code.
 
-## Product story — 20/10/2026
+## Phiên bản đang dùng — 20/10/2026
 
-Trang Home VI và EN đã được tổ chức lại theo mạch: hiểu bữa ăn → kiểm tra nguyên liệu → Sara hiểu ngữ cảnh → meal plan → vận động và tiến độ → động lực → video app → cộng đồng → FAQ.
+Home VI và EN theo ba nguồn rõ ràng:
 
-- Giữ theme cam, trắng ấm, Be Vietnam Pro và mascot Sara. Tham khảo cách [0xcal](https://0xcal.app/) giải thích sản phẩm bằng các ví dụ cụ thể; không dùng số liệu accuracy, benchmark, testimonial hoặc cam kết của họ cho Dietfit.
-- **Hero Rive được giữ nguyên**: markup intro/Rive, `scripts/dietfit-hero.js`, `styles/dietfit-hero.css`, toàn bộ `.riv` và poster không thay đổi. Bạn vẫn export file Rive thay thế như hướng dẫn bên dưới.
-- Nội dung mới nằm trực tiếp trong `index.html` và `en/index.html`, bên dưới comment `PRODUCT STORY`.
-- `styles/dietfit-product.css`: bố cục và giao diện phần product story, được scope trong `.dietfit-product`.
-- `scripts/dietfit-product.js`: demo Deep Scan (chọn nguyên liệu, sửa gram, lưu thử), hội thoại Sara mẫu, đổi món/log Meal Plan, đổi khoảng thời gian biểu đồ và streak demo. Mọi trạng thái chỉ ở trình duyệt; không gọi AI, không gửi dữ liệu và không ghi vào tài khoản.
-- `assets/product/`: mascot và ảnh món ăn được tái sử dụng từ landing v2; ba video app do Dietfit cung cấp, đã cắt đoạn, tắt âm thanh và nén H.264. Video chỉ tải khi người xem bấm phát.
-- Các bản demo được ghi rõ là dữ liệu mẫu. Kết quả dinh dưỡng được trình bày là ước tính; Sara không thay thế tư vấn y tế.
-- Tài liệu nguồn và giới hạn đối chiếu được ghi trong `content/product-reference.md`.
+- **Design version 1** (`909d84a`): nền trắng, màu cam `#FE692E`, chữ Be Vietnam Pro, carousel ảnh người thật, social/community, bố cục FAQ và ảnh/footer cuối trang.
+- **Gaia**: bố cục giới thiệu tính năng xen kẽ text/điện thoại; Sara xuất hiện ở mép khối thay vì lặp lại trong nhiều thẻ trang trí. Không dùng asset hoặc mã Gaia.
+- **V2** (`runner-camera-v87`): lấy trực tiếp geometry và renderer của Scan, Sara, Meal Plan, Home/Connected Health và widgets. Cuộn trang điều khiển nội dung trong UI; không thay bằng video tự chạy hay chỉ xoay cả điện thoại. Không dùng tranh cổ điển hoặc nhân vật cổ điển.
 
-Preview dự án này riêng với landing v2:
+**Hero Rive giữ nguyên**: HTML intro/Rive, `scripts/dietfit-hero.js`, `styles/dietfit-hero.css`, toàn bộ file `.riv` và poster không thay đổi. Bạn vẫn có thể thay file export từ Rive như hướng dẫn bên dưới.
+
+- `styles/dietfit-features.css`: bố cục feature theo design system v1.
+- `styles/dietfit-native-ui.css`: CSS app v2 được giới hạn trong `.df-native`, giữ font native app riêng.
+- `scripts/dietfit-native-ui.js`: renderer nội dung và controller scroll cho các feature. Dữ liệu mẫu chỉ nằm trong trình duyệt; không gọi AI hoặc ghi vào tài khoản.
+- `assets/product/v2/`: chỉ những ảnh món ăn, mascot, font app và icon cần dùng. Không có hình nền tranh.
+- Các file `dietfit-product.*` và `dietfit-ui-motion.*` của lượt trước không được Home tải nữa. Lịch sử Git giữ các mốc cũ để phục hồi/đối chiếu.
+- Bấm một bước demo hoặc một control trong app sẽ ưu tiên thao tác của bạn; nút “Theo cuộn lại” tiếp tục tour. Scan có các sheet từ camera đến kết quả 558 kcal. Sara gõ câu hỏi, gửi ảnh, hiện phản hồi và summary theo scroll. Meal Plan đổi món/tick; Home chọn và log bữa tối.
+- Trên mobile, phần mô tả cuộn lên trước rồi điện thoại được giữ ở kích thước dễ xem. Reduced motion giữ các màn hình và nút chọn bước, không chạy chuỗi chuyển động.
+
+Chạy đúng project này:
 
 ```bash
 python3 -m http.server 4180 --bind 127.0.0.1 --directory /Users/vunguyen/Desktop/prj-dietfit-landingpage
 ```
 
-Mở `http://127.0.0.1:4180/` hoặc `/en/`. Cổng 4173 vẫn dành cho landing v2.
+Mở `http://127.0.0.1:4180/` hoặc `/en/`. Cổng **4173** vẫn là bản v2 tham khảo, không phải trang vừa chỉnh. Deploy Vercel từ root `prj-dietfit-landingpage`; đây là trang tĩnh, không cần build frontend.
 
 ## Cấu trúc
 
@@ -70,12 +75,3 @@ Domain chính thức: `https://dietfit.health` (khai báo trong `tools/build.py`
 - Ảnh chia sẻ mạng xã hội (1200×630) nằm trong `assets/og/`.
 - Link cũ `blog/post.html?slug=…` được chuyển 301 sang URL mới (xem `vercel.json`).
 - Sau khi deploy: vào Google Search Console → thêm property `dietfit.health` → gửi `https://dietfit.health/sitemap.xml`.
-
-
-## Chuyển động UI theo cuộn
-
-- `styles/dietfit-ui-motion.css`, `scripts/dietfit-ui-motion.js`: chuyển động điện thoại, từng bữa trong Meal Plan và bảng sức khỏe; giữ nguyên theme, ảnh người và mascot.
-- V2 chỉ là tham khảo cách scroll trigger, không dùng tranh cổ điển của v2.
-- Desktop rộng giữ điện thoại Scan/Sara khi cuộn qua ba bước, kể cả khung 1280×720. Mobile/iPad cuộn tự nhiên; khi điện thoại vào vùng nhìn, demo phát từng bước và dừng khi bạn thao tác hoặc rời vùng nhìn.
-- Bấm hoặc chỉnh demo sẽ giành quyền điều khiển từ scroll; `prefers-reduced-motion` tắt chuyển động.
-- Hero Rive độc lập, không thay đổi.
