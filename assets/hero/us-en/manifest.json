@@ -1,0 +1,50 @@
+[
+  {
+    "source": "dietfit-hero-en.riv",
+    "output": "dietfit-hero-us-en.riv",
+    "sourceBytes": 1249909,
+    "outputBytes": 1444636,
+    "replacedImages": [
+      "BMI",
+      "Calo average",
+      "Drink",
+      "Fat",
+      "Food information",
+      "Meal score",
+      "Protein",
+      "Scan",
+      "Series of days",
+      "Starch",
+      "Today calo",
+      "bg",
+      "food",
+      "hands",
+      "review card"
+    ],
+    "unmodifiedAnimationSkeletonSha256": "cea696e56a904de68027e8d4bab1fb02dfaf9a032f57b2ce2a1734420fd04fc3"
+  },
+  {
+    "source": "dietfit-hero-responsive-en.riv",
+    "output": "dietfit-hero-responsive-us-en.riv",
+    "sourceBytes": 1250795,
+    "outputBytes": 1445522,
+    "replacedImages": [
+      "BMI",
+      "Calo average",
+      "Drink",
+      "Fat",
+      "Food information",
+      "Meal score",
+      "Protein",
+      "Scan",
+      "Series of days",
+      "Starch",
+      "Today calo",
+      "bg",
+      "food",
+      "hands",
+      "review card"
+    ],
+    "unmodifiedAnimationSkeletonSha256": "9edc0d94f1913a42e67eb5b31d32fe04b78a8bfd2a42e0f3bf282d1263b543a2"
+  }
+]

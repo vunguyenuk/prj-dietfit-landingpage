@@ -34,12 +34,13 @@
   // iPad + mobile (<= 1024px) dùng bản dựng riêng; desktop giữ bản gốc.
   // Chỉ nạp đúng một file để không tải thừa ~5.8MB.
   const compactQuery = window.matchMedia('(max-width: 1024px)');
-  // Bản /en/ dùng file -en.riv (chỉ khác dòng chữ "Calculating calories...").
-  const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-en' : '';
+  // EN uses a separate US food/UI image set; the original VI exports remain untouched.
+  const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-us-en' : '';
+  const heroVersion = langSuffix ? '20261020-us-1' : '20260918-1';
   function currentHeroFile() {
     return compactQuery.matches
-      ? 'dietfit-hero-responsive' + langSuffix + '.riv?v=20260918-1'
-      : 'dietfit-hero' + langSuffix + '.riv?v=20260918-1';
+      ? 'dietfit-hero-responsive' + langSuffix + '.riv?v=' + heroVersion
+      : 'dietfit-hero' + langSuffix + '.riv?v=' + heroVersion;
   }
 
   // Tải sẵn file .riv ngay lập tức, song song với rive.js và rive.wasm.

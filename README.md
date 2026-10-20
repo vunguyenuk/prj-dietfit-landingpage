@@ -10,7 +10,7 @@ Home VI và EN theo ba nguồn rõ ràng:
 - **Gaia**: bố cục giới thiệu tính năng xen kẽ text/điện thoại; Sara xuất hiện ở mép khối thay vì lặp lại trong nhiều thẻ trang trí. Không dùng asset hoặc mã Gaia.
 - **V2** (`runner-camera-v87`): lấy trực tiếp geometry và renderer của Scan, Sara, Meal Plan, Home/Connected Health và widgets. Cuộn trang điều khiển nội dung trong UI; không thay bằng video tự chạy hay chỉ xoay cả điện thoại. Không dùng tranh cổ điển hoặc nhân vật cổ điển.
 
-**Hero Rive giữ nguyên**: HTML intro/Rive, `scripts/dietfit-hero.js`, `styles/dietfit-hero.css`, toàn bộ file `.riv` và poster không thay đổi. Bạn vẫn có thể thay file export từ Rive như hướng dẫn bên dưới.
+**Hero Rive**: bản VI dùng nguyên file, poster và chuyển động hiện tại. Bản EN có bộ ảnh món ăn/UI riêng cho thị trường Mỹ; chỉ thay ảnh nhúng, giữ toàn bộ object timeline/state machine của export gốc. Loader chọn theo ngôn ngữ và breakpoint. CSS hero và Rive runtime không thay đổi.
 
 - `styles/dietfit-features.css`: bố cục feature theo design system v1.
 - `styles/dietfit-native-ui.css`: CSS app v2 được giới hạn trong `.df-native`, giữ font native app riêng.
@@ -42,7 +42,11 @@ Mở `http://127.0.0.1:4180/` hoặc `/en/`. Cổng **4173** vẫn là bản v2 
 ## Rive hero
 
 - Ảnh bên trong các file `.riv` đã được nén lại sang WebP (giữ nguyên kích thước): ~6.3MB → ~1.25MB. Nếu export lại file từ Rive, hãy nén ảnh trước khi đưa vào Rive (hoặc bật nén trong Rive Editor), rồi đổi `?v=` trong `scripts/dietfit-hero.js` và thẻ preload trong `<head>`.
-- Các file `*-en.riv` giống hệt bản gốc, chỉ khác dòng chữ đang tính calo. Export lại bản VI thì cần tạo lại bản EN.
+- `/en/` dùng `dietfit-hero-us-en.riv` và `dietfit-hero-responsive-us-en.riv` (~1.45MB/file), cùng poster `*-us-en.webp`. Các file `*-en.riv` cũ vẫn được giữ làm nguồn.
+- Bộ US: grilled chicken, quinoa, broccoli, sweet potato, avocado; bối cảnh có salad, salmon bowl, turkey sandwich và yogurt/berries. Toàn bộ card hero dùng tiếng Anh, đơn vị cân nặng lb và nước fl oz. Số dinh dưỡng/điểm/biểu đồ là dữ liệu minh hoạ, không phải kết quả AI thực.
+- `assets/hero/us-en/` giữ ảnh nguồn và UI tiếng Anh để bạn đưa lại vào Rive Editor. Các ảnh món ăn được tạo bằng công cụ imagegen tích hợp; card UI dựng bằng code để giữ chữ và số chính xác. `tools/build-rive-us.cjs` dựng card (cần `@napi-rs/canvas`, `sharp`; có thể trỏ `DIETFIT_NODE_MODULES` tới thư mục npm dependencies). `python3 tools/build-rive-us.py` đóng gói ảnh vào hai export US; script xác nhận mọi byte ngoài payload ảnh/độ dài ảnh không thay đổi.
+- Khi export lại scene trong Rive: giữ tên asset hoặc cập nhật bảng `REPLACEMENTS` trong script build. File `.riv` là runtime export; source project/state machine vẫn chỉnh trong Rive Editor. Bản VI không bị ghi đè.
+- Hai prompt ảnh gốc và vai trò từng asset nằm trong `assets/hero/us-en/prompts.md`. Thư mục source này không deploy; hai file `.riv` US đã nhúng đủ ảnh nên không cần tải source ngoài.
 - `assets/hero/dietfit-hero-poster*.webp` là khung hình đầu của Rive, hiện ngay khi trang mở trong lúc Rive đang tải.
 
 ## Chạy local
