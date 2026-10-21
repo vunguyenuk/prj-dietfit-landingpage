@@ -9,7 +9,7 @@
 .df-integrations__description a { color:#110b20; font-size:.875rem; text-underline-offset:5px; }
 .df-integrations__scene { position:relative; height:560px; margin-top:48px; isolation:isolate; }
 .df-integrations__apps { position:absolute; inset:0; margin:0; padding:0; list-style:none; }
-.df-integrations__app { position:absolute; z-index:2; width:148px; rotate:none; }
+.df-integrations__app { position:absolute; z-index:6; width:148px; rotate:none; }
 .df-integrations__tile { position:relative; display:flex; align-items:center; gap:12px; min-height:92px; padding:16px; border:0; border-radius:24px; background:#fff; box-shadow:0 10px 24px -16px rgb(38 29 19 / 25%); color:#211c29; text-decoration:none; }
 .df-integrations__tile img { flex:none; width:56px; height:56px; border-radius:14px; }
 .df-integrations__tile > span { font-size:.8125rem; line-height:1.3; font-weight:500; }
@@ -26,7 +26,7 @@
 .df-integrations__hub > img { display:block; width:64px; height:64px; border-radius:16px; margin:0 auto 12px; }
 .df-integrations__hub h3 { margin:0 0 4px; font-size:1.125rem; font-weight:600; }
 .df-integrations__hub .df-integrations__data { margin:12px 0 0; color:#77717f; font-size:.625rem; line-height:1.5; }
-.df-integrations__destination { position:absolute; left:50%; top:82%; translate:-50% 0; display:flex; gap:12px; align-items:center; padding:12px 20px; border:0; border-radius:20px; background:#fff; z-index:2; }
+.df-integrations__destination { position:absolute; left:50%; top:82%; translate:-50% 0; display:flex; gap:12px; align-items:center; padding:12px 20px; border:0; border-radius:20px; background:#fff; z-index:6; }
 .df-integrations__destination img { width:40px; height:40px; border-radius:12px; }
 .df-integrations__destination strong { display:block; font-size:1rem; font-weight:600; }
 .df-integrations__destination span { display:block; margin-top:4px; font-size:.6875rem; white-space:nowrap; color:#77717f; }
@@ -34,8 +34,8 @@
 .df-integrations__carry .df-integrations__tile { position:absolute; z-index:2; min-height:0; padding:10px; border-radius:18px; gap:8px; }
 .df-integrations__carry .df-integrations__tile img { width:40px; height:40px; border-radius:10px; }
 .df-integrations__carry .df-integrations__tile > span { font-size:.6875rem; }
-.df-integrations__app--withings { left:16%; top:42%; }
-.df-integrations__app--withings .df-integrations__tile { left:70px; top:142px; width:128px; }
+.df-integrations__app--withings { left:calc(16% + 236px); top:68%; width:128px; height:auto; }
+.df-integrations__app--withings .df-integrations__tile { position:relative; inset:auto; width:100%; }
 .df-integrations__app--strava { left:80%; top:44%; }
 .df-integrations__app--strava .df-integrations__tile { left:-48px; top:8px; width:112px; }
 .df-integrations__note { margin:16px 0 24px; text-align:center; color:#77717f; font-size:.6875rem; line-height:1.6; }
@@ -45,7 +45,7 @@
 .df-integrations__setup li { color:#625d6b; font-size:.8125rem; line-height:1.6; }
 .df-integrations__setup strong { font-weight:500; color:#110b20; }
 /* The mascot pose atlas carries each card; the final collage stays in normal flow. */
-.df-integrations .df-integrations__hub { z-index:4; top:35%; }
+.df-integrations .df-integrations__hub { z-index:7; top:35%; }
 .df-integrations__stage { display:flow-root; }
 .df-integrations__porter { position:absolute; z-index:5; width:224px; height:224px; pointer-events:none; }
 .df-integrations__porter--left { left:16%; top:calc(42% + 30px); }
@@ -57,9 +57,36 @@
 .df-integrations__porter--right .df-integrations__sprite { animation-delay:-1.7s; }
 @keyframes df-integration-porter-idle { 0%,100% { transform:scale(1); } 48% { transform:scale(1.005,1.012); } }
 @media(prefers-reduced-motion:reduce) { .df-integrations .df-integrations__sprite { animation:none!important; } }
+/* Once deliveries finish, the original writing pose takes over at the same foot baseline. */
+.df-integrations__porter .df-integrations__notetaker { display:none; position:absolute; inset:0; width:100%; height:100%; }
+.df-integrations__porter.is-writing .df-integrations__facing { visibility:hidden; }
+.df-integrations__porter.is-writing .df-integrations__notetaker { display:block; animation:df-integration-note-enter 220ms cubic-bezier(.25,1,.5,1) both; }
+.df-integrations__notetaker .df-mascot__face { translate:0 .5%; }
+.df-integrations__notetaker .df-mascot__base {
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='white' fill-rule='evenodd' d='M0 0H100V100H0ZM30 43L40 49L45 54L48 61L43 70L27 72L16 65V54L25 49Z'/%3E%3C/svg%3E");
+  mask-size:100% 100%;
+}
+.df-integrations__notetaker .df-integrations__pen {
+  position:absolute; inset:0; width:100%; height:100%; object-fit:contain;
+  clip-path:polygon(30% 43%,40% 49%,45% 54%,48% 61%,43% 70%,27% 72%,16% 65%,16% 54%,25% 49%);
+  transform-origin:27% 63%;
+  animation:df-integration-note-scribble 2.3s cubic-bezier(.37,0,.63,1) infinite paused;
+}
+.df-integrations__notetaker.is-mascot-active .df-integrations__pen { animation-play-state:running; }
+@keyframes df-integration-note-enter { from { opacity:0; } to { opacity:1; } }
+@keyframes df-integration-note-scribble {
+  0%,16%,48%,100% { transform:rotate(0); }
+  23%,36% { transform:rotate(1.5deg) translate(.2%,.1%); }
+  29%,42% { transform:rotate(-.9deg); }
+  67%,78% { transform:rotate(1.1deg); }
+  72%,84% { transform:rotate(-.6deg) translate(-.1%,0); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .df-integrations .df-integrations__notetaker,.df-integrations .df-integrations__pen { animation:none!important; transform:none!important; }
+}
 .df-integrations__porter::before { content:""; position:absolute; left:25%; bottom:3%; width:50%; height:6%; background:radial-gradient(ellipse,rgb(35 25 18 / 16%),transparent 70%); }
 .df-integrations.is-delivery-ready .df-integrations__app:not(.is-placed) .df-integrations__tile { opacity:0; pointer-events:none; }
-.df-integrations__app.is-being-carried { z-index:6; }
+.df-integrations__app.is-being-carried { z-index:8; }
 .df-integrations__app.is-being-carried .df-integrations__tile { will-change:transform,opacity; }
 .df-integrations__tile { transition:box-shadow 200ms cubic-bezier(.25,1,.5,1); }
 @media(hover:hover) and (prefers-reduced-motion:no-preference) {
@@ -73,7 +100,7 @@
   .df-integrations__app--whoop { left:77%; width:156px; }
   .df-integrations__app--strava { left:76%; }
   .df-integrations__hub { width:200px; }
-  .df-integrations__app--withings { left:8%; }
+  .df-integrations__app--withings { left:calc(8% + 236px); }
   .df-integrations__app--polar { left:0; }
   .df-integrations__app--vesync { left:66%; }
 }

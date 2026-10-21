@@ -33,3 +33,7 @@ Characters turn through quarter/front views to face their travel direction, alte
 Atlas keyframes use per-segment steps with a linear overall timeline, so every gait frame appears instead of freezing the complete cycle on its first frame. Translation and sprite motion are separate animations. Idle characters breathe subtly; moving characters use the articulated pose cycle. No recurring JavaScript frame loop is needed.
 
 Animations pause offscreen and in background tabs. Keyboard focus, resize or a reduced-motion preference immediately settles the complete layout. Mobile uses the static app grid without travelling mascots; very short desktop windows also show the final scene immediately. If Web Animations or IntersectionObserver is unavailable, the native static scene remains readable.
+
+After each mascot finishes its own deliveries, it returns home and switches to the original notebook-writing pose. Existing breathing, eye movement and blinking apply to that pose, plus a separate masked forearm/pencil layer with short, irregular writing strokes. The shared mascot visibility controller pauses the gesture offscreen. Reduced-motion users see a still notebook pose.
+
+The Withings card now has a separate slot, 12px beyond the left mascot's full resting box. Official app cards render above travelling/resting characters, and the central Dietfit hub remains above the characters, so a mascot cannot hide a logo. Only the card currently being carried is raised above the hub during pickup.

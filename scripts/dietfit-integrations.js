@@ -35,6 +35,7 @@
     });
     porters.forEach(function (porter) {
       porter.style.transform = ''; porter.classList.remove('is-working');
+      porter.classList.add('is-writing');
       porter.querySelector('.df-integrations__facing').style.transform = '';
       porter.querySelector('.df-integrations__atlas').style.transform = cell(0);
     });
@@ -166,12 +167,13 @@
           if (token !== generation) return;
           await deliver(scene.querySelector('.df-integrations__app--' + name),rig,job.side,token);
         }
+        if (token === generation) job.porter.classList.add('is-writing');
       }));
       if (token === generation) settle();
     } catch (_) { if (token === generation) settle(); }
   }
   if (eligible()) section.classList.add('is-delivery-ready');
-  else complete = true;
+  else settle();
   new IntersectionObserver(function (entries) {
     const entry = entries[0]; visible = entry.isIntersecting; sync();
     if (visible && entry.intersectionRatio >= .5) assemble();
