@@ -51,3 +51,12 @@ Validation: initialization/resize tests cover seven stage-size/DPR fixtures and 
 ## Meal-plan balance — 21 October, 21:22 feedback
 
 The dashboard heading is white with a restrained shadow and a darker upper photographic backdrop. Meal plan now uses three equal-height meal rows below its heading/subtitle, filling the existing panel height. Thumbnail columns grow to 24% of the card content width (up to 80px), with larger meal names and secondary text. Width container units keep the hierarchy proportional to this card rather than the whole screen. Compact sizes retain smaller type and tighter gaps. The outer dashboard size, Figma result and scroll sequence remain unchanged.
+
+
+## Single-background repair and direct review
+
+The initial bench seam came from two independent image layers: a Cover CSS bench and the native bench transformed inside the FitHeight Rive artboard. EN now selects separate `*-foreground-us-en.riv` files. `tools/build-rive-foreground.py` derives them reproducibly by disabling only the `bg` and `Dark bg` embedded images and setting the static artboard fill alpha to zero. It asserts that all remaining bytes, including the complete animation/state-machine suffix, are identical. Original VI, English and US-English Rive exports remain untouched.
+
+One stage pseudo-element owns the responsive bench photograph. The loading poster covers the same frame without inset padding, removing its second rectangular seam. The original phone retains its height fit; the extra 24px canvas inset was removed because the native phone already has internal margins. This also keeps the hand attached to the scene's top edge. Foreground opacity is a pure function of the first 1.2% of scroll, hiding the stray hand sliver at zero progress.
+
+Chrome was available briefly for actual desktop QA at 2560 × 1318: camera/white calculation phone fit in full, the bench seam was absent, the side mascot peek stayed beside the device, and the completed dashboard used the blurred meal with no beige enclosure. White title color and Meal plan's 407px panel with three equal 93.93px rows were measured; no plan overflow occurred. Proof images are in the external review folder `final-2026-10-21/`. Browser access later became unavailable again; subsequent page-heading/card-size changes have code/build validation but no new screenshot.

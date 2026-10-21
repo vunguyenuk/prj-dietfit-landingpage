@@ -46,8 +46,8 @@
   // Chỉ nạp đúng một file để không tải thừa ~5.8MB.
   const compactQuery = window.matchMedia('(max-width: 1024px)');
   // EN uses a separate US food/UI image set; the original VI exports remain untouched.
-  const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-us-en' : '';
-  const heroVersion = langSuffix ? '20261021-placement-1' : '20260918-1';
+  const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-foreground-us-en' : '';
+  const heroVersion = langSuffix ? '20261021-single-background-1' : '20260918-1';
   const scan = langSuffix && window.createDietfitHeroScan ? window.createDietfitHeroScan(hero) : null;
   const finale = langSuffix && window.createDietfitHeroFinale ? window.createDietfitHeroFinale(hero,stage) : null;
   function currentHeroFile() {
@@ -131,6 +131,7 @@
       // Keep the scene pinned: capture + Deep Scan first, then a scroll-only finale.
       const beforeFinale = Math.min(1,renderedScroll/.62);
       const nativeProgress = scan ? scan.render(beforeFinale*scan.finaleEntry()) : renderedScroll;
+      if (langSuffix) hero.style.setProperty('--df-hero-foreground-opacity',Math.min(1,renderedScroll/.012).toFixed(3));
       const chapter = Math.max(0,Math.min(1,(renderedScroll-.62)/.32));
       const riveProgress = finale ? finale.progress(nativeProgress,chapter) : nativeProgress;
       if (scrollAnimation) {
@@ -156,10 +157,12 @@
   function fitEnglishScene() {
     if (!langSuffix || !player) return;
     // Fit the artboard's height, rather than enlarging it to fill a wide stage.
+    // Its original phone already has internal top/bottom space. Keep the hand
+    // attached to the scene edge instead of adding a second inset to the canvas.
     // The 700px central safe frame includes the complete native phone. On a
     // narrow screen, constrain that frame too, without shrinking to all 1920px.
     const bounds=stage.getBoundingClientRect();
-    const height=Math.max(1,Math.min(bounds.height-48,(bounds.width-32)*1258/700));
+    const height=Math.max(1,Math.min(bounds.height,(bounds.width-32)*1258/700));
     const ratio=window.devicePixelRatio || 1;
     const inset=(bounds.height-height)/2*ratio;
     player.layout=new window.rive.Layout({

@@ -1,0 +1,42 @@
+/* Page typography has one scale. App previews keep their native UI type. */
+.dietfit-home--en {
+  --dietfit-type-hero:clamp(2.5rem,4.1vw,3.75rem);
+  --dietfit-type-section:clamp(2rem,2.7vw,2.25rem);
+  --dietfit-type-subheading:clamp(1.25rem,1.5vw,1.5rem);
+}
+.dietfit-home--en .dietfit-hero-heading {
+  font-size:var(--dietfit-type-hero);
+  font-weight:600;
+  line-height:1.12;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.dietfit-home--en :is(.df-feature-intro h2,.df-feature-copy h2,.dietfit-progress-cta h2,.df-integrations h2,.dietfit-faq > h2,.dietfit-final-cta h2) {
+  font-size:var(--dietfit-type-section);
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.dietfit-home--en :is(.df-feature-body,.dietfit-progress-cta__content > p,.df-integrations__description p) {
+  font-size:1rem;
+  line-height:1.6;
+  letter-spacing:-.006em;
+}
+.dietfit-home--en .dietfit-progress-cta__content > h2 { max-width:24ch; }
+.dietfit-home--en .dietfit-progress-cta__content > p { max-width:60ch; margin-inline:auto; }
+.dietfit-home--en .dietfit-progress-cta__content > p strong { font-weight:500; }
+.dietfit-home--en .dietfit-highlights--en .dietfit-card-copy h2 {
+  font-size:var(--dietfit-type-subheading);
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:-.025em;
+}
+@media(max-width:767px) {
+  .dietfit-home--en {
+    --dietfit-type-hero:clamp(2.125rem,8vw,2.75rem);
+    --dietfit-type-section:clamp(1.75rem,6.7vw,2.125rem);
+    --dietfit-type-subheading:1.25rem;
+  }
+  .dietfit-home--en .dietfit-progress-cta__content > p { max-width:36ch; }
+}

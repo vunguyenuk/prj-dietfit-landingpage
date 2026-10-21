@@ -19,7 +19,7 @@
       // These are the food image's world bounds at the held calculation frame,
       // derived from its unchanged parent transforms in each original timeline.
       const bounds=stage.getBoundingClientRect();
-      const fit=Math.max(1,Math.min(bounds.height-48,(bounds.width-32)*1258/700))/1258;
+      const fit=Math.max(1,Math.min(bounds.height,(bounds.width-32)*1258/700))/1258;
       const photo=compact.matches?{y:637.8730957,w:510.3436665,h:514.0507633}:{y:626.3336966,w:518.9414741,h:522.7110248};
       plate.style.width=(photo.w*fit).toFixed(3)+'px';
       plate.style.height=(photo.h*fit).toFixed(3)+'px';

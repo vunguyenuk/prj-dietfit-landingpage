@@ -21,7 +21,7 @@
 | Motion hero do scroll, hoàn tất rồi mới qua section sau | Hero pin 900svh; capture/scan → chào → budget → chuyển dinh dưỡng → dashboard → hold. Freeze/reverse đã qua kiểm tra logic. |
 | UI result theo Figma | Dùng Meal Detail 36627:85534 trong trang được gửi; icon gốc, native 375 × 812, nút đen; bỏ UI tự dựng và ảnh cũ chồng phía dưới. |
 | Card list giữa integration và FAQ | Đúng thứ tự trong HTML, giữ scroll/arrow navigation. |
-| Card đủ lớn để đọc, màn hình rộng hiện ít nhất 4 | Đã bổ sung 4 card trọn từ viewport 1800px; laptop nhỏ hơn giữ khoảng 3,2 card, tablet 2, mobile 1. Typography tiếp tục co giãn. |
+| Card đủ lớn để đọc | Theo phản hồi 22:23, tăng card khoảng 10%: màn hình rộng dùng 3,6 card thay 4, laptop 3 thay 3,2, giữ tỷ lệ 5:7 và giới hạn chiều cao. |
 | Phone có/không mascot phải đồng cỡ | Cả 5 chapter dùng cùng 395 × 832, cùng hàm fit; mascot không chiếm bớt cột phone. |
 | Copy theo Notion PDF | Hero, Scan, Sara, Meal Plan, Fasting và 4 card level 2 đã cập nhật; Connected Health đổi thứ tự; VI giữ theo ghi chú phê duyệt EN trước trong nguồn. |
 
@@ -49,3 +49,15 @@ Chưa có kiểm tra trực quan bản cuối trên browser ở desktop/mobile v
 - Dashboard vượt chiều cao vì lấy 100svh thay cho stage thực: giới hạn theo container height, giữ khoảng trống phía trên/dưới.
 - Thay nền đen bằng ảnh chính món vừa scan, làm mờ bằng CSS; xoá lớp nền vàng nhạt khỏi DOM và controller.
 - Kiểm tra logic/DOM, DPR/resize, freeze/reverse và build đã qua. Chưa có bằng chứng render browser cho bản sửa này.
+
+
+## Rà soát cuối và phản hồi 22:23
+
+- Nền hero chỉ còn một lớp ảnh ghế; export foreground EN không đổi timeline/state machine. Đã thấy trực tiếp đường ghép biến mất trên Chrome.
+- 5 phone feature có kích thước bằng nhau: 528,39 × 1112,96px tại viewport 2560 × 1318; thứ tự phải/trái/phải/trái/phải đúng.
+- Before/after dùng ảnh gốc 368 × 978, tỷ lệ render 0,37628; khoảng cách gallery → Your movement đo được 160px; không tràn ngang.
+- Integration đủ 9 app, loop/pause/reverse lifecycle qua kiểm tra hai vòng; Chrome xác nhận scene đang active và hai nhân vật đang mang app.
+- Title dashboard trắng; Meal plan phân bổ ba hàng, không overflow. Ảnh app/ảnh món trong card mới đã bỏ chiều cao thuộc tính gây kéo giãn.
+- Sửa Lenis EN để reset vị trí khi hashchange/pageshow; Chrome xác nhận sau mở #dietfit-progress, một cuộn nhỏ đi từ y=29630 đến 29880 thay vì nhảy xuống carousel.
+- Typography mới: một thang heading EN ở stylesheet cuối, cùng weight/line-height/letter-spacing; heading section giảm còn tối đa 2,25rem; hero riêng tối đa 3,75rem. Body before/after giới hạn 60ch và giảm weight câu nhấn; tăng nhẹ kích thước card theo yêu cầu mới nhất.
+- Build và các kiểm tra logic/DOM đã qua. Browser kết nối lại thành công rồi gián đoạn lần nữa; chưa kiểm tra render bản typography mới/mobile nên không khẳng định pixel parity với Figma/video.

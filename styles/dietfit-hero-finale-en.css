@@ -2,9 +2,16 @@
 .dietfit-home--en .dietfit-hero-wrap { border:0; border-radius:0; overflow:visible; }
 .dietfit-home--en [data-component-name="scrollable-rive-hero"] { clip-path:none; overflow:visible; background:transparent; }
 .dietfit-home--en .dietfit-hero-stage { container-type:size; }
-.dietfit-home--en .dietfit-rive-canvas { clip-path:inset(0 round clamp(20px,2vw,32px)); background:url('/assets/hero/us-en/bg.webp') center/cover no-repeat; }
-.dietfit-home--en .dietfit-hero-loading { border-radius:clamp(20px,2vw,32px); background:url('/assets/hero/us-en/bg.webp') center/cover no-repeat; }
-.dietfit-home--en .dietfit-hero-poster img { object-fit:contain; padding:24px; box-sizing:border-box; }
+/* The EN Rive foreground has no bench/artboard fill. One photographic layer
+   covers the scene independently of the phone's safe FitHeight viewport. */
+.dietfit-home--en .dietfit-hero-stage::before { content:""; position:absolute; inset:0; border-radius:clamp(20px,2vw,32px); background:url('/assets/hero/dietfit-hero-poster-us-en.webp') center/cover no-repeat; pointer-events:none; }
+.dietfit-home--en .dietfit-rive-canvas { clip-path:inset(0 round clamp(20px,2vw,32px)); background:none; }
+.dietfit-home--en .rive-ready .dietfit-rive-canvas { opacity:var(--df-hero-foreground-opacity,0); }
+.dietfit-home--en .dietfit-hero-loading { border-radius:clamp(20px,2vw,32px); background:none; }
+.dietfit-home--en .dietfit-hero-poster img { object-fit:cover; padding:0; }
+@media(orientation:portrait) {
+  .dietfit-home--en .dietfit-hero-stage::before { background-image:url('/assets/hero/dietfit-hero-poster-mobile-us-en.webp'); }
+}
 .dietfit-home--en .dietfit-hero-stage::after { content:""; position:absolute; inset:0; z-index:1; border:1px solid rgb(17 11 32 / 12%); border-radius:clamp(20px,2vw,32px); pointer-events:none; }
 .df-hero-finale { position:absolute; inset:0; z-index:2; overflow:visible; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 180ms linear; }
 .is-hero-finale .df-hero-finale { opacity:1; visibility:visible; }

@@ -64,7 +64,7 @@
 .dietfit-highlights--en .df-habit-card--reminder { background:#e8eee3; }
 .df-habit-reminder { display:grid; gap:18px; }
 .df-habit-reminder > div { display:grid; gap:8px; padding:9%; background:#fffaf6; border-radius:22px; }
-.df-habit-reminder img { width:11%; aspect-ratio:1; border-radius:8px; margin-bottom:5%; }
+.df-habit-reminder img { width:11%; height:auto; aspect-ratio:1; object-fit:contain; border-radius:8px; margin-bottom:5%; }
 .df-habit-reminder b { font-size:4.5cqw; }
 .df-habit-reminder span,.df-habit-reminder small { font-size:3cqw; color:#8d8882; }
 .df-habit-reminder strong { font-size:13cqw; line-height:1.1; letter-spacing:-.04em; }
@@ -72,7 +72,7 @@
 .df-habit-together { display:grid; gap:16px; }
 .df-habit-together > div { display:flex; align-items:center; gap:6%; padding:6%; border-radius:22px; background:#fffaf6; }
 .df-habit-together > div:last-child { margin-left:10%; }
-.df-habit-together img { width:38%; aspect-ratio:1; object-fit:cover; border-radius:15px; }
+.df-habit-together img { flex-shrink:0; width:38%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:15px; }
 .df-habit-together span { font-size:3.5cqw; font-weight:500; }
 .df-habit-together small { display:block; font-size:2.7cqw; color:#8d8882; font-weight:400; margin-top:6px; }
 @media(max-width:767px) { .dietfit-home--en .dietfit-hero-heading { font-size:clamp(2.25rem,9vw,3.25rem); } }

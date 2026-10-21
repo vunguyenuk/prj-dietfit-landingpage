@@ -1,0 +1,26 @@
+[
+  {
+    "source": "dietfit-hero-us-en.riv",
+    "output": "dietfit-hero-foreground-us-en.riv",
+    "disabledBackgrounds": [
+      "Dark bg",
+      "bg"
+    ],
+    "staticArtboardFillAlpha": 0,
+    "animationSha256": "de6a624c32ca40eaba38b9e0558160196f4d2a13cb66ea6700acee6a108afbdb",
+    "sourceBytes": 956280,
+    "outputBytes": 799684
+  },
+  {
+    "source": "dietfit-hero-responsive-us-en.riv",
+    "output": "dietfit-hero-responsive-foreground-us-en.riv",
+    "disabledBackgrounds": [
+      "Dark bg",
+      "bg"
+    ],
+    "staticArtboardFillAlpha": 0,
+    "animationSha256": "c22682a274d46cb27208f7793503b3054144d2f555a635d9812bc9cb1c5d7952",
+    "sourceBytes": 957166,
+    "outputBytes": 800570
+  }
+]

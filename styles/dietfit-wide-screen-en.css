@@ -20,7 +20,6 @@
   .dietfit-home--en .df-integrations__porter { --df-porter-size:clamp(180px,9vw,280px); width:var(--df-porter-size); height:var(--df-porter-size); }
   .dietfit-home--en .df-integrations__porter--left { left:calc(50% - var(--df-porter-size) - 10px); }
   .dietfit-home--en .df-integrations__porter--right { right:calc(50% - var(--df-porter-size) - 10px); }
-  .dietfit-home--en .df-hero-scan__label { font-size:clamp(.625rem,.8vw,.875rem); }
   .dietfit-home--en .df-hero-finale__phone { height:min(calc(100% - 96px),1600px); }
   .dietfit-home--en .df-hero-dashboard { width:min(clamp(620px,40vw,1200px),calc(44px + (100cqh - 122px) * 750 / 812),88%); }
   .dietfit-home--en .df-hero-finale__peek-window { width:clamp(128px,7vw,220px); }
