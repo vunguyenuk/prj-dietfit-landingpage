@@ -50,7 +50,11 @@
       const sectionTop = highlights.getBoundingClientRect().top + window.scrollY;
       const verticalRange = highlights.offsetHeight - sticky.offsetHeight;
       const targetY = sectionTop + (targetLeft / Math.max(maxHorizontal, 1)) * verticalRange;
-      window.scrollTo({ top: targetY, behavior: 'smooth' });
+      if (isEnglishHighlights && window.dietfitLenis) {
+        window.dietfitLenis.scrollTo(targetY,{duration:.55});
+      } else {
+        window.scrollTo({ top: targetY, behavior: 'smooth' });
+      }
     } else {
       carousel.scrollTo({ left: targetLeft, behavior: 'smooth' });
     }
