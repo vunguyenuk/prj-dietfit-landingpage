@@ -1,5 +1,23 @@
-/* EN photo pair: equal halves of the supplied 736 × 978 image. */
-.dietfit-progress-cta--en .dietfit-progress-cta__gallery figure { position: relative; }
+/* Equal-width originals, shown in full at their natural aspect ratio. */
+.dietfit-progress-cta--en .dietfit-progress-cta__gallery {
+  width: min(100%, 52rem);
+  grid-template-areas: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border-radius: clamp(1.25rem, 2vw, 1.875rem);
+  box-shadow: 0 1.25rem 3rem rgb(17 11 32 / 12%);
+}
+.dietfit-progress-cta--en .dietfit-progress-cta__gallery :is(figure, img) { border-radius: 0; }
+.dietfit-progress-cta--en .dietfit-progress-cta__gallery::after { display: block; }
+.dietfit-progress-cta--en .dietfit-progress-cta__gallery figure {
+  position: relative;
+  grid-area: auto;
+  width: 100%;
+  transform: none;
+  will-change: auto;
+  box-shadow: none;
+}
 .dietfit-progress-cta--en figcaption {
   position: absolute;
   inset: auto auto 0 0;
@@ -17,17 +35,7 @@
 }
 .dietfit-progress-cta--en figcaption span { font-size: .75rem; color: #f7e9dd; }
 
-/* Preserve each half in full, without stretching or cropping the subject. */
-@media (min-width: 768px) {
-  .dietfit-progress-cta--en .dietfit-progress-cta__gallery figure {
-    width: clamp(8rem, calc((100svh - 27rem) * 368 / 978), 24rem);
-  }
-}
 @media (max-width: 767px) {
-  .dietfit-progress-cta--en .dietfit-progress-cta__gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .5rem;
-  }
   .dietfit-progress-cta--en figcaption {
     padding: .5rem .65rem;
     font-size: .95rem;

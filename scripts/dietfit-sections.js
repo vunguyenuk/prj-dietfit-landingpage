@@ -126,7 +126,7 @@
 
   const section = document.querySelector('.dietfit-progress-cta');
   const sticky = section && section.querySelector('.dietfit-progress-cta__sticky');
-  if (!section || !sticky) return;
+  if (!section || !sticky || section.dataset.progressLayout === 'natural') return;
 
   const desktopQuery = window.matchMedia('(min-width: 768px)');
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
