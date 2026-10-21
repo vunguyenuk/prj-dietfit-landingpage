@@ -5,6 +5,8 @@
 .dietfit-home--en main > :is(.dietfit-hero-wrap,.df-score-strip,.dietfit-product,.dietfit-progress-cta,.df-integrations,.dietfit-highlights,.dietfit-faq,.dietfit-final) { margin-block:0; }
 .dietfit-home--en main > :is(.dietfit-hero-wrap,.df-score-strip,.dietfit-product,.dietfit-progress-cta,.df-integrations,.dietfit-highlights,.dietfit-faq,.dietfit-final) { margin-top:var(--df-section-gap); }
 .dietfit-home--en :is(.df-score-strip__inner,.df-feature-intro,.dietfit-progress-cta__sticky,.df-integrations,.dietfit-highlights,.dietfit-faq) { padding-block:0; }
+/* Extra breathing room requested between the comparison and Connected Health. */
+.dietfit-home--en main > .dietfit-progress-cta + .df-integrations { margin-block-start:calc(var(--df-section-gap) + 60px); }
 .dietfit-home--en .df-feature-intro { margin-bottom:var(--df-section-gap); }
 .dietfit-home--en .df-feature + .df-feature { margin-top:var(--df-section-gap); }
 .dietfit-home--en .df-feature-sample-note { margin:0 auto; padding-top:20px; padding-bottom:0; }
