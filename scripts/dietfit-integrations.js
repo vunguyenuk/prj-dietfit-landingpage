@@ -5,98 +5,128 @@
   const setup = section.querySelector('#dietfit-sync-setup');
   const setupLink = section.querySelector('a[href="#dietfit-sync-setup"]');
   if (setup && setupLink) setupLink.addEventListener('click', function () { setup.open = true; });
-  if (!('IntersectionObserver' in window)) return;
   const scene = section.querySelector('.df-integrations__scene');
   const hub = section.querySelector('.df-integrations__hub');
-  const scrollStage = section.querySelector('.df-integrations__scroll-stage');
-  const apps = Array.from(section.querySelectorAll('.df-integrations__app,.df-integrations__destination'));
+  if (!scene || !hub || !('IntersectionObserver' in window) || !scene.animate) return;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const apps = Array.from(scene.querySelectorAll('.df-integrations__app'));
+  const animations = new Set();
   let visible = false;
-  let frame = 0;
-  let rendered = null;
-  let lastTime = 0;
-  let pinTop = 104;
-  let travel = 360;
-  let pinned = false;
-  const clamp = function (n) { return Math.min(1, Math.max(0, n)); };
-  function targetProgress() {
-    if (reduced.matches) return 1;
-    const top = (pinned ? scrollStage : scene).getBoundingClientRect().top;
-    return clamp((pinTop - top) / travel);
-  }
-  function paint(progress) {
-    section.style.setProperty('--df-integration-progress', progress.toFixed(3));
-    apps.forEach(function (app, index) {
-      const p = clamp((progress - index * .018) / .856);
-      // Smooth acceleration and deceleration, with no overshoot.
-      const eased = p * p * p * (p * (p * 6 - 15) + 10);
-      app.style.setProperty('--df-flight-remain', (1 - eased).toFixed(4));
-      app.style.setProperty('--df-flight-scale', (.24 + .76 * eased).toFixed(4));
-      app.style.setProperty('--df-flight-opacity', clamp(p * 4).toFixed(3));
-      app.style.pointerEvents = p < .1 ? 'none' : '';
-    });
-  }
-  function draw(time) {
-    frame = 0;
-    if (document.hidden) return;
-    const target = targetProgress();
-    const dt = lastTime ? Math.min(64, Math.max(1, time - lastTime)) : 16.67;
-    lastTime = time;
-    if (rendered === null || reduced.matches) rendered = target;
-    else rendered += (target - rendered) * (1 - Math.exp(-dt / 105));
-    if (Math.abs(target - rendered) < .0001) rendered = target;
-    paint(rendered);
-    if (rendered !== target) requestDraw();
-    else lastTime = 0;
-  }
-  function requestDraw() {
-    if ((visible || reduced.matches) && !document.hidden && !frame) frame = window.requestAnimationFrame(draw);
-  }
-  function measure() {
-    if (!scene || !hub || !scrollStage) return;
-    if (frame) window.cancelAnimationFrame(frame);
-    frame = 0;
-    lastTime = 0;
-    section.classList.remove('is-flight-ready','is-scroll-pinned');
-    const height = scene.getBoundingClientRect().height;
-    pinTop = Math.min(128, Math.max(88, window.innerHeight * .1));
-    travel = Math.min(420, Math.max(260, window.innerHeight * .38));
-    pinned = !reduced.matches && window.innerWidth >= 768 && height + pinTop + 32 <= window.innerHeight;
-    section.style.setProperty('--df-integration-pin-top',pinTop.toFixed(1) + 'px');
-    section.style.setProperty('--df-integration-runway',(height + travel).toFixed(1) + 'px');
-    section.classList.toggle('is-scroll-pinned',pinned);
-    const sceneRect = scene.getBoundingClientRect();
-    const center = hub.getBoundingClientRect();
-    const x = center.left - sceneRect.left + center.width / 2;
-    const y = center.top - sceneRect.top + center.height / 2;
-    apps.forEach(function (app) {
-      const resting = app.getBoundingClientRect();
-      app.style.setProperty('--df-flight-x', (x - (resting.left - sceneRect.left + resting.width / 2)).toFixed(2) + 'px');
-      app.style.setProperty('--df-flight-y', (y - (resting.top - sceneRect.top + resting.height / 2)).toFixed(2) + 'px');
-    });
-    section.classList.toggle('is-flight-ready', !reduced.matches);
-    rendered = targetProgress();
-    paint(rendered);
+  let started = false;
+  let complete = false;
+  let generation = 0;
+  const limit = function (n, low, high) { return Math.max(low, Math.min(high,n)); };
+  const point = function (rect) { return { x:rect.left + rect.width / 2, y:rect.top + rect.height / 2 }; };
+  const shift = function (x,y,scale) { return 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px) scale(' + scale + ')'; };
+  const eligible = function () { return !reduced.matches && window.innerWidth > 700 && window.innerHeight >= 480; };
+
+  function settle() {
+    generation++;
+    complete = true;
+    animations.forEach(function (animation) { animation.cancel(); });
+    animations.clear();
+    section.classList.remove('is-delivery-ready');
+    apps.forEach(function (app) { app.classList.add('is-placed'); app.classList.remove('is-being-carried'); });
   }
   function sync() {
-    section.classList.toggle('is-active', visible && !reduced.matches && !document.hidden);
-    if ((!visible || document.hidden) && frame) { window.cancelAnimationFrame(frame); frame = 0; lastTime = 0; }
-    if (!document.hidden) requestDraw();
+    const active = visible && !document.hidden && !reduced.matches;
+    section.classList.toggle('is-active',active);
+    animations.forEach(function (animation) { if (active) animation.play(); else animation.pause(); });
   }
-  new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; sync(); }, { rootMargin:'160px 0px', threshold:0 }).observe(section);
-  scene.addEventListener('focusin', function (event) {
-    const app = event.target.closest('.df-integrations__app');
-    if (app) app.classList.add('is-focused');
+  function animate(element, frames, delay) {
+    const animation = element.animate(frames, {
+      duration:2250, delay:delay || 0, fill:'both', easing:'linear'
+    });
+    animations.add(animation);
+    if (!visible || document.hidden) animation.pause();
+    return animation;
+  }
+  async function deliver(app, porter, side, token, delay) {
+    if (token !== generation) return;
+    const tile = app.querySelector('.df-integrations__tile');
+    const origin = point(hub.getBoundingClientRect());
+    const rest = point(tile.getBoundingClientRect());
+    const actor = porter.getBoundingClientRect();
+    const bounds = scene.getBoundingClientRect();
+    const hubRect = hub.getBoundingClientRect();
+    // The hand anchors use the original writing/waving poses, without redrawing them.
+    const handX = actor.width * (side < 0 ? .60 : .23);
+    const handY = actor.height * (side < 0 ? .63 : .48);
+    const home = { x:actor.left + handX, y:actor.top + handY };
+    const pickup = { x:origin.x + side * (hubRect.width / 2 + 34), y:origin.y + 18 };
+    // Keep feet inside the scene; the final short lift places high cards above the hands.
+    const placing = {
+      x:limit(rest.x,bounds.left + handX + 8,bounds.right - actor.width + handX - 8),
+      y:limit(rest.y,bounds.top + handY + 8,bounds.bottom - actor.height + handY - 8)
+    };
+    const middle = { x:(pickup.x + placing.x) / 2, y:(pickup.y + placing.y) / 2 - 18 };
+    const ease = 'cubic-bezier(.45,0,.2,1)';
+    const actorAt = function (p,offset,easing) {
+      return { transform:shift(p.x - home.x,p.y - home.y,1), offset:offset, easing:easing || ease };
+    };
+    const cardAt = function (p,offset,scale,opacity,easing) {
+      return { transform:shift(p.x - rest.x,p.y - rest.y,scale), opacity:opacity, offset:offset, easing:easing || ease };
+    };
+    app.classList.add('is-being-carried');
+    const movement = animate(porter,[
+      actorAt(home,0), actorAt(pickup,.24), actorAt(pickup,.34,'cubic-bezier(.4,0,.7,.7)'),
+      actorAt(middle,.50,'cubic-bezier(.3,.3,.6,1)'), actorAt(placing,.66), actorAt(placing,.78), actorAt(home,1)
+    ],delay);
+    const carrying = animate(tile,[
+      cardAt(origin,0,.62,0), cardAt(origin,.18,.62,0),
+      cardAt(pickup,.24,1,1), cardAt(pickup,.34,1,1,'cubic-bezier(.4,0,.7,.7)'),
+      cardAt(middle,.50,1,1,'cubic-bezier(.3,.3,.6,1)'), cardAt(placing,.66,1,1),
+      cardAt(rest,.78,1,1), cardAt(rest,1,1,1)
+    ],delay);
+    try {
+      await Promise.all([movement.finished,carrying.finished]);
+      if (token !== generation) return;
+      app.classList.add('is-placed');
+      app.classList.remove('is-being-carried');
+      // Releasing fill restores native links and the independent hover animation.
+      movement.cancel(); carrying.cancel();
+      animations.delete(movement); animations.delete(carrying);
+    } catch (_) { /* Resize, focus or a motion preference change reveals the final layout. */ }
+  }
+  async function assemble() {
+    if (started || complete || !eligible()) return;
+    started = true;
+    const token = generation;
+    // Ensure the actual mascot and official icon artwork are ready before the pickup.
+    await Promise.all(Array.from(scene.querySelectorAll('img')).map(function (img) {
+      img.loading = 'eager';
+      return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
+    }));
+    if (token !== generation || !eligible()) return;
+    const jobs = [
+      { side:-1, names:['garmin','oura','polar','withings'], porter:scene.querySelector('.df-integrations__porter--left') },
+      { side:1, names:['whoop','google-health','vesync','strava'], porter:scene.querySelector('.df-integrations__porter--right') }
+    ];
+    try {
+      await Promise.all(jobs.map(async function (job) {
+        if (!job.porter) return;
+        for (let i = 0; i < job.names.length; i++) {
+          if (token !== generation) return;
+          const app = scene.querySelector('.df-integrations__app--' + job.names[i]);
+          if (app) await deliver(app,job.porter,job.side,token,i === 0 && job.side > 0 ? 140 : 0);
+        }
+      }));
+      if (token === generation) settle();
+    } catch (_) { if (token === generation) settle(); }
+  }
+  if (eligible()) section.classList.add('is-delivery-ready');
+  else complete = true;
+  new IntersectionObserver(function (entries) {
+    const entry = entries[0];
+    visible = entry.isIntersecting;
+    sync();
+    if (visible && entry.intersectionRatio >= .5) assemble();
+  }, { threshold:[0,.25,.5,.75,1] }).observe(scene);
+  // Keyboard navigation never waits for the decorative scene to finish.
+  scene.addEventListener('focusin',function (event) {
+    if (event.target.closest('.df-integrations__tile')) settle();
   });
-  scene.addEventListener('focusout', function (event) {
-    const app = event.target.closest('.df-integrations__app');
-    if (app) app.classList.remove('is-focused');
-  });
-  window.addEventListener('scroll', requestDraw, { passive:true });
-  window.addEventListener('resize', measure, { passive:true });
-  window.addEventListener('load', measure, { once:true });
-  if ('ResizeObserver' in window) new ResizeObserver(measure).observe(scene);
-  reduced.addEventListener('change', function () { measure(); sync(); });
-  document.addEventListener('visibilitychange', sync);
-  measure();
+  window.addEventListener('resize',function () { settle(); },{ passive:true });
+  reduced.addEventListener('change',function () { settle(); sync(); });
+  document.addEventListener('visibilitychange',sync);
 }());
