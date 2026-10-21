@@ -58,7 +58,7 @@
   .df-feature--plan .df-feature-peek.df-mascot { left:-8px; right:auto; }
   .df-feature-stage:has(> .df-feature-peek.df-mascot) { --df-mascot-reserve:88px; }
   .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native { box-sizing:border-box; padding-right:88px; }
-  .df-feature--plan .df-feature-stage > .df-native { padding-right:0; padding-left:88px; }
+  .df-feature--plan .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native { padding-right:0; padding-left:88px; }
   .df-feature--widgets .df-feature-stage > .df-native { padding:0; }
   .df-feature--widgets .df-feature-peek.df-mascot { bottom:30%; }
   .dietfit-easy__mascots:has(.df-mascot) { gap:0; width:min(100%,480px); }

@@ -1,0 +1,60 @@
+{
+  "reference": "https://0xcal.app/#features",
+  "note": "App ecosystem informed by reference; current official icons from Apple App Store catalog, downloaded 2026-10-21. All connections shown via Apple Health; not direct Dietfit app integrations.",
+  "icons": [
+    {
+      "slug": "garmin",
+      "name": "Garmin Connect\u2122",
+      "bundle": "com.garmin.connect.mobile",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/e6/92/3ce6922b-aaf4-cbcb-bd2f-b64ac8d61542/AppIcon-0-0-1x_U007ephone-0-1-0-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "whoop",
+      "name": "WHOOP",
+      "bundle": "com.whoop.iphone",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/17/c2/a117c2c0-7449-e8fc-89e8-1fede409ff5a/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "oura",
+      "name": "Oura",
+      "bundle": "com.ouraring.oura",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a8/3e/4e/a83e4ebb-f262-cd77-c428-96c6ab71e28e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "withings",
+      "name": "Withings",
+      "bundle": "com.withings.wiScaleNG",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/3b/f0/213bf0b5-e489-e8d1-6df4-fd641d7a6c14/AppIcon-Release-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "google-health",
+      "name": "Google Health (Fitbit)",
+      "bundle": "com.fitbit.FitbitMobile",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f9/44/0f/f9440fa0-4470-9f43-d5ab-80616ac9ac81/google_health_ios-0-0-1x_U007ephone-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "strava",
+      "name": "Strava: Run, Bike, Walk",
+      "bundle": "com.strava.stravaride",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/15/95/de1595fa-f1e1-7ba7-01e7-4774082486e0/AppIcon-Primary-0-0-1x_U007ephone-0-1-0-0-sRGB-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "polar",
+      "name": "Polar Flow",
+      "bundle": "fi.polar.polarflow",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3e/f0/67/3ef06755-5610-0f95-b54e-fcedde1d0d20/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "vesync",
+      "name": "VeSync",
+      "bundle": "com.etekcity.vesyncPlatform",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/a7/79/ada779d3-5d3f-04e1-619d-50f5ef690d78/AppIconWithIpad-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
+    },
+    {
+      "slug": "apple-health",
+      "name": "Apple Health",
+      "bundle": "com.apple.Health",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/38/d1/c438d148-1fe2-67a3-c768-6158621cc13f/healthCalistoga-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
+    }
+  ]
+}
