@@ -1,0 +1,50 @@
+{
+  "figmaFile": "o5xi1PVyNzq4HOwH1gFf96",
+  "parentNode": "40000253:36338",
+  "exportedAt": "2026-10-21",
+  "encoding": "Lossless WebP; original export dimensions and pixels preserved",
+  "cards": [
+    {
+      "file": "card-1.webp",
+      "node": "28680:4707",
+      "width": 1500,
+      "height": 2100,
+      "sha256": "24169642261ff47ccea1a124dea4c4b53a7af860b5c70a2f170b4148931f694f"
+    },
+    {
+      "file": "card-2.webp",
+      "node": "28680:4710",
+      "width": 1500,
+      "height": 2100,
+      "sha256": "c2f0fcf5ee414f15988fbf4d189d0e4098f69f801c17b54a53ee8695f25bd897"
+    },
+    {
+      "file": "card-3.webp",
+      "node": "28680:4704",
+      "width": 1500,
+      "height": 2100,
+      "sha256": "914cab6030bcc01e2562dc0745c739e142012093c90b6805d62e3fa743ec65dd"
+    },
+    {
+      "file": "card-4.webp",
+      "node": "28680:4699",
+      "width": 1500,
+      "height": 2100,
+      "sha256": "4d5497bdaf600883b9e2a438cd609cdc67a46f7f93d31618785b52dca9cced8c"
+    },
+    {
+      "file": "card-5.webp",
+      "node": "28680:4697",
+      "width": 1500,
+      "height": 2100,
+      "sha256": "ae9c9cedc50c58e53050e302a45c8e3fd6a0a3e7362b5127b23432b1b6d6e974"
+    },
+    {
+      "file": "card-6.webp",
+      "node": "28680:4693",
+      "width": 1500,
+      "height": 2100,
+      "sha256": "e9a55d3a71064ea694b273887c99dcec9b85e3475d28c15c7db82bed6b96a5e0"
+    }
+  ]
+}
