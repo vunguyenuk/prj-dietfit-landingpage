@@ -21,6 +21,12 @@
 .dietfit-home--en [data-component-name="scrollable-rive-hero"] {
   clip-path:inset(0 round var(--hero-corner-radius));
 }
+.dietfit-home--en .dietfit-hero-wrap {
+  box-sizing:border-box;
+  border:1px solid rgb(17 11 32 / 12%);
+  border-radius:clamp(20px,2vw,32px);
+  overflow:clip;
+}
 .dietfit-home--en .dietfit-hero-heading { width:100%; }
 .dietfit-highlights--en .dietfit-carousel {
   position:relative;

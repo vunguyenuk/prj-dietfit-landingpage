@@ -7,7 +7,7 @@
   gap:32px;
   width:min(calc(100% - 40px),90rem);
   margin-inline:auto;
-  padding-block:24px 12px;
+  padding-block:clamp(40px,4vw,56px) clamp(32px,3vw,48px);
 }
 .df-score-strip__intro h2 { margin:0 0 8px; font-size:1.125rem; line-height:1.25; font-weight:600; letter-spacing:-.02em; }
 .df-score-strip__intro p { margin:0; color:#625d6b; font-size:.8125rem; line-height:1.5; }
@@ -19,7 +19,7 @@
 .df-score-strip__value { display:flex; align-items:baseline; gap:2px; font-size:clamp(2.25rem,3.5vw,3rem); font-weight:500; line-height:1; letter-spacing:-.045em; font-variant-numeric:tabular-nums lining-nums; }
 .df-score-strip__value span { font-size:.55em; letter-spacing:-.02em; }
 @media(max-width:800px) {
-  .df-score-strip__inner { grid-template-columns:1fr; gap:20px; padding-block:24px 12px; }
+  .df-score-strip__inner { grid-template-columns:1fr; gap:20px; padding-block:32px; }
   .df-score-strip__intro .df-score-strip__disclosure { max-width:none; margin-top:4px; }
   .df-score-strip__card { padding:0 16px; }
   .df-score-strip__card:first-child { padding-left:0; border-left:0; }
