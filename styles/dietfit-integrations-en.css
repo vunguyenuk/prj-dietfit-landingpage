@@ -31,14 +31,12 @@
 .df-integrations__destination strong { display:block; font-size:1rem; font-weight:600; }
 .df-integrations__destination span { display:block; margin-top:4px; font-size:.6875rem; white-space:nowrap; color:#77717f; }
 .df-integrations__carry { width:224px; height:280px; rotate:none; }
-.df-integrations__helper.df-mascot { position:absolute; width:224px; inset:30px auto auto 0; pointer-events:none; }
 .df-integrations__carry .df-integrations__tile { position:absolute; z-index:2; min-height:0; padding:10px; border-radius:18px; gap:8px; }
 .df-integrations__carry .df-integrations__tile img { width:40px; height:40px; border-radius:10px; }
 .df-integrations__carry .df-integrations__tile > span { font-size:.6875rem; }
 .df-integrations__app--withings { left:16%; top:42%; }
 .df-integrations__app--withings .df-integrations__tile { left:70px; top:142px; width:128px; }
 .df-integrations__app--strava { left:80%; top:44%; }
-.df-integrations__app--strava .df-integrations__helper { top:0; }
 .df-integrations__app--strava .df-integrations__tile { left:-48px; top:8px; width:112px; }
 .df-integrations__note { margin:16px 0 24px; text-align:center; color:#77717f; font-size:.6875rem; line-height:1.6; }
 .df-integrations__setup { border:0; scroll-margin-top:104px; }
@@ -46,13 +44,19 @@
 .df-integrations__setup ol { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; list-style-position:inside; margin:0; padding:0 0 24px; }
 .df-integrations__setup li { color:#625d6b; font-size:.8125rem; line-height:1.6; }
 .df-integrations__setup strong { font-weight:500; color:#110b20; }
-/* The original mascot artwork carries each card; the final collage stays in normal flow. */
+/* The mascot pose atlas carries each card; the final collage stays in normal flow. */
 .df-integrations .df-integrations__hub { z-index:4; top:35%; }
 .df-integrations__stage { display:flow-root; }
 .df-integrations__porter { position:absolute; z-index:5; width:224px; height:224px; pointer-events:none; }
 .df-integrations__porter--left { left:16%; top:calc(42% + 30px); }
 .df-integrations__porter--right { left:80%; top:44%; }
-.df-integrations__porter .df-integrations__helper.df-mascot { position:relative; inset:auto; width:100%; }
+.df-integrations__facing { display:block; width:100%; height:100%; }
+.df-integrations__sprite { display:block; position:relative; width:100%; height:100%; overflow:hidden; }
+.df-integrations__atlas { position:absolute; inset:0 auto auto 0; display:block; width:400%; height:400%; max-width:none; pointer-events:none; }
+.df-integrations.is-active .df-integrations__porter:not(.is-working) .df-integrations__sprite { animation:df-integration-porter-idle 5.1s cubic-bezier(.37,0,.63,1) infinite; transform-origin:50% 94%; }
+.df-integrations__porter--right .df-integrations__sprite { animation-delay:-1.7s; }
+@keyframes df-integration-porter-idle { 0%,100% { transform:scale(1); } 48% { transform:scale(1.005,1.012); } }
+@media(prefers-reduced-motion:reduce) { .df-integrations .df-integrations__sprite { animation:none!important; } }
 .df-integrations__porter::before { content:""; position:absolute; left:25%; bottom:3%; width:50%; height:6%; background:radial-gradient(ellipse,rgb(35 25 18 / 16%),transparent 70%); }
 .df-integrations.is-delivery-ready .df-integrations__app:not(.is-placed) .df-integrations__tile { opacity:0; pointer-events:none; }
 .df-integrations__app.is-being-carried { z-index:6; }
@@ -91,12 +95,10 @@
   .df-integrations__app--google-health,.df-integrations__app--vesync { grid-column:span 2; }
   .df-integrations__app--google-health .df-integrations__tile,.df-integrations__app--vesync .df-integrations__tile { flex-direction:row!important; padding:12px!important; text-align:left; min-height:72px; }
   .df-integrations__carry { grid-column:span 2; height:210px; }
-  .df-integrations__helper.df-mascot { width:180px; top:20px; left:calc(50% - 90px); }
   .df-integrations__carry .df-integrations__tile { height:auto; min-height:0; padding:8px; gap:6px; flex-direction:row; }
   .df-integrations__carry .df-integrations__tile img { width:32px; height:32px; border-radius:8px; }
   .df-integrations__carry .df-integrations__tile > span { font-size:.625rem; }
   .df-integrations__app--withings .df-integrations__tile { width:104px; top:104px; left:calc(50% - 24px); }
-  .df-integrations__app--strava .df-integrations__helper { top:20px; }
   .df-integrations__app--strava .df-integrations__tile { width:88px; top:20px; left:calc(50% - 108px); }
   .df-integrations__destination { position:relative; top:auto; left:auto; translate:none; margin-top:-12px; }
   .df-integrations__note { margin-top:24px; }

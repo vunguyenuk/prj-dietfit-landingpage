@@ -1,0 +1,275 @@
+{
+  "created": "2026-10-21",
+  "generator": "Built-in image_gen",
+  "identityReference": "../cutouts/wave.png",
+  "source": "generated-source.png",
+  "atlas": "walk-carry-atlas.webp",
+  "cell": 320,
+  "columns": 4,
+  "rows": 4,
+  "processing": "Extract original poses, align torso and foot baseline at one uniform scale, lossless WebP packing. No app logos generated.",
+  "states": {
+    "idle": 0,
+    "turn": 1,
+    "walk": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "crouch": 6,
+    "lift": 7,
+    "carry": [
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": 12,
+    "release": 13,
+    "turnBack": 14,
+    "smile": 15
+  },
+  "frames": [
+    {
+      "index": 0,
+      "source": {
+        "left": 54,
+        "top": 19,
+        "width": 243,
+        "height": 275
+      },
+      "destination": {
+        "left": 39,
+        "top": 29
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 1,
+      "source": {
+        "left": 377,
+        "top": 20,
+        "width": 214,
+        "height": 274
+      },
+      "destination": {
+        "left": 53,
+        "top": 30
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 2,
+      "source": {
+        "left": 676,
+        "top": 20,
+        "width": 239,
+        "height": 274
+      },
+      "destination": {
+        "left": 44,
+        "top": 30
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 3,
+      "source": {
+        "left": 1007,
+        "top": 20,
+        "width": 214,
+        "height": 273
+      },
+      "destination": {
+        "left": 54,
+        "top": 31
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 4,
+      "source": {
+        "left": 56,
+        "top": 331,
+        "width": 229,
+        "height": 270
+      },
+      "destination": {
+        "left": 44,
+        "top": 34
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 5,
+      "source": {
+        "left": 379,
+        "top": 331,
+        "width": 214,
+        "height": 270
+      },
+      "destination": {
+        "left": 54,
+        "top": 34
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 6,
+      "source": {
+        "left": 692,
+        "top": 350,
+        "width": 232,
+        "height": 252
+      },
+      "destination": {
+        "left": 55,
+        "top": 52
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 7,
+      "source": {
+        "left": 1002,
+        "top": 322,
+        "width": 222,
+        "height": 280
+      },
+      "destination": {
+        "left": 46,
+        "top": 24
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 8,
+      "source": {
+        "left": 74,
+        "top": 628,
+        "width": 228,
+        "height": 271
+      },
+      "destination": {
+        "left": 46,
+        "top": 33
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 9,
+      "source": {
+        "left": 383,
+        "top": 627,
+        "width": 227,
+        "height": 273
+      },
+      "destination": {
+        "left": 44,
+        "top": 31
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 10,
+      "source": {
+        "left": 695,
+        "top": 627,
+        "width": 228,
+        "height": 273
+      },
+      "destination": {
+        "left": 46,
+        "top": 31
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 11,
+      "source": {
+        "left": 1009,
+        "top": 629,
+        "width": 217,
+        "height": 271
+      },
+      "destination": {
+        "left": 47,
+        "top": 33
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 12,
+      "source": {
+        "left": 68,
+        "top": 923,
+        "width": 246,
+        "height": 289
+      },
+      "destination": {
+        "left": 45,
+        "top": 15
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 13,
+      "source": {
+        "left": 374,
+        "top": 928,
+        "width": 238,
+        "height": 280
+      },
+      "destination": {
+        "left": 46,
+        "top": 24
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 14,
+      "source": {
+        "left": 671,
+        "top": 931,
+        "width": 220,
+        "height": 281
+      },
+      "destination": {
+        "left": 50,
+        "top": 23
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    },
+    {
+      "index": 15,
+      "source": {
+        "left": 972,
+        "top": 928,
+        "width": 249,
+        "height": 280
+      },
+      "destination": {
+        "left": 36,
+        "top": 24
+      },
+      "baseline": 300,
+      "torsoCenter": 160
+    }
+  ]
+}
