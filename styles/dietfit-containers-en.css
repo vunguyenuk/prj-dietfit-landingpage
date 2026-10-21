@@ -1,0 +1,45 @@
+/* Match the existing “Understand your meals” container across the page shell. */
+.dietfit-home--en {
+  --dietfit-page-max:90rem;
+  --dietfit-page-gutter:1.25rem;
+}
+.dietfit-home--en :is(.dietfit-hero-wrap,.dietfit-highlights-sticky,.dietfit-final--en),
+.dietfit-home--en #dietfit-header .dietfit-header-nav {
+  width:min(calc(100% - var(--dietfit-page-gutter) * 2),var(--dietfit-page-max));
+  margin-inline:auto;
+}
+.dietfit-home--en [data-component-name="scrollable-rive-hero"] {
+  clip-path:inset(0 round var(--hero-corner-radius));
+}
+.dietfit-home--en .dietfit-hero-heading { width:100%; }
+.dietfit-highlights--en .dietfit-carousel {
+  position:relative;
+  padding-inline:0;
+  scroll-padding-inline:0;
+}
+.dietfit-final--en {
+  border-radius:clamp(1.25rem,2vw,2rem);
+  margin-bottom:var(--dietfit-page-gutter);
+}
+/* Use the nav's center for the joined pill, then its edges when it splits. */
+.dietfit-home--en #dietfit-header .dietfit-header-logo-shell {
+  left:50%;
+  transform:translateX(calc(var(--header-joined-width) / -2));
+}
+.dietfit-home--en #dietfit-header .dietfit-header-cta-shell {
+  right:50%;
+  transform:translateX(calc(var(--header-joined-width) / 2));
+}
+@media(min-width:768px) {
+  .dietfit-home--en #dietfit-header.is-split .dietfit-header-logo-shell { left:0; transform:none; }
+  .dietfit-home--en #dietfit-header.is-split .dietfit-header-cta-shell { right:0; transform:none; }
+}
+@media(max-width:767px) {
+  .dietfit-highlights--en .dietfit-card-en { flex-basis:100%; }
+  .dietfit-final--en .dietfit-final-cta { padding-inline:.5rem; }
+  .dietfit-final--en .dietfit-final-cta h2 { font-size:clamp(1.375rem,7.4vw,2.5rem); }
+  .dietfit-home--en #dietfit-header .dietfit-header-nav { --header-joined-width:100%; }
+  .dietfit-home--en #dietfit-header .dietfit-header-logo-shell { left:0; width:100%; transform:none; }
+  .dietfit-home--en #dietfit-header .dietfit-mobile-menu-toggle { right:0; }
+  .dietfit-home--en #dietfit-header .dietfit-mobile-menu { left:0; right:0; }
+}
