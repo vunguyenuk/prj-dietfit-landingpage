@@ -7,8 +7,6 @@
   if (!carousel || !previous || !next) return;
 
   const highlights = carousel.closest('.dietfit-highlights');
-  // The Nomia-inspired bento has its own direct horizontal controls.
-  if (highlights && highlights.classList.contains('dietfit-highlights--bento')) return;
   const sticky = highlights && highlights.querySelector('.dietfit-highlights-sticky');
   const desktopQuery = window.matchMedia('(min-width: 768px)');
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
