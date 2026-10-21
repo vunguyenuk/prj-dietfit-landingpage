@@ -256,13 +256,15 @@ const chapters=$$('[data-demo]');
 function fit(el){
   const stage=$('.df-feature-stage',el),device=$('.dv',el);
   const native=$('.df-native',el),mascot=$('.df-feature-peek.df-mascot',el);
-  const availableWidth=Math.max(1,mascot?native.clientWidth:stage.clientWidth);
+  const sharedPhoneColumn=document.body.classList.contains('dietfit-home--en');
+  const availableWidth=Math.max(1,sharedPhoneColumn?stage.clientWidth:(mascot?native.clientWidth:stage.clientWidth));
   if(el.dataset.demo==='widgets'){
     const board=$('#wgs',el);
     if(mascot){
       board.style.width='460px';
       const k=Math.min(1,availableWidth/460,Math.max(1,stage.clientHeight-24)/board.offsetHeight);
       board.style.transform=`scale(${k})`;
+      if(sharedPhoneColumn)stage.style.setProperty('--df-feature-visual-width',`${460*k}px`);
       stage.style.setProperty('--df-mascot-floor',`${(stage.clientHeight-board.offsetHeight*k)/2}px`);
     }else{
       native.style.width='460px';
@@ -273,6 +275,7 @@ function fit(el){
   if(!device)return;
   const k=Math.max(.1,Math.min(stage.clientHeight/832,(availableWidth-12)/395,1.15));
   device.style.setProperty('--k',k.toFixed(4));
+  if(sharedPhoneColumn)stage.style.setProperty('--df-feature-visual-width',`${395*k}px`);
   if(mascot)stage.style.setProperty('--df-mascot-floor',`${(stage.clientHeight-832*k)/2}px`);
 }
 function draw(el,p){

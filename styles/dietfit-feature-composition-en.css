@@ -1,0 +1,38 @@
+/* The phone owns the same column and scale with or without a mascot. */
+@media(min-width:768px) {
+  .dietfit-home--en .df-feature .df-feature-sticky {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:clamp(48px,7vw,112px);
+  }
+}
+.dietfit-home--en .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+  grid-template-columns:minmax(0,1fr);
+  column-gap:0;
+  isolation:isolate;
+}
+.dietfit-home--en .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native {
+  position:relative;
+  z-index:2;
+  grid-column:1;
+  grid-row:1;
+}
+/* Peek from the inward edge, using the column gap instead of pushing outside
+   the page container. The phone occludes the mascot's right side. */
+.dietfit-home--en .df-feature .df-feature-peek.df-mascot {
+  --df-mascot-width:min(220px,calc(var(--df-feature-visual-width,400px) * .52));
+  position:absolute;
+  z-index:1;
+  grid-column:auto;
+  grid-row:auto;
+  width:var(--df-mascot-width);
+  height:auto;
+  inset:auto;
+  left:calc(50% - var(--df-feature-visual-width,400px) / 2 - var(--df-mascot-width) * .78);
+  bottom:calc(var(--df-mascot-floor,0px) + 8px);
+  margin:0;
+  transform:none;
+  pointer-events:none;
+}
+.dietfit-home--en .df-feature--widgets .df-feature-peek.df-mascot {
+  --df-mascot-width:min(180px,calc(var(--df-feature-visual-width,400px) * .4));
+}
