@@ -3,11 +3,13 @@
   --dietfit-page-max:90rem;
   --dietfit-page-gutter:1.25rem;
 }
-.dietfit-home--en :is(.dietfit-hero-wrap,.dietfit-highlights-sticky,.dietfit-final--en),
+.dietfit-home--en :is(.dietfit-hero-wrap,.dietfit-highlights-sticky,.dietfit-final--en,.dietfit-faq),
 .dietfit-home--en #dietfit-header .dietfit-header-nav {
   width:min(calc(100% - var(--dietfit-page-gutter) * 2),var(--dietfit-page-max));
   margin-inline:auto;
 }
+.dietfit-home--en .dietfit-faq { padding-inline:0; }
+.dietfit-home--en .dietfit-faq-list { width:100%; max-width:none; }
 .dietfit-home--en [data-component-name="scrollable-rive-hero"] {
   clip-path:inset(0 round var(--hero-corner-radius));
 }
