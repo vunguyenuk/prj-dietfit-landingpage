@@ -33,6 +33,10 @@
   transform:none;
   pointer-events:none;
 }
+/* Keep companions on the inward edge when their phone sits in the left column. */
+.dietfit-home--en .df-feature.is-flipped .df-feature-peek.df-mascot {
+  left:calc(50% + var(--df-feature-visual-width,400px) / 2 - var(--df-mascot-width) * .22);
+}
 .dietfit-home--en .df-feature--widgets .df-feature-peek.df-mascot {
   --df-mascot-width:min(11.25rem,calc(var(--df-feature-visual-width,400px) * .4));
 }
