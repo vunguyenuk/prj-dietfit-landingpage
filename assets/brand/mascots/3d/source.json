@@ -1,0 +1,58 @@
+{
+  "fileKey": "o5xi1PVyNzq4HOwH1gFf96",
+  "nodeId": "40000250:36264",
+  "sourceUrl": "https://www.figma.com/design/o5xi1PVyNzq4HOwH1gFf96/Prj-DietFit---Production-Sync?node-id=40000250-36264",
+  "mode": "Figma source art with built-in image_gen background extraction",
+  "assets": [
+    {
+      "pose": "wave",
+      "nodeId": "40000250:36273",
+      "original": "source/wave.png",
+      "transparentExport": "cutouts/wave.png",
+      "productionFile": "wave.webp",
+      "prompt": "Use case: background-extraction. Remove only the peach/pink studio backdrop and floor shadow from this exact supplied Dietfit 3D mascot image (wave pose). Preserve the SAME existing character pixel appearance, facial expression, fur texture and fuzzy edge detail, cracked peach eggshell hat, hand positions, body proportions, colors and every prop. Do not redraw, restyle, change pose, add text, add objects, or simplify the fur. Isolate the entire full-body mascot and held accessories, with both feet and all fingers intact. Keep the original square canvas composition and subject placement, no zoom or crop. Deliver a genuine transparent RGBA PNG with clean alpha edges, no peach rectangular background, no colored fringe, no new ground plane and no cast floor shadow. White fur and pale internal details must remain opaque; only the surrounding background becomes transparent."
+    },
+    {
+      "pose": "thumbs-up",
+      "nodeId": "40000250:36274",
+      "original": "source/thumbs-up.png",
+      "transparentExport": "cutouts/thumbs-up.png",
+      "productionFile": "thumbs-up.webp",
+      "prompt": "Use case: background-extraction. Remove only the peach/pink studio backdrop and floor shadow from this exact supplied Dietfit 3D mascot image (thumbs-up pose). Preserve the SAME existing character pixel appearance, facial expression, fur texture and fuzzy edge detail, cracked peach eggshell hat, hand positions, body proportions, colors and every prop. Do not redraw, restyle, change pose, add text, add objects, or simplify the fur. Isolate the entire full-body mascot and held accessories, with both feet and all fingers intact. Keep the original square canvas composition and subject placement, no zoom or crop. Deliver a genuine transparent RGBA PNG with clean alpha edges, no peach rectangular background, no colored fringe, no new ground plane and no cast floor shadow. White fur and pale internal details must remain opaque; only the surrounding background becomes transparent."
+    },
+    {
+      "pose": "eating",
+      "nodeId": "40000250:36303",
+      "original": "source/eating.png",
+      "transparentExport": "cutouts/eating.png",
+      "productionFile": "eating.webp",
+      "prompt": "Use case: background-extraction. Remove only the peach/pink studio backdrop and floor shadow from this exact supplied Dietfit 3D mascot image (eating pose). Preserve the SAME existing character pixel appearance, facial expression, fur texture and fuzzy edge detail, cracked peach eggshell hat, hand positions, body proportions, colors and every prop. Do not redraw, restyle, change pose, add text, add objects, or simplify the fur. Isolate the entire full-body mascot and held accessories, with both feet and all fingers intact. Keep the original square canvas composition and subject placement, no zoom or crop. Deliver a genuine transparent RGBA PNG with clean alpha edges, no peach rectangular background, no colored fringe, no new ground plane and no cast floor shadow. White fur and pale internal details must remain opaque; only the surrounding background becomes transparent."
+    },
+    {
+      "pose": "exercise",
+      "nodeId": "40000250:36307",
+      "original": "source/exercise.png",
+      "transparentExport": "cutouts/exercise.png",
+      "productionFile": "exercise.webp",
+      "prompt": "Use case: background-extraction. Remove only the peach/pink studio backdrop and floor shadow from this exact supplied Dietfit 3D mascot image (exercise pose). Preserve the SAME existing character pixel appearance, facial expression, fur texture and fuzzy edge detail, cracked peach eggshell hat, hand positions, body proportions, colors and every prop. Do not redraw, restyle, change pose, add text, add objects, or simplify the fur. Isolate the entire full-body mascot and held accessories, with both feet and all fingers intact. Keep the original square canvas composition and subject placement, no zoom or crop. Deliver a genuine transparent RGBA PNG with clean alpha edges, no peach rectangular background, no colored fringe, no new ground plane and no cast floor shadow. White fur and pale internal details must remain opaque; only the surrounding background becomes transparent."
+    },
+    {
+      "pose": "writing",
+      "nodeId": "40000250:36310",
+      "original": "source/writing.png",
+      "transparentExport": "cutouts/writing.png",
+      "productionFile": "writing.webp",
+      "prompt": "Use case: background-extraction. Remove only the peach/pink studio backdrop and floor shadow from this exact supplied Dietfit 3D mascot image (writing pose). Preserve the SAME existing character pixel appearance, facial expression, fur texture and fuzzy edge detail, cracked peach eggshell hat, hand positions, body proportions, colors and every prop. Do not redraw, restyle, change pose, add text, add objects, or simplify the fur. Isolate the entire full-body mascot and held accessories, with both feet and all fingers intact. Keep the original square canvas composition and subject placement, no zoom or crop. Deliver a genuine transparent RGBA PNG with clean alpha edges, no peach rectangular background, no colored fringe, no new ground plane and no cast floor shadow. White fur and pale internal details must remain opaque; only the surrounding background becomes transparent."
+    },
+    {
+      "pose": "glasses",
+      "nodeId": "40000250:36313",
+      "original": "source/glasses.png",
+      "transparentExport": "cutouts/glasses.png",
+      "productionFile": "glasses.webp",
+      "prompt": "Use case: background-extraction. Remove only the peach/pink studio backdrop and floor shadow from this exact supplied Dietfit 3D mascot image (glasses pose). Preserve the SAME existing character pixel appearance, facial expression, fur texture and fuzzy edge detail, cracked peach eggshell hat, hand positions, body proportions, colors and every prop. Do not redraw, restyle, change pose, add text, add objects, or simplify the fur. Isolate the entire full-body mascot and held accessories, with both feet and all fingers intact. Keep the original square canvas composition and subject placement, no zoom or crop. Deliver a genuine transparent RGBA PNG with clean alpha edges, no peach rectangular background, no colored fringe, no new ground plane and no cast floor shadow. White fur and pale internal details must remain opaque; only the surrounding background becomes transparent."
+    }
+  ],
+  "finishing": "tools/build-mascots.cjs removes detached extraction specks, preserves the main alpha silhouette and fits each pose proportionally to a 1000×1000 canvas with a common foot baseline. No runtime Figma URLs. glasses-avatar.webp is a static face crop.",
+  "motion": "Native CSS keyframes and masked image layers provide a wave, shoulder stretch, meal presentation, writing nod and approval. Original raster poses are not a rigged 3D model. IntersectionObserver pauses out-of-view characters; reduced-motion and hidden-tab states pause motion. Browser playback verification is unavailable while local browser use is disabled."
+}

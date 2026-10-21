@@ -1,0 +1,45 @@
+/* Dietfit's supplied 3D poses. Animate the gesture, keeping feet grounded. */
+.df-mascot { display:block; position:relative; aspect-ratio:1; isolation:isolate; }
+.df-mascot__body { position:relative; display:block; width:100%; transform-origin:50% 94%; }
+.df-mascot__body > img { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:contain; }
+.df-mascot__arm { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+.df-mascot[data-mascot-pose="wave"] .df-mascot__body { animation:df-mascot-greeting 6.4s ease-in-out infinite paused; }
+.df-mascot[data-mascot-pose="exercise"] .df-mascot__body { animation:df-mascot-stretch 5.6s ease-in-out infinite paused; }
+.df-mascot[data-mascot-pose="eating"] .df-mascot__body { animation:df-mascot-meal 6s ease-in-out infinite paused; }
+.df-mascot[data-mascot-pose="writing"] .df-mascot__body { animation:df-mascot-writing 7.2s ease-in-out infinite paused; }
+.df-mascot[data-mascot-pose="thumbs-up"] .df-mascot__body { animation:df-mascot-approve 6.8s ease-in-out infinite paused; }
+.df-mascot.is-mascot-active .df-mascot__body { animation-play-state:running; }
+.df-mascot[data-mascot-pose="wave"] .df-mascot__arm { transform-origin:31% 53%; animation:df-mascot-wave 6.4s ease-in-out infinite paused; }
+.df-mascot[data-mascot-pose="exercise"] .df-mascot__arm { transform-origin:72% 50%; animation:df-mascot-arm-stretch 5.6s ease-in-out infinite paused; }
+.df-mascot.is-mascot-active .df-mascot__arm { animation-play-state:running; }
+.df-mascot--layered[data-mascot-pose="wave"] .df-mascot__base {
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='white' fill-rule='evenodd' d='M0 0H100V100H0ZM0 31H23L27 43V61H0Z'/%3E%3C/svg%3E");
+  mask-size:100% 100%;
+}
+.df-mascot--layered[data-mascot-pose="wave"] .df-mascot__arm { clip-path:polygon(0 31%,24% 31%,31% 42%,35% 49%,35% 61%,0 61%); }
+.df-mascot--layered[data-mascot-pose="exercise"] .df-mascot__base {
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='white' fill-rule='evenodd' d='M0 0H100V100H0ZM85 25H100V60H80V44Z'/%3E%3C/svg%3E");
+  mask-size:100% 100%;
+}
+.df-mascot--layered[data-mascot-pose="exercise"] .df-mascot__arm { clip-path:polygon(84% 24%,100% 24%,100% 64%,74% 64%,74% 49%,82% 40%); }
+@keyframes df-mascot-greeting { 0%,16%,100% { transform:rotate(0); } 5%,11% { transform:rotate(-1deg); } }
+@keyframes df-mascot-wave { 0%,20%,100% { transform:rotate(0); } 4%,12% { transform:rotate(7deg); } 8%,16% { transform:rotate(-5deg); } }
+@keyframes df-mascot-stretch { 0%,18%,100% { transform:rotate(0); } 7%,12% { transform:rotate(-3deg); } }
+@keyframes df-mascot-arm-stretch { 0%,18%,100% { transform:rotate(0); } 7%,12% { transform:rotate(-7deg); } }
+@keyframes df-mascot-meal { 0%,20%,100% { transform:rotate(0); } 8%,14% { transform:translateY(-2px) rotate(1deg); } }
+@keyframes df-mascot-writing { 0%,24%,100% { transform:rotate(0); } 6%,16% { transform:rotate(1.5deg); } 11%,21% { transform:rotate(.3deg); } }
+@keyframes df-mascot-approve { 0%,22%,100% { transform:translateY(0); } 8%,15% { transform:translateY(-3px) rotate(-1deg); } }
+/* New cutouts use a shared square canvas, with feet on the same baseline. */
+.df-feature-peek.df-mascot { width:clamp(90px,9vw,138px); }
+.df-feature--plan .df-feature-peek.df-mascot { width:clamp(86px,8vw,128px); }
+.df-feature--widgets .df-feature-peek.df-mascot { width:clamp(90px,9vw,136px); }
+.dietfit-easy__mascots:has(.df-mascot) { gap:clamp(0px,2vw,24px); }
+.dietfit-easy__mascots .df-mascot { flex:1 1 0; width:0; min-width:0; margin:0; }
+.dietfit-easy__mascots .dietfit-easy__mascot--workout.df-mascot { flex:1.12 1 0; width:0; }
+@media(max-width:700px) {
+  .df-feature-peek.df-mascot,.df-feature--plan .df-feature-peek.df-mascot,.df-feature--widgets .df-feature-peek.df-mascot { width:76px; }
+  .dietfit-easy__mascots:has(.df-mascot) { gap:0; width:min(100%,480px); }
+}
+@media(prefers-reduced-motion:reduce) {
+  .df-mascot .df-mascot__body,.df-mascot .df-mascot__arm { animation:none!important; transform:none!important; }
+}
