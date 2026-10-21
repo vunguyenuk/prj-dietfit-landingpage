@@ -171,6 +171,7 @@
   <meta name="dietfit-source-revision" content="v1-feature-copy-clean-v9">
   <link rel="stylesheet" href="/styles/dietfit-features.css?v=9">
   <link rel="stylesheet" href="/styles/dietfit-native-ui.css?v=6">
+  <link rel="stylesheet" href="/styles/dietfit-highlights-bento.css?v=1">
 </head>
 
 <body>
@@ -243,53 +244,76 @@
 
 
     <!-- PRODUCT STORY: v1 design + Gaia feature composition + isolated v2 app renderers. -->
-    <section class="dietfit-highlights" aria-label="Tính năng nổi bật của Dietfit">
+    <section class="dietfit-highlights dietfit-highlights--bento" id="dietfit-highlights" aria-labelledby="dietfit-highlights-title">
       <div class="dietfit-highlights-sticky">
-        <div class="dietfit-carousel" data-dietfit-carousel>
-          <article class="dietfit-card dietfit-card-asset dietfit-card-asset-light-copy"
-            style="--dietfit-card-image:url('/assets/cards/dietfit-card-1-v4.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Xoá mù về dinh dưỡng</h2>
+        <header class="dietfit-bento-header">
+          <p class="dietfit-bento-eyebrow">Mỗi ngày cùng Dietfit</p>
+          <h2 id="dietfit-highlights-title">Bữa ăn, vận động và tiến độ.<br><span>Cùng bạn mỗi ngày.</span></h2>
+        </header>
+        <div class="dietfit-carousel" data-dietfit-carousel tabindex="0" role="region" aria-label="Tính năng nổi bật của Dietfit">
+          <article class="dietfit-card dietfit-bento-card" aria-label="1 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/dietfit-card-1-v4.webp')">
+
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Ảnh bữa ăn<span aria-hidden="true">01</span></span>
+              <h3>Xoá mù về dinh dưỡng</h3>
               <p>Chỉ cần chụp ảnh, AI sẽ nhận diện món ăn và bóc tách dinh dưỡng chỉ với vài giây.</p>
             </div>
           </article>
-          <article class="dietfit-card dietfit-card-asset dietfit-card-asset-light-copy"
-            style="--dietfit-card-image:url('/assets/cards/dietfit-card-2-v5.webp');--dietfit-card-mobile-image:url('/assets/cards/dietfit-card-2-mobile-v1.webp');--dietfit-card-position:50% 0%">
-            <div class="dietfit-card-copy">
-              <h2>Biết calo bằng 1 chạm</h2>
+          <article class="dietfit-card dietfit-bento-card" aria-label="2 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/dietfit-card-2-v5.webp');--dietfit-card-mobile-image:url('/assets/cards/dietfit-card-2-mobile-v1.webp');--dietfit-card-position:50% 0%">
+
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Nhật ký<span aria-hidden="true">02</span></span>
+              <h3>Biết calo bằng 1 chạm</h3>
               <p>Thâm hụt calo hiệu quả hơn chỉ bằng 1 nút chụp ảnh</p>
             </div>
           </article>
-          <article class="dietfit-card dietfit-card-asset"
-            style="--dietfit-card-image:url('/assets/cards/dietfit-card-3-v4.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Đi chuẩn khoa học</h2>
+          <article class="dietfit-card dietfit-bento-card" aria-label="3 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/dietfit-card-3-v4.webp')">
+
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Mục tiêu<span aria-hidden="true">03</span></span>
+              <h3>Đi chuẩn khoa học</h3>
               <p>Ứng dụng BMR, BMI, TDEE để hỗ trợ bạn thâm hụt calo đúng khoa học</p>
             </div>
           </article>
-          <article class="dietfit-card dietfit-card-asset"
-            style="--dietfit-card-image:url('/assets/cards/dietfit-card-4-v4.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Phần thưởng cho sự kỉ luật</h2>
+          <article class="dietfit-card dietfit-bento-card" aria-label="4 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/dietfit-card-4-v4.webp')">
+
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Fitpoints<span aria-hidden="true">04</span></span>
+              <h3>Phần thưởng cho sự kỉ luật</h3>
               <p>Log bữa ăn, giữ streak và hoàn thành thử thách để nhận Fitpoints.</p>
             </div>
           </article>
-          <article class="dietfit-card dietfit-card-asset"
-            style="--dietfit-card-image:url('/assets/cards/dietfit-card-5-v4.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Tích hợp Apple Health</h2>
+          <article class="dietfit-card dietfit-bento-card" aria-label="5 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/dietfit-card-5-v4.webp')">
+
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Apple Health<span aria-hidden="true">05</span></span>
+              <h3>Tích hợp Apple Health</h3>
               <p>Tự động cập nhật calo tiêu hao để điều chỉnh mức calo nạp vào phù hợp.</p>
             </div>
           </article>
-          <article class="dietfit-card dietfit-card-asset"
-            style="--dietfit-card-image:url('/assets/cards/dietfit-card-6-v4.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Hệ thống biểu đồ thông minh</h2>
+          <article class="dietfit-card dietfit-bento-card" aria-label="6 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/dietfit-card-6-v4.webp')">
+
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Tiến độ<span aria-hidden="true">06</span></span>
+              <h3>Hệ thống biểu đồ thông minh</h3>
               <p>Biểu đồ trực quan ghi chép lại từng quá trình cố gắng của bạn</p>
             </div>
           </article>
         </div>
         <div class="dietfit-carousel-controls" aria-label="Điều khiển danh sách tính năng">
+          <p class="dietfit-bento-position" aria-live="polite" aria-atomic="true"><span data-dietfit-current>01</span><span aria-hidden="true"> / </span><span>06</span></p>
           <button type="button" data-dietfit-prev aria-label="Tính năng trước">←</button>
           <button type="button" data-dietfit-next aria-label="Tính năng tiếp theo">→</button>
         </div>
@@ -678,6 +702,7 @@
   <script src="./scripts/dietfit-social.js?v=6"></script>
   <script src="./scripts/dietfit-mobile-menu.js?v=3"></script>
   <script src="/scripts/dietfit-native-ui.js?v=9"></script>
+  <script src="/scripts/dietfit-highlights-bento.js?v=1"></script>
 </body>
 
 </html>

@@ -174,6 +174,7 @@
   <meta name="dietfit-source-revision" content="v1-feature-copy-clean-v9">
   <link rel="stylesheet" href="/styles/dietfit-features.css?v=9">
   <link rel="stylesheet" href="/styles/dietfit-native-ui.css?v=6">
+  <link rel="stylesheet" href="/styles/dietfit-highlights-bento.css?v=1">
 </head>
 
 <body>
@@ -246,22 +247,26 @@
 
 
     <!-- PRODUCT STORY: v1 design + Gaia feature composition + isolated v2 app renderers. -->
-    <section class="dietfit-highlights dietfit-highlights--en" id="dietfit-highlights" aria-label="Dietfit feature previews">
+    <section class="dietfit-highlights dietfit-highlights--en dietfit-highlights--bento" id="dietfit-highlights" aria-labelledby="dietfit-highlights-title">
       <div class="dietfit-highlights-sticky">
-        <div class="dietfit-carousel" data-dietfit-carousel>
-          <article class="dietfit-card dietfit-card-en df-highlight--nutrition dietfit-card-asset dietfit-card-asset-light-copy" style="--dietfit-card-image:url('/assets/cards/us-en/card-1.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Nutrition, finally clear</h2>
+        <header class="dietfit-bento-header">
+          <p class="dietfit-bento-eyebrow">Every day with Dietfit</p>
+          <h2 id="dietfit-highlights-title">Meals, movement and progress.<br><span>All part of your day.</span></h2>
+        </header>
+        <div class="dietfit-carousel" data-dietfit-carousel tabindex="0" role="region" aria-label="Dietfit feature previews">
+          <article class="dietfit-card dietfit-card-en df-highlight--nutrition dietfit-bento-card" aria-label="1 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-1.webp')">
+
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Photo scan<span aria-hidden="true">01</span></span>
+              <h3>Nutrition, finally clear</h3>
               <p>Just snap a photo. Understand what’s in your meal in seconds.</p>
             </div>
-
           </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--dashboard dietfit-card-asset-light-copy">
-            <div class="dietfit-card-copy">
-              <h2>Calories in one tap</h2>
-              <p>Snap your meal. Review the nutrition. Log it in a tap.</p>
-            </div>
-            <svg class="df-card-ui df-card-ui--dashboard" viewBox="0 0 600 810" fill="none" aria-hidden="true" focusable="false">
+          <article class="dietfit-card dietfit-card-en df-highlight--dashboard dietfit-bento-card" aria-label="2 / 6">
+            <div class="dietfit-highlight-visual">
+              <svg class="df-card-ui df-card-ui--dashboard" viewBox="0 0 600 810" fill="none" aria-hidden="true" focusable="false">
 <rect x="78" y="0" width="444" height="860" rx="58" fill="#302e2d"/>
               <rect x="84" y="6" width="432" height="848" rx="53" fill="#171615"/>
               <rect x="92" y="14" width="416" height="832" rx="46" fill="#fffcfa"/>
@@ -322,13 +327,16 @@
               <rect x="120" y="738" width="360" height="54" rx="27" fill="#fe692e"/>
               <text x="300" y="772" font-size="17" font-weight="600" fill="#fffcfa" text-anchor="middle">+  Log a meal</text>
 </svg>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--science dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-3.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Backed by science</h2>
-              <p>Daily targets built around your profile, your activity and your goals.</p>
             </div>
-            <svg class="df-card-ui" viewBox="0 0 600 600" fill="none" aria-hidden="true" focusable="false">
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Meal log<span aria-hidden="true">02</span></span>
+              <h3>Calories in one tap</h3>
+              <p>Snap your meal. Review the nutrition. Log it in a tap.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--science dietfit-bento-card" aria-label="3 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-3.webp')">
+              <svg class="df-card-ui" viewBox="0 0 600 600" fill="none" aria-hidden="true" focusable="false">
 <rect x="302" y="12" width="272" height="140" rx="22" fill="#fffcfa"/>
               <text x="322" y="43" font-size="16" font-weight="500" fill="#211c29">Your daily target</text>
               <text x="322" y="82" font-size="32" font-weight="600" fill="#211c29">2,000</text>
@@ -360,13 +368,16 @@
               <rect x="518" y="494" width="15" height="42" rx="5" fill="#fe692e"/>
               <text x="525" y="557" font-size="11" font-weight="400" fill="#77717b" text-anchor="middle">S</text>
 </svg>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--streak dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-4.webp')">
-            <div class="dietfit-card-copy">
-              <h2>A reward for discipline</h2>
-              <p>Log meals, keep your streak and complete challenges to earn Fitpoints.</p>
             </div>
-            <svg class="df-card-ui" viewBox="0 0 600 620" fill="none" aria-hidden="true" focusable="false">
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Daily targets<span aria-hidden="true">03</span></span>
+              <h3>Backed by science</h3>
+              <p>Daily targets built around your profile, your activity and your goals.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--streak dietfit-bento-card" aria-label="4 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-4.webp')">
+              <svg class="df-card-ui" viewBox="0 0 600 620" fill="none" aria-hidden="true" focusable="false">
 <g transform="translate(0 335)">
               <rect x="26" y="18" width="192" height="226" rx="22" fill="#fffcfa"/>
               <text x="122" y="50" font-size="18" font-weight="600" fill="#211c29" text-anchor="middle">Today</text>
@@ -384,13 +395,16 @@
               <text x="121" y="366" font-size="27" font-weight="600" fill="#211c29" text-anchor="middle">11</text>
               <text x="121" y="425" font-size="12" font-weight="400" fill="#77717b" text-anchor="middle">Keep it going</text>
 </g></svg>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--health dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-5.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Works with Apple Health</h2>
-              <p>Connect your activity and see your daily calories adjust.</p>
             </div>
-            <svg class="df-card-ui" viewBox="0 0 600 600" fill="none" aria-hidden="true" focusable="false"><g transform="translate(0 30)">
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Fitpoints<span aria-hidden="true">04</span></span>
+              <h3>A reward for discipline</h3>
+              <p>Log meals, keep your streak and complete challenges to earn Fitpoints.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--health dietfit-bento-card" aria-label="5 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-5.webp')">
+              <svg class="df-card-ui" viewBox="0 0 600 600" fill="none" aria-hidden="true" focusable="false"><g transform="translate(0 30)">
 <rect x="218" y="215" width="356" height="155" rx="22" fill="#fffcfa"/>
               <text x="241" y="248" font-size="17" font-weight="500" fill="#211c29">Water</text>
               <text x="548" y="248" font-size="20" font-weight="400" fill="#77717b" text-anchor="end">−     +</text>
@@ -413,13 +427,16 @@
               <text x="322" y="546" font-size="22" font-weight="600" fill="#211c29">320</text>
               <text x="379" y="545" font-size="13" font-weight="400" fill="#77717b">active kcal</text>
 </g></svg>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--progress dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-6.webp')">
-            <div class="dietfit-card-copy">
-              <h2>Smart progress charts</h2>
-              <p>See your meals, activity and habits come together over time.</p>
             </div>
-            <svg class="df-card-ui" viewBox="0 0 600 600" fill="none" aria-hidden="true" focusable="false">
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Apple Health<span aria-hidden="true">05</span></span>
+              <h3>Works with Apple Health</h3>
+              <p>Connect your activity and see your daily calories adjust.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--progress dietfit-bento-card" aria-label="6 / 6">
+            <div class="dietfit-highlight-visual dietfit-card-asset" style="--dietfit-card-image:url('/assets/cards/us-en/card-6.webp')">
+              <svg class="df-card-ui" viewBox="0 0 600 600" fill="none" aria-hidden="true" focusable="false">
               <g transform="translate(0 40) scale(.9)">
 <rect x="25" y="218" width="312" height="288" rx="22" fill="#fffcfa"/>
               <text x="49" y="254" font-size="20" font-weight="600" fill="#211c29">Your progress</text>
@@ -464,9 +481,17 @@
   <rect x="11" y="281" width="117" height="29" rx="14" fill="#211c29"/>
               <text x="69" y="299" text-anchor="middle" fill="#fffcfa" font-size="8">Keep going →</text>
   <path d="M47 329H91" stroke="#211c29" stroke-width="3" stroke-linecap="round"/>
-</g></svg></article>
+</g></svg>
+            </div>
+            <div class="dietfit-card-copy dietfit-bento-copy">
+              <span class="dietfit-bento-label">Progress<span aria-hidden="true">06</span></span>
+              <h3>Smart progress charts</h3>
+              <p>See your meals, activity and habits come together over time.</p>
+            </div>
+          </article>
         </div>
         <div class="dietfit-carousel-controls" aria-label="Feature list controls">
+          <p class="dietfit-bento-position" aria-live="polite" aria-atomic="true"><span data-dietfit-current>01</span><span aria-hidden="true"> / </span><span>06</span></p>
           <button type="button" data-dietfit-prev aria-label="Previous feature">←</button>
           <button type="button" data-dietfit-next aria-label="Next feature">→</button>
         </div>
@@ -857,6 +882,7 @@
   <script src="/scripts/dietfit-social.js?v=6"></script>
   <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>
   <script src="/scripts/dietfit-native-ui.js?v=9"></script>
+  <script src="/scripts/dietfit-highlights-bento.js?v=1"></script>
 </body>
 
 </html>
