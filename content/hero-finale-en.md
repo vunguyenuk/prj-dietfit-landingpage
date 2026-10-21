@@ -74,3 +74,9 @@ The hardware no longer fades out during docking. Its final translation accounts 
 Latest feedback replaces the 40px cap with an equal 20px hero frame: wrapper width `100% − 40px`, sticky top20px and height `100svh − 40px`. The fixed header moves to top40px and its navigation width becomes `100% − 80px`; split shells sit directly on those edges, giving 20px between the header and hero at the top, left and right. These are CSS pixels independent of the wide-screen font scale. Other page containers retain their established sizing.
 
 The initial scroll-linked foreground fade is removed. Full native arm lowering is restored, with only its small elbow cap repaired in the foreground image payloads; native motion bytes and the existing phone/result handoff are retained.
+
+## Keep a visible gap outside the hardware — 22 October
+
+The old 12px grid gap was between the left cards and the phone's screen opening. The physical hardware extends 42/816 of the screen width to the left, consuming that gap. The grid now reserves the bezel plus 20px of visible space (12px on compact screens), using `(visibleGap × 1632 + gridWidth × 42) / 1674`. This remains proportional as the phone scales. Row spacing stays unchanged.
+
+Meal plan reveal starts after docking completes at .88, ending at .97, so the stationary card cannot intersect the moving hardware. Geometry checks cover budget clearance throughout docking and the final plan gap at desktop, wide and compact sizes. Shared-result freeze/reverse, reduced motion, native handoff and build checks pass. Browser render remains unverified through this session's unavailable connection.

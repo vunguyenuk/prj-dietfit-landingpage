@@ -93,9 +93,10 @@
       log.textContent=transfer===1?'Meal logged':'Log meal';
       logControl.classList.toggle('is-logged',transfer===1);
       title.style.clipPath='inset(0 '+((1-range(p,.83,.91))*100).toFixed(2)+'% 0 0)';
-      plan.style.clipPath='inset(0 0 '+((1-range(p,.82,.93))*100).toFixed(2)+'% round 16px)';
-      plan.style.transform='translateY('+((1-range(p,.82,.93))*-24).toFixed(2)+'px)';
-      scene.dataset.phase=p<.045?'peeking':p<.19?'waving':p<.245?'hiding':p<.27?'waiting':p<.49?'revealing':p<.70?'transferring':p<.93?'docking':'complete';
+      // Reveal the plan after hardware docks, so it cannot cross the card edge.
+      plan.style.clipPath='inset(0 0 '+((1-range(p,.88,.97))*100).toFixed(2)+'% round 16px)';
+      plan.style.transform='translateY('+((1-range(p,.88,.97))*-24).toFixed(2)+'px)';
+      scene.dataset.phase=p<.045?'peeking':p<.19?'waving':p<.245?'hiding':p<.27?'waiting':p<.49?'revealing':p<.70?'transferring':p<.97?'docking':'complete';
     }
     function reset(){last=-1;chapter=0;paint(0);hero.classList.remove('is-hero-finale');}
     measure();paint(0);

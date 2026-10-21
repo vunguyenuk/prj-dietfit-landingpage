@@ -35,7 +35,10 @@
    Use the actual pinned stage height; viewport height ignores its white gutters. */
 .df-hero-dashboard__title { position:relative; display:flex; align-items:center; gap:10px; height:28px; margin-bottom:14px; color:#fff; text-shadow:0 1px 8px rgb(17 11 32 / 35%); font-size:0.875rem; font-weight:500; clip-path:inset(0 100% 0 0); }
 .df-hero-dashboard__title img { width:28px; height:28px; border-radius:8px; }
-.df-hero-dashboard__grid { position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto 1fr; gap:12px; align-items:stretch; }
+/* The grid is measured to the screen, while the retained hardware extends
+   42/816 of its screen width into the gap. Reserve that bezel plus 20px of
+   visible air: gap=(visibleGap*2*816 + gridWidth*42)/(2*816+42). */
+.df-hero-dashboard__grid { position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto 1fr; row-gap:12px; column-gap:calc((var(--df-dashboard-visible-gap,20px) * 1632 + 100% * 42) / 1674); align-items:stretch; }
 .df-hero-dashboard__grid > div { min-width:0; border-radius:16px; background:#fff; }
 .df-hero-dashboard h3 { margin:0 0 4px; font-size:0.9375rem; line-height:1.4; font-weight:600; }
 .df-hero-dashboard p { margin:0 0 12px; font-size:0.6875rem; color:#77717f; }
@@ -130,7 +133,7 @@
   .df-hero-finale__phone { left:62%; width:min(58%,240px,calc((100cqh - 48px) * 899 / 1832)); height:auto; }
   .df-hero-finale__peek-window { width:88px; }
   .df-hero-dashboard { width:min(96%,calc(23px + (100cqh - 76px) * 750 / 812)); padding:8px; }
-  .df-hero-dashboard__grid { gap:7px; }
+  .df-hero-dashboard__grid { --df-dashboard-visible-gap:12px; row-gap:7px; }
   .df-hero-dashboard__title { font-size:10px; height:22px; margin-bottom:8px; gap:6px; }
   .df-hero-dashboard__title img { width:22px; height:22px; border-radius:6px; }
   .df-hero-dashboard__budget { padding:9px; }
