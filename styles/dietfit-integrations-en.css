@@ -101,3 +101,15 @@
   .df-integrations__setup ol { grid-template-columns:1fr; gap:16px; }
 }
 @media(prefers-reduced-motion:reduce) { .df-integrations .df-integrations__tile { animation:none!important; } }
+
+/* Wait for the collage, then hold it in view for the short outward reveal. */
+.df-integrations__scroll-stage { display:flow-root; }
+.dietfit-home--en .df-integrations.is-scroll-pinned .df-integrations__scroll-stage {
+  height:var(--df-integration-runway);
+  margin-top:clamp(48px,5vw,72px);
+}
+.dietfit-home--en .df-integrations.is-scroll-pinned .df-integrations__scene {
+  position:sticky;
+  top:var(--df-integration-pin-top);
+  margin-top:0;
+}

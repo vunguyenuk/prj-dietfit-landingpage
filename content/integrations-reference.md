@@ -25,3 +25,5 @@ Motion uses CSS transforms only, pauses offscreen and in background tabs, and is
 ## Motion update — 21 October 2026
 
 Dietfit now anchors the center of the scene; the Apple Health card remains the clearly labeled sharing bridge. Provider tiles expand from Dietfit to their resting positions as the scene enters the viewport. Hover/focus gently floats a single tile. Original official app artwork remains unchanged, without connector strokes or arrow badges. The collage gains 48–72px of space below its intro. Reduced-motion users see the fully expanded, static layout; keyboard focus immediately reveals any provider tile.
+
+The outward reveal now waits until the collage reaches 88–128px below the viewport top. On screens tall enough to show the whole collage, a short sticky runway holds it in view while scrolling opens the tiles. Progress follows the scroll with frame-rate-independent 105ms damping and a quintic ease; scrolling backward reverses the same path. Tall mobile layouts use the later trigger without pinning. Reduced-motion mode removes the runway and shows the final layout immediately.
