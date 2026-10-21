@@ -19,11 +19,12 @@
       "sha256": "c2f0fcf5ee414f15988fbf4d189d0e4098f69f801c17b54a53ee8695f25bd897"
     },
     {
-      "file": "card-3.webp",
+      "file": "card-3-v2.webp",
       "node": "28680:4704",
       "width": 1500,
       "height": 2100,
-      "sha256": "914cab6030bcc01e2562dc0745c739e142012093c90b6805d62e3fa743ec65dd"
+      "sha256": "832a117bcd45082d52571dd30e9cd4b62d9c1b99c6552a012fc91e3bf01c396a",
+      "updatedAt": "2026-10-21"
     },
     {
       "file": "card-4.webp",
