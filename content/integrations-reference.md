@@ -1,10 +1,10 @@
 # US integrations section
 
-Replaces only the EN mascot CTA at `#dietfit-video`, 21 October 2026. The Vietnamese page, hero and original native demos are unchanged. The reference is the app ecosystem in [0xCal](https://0xcal.app/), with the user's floating-card collage composition and existing Dietfit 3D mascots. Native HTML/CSS composes the cards and characters; no generated imagery is needed.
+Replaces only the EN mascot CTA at `#dietfit-video`, 21 October 2026. The Vietnamese page, hero and original native demos are unchanged. The current composition follows the user's staggered square app-grid reference, with the existing Dietfit 3D mascots. Native HTML/CSS composes the cards and characters; no generated imagery is needed.
 
 Apple Health is the bridge. The section does not claim direct Dietfit partnerships with the listed apps, does not display fake connected states, and does not claim every app shares every data category. The main Dietfit copy stays within the existing product's steps, workouts and active-energy scope. On-device access and app-specific permissions determine what is shared.
 
-The official app catalog now calls Fitbit “Google Health (Fitbit)”; this is the label/icon used. Icons are original unmodified JPEG files downloaded directly from the Apple App Store catalog into `assets/integrations/official/`. Each bundle ID, app name and seller was checked on 21 October 2026; download URLs, store pages and SHA-256 hashes are recorded in `assets/integrations/source.json`. No logos are redrawn or recolored. The section uses no connector strokes, per-card arrow badges, card borders or rotation.
+The official app catalog now calls Fitbit “Google Health (Fitbit)”; this is the label/icon used. Icons are original unmodified JPEG files downloaded directly from the Apple App Store catalog into `assets/integrations/official/`. Each bundle ID, app name and seller was checked on 21 October 2026; download URLs, store pages and SHA-256 hashes are recorded in `assets/integrations/source.json`. No logos are redrawn or recolored. The section uses no connector strokes, per-card arrow badges or rotation. App icons occupy square cells with one quiet border; there are no glass layers.
 
 ## Verified provider instructions
 
@@ -36,6 +36,10 @@ Animations pause offscreen and in background tabs. Keyboard focus, resize or a r
 
 After the left mascot finishes its own deliveries, it returns home and switches to the original notebook-writing pose. The right mascot returns home and stays in its relaxed, empty-handed pose with subtle breathing. Existing breathing, eye movement and blinking apply to that pose, plus a separate masked forearm/pencil layer with short, irregular writing strokes. The shared mascot visibility controller pauses the gesture offscreen. Reduced-motion users see a still notebook pose.
 
-The Withings card now has a separate slot, 12px beyond the left mascot's full resting box. Official app cards render above travelling/resting characters, and the central Dietfit hub remains above the characters, so a mascot cannot hide a logo. Only the card currently being carried is raised above the hub during pickup.
+## Staggered grid update — 21 October 2026
 
-Each app has an aria-hidden glass mounting target at its final card bounds, with 8px of clearance on each edge. It appears while the mascot approaches that position, remains during the placing gesture, then fades away immediately after the card is placed. It does not travel with the card, intercept input, or persist as a border around the finished app. Focus, resize and motion-preference changes clear all targets along with the delivery animations.
+The glass mounting targets and all their animation state were removed. The eight official icons now occupy equal square cells in a staggered 5 × 5 grid, with four quiet, decorative empty cells matching the supplied reference. All cells are fixed targets: mascots still collect each app from Dietfit and carry it to its cell. The left helper writes after its deliveries; the right helper waves. Their resting positions sit beside Dietfit, clear of the finished icon grid.
+
+Rows/columns: Garmin (1,2), Oura (1,4), WHOOP (2,3), Polar (2,5), Google Health (3,2), VeSync (3,4), Withings (4,3), Strava (5,2). Empty cells are aria-hidden presentation elements at (2,1), (4,1), (4,5), (5,4). App labels remain available in each link's accessible name and native tooltip; only the original official icon is visible in the cell.
+
+Desktop places Dietfit and its helpers beside the grid. Tablet stacks the grid above Dietfit and the resting helpers. Mobile keeps the same staggered pattern with fluid cell sizes and no travelling mascots. The single cell border stays at the destination while an icon is carried; it has no glass gradient, doubled frame or mounting fade.
