@@ -169,7 +169,7 @@
   <link rel="stylesheet" href="/styles/dietfit-progress-en.css?v=20261021-wide-pair-1">
   <link rel="stylesheet" href="/styles/dietfit-footer-en.css?v=20261021-three-lines-1">
   <link rel="stylesheet" href="/styles/dietfit-integrations-en.css?v=20261021-1">
-  <link rel="stylesheet" href="/styles/dietfit-benchmark-en.css?v=20261021-quiet-1">
+  <link rel="stylesheet" href="/styles/dietfit-benchmark-en.css?v=20261021-simple-1">
   <link rel="stylesheet" href="/styles/dietfit-mobile-menu.css?v=1">
   <link rel="stylesheet" href="/styles/dietfit-lang-switch.css?v=1">
   <meta name="dietfit-source-revision" content="v1-feature-copy-clean-v9">
@@ -177,6 +177,7 @@
   <link rel="stylesheet" href="/styles/dietfit-native-ui.css?v=6">
   <link rel="stylesheet" href="/styles/dietfit-mascots.css?v=20261021-grounded-1">
   <link rel="stylesheet" href="/styles/dietfit-containers-en.css?v=20261021-1">
+  <link rel="stylesheet" href="/styles/dietfit-spacing-en.css?v=20261021-1">
 </head>
 
 <body class="dietfit-home--en">
@@ -251,26 +252,22 @@
     <section class="df-score-strip" id="dietfit-score-strip" aria-labelledby="df-score-strip-title" data-benchmark-status="unpublished" data-display="illustrative">
       <div class="df-score-strip__inner">
         <div class="df-score-strip__intro">
-          <h2 id="df-score-strip-title">Accuracy, at a glance.</h2>
-          <p>Example calorie error. Lower is closer to the reference meal.</p>
-          <p class="df-score-strip__disclosure" id="df-score-strip-state"><strong>Illustrative data.</strong> Fictional values; no measured results yet.</p>
-          <a href="#dietfit-benchmark">How we’ll measure it ↗</a>
+          <h2 id="df-score-strip-title">Calorie error</h2>
+          <p>Lower means a closer estimate.</p>
+          <p class="df-score-strip__disclosure" id="df-score-strip-state">Illustrative values only. No measured results yet.</p>
         </div>
         <dl class="df-score-strip__scores" aria-describedby="df-score-strip-state">
           <div class="df-score-strip__card df-score-strip__dietfit">
-            <dt>Dietfit <span class="df-score-strip__demo">Demo</span></dt>
+            <dt>Dietfit</dt>
             <dd class="df-score-strip__value" aria-label="12 percent, illustrative example only">12<span aria-hidden="true">%</span></dd>
-            <dd class="df-score-strip__caption">Calorie error<br><span>Example value</span></dd>
           </div>
           <div class="df-score-strip__card">
-            <dt>Comparison A <span class="df-score-strip__demo">Demo</span></dt>
+            <dt>App A</dt>
             <dd class="df-score-strip__value" aria-label="18 percent, illustrative example only">18<span aria-hidden="true">%</span></dd>
-            <dd class="df-score-strip__caption">Calorie error<br><span>Example value</span></dd>
           </div>
           <div class="df-score-strip__card">
-            <dt>Comparison B <span class="df-score-strip__demo">Demo</span></dt>
+            <dt>App B</dt>
             <dd class="df-score-strip__value" aria-label="24 percent, illustrative example only">24<span aria-hidden="true">%</span></dd>
-            <dd class="df-score-strip__caption">Calorie error<br><span>Example value</span></dd>
           </div>
         </dl>
       </div>
@@ -503,50 +500,6 @@
     </div></div><span class="df-feature-peek df-mascot df-mascot--layered" data-mascot-pose="exercise" aria-hidden="true"><span class="df-mascot__body"><img class="df-mascot__base" src="/assets/brand/mascots/3d/exercise.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"><img class="df-mascot__arm" src="/assets/brand/mascots/3d/exercise.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></span></span></div></div></section>
 <p class="df-feature-sample-note container">Feature previews use sample data.</p>
 </div>
-    <section class="df-benchmark" id="dietfit-benchmark" aria-labelledby="df-benchmark-title" data-benchmark-status="unpublished">
-      <div class="df-benchmark__inner">
-        <div class="df-benchmark__intro">
-          <div>
-            <p class="df-benchmark__eyebrow">Accuracy · Benchmark preview</p>
-            <h2 id="df-benchmark-title">A closer look at the numbers.</h2>
-          </div>
-          <p class="df-benchmark__lead">A meal estimate should be easy to question. This is the framework for comparing Dietfit’s estimates with measured meals, one food at a time.</p>
-        </div>
-        <div class="df-benchmark__panel">
-          <div class="df-benchmark__summary">
-            <div class="df-benchmark__brand"><img src="/assets/images/dietfit-app-icon-192.png" alt="" width="32" height="32" loading="lazy"><span>Dietfit</span></div>
-            <span class="df-benchmark__status">Results not published</span>
-            <h3>Measured meals.<br>Inspectable results.</h3>
-            <p>No accuracy score is published here yet. The categories below describe the planned evaluation, not measured performance.</p>
-            <a class="df-benchmark__method-link" href="#dietfit-benchmark-method">Read the proposed method ↓</a>
-          </div>
-          <div class="df-benchmark__results">
-            <h3>Results by food type</h3>
-            <p>First estimates, before any manual edits.</p>
-            <table aria-describedby="df-benchmark-note">
-              <caption>Planned Dietfit benchmark categories. No measured results have been published.</caption>
-              <thead><tr><th scope="col">Food type</th><th scope="col">Meals tested</th><th scope="col">Median calorie error</th></tr></thead>
-              <tbody>
-                <tr><th scope="row">Packaged foods<span>Matched label and serving</span></th><td>—</td><td>—</td></tr>
-                <tr><th scope="row">Single ingredients<span>Known edible weight</span></th><td>—</td><td>—</td></tr>
-                <tr><th scope="row">Home-cooked meals<span>Weighed recipe, including oils</span></th><td>—</td><td>—</td></tr>
-                <tr><th scope="row">Restaurant meals<span>Verifiable serving reference</span></th><td>—</td><td>—</td></tr>
-              </tbody>
-            </table>
-            <p class="df-benchmark__note" id="df-benchmark-note">— means not published. Lower percentage error means a closer calorie estimate; it does not measure every aspect of a meal.</p>
-          </div>
-        </div>
-        <details class="df-benchmark__method" id="dietfit-benchmark-method">
-          <summary>How the benchmark would be measured</summary>
-          <div class="df-benchmark__method-body">
-            <div><h4>1. Start with a reference</h4><p>Use weighed ingredients or a matching nutrition label. Account for portions, cooking yield, oils and sauces.</p></div>
-            <div><h4>2. Keep the inputs consistent</h4><p>Separate photo and text tests, Quick Scan and Deep Scan. Any app comparison needs the same inputs and correction rules.</p></div>
-            <div><h4>3. Show the full result</h4><p>Report calorie error, completed and failed scans, sample size, test date and per-meal records. Repeat scans to show variation.</p></div>
-          </div>
-        </details>
-      </div>
-    </section>
-
     <section class="dietfit-progress-cta dietfit-progress-cta--en" id="dietfit-progress" data-progress-layout="natural">
       <div class="dietfit-progress-cta__sticky">
         <div class="dietfit-progress-cta__content">

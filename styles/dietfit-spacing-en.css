@@ -1,0 +1,37 @@
+/* One spacing rhythm for the EN page, without changing app scroll timelines. */
+.dietfit-home--en { --df-section-space:clamp(3rem,5vw,4.5rem); }
+.dietfit-home--en .dietfit-intro { gap:1.5rem; }
+.dietfit-home--en .dietfit-hero-wrap { margin-top:2.5rem; }
+.dietfit-home--en .dietfit-highlights--en { background:#fff; padding-block:16px 24px; }
+.dietfit-home--en .dietfit-highlights--en .dietfit-carousel { padding-block:0 16px; }
+.dietfit-home--en .dietfit-card-copy { gap:8px; }
+.dietfit-home--en .df-feature-intro { padding-block:calc(var(--df-section-space) / 2) 16px; }
+.dietfit-home--en .df-feature-copy { gap:16px; }
+.dietfit-home--en .df-feature-body { line-height:1.55; }
+.dietfit-home--en .df-feature-sample-note { padding-block:12px 20px; }
+.dietfit-home--en .dietfit-progress-cta__sticky { padding-block:calc(var(--df-section-space) / 2); gap:28px; }
+.dietfit-home--en .dietfit-progress-cta__content { gap:16px; }
+.dietfit-home--en .df-integrations { padding-block:calc(var(--df-section-space) / 2); }
+.dietfit-home--en .df-integrations__eyebrow { margin-bottom:12px; }
+.dietfit-home--en .df-integrations__description p { margin-bottom:16px; line-height:1.55; }
+.dietfit-home--en .df-integrations__scene { margin-top:32px; }
+.dietfit-home--en .dietfit-faq { background:#fff; padding-block:calc(var(--df-section-space) / 2) var(--df-section-space); }
+.dietfit-home--en .dietfit-faq > h2 { margin-bottom:28px; }
+.dietfit-home--en .dietfit-final-cta .dietfit-button { margin-top:24px; }
+@media(min-width:768px) {
+  .dietfit-highlights--en.dietfit-scroll-scrub { padding-block:0; }
+  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-highlights-sticky {
+    top:88px;
+    height:calc(100svh - 88px);
+    justify-content:flex-start;
+    padding-block:16px 24px;
+  }
+}
+@media(max-width:767px) {
+  .dietfit-home--en .df-feature-copy { gap:12px; }
+  .dietfit-home--en .df-integrations__intro { gap:16px; }
+  .dietfit-home--en .dietfit-faq > h2 { margin-bottom:24px; }
+}
+@media(min-width:701px) and (max-width:1000px) {
+  .dietfit-home--en .df-integrations__app--strava { left:auto; right:0; }
+}

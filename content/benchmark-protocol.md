@@ -4,7 +4,7 @@ Requested replacement for the EN-only Vietnamese influencer video block, 21 Octo
 
 ## Current evidence state
 
-No Dietfit benchmark dataset or measured app results were supplied or found in this repository. The section is an explicitly unpublished framework, with no measured percentages, competitor rankings, sample counts, test date, fabricated food results, or claim that testing has already happened. The separate score-card design concept uses clearly disclosed fictional values at the user’s request; see its implementation boundary below. All dash cells mean not published, not zero error.
+No Dietfit benchmark dataset or measured app results were supplied or found in this repository. The section is an explicitly unpublished framework, with no measured percentages, competitor rankings, sample counts, test date, fabricated food results, or claim that testing has already happened. The separate score-card design concept uses clearly disclosed fictional values at the user’s request; see its implementation boundary below. The detailed results table has been removed from the landing page at the user’s request.
 
 0xCal's numbers belong to 0xCal and must never be relabeled as Dietfit results. Its text-description benchmark and weighed-plate photo test are separate experiments. Its blended headline is not a suitable Dietfit photo accuracy claim.
 
@@ -23,6 +23,6 @@ Use `content/benchmark-template.csv` for actual measurements. Only publish measu
 
 ## Implementation boundary
 
-`#dietfit-benchmark` replaces only the EN creator block. `styles/dietfit-benchmark-en.css` uses the existing Dietfit typography/palette. Native details/summary exposes the proposed method with no JavaScript dependency or video requests. This is a local review draft; no deployment is part of this change.
+The detailed `#dietfit-benchmark` section and its method link were removed from the EN landing page on 21 October 2026 at the user's request. This protocol remains an internal reference for future measured results.
 
-The compact `#dietfit-score-strip` sits between the EN Rive hero and feature carousel. It is a design concept with three neutral white cards with thin borders, without a section background. The compact text column sits beside the cards on desktop. At the user’s request, it uses fictional 12%, 18% and 24% examples, clearly labeled “Illustrative data”, “Demo” and “Example value”. These are not test results or accuracy claims. Comparators are anonymous “Comparison A/B”; do not assign invented scores to MyFitnessPal, Fitatu or other real apps. The detailed benchmark section remains unpublished, with dash values and the proposed method. Replace the concept with measured values only after the evidence and calculations above exist.
+The compact `#dietfit-score-strip` sits between the EN Rive hero and feature carousel. It shows three plain metric columns with fictional 12%, 18% and 24% examples and one visible disclosure: “Illustrative values only. No measured results yet.” Repeated Demo badges and example captions were removed to reduce visual noise. These are not test results or accuracy claims. Comparators remain anonymous “App A/B”; do not assign invented scores to real apps. Replace the concept with measured values only after the evidence and calculations above exist.
