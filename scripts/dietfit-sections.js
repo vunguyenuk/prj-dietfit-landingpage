@@ -126,7 +126,9 @@
 
   const section = document.querySelector('.dietfit-progress-cta');
   const sticky = section && section.querySelector('.dietfit-progress-cta__sticky');
-  if (!section || !sticky || section.dataset.progressLayout === 'natural') return;
+  if (!section || !sticky) return;
+  const naturalLayout = section.dataset.progressLayout === 'natural';
+  const gallery = section.querySelector('.dietfit-progress-cta__gallery');
 
   const desktopQuery = window.matchMedia('(min-width: 768px)');
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -138,7 +140,9 @@
   function updateProgress() {
     scrollFrame = 0;
     if (!enabled) return;
-    const progress = Math.min(1, Math.max(0, (window.scrollY - sectionTop) / scrollRange));
+    const progress = naturalLayout && gallery
+      ? Math.min(1, Math.max(0, (window.innerHeight * .85 - gallery.getBoundingClientRect().top) / (window.innerHeight * .65)))
+      : Math.min(1, Math.max(0, (window.scrollY - sectionTop) / scrollRange));
     section.style.setProperty('--dietfit-progress-spread', progress.toFixed(4));
   }
 
@@ -148,7 +152,7 @@
 
   function measure() {
     enabled = desktopQuery.matches && !reducedMotionQuery.matches;
-    section.classList.toggle('is-scroll-scrub', enabled);
+    section.classList.toggle('is-scroll-scrub', enabled && !naturalLayout);
     section.style.setProperty('--dietfit-progress-spread', enabled ? '0' : '1');
     sectionTop = section.getBoundingClientRect().top + window.scrollY;
     scrollRange = Math.max(section.offsetHeight - sticky.offsetHeight, 1);

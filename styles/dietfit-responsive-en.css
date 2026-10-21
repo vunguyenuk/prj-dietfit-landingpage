@@ -1,0 +1,61 @@
+/* Mobile and tablet prioritize the app visual over decorative mascots. */
+@media(max-width:1024px) {
+  .dietfit-home--en .df-feature-peek.df-mascot { display:none; }
+  .dietfit-home--en .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    grid-template-columns:minmax(0,1fr);
+    column-gap:0;
+  }
+  .dietfit-home--en .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native {
+    grid-column:1;
+    padding:0;
+  }
+  .dietfit-home--en .df-feature .df-feature-copy { justify-items:center; text-align:center; }
+  .dietfit-home--en .df-feature-copy .df-resume { justify-self:center; }
+  .dietfit-home--en .dietfit-final-cta { align-items:center; text-align:center; }
+  .dietfit-home--en .dietfit-final-cta h2 { margin-inline:auto; }
+}
+/* Small screens give text and product visual one shared centered column. */
+@media(max-width:767px) {
+  .dietfit-home--en .df-feature .df-feature-sticky {
+    display:block;
+    position:relative;
+    top:auto;
+    width:min(calc(100% - 40px),36rem);
+    min-height:inherit;
+    height:auto;
+    padding:28px 0;
+  }
+  .dietfit-home--en .df-feature .df-feature-copy {
+    width:100%;
+    max-width:none;
+    margin:0 auto 24px;
+    justify-items:center;
+    gap:12px;
+    text-align:center;
+  }
+  .dietfit-home--en .df-feature-copy .df-feature-body { max-width:42ch; }
+  .dietfit-home--en .df-feature .df-feature-stage,
+  .dietfit-home--en .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    position:relative;
+    top:auto;
+    width:100%;
+    height:min(620px,calc(100svh - 112px));
+    min-height:0;
+    max-height:none;
+    grid-template-columns:minmax(0,1fr);
+    column-gap:0;
+  }
+  .dietfit-home--en .df-feature--widgets .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    height:min(480px,calc(100svh - 112px));
+  }
+}
+@media(max-width:767px) and (prefers-reduced-motion:no-preference) {
+  .dietfit-home--en .df-feature .df-feature-stage,
+  .dietfit-home--en .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    position:sticky;
+    top:88px;
+  }
+}
+@media(max-width:767px) and (prefers-reduced-motion:reduce) {
+  .dietfit-home--en .df-feature .df-feature-sticky { min-height:0; }
+}

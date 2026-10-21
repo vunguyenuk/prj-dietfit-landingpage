@@ -46,10 +46,21 @@
 .df-integrations__setup ol { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; list-style-position:inside; margin:0; padding:0 0 24px; }
 .df-integrations__setup li { color:#625d6b; font-size:.8125rem; line-height:1.6; }
 .df-integrations__setup strong { font-weight:500; color:#110b20; }
-.df-integrations__app:not(.df-integrations__carry) .df-integrations__tile { animation:df-integration-float 7s ease-in-out infinite paused; }
-.df-integrations__app:nth-child(2n) .df-integrations__tile { animation-delay:-3s; }
-.df-integrations.is-active .df-integrations__app .df-integrations__tile { animation-play-state:running; }
-@keyframes df-integration-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-5px); } }
+/* Scroll positions provider tiles from Dietfit at the center to their resting places. */
+.df-integrations.is-flight-ready :is(.df-integrations__app,.df-integrations__destination) {
+  transform:translate(calc(var(--df-flight-x,0px) * var(--df-flight-remain,0)),calc(var(--df-flight-y,0px) * var(--df-flight-remain,0))) scale(var(--df-flight-scale,1));
+  opacity:var(--df-flight-opacity,1);
+  transform-origin:50% 50%;
+  will-change:transform,opacity;
+}
+.df-integrations .df-integrations__hub { z-index:4; top:35%; }
+.df-integrations .df-integrations__app.is-focused { transform:none; opacity:1; }
+.df-integrations__tile { transition:box-shadow 200ms cubic-bezier(.25,1,.5,1); }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+  .df-integrations.is-active .df-integrations__app .df-integrations__tile:hover,
+  .df-integrations.is-active .df-integrations__tile:focus-visible { animation:df-integration-hover 2.8s cubic-bezier(.37,0,.63,1) infinite; }
+}
+@keyframes df-integration-hover { 0%,100% { transform:translateY(-3px); } 50% { transform:translateY(-9px); } }
 @media(max-width:1000px) and (min-width:701px) {
   .df-integrations__scene { height:520px; }
   .df-integrations__app--garmin { left:2%; }
@@ -67,7 +78,7 @@
   .df-integrations h2 { font-size:clamp(32px,8vw,48px); }
   .df-integrations__description p { font-size:1rem; margin-bottom:12px; }
   .df-integrations__scene { display:flex; flex-direction:column; align-items:center; gap:28px; height:auto; margin-top:32px; }
-  .df-integrations__hub { position:relative; top:auto; left:auto; translate:none; width:100%; box-sizing:border-box; padding:20px; }
+  .df-integrations .df-integrations__hub { position:relative; top:auto; left:auto; translate:none; width:100%; box-sizing:border-box; padding:20px; }
   .df-integrations__hub > img { width:48px; height:48px; margin-bottom:10px; }
   .df-integrations__apps { position:relative; inset:auto; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px 8px; width:100%; }
   .df-integrations__app { position:relative; inset:auto; width:auto; rotate:none; }

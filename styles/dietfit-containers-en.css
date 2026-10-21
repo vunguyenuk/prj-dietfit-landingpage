@@ -31,8 +31,8 @@
   transform:translateX(calc(var(--header-joined-width) / 2));
 }
 @media(min-width:768px) {
-  .dietfit-home--en #dietfit-header.is-split .dietfit-header-logo-shell { left:0; transform:none; }
-  .dietfit-home--en #dietfit-header.is-split .dietfit-header-cta-shell { right:0; transform:none; }
+  .dietfit-home--en #dietfit-header.is-split .dietfit-header-logo-shell { left:0; transform:translateX(clamp(16px,1.7vw,32px)); }
+  .dietfit-home--en #dietfit-header.is-split .dietfit-header-cta-shell { right:0; transform:translateX(calc(-1 * clamp(16px,1.7vw,32px))); }
 }
 @media(max-width:767px) {
   .dietfit-highlights--en .dietfit-card-en { flex-basis:100%; }

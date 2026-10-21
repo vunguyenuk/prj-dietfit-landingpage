@@ -35,6 +35,29 @@
 }
 .dietfit-progress-cta--en figcaption span { font-size: .75rem; color: #f7e9dd; }
 
+/* Restore the scroll-driven stack-to-pair reveal at the wider image size. */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .dietfit-progress-cta--en .dietfit-progress-cta__gallery {
+    grid-template-areas:"stack";
+    grid-template-columns:1fr;
+    overflow:visible;
+    box-shadow:none;
+  }
+  .dietfit-progress-cta--en .dietfit-progress-cta__gallery figure {
+    grid-area:stack;
+    width:50%;
+    will-change:transform;
+    box-shadow:0 1rem 2.5rem rgb(17 11 32 / 8%);
+  }
+  .dietfit-progress-cta--en .dietfit-progress-cta__gallery figure:first-child {
+    transform:translateX(calc(-50% * var(--dietfit-progress-spread))) rotate(calc(-2deg * (1 - var(--dietfit-progress-spread))));
+    border-radius:1.5rem var(--dietfit-progress-inner-radius) var(--dietfit-progress-inner-radius) 1.5rem;
+  }
+  .dietfit-progress-cta--en .dietfit-progress-cta__gallery figure:last-child {
+    transform:translateX(calc(50% * var(--dietfit-progress-spread))) rotate(calc(2deg * (1 - var(--dietfit-progress-spread))));
+    border-radius:var(--dietfit-progress-inner-radius) 1.5rem 1.5rem var(--dietfit-progress-inner-radius);
+  }
+}
 @media (max-width: 767px) {
   .dietfit-progress-cta--en figcaption {
     padding: .5rem .65rem;

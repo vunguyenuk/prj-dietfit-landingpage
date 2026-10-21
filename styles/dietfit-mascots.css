@@ -3,11 +3,15 @@
 .df-mascot__body { position:relative; display:block; width:100%; transform-origin:50% 94%; }
 .df-mascot__body > img { display:block; width:100%; height:auto; aspect-ratio:1; object-fit:contain; }
 .df-mascot__arm { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; pointer-events:none; }
-.df-mascot[data-mascot-pose="wave"] .df-mascot__body { animation:df-mascot-greeting 6.4s ease-in-out infinite paused; }
-.df-mascot[data-mascot-pose="exercise"] .df-mascot__body { animation:df-mascot-stretch 5.6s ease-in-out infinite paused; }
-.df-mascot[data-mascot-pose="eating"] .df-mascot__body { animation:df-mascot-meal 6s ease-in-out infinite paused; }
-.df-mascot[data-mascot-pose="writing"] .df-mascot__body { animation:df-mascot-writing 7.2s ease-in-out infinite paused; }
-.df-mascot[data-mascot-pose="thumbs-up"] .df-mascot__body { animation:df-mascot-approve 6.8s ease-in-out infinite paused; }
+/* A slow breath under the pose's occasional gesture, with staggered rhythms. */
+.df-mascot .df-mascot__body {
+  animation:df-mascot-breathe var(--df-breath-duration,5.3s) cubic-bezier(.37,0,.63,1) var(--df-motion-offset,0s) infinite paused;
+}
+.df-mascot[data-mascot-pose="wave"] .df-mascot__body { rotate:0deg; }
+.df-mascot[data-mascot-pose="writing"] .df-mascot__body { animation-name:df-mascot-writing-breath; }
+.df-mascot[data-mascot-pose="exercise"] .df-mascot__body { animation-name:df-mascot-stretch-breath; }
+.df-mascot[data-mascot-pose="eating"] .df-mascot__body { animation-name:df-mascot-meal-breath; }
+.df-mascot[data-mascot-pose="thumbs-up"] .df-mascot__body { animation-name:df-mascot-approve-breath; }
 .df-mascot.is-mascot-active .df-mascot__body { animation-play-state:running; }
 .df-mascot[data-mascot-pose="wave"] .df-mascot__arm { transform-origin:31% 53%; animation:df-mascot-wave 6.4s ease-in-out infinite paused; }
 .df-mascot[data-mascot-pose="exercise"] .df-mascot__arm { transform-origin:72% 50%; animation:df-mascot-arm-stretch 5.6s ease-in-out infinite paused; }
@@ -22,13 +26,66 @@
   mask-size:100% 100%;
 }
 .df-mascot--layered[data-mascot-pose="exercise"] .df-mascot__arm { clip-path:polygon(84% 24%,100% 24%,100% 64%,74% 64%,74% 49%,82% 40%); }
-@keyframes df-mascot-greeting { 0%,16%,100% { transform:rotate(0); } 5%,11% { transform:rotate(-1deg); } }
-@keyframes df-mascot-wave { 0%,20%,100% { transform:rotate(0); } 4%,12% { transform:rotate(7deg); } 8%,16% { transform:rotate(-5deg); } }
-@keyframes df-mascot-stretch { 0%,18%,100% { transform:rotate(0); } 7%,12% { transform:rotate(-3deg); } }
-@keyframes df-mascot-arm-stretch { 0%,18%,100% { transform:rotate(0); } 7%,12% { transform:rotate(-7deg); } }
-@keyframes df-mascot-meal { 0%,20%,100% { transform:rotate(0); } 8%,14% { transform:translateY(-2px) rotate(1deg); } }
-@keyframes df-mascot-writing { 0%,24%,100% { transform:rotate(0); } 6%,16% { transform:rotate(1.5deg); } 11%,21% { transform:rotate(.3deg); } }
-@keyframes df-mascot-approve { 0%,22%,100% { transform:translateY(0); } 8%,15% { transform:translateY(-3px) rotate(-1deg); } }
+@keyframes df-mascot-breathe {
+  0%,100% { transform:scale(1); }
+  47% { transform:translateY(-.3%) scale(1.006,1.012); }
+  73% { transform:translateY(-.1%) rotate(.35deg); }
+}
+@keyframes df-mascot-writing-breath {
+  0%,100% { transform:scale(1); }
+  38% { transform:scale(1.005,1.01) rotate(.7deg); }
+  52% { transform:scale(1.005,1.008) rotate(.2deg); }
+  67% { transform:scale(1.003,1.006) rotate(.6deg); }
+}
+@keyframes df-mascot-stretch-breath {
+  0%,100% { transform:scale(1); }
+  40% { transform:scale(1.006,1.012) rotate(-.8deg); }
+  65% { transform:scale(1.003,1.007) rotate(-.2deg); }
+}
+@keyframes df-mascot-meal-breath {
+  0%,100% { transform:scale(1); }
+  46% { transform:translateY(-.3%) scale(1.005,1.012) rotate(.5deg); }
+}
+@keyframes df-mascot-approve-breath {
+  0%,100% { transform:scale(1); }
+  42% { transform:translateY(-.4%) scale(1.006,1.01) rotate(-.5deg); }
+}
+@keyframes df-mascot-wave { 0%,32%,100% { transform:rotate(0); } 6%,18% { transform:rotate(5deg); } 12%,24% { transform:rotate(-3deg); } }
+@keyframes df-mascot-arm-stretch { 0%,30%,100% { transform:rotate(0); } 12%,19% { transform:rotate(-4deg); } }
+.df-mascot__face {
+  position:absolute; inset:0; pointer-events:none;
+  mask-image:radial-gradient(ellipse 25% 18% at var(--df-face-x,50%) 39%,#000 68%,transparent 100%);
+  animation:df-mascot-look 9.7s cubic-bezier(.37,0,.63,1) var(--df-motion-offset,0s) infinite paused;
+}
+.df-mascot__face > img { display:block; width:100%; height:100%; object-fit:contain; }
+.df-mascot.is-mascot-active .df-mascot__face { animation-play-state:running; }
+.df-mascot__expression {
+  position:absolute; inset:0;
+  mask-image:radial-gradient(ellipse 7% 4% at var(--df-face-x,50%) 44.5%,#000 55%,transparent 100%);
+  transform-origin:var(--df-face-x,50%) 44.5%;
+  animation:df-mascot-smile 11.3s cubic-bezier(.37,0,.63,1) var(--df-motion-offset,0s) infinite paused;
+}
+.df-mascot__expression img { display:block; width:100%; height:100%; object-fit:contain; }
+.df-mascot.is-mascot-active .df-mascot__expression { animation-play-state:running; }
+@keyframes df-mascot-smile {
+  0%,26%,76%,100% { transform:scale(1); }
+  40%,57% { transform:scale(1.035,1.045); }
+}
+.df-mascot__eyelid {
+  position:absolute; width:10%; height:10.4%; border-radius:50%;
+  background-size:1000% 1000%; background-position:50% 29%;
+  mask-image:radial-gradient(ellipse,#000 65%,transparent 100%);
+  transform:scaleY(0); transform-origin:center 30%;
+}
+.df-mascot__eyelid::after {
+  content:""; position:absolute; left:20%; top:40%; width:60%; height:20%;
+  border-bottom:1.5px solid #60423a; border-radius:0 0 50% 50%;
+}
+@keyframes df-mascot-look {
+  0%,18%,65%,100% { transform:translate(0,0); }
+  28%,43% { transform:translate(.3%,.15%); }
+  76%,86% { transform:translate(-.2%,-.1%); }
+}
 /* Give the mascot its own lane, with feet on the app visual's baseline. */
 .df-feature-stage:has(> .df-feature-peek.df-mascot) {
   --df-mascot-width:clamp(240px,23vw,340px);
@@ -100,4 +157,5 @@
 }
 @media(prefers-reduced-motion:reduce) {
   .df-mascot .df-mascot__body,.df-mascot .df-mascot__arm { animation:none!important; transform:none!important; }
+  .df-mascot__face { display:none; }
 }

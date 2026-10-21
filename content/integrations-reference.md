@@ -20,3 +20,8 @@ The official app catalog now calls Fitbit “Google Health (Fitbit)”; this is 
 Each app card opens its provider's Apple Health instructions. The inline disclosure explains permissions; the native details section explains the three-step route. Its introductory link also opens the details so the user can read the setup immediately.
 
 Motion uses CSS transforms only, pauses offscreen and in background tabs, and is disabled for reduced-motion preferences. Existing mascot motion follows the same visibility/preference rules.
+
+
+## Motion update — 21 October 2026
+
+Dietfit now anchors the center of the scene; the Apple Health card remains the clearly labeled sharing bridge. Provider tiles expand from Dietfit to their resting positions as the scene enters the viewport. Hover/focus gently floats a single tile. Original official app artwork remains unchanged, without connector strokes or arrow badges. The collage gains 48–72px of space below its intro. Reduced-motion users see the fully expanded, static layout; keyboard focus immediately reveals any provider tile.
