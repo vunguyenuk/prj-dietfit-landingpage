@@ -26,7 +26,7 @@
   box-sizing:border-box; width:100%; height:100%; padding:16px; min-height:0;
   border:0; border-radius:12px; background:#fff; box-shadow:none; color:#211c29; text-decoration:none;
 }
-.df-integrations__tile img { display:block; flex:none; width:40px; height:40px; border-radius:10px; }
+.df-integrations__tile img { display:block; flex:none; width:min(100%,72px); height:auto; aspect-ratio:1; border-radius:16px; }
 .df-integrations__tile > span { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
 .df-integrations__tile:hover { box-shadow:0 6px 20px -12px rgb(38 29 19 / 25%); }
 .df-integrations a:focus-visible,.df-integrations summary:focus-visible { outline:3px solid #fe692e; outline-offset:5px; }
@@ -38,14 +38,11 @@
 .df-integrations__app--vesync { grid-area:6 / 8; }
 .df-integrations__app--withings { grid-area:6 / 4; }
 .df-integrations__app--strava { grid-area:3 / 1; }
+.df-integrations__app--apple-health { grid-area:7 / 6; }
 .df-integrations__hub { position:absolute; left:50%; top:32%; z-index:7; translate:-50% 0; width:176px; padding:24px 16px 18px; border:0; border-radius:24px; background:#fff; text-align:center; }
 .df-integrations__hub > img { display:block; width:64px; height:64px; border-radius:16px; margin:0 auto 12px; }
 .df-integrations__hub h3 { margin:0 0 4px; font-size:1.125rem; font-weight:600; }
 .df-integrations__hub .df-integrations__data { margin:12px 0 0; color:#77717f; font-size:.625rem; line-height:1.5; }
-.df-integrations__destination { position:absolute; left:50%; bottom:12px; translate:-50% 0; display:flex; gap:12px; align-items:center; padding:12px 0; border:0; background:#fff; z-index:6; }
-.df-integrations__destination img { width:40px; height:40px; border-radius:12px; }
-.df-integrations__destination strong { display:block; font-size:1rem; font-weight:600; }
-.df-integrations__destination span { display:block; margin-top:4px; font-size:.6875rem; white-space:nowrap; color:#77717f; }
 .df-integrations__stage { display:flow-root; }
 .df-integrations__porter { position:absolute; z-index:5; width:180px; height:180px; pointer-events:none; }
 .df-integrations__porter--left { left:calc(50% - 190px); top:55%; }
@@ -101,15 +98,11 @@
 @media(prefers-reduced-motion:reduce) { .df-integrations .df-integrations__greeter { animation:none!important; } }
 
 
-.df-integrations__destination { width:auto; }
-.df-integrations__destination::before { display:none; }
-.df-integrations__destination .df-integrations__tile { gap:12px; width:max-content; padding:10px 16px; }
-.df-integrations__destination .df-integrations__tile > div { text-align:left; }
 @media(max-width:1100px) and (min-width:701px) {
   .df-integrations__scene { height:620px; }
   .df-integrations__apps { gap:6px; }
   .df-integrations__tile { padding:8px; }
-  .df-integrations__tile img { width:32px; height:32px; border-radius:8px; }
+  .df-integrations__tile img { width:min(100%,56px); height:auto; border-radius:12px; }
   .df-integrations__hub { top:28%; width:160px; padding:16px 8px; }
   .df-integrations__porter { width:150px; height:150px; top:54%; }
   .df-integrations__porter--left { left:calc(50% - 160px); }
@@ -121,7 +114,7 @@
   .df-integrations__eyebrow { font-size:.625rem; margin-bottom:12px; }
   .df-integrations h2 { font-size:clamp(32px,8vw,48px); }
   .df-integrations__description p { font-size:1rem; margin-bottom:12px; }
-  .df-integrations__scene { height:calc(92vw * 9 / 7 + 90px); margin-top:32px; }
+  .df-integrations__scene { height:calc(92vw * 9 / 7); margin-top:32px; }
   .df-integrations__apps { width:100%; aspect-ratio:7 / 9; grid-template-columns:repeat(7,minmax(0,1fr)); grid-template-rows:repeat(9,minmax(0,1fr)); gap:5px; }
   .df-integrations__empty[data-grid="wide"] { display:none; }
   .df-integrations__empty[data-grid="compact"] { display:block; }
@@ -129,8 +122,8 @@
   .df-integrations__hub > img { width:48px; height:48px; margin-bottom:10px; }
   .df-integrations__hub h3 { font-size:1rem; }
   .df-integrations__hub .df-integrations__data { font-size:.5625rem; }
-  .df-integrations__tile { padding:8px; }
-  .df-integrations__tile img { width:min(100%,32px); height:auto; aspect-ratio:1; border-radius:8px; }
+  .df-integrations__tile { padding:5px; }
+  .df-integrations__tile img { width:min(100%,40px); height:auto; aspect-ratio:1; border-radius:8px; }
   .df-integrations__app--garmin { grid-area:1 / 2; }
   .df-integrations__app--oura { grid-area:1 / 6; }
   .df-integrations__app--whoop { grid-area:3 / 7; }
@@ -139,9 +132,6 @@
   .df-integrations__app--vesync { grid-area:8 / 2; }
   .df-integrations__app--withings { grid-area:8 / 6; }
   .df-integrations__app--strava { grid-area:6 / 1; }
+  .df-integrations__app--apple-health { grid-area:9 / 4; }
   .df-integrations__porter { display:none; }
-  .df-integrations__destination { bottom:0; }
-  .df-integrations__destination strong { font-size:.875rem; }
-  .df-integrations__destination span { font-size:.625rem; }
-  .df-integrations__destination img { width:36px; height:36px; }
 }
