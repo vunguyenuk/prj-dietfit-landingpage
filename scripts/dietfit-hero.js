@@ -3,7 +3,18 @@
 
   const hero = document.querySelector('[data-component-name="scrollable-rive-hero"]');
   const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (!hero || motionQuery.matches) return;
+  if (!hero) return;
+  function measureHeroInset() {
+    if (!document.body.classList.contains('dietfit-home--en')) return;
+    const wrap=hero.closest('.dietfit-hero-wrap');
+    const gutter=wrap?Math.max(0,(document.documentElement.clientWidth-wrap.getBoundingClientRect().width)/2):0;
+    hero.style.setProperty('--df-hero-gutter',gutter.toFixed(2)+'px');
+  }
+  measureHeroInset();
+  if (motionQuery.matches) {
+    window.addEventListener('resize',measureHeroInset,{passive:true});
+    return;
+  }
 
   const stage = hero.querySelector('.dietfit-hero-stage');
   const header = document.getElementById('dietfit-header');
@@ -79,8 +90,8 @@
     if (!player || (!scrollValue && !scrollAnimation)) return;
 
     const rect = hero.getBoundingClientRect();
-    const startOffset = langSuffix ? 0 : 188;
-    const travel = Math.max(1, rect.height - window.innerHeight + startOffset);
+    const startOffset = langSuffix ? parseFloat(hero.style.getPropertyValue('--df-hero-gutter')) || 0 : 188;
+    const travel = Math.max(1,langSuffix ? rect.height-stage.clientHeight : rect.height-window.innerHeight+startOffset);
     const rawProgress = rect.top > startOffset
       ? 0
       : Math.min(1, Math.max(0, (startOffset - rect.top) / travel));
@@ -132,6 +143,7 @@
   }
 
   function resize() {
+    measureHeroInset();
     if (scan) scan.resize();
     if (finale) finale.resize();
     if (player && player.loaded && player.artboard) {

@@ -1,0 +1,60 @@
+{
+  "fileKey": "o5xi1PVyNzq4HOwH1gFf96",
+  "pageId": "25395:22061",
+  "nodeId": "36627:85534",
+  "name": "Meal Detail",
+  "nativeWidth": 375,
+  "nativeHeight": 812,
+  "downloadedOn": "2026-10-21",
+  "mealData": "The EN hero's existing roast-veggie bowl and nutrition remain scan data; only the native Meal Detail UI is adapted.",
+  "assets": [
+    {
+      "name": "imgElements2",
+      "file": "2aea6.svg"
+    },
+    {
+      "name": "imgElements3",
+      "file": "29c53.svg"
+    },
+    {
+      "name": "imgCalorieIcon",
+      "file": "0918a.svg"
+    },
+    {
+      "name": "imgVector",
+      "file": "c97e6.svg"
+    },
+    {
+      "name": "imgVector1",
+      "file": "e1ed7.svg"
+    },
+    {
+      "name": "imgVector2",
+      "file": "c3024.svg"
+    },
+    {
+      "name": "imgElements6",
+      "file": "171e9.svg"
+    },
+    {
+      "name": "imgElements7",
+      "file": "8e3a5.svg"
+    },
+    {
+      "name": "imgElements8",
+      "file": "9a4c2.svg"
+    },
+    {
+      "name": "imgCap",
+      "file": "2f9ff.svg"
+    },
+    {
+      "name": "imgWifi",
+      "file": "2b6a2.svg"
+    },
+    {
+      "name": "imgCellularConnection",
+      "file": "03a68.svg"
+    }
+  ]
+}

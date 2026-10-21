@@ -13,3 +13,11 @@
   .dietfit-home--en .df-feature { min-height:0; padding-block:0; }
   .dietfit-home--en .df-feature .df-feature-sticky { top:auto; min-height:0; }
 }
+
+/* In the pinned viewport the white top/bottom frame matches the actual side gutter.
+   JavaScript measures the shared frame, including the desktop scrollbar. */
+.dietfit-home--en [data-component-name="scrollable-rive-hero"] { --df-hero-gutter:max(4vw,calc((100vw - var(--dietfit-page-max)) / 2)); }
+.dietfit-home--en .dietfit-hero-sticky { top:var(--df-hero-gutter); height:calc(100svh - 2 * var(--df-hero-gutter)); }
+@media(prefers-reduced-motion:reduce) {
+  .dietfit-home--en [data-component-name="scrollable-rive-hero"] { height:calc(100svh - 2 * var(--df-hero-gutter)); }
+}

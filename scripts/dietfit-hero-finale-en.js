@@ -6,12 +6,10 @@
     const find=function(s){return scene.querySelector(s);};
     const phone=find('.df-hero-finale__phone'),hardware=find('.df-hero-finale__hardware');
     const mascot=find('.df-hero-finale__mascot'),arm=find('.df-hero-finale__mascot-arm');
-    const screen=find('.df-hero-finale__screen'),snapshot=find('.df-hero-finale__snapshot');
-    const snapshotImage=snapshot.querySelector('img'),logControl=find('.df-hero-result__log');
+    const screen=find('.df-hero-finale__screen'),logControl=find('.df-hero-result__log');
     const budget=find('.df-hero-dashboard__budget'),journal=find('.df-hero-dashboard__journal');
     const surface=find('.df-hero-dashboard__surface'),title=find('.df-hero-dashboard__title'),plan=find('.df-hero-dashboard__plan');
-    const result=find('.df-hero-result'),sheet=find('.df-hero-result__sheet'),heading=find('[data-result-heading]');
-    const tags=Array.from(scene.querySelectorAll('.df-hero-result__tag'));
+    const result=find('.df-hero-result'),sheet=find('.df-hero-result__sheet');
     const particles=Array.from(scene.querySelectorAll('.df-hero-finale__nutrients i'));
     const sources=Array.from(scene.querySelectorAll('[data-result-macro]'));
     const destinations=Array.from(scene.querySelectorAll('[data-budget-macro]'));
@@ -30,13 +28,13 @@
       phone.style.transform='translate(-50%,-50%)';journal.style.transform='none';budget.style.transform='none';result.style.transform='none';sheet.style.transform='none';
       const rect=scene.getBoundingClientRect(),p=phone.getBoundingClientRect(),s=screen.getBoundingClientRect();
       const j=journal.getBoundingClientRect(),b=budget.getBoundingClientRect();
+      journal.style.setProperty('--df-result-scale',(j.width/375).toFixed(6));
       const scale=j.width?s.width/j.width:1,budgetScale=rect.width<=700?.63:(b.width?s.width*.85/b.width:1);
       const start={x:s.left+s.width/2-j.left-j.width/2,y:s.top-j.top,scale:scale};
       const floating={x:p.left-b.width*budgetScale/2-16-b.left-b.width/2,y:p.top+p.height*.43-b.top-b.height/2,scale:budgetScale};
       const origin={x:p.left+p.width/2-b.left-b.width/2,y:p.top+p.height*.43-b.top-b.height/2};
-      geometry={start:start,floating:floating,origin:origin,
+      geometry={start:start,floating:floating,origin:origin,resultRadius:j.width*54/375,
         phone:{x:j.left+j.width/2-s.left-s.width/2,y:j.top+j.height/2-s.top-s.height/2,scale:s.width?j.width/s.width:1},
-        snapshotOffset:Math.min(s.width*1311/404*.2769,Math.max(0,s.width*1311/404-s.height))/scale,
         paths:sources.map(function(el,index){
           const a=el.getBoundingClientRect(),z=destinations[index].getBoundingClientRect();
           return {x:j.left+j.width/2+start.x+(a.left+a.width/2-j.left-j.width/2)*scale-rect.left,
@@ -66,18 +64,17 @@
       mascot.style.transform='translateY('+((1-peek)*105).toFixed(2)+'%) rotate('+(-1.5*peek).toFixed(2)+'deg)';
       arm.style.transform='rotate('+wave(p).toFixed(2)+'deg)';
       // The same two opaque panels travel into the dashboard. No duplicate UI crossfade.
-      const spread=range(p,.27,.38),reveal=range(p,.31,.46),transfer=range(p,.52,.68),dock=range(p,.72,.88);
+      const spread=range(p,.27,.38),transfer=range(p,.52,.68),dock=range(p,.72,.88);
       const x=mix(g.origin.x,g.floating.x,spread)*(1-dock),y=mix(g.origin.y,g.floating.y,spread)*(1-dock);
       budget.style.transform='translate('+x.toFixed(2)+'px,'+y.toFixed(2)+'px) scale('+mix(mix(.4,g.floating.scale,spread),1,dock).toFixed(4)+')';
       budget.style.visibility=p>.27?'visible':'hidden';
       budget.style.opacity='1';
       journal.style.transform='translate('+(g.start.x*(1-dock)).toFixed(2)+'px,'+(g.start.y*(1-dock)).toFixed(2)+'px) scale('+mix(g.start.scale,1,dock).toFixed(4)+')';
-      journal.style.borderRadius=mix(40,16,dock).toFixed(2)+'px';
-      snapshot.style.visibility=reveal<1?'visible':'hidden';
-      snapshotImage.style.transform='translateY('+(-g.snapshotOffset).toFixed(2)+'px)';
-      result.style.transform='translateY('+((1-reveal)*100).toFixed(3)+'%)';
-      sheet.style.transform='translateY('+((1-range(p,.37,.49))*42).toFixed(3)+'%)';
-      tags.forEach(function(tag,i){tag.style.transform='scale('+range(p,.36+i*.025,.40+i*.025).toFixed(4)+')';tag.style.opacity=(1-range(p,.71,.75)).toFixed(3);});
+      journal.style.borderRadius=mix(g.resultRadius,16,dock).toFixed(2)+'px';
+      // Show the complete Figma Meal Detail from the start. The old scrolled
+      // information screenshot must never remain underneath a second UI sheet.
+      result.style.transform='none';
+      sheet.style.transform='none';
       hardware.style.opacity=(1-range(p,.73,.78)).toFixed(3);
       phone.style.transform='translate(-50%,-50%) translate('+(g.phone.x*dock).toFixed(2)+'px,'+(g.phone.y*dock).toFixed(2)+'px) scale('+mix(1,g.phone.scale,dock).toFixed(4)+')';
       // Calories and macros arrive in the budget, just as the meal-plans reference.
@@ -93,7 +90,6 @@
       });
       log.textContent=transfer===1?'Meal logged':'Log meal';
       logControl.classList.toggle('is-logged',transfer===1);
-      heading.textContent=dock>.5?'Food journal':'Scan result';
       surface.style.clipPath='inset(0 0 '+((1-range(p,.85,.92))*100).toFixed(2)+'% round 24px)';
       title.style.clipPath='inset(0 '+((1-range(p,.83,.91))*100).toFixed(2)+'% 0 0)';
       plan.style.clipPath='inset(0 0 '+((1-range(p,.82,.93))*100).toFixed(2)+'% round 16px)';
@@ -102,6 +98,7 @@
     }
     function reset(){last=-1;chapter=0;paint(0);hero.classList.remove('is-hero-finale');}
     measure();paint(0);
+    if(document.fonts)document.fonts.ready.then(function(){measure();paint(chapter);});
     return {
       progress:function(value,p){
         chapter=clamp(p===undefined?(value-gate())/(1-gate()):p);
