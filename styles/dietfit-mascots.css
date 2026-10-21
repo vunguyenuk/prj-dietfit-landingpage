@@ -29,38 +29,73 @@
 @keyframes df-mascot-meal { 0%,20%,100% { transform:rotate(0); } 8%,14% { transform:translateY(-2px) rotate(1deg); } }
 @keyframes df-mascot-writing { 0%,24%,100% { transform:rotate(0); } 6%,16% { transform:rotate(1.5deg); } 11%,21% { transform:rotate(.3deg); } }
 @keyframes df-mascot-approve { 0%,22%,100% { transform:translateY(0); } 8%,15% { transform:translateY(-3px) rotate(-1deg); } }
-/* Keep feature mascots out of the stage grid, beside the app visual. */
+/* Give the mascot its own lane, with feet on the app visual's baseline. */
+.df-feature-stage:has(> .df-feature-peek.df-mascot) {
+  --df-mascot-width:clamp(240px,23vw,340px);
+  grid-template-columns:minmax(0,1fr) var(--df-mascot-width);
+  column-gap:clamp(12px,1.2vw,20px);
+}
+.df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native {
+  grid-column:1;
+  grid-row:1;
+  grid-template-columns:minmax(0,1fr);
+  min-width:0;
+  height:100%;
+  padding:0;
+}
 .df-feature-peek.df-mascot {
-  position:absolute;
+  position:relative;
+  grid-column:2;
+  grid-row:1;
+  align-self:end;
   z-index:2;
-  width:clamp(192px,18vw,272px);
-  right:calc(-1 * clamp(16px,4.4vw,64px));
-  left:auto;
-  bottom:16%;
+  width:var(--df-mascot-width);
+  inset:auto;
+  margin-bottom:calc(var(--df-mascot-floor,0px) - var(--df-mascot-width) * .05);
   transform:none;
 }
-.df-feature--plan .df-feature-peek.df-mascot {
-  width:clamp(192px,18vw,272px);
-  left:calc(-1 * clamp(16px,4.4vw,64px));
-  right:auto;
-  bottom:16%;
+.df-feature-peek.df-mascot::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:24%;
+  bottom:3%;
+  width:52%;
+  height:7%;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgb(35 25 18 / 32%),rgb(35 25 18 / 14%) 45%,transparent 72%);
+  filter:blur(5px);
+  pointer-events:none;
 }
-.df-feature--widgets .df-feature-peek.df-mascot {
-  width:clamp(192px,18vw,272px);
-  right:calc(-1 * clamp(16px,4.4vw,64px));
-  bottom:12%;
+.df-feature--plan .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+  grid-template-columns:var(--df-mascot-width) minmax(0,1fr);
+}
+.df-feature--plan .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native { grid-column:2; }
+.df-feature--plan .df-feature-peek.df-mascot {
+  grid-column:1;
+  width:var(--df-mascot-width);
+  inset:auto;
+  transform:none;
+}
+.df-feature--widgets .df-feature-peek.df-mascot { width:var(--df-mascot-width); inset:auto; transform:none; }
+@media(min-width:701px) {
+  .df-feature-sticky:has(.df-feature-peek.df-mascot) {
+    grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+    gap:clamp(32px,4vw,64px);
+  }
 }
 .dietfit-easy__mascots:has(.df-mascot) { gap:clamp(0px,2vw,24px); }
 .dietfit-easy__mascots .df-mascot { flex:1 1 0; width:0; min-width:0; margin:0; }
 .dietfit-easy__mascots .dietfit-easy__mascot--workout.df-mascot { flex:1.12 1 0; width:0; }
+@media(min-width:701px) and (max-width:1000px) {
+  .df-feature-stage:has(> .df-feature-peek.df-mascot) { --df-mascot-width:clamp(152px,22vw,220px); }
+}
 @media(max-width:700px) {
-  .df-feature-peek.df-mascot,.df-feature--plan .df-feature-peek.df-mascot,.df-feature--widgets .df-feature-peek.df-mascot { width:clamp(128px,38vw,176px); right:-8px; left:auto; bottom:20%; }
-  .df-feature--plan .df-feature-peek.df-mascot { left:-8px; right:auto; }
-  .df-feature-stage:has(> .df-feature-peek.df-mascot) { --df-mascot-reserve:88px; }
-  .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native { box-sizing:border-box; padding-right:88px; }
-  .df-feature--plan .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native { padding-right:0; padding-left:88px; }
-  .df-feature--widgets .df-feature-stage > .df-native { padding:0; }
-  .df-feature--widgets .df-feature-peek.df-mascot { bottom:30%; }
+  .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    --df-mascot-width:clamp(152px,42vw,190px);
+    column-gap:8px;
+    height:min(480px,calc(100svh - 112px));
+  }
   .dietfit-easy__mascots:has(.df-mascot) { gap:0; width:min(100%,480px); }
 }
 @media(prefers-reduced-motion:reduce) {

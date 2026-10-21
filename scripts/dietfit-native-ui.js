@@ -255,17 +255,25 @@ const renderers={scan,coach,health:p=>{
 const chapters=$$('[data-demo]');
 function fit(el){
   const stage=$('.df-feature-stage',el),device=$('.dv',el);
-  const reserve=parseFloat(getComputedStyle(stage).getPropertyValue('--df-mascot-reserve'))||0;
-  const availableWidth=Math.max(1,stage.clientWidth-reserve);
+  const native=$('.df-native',el),mascot=$('.df-feature-peek.df-mascot',el);
+  const availableWidth=Math.max(1,mascot?native.clientWidth:stage.clientWidth);
   if(el.dataset.demo==='widgets'){
-    const native=$('.df-native',el),board=$('#wgs',el);
-    native.style.width='460px';
-    native.style.transform=`scale(${Math.min(1,availableWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;
+    const board=$('#wgs',el);
+    if(mascot){
+      board.style.width='460px';
+      const k=Math.min(1,availableWidth/460,Math.max(1,stage.clientHeight-24)/board.offsetHeight);
+      board.style.transform=`scale(${k})`;
+      stage.style.setProperty('--df-mascot-floor',`${(stage.clientHeight-board.offsetHeight*k)/2}px`);
+    }else{
+      native.style.width='460px';
+      native.style.transform=`scale(${Math.min(1,availableWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;
+    }
     return;
   }
   if(!device)return;
   const k=Math.max(.1,Math.min(stage.clientHeight/832,(availableWidth-12)/395,1.15));
   device.style.setProperty('--k',k.toFixed(4));
+  if(mascot)stage.style.setProperty('--df-mascot-floor',`${(stage.clientHeight-832*k)/2}px`);
 }
 function draw(el,p){
  p=clamp(p);el.style.setProperty('--demo-p',p);el.dataset.demoProgress=p.toFixed(3);renderers[el.dataset.demo](p);
