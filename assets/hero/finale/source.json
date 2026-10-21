@@ -1,0 +1,11 @@
+{
+  "source": "Existing EN Rive hero and localized embedded UI assets",
+  "phone-frame.webp": "Unmodified Phone image extracted from dietfit-hero-us-en.riv",
+  "dark-grid.webp": "Unmodified Dark bg image extracted from dietfit-hero-us-en.riv",
+  "ui": "Exact copies of existing assets/hero/us-en images; no redrawing",
+  "burstStartFrame": 375,
+  "timelineLastFrame": 539,
+  "originalRiveExports": "Unchanged",
+  "compactBurstStartFrame": 800,
+  "compactTimelineLastFrame": 1925
+}

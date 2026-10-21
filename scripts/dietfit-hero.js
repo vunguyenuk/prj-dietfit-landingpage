@@ -37,6 +37,7 @@
   // EN uses a separate US food/UI image set; the original VI exports remain untouched.
   const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-us-en' : '';
   const heroVersion = langSuffix ? '20261021-placement-1' : '20260918-1';
+  const finale = langSuffix && window.createDietfitHeroFinale ? window.createDietfitHeroFinale(hero,stage) : null;
   function currentHeroFile() {
     return compactQuery.matches
       ? 'dietfit-hero-responsive' + langSuffix + '.riv?v=' + heroVersion
@@ -84,9 +85,10 @@
       : Math.min(1, Math.max(0, (startOffset - rect.top) / travel));
     // Mobile/iPad có quãng cuộn ngắn hơn desktop. Curve lũy thừa giữ animation
     // chậm ở đầu và giữa, nhưng vẫn về đúng frame cuối khi hết hero.
-    targetScroll = compactQuery.matches
+    const desiredProgress = compactQuery.matches
       ? Math.pow(rawProgress, 1.35)
       : rawProgress;
+    targetScroll = finale ? finale.progress(desiredProgress) : desiredProgress;
   }
 
   function updateHeroExpansion() {
@@ -107,13 +109,14 @@
     updateScroll();
   }
 
-  function animateScroll() {
+  function animateScroll(time) {
     if (scrollValue || scrollAnimation) {
       const distance = targetScroll - renderedScroll;
       const smoothing = compactQuery.matches ? 0.085 : 0.14;
       renderedScroll = Math.abs(distance) < 0.001
         ? targetScroll
         : renderedScroll + distance * smoothing;
+      if (finale) finale.tick(renderedScroll,time);
       if (scrollAnimation) {
         player.scrub(scrollAnimation, renderedScroll * scrollDuration);
       } else {
@@ -124,6 +127,7 @@
   }
 
   function resize() {
+    if (finale) finale.resize();
     if (player && player.loaded && player.artboard) {
       player.resizeDrawingSurfaceToCanvas(window.devicePixelRatio || 1);
     }
@@ -211,6 +215,7 @@
   function swapHeroFile() {
     if (!window.rive) return;
     if (frame) cancelAnimationFrame(frame);
+    if (finale) finale.reset();
     frame = 0;
     scrollValue = null;
     scrollAnimation = null;
@@ -241,6 +246,7 @@
   window.addEventListener('pagehide', function () {
     if (frame) cancelAnimationFrame(frame);
     if (player) player.cleanup();
+    if (finale) finale.destroy();
   }, { once: true });
 
   requestScrollUpdate();
