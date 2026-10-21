@@ -1,0 +1,75 @@
+{
+  "fileKey": "o5xi1PVyNzq4HOwH1gFf96",
+  "streak": "36892:90074",
+  "challenges": "36892:90110",
+  "fitpoints": "36886:69133",
+  "assets": {
+    "streak-flame.png": "b613d669-11fe-4a70-9cf1-2db9746d646d/1fbcc.png",
+    "streak-check.svg": "b613d669-11fe-4a70-9cf1-2db9746d646d/7832e.svg",
+    "challenge-target.png": "79681970-e5cc-4177-9c4b-cfa3af8a6d4c/7f4c3.png",
+    "challenge-rocket.svg": "79681970-e5cc-4177-9c4b-cfa3af8a6d4c/a14ad.svg",
+    "challenge-cutlery.svg": "79681970-e5cc-4177-9c4b-cfa3af8a6d4c/8569a.svg",
+    "challenge-icon-target.svg": "79681970-e5cc-4177-9c4b-cfa3af8a6d4c/eb1c9.svg",
+    "challenge-bars.svg": "79681970-e5cc-4177-9c4b-cfa3af8a6d4c/8d3e1.svg",
+    "fitpoints.svg": "52e3374f-762a-434d-b732-4b429f8cfc85/93b20.svg"
+  },
+  "standardWidgets": "User attachment: Buddy Widget Standard (Copy)/buddy widget.html and r/*.webp",
+  "sharedWidgetMotion": "User attachment: ugc_widget_final.mp4, paired meal widgets, share notification and reunion sequence",
+  "losslessEncodings": {
+    "streak-flame.webp": {
+      "source": "streak-flame.png",
+      "originalSha256": "0a95f637eae9316b6739e9fa5ccce88d6890fb40c4edd9962bb5ff1c5270fc69",
+      "dimensions": [
+        1080,
+        1080
+      ],
+      "visiblePixelsAndAlpha": "identical"
+    },
+    "challenge-target.webp": {
+      "source": "challenge-target.png",
+      "originalSha256": "17528584797fb9116e66481c658327007f02e78a3efb37da08f07a2123b5d718",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "visiblePixelsAndAlpha": "identical"
+    }
+  },
+  "humanPhotos": {
+    "tool": "Built-in image_gen",
+    "source": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-93c280bf-1917-48a1-a61b-ae1a97ebb542.png",
+    "output": [
+      "streak-person.webp",
+      "challenge-person.webp"
+    ],
+    "processing": "Split the diptych into portraits, resized to 750\u00d71000 and encoded WebP; native UI remains HTML plus original Figma assets."
+  },
+  "mealStills": {
+    "source": "User-provided ugc_widget_final.mp4",
+    "framesSeconds": [
+      16,
+      30
+    ],
+    "crops": {
+      "shared-lunch.webp": [
+        28,
+        362,
+        524,
+        620
+      ],
+      "shared-mom.webp": [
+        550,
+        362,
+        1052,
+        620
+      ],
+      "shared-dinner.webp": [
+        30,
+        355,
+        525,
+        646
+      ]
+    },
+    "purpose": "Food photographs only, excluding all source labels; English labels and crossfades are HTML/CSS."
+  }
+}

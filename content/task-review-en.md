@@ -57,3 +57,11 @@ Typography/card mới và mobile vẫn cần kiểm tra render. Công cụ brows
 ## Khôi phục visual Fasting theo ảnh mới
 
 Giữ nội dung Fasting; thay phone/timer bằng nguyên cụm Widgets & Streaks trước đó: Today, Streak, trend chart, ảnh bữa ăn và mascot bên phải. Desktop khôi phục visual column rộng hơn và lane riêng cho mascot; widget scale đo theo cột thực để không lấn nhân vật. Dùng lại renderer scroll/reverse widget. Đây là ngoại lệ mới theo yêu cầu người dùng cho ghi chú “năm phone đồng cỡ” trước đó: hiện còn bốn phone và một cụm widget.
+
+## Card theo Figma + HTML/video đính kèm — 22/10
+
+- Thay bốn visual chung bằng Streak/Challenges đúng component Figma và ảnh biểu cảm người riêng; Fitpoints dùng icon và balance gốc.
+- Standard widget dùng nguyên các render EN trong file HTML đính kèm, hiển thị nửa trên iPhone và lặp ba trạng thái.
+- Widget 1:1 lặp chia sẻ bữa ăn theo video, có notification và hai ảnh bữa tối đồng bộ; ảnh món ăn lấy từ video, caption EN là HTML.
+- Có Pause/Play, pause offscreen/tab hidden và reduced motion; không sửa sáu artwork card hoặc visual Fasting vừa khôi phục.
+- Build, asset/source integrity và motion lifecycle pass. Browser vẫn chưa kết nối nên chưa xác nhận desktop/mobile render cuối.

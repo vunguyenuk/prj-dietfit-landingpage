@@ -37,48 +37,4 @@
 .df-native .df-fasting-sample { color:#8d8882; font-size:10px; text-align:center; margin-top:12px; }
 .df-fasting-home { position:absolute; bottom:9px; left:50%; translate:-50% 0; width:122px; height:5px; background:#30261d; border-radius:8px; }
 .is-eating .df-fasting-arc { stroke:#8ca53b; }
-/* New level-two feature cards keep their live copy above a native product vignette. */
-.dietfit-highlights--en .df-habit-card { display:grid; grid-template-rows:max-content minmax(0,1fr); color:#211c29; background:#f3e9df; container-type:inline-size; }
-.dietfit-highlights--en .df-habit-card .dietfit-card-copy { position:relative; inset:auto; }
-.dietfit-highlights--en .df-habit-card::before { display:none; }
-.dietfit-highlights--en .df-habit-card .dietfit-card-copy p { color:#625d6b; }
-/* Copy owns its height; previews fit the remaining track instead of overlapping it.
-   The inner container keeps vignette type proportional when height limits its width. */
-.df-habit-art { position:relative; min-height:0; margin:0 7% 5%; display:flex; align-items:center; justify-content:center; container-type:size; font-family:var(--dietfit-font); line-height:1.35; }
-.df-habit-fit { width:min(100%,100cqh); container-type:inline-size; }
-.df-habit-card--challenge .df-habit-fit { width:min(100%,85cqh); }
-.df-habit-card--reminder .df-habit-fit { width:min(100%,90cqh); }
-.df-habit-fit > div { width:100%; }
-.df-habit-streak { padding:8%; border-radius:24px; background:#fffaf6; text-align:center; box-shadow:0 12px 40px rgb(68 40 14 / 8%); }
-.df-habit-streak > span { display:block; font-size:14cqw; }
-.df-habit-streak > strong { display:block; font-size:21cqw; line-height:1.1; letter-spacing:-.05em; }
-.df-habit-streak > b { display:block; margin-top:2%; font-size:4cqw; font-weight:500; }
-.df-habit-streak > div { display:flex; justify-content:space-between; margin-top:10%; gap:3%; }
-.df-habit-streak i { display:grid; place-items:center; width:10%; aspect-ratio:1; border-radius:50%; background:#fe692e; color:white; font-size:2.8cqw; font-style:normal; }
-.df-habit-streak i:last-child { background:#eee7df; color:#7a7166; }
-.df-habit-streak p { font-size:3cqw; margin:8% 0 0; color:#8d8882; }
-.dietfit-highlights--en .df-habit-card--challenge { background:#f4ead7; }
-.df-habit-challenge { padding:8%; background:#fffaf0; border-radius:24px; }
-.df-habit-challenge > span { display:block; color:#fe692e; font-size:13cqw; margin-bottom:8%; }
-.df-habit-challenge > small { font-size:2.8cqw; color:#8d7c5e; letter-spacing:.07em; }
-.df-habit-challenge > strong { display:block; margin-top:5%; font-size:7cqw; line-height:1.2; letter-spacing:-.03em; }
-.df-habit-challenge > div { margin-top:12%; font-size:3cqw; }
-.df-habit-challenge b { font-size:5cqw; margin-right:3%; }
-.df-habit-challenge i { display:block; height:8px; background:#efe5d4; border-radius:8px; margin-top:5%; }
-.df-habit-challenge em { display:block; width:57%; height:100%; background:#fe692e; border-radius:8px; }
-.df-habit-challenge p { font-size:3cqw; color:#9c6c26; margin:8% 0 0; }
-.dietfit-highlights--en .df-habit-card--reminder { background:#e8eee3; }
-.df-habit-reminder { display:grid; gap:4cqw; }
-.df-habit-reminder > div { display:grid; gap:2cqw; padding:9%; background:#fffaf6; border-radius:22px; }
-.df-habit-reminder img { width:11%; height:auto; aspect-ratio:1; object-fit:contain; border-radius:8px; margin-bottom:5%; }
-.df-habit-reminder b { font-size:4.5cqw; }
-.df-habit-reminder span,.df-habit-reminder small { font-size:3cqw; color:#8d8882; }
-.df-habit-reminder strong { font-size:13cqw; line-height:1.1; letter-spacing:-.04em; }
-.dietfit-highlights--en .df-habit-card--together { background:#f5e4dc; }
-.df-habit-together { display:grid; gap:4cqw; }
-.df-habit-together > div { display:flex; align-items:center; gap:6%; padding:6%; border-radius:22px; background:#fffaf6; }
-.df-habit-together > div:last-child { margin-left:10%; }
-.df-habit-together img { flex-shrink:0; width:38%; height:auto; aspect-ratio:1; object-fit:cover; border-radius:15px; }
-.df-habit-together span { font-size:3.5cqw; font-weight:500; }
-.df-habit-together small { display:block; font-size:2.7cqw; color:#8d8882; font-weight:400; margin-top:6px; }
 @media(max-width:767px) { .dietfit-home--en .dietfit-hero-heading { font-size:clamp(2.25rem,9vw,3.25rem); } }
