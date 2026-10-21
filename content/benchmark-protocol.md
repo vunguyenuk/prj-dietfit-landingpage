@@ -24,3 +24,5 @@ Use `content/benchmark-template.csv` for actual measurements. Only publish measu
 ## Implementation boundary
 
 `#dietfit-benchmark` replaces only the EN creator block. `styles/dietfit-benchmark-en.css` uses the existing Dietfit typography/palette. Native details/summary exposes the proposed method with no JavaScript dependency or video requests. This is a local review draft; no deployment is part of this change.
+
+The compact `#dietfit-score-strip` sits between the EN Rive hero and feature carousel, following the user's 0xCal layout reference. It reserves three comparable metric columns for Dietfit, MyFitnessPal and Fitatu. All scores remain unpublished placeholders; these app names identify proposed comparison columns, not a completed experiment or ranking. The planned metric is median calorie percentage error (lower is better), consistent with the detailed section. Do not populate it with 0xCal's reported accuracy percentages: those are a different measure and dataset.
