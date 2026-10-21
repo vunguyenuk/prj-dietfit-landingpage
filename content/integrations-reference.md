@@ -24,7 +24,7 @@ Motion uses CSS transforms only, pauses offscreen and in background tabs, and is
 
 ## Motion update — 21 October 2026
 
-The scroll fan-out and sticky runway have been removed. Once at least half the scene enters view, two mascots collect the official app cards from behind the central Dietfit hub, carry them to their positions, and place them. The left mascot places Garmin, Oura, Polar and Withings; the right places WHOOP, Google Health, VeSync and Strava. Both sequences run once. The right helper also carries Apple Health into its central bridge slot after placing the four provider apps. No scroll-progress or reverse-scroll motion remains.
+The scroll fan-out and sticky runway have been removed. Once at least half the scene enters view, two mascots collect the official app cards from behind the central Dietfit hub, carry them to their positions, and place them. The left mascot places Garmin, Oura, Polar and Withings; the right places WHOOP, Google Health, VeSync and Strava. Both sequences repeat while the scene is visible, with a 3.5-second readable rest between full rounds. The right helper also carries Apple Health into its central bridge slot after placing the four provider apps. No scroll-progress or reverse-scroll motion remains.
 
 The integration characters now use a dedicated 16-pose transparent atlas, generated from the existing wave mascot with the built-in image_gen tool. The source, prompt, cell extraction coordinates and lossless atlas are saved under `assets/brand/mascots/3d/delivery/`. This is sprite animation, not a rigged 3D model. Other mascot assets and their existing animation are unchanged.
 
@@ -32,7 +32,7 @@ Characters turn through quarter/front views to face their travel direction, alte
 
 Atlas keyframes use per-segment steps with a linear overall timeline, so every gait frame appears instead of freezing the complete cycle on its first frame. Translation and sprite motion are separate animations. Idle characters breathe subtly; moving characters use the articulated pose cycle. No recurring JavaScript frame loop is needed.
 
-Animations pause offscreen and in background tabs. Keyboard focus, resize or a reduced-motion preference immediately settles the complete layout. Mobile uses the static app grid without travelling mascots; very short desktop windows also show the final scene immediately. If Web Animations or IntersectionObserver is unavailable, the native static scene remains readable.
+Animations pause offscreen and in background tabs. Keyboard focus, resize or a reduced-motion preference immediately settles the complete layout. The loop can resume after focus leaves, after resize settles, or when reduced motion is disabled, subject to the scene being at least half visible. Mobile uses the static app grid without travelling mascots; very short desktop windows also show the final scene immediately. If Web Animations or IntersectionObserver is unavailable, the native static scene remains readable.
 
 After the left mascot finishes its own deliveries, it returns home and switches to the original notebook-writing pose. The right mascot returns home and stays in its relaxed, empty-handed pose with subtle breathing. Existing breathing, eye movement and blinking apply to that pose, plus a separate masked forearm/pencil layer with short, irregular writing strokes. The shared mascot visibility controller pauses the gesture offscreen. Reduced-motion users see a still notebook pose.
 
@@ -45,3 +45,11 @@ On mobile the same composition adapts to seven columns and nine rows, with small
 The carousel section follows integrations and precedes FAQ. It is moved in native document order, retaining its existing scroll/touch controls and card artwork.
 
 Icon sizing update: desktop icons grow from 40px to 72px; tablet from 32px to 56px. Mobile icons use up to 40px with 5px cell padding, constrained to the square interior. All nine official icon files are unchanged.
+
+## Repeating delivery update
+
+The two delivery jobs now run in a continuous loop while visible. After all nine apps are placed, the complete grid remains readable for 3.5 seconds. Subsequent rounds fade only the app about to be collected; the rest of the grid stays in place. Both helpers return home each round; the left writes and the right rests during the pause.
+
+The resting interval is a pauseable Web Animations clock, not a background timeout. Offscreen scenes and hidden tabs pause both movement and the interval. Keyboard focus settles all links and blocks replay until focus leaves. Resize cancels stale geometry, shows all links and restarts after a pause when eligible. Page exit cancels the sequence. Mobile, reduced-motion and missing-API fallbacks remain static.
+
+Deterministic tests complete two full cycles and verify all nine deliveries, reading pause, next-round recall, visibility/tab pause-resume, focus cancellation/resume, page-exit cleanup, resize and reduced-motion behavior. Final browser rendering is not verified because this session's browser connection remains unavailable.

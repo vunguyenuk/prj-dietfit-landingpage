@@ -8,4 +8,4 @@ The chapter occupies scroll progress .24–.44. The native timeline holds at des
 
 The following mascot peek/wave and shared-panel dashboard assembly remain intact. VI is unchanged; reduced motion retains the static hero poster.
 
-Independent geometry checks derive the expected image bounds from the original Rive records at laptop, 2K, 4K, tablet and mobile fixtures. Other checks cover progress continuity, contour/label ordering, freeze/reverse, reduced motion and shared-panel handoff. These are code/DOM tests, not rendered visual proof. Final browser QA is blocked while browser use is disabled in Work settings.
+Independent geometry checks derive the expected image bounds from the original Rive records at laptop, 2K, 4K, tablet and mobile fixtures. Other checks cover progress continuity, contour/label ordering, freeze/reverse, reduced motion and shared-panel handoff. These are code/DOM tests, not rendered visual proof. Final browser QA is blocked while this session's browser connection is unavailable despite the enabled setting.

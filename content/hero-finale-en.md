@@ -18,7 +18,7 @@ This replaces the previous whole-phone/dashboard crossfade, which produced doubl
 
 No timers, autoplay, wheel cancellation or scroll lock drive the finale. A stationary scroll position freezes all movement and counters, and reverse scrolling restores the earlier meal and budget state. Reduced motion retains the static poster. The rounded dark scene is separate from the shared panels, allowing the calorie card to extend beyond its edges.
 
-Validation: deterministic non-zero geometry tests cover shared identities, opaque docking at intermediate frames, nutrient flight, total arithmetic, stationary state, reversal, desktop/compact native handoff, resize and reduced motion. Deep Scan regression, syntax and site build pass. Final browser visual verification for this revision is blocked while Browser use is disabled in Work settings.
+Validation: deterministic non-zero geometry tests cover shared identities, opaque docking at intermediate frames, nutrient flight, total arithmetic, stationary state, reversal, desktop/compact native handoff, resize and reduced motion. Deep Scan regression, syntax and site build pass. Final browser visual verification for this revision is blocked while this session's browser connection is unavailable despite the enabled setting.
 
 ## Figma UI correction — 21 October, evening
 
@@ -30,7 +30,7 @@ The obsolete scrolled screenshot is removed from the DOM. One opaque native resu
 
 The hero's pinned top/bottom whitespace now equals the measured side gutter of the shared container, accounting for scrollbar width. The stage height is viewport height minus twice that gutter. Scroll progress uses the resulting stage height, so the finale still finishes before release. Insets also update on resize and in reduced-motion mode. Other section margins remain 100px.
 
-New DOM checks cover the Figma node, native SVG slots and nonempty local assets, removal of the old stacked UI, measured insets and VI isolation. Shared-panel transfer/freeze/reverse/resize checks, native scan geometry tests, JS syntax and the site build pass. Rendered browser geometry and screenshot comparison remain unverified because Browser use is disabled.
+New DOM checks cover the Figma node, native SVG slots and nonempty local assets, removal of the old stacked UI, measured insets and VI isolation. Shared-panel transfer/freeze/reverse/resize checks, native scan geometry tests, JS syntax and the site build pass. Rendered browser geometry and screenshot comparison remain unverified because this session's browser connection is unavailable.
 
 ## Side-peek correction
 

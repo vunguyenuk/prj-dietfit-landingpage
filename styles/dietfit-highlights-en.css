@@ -67,6 +67,11 @@
   .dietfit-highlights--en .dietfit-card-copy h2 { font-size:clamp(1.25rem,1.6vw,1.5rem); line-height:1.2; }
   .dietfit-highlights--en .dietfit-card-copy p { font-size:1rem; line-height:1.5; }
 }
+/* Wide desktops have room for four readable cards inside the fluid frame. */
+@media(min-width:1800px) {
+  .dietfit-highlights--en .dietfit-card-en,
+  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en { flex-basis:min(calc((100% - 60px) / 4),calc((100svh - 200px) * 5 / 7)); }
+}
 @media(max-width:767px) {
   .dietfit-highlights--en .dietfit-card-en { flex-basis:calc(100vw - 2.5rem); }
   .dietfit-card-en .dietfit-card-copy h2 { font-size:1.5rem; }

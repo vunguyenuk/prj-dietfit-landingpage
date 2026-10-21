@@ -15,4 +15,4 @@ Applied to the English home page:
 
 The fasting preview is sample UI, not a live timer. Its progress changes only with section scroll or explicit schedule selection, supports reverse scroll, and provides the existing resume-scroll control after direct interaction. Reduced motion renders a stable sample.
 
-Validation: build, JavaScript syntax, source-copy/chapter-order assertions, fasting schedule interaction/freeze/reverse/resume checks, EN/VI reduced-motion initialization, hero geometry/progress/handoff tests, and integration/mascot lifecycle regression checks. Final browser visual verification remains pending while Browser use is disabled in Work settings.
+Validation: build, JavaScript syntax, source-copy/chapter-order assertions, fasting schedule interaction/freeze/reverse/resume checks, EN/VI reduced-motion initialization, hero geometry/progress/handoff tests, and integration/mascot lifecycle regression checks. Final browser visual verification remains pending while this session's browser connection is unavailable despite the enabled setting.

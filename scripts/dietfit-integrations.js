@@ -10,8 +10,10 @@
   const porters = Array.from(scene.querySelectorAll('.df-integrations__porter'));
   const animations = new Set();
   let visible = false;
+  let startVisible = false;
   let started = false;
   let complete = false;
+  let focusLocked = false;
   let generation = 0;
   const limit = function (n, low, high) { return Math.max(low,Math.min(high,n)); };
   const shift = function (x,y,scale) { return 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px) scale(' + scale + ')'; };
@@ -22,6 +24,7 @@
   function settle() {
     generation++;
     complete = true;
+    started = false;
     animations.forEach(function (animation) { animation.cancel(); });
     animations.clear();
     section.classList.remove('is-delivery-ready');
@@ -114,6 +117,12 @@
       x:pickup.x - rig.home.x - rig.size * (pickupDir > 0 ? .78 : .22),
       y:pickup.y - rig.home.y - rig.size * .61
     };
+    // On later rounds only recall the next app; the rest of the grid stays readable.
+    if (app.classList.contains('is-placed')) {
+      await tween(tile,[{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.94)'}],220,token);
+      app.classList.remove('is-placed');
+      tile.style.transform = ''; tile.style.opacity = '';
+    }
     app.classList.add('is-being-carried');
     rig.porter.classList.add('is-working');
     await walk(rig,pickupRoot,null,token);
@@ -144,43 +153,65 @@
     rig.porter.classList.remove('is-working');
   }
   async function assemble() {
-    if (started || complete || !eligible()) return;
+    if (started || !eligible() || !startVisible || document.hidden || focusLocked) return;
     started = true;
     const token = generation;
-    await Promise.all(Array.from(scene.querySelectorAll('img')).map(function (img) {
-      img.loading = 'eager';
-      return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
-    }));
-    if (token !== generation || !eligible()) return;
-    const bounds = scene.getBoundingClientRect();
-    const jobs = [
-      {side:-1,names:['garmin','oura','polar','withings'],porter:porters[0]},
-      {side:1,names:['whoop','google-health','vesync','strava','apple-health'],porter:porters[1]}
-    ];
     try {
-      await Promise.all(jobs.map(async function (job) {
-        const rect = job.porter.getBoundingClientRect();
-        const rig = { porter:job.porter,atlas:job.porter.querySelector('.df-integrations__atlas'),facing:job.porter.querySelector('.df-integrations__facing'),home:{x:rect.left - bounds.left,y:rect.top - bounds.top},size:rect.width,position:{x:0,y:0},direction:1 };
-        for (const name of job.names) {
-          if (token !== generation) return;
-          await deliver(scene.querySelector('.df-integrations__app--' + name),rig,job.side,token);
-        }
-        if (token === generation) {
-          job.porter.classList.add('is-resting');
-          job.porter.classList.toggle('is-writing',!!job.porter.querySelector('.df-integrations__notetaker'));
-        }
+      await Promise.all(Array.from(scene.querySelectorAll('img')).map(function (img) {
+        img.loading = 'eager';
+        return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
       }));
-      if (token === generation) settle();
+      if (token !== generation || !eligible()) return;
+      // The idle hold uses the same pauseable animation clock as walking.
+      // No background timeout can launch another round while offscreen.
+      if (complete) await tween(scene,[{},{}],3500,token);
+      while (token === generation && eligible() && !focusLocked) {
+        complete = false;
+        section.classList.add('is-delivery-ready');
+        porters.forEach(function (porter) {
+          porter.classList.remove('is-resting','is-writing');
+        });
+        const bounds = scene.getBoundingClientRect();
+        const jobs = [
+          {side:-1,names:['garmin','oura','polar','withings'],porter:porters[0]},
+          {side:1,names:['whoop','google-health','vesync','strava','apple-health'],porter:porters[1]}
+        ];
+        await Promise.all(jobs.map(async function (job) {
+          const rect = job.porter.getBoundingClientRect();
+          const rig = { porter:job.porter,atlas:job.porter.querySelector('.df-integrations__atlas'),facing:job.porter.querySelector('.df-integrations__facing'),home:{x:rect.left - bounds.left,y:rect.top - bounds.top},size:rect.width,position:{x:0,y:0},direction:1 };
+          for (const name of job.names) {
+            if (token !== generation) return;
+            await deliver(scene.querySelector('.df-integrations__app--' + name),rig,job.side,token);
+          }
+          if (token === generation) {
+            job.porter.classList.add('is-resting');
+            job.porter.classList.toggle('is-writing',!!job.porter.querySelector('.df-integrations__notetaker'));
+          }
+        }));
+        if (token !== generation) return;
+        complete = true;
+        section.classList.remove('is-delivery-ready');
+        await tween(scene,[{},{}],3500,token);
+      }
     } catch (_) { if (token === generation) settle(); }
+    finally { if (token === generation) started = false; }
   }
   if (eligible()) section.classList.add('is-delivery-ready');
   else settle();
   new IntersectionObserver(function (entries) {
-    const entry = entries[0]; visible = entry.isIntersecting; sync();
-    if (visible && entry.intersectionRatio >= .5) assemble();
+    const entry = entries[0]; visible = entry.isIntersecting;
+    startVisible = visible && entry.intersectionRatio >= .5; sync();
+    if (startVisible) assemble();
   },{threshold:[0,.25,.5,.75,1]}).observe(scene);
-  scene.addEventListener('focusin',function (event) { if (event.target.closest('.df-integrations__tile')) settle(); });
-  window.addEventListener('resize',settle,{passive:true});
-  reduced.addEventListener('change',function () { settle(); sync(); });
-  document.addEventListener('visibilitychange',sync);
+  scene.addEventListener('focusin',function (event) {
+    if (event.target.closest('.df-integrations__tile')) { focusLocked = true; settle(); }
+  });
+  scene.addEventListener('focusout',function (event) {
+    if (!scene.contains(event.relatedTarget)) { focusLocked = false; assemble(); }
+  });
+  window.addEventListener('resize',function () { settle(); sync(); assemble(); },{passive:true});
+  reduced.addEventListener('change',function () { settle(); sync(); assemble(); });
+  document.addEventListener('visibilitychange',function () { sync(); if (!document.hidden) assemble(); });
+  window.addEventListener('pagehide',settle);
+  window.addEventListener('pageshow',function () { sync(); assemble(); });
 }());
