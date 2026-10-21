@@ -3,7 +3,7 @@
     "source": "dietfit-hero-en.riv",
     "output": "dietfit-hero-us-en.riv",
     "sourceBytes": 1249909,
-    "outputBytes": 967338,
+    "outputBytes": 956280,
     "replacedImages": [
       "BMI",
       "Calo average",
@@ -27,7 +27,7 @@
     "source": "dietfit-hero-responsive-en.riv",
     "output": "dietfit-hero-responsive-us-en.riv",
     "sourceBytes": 1250795,
-    "outputBytes": 968224,
+    "outputBytes": 957166,
     "replacedImages": [
       "BMI",
       "Calo average",

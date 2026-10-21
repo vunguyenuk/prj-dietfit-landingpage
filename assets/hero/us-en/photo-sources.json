@@ -1,5 +1,5 @@
 {
-  "revision": "20261021-perspective-1",
+  "revision": "20261021-placement-1",
   "source": "User attachment codex-clipboard-f5c768c2-d0e7-4fb7-a4c9-101d0c2cafba.png",
   "sourceDimensions": [
     1199,
@@ -11,7 +11,7 @@
     "Perspective-corrected moving hand and bowl composite",
     "Matching bowl image in app result and recent meal thumbnail"
   ],
-  "method": "Original source photograph is retained byte-for-byte in table-source.png. Built-in imagegen edits remove the two background plates and reconstruct the green bench. A separate transparent image edit corrects the bowl camera angle and hand grip, using the original food photo as reference; this composite is AI-assisted and is not an untouched photograph. Proportional resizing preserves bowl geometry. Prompts and output paths are recorded in perspective-edit.json.",
+  "method": "Original source photograph is retained byte-for-byte in table-source.png. Built-in imagegen edits remove the two background plates and reconstruct the green bench. A separate transparent image edit corrects the bowl camera angle and hand grip, using the original food photo as reference; this composite is AI-assisted and is not an untouched photograph. Proportional resizing preserves bowl geometry. Prompts and output paths are recorded in perspective-edit.json. Placement correction: original meal-hand-source.png is retained. The build transforms the hand/bowl to the original Rive plate anchor and adds two native-canvas bowl shadows. Built-in imagegen moves napkin/cutlery to the far upper-right bench edge, clear of the bowl. See placement-edit.json.",
   "nutrition": "Roast veggie bowl: illustrative sample data, not measurement of the photographed meal. Six ingredient energies sum to 620 kcal.",
   "animation": "Original timeline and state-machine bytes retained in both EN exports."
 }

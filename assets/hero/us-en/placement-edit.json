@@ -1,0 +1,13 @@
+{
+  "mode": "built-in image_gen edit",
+  "revision": "20261021-placement-1",
+  "input": "table-bench-clean.png (previous plate-free bench)",
+  "output": "table-bench-clean.png",
+  "generatedOutput": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-67314cde-f64c-45e0-9915-dc2947796c60.png",
+  "prompt": "Use case: precise-object-edit. Edit this exact portrait outdoor green-bench photograph. Move the existing white napkin, fork and knife together from their central position to the FAR UPPER RIGHT end of the bench, mostly cropped by the top edge of the photograph. Keep them small, at most within the region x850..1199 y0..300 on the 1199x1799 reference. The entire central bench region x300..1100 y350..1350 must be completely empty green slats and gaps, leaving clear space for a separate animated bowl. Remove the original napkin/knife/fork and their shadows from the center and reconstruct the bench slats continuously with exact existing widths, diagonal perspective, texture and daylight. Keep the pink drink at lower left, pavement, entire bench shape, framing, green colors and all other surroundings unchanged. No food, bowl, hand, phone, new objects or added lettering. Do not move the camera or change scale.",
+  "animationAssetFinishing": {
+    "source": "meal-hand-source.png (unchanged photographic composite)",
+    "output": "hands.webp",
+    "method": "Native canvas transform aligns the existing bowl with the original Rive plate anchor. Scale 0.97; lower image translation x78/y80; forearm above source y300 is sheared to retain its top-edge entry. Two bowl-only shadows: ellipse center 922/670, radii335/342, offsets15/20 and5/8, blur15px and4px, alpha0.30 and0.24. Shadows move with the existing embedded hand/bowl image; there is no separate animated contact-shadow layer. Timeline and Rive non-image bytes are retained."
+  }
+}
