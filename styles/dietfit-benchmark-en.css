@@ -1,32 +1,33 @@
-/* US trust section: measured evidence replaces market-specific creator videos. */
-.df-score-strip { color:#110b20; background:#fff; border-bottom:1px solid #eee9e5; scroll-margin-top:100px; }
-.df-score-strip__inner { width:min(calc(100% - 48px),1200px); margin-inline:auto; padding-block:40px 36px; display:grid; grid-template-columns:minmax(240px,1.15fr) minmax(0,3fr); align-items:start; gap:clamp(32px,5vw,80px); }
-.df-score-strip__intro h2 { margin:0 0 10px; font-size:.9375rem; line-height:1.4; font-weight:600; letter-spacing:-.015em; }
-.df-score-strip__intro p { max-width:30ch; margin:0 0 12px; color:#625d6b; font-size:.8125rem; line-height:1.65; }
-.df-score-strip__intro a { color:#a4431b; font-size:.8125rem; line-height:1.6; text-underline-offset:4px; }
+/* Compact US benchmark concept. Values are explicitly illustrative. */
+.df-score-strip { color:#110b20; background:transparent; scroll-margin-top:100px; }
+.df-score-strip__inner { width:min(calc(100% - 48px),1000px); margin-inline:auto; padding-block:32px 40px; }
+.df-score-strip__intro { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:12px; }
+.df-score-strip__intro h2 { margin:0 0 8px; font-size:clamp(22px,2.1vw,28px); line-height:1.15; font-weight:600; letter-spacing:-.035em; }
+.df-score-strip__intro p { margin:0; color:#625d6b; font-size:.8125rem; line-height:1.5; }
+.df-score-strip__intro a { flex:none; color:#a4431b; font-size:.75rem; line-height:1.5; text-underline-offset:4px; }
 .df-score-strip__intro a:focus-visible { outline:3px solid #fe692e; outline-offset:4px; }
-.df-score-strip__scores { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:clamp(20px,4vw,64px); margin:0; }
-.df-score-strip__scores > div { min-width:0; }
-.df-score-strip dt { margin-bottom:10px; font-size:.8125rem; font-weight:500; line-height:1.4; }
+.df-score-strip__disclosure { margin:0 0 20px; color:#625d6b; font-size:.6875rem; line-height:1.6; }
+.df-score-strip__disclosure strong { margin-right:8px; color:#94380f; font-weight:600; }
+.df-score-strip__scores { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:0; }
+.df-score-strip__card { min-width:0; padding:20px 24px; border:1px solid #ebe6e2; border-radius:24px; background:#fff; box-shadow:0 8px 0 #fe692e; }
+.df-score-strip dt { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; margin-bottom:28px; font-size:.8125rem; font-weight:500; line-height:1.4; }
+.df-score-strip__demo { padding:3px 7px; border-radius:12px; color:#a4431b; background:#fff3ec; font-size:.625rem; font-weight:500; }
 .df-score-strip dd { margin:0; }
-.df-score-strip__value { display:flex; align-items:baseline; gap:3px; font-size:clamp(48px,4.8vw,68px); font-weight:600; line-height:1; letter-spacing:-.055em; font-variant-numeric:tabular-nums lining-nums; }
-.df-score-strip__value span { position:relative; top:-.5em; font-size:.34em; letter-spacing:0; font-weight:500; }
-.df-score-strip__dietfit .df-score-strip__value { color:#dd541f; }
-.df-score-strip__caption { margin-top:12px!important; color:#77717f; font-size:.75rem; line-height:1.5; }
-.df-score-strip__state { grid-column:1 / -1; margin:16px 0 0; color:#77717f; font-size:.6875rem; line-height:1.5; }
-.df-score-strip__state dt,.df-score-strip__state dd { display:inline; margin:0; font-size:inherit; font-weight:400; line-height:inherit; }
-.df-score-strip__state dt::after { content:' · '; }
-@media(max-width:800px) {
-  .df-score-strip__inner { grid-template-columns:1fr; gap:28px; padding-block:32px; }
-  .df-score-strip__intro p { display:inline; max-width:none; margin-right:8px; }
-  .df-score-strip__intro a { display:inline-block; }
-  .df-score-strip__scores { gap:16px; }
-}
-@media(max-width:420px) {
-  .df-score-strip__inner { width:calc(100% - 40px); }
-  .df-score-strip dt { font-size:.6875rem; }
-  .df-score-strip__value { font-size:46px; }
-  .df-score-strip__caption { font-size:.6875rem; }
+.df-score-strip__value { display:flex; align-items:baseline; gap:2px; font-size:clamp(48px,5vw,68px); font-weight:600; line-height:1; letter-spacing:-.065em; font-variant-numeric:tabular-nums lining-nums; }
+.df-score-strip__value span { font-size:.65em; letter-spacing:-.04em; }
+.df-score-strip__dietfit .df-score-strip__value { color:#d94b16; }
+.df-score-strip__caption { margin-top:12px!important; font-size:.8125rem; line-height:1.4; font-weight:500; }
+.df-score-strip__caption span { color:#77717f; font-size:.6875rem; font-weight:400; }
+@media(max-width:600px) {
+  .df-score-strip__inner { width:calc(100% - 40px); padding-block:24px 32px; }
+  .df-score-strip__intro { align-items:start; flex-direction:column; gap:8px; }
+  .df-score-strip__scores { gap:10px; }
+  .df-score-strip__card { padding:14px 12px; border-radius:18px; box-shadow:0 6px 0 #fe692e; }
+  .df-score-strip dt { min-height:38px; align-content:start; align-items:start; gap:4px; margin-bottom:16px; font-size:.6875rem; }
+  .df-score-strip__demo { padding:2px 5px; font-size:.5625rem; }
+  .df-score-strip__value { font-size:clamp(36px,10vw,52px); }
+  .df-score-strip__caption { margin-top:10px!important; font-size:.6875rem; }
+  .df-score-strip__caption span { font-size:.5625rem; }
 }
 .df-benchmark { padding:clamp(72px,8vw,128px) 24px; color:#110b20; background:#fff; scroll-margin-top:100px; }
 .df-benchmark__inner { width:min(100%,1200px); margin-inline:auto; }

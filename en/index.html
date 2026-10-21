@@ -168,7 +168,7 @@
   <link rel="stylesheet" href="/styles/dietfit-highlights-en.css?v=20261021-figma-1">
   <link rel="stylesheet" href="/styles/dietfit-progress-en.css?v=20261021-user-pair-1">
   <link rel="stylesheet" href="/styles/dietfit-video-en.css?v=2">
-  <link rel="stylesheet" href="/styles/dietfit-benchmark-en.css?v=20261021-2">
+  <link rel="stylesheet" href="/styles/dietfit-benchmark-en.css?v=20261021-compact-1">
   <link rel="stylesheet" href="/styles/dietfit-mobile-menu.css?v=1">
   <link rel="stylesheet" href="/styles/dietfit-lang-switch.css?v=1">
   <meta name="dietfit-source-revision" content="v1-feature-copy-clean-v9">
@@ -246,30 +246,32 @@
     </div>
 
 
-    <section class="df-score-strip" id="dietfit-score-strip" aria-labelledby="df-score-strip-title" data-benchmark-status="unpublished">
+    <section class="df-score-strip" id="dietfit-score-strip" aria-labelledby="df-score-strip-title" data-benchmark-status="unpublished" data-display="illustrative">
       <div class="df-score-strip__inner">
         <div class="df-score-strip__intro">
-          <h2 id="df-score-strip-title">Accuracy, in context.</h2>
-          <p>A planned comparison on the same measured meals. Lower calorie error means a closer estimate.</p>
-          <a href="#dietfit-benchmark">Method &amp; test categories →</a>
+          <div>
+            <h2 id="df-score-strip-title">Accuracy, at a glance.</h2>
+            <p>Example calorie error. Lower is closer to the reference meal.</p>
+          </div>
+          <a href="#dietfit-benchmark">How we’ll measure it ↗</a>
         </div>
+        <p class="df-score-strip__disclosure" id="df-score-strip-state"><strong>Illustrative data</strong> Fictional values for this design preview. No measured results yet.</p>
         <dl class="df-score-strip__scores" aria-describedby="df-score-strip-state">
-          <div class="df-score-strip__dietfit" data-benchmark-app="dietfit">
-            <dt>Dietfit</dt>
-            <dd class="df-score-strip__value" aria-label="Not published">—<span aria-hidden="true">%</span></dd>
-            <dd class="df-score-strip__caption">median calorie error</dd>
+          <div class="df-score-strip__card df-score-strip__dietfit">
+            <dt>Dietfit <span class="df-score-strip__demo">Demo</span></dt>
+            <dd class="df-score-strip__value" aria-label="12 percent, illustrative example only">12<span aria-hidden="true">%</span></dd>
+            <dd class="df-score-strip__caption">Calorie error<br><span>Example value</span></dd>
           </div>
-          <div data-benchmark-app="myfitnesspal">
-            <dt>MyFitnessPal</dt>
-            <dd class="df-score-strip__value" aria-label="Not published">—<span aria-hidden="true">%</span></dd>
-            <dd class="df-score-strip__caption">median calorie error</dd>
+          <div class="df-score-strip__card">
+            <dt>Comparison A <span class="df-score-strip__demo">Demo</span></dt>
+            <dd class="df-score-strip__value" aria-label="18 percent, illustrative example only">18<span aria-hidden="true">%</span></dd>
+            <dd class="df-score-strip__caption">Calorie error<br><span>Example value</span></dd>
           </div>
-          <div data-benchmark-app="fitatu">
-            <dt>Fitatu</dt>
-            <dd class="df-score-strip__value" aria-label="Not published">—<span aria-hidden="true">%</span></dd>
-            <dd class="df-score-strip__caption">median calorie error</dd>
+          <div class="df-score-strip__card">
+            <dt>Comparison B <span class="df-score-strip__demo">Demo</span></dt>
+            <dd class="df-score-strip__value" aria-label="24 percent, illustrative example only">24<span aria-hidden="true">%</span></dd>
+            <dd class="df-score-strip__caption">Calorie error<br><span>Example value</span></dd>
           </div>
-          <div class="df-score-strip__state" id="df-score-strip-state"><dt>Comparison preview</dt><dd>Results have not been published for any app.</dd></div>
         </dl>
       </div>
     </section>
