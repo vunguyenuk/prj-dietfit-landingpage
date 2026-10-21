@@ -1,0 +1,7 @@
+# Focused writing expression
+
+Mode: built-in image_gen, transparent background. Reference: `../writing.webp`. Original generation: `generated-source.png`. Production asset: `writing-tongue.webp` (1000×1000 lossless transparent WebP). Only the EN page references the edited expression. Other original pose assets are preserved.
+
+## Final prompt
+
+Use case: precise-object-edit. Edit this exact existing Dietfit writing mascot PNG/WebP, preserving the original canvas, full-body framing, character pixel scale, head/body silhouette, shell crack pattern, fuzzy white fur material, face feature positions, feet on the same baseline, peach notebook, pencil, hands and all original colors. Make ONLY a small facial expression change: the mascot is absorbed in writing, eyes glance slightly downward toward the notebook, and a small cute pink tongue sticks out from ONE corner of its smiling mouth (the character's left mouth corner, screen-right). Tongue modest and rounded, short, clearly asymmetrical to one side, like a focused game character concentrating on a task. Keep the mouth in the same place and retain an encouraging/cute expression, no giant tongue, no new lips or teeth, no caricature changes. Keep the entire original pose, hands and notebook EXACTLY as supplied; do not redesign or re-pose the body. Preserve genuine background alpha transparency and soft fur edge detail, no background, no ground plane or added cast shadow, no text, no other objects. Output a single square transparent asset at the same proportions as the input.

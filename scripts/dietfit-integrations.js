@@ -35,6 +35,7 @@
     });
     porters.forEach(function (porter) {
       porter.style.transform = ''; porter.classList.remove('is-working');
+      porter.classList.add('is-resting');
       porter.classList.toggle('is-writing',!!porter.querySelector('.df-integrations__notetaker'));
       porter.querySelector('.df-integrations__facing').style.transform = '';
       porter.querySelector('.df-integrations__atlas').style.transform = cell(0);
@@ -176,7 +177,10 @@
           if (token !== generation) return;
           await deliver(scene.querySelector('.df-integrations__app--' + name),rig,job.side,token);
         }
-        if (token === generation) job.porter.classList.toggle('is-writing',!!job.porter.querySelector('.df-integrations__notetaker'));
+        if (token === generation) {
+          job.porter.classList.add('is-resting');
+          job.porter.classList.toggle('is-writing',!!job.porter.querySelector('.df-integrations__notetaker'));
+        }
       }));
       if (token === generation) settle();
     } catch (_) { if (token === generation) settle(); }

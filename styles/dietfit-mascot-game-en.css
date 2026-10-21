@@ -1,0 +1,18 @@
+/* Articulated idle: anchored feet, torso breathing, independent head and gestures. */
+.df-mascot--game .df-mascot__body { transform-origin:50% 86%; animation-name:df-game-breathe; }
+.df-mascot--game .df-mascot__head,.df-mascot--game .df-mascot__feet,.df-mascot--game .df-mascot__prop {
+  position:absolute; inset:0; display:block; width:100%; height:100%; pointer-events:none;
+}
+.df-mascot--game .df-mascot__head { transform-origin:50% 48%; }
+.df-mascot--game .df-mascot__head > img,.df-mascot--game .df-mascot__feet img,.df-mascot--game .df-mascot__prop img { display:block; width:100%; height:100%; object-fit:contain; }
+.df-mascot--game .df-mascot__feet { mask-image:linear-gradient(transparent 83%,#000 86%); }
+.df-mascot--game .df-mascot__arm,.df-mascot--game .df-mascot__face,.df-mascot--game .df-mascot__pen { animation:none!important; }
+.df-mascot--game .df-mascot__pen { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; pointer-events:none; transform-origin:27% 63%; clip-path:polygon(30% 43%,40% 49%,45% 54%,48% 61%,43% 70%,27% 72%,16% 65%,16% 54%,25% 49%); }
+.df-mascot--game .df-mascot__expression { animation-duration:13.9s; }
+.df-mascot--game[data-mascot-pose="writing"] .df-mascot__expression { animation:none; }
+@keyframes df-game-breathe { 0%,100% { transform:scale(1); } 43% { transform:scale(1.007,1.014); } 68% { transform:scale(1.002,1.006); } }
+@media(prefers-reduced-motion:reduce) {
+  .df-mascot--game .df-mascot__head,.df-mascot--game .df-mascot__feet,.df-mascot--game .df-mascot__prop { display:none; }
+  .df-mascot--game .df-mascot__base { mask-image:var(--df-original-mask,none)!important; mask-composite:add!important; }
+  .df-mascot--game .df-mascot__pen { transform:none!important; }
+}
