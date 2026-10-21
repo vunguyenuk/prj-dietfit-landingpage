@@ -166,9 +166,9 @@
   <link rel="stylesheet" href="/styles/dietfit-hero.css?v=20260918-1">
   <link rel="stylesheet" href="/styles/dietfit-sections.css?v=59">
   <link rel="stylesheet" href="/styles/dietfit-highlights-en.css?v=20261021-overlay-1">
-  <link rel="stylesheet" href="/styles/dietfit-progress-en.css?v=20261021-scroll-restored-1">
+  <link rel="stylesheet" href="/styles/dietfit-progress-en.css?v=20261021-scroll-layout-1">
   <link rel="stylesheet" href="/styles/dietfit-footer-en.css?v=20261021-footer-lift-3">
-  <link rel="stylesheet" href="/styles/dietfit-integrations-en.css?v=20261021-app-grid-1">
+  <link rel="stylesheet" href="/styles/dietfit-integrations-en.css?v=20261021-scroll-layout-1">
   <link rel="stylesheet" href="/styles/dietfit-benchmark-en.css?v=20261021-score-breathing-1">
   <link rel="stylesheet" href="/styles/dietfit-mobile-menu.css?v=1">
   <link rel="stylesheet" href="/styles/dietfit-lang-switch.css?v=1">
@@ -177,10 +177,10 @@
   <link rel="stylesheet" href="/styles/dietfit-native-ui.css?v=6">
   <link rel="stylesheet" href="/styles/dietfit-mascots.css?v=20261021-lifelike-1">
   <link rel="stylesheet" href="/styles/dietfit-mascot-game-en.css?v=20261021-game-idle-1">
-  <link rel="stylesheet" href="/styles/dietfit-spacing-en.css?v=20261021-scene-gap-1">
+  <link rel="stylesheet" href="/styles/dietfit-spacing-en.css?v=20261021-scroll-layout-1">
   <link rel="stylesheet" href="/styles/dietfit-responsive-en.css?v=20261021-1">
-  <link rel="stylesheet" href="/styles/dietfit-containers-en.css?v=20261021-unified-1240-1">
-  <link rel="stylesheet" href="/styles/dietfit-hero-finale-en.css?v=20261021-peek-first-1">
+  <link rel="stylesheet" href="/styles/dietfit-containers-en.css?v=20261021-scroll-layout-1">
+  <link rel="stylesheet" href="/styles/dietfit-hero-finale-en.css?v=20261021-scroll-layout-1">
   <link rel="stylesheet" href="/styles/dietfit-hero-scan-en.css?v=20261021-deep-scan-1">
 </head>
 
@@ -280,16 +280,15 @@
                 <img class="df-hero-finale__hardware" src="/assets/hero/finale/phone-frame.webp" alt="" width="899" height="1832" loading="lazy" decoding="async">
               </div>
               <div class="df-hero-finale__cards">
-                <img class="df-hero-finale__card df-hero-finale__card--water" src="/assets/hero/finale/water.png" alt="" width="351" height="172" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--streak" src="/assets/hero/finale/streak.png" alt="" width="178" height="185" loading="lazy" decoding="async">
                 <img class="df-hero-finale__card df-hero-finale__card--today-calories" src="/assets/hero/finale/today-calories.png" alt="" width="351" height="268" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--meal-score" src="/assets/hero/finale/meal-score.png" alt="" width="404" height="369" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--bmi" src="/assets/hero/finale/bmi.png" alt="" width="395" height="232" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--protein" src="/assets/hero/finale/protein.png" alt="" width="109" height="132" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--starch" src="/assets/hero/finale/starch.png" alt="" width="109" height="132" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--fat" src="/assets/hero/finale/fat.png" alt="" width="109" height="132" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--calorie-average" src="/assets/hero/finale/calorie-average.png" alt="" width="383" height="398" loading="lazy" decoding="async">
-                <img class="df-hero-finale__card df-hero-finale__card--review-card" src="/assets/hero/finale/review-card.png" alt="" width="351" height="358" loading="lazy" decoding="async">
+              </div>
+              <div class="df-hero-dashboard">
+                <div class="df-hero-dashboard__title"><img src="/assets/images/dietfit-app-icon-192.png" alt="" width="192" height="192" loading="lazy"><span>Your nutrition, together.</span></div>
+                <div class="df-hero-dashboard__grid">
+                  <div class="df-hero-dashboard__budget"><img src="/assets/hero/finale/today-calories.png" alt="" width="351" height="268" loading="lazy" decoding="async"></div>
+                  <div class="df-hero-dashboard__plan"><h3>Meal plan</h3><p>Room for your taste.</p><div><img src="/assets/product/v2/scan/A-photo.jpg" alt="" width="80" height="80" loading="lazy"><span>Breakfast<small>A fresh start</small></span></div><div><img src="/assets/product/v2/scan/B-photo.jpg" alt="" width="80" height="80" loading="lazy"><span>Lunch<small>Made for your goal</small></span></div><div><img src="/assets/hero/deep-scan/meal.webp" alt="" width="710" height="710" loading="lazy"><span>Roast veggie bowl<small>620 kcal</small></span></div></div>
+                  <div class="df-hero-dashboard__journal"><h3>Food journal</h3><p>Today</p><img src="/assets/hero/deep-scan/meal.webp" alt="" width="710" height="710" loading="lazy" decoding="async"><strong>Roast veggie bowl</strong><span>620 kcal</span><div><span>Carbs <b>78g</b></span><span>Protein <b>23g</b></span><span>Fat <b>24g</b></span></div><small>6 ingredients · Reviewed by you</small></div>
+                </div>
               </div>
             </div>
           </div>
@@ -319,60 +318,6 @@
             <dd class="df-score-strip__value" aria-label="24 percent, illustrative example only">24<span aria-hidden="true">%</span></dd>
           </div>
         </dl>
-      </div>
-    </section>
-
-    <!-- PRODUCT STORY: v1 design + Gaia feature composition + isolated v2 app renderers. -->
-    <section class="dietfit-highlights dietfit-highlights--en" id="dietfit-highlights" aria-label="Dietfit feature previews">
-      <div class="dietfit-highlights-sticky">
-        <div class="dietfit-carousel" data-dietfit-carousel>
-          <article class="dietfit-card dietfit-card-en df-highlight--nutrition" data-figma-node="28680:4707">
-            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-1.webp" width="1500" height="2100" alt="A woman checking her phone outdoors" loading="lazy" decoding="async">
-            <div class="dietfit-card-copy">
-              <h2>Nutrition, finally clear</h2>
-              <p>Just snap a photo. Understand what’s in your meal in seconds.</p>
-            </div>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--dashboard" data-figma-node="28680:4710">
-            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-2.webp" width="1500" height="2100" alt="Dietfit meal dashboard in an iPhone" loading="lazy" decoding="async">
-            <div class="dietfit-card-copy">
-              <h2>Calories in one tap</h2>
-              <p>Snap your meal. Review the nutrition. Log it in a tap.</p>
-            </div>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--science" data-figma-node="28680:4704">
-            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-3-v2.webp" width="1500" height="2100" alt="A meal with Dietfit calorie and nutrition summaries" loading="lazy" decoding="async">
-            <div class="dietfit-card-copy">
-              <h2>Backed by science</h2>
-              <p>Daily targets built around your profile, your activity and your goals.</p>
-            </div>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--streak" data-figma-node="28680:4699">
-            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-4.webp" width="1500" height="2100" alt="Two friends eating pasta with Dietfit activity summaries" loading="lazy" decoding="async">
-            <div class="dietfit-card-copy">
-              <h2>A reward for discipline</h2>
-              <p>Log meals, keep your streak and complete challenges to earn Fitpoints.</p>
-            </div>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--health" data-figma-node="28680:4697">
-            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-5.webp" width="1500" height="2100" alt="A woman checking her watch with Dietfit water and workout logs" loading="lazy" decoding="async">
-            <div class="dietfit-card-copy">
-              <h2>Works with Apple Health</h2>
-              <p>Connect your activity and see your daily calories adjust.</p>
-            </div>
-          </article>
-          <article class="dietfit-card dietfit-card-en df-highlight--progress" data-figma-node="28680:4693">
-            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-6.webp" width="1500" height="2100" alt="A runner checking the Dietfit activity screen" loading="lazy" decoding="async">
-            <div class="dietfit-card-copy">
-              <h2>Smart progress charts</h2>
-              <p>See your meals, activity and habits come together over time.</p>
-            </div>
-          </article>
-        </div>
-        <div class="dietfit-carousel-controls" aria-label="Feature list controls">
-          <button type="button" data-dietfit-prev aria-label="Previous feature">←</button>
-          <button type="button" data-dietfit-next aria-label="Next feature">→</button>
-        </div>
       </div>
     </section>
 
@@ -571,12 +516,12 @@
       <div class="df-integrations__inner">
         <div class="df-integrations__intro">
           <div><p class="df-integrations__eyebrow">Connected through Apple Health</p><h2 id="df-integrations-title">Your movement.<br>Part of the picture.</h2></div>
-          <div class="df-integrations__description"><p>Your runs, daily steps and active energy belong beside your meals. Bring what you already track into Dietfit through Apple Health.</p><a href="#dietfit-sync-setup">See how it connects</a></div>
+          <div class="df-integrations__description"><p>Your runs, daily steps and active energy belong beside your meals. Bring what you already track into Dietfit through Apple Health.</p><a href="#dietfit-integrations-apps">See how it connects</a></div>
         </div>
         <div class="df-integrations__stage">
         <div class="df-integrations__scene" role="group" aria-label="Compatible apps share data with Apple Health, which connects to Dietfit">
           <div class="df-integrations__hub"><img src="/assets/images/dietfit-app-icon-192.png" alt="" width="192" height="192" loading="lazy" decoding="async"><h3>Dietfit</h3><p class="df-integrations__data">Your meals + your movement</p></div>
-          <ul class="df-integrations__apps" aria-label="Apps that can share data with Apple Health">
+          <ul class="df-integrations__apps" id="dietfit-integrations-apps" aria-label="Apps that can share data with Apple Health">
             <li class="df-integrations__app df-integrations__app--garmin">
 
               <a class="df-integrations__tile" href="https://support.garmin.com/en-US/?faq=lK5FPB9iPF5PXFkIpFlFPA" target="_blank" rel="noopener noreferrer" aria-label="How Garmin Connect shares data with Apple Health (opens a new tab)" title="Garmin Connect">
@@ -631,20 +576,117 @@
                 <span>Strava</span>
               </a>
             </li>
-                      <li class="df-integrations__empty df-integrations__empty--one" aria-hidden="true" role="presentation"></li>
-            <li class="df-integrations__empty df-integrations__empty--two" aria-hidden="true" role="presentation"></li>
-            <li class="df-integrations__empty df-integrations__empty--three" aria-hidden="true" role="presentation"></li>
-            <li class="df-integrations__empty df-integrations__empty--four" aria-hidden="true" role="presentation"></li>
+
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:1;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:1;--grid-column:5" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:1;--grid-column:9" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:1;--grid-column:11" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:2;--grid-column:2" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:2;--grid-column:4" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:2;--grid-column:8" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:2;--grid-column:10" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:3;--grid-column:3" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:3;--grid-column:9" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:3;--grid-column:11" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:4;--grid-column:2" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:4;--grid-column:4" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:4;--grid-column:8" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:4;--grid-column:10" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:5;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:5;--grid-column:3" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:5;--grid-column:9" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:5;--grid-column:11" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:6;--grid-column:2" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:6;--grid-column:10" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:7;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:7;--grid-column:3" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:7;--grid-column:9" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="wide" style="--grid-row:7;--grid-column:11" aria-hidden="true" role="presentation"></li>
+
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:1;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:1;--grid-column:3" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:1;--grid-column:5" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:1;--grid-column:7" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:2;--grid-column:2" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:2;--grid-column:4" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:2;--grid-column:6" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:3;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:4;--grid-column:2" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:4;--grid-column:6" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:5;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:5;--grid-column:7" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:6;--grid-column:2" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:6;--grid-column:6" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:7;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:7;--grid-column:7" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:8;--grid-column:4" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:9;--grid-column:1" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:9;--grid-column:3" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:9;--grid-column:5" aria-hidden="true" role="presentation"></li>
+            <li class="df-integrations__empty" data-grid="compact" style="--grid-row:9;--grid-column:7" aria-hidden="true" role="presentation"></li>
           </ul>
           <div class="df-integrations__porter df-integrations__porter--left" aria-hidden="true"><span class="df-integrations__facing"><span class="df-integrations__sprite"><img class="df-integrations__atlas" src="/assets/brand/mascots/3d/delivery/walk-carry-atlas.webp" alt="" width="1280" height="1280" loading="lazy" decoding="async"></span></span><span class="df-integrations__notetaker df-mascot" data-mascot-pose="writing" aria-hidden="true"><span class="df-mascot__body"><img class="df-mascot__base" src="/assets/brand/mascots/3d/focused/writing-tongue.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"><img class="df-integrations__pen" src="/assets/brand/mascots/3d/focused/writing-tongue.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></span></span></div>
           <div class="df-integrations__porter df-integrations__porter--right" aria-hidden="true"><span class="df-integrations__facing"><span class="df-integrations__sprite"><img class="df-integrations__atlas" src="/assets/brand/mascots/3d/delivery/walk-carry-atlas.webp" alt="" width="1280" height="1280" loading="lazy" decoding="async"></span></span><span class="df-integrations__greeter df-mascot df-mascot--layered" data-mascot-pose="wave" aria-hidden="true"><span class="df-mascot__body"><img class="df-mascot__base" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"><img class="df-mascot__arm" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></span></span></div>
-          <div class="df-integrations__destination"><img src="/assets/integrations/official/apple-health.jpg" alt="" width="128" height="128" loading="lazy" decoding="async"><div><strong>Via Apple Health</strong><span>Steps · Workouts · Active energy</span></div></div>
+          <div class="df-integrations__destination df-integrations__app df-integrations__app--apple-health"><div class="df-integrations__tile"><img src="/assets/integrations/official/apple-health.jpg" alt="" width="128" height="128" loading="lazy" decoding="async"><div><strong>Via Apple Health</strong><span>Steps · Workouts · Active energy</span></div></div></div>
         </div>
         </div>
-        <p class="df-integrations__note">On iPhone, via Apple Health. Shared data depends on each app and the permissions you allow.</p>
-        <details class="df-integrations__setup" id="dietfit-sync-setup"><summary>How the connection works</summary><ol><li><strong>Start with your tracker.</strong> Enable Apple Health sharing in the app you already use. Tap an app above for its setup guide.</li><li><strong>Allow access in Dietfit.</strong> Choose the Health data you want Dietfit to read when you grant access.</li><li><strong>See the bigger picture.</strong> Your shared activity sits alongside your meals in Dietfit.</li></ol></details>
       </div>
     </section>
+
+    <!-- PRODUCT STORY: v1 design + Gaia feature composition + isolated v2 app renderers. -->
+    <section class="dietfit-highlights dietfit-highlights--en" id="dietfit-highlights" aria-label="Dietfit feature previews">
+      <div class="dietfit-highlights-sticky">
+        <div class="dietfit-carousel" data-dietfit-carousel>
+          <article class="dietfit-card dietfit-card-en df-highlight--nutrition" data-figma-node="28680:4707">
+            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-1.webp" width="1500" height="2100" alt="A woman checking her phone outdoors" loading="lazy" decoding="async">
+            <div class="dietfit-card-copy">
+              <h2>Nutrition, finally clear</h2>
+              <p>Just snap a photo. Understand what’s in your meal in seconds.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--dashboard" data-figma-node="28680:4710">
+            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-2.webp" width="1500" height="2100" alt="Dietfit meal dashboard in an iPhone" loading="lazy" decoding="async">
+            <div class="dietfit-card-copy">
+              <h2>Calories in one tap</h2>
+              <p>Snap your meal. Review the nutrition. Log it in a tap.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--science" data-figma-node="28680:4704">
+            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-3-v2.webp" width="1500" height="2100" alt="A meal with Dietfit calorie and nutrition summaries" loading="lazy" decoding="async">
+            <div class="dietfit-card-copy">
+              <h2>Backed by science</h2>
+              <p>Daily targets built around your profile, your activity and your goals.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--streak" data-figma-node="28680:4699">
+            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-4.webp" width="1500" height="2100" alt="Two friends eating pasta with Dietfit activity summaries" loading="lazy" decoding="async">
+            <div class="dietfit-card-copy">
+              <h2>A reward for discipline</h2>
+              <p>Log meals, keep your streak and complete challenges to earn Fitpoints.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--health" data-figma-node="28680:4697">
+            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-5.webp" width="1500" height="2100" alt="A woman checking her watch with Dietfit water and workout logs" loading="lazy" decoding="async">
+            <div class="dietfit-card-copy">
+              <h2>Works with Apple Health</h2>
+              <p>Connect your activity and see your daily calories adjust.</p>
+            </div>
+          </article>
+          <article class="dietfit-card dietfit-card-en df-highlight--progress" data-figma-node="28680:4693">
+            <img class="dietfit-card-art" src="/assets/cards/figma-sync/card-6.webp" width="1500" height="2100" alt="A runner checking the Dietfit activity screen" loading="lazy" decoding="async">
+            <div class="dietfit-card-copy">
+              <h2>Smart progress charts</h2>
+              <p>See your meals, activity and habits come together over time.</p>
+            </div>
+          </article>
+        </div>
+        <div class="dietfit-carousel-controls" aria-label="Feature list controls">
+          <button type="button" data-dietfit-prev aria-label="Previous feature">←</button>
+          <button type="button" data-dietfit-next aria-label="Next feature">→</button>
+        </div>
+      </div>
+    </section>
+
 
 <section class="dietfit-faq" id="dietfit-faq"><h2>A few things you might wonder</h2><div class="dietfit-faq-list"><details>
               <summary>
@@ -730,13 +772,13 @@
 
   <script src="/vendor/lenis/lenis.min.js"></script>
   <script src="/scripts/dietfit-scroll.js"></script>
-  <script src="/scripts/dietfit-hero-scan-en.js?v=20261021-deep-scan-1"></script>
-  <script src="/scripts/dietfit-hero-finale-en.js?v=20261021-deep-scan-1"></script>
-  <script src="/scripts/dietfit-hero.js?v=20261021-deep-scan-1"></script>
+  <script src="/scripts/dietfit-hero-scan-en.js?v=20261021-scroll-layout-1"></script>
+  <script src="/scripts/dietfit-hero-finale-en.js?v=20261021-scroll-layout-1"></script>
+  <script src="/scripts/dietfit-hero.js?v=20261021-scroll-layout-1"></script>
   <script src="/scripts/dietfit-sections.js?v=20261021-scroll-restored-1"></script>
   <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>
   <script src="/scripts/dietfit-native-ui.js?v=20261021-grounded-1"></script>
-  <script src="/scripts/dietfit-integrations.js?v=20261021-app-grid-1"></script>
+  <script src="/scripts/dietfit-integrations.js?v=20261021-scroll-layout-1"></script>
   <script src="/scripts/dietfit-mascots.js?v=20261021-strong-wave-1"></script>
 </body>
 

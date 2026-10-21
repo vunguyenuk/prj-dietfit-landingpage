@@ -79,14 +79,14 @@
     if (!player || (!scrollValue && !scrollAnimation)) return;
 
     const rect = hero.getBoundingClientRect();
-    const startOffset = 188;
+    const startOffset = langSuffix ? 0 : 188;
     const travel = Math.max(1, rect.height - window.innerHeight + startOffset);
     const rawProgress = rect.top > startOffset
       ? 0
       : Math.min(1, Math.max(0, (startOffset - rect.top) / travel));
     // Mobile/iPad có quãng cuộn ngắn hơn desktop. Curve lũy thừa giữ animation
     // chậm ở đầu và giữa, nhưng vẫn về đúng frame cuối khi hết hero.
-    const desiredProgress = compactQuery.matches
+    const desiredProgress = compactQuery.matches && !langSuffix
       ? Math.pow(rawProgress, 1.35)
       : rawProgress;
     targetScroll = desiredProgress;
@@ -114,12 +114,14 @@
     if (scrollValue || scrollAnimation) {
       const distance = targetScroll - renderedScroll;
       const smoothing = compactQuery.matches ? 0.085 : 0.14;
-      renderedScroll = Math.abs(distance) < 0.001
+      renderedScroll = langSuffix || Math.abs(distance) < 0.001
         ? targetScroll
         : renderedScroll + distance * smoothing;
-      const nativeProgress = scan ? scan.render(renderedScroll) : renderedScroll;
-      const riveProgress = finale ? finale.progress(nativeProgress) : nativeProgress;
-      if (finale) finale.tick(riveProgress,time);
+      // Keep the scene pinned: capture + Deep Scan first, then a scroll-only finale.
+      const beforeFinale = Math.min(1,renderedScroll/.62);
+      const nativeProgress = scan ? scan.render(beforeFinale*scan.finaleEntry()) : renderedScroll;
+      const chapter = Math.max(0,Math.min(1,(renderedScroll-.62)/.32));
+      const riveProgress = finale ? finale.progress(nativeProgress,chapter) : nativeProgress;
       if (scrollAnimation) {
         player.scrub(scrollAnimation, riveProgress * scrollDuration);
       } else {

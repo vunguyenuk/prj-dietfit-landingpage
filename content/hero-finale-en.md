@@ -1,19 +1,21 @@
-# EN hero greeting and floating UI
+# EN hero: scroll-only meal-plans sequence
 
-The EN hero keeps the existing Rive capture/analysis sequence. Before the native surrounding cards begin (frame 375 of the 539-frame work area), the EN controller holds at frame 374 (compact export: frame 799 before its first card move at 800, in its 1925-frame work area) and shows the final phone scene using the existing embedded phone artwork and localized UI images.
+Reference: user-supplied `/Users/vunguyen/Desktop/meal-plans.mp4` (6.47 seconds). Its choreography is capture → ingredient identification → one supporting macro card → phone result sheet → compact nutrition dashboard. Dietfit uses its own existing meal, phone and product artwork for the same sequence.
 
-The finale runs once per visit to that point:
+The EN hero now has a 900svh natural sticky runway. Progress starts only when the hero reaches the top of the viewport, rather than 188px before it. Capture and Deep Scan occupy the first 62% of that runway. The next 32% drives the greeting, result and dashboard; the final 6% holds the completed dashboard for reading before the sticky stage releases and the next section enters.
 
-- 0–480 ms: mascot peeks from behind the top of the phone.
-- 480–1720 ms: two gentle hand waves.
-- 1720–2200 ms: mascot disappears behind the phone.
-- 2200–2360 ms: short pause, all surrounding cards still hidden.
-- 2360–3660 ms: surrounding cards spread from the phone with a small stagger and smooth acceleration/deceleration.
+The finale is a pure function of scroll progress:
 
-The ingredient list continues responding to scroll after the greeting gate. Scrolling back before the gate resets the greeting. Offscreen/hidden tabs pause the sequence instead of consuming it unseen. It shares the hero's existing animation frame loop.
+- 0–4.5%: mascot peeks above the phone.
+- 4.5–19%: the larger hand waves follow scroll.
+- 19–24.5%: mascot hides completely.
+- 27–47%: one calorie-budget card emerges beside the phone.
+- 33–63%: the phone's ingredient result scrolls internally.
+- 66–85%: phone and supporting card move into the journal and budget positions of the compact dashboard, using measured target bounds and transform-only scaling.
+- 85–100%: completed dashboard stays readable.
 
-The rounded backdrop, phone and floating cards are separate layers. Only the phone screen and mascot peek aperture clip their contents. The outer cards can extend past the black backdrop, while staying at least 8px inside the viewport. Tablet and mobile have separate card positions. Reduced motion uses the existing static hero poster.
+The dashboard has a calorie budget, three-row meal plan and one food-journal entry. Nine of the previous ten floating cards have been removed from the DOM. No elapsed-time counters, autoplay, gesture timers, scroll cancellation or wheel interception drive this chapter. Stop scrolling and its state stops; scroll backward to reverse it. The original Rive exports are held before their native card burst and remain byte-identical. VI behavior is unchanged.
 
-`assets/hero/finale/source.json` records the original artwork sources. The UI is copied exactly from the current EN image set; all original Rive exports and the VI hero remain unchanged.
+The rounded background and UI layers remain separate, so the supporting card can extend beyond the black scene without clipping. Reduced-motion users retain the static poster.
 
-Validation: build, JavaScript syntax, greeting/reveal ordering, hidden/offscreen pause/resume, reverse reset/replay, final card transforms, continued screen scrolling, asset paths and EN-only wiring. Browser visual QA is pending because local browser use is disabled in Work settings.
+Validation: source checks, desktop/compact native handoff, deterministic stationary state, reverse playback, all phase boundaries, reduced motion, site build, and live Chrome inspection of the pinned stage and final dashboard.

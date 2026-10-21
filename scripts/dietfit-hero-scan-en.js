@@ -22,6 +22,11 @@
       })).then(function () { ready=true; last=-1; });
     }
     return {
+      finaleEntry:function () {
+        const hold=compact.matches?274/1925:199/539;
+        const gate=compact.matches?799/1925:374/539;
+        return leave+(gate-hold)/(1-hold)*(1-leave);
+      },
       render:function (progress) {
         // Hold the native hero immediately before calculating. Add one scroll chapter,
         // then map back into the unchanged native timeline and its existing finale gate.

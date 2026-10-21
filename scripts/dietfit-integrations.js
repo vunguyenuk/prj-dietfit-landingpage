@@ -2,9 +2,6 @@
   'use strict';
   const section = document.querySelector('.df-integrations');
   if (!section) return;
-  const setup = section.querySelector('#dietfit-sync-setup');
-  const setupLink = section.querySelector('a[href="#dietfit-sync-setup"]');
-  if (setup && setupLink) setupLink.addEventListener('click', function () { setup.open = true; });
   const scene = section.querySelector('.df-integrations__scene');
   const hub = section.querySelector('.df-integrations__hub');
   if (!scene || !hub || !('IntersectionObserver' in window) || !scene.animate) return;
@@ -158,7 +155,7 @@
     const bounds = scene.getBoundingClientRect();
     const jobs = [
       {side:-1,names:['garmin','oura','polar','withings'],porter:porters[0]},
-      {side:1,names:['whoop','google-health','vesync','strava'],porter:porters[1]}
+      {side:1,names:['whoop','google-health','vesync','strava','apple-health'],porter:porters[1]}
     ];
     try {
       await Promise.all(jobs.map(async function (job) {

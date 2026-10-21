@@ -2,7 +2,7 @@
 .dietfit-home--en {
   --dietfit-page-max:1240px;
   --dietfit-page-gutter:4vw;
-  --dietfit-page-width:min(var(--dietfit-page-max),92vw);
+  --dietfit-page-width:min(var(--dietfit-page-max),92vw,92%);
 }
 /* One outer frame for every EN section. Never apply a second gutter inside it. */
 .dietfit-home--en :is(.container,.dietfit-hero-wrap,.dietfit-highlights-sticky,.dietfit-final--en,.dietfit-faq,.df-score-strip__inner,.df-integrations__inner,.dietfit-progress-cta__sticky),
@@ -17,10 +17,11 @@
 .dietfit-home--en .dietfit-faq,
 .dietfit-home--en .dietfit-progress-cta__sticky,
 .dietfit-home--en .df-feature .df-feature-sticky { padding-inline:0; }
+.dietfit-home--en .df-feature-copy { justify-self:stretch; max-width:none; }
 .dietfit-home--en .dietfit-faq-list { width:100%; max-width:none; }
 .dietfit-home--en .dietfit-progress-cta__content { width:100%; max-width:none; }
 .dietfit-home--en .dietfit-footer { width:100%; max-width:none; }
-.dietfit-home--en .dietfit-hero-heading { width:100%; }
+.dietfit-home--en .dietfit-hero-heading { width:100%; text-wrap:balance; font-size:clamp(2.25rem,3.6vw,3.5rem); }
 .dietfit-highlights--en .dietfit-carousel {
   position:relative;
   padding-inline:0;

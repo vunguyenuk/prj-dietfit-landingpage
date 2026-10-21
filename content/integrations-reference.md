@@ -17,14 +17,14 @@ The official app catalog now calls Fitbit “Google Health (Fitbit)”; this is 
 - Strava: https://support.strava.com/en-us/articles/15402024-apple-health-and-strava
 - VeSync: https://barcode.vesync.com/?v=new-1
 
-Each app card opens its provider's Apple Health instructions. The inline disclosure explains permissions; the native details section explains the three-step route. Its introductory link also opens the details so the user can read the setup immediately.
+Each app card opens its provider's Apple Health instructions. The introduction explains the Apple Health route. Each provider icon still opens its original setup guide. The former sample-data/permissions sentence and “How the connection works” details block were removed at the user’s request; “See how it connects” now links to the app grid.
 
 Motion uses CSS transforms only, pauses offscreen and in background tabs, and is disabled for reduced-motion preferences. Existing mascot motion follows the same visibility/preference rules.
 
 
 ## Motion update — 21 October 2026
 
-The scroll fan-out and sticky runway have been removed. Once at least half the scene enters view, two mascots collect the official app cards from behind the central Dietfit hub, carry them to their positions, and place them. The left mascot places Garmin, Oura, Polar and Withings; the right places WHOOP, Google Health, VeSync and Strava. Both sequences run once. No scroll-progress or reverse-scroll motion remains.
+The scroll fan-out and sticky runway have been removed. Once at least half the scene enters view, two mascots collect the official app cards from behind the central Dietfit hub, carry them to their positions, and place them. The left mascot places Garmin, Oura, Polar and Withings; the right places WHOOP, Google Health, VeSync and Strava. Both sequences run once. The right helper also carries Apple Health into its central bridge slot after placing the four provider apps. No scroll-progress or reverse-scroll motion remains.
 
 The integration characters now use a dedicated 16-pose transparent atlas, generated from the existing wave mascot with the built-in image_gen tool. The source, prompt, cell extraction coordinates and lossless atlas are saved under `assets/brand/mascots/3d/delivery/`. This is sprite animation, not a rigged 3D model. Other mascot assets and their existing animation are unchanged.
 
@@ -36,10 +36,10 @@ Animations pause offscreen and in background tabs. Keyboard focus, resize or a r
 
 After the left mascot finishes its own deliveries, it returns home and switches to the original notebook-writing pose. The right mascot returns home and stays in its relaxed, empty-handed pose with subtle breathing. Existing breathing, eye movement and blinking apply to that pose, plus a separate masked forearm/pencil layer with short, irregular writing strokes. The shared mascot visibility controller pauses the gesture offscreen. Reduced-motion users see a still notebook pose.
 
-## Staggered grid update — 21 October 2026
+## Centered grid update — 21 October 2026
 
-The glass mounting targets and all their animation state were removed. The eight official icons now occupy equal square cells in a staggered 5 × 5 grid, with four quiet, decorative empty cells matching the supplied reference. All cells are fixed targets: mascots still collect each app from Dietfit and carry it to its cell. The left helper writes after its deliveries; the right helper waves. Their resting positions sit beside Dietfit, clear of the finished icon grid.
+Dietfit is again centered in the scene. An 11-column, 7-row staggered grid spans the container around it, with quiet empty square cells and the eight original provider icons. The hub reserves the central columns; helpers rest on either side, with the left writing and the right waving. Apple Health is now the ninth carried item, placed below the central hub with its “Via Apple Health” and activity labels intact. There are no glass targets.
 
-Rows/columns: Garmin (1,2), Oura (1,4), WHOOP (2,3), Polar (2,5), Google Health (3,2), VeSync (3,4), Withings (4,3), Strava (5,2). Empty cells are aria-hidden presentation elements at (2,1), (4,1), (4,5), (5,4). App labels remain available in each link's accessible name and native tooltip; only the original official icon is visible in the cell.
+On mobile the same composition adapts to seven columns and nine rows, with smaller icons, a central Dietfit hub and Apple Health beneath it. Decorative cells have separate wide/compact positions and are aria-hidden. Mobile/reduced-motion users see the completed static scene with no travelling helpers. Provider links retain accessible labels and native tooltips.
 
-Desktop places Dietfit and its helpers beside the grid. Tablet stacks the grid above Dietfit and the resting helpers. Mobile keeps the same staggered pattern with fluid cell sizes and no travelling mascots. The single cell border stays at the destination while an icon is carried; it has no glass gradient, doubled frame or mounting fade.
+The carousel section follows integrations and precedes FAQ. It is moved in native document order, retaining its existing scroll/touch controls and card artwork.
