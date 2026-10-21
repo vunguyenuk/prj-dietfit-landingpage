@@ -1,0 +1,27 @@
+/* Keep the faces above the message, preserving the supplied photo's proportions. */
+.dietfit-final--en .dietfit-final-image {
+  bottom:auto;
+  width:100%;
+  height:auto;
+  aspect-ratio:1000 / 666;
+  background-position:center top;
+  background-size:cover;
+  mask-image:linear-gradient(#000 78%,transparent);
+}
+.dietfit-final--en .dietfit-final-cta {
+  min-height:0;
+  justify-content:flex-end;
+  padding-block:clamp(19rem,35vw,34rem) 4rem;
+}
+.dietfit-final--en .dietfit-final-cta h2 {
+  max-width:100%;
+  font-size:clamp(2.5rem,5.4vw,5.25rem);
+  line-height:1.06;
+  letter-spacing:-.035em;
+}
+.dietfit-final--en .dietfit-final-cta h2 span { display:block; }
+@media(max-width:767px) {
+  .dietfit-final--en .dietfit-final-image { height:36rem; aspect-ratio:auto; background-size:auto 36rem; }
+  .dietfit-final--en .dietfit-final-cta { padding-top:20rem; padding-bottom:3rem; }
+  .dietfit-final--en .dietfit-final-cta h2 { font-size:clamp(1.625rem,8.3vw,2.5rem); }
+}
