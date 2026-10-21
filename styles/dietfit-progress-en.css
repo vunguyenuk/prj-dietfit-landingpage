@@ -66,3 +66,26 @@
     font-size: .95rem;
   }
 }
+
+/* An editorial copy column beside the comparison keeps the message readable. */
+.dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__sticky {
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:center;
+  gap:clamp(48px,6vw,112px);
+}
+.dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content {
+  max-width:42ch;
+  justify-self:start;
+  justify-items:start;
+  gap:20px;
+  text-align:left;
+}
+.dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > h2 { max-width:17ch; }
+.dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > p { max-width:42ch; margin:0; }
+.dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__lead { font-weight:500; color:#110b20; }
+.dietfit-home--en .dietfit-progress-cta--en .dietfit-button { margin-top:8px; }
+@media(max-width:1024px) {
+  .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__sticky { grid-template-columns:1fr; gap:40px; }
+  .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content { max-width:38rem; justify-self:center; justify-items:center; text-align:center; gap:16px; }
+  .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > h2 { max-width:24ch; }
+}

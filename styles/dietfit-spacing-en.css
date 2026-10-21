@@ -8,7 +8,6 @@
 .dietfit-home--en .df-feature-intro { padding-block:calc(var(--df-section-space) / 2) 16px; }
 .dietfit-home--en .df-feature-copy { gap:16px; }
 .dietfit-home--en .df-feature-body { line-height:1.55; }
-.dietfit-home--en .df-feature-sample-note { padding-block:12px 20px; }
 .dietfit-home--en .dietfit-progress-cta__sticky { padding-block:calc(var(--df-section-space) / 2); gap:28px; }
 .dietfit-home--en .dietfit-progress-cta__content { gap:16px; }
 .dietfit-home--en .df-integrations { padding-block:calc(var(--df-section-space) / 2); }

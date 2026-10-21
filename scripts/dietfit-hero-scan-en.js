@@ -9,22 +9,27 @@
     const labels = Array.from(scene.querySelectorAll('.df-hero-scan__label'));
     const beam = scene.querySelector('.df-hero-scan__beam');
     const plate = scene.querySelector('.df-hero-scan__plate');
+    const photoTransform=scene.querySelector('[data-scan-photo-transform]');
     const stage = hero.querySelector('.dietfit-hero-stage');
     const clamp = function (n) { return Math.max(0,Math.min(1,n)); };
     const smooth = function (n) { n=clamp(n); return n*n*(3-2*n); };
     const enter = .24,leave = .44;
     let last = -1,preparing = false,ready = false;
     function measure() {
-      // Match the native Rive FitHeight viewport, including its safe frame.
-      // These are the food image's world bounds at the held calculation frame,
-      // derived from its unchanged parent transforms in each original timeline.
+      // Analytics is a 417×894 texture with a transparent food window at
+      // x36/y193, 344×425. Measure that window, not the complete UI texture.
       const bounds=stage.getBoundingClientRect();
       const fit=Math.max(1,Math.min(bounds.height,(bounds.width-32)*1258/700))/1258;
-      const photo=compact.matches?{y:637.8730957,w:510.3436665,h:514.0507633}:{y:626.3336966,w:518.9414741,h:522.7110248};
+      const photo=compact.matches
+        ? {x:746.8418899,y:324.0055769,w:425.0804389,h:525.1720539,matrix:[.902469002,.000936185,-.000936185,.902469002,-144.377576,-56.386020]}
+        : {x:743.2506904,y:307.1784222,w:432.2418090,h:534.0196768,matrix:[.848683071,-.013929955,.013929955,.848683071,-116.457111,-49.415322]};
       plate.style.width=(photo.w*fit).toFixed(3)+'px';
       plate.style.height=(photo.h*fit).toFixed(3)+'px';
-      plate.style.left=(bounds.width/2).toFixed(3)+'px';
-      plate.style.top=(bounds.height/2+(photo.y-629)*fit).toFixed(3)+'px';
+      plate.style.left=(bounds.width/2+(photo.x+photo.w/2-960)*fit).toFixed(3)+'px';
+      plate.style.top=(bounds.height/2+(photo.y+photo.h/2-629)*fit).toFixed(3)+'px';
+      // Paths are traced in the shared 710×710 meal crop. This affine maps
+      // that crop through the held hand/bowl pose into the native food window.
+      photoTransform.setAttribute('transform','matrix('+photo.matrix.join(' ')+')');
     }
     function prepare() {
       if(preparing)return;
@@ -42,7 +47,12 @@
         // Hold the native hero immediately before calculating. Add one scroll chapter,
         // then map back into the unchanged native timeline and its existing finale gate.
         const hold = compact.matches ? 274/1925 : 199/539;
-        const native = progress<enter ? progress/enter*hold : progress<=leave ? hold : hold+(progress-leave)/(1-leave)*(1-hold);
+        // Begin after the original forearm's off-stage rotation. At capture,
+        // switch directly to the settled calculation frame: the original slide
+        // crossfades two status bars and two screens over one another.
+        const cameraStart=compact.matches?77/1925:90/539;
+        const cameraEnd=compact.matches?171/1925:149/539;
+        const native = progress<enter ? cameraStart+progress/enter*(cameraEnd-cameraStart) : progress<=leave ? hold : hold+(progress-leave)/(1-leave)*(1-hold);
         if (progress>.12) prepare();
         if (progress===last) return native;
         last = progress;

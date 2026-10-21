@@ -10,11 +10,11 @@ The finale is a pure function of scroll progress:
 - 27–38%: one calorie-budget panel moves out beside the phone.
 - The complete native Meal Detail screen is present from the start of the finale. It does not slide a second result UI over the old scrolled information screenshot.
 - 49–68%: colored nutrient dots move from the meal's macros to the budget; its ring, food total and macro values update. The reviewed 620 kcal meal changes food from 990 to 1,610 kcal, leaving 590 kcal against a 2,000 goal plus 200 activity calories.
-- 72–88%: the **same budget and same result panel** translate and scale into their dashboard positions. Only the phone hardware fades away; the result and budget remain fully opaque. There is no second copy of either UI underneath them.
+- 72–88%: the **same budget and same result panel** translate and scale into their dashboard positions. The phone hardware and island remain attached to the result; both panels remain fully opaque. There is no second copy of either UI underneath them.
 - 83–93%: the title is uncovered and Meal plan opens below the budget. The previous enclosing beige surface is removed.
 - 93–100%: completed dashboard stays readable.
 
-This replaces the previous whole-phone/dashboard crossfade, which produced doubled translucent text and images at intermediate scroll positions. The dashboard does not have an opacity animation. Its budget and journal have exactly one DOM instance each throughout the sequence. Layout is measured on setup, image decode, font readiness and resize; per-frame movement uses transforms, small clip reveals and the hardware opacity. Existing Rive exports remain unchanged and pause before the native many-card burst. VI behavior is unchanged.
+This replaces the previous whole-phone/dashboard crossfade, which produced doubled translucent text and images at intermediate scroll positions. The dashboard does not have an opacity animation. Its budget and journal have exactly one DOM instance each throughout the sequence. Layout is measured on setup, image decode, font readiness and resize; per-frame movement uses transforms, small clip reveals and the phone transform. Existing Rive exports remain unchanged and pause before the native many-card burst. VI behavior is unchanged.
 
 No timers, autoplay, wheel cancellation or scroll lock drive the finale. A stationary scroll position freezes all movement and counters, and reverse scrolling restores the earlier meal and budget state. Reduced motion retains the static poster. The rounded blurred-meal background is separate from the shared panels, allowing the calorie card to extend beside the phone without clipping.
 
@@ -28,7 +28,7 @@ The result now uses the frame's 375 × 812 app coordinates, Be Vietnam Pro, 468p
 
 The obsolete scrolled screenshot is removed from the DOM. One opaque native result remains in the phone and docks as the same panel. Its typography, SVG assets and card geometry scale together. Corner radius and nutrient source positions derive from that same scale.
 
-The hero's pinned top/bottom whitespace now equals the measured side gutter of the shared container, accounting for scrollbar width. The stage height is viewport height minus twice that gutter. Scroll progress uses the resulting stage height, so the finale still finishes before release. Insets also update on resize and in reduced-motion mode. Other section margins remain 100px.
+The hero's pinned top/bottom whitespace now caps at 40px, with smaller measured gutters on compact screens. The stage height is viewport height minus twice that gutter. Scroll progress uses the resulting stage height, so the finale still finishes before release. Insets also update on resize and in reduced-motion mode. Other section margins remain 100px.
 
 New DOM checks cover the Figma node, native SVG slots and nonempty local assets, removal of the old stacked UI, measured insets and VI isolation. Shared-panel transfer/freeze/reverse/resize checks, native scan geometry tests, JS syntax and the site build pass. Rendered browser geometry and screenshot comparison remain unverified because this session's browser connection is unavailable.
 
@@ -39,7 +39,7 @@ The hero mascot now emerges horizontally from the left phone edge at 27% of its 
 
 ## Phone fit and food-background correction — 21 October, late evening
 
-The EN native canvas now uses centered FitHeight instead of Cover. Its rendering viewport reserves 24px above/below and constrains a 700px-wide central safe frame on narrow displays. The custom viewport is recalculated after each drawing-surface resize, in device pixels. Deep Scan uses that exact viewport scale, so its contours remain over the existing white phone's food image. The poster also uses contain. The shared outer top/bottom gutters remain equal to the side gutter. Original Rive bytes and VI fitting are unchanged.
+The EN native canvas now uses centered FitHeight instead of Cover. Its rendering viewport fits the full stage height and constrains a 700px-wide central safe frame on narrow displays. The custom viewport is recalculated after each drawing-surface resize, in device pixels. Deep Scan uses that exact viewport scale, so its contours remain over the existing white phone's food image. The poster covers the same background frame. Outer top/bottom gutters cap at 40px. Original Rive bytes and VI fitting are unchanged.
 
 The final scene replaces the black dotted background with the same scanned roast-veggie bowl photograph, blurred 24px. Only the inset photographic layer is blurred; the phone, text and cards stay sharp. An enlarged image layer and rounded clipping prevent exposed blur edges. A darkened upper image treatment supports the white dashboard title. The beige enclosing dashboard surface is removed from HTML, CSS and its animation controller; the Figma app's own native UI styling remains.
 
@@ -60,3 +60,10 @@ The initial bench seam came from two independent image layers: a Cover CSS bench
 One stage pseudo-element owns the responsive bench photograph. The loading poster covers the same frame without inset padding, removing its second rectangular seam. The original phone retains its height fit; the extra 24px canvas inset was removed because the native phone already has internal margins. This also keeps the hand attached to the scene's top edge. Foreground opacity is a pure function of the first 1.2% of scroll, hiding the stray hand sliver at zero progress.
 
 Chrome was available briefly for actual desktop QA at 2560 × 1318: camera/white calculation phone fit in full, the bench seam was absent, the side mascot peek stayed beside the device, and the completed dashboard used the blurred meal with no beige enclosure. White title color and Meal plan's 407px panel with three equal 93.93px rows were measured; no plan overflow occurred. Proof images are in the external review folder `final-2026-10-21/`. Browser access later became unavailable again; subsequent page-heading/card-size changes have code/build validation but no new screenshot.
+
+
+## Device continuity — 23:15 feedback
+
+The 899 × 1832 hardware's transparent screen opening was measured from its alpha channel: x42/y34 to x858/y1794. The measurement element now starts at that exact origin, uses width816 and the native 375:812 app ratio; the bottom bleeds beneath the rim. This removes the exposed strip above the photo. The UI corner radius remains native while docking instead of changing to a small dashboard radius.
+
+The hardware no longer fades out during docking. Its final translation accounts for scaling the screen's asymmetric offset from the hardware center, so the phone frame and island follow the shared result into the dashboard's right column. Deterministic tests cover the physical screen-to-journal center mapping as well as retained hardware throughout transfer, freeze, reverse and compact/desktop resize. No new full-browser render is claimed.

@@ -1,17 +1,23 @@
-# EN hero Deep Scan chapter
+# EN hero capture and Deep Scan — 21 October, 23:15 correction
 
-Deep Scan is an overlay of ingredient contours, labels and a light scan band on the original white calculation screen inside the original Rive phone. It contains no photograph, second phone, screen background or replacement hardware. The original Rive files remain byte-for-byte unchanged.
+Deep Scan draws six ingredient contours and four labels over the original Rive white calculation screen. It contains no duplicate meal image or phone hardware.
 
-The existing roast-veggie bowl has six SVG regions (fried egg, roasted vegetables, quinoa, dressing, kale and chickpeas) and four staggered portion/calorie labels, consistent with the existing 620 kcal result. Overlay bounds derive from the native food image and parent transforms in each original 1920 × 1258 Rive artboard, using the same centered FitHeight safe viewport as the canvas (the full artboard height and a 700px native central frame constrained to the available width). A resize recomputes those bounds.
+## Correct photo coordinates
 
-The chapter occupies scroll progress .24–.44. The native timeline holds at desktop frame 199/539 or compact frame 274/1925 while contours draw, labels appear and the scan band passes. Continuing scroll resumes the same white screen's calculation and result. Reverse scroll erases the contours. No separate autoplay timer or animation frame loop is introduced.
+The previous overlay treated the 417 × 894 Analytics UI texture as a 413 × 416 meal photo. The visible food is actually the moving hand/bowl seen through that texture's transparent window at x36/y193, width344/height425. The previous assumptions made the contours too wide and too low.
 
-The following mascot peek/wave and shared-panel dashboard assembly remain intact. VI is unchanged; reduced motion retains the static hero poster.
+The overlay now fits that window, clipped to its rounded corners. Traces are drawn against the actual shared 710 × 710 meal crop, then transformed through the unchanged hand/bowl bone and image pose into the calculation window. Desktop world bounds are x743.2506904/y307.1784222/w432.2418090/h534.0196768; compact bounds are x746.8418899/y324.0055769/w425.0804389/h525.1720539. Both use the canvas's centered FitHeight safe viewport. Resize recomputes the screen scale.
 
-Independent geometry checks derive the expected image bounds from the original Rive records at laptop, 2K, 4K, tablet and mobile fixtures. Other checks cover progress continuity, contour/label ordering, freeze/reverse, reduced motion and shared-panel handoff. These are code/DOM tests, not rendered visual proof. Final browser QA is blocked while this session's browser connection is unavailable despite the enabled setting.
+An independent check derives those bounds and several meal points from the original Rive transform records. A reference render of the unchanged hand texture plus SVG paths is saved outside the repo as `prj-dietfit-review-2026-10-20/scan-alignment-reference.png`. It verifies contour placement on the native clipped food, not the full website render.
 
+## Clean capture and arm pose
 
-The late-evening foreground export removes only the two embedded background image layers and the static artboard fill; all original image/phone transforms and animation bytes are preserved. FitHeight now uses the complete stage height because the phone already has native internal margins, allowing the hand to enter through the scene edge. Overlay labels scale with the plate's width rather than the full desktop viewport, keeping portion/calorie text inside the white phone. Direct Chrome review at 2560 × 1318 confirmed the complete phone, continuous background and smaller labels. The latest typography changes were made after that review.
+The native early forearm rotation exposes a detached triangular tip. EN now begins at the clean settled hand pose (desktop frame90/539, compact77/1925), preserving the following phone entry. Before progress .24, camera playback reaches desktop149/539 or compact171/1925. At .24 it switches directly to the settled calculation frame199/539 or274/1925. This skips the native camera/calculation crossfade that showed two status bars and two screens simultaneously.
 
+Contours occupy progress .24–.44, with staggered labels, a light scan band and reverse-scroll erasure. After .44 the original calculation/result timeline resumes and hands off to the scroll-driven finale. There is no autoplay timer. Rive assets, animation bytes and VI playback remain unchanged.
 
-After the 22:51 feedback, the EN hero's vertical gutter caps at 100 CSS px instead of matching the potentially much larger desktop side gutter. This restores stage/phone height on wide screens: at a 2560 × 1318 viewport with a 2080px page frame, stage height increases from 838px to 1118px. Compact viewports keep their smaller gutter. The canvas and scan overlay still use the same FitHeight measurement; native assets and motion timeline are unchanged.
+## Frame and validation
+
+The latest requested vertical spacing caps at 40 CSS px. Smaller compact gutters remain smaller; the same bounded FitHeight scale prevents phone cropping.
+
+Checks pass for native window/held bone geometry at desktop, 2K, 4K, tablet and phone; clean camera/calculation mapping, freeze/reverse, scan ordering, finale frame continuity, resize, reduced motion, JavaScript syntax and site build. The newest full-page render remains unverified because the session's browser connection is unavailable despite the user's enabled setting.

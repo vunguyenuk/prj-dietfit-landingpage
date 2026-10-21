@@ -7,9 +7,9 @@
   function measureHeroInset() {
     if (!document.body.classList.contains('dietfit-home--en')) return;
     const wrap=hero.closest('.dietfit-hero-wrap');
-    // Cap the vertical frame at 100px: wide-screen side gutters can be much
+    // Cap the vertical frame at 40px: wide-screen side gutters can be much
     // larger, and should not shrink the phone's available height.
-    const gutter=wrap?Math.min(100,Math.max(0,(document.documentElement.clientWidth-wrap.getBoundingClientRect().width)/2)):0;
+    const gutter=wrap?Math.min(40,Math.max(0,(document.documentElement.clientWidth-wrap.getBoundingClientRect().width)/2)):0;
     hero.style.setProperty('--df-hero-gutter',gutter.toFixed(2)+'px');
   }
   measureHeroInset();

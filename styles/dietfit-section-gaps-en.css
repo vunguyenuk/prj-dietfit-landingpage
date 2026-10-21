@@ -9,16 +9,15 @@
 .dietfit-home--en main > .dietfit-progress-cta + .df-integrations { margin-block-start:calc(var(--df-section-gap) + 60px); }
 .dietfit-home--en .df-feature-intro { margin-bottom:var(--df-section-gap); }
 .dietfit-home--en .df-feature + .df-feature { margin-top:var(--df-section-gap); }
-.dietfit-home--en .df-feature-sample-note { margin:0 auto; padding-top:20px; padding-bottom:0; }
 /* Static chapters keep the same rhythm without animation runway or relative offsets. */
 @media(prefers-reduced-motion:reduce) {
   .dietfit-home--en .df-feature { min-height:0; padding-block:0; }
   .dietfit-home--en .df-feature .df-feature-sticky { top:auto; min-height:0; }
 }
 
-/* Keep the hero tall: top/bottom spacing caps at 100px on wide screens.
+/* Keep the hero tall: top/bottom spacing caps at 40px on wide screens.
    Compact viewports retain their smaller measured gutter. */
-.dietfit-home--en [data-component-name="scrollable-rive-hero"] { --df-hero-gutter:min(100px,max(4vw,calc((100vw - var(--dietfit-page-max)) / 2))); }
+.dietfit-home--en [data-component-name="scrollable-rive-hero"] { --df-hero-gutter:min(40px,max(4vw,calc((100vw - var(--dietfit-page-max)) / 2))); }
 .dietfit-home--en .dietfit-hero-sticky { top:var(--df-hero-gutter); height:calc(100svh - 2 * var(--df-hero-gutter)); }
 @media(prefers-reduced-motion:reduce) {
   .dietfit-home--en [data-component-name="scrollable-rive-hero"] { height:calc(100svh - 2 * var(--df-hero-gutter)); }

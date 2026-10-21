@@ -2,18 +2,18 @@
    No second device, meal photograph, screen background or replacement hardware. */
 .df-hero-scan { position:absolute; inset:0; z-index:3; opacity:0; visibility:hidden; pointer-events:none; }
 .is-hero-scanning .df-hero-scan { visibility:visible; }
-.df-hero-scan__plate { position:absolute; container-type:inline-size; transform:translate(-50%,-50%); }
+.df-hero-scan__plate { position:absolute; container-type:inline-size; overflow:hidden; border-radius:7% / 5.65%; transform:translate(-50%,-50%); }
 .df-hero-scan__regions { position:absolute; inset:0; width:100%; height:100%; }
-.df-hero-scan__regions { overflow:visible; }
+.df-hero-scan__regions { overflow:hidden; }
 .df-hero-scan__regions path { fill:var(--region); fill-opacity:0; stroke:var(--region); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:1; }
 .df-hero-scan__label { position:absolute; z-index:3; box-sizing:border-box; width:max-content; max-width:43%; padding:2cqw 2.4cqw; border-radius:2.4cqw; background:rgb(18 17 14 / 78%); color:#fffaf6; font-family:var(--dietfit-font); font-size:clamp(8px,3cqw,14px); line-height:1.35; opacity:0; transform:translateY(6px); }
 .df-hero-scan__label::after { content:""; position:absolute; left:16px; top:calc(100% + 5px); width:9px; height:9px; border:2px solid #fffaf6; border-radius:50%; background:var(--region); box-shadow:0 0 0 3px rgb(255 255 255 / 15%); }
 .df-hero-scan__label strong { font-weight:500; }
 .df-hero-scan__label small { font-size:inherit; opacity:.8; }
 .df-hero-scan__label b { display:block; font-size:1.25em; font-weight:500; }
-.df-hero-scan__label--egg { left:51%; top:6%; }
-.df-hero-scan__label--vegetables { left:15%; top:30%; }
-.df-hero-scan__label--quinoa { left:32%; top:80%; }
-.df-hero-scan__label--dressing { left:58%; top:56%; max-width:40%; }
+.df-hero-scan__label--egg { left:52%; top:7%; }
+.df-hero-scan__label--vegetables { left:8%; top:43%; }
+.df-hero-scan__label--quinoa { left:24%; top:80%; }
+.df-hero-scan__label--dressing { left:58%; top:62%; max-width:40%; }
 .df-hero-scan__beam { position:absolute; z-index:1; left:0; top:0; width:100%; height:16%; background:linear-gradient(transparent,rgb(255 250 237 / 10%) 90%,rgb(255 250 237 / 70%)); opacity:0; }
 @media(prefers-reduced-motion:reduce) { .df-hero-scan { display:none; } }

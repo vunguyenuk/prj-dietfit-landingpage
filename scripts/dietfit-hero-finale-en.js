@@ -34,7 +34,8 @@
       const floating={x:p.left-b.width*budgetScale/2-16-b.left-b.width/2,y:p.top+p.height*.43-b.top-b.height/2,scale:budgetScale};
       const origin={x:p.left+p.width/2-b.left-b.width/2,y:p.top+p.height*.43-b.top-b.height/2};
       geometry={start:start,floating:floating,origin:origin,resultRadius:j.width*54/375,
-        phone:{x:j.left+j.width/2-s.left-s.width/2,y:j.top+j.height/2-s.top-s.height/2,scale:s.width?j.width/s.width:1},
+        phone:{x:j.left+j.width/2-p.left-p.width/2-(s.left+s.width/2-p.left-p.width/2)/scale,
+          y:j.top+j.height/2-p.top-p.height/2-(s.top+s.height/2-p.top-p.height/2)/scale,scale:s.width?j.width/s.width:1},
         paths:sources.map(function(el,index){
           const a=el.getBoundingClientRect(),z=destinations[index].getBoundingClientRect();
           return {x:j.left+j.width/2+start.x+(a.left+a.width/2-j.left-j.width/2)*scale-rect.left,
@@ -70,12 +71,13 @@
       budget.style.visibility=p>.27?'visible':'hidden';
       budget.style.opacity='1';
       journal.style.transform='translate('+(g.start.x*(1-dock)).toFixed(2)+'px,'+(g.start.y*(1-dock)).toFixed(2)+'px) scale('+mix(g.start.scale,1,dock).toFixed(4)+')';
-      journal.style.borderRadius=mix(g.resultRadius,16,dock).toFixed(2)+'px';
+      journal.style.borderRadius=g.resultRadius.toFixed(2)+'px';
       // Show the complete Figma Meal Detail from the start. The old scrolled
       // information screenshot must never remain underneath a second UI sheet.
       result.style.transform='none';
       sheet.style.transform='none';
-      hardware.style.opacity=(1-range(p,.73,.78)).toFixed(3);
+      // Keep the physical frame and island attached through the complete docking.
+      hardware.style.opacity='1';
       phone.style.transform='translate(-50%,-50%) translate('+(g.phone.x*dock).toFixed(2)+'px,'+(g.phone.y*dock).toFixed(2)+'px) scale('+mix(1,g.phone.scale,dock).toFixed(4)+')';
       // Calories and macros arrive in the budget, just as the meal-plans reference.
       left.textContent=format.format(Math.round(mix(1210,590,transfer)));
