@@ -1,15 +1,13 @@
-# Dietfit US hero imagery
+# Dietfit EN hero imagery
 
-Tool: built-in imagegen. Targets were edited non-destructively from images extracted from the original Rive export. The Vietnamese images and binaries remain unchanged. Standard image encoding/resizing adapts output to the original asset dimensions; no timeline is re-created.
+## Current revision: real photography, 21 October 2026
 
-## Main hand/plate
+The earlier generated chicken/quinoa and table imagery has been replaced. The current table and bowl use actual photographs by Brooke Lark, discovered through a Pinterest pin and traced to their original Unsplash/Wikimedia sources. See `photo-sources.json` for provenance and CC0 records.
 
-Edit the transparent hand holding a dinner plate. Replace only the Vietnamese broken-rice meal with grilled chicken breast at lower left, quinoa at center, broccoli at upper right, roasted sweet potato at right and fanned avocado at upper left. Keep the hand, grasp, ceramic plate, angle, lighting, cutout framing and surrounding transparency. Photoreal texture, rich natural food colors, no text or UI. Final Rive image size: 1536×1055.
+- `table-source.png`: proportionally cropped Breakfast at Dawn photograph.
+- `meal-hand-source.png`: cropped yogurt/fruit bowl photograph, masked to a transparent plate-shaped slot and composited with the existing hand from the original EN Rive export. This is a photographic composite, not an unedited photograph of someone holding this bowl.
+- `bg.webp`, `hands.webp`, `food.webp`, `scan.png`: derived with `tools/build-rive-us.cjs` so the same bowl appears in the scene, result image and camera thumbnail.
+- Result copy now reads “Yogurt & fruit bowl”; nutrition is illustrative sample data with six ingredient energies summing to 488 kcal.
+- Run `tools/build-rive-us.cjs` with the existing canvas/sharp dependencies, then `tools/build-rive-us.py` to rebuild the EN exports. Inputs are the checked-in source PNGs.
 
-## Surrounding table
-
-Edit the existing 1448×1086 overhead wood table background. Preserve all dish locations, scale, cropping, lighting and the empty center. Replace the surrounding foods with chopped salad at upper left, salmon/brown-rice bowl at top center, roasted sweet potato/salad at upper right, turkey-avocado sandwich at lower left, yogurt/berry/granola bowl at lower right and herb dressing at bottom center. Retain iced coffee at right. No phone, hands, text or extra props.
-
-## UI assets
-
-Built with tools/build-rive-us.cjs using existing Be Vietnam Pro font files. Copy is English and nutrition values are illustrative. Main ingredient energy sums to 642 kcal. Weight/water use lb/fl oz. Phone frame, analytics shell, dark background and all non-image Rive objects are retained from the source export.
+All original VI exports, runtime code, timelines and state machines remain unchanged. EN resource versions are advanced to avoid cached generated-food assets.
