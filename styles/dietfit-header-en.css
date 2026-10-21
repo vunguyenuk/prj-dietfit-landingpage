@@ -1,0 +1,24 @@
+/* Keep navigation compact as page typography grows on wide screens. */
+.dietfit-home--en #dietfit-header .dietfit-header-nav {
+  --header-height:clamp(54px,3.375rem,64px);
+  --header-cta-height:clamp(40px,2.5rem,46px);
+}
+.dietfit-home--en #dietfit-header :is(.dietfit-header-blog-link,.dietfit-button--compact) {
+  font-size:clamp(14px,.875rem,18px);
+  line-height:1.25;
+}
+.dietfit-home--en #dietfit-header .dietfit-header-cta-shell .dietfit-lang-switch a {
+  font-size:clamp(12px,.75rem,15px);
+}
+/* Inline images reserve a text descender below the logo. Center the actual
+   image box so the shell's top and bottom spaces are identical. */
+.dietfit-home--en #dietfit-header .dietfit-header-logo-content > a {
+  display:inline-flex;
+  align-items:center;
+  line-height:0;
+}
+.dietfit-home--en #dietfit-header .dietfit-header-logo-content img {
+  display:block;
+  width:102px;
+  height:auto;
+}

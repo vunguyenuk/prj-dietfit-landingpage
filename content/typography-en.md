@@ -11,3 +11,6 @@
 Desktop root sizing still follows the existing large-screen scale, so rem values grow with the device frame. The section cap reduces the oversized feature headings and replaces the separate hard-coded 52px comparison/FAQ sizes. Cards grow approximately 10% in width on wide desktops while preserving their 5:7 ratio; the latest readability request supersedes the earlier four-full-card count.
 
 Build and source checks pass. The latest type/card adjustment has not been re-rendered because browser access became unavailable after the earlier successful desktop review.
+
+
+Header follow-up: EN home navigation uses its own compact scale in `styles/dietfit-header-en.css`: About/Blog/CTA 14–18px, language options 12–15px, shell height 54–64px and CTA height 40–46px. This avoids inheriting the full large-screen rem growth. Logo links use inline-flex with zero line-height and a block image at its intrinsic aspect ratio, removing the baseline descender space below the logo. Mobile menu text is unchanged.
