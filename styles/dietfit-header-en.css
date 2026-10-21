@@ -22,3 +22,11 @@
   width:102px;
   height:auto;
 }
+
+/* Header sits 20px inside the hero's 20px frame, equally across top/left/right. */
+.dietfit-home--en #dietfit-header { padding-top:40px; }
+.dietfit-home--en #dietfit-header .dietfit-header-nav { width:calc(100% - 80px); }
+@media(min-width:768px) {
+  .dietfit-home--en #dietfit-header.is-split .dietfit-header-logo-shell { left:0; transform:none; }
+  .dietfit-home--en #dietfit-header.is-split .dietfit-header-cta-shell { right:0; transform:none; }
+}

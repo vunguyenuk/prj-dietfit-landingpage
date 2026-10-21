@@ -1,0 +1,11 @@
+{
+  "source": "hands.webp",
+  "output": "hands-elbow-repair.webp",
+  "dimensions": [
+    1536,
+    1055
+  ],
+  "operation": "Round only the upper 160px cap with an elliptical clip, center300/160, radii220/160. Original texture, alpha and RGB at y>=161 are retained. No generated photograph is used.",
+  "preserved": "The complete hand, fingers, bowl, food, shadows, original image placement, Rive transform records and every timeline/state-machine byte.",
+  "playback": "Restore from native frame0, including the original 43–90 desktop arm rotation. Remove the scroll-linked foreground fade."
+}

@@ -65,3 +65,11 @@ Giữ nội dung Fasting; thay phone/timer bằng nguyên cụm Widgets & Streak
 - Widget 1:1 lặp chia sẻ bữa ăn theo video, có notification và hai ảnh bữa tối đồng bộ; ảnh món ăn lấy từ video, caption EN là HTML.
 - Có Pause/Play, pause offscreen/tab hidden và reduced motion; không sửa sáu artwork card hoặc visual Fasting vừa khôi phục.
 - Build, asset/source integrity và motion lifecycle pass. Browser vẫn chưa kết nối nên chưa xác nhận desktop/mobile render cuối.
+
+
+## Phản hồi khôi phục motion tay và lề 20px — 22/10
+
+- Khôi phục timeline từ frame0, gồm toàn bộ đoạn tay ngoắc/hạ xuống như bản gốc; vẫn bỏ crossfade camera/calculation bị chồng UI.
+- Bỏ fade theo scroll gây tay/món ăn bán trong suốt. Chỉ bo lại mép texture trong 160px đầu gần cùi chỏ, không sửa bàn tay, món ăn hay keyframe.
+- Hero lề 20px cả bốn phía khi pin; header đặt 20px vào trong hero ở trên/trái/phải. Không đổi container của các section khác.
+- Kiểm tra byte timeline desktop/compact, pixel/alpha vùng bàn tay+món ăn, scan geometry, safe fit, resize/reduced motion, syntax và build đều pass. Browser vẫn chưa kết nối nên chưa xác nhận render trang cuối.

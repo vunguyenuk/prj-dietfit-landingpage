@@ -47,10 +47,10 @@
         // Hold the native hero immediately before calculating. Add one scroll chapter,
         // then map back into the unchanged native timeline and its existing finale gate.
         const hold = compact.matches ? 274/1925 : 199/539;
-        // Begin after the original forearm's off-stage rotation. At capture,
-        // switch directly to the settled calculation frame: the original slide
-        // crossfades two status bars and two screens over one another.
-        const cameraStart=compact.matches?77/1925:90/539;
+        // Preserve the complete original arm-lowering motion. Only the
+        // angular proximal elbow tip is repaired in the foreground texture.
+        // At capture, still skip the duplicate camera/calculation UI crossfade.
+        const cameraStart=0;
         const cameraEnd=compact.matches?171/1925:149/539;
         const native = progress<enter ? cameraStart+progress/enter*(cameraEnd-cameraStart) : progress<=leave ? hold : hold+(progress-leave)/(1-leave)*(1-hold);
         if (progress>.12) prepare();

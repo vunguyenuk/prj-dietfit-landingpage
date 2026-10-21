@@ -21,3 +21,12 @@ Contours occupy progress .24–.44, with staggered labels, a light scan band and
 The latest requested vertical spacing caps at 40 CSS px. Smaller compact gutters remain smaller; the same bounded FitHeight scale prevents phone cropping.
 
 Checks pass for native window/held bone geometry at desktop, 2K, 4K, tablet and phone; clean camera/calculation mapping, freeze/reverse, scan ordering, finale frame continuity, resize, reduced motion, JavaScript syntax and site build. The newest full-page render remains unverified because the session's browser connection is unavailable despite the user's enabled setting.
+
+
+## Restore arm lowering; local elbow repair — 22 October
+
+The latest feedback supersedes the earlier frame90/frame77 start. EN playback now starts at native frame0 and includes the original lowering rotation (desktop frames43–90), while retaining the existing camera/calculation crossfade skip and scan hold. The scroll-driven foreground fade is removed, so the hand and bowl stay opaque.
+
+Only the proximal top 160px of the existing 1536×1055 hand texture is clipped to a rounded elbow cap. The previous straight texture edge rotated into view as a pointed wedge. The native pivot remains within the retained opaque region. `tools/build-rive-elbow-texture.cjs` produces the repair deterministically; `tools/build-rive-foreground.py` embeds it into the two EN foreground variants. No replacement photograph is used. Original hand/meal dimensions, opaque pixels and alpha below y161, transforms, and every desktop/compact animation/state-machine byte are verified unchanged.
+
+Build order: render US assets → package US Rive images → build local elbow texture → package EN foreground Rive files. The native artwork rotation reference is saved outside the repository as `prj-dietfit-review-2026-10-20/elbow-rotation-reference.png`. It is an art-coordinate check, not a browser screenshot. Browser rendering remains unverified because the session connection is unavailable.

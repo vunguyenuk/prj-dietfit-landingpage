@@ -6,7 +6,7 @@
    covers the scene independently of the phone's safe FitHeight viewport. */
 .dietfit-home--en .dietfit-hero-stage::before { content:""; position:absolute; inset:0; border-radius:clamp(20px,2vw,32px); background:url('/assets/hero/dietfit-hero-poster-us-en.webp') center/cover no-repeat; pointer-events:none; }
 .dietfit-home--en .dietfit-rive-canvas { clip-path:inset(0 round clamp(20px,2vw,32px)); background:none; }
-.dietfit-home--en .rive-ready .dietfit-rive-canvas { opacity:var(--df-hero-foreground-opacity,0); }
+.dietfit-home--en .rive-ready .dietfit-rive-canvas { opacity:1; }
 .dietfit-home--en .dietfit-hero-loading { border-radius:clamp(20px,2vw,32px); background:none; }
 .dietfit-home--en .dietfit-hero-poster img { object-fit:cover; padding:0; }
 @media(orientation:portrait) {

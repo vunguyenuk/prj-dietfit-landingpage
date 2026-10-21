@@ -7,9 +7,8 @@
   function measureHeroInset() {
     if (!document.body.classList.contains('dietfit-home--en')) return;
     const wrap=hero.closest('.dietfit-hero-wrap');
-    // Cap the vertical frame at 40px: wide-screen side gutters can be much
-    // larger, and should not shrink the phone's available height.
-    const gutter=wrap?Math.min(40,Math.max(0,(document.documentElement.clientWidth-wrap.getBoundingClientRect().width)/2)):0;
+    // The hero has a 20px frame on every side, independently of page type.
+    const gutter=wrap?Math.min(20,Math.max(0,(document.documentElement.clientWidth-wrap.getBoundingClientRect().width)/2)):20;
     hero.style.setProperty('--df-hero-gutter',gutter.toFixed(2)+'px');
   }
   measureHeroInset();
@@ -49,7 +48,7 @@
   const compactQuery = window.matchMedia('(max-width: 1024px)');
   // EN uses a separate US food/UI image set; the original VI exports remain untouched.
   const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-foreground-us-en' : '';
-  const heroVersion = langSuffix ? '20261021-single-background-1' : '20260918-1';
+  const heroVersion = langSuffix ? '20261022-arm-continuation-1' : '20260918-1';
   const scan = langSuffix && window.createDietfitHeroScan ? window.createDietfitHeroScan(hero) : null;
   const finale = langSuffix && window.createDietfitHeroFinale ? window.createDietfitHeroFinale(hero,stage) : null;
   function currentHeroFile() {
@@ -133,7 +132,6 @@
       // Keep the scene pinned: capture + Deep Scan first, then a scroll-only finale.
       const beforeFinale = Math.min(1,renderedScroll/.62);
       const nativeProgress = scan ? scan.render(beforeFinale*scan.finaleEntry()) : renderedScroll;
-      if (langSuffix) hero.style.setProperty('--df-hero-foreground-opacity',Math.min(1,renderedScroll/.012).toFixed(3));
       const chapter = Math.max(0,Math.min(1,(renderedScroll-.62)/.32));
       const riveProgress = finale ? finale.progress(nativeProgress,chapter) : nativeProgress;
       if (scrollAnimation) {

@@ -67,3 +67,10 @@ Chrome was available briefly for actual desktop QA at 2560 × 1318: camera/white
 The 899 × 1832 hardware's transparent screen opening was measured from its alpha channel: x42/y34 to x858/y1794. The measurement element now starts at that exact origin, uses width816 and the native 375:812 app ratio; the bottom bleeds beneath the rim. This removes the exposed strip above the photo. The UI corner radius remains native while docking instead of changing to a small dashboard radius.
 
 The hardware no longer fades out during docking. Its final translation accounts for scaling the screen's asymmetric offset from the hardware center, so the phone frame and island follow the shared result into the dashboard's right column. Deterministic tests cover the physical screen-to-journal center mapping as well as retained hardware throughout transfer, freeze, reverse and compact/desktop resize. No new full-browser render is claimed.
+
+
+## Compact hero frame and aligned header — 22 October
+
+Latest feedback replaces the 40px cap with an equal 20px hero frame: wrapper width `100% − 40px`, sticky top20px and height `100svh − 40px`. The fixed header moves to top40px and its navigation width becomes `100% − 80px`; split shells sit directly on those edges, giving 20px between the header and hero at the top, left and right. These are CSS pixels independent of the wide-screen font scale. Other page containers retain their established sizing.
+
+The initial scroll-linked foreground fade is removed. Full native arm lowering is restored, with only its small elbow cap repaired in the foreground image payloads; native motion bytes and the existing phone/result handoff are retained.

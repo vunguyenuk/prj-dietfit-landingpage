@@ -7,9 +7,11 @@
       "bg"
     ],
     "staticArtboardFillAlpha": 0,
+    "proximalElbowRepair": "hands-elbow-repair.webp",
+    "elbowRepairSha256": "568604bcf4c70c638eba346a402f1cdac1c1613bc76041b1f1b9beccd79c68ed",
     "animationSha256": "de6a624c32ca40eaba38b9e0558160196f4d2a13cb66ea6700acee6a108afbdb",
     "sourceBytes": 956280,
-    "outputBytes": 799684
+    "outputBytes": 1349660
   },
   {
     "source": "dietfit-hero-responsive-us-en.riv",
@@ -19,8 +21,10 @@
       "bg"
     ],
     "staticArtboardFillAlpha": 0,
+    "proximalElbowRepair": "hands-elbow-repair.webp",
+    "elbowRepairSha256": "568604bcf4c70c638eba346a402f1cdac1c1613bc76041b1f1b9beccd79c68ed",
     "animationSha256": "c22682a274d46cb27208f7793503b3054144d2f555a635d9812bc9cb1c5d7952",
     "sourceBytes": 957166,
-    "outputBytes": 800570
+    "outputBytes": 1350546
   }
 ]

@@ -1,8 +1,9 @@
 """Separate EN hero foregrounds from the single responsive CSS background.
 
-Run after build-rive-us.py. Original exports and US image variants stay intact.
-Only two background image payloads and the static artboard fill alpha change;
-every timeline, state machine, foreground asset and transform stays unchanged.
+Run after build-rive-us.py and build-rive-elbow-texture.cjs.
+Original exports and US image variants stay intact.
+Two background image payloads, the local elbow repair and static fill alpha
+change. Every timeline, state machine and transform stays unchanged.
 """
 from pathlib import Path
 import hashlib
@@ -16,6 +17,7 @@ spec = importlib.util.spec_from_file_location('rive_images', ROOT / 'tools/build
 images = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(images)
 BACKGROUNDS = {'bg', 'Dark bg'}
+ELBOW_REPAIR = ROOT / 'assets/hero/us-en/hands-elbow-repair.webp'
 
 
 def empty_image():
@@ -42,7 +44,7 @@ def normalized(data, parent, alpha):
     data = data[:at] + b'\xff' + data[at + 1:]
     pieces, cursor = [], 0
     for asset in images.assets(data):
-        if asset['name'] not in BACKGROUNDS:
+        if asset['name'] not in BACKGROUNDS | {'hands'}:
             continue
         pieces.append(data[cursor:asset['length_at']])
         cursor = asset['end']
@@ -57,12 +59,14 @@ def main():
         before = source.read_bytes()
         after = before
         replaced = []
+        assert ELBOW_REPAIR.exists(), 'Build the local elbow texture before packaging'
         for asset in reversed(images.assets(before)):
-            if asset['name'] not in BACKGROUNDS:
+            if asset['name'] not in BACKGROUNDS | {'hands'}:
                 continue
-            pixel = empty_image()
+            pixel = ELBOW_REPAIR.read_bytes() if asset['name'] == 'hands' else empty_image()
             after = after[:asset['length_at']] + images.write_var(len(pixel)) + pixel + after[asset['end']:]
-            replaced.append(asset['name'])
+            if asset['name'] in BACKGROUNDS:
+                replaced.append(asset['name'])
         assert set(replaced) == BACKGROUNDS and len(replaced) == 2
         at = paint_offset(after, parent, 255)
         after = after[:at] + b'\x00' + after[at + 1:]
@@ -73,6 +77,8 @@ def main():
         output.write_bytes(after)
         report.append(dict(source=source.name, output=output.name,
                            disabledBackgrounds=sorted(replaced), staticArtboardFillAlpha=0,
+                           proximalElbowRepair=ELBOW_REPAIR.name,
+                           elbowRepairSha256=hashlib.sha256(ELBOW_REPAIR.read_bytes()).hexdigest(),
                            animationSha256=hashlib.sha256(after[after.index(timeline):]).hexdigest(),
                            sourceBytes=len(before), outputBytes=len(after)))
     (ROOT / 'assets/hero/us-en/foreground-manifest.json').write_text(json.dumps(report, indent=2) + '\n')
