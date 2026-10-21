@@ -181,6 +181,7 @@
   <link rel="stylesheet" href="/styles/dietfit-responsive-en.css?v=20261021-1">
   <link rel="stylesheet" href="/styles/dietfit-containers-en.css?v=20261021-unified-1240-1">
   <link rel="stylesheet" href="/styles/dietfit-hero-finale-en.css?v=20261021-peek-first-1">
+  <link rel="stylesheet" href="/styles/dietfit-hero-scan-en.css?v=20261021-deep-scan-1">
 </head>
 
 <body class="dietfit-home--en">
@@ -245,6 +246,31 @@
                 <source media="(orientation: portrait)" srcset="/assets/hero/dietfit-hero-poster-mobile-us-en.webp?v=20261021-placement-1" width="780" height="1688">
                 <img src="/assets/hero/dietfit-hero-poster-us-en.webp?v=20261021-placement-1" alt="" width="1920" height="1200" fetchpriority="high" decoding="async">
               </picture>
+            </div>
+            <div class="df-hero-scan" aria-hidden="true">
+              <div class="df-hero-scan__phone">
+                <div class="df-hero-scan__screen">
+                  <div class="df-hero-scan__plate">
+                    <img class="df-hero-scan__meal" src="/assets/hero/deep-scan/meal.webp" alt="" width="710" height="710" loading="lazy" decoding="async">
+                    <svg class="df-hero-scan__regions" viewBox="0 0 413 416" aria-hidden="true">
+                      <path data-scan-region="egg" pathLength="1" style="--region:#b477fd" d="M204 65C219 54 235 64 249 57C275 51 310 63 323 88C333 110 332 128 341 147C349 166 335 192 324 210L305 224C287 222 274 213 258 208L240 187L223 160L211 140L201 114C194 95 193 78 204 65Z"/>
+                      <path data-scan-region="vegetables" pathLength="1" style="--region:#ffac60" d="M110 156L136 139L160 137L184 129L207 133L213 153L231 173L237 194L255 216L269 236L264 269L243 295L216 309L192 300L174 304L152 294L143 270L126 266L120 244L101 226L99 204L92 183L101 169Z"/>
+                      <path data-scan-region="quinoa" pathLength="1" style="--region:#f563a7" d="M113 302C139 290 156 297 177 302L202 306L226 293C244 287 266 304 285 312L308 323C322 336 310 358 295 368L277 388C253 399 231 391 213 393L188 390L159 395L134 384L111 369L101 347L104 321Z M28 151L48 137L76 127L94 136L103 158L93 177L96 197L80 215L69 234L51 239L33 226L24 205L20 181Z"/>
+                      <path data-scan-region="dressing" pathLength="1" style="--region:#2ab0f9" d="M288 219C309 204 342 209 361 224C383 241 383 270 371 292C359 315 327 321 302 310C277 299 268 273 272 251C274 238 280 227 288 219Z"/>
+                      <path data-scan-region="kale" pathLength="1" style="--region:#21cbb2" d="M58 91L66 72L85 73L93 57L112 65L128 55L137 40L159 35L169 25L191 30L199 43L207 62L193 75L199 95L182 104L180 120L159 128L146 138L126 136L115 144L96 133L79 137L67 120L52 113Z M27 216L42 211L50 224L65 224L71 239L86 230L99 240L113 244L109 264L122 277L115 295L130 309L118 328L104 337L87 349L71 336L55 333L49 316L38 302L38 282L26 267L21 244Z"/>
+                      <path data-scan-region="chickpeas" pathLength="1" style="--region:#abc53e" d="M90 151a9 9 0 1 0 18 0a9 9 0 1 0-18 0 M16 214a8 8 0 1 0 16 0a8 8 0 1 0-16 0 M132 246a9 9 0 1 0 18 0a9 9 0 1 0-18 0 M220 333a9 9 0 1 0 18 0a9 9 0 1 0-18 0 M304 345a10 10 0 1 0 20 0a10 10 0 1 0-20 0 M267 359a9 9 0 1 0 18 0a9 9 0 1 0-18 0 M147 379a9 9 0 1 0 18 0a9 9 0 1 0-18 0"/>
+                    </svg>
+                    <div class="df-hero-scan__label df-hero-scan__label--egg" style="--region:#b477fd"><strong>Fried egg <small>1 egg</small></strong><b>100 <small>kcal</small></b></div>
+                    <div class="df-hero-scan__label df-hero-scan__label--vegetables" style="--region:#ffac60"><strong>Roasted vegetables <small>150g</small></strong><b>135 <small>kcal</small></b></div>
+                    <div class="df-hero-scan__label df-hero-scan__label--quinoa" style="--region:#f563a7"><strong>Quinoa <small>120g</small></strong><b>144 <small>kcal</small></b></div>
+                    <div class="df-hero-scan__label df-hero-scan__label--dressing" style="--region:#2ab0f9"><strong>Dressing <small>25g</small></strong><b>116 <small>kcal</small></b></div>
+                  </div>
+                  <div class="df-hero-scan__beam"></div>
+                  <div class="df-hero-scan__top"><span>×</span><strong>Deep Scan</strong><span></span></div>
+                  <div class="df-hero-scan__summary"><strong>6 ingredients identified</strong><span>Roast veggie bowl · 620 kcal</span></div>
+                </div>
+                <img class="df-hero-scan__hardware" src="/assets/hero/finale/phone-frame.webp" alt="" width="899" height="1832" loading="lazy" decoding="async">
+              </div>
             </div>
             <div class="df-hero-finale" aria-hidden="true">
               <div class="df-hero-finale__backdrop"></div>
@@ -704,8 +730,9 @@
 
   <script src="/vendor/lenis/lenis.min.js"></script>
   <script src="/scripts/dietfit-scroll.js"></script>
-  <script src="/scripts/dietfit-hero-finale-en.js?v=20261021-strong-wave-1"></script>
-  <script src="/scripts/dietfit-hero.js?v=20261021-peek-first-1"></script>
+  <script src="/scripts/dietfit-hero-scan-en.js?v=20261021-deep-scan-1"></script>
+  <script src="/scripts/dietfit-hero-finale-en.js?v=20261021-deep-scan-1"></script>
+  <script src="/scripts/dietfit-hero.js?v=20261021-deep-scan-1"></script>
   <script src="/scripts/dietfit-sections.js?v=20261021-scroll-restored-1"></script>
   <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>
   <script src="/scripts/dietfit-native-ui.js?v=20261021-grounded-1"></script>

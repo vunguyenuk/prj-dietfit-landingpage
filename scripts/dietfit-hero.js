@@ -37,6 +37,7 @@
   // EN uses a separate US food/UI image set; the original VI exports remain untouched.
   const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-us-en' : '';
   const heroVersion = langSuffix ? '20261021-placement-1' : '20260918-1';
+  const scan = langSuffix && window.createDietfitHeroScan ? window.createDietfitHeroScan(hero) : null;
   const finale = langSuffix && window.createDietfitHeroFinale ? window.createDietfitHeroFinale(hero,stage) : null;
   function currentHeroFile() {
     return compactQuery.matches
@@ -88,7 +89,7 @@
     const desiredProgress = compactQuery.matches
       ? Math.pow(rawProgress, 1.35)
       : rawProgress;
-    targetScroll = finale ? finale.progress(desiredProgress) : desiredProgress;
+    targetScroll = desiredProgress;
   }
 
   function updateHeroExpansion() {
@@ -116,11 +117,13 @@
       renderedScroll = Math.abs(distance) < 0.001
         ? targetScroll
         : renderedScroll + distance * smoothing;
-      if (finale) finale.tick(renderedScroll,time);
+      const nativeProgress = scan ? scan.render(renderedScroll) : renderedScroll;
+      const riveProgress = finale ? finale.progress(nativeProgress) : nativeProgress;
+      if (finale) finale.tick(riveProgress,time);
       if (scrollAnimation) {
-        player.scrub(scrollAnimation, renderedScroll * scrollDuration);
+        player.scrub(scrollAnimation, riveProgress * scrollDuration);
       } else {
-        scrollValue.value = renderedScroll;
+        scrollValue.value = riveProgress;
       }
     }
     frame = requestAnimationFrame(animateScroll);
@@ -215,6 +218,7 @@
   function swapHeroFile() {
     if (!window.rive) return;
     if (frame) cancelAnimationFrame(frame);
+    if (scan) scan.reset();
     if (finale) finale.reset();
     frame = 0;
     scrollValue = null;
@@ -246,6 +250,7 @@
   window.addEventListener('pagehide', function () {
     if (frame) cancelAnimationFrame(frame);
     if (player) player.cleanup();
+    if (scan) scan.reset();
     if (finale) finale.destroy();
   }, { once: true });
 

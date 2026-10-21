@@ -1,0 +1,7 @@
+{
+  "meal": "Exact 710x710 crop (525,250) from existing assets/hero/us-en/meal-hand-source.png, matching the hero result image crop; WebP encoded at quality 93",
+  "table": "Unmodified copy of existing assets/hero/us-en/bg.webp",
+  "regions": "SVG ingredient contours authored against this exact meal crop, viewBox 0 0 413 416",
+  "nutrition": "Existing hero sample data: quinoa 144, vegetables 135, egg 100, kale 35, chickpeas 90, dressing 116 kcal; total 620",
+  "originalRiveFiles": "Unchanged"
+}

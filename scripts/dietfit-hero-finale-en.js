@@ -76,6 +76,7 @@
     measure(); paint();
     return {
       progress:function (value) {
+        if (value===desired) return Math.min(value,gate);
         if (value<gate-.025 && (started || complete)) reset();
         desired=value;
         paintScreen();
