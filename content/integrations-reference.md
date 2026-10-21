@@ -4,7 +4,7 @@ Replaces only the EN mascot CTA at `#dietfit-video`, 21 October 2026. The Vietna
 
 Apple Health is the bridge. The section does not claim direct Dietfit partnerships with the listed apps, does not display fake connected states, and does not claim every app shares every data category. The main Dietfit copy stays within the existing product's steps, workouts and active-energy scope. On-device access and app-specific permissions determine what is shared.
 
-The official app catalog now calls Fitbit “Google Health (Fitbit)”; this is the label/icon used. Icons are downloaded locally from the Apple App Store catalog, with source metadata in `assets/integrations/source.json`.
+The official app catalog now calls Fitbit “Google Health (Fitbit)”; this is the label/icon used. Icons are original unmodified JPEG files downloaded directly from the Apple App Store catalog into `assets/integrations/official/`. Each bundle ID, app name and seller was checked on 21 October 2026; download URLs, store pages and SHA-256 hashes are recorded in `assets/integrations/source.json`. No logos are redrawn or recolored. The section uses no connector strokes, per-card arrow badges, card borders or rotation.
 
 ## Verified provider instructions
 

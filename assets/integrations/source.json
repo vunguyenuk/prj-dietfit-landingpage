@@ -1,60 +1,106 @@
 {
   "reference": "https://0xcal.app/#features",
-  "note": "App ecosystem informed by reference; current official icons from Apple App Store catalog, downloaded 2026-10-21. All connections shown via Apple Health; not direct Dietfit app integrations.",
+  "verified": "2026-10-21",
+  "note": "Original unmodified artwork downloaded from the official Apple App Store catalog. Each bundle ID, app name and seller was checked. SHA-256 records refer to original downloaded bytes. Connections shown via Apple Health, not direct Dietfit partnerships.",
   "icons": [
     {
       "slug": "garmin",
-      "name": "Garmin Connect\u2122",
       "bundle": "com.garmin.connect.mobile",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/e6/92/3ce6922b-aaf4-cbcb-bd2f-b64ac8d61542/AppIcon-0-0-1x_U007ephone-0-1-0-0-85-220.png/512x512bb.jpg"
+      "name": "Garmin Connect\u2122",
+      "seller": "Garmin International",
+      "store": "https://apps.apple.com/us/app/garmin-connect/id583446403?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3c/e6/92/3ce6922b-aaf4-cbcb-bd2f-b64ac8d61542/AppIcon-0-0-1x_U007ephone-0-1-0-0-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.garmin.connect.mobile&country=us",
+      "file": "assets/integrations/official/garmin.jpg",
+      "sha256": "97fae36410a3860699e2f2f187e344ce086d761bdd30b610b75df69f7c024e5a"
     },
     {
       "slug": "whoop",
-      "name": "WHOOP",
       "bundle": "com.whoop.iphone",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/17/c2/a117c2c0-7449-e8fc-89e8-1fede409ff5a/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-0-85-220.png/512x512bb.jpg"
+      "name": "WHOOP",
+      "seller": "Whoop Incorporated",
+      "store": "https://apps.apple.com/us/app/whoop/id933944389?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a1/17/c2/a117c2c0-7449-e8fc-89e8-1fede409ff5a/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-0-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.whoop.iphone&country=us",
+      "file": "assets/integrations/official/whoop.jpg",
+      "sha256": "251a8617f1af3c93ae8761e836ad669effd76e4cac31ede770acdd45ac7c38f5"
     },
     {
       "slug": "oura",
-      "name": "Oura",
       "bundle": "com.ouraring.oura",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a8/3e/4e/a83e4ebb-f262-cd77-c428-96c6ab71e28e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg"
+      "name": "Oura",
+      "seller": "Oura Health Oy",
+      "store": "https://apps.apple.com/us/app/oura/id1043837948?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a8/3e/4e/a83e4ebb-f262-cd77-c428-96c6ab71e28e/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.ouraring.oura&country=us",
+      "file": "assets/integrations/official/oura.jpg",
+      "sha256": "ca1efeedddb86ec85c9022b98fe8aad63e787592245ede0e3cc70a391713ac05"
     },
     {
       "slug": "withings",
-      "name": "Withings",
       "bundle": "com.withings.wiScaleNG",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/3b/f0/213bf0b5-e489-e8d1-6df4-fd641d7a6c14/AppIcon-Release-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg"
+      "name": "Withings",
+      "seller": "Withings",
+      "store": "https://apps.apple.com/us/app/withings/id542701020?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/3b/f0/213bf0b5-e489-e8d1-6df4-fd641d7a6c14/AppIcon-Release-0-0-1x_U007epad-0-1-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.withings.wiScaleNG&country=us",
+      "file": "assets/integrations/official/withings.jpg",
+      "sha256": "8e6de0f0d3a334008705b432962f056db1fc3991f31fca9b49672c36f1a28e00"
     },
     {
       "slug": "google-health",
-      "name": "Google Health (Fitbit)",
       "bundle": "com.fitbit.FitbitMobile",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f9/44/0f/f9440fa0-4470-9f43-d5ab-80616ac9ac81/google_health_ios-0-0-1x_U007ephone-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg"
+      "name": "Google Health (Fitbit)",
+      "seller": "Google LLC",
+      "store": "https://apps.apple.com/us/app/google-health-fitbit/id462638897?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f9/44/0f/f9440fa0-4470-9f43-d5ab-80616ac9ac81/google_health_ios-0-0-1x_U007ephone-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.fitbit.FitbitMobile&country=us",
+      "file": "assets/integrations/official/google-health.jpg",
+      "sha256": "b8102b03bde4f28894a762388dc4b650a9d16e78ee251c2b28550ac591a592c6"
     },
     {
       "slug": "strava",
-      "name": "Strava: Run, Bike, Walk",
       "bundle": "com.strava.stravaride",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/15/95/de1595fa-f1e1-7ba7-01e7-4774082486e0/AppIcon-Primary-0-0-1x_U007ephone-0-1-0-0-sRGB-85-220.png/512x512bb.jpg"
+      "name": "Strava: Run, Bike, Walk",
+      "seller": "Strava Inc.",
+      "store": "https://apps.apple.com/us/app/strava-run-bike-walk/id426826309?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/15/95/de1595fa-f1e1-7ba7-01e7-4774082486e0/AppIcon-Primary-0-0-1x_U007ephone-0-1-0-0-sRGB-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.strava.stravaride&country=us",
+      "file": "assets/integrations/official/strava.jpg",
+      "sha256": "4f7a24da90116fc51b850cc72831992081d020f4b16267c5378876b2c415111f"
     },
     {
       "slug": "polar",
-      "name": "Polar Flow",
       "bundle": "fi.polar.polarflow",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3e/f0/67/3ef06755-5610-0f95-b54e-fcedde1d0d20/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg"
+      "name": "Polar Flow",
+      "seller": "Polar Electro Oy",
+      "store": "https://apps.apple.com/us/app/polar-flow/id717172678?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3e/f0/67/3ef06755-5610-0f95-b54e-fcedde1d0d20/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=fi.polar.polarflow&country=us",
+      "file": "assets/integrations/official/polar.jpg",
+      "sha256": "bb51aa3e4e5f43db758c19f848d50588876eac62dc3775709d33ddfa73735c2e"
     },
     {
       "slug": "vesync",
-      "name": "VeSync",
       "bundle": "com.etekcity.vesyncPlatform",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/a7/79/ada779d3-5d3f-04e1-619d-50f5ef690d78/AppIconWithIpad-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
+      "name": "VeSync",
+      "seller": "Vesync Technology Corporation",
+      "store": "https://apps.apple.com/us/app/vesync/id1289575311?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ad/a7/79/ada779d3-5d3f-04e1-619d-50f5ef690d78/AppIconWithIpad-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.etekcity.vesyncPlatform&country=us",
+      "file": "assets/integrations/official/vesync.jpg",
+      "sha256": "50494fdc7b1bf0983147e8639a744391f05031575f8f4d590b8377411585db02"
     },
     {
       "slug": "apple-health",
-      "name": "Apple Health",
       "bundle": "com.apple.Health",
-      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/38/d1/c438d148-1fe2-67a3-c768-6158621cc13f/healthCalistoga-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg"
+      "name": "Apple Health",
+      "seller": "Apple Inc.",
+      "store": "https://apps.apple.com/us/app/apple-health/id1242545199?uo=4",
+      "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c4/38/d1/c438d148-1fe2-67a3-c768-6158621cc13f/healthCalistoga-0-0-1x_U007epad-0-1-0-85-220.png/512x512bb.jpg",
+      "lookup": "https://itunes.apple.com/lookup?bundleId=com.apple.Health&country=us",
+      "file": "assets/integrations/official/apple-health.jpg",
+      "sha256": "8a57edb9e15c3e96be3aed82312c085b488924c12d5e2333bf41adaea550d456"
     }
   ]
 }
