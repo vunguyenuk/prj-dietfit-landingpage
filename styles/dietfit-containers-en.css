@@ -1,6 +1,6 @@
-/* Reference: https://0xcal.app/ — .wrap { width:min(1240px,92vw) }. */
+/* Shared frame: compact below laptop sizes, fluid on larger desktops. */
 .dietfit-home--en {
-  --dietfit-page-max:1240px;
+  --dietfit-page-max:clamp(1240px,calc(75vw + 160px),2400px);
   --dietfit-page-gutter:4vw;
   --dietfit-page-width:min(var(--dietfit-page-max),92vw,92%);
 }

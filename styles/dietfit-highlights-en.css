@@ -51,7 +51,7 @@
   .dietfit-home--en .dietfit-highlights--en .dietfit-carousel { gap:16px; }
   .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-carousel { flex:0 1 auto; }
   .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en {
-    flex:0 0 calc((100% - 16px) / 2);
+    flex:0 0 min(calc((100% - 16px) / 2),calc((100svh - 200px) * 5 / 7));
     height:auto;
     min-height:0;
     align-self:flex-start;
@@ -62,10 +62,10 @@
 @media(min-width:1024px) {
   .dietfit-home--en .dietfit-highlights--en .dietfit-carousel { gap:20px; }
   .dietfit-highlights--en .dietfit-card-en,
-  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en { flex:0 0 calc((100% - 60px) / 3.2); }
-  .dietfit-home--en .dietfit-highlights--en .dietfit-card-copy { padding:clamp(20px,1.6vw,24px); gap:10px; }
-  .dietfit-highlights--en .dietfit-card-copy h2 { font-size:clamp(20px,1.6vw,24px); line-height:1.2; }
-  .dietfit-highlights--en .dietfit-card-copy p { font-size:16px; line-height:1.5; }
+  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en { flex:0 0 min(calc((100% - 60px) / 3.2),calc((100svh - 200px) * 5 / 7)); }
+  .dietfit-home--en .dietfit-highlights--en .dietfit-card-copy { padding:clamp(1.25rem,1.6vw,1.5rem); gap:.625rem; }
+  .dietfit-highlights--en .dietfit-card-copy h2 { font-size:clamp(1.25rem,1.6vw,1.5rem); line-height:1.2; }
+  .dietfit-highlights--en .dietfit-card-copy p { font-size:1rem; line-height:1.5; }
 }
 @media(max-width:767px) {
   .dietfit-highlights--en .dietfit-card-en { flex-basis:calc(100vw - 2.5rem); }

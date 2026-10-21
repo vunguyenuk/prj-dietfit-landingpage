@@ -8,19 +8,30 @@
     const regions = Array.from(scene.querySelectorAll('[data-scan-region]'));
     const labels = Array.from(scene.querySelectorAll('.df-hero-scan__label'));
     const beam = scene.querySelector('.df-hero-scan__beam');
-    const summary = scene.querySelector('.df-hero-scan__summary');
+    const plate = scene.querySelector('.df-hero-scan__plate');
+    const stage = hero.querySelector('.dietfit-hero-stage');
     const clamp = function (n) { return Math.max(0,Math.min(1,n)); };
     const smooth = function (n) { n=clamp(n); return n*n*(3-2*n); };
     const enter = .24,leave = .44;
     let last = -1,preparing = false,ready = false;
-    function prepare() {
-      if (preparing) return;
-      preparing = true;
-      Promise.all(Array.from(scene.querySelectorAll('img')).map(function (img) {
-        img.loading = 'eager';
-        return img.decode ? img.decode().catch(function () {}) : Promise.resolve();
-      })).then(function () { ready=true; last=-1; });
+    function measure() {
+      // Native Rive artboard is 1920 × 1258, rendered with Fit.Cover / Center.
+      // These are the food image's world bounds at the held calculation frame,
+      // derived from its unchanged parent transforms in each original timeline.
+      const bounds=stage.getBoundingClientRect();
+      const fit=Math.max(bounds.width/1920,bounds.height/1258);
+      const photo=compact.matches?{y:637.8730957,w:510.3436665,h:514.0507633}:{y:626.3336966,w:518.9414741,h:522.7110248};
+      plate.style.width=(photo.w*fit).toFixed(3)+'px';
+      plate.style.height=(photo.h*fit).toFixed(3)+'px';
+      plate.style.left=(bounds.width/2).toFixed(3)+'px';
+      plate.style.top=(bounds.height/2+(photo.y-629)*fit).toFixed(3)+'px';
     }
+    function prepare() {
+      if(preparing)return;
+      preparing=true;
+      measure();ready=true;last=-1;
+    }
+    measure();
     return {
       finaleEntry:function () {
         const hold=compact.matches?274/1925:199/539;
@@ -51,9 +62,10 @@
         });
         beam.style.transform = 'translateY('+(clamp(t/.72)*530).toFixed(2)+'%)';
         beam.style.opacity = (smooth(t/.08)*(1-smooth((t-.62)/.12))*.8).toFixed(3);
-        summary.style.opacity = smooth((t-.70)/.12).toFixed(3);
+
         return native;
       },
+      resize:measure,
       reset:function () { last=-1; hero.classList.remove('is-hero-scanning'); scene.style.opacity='0'; }
     };
   };

@@ -252,17 +252,39 @@ const renderers={scan,coach,health:p=>{
  $$('#wgs .mm i').forEach((bar,i)=>{bar.style.transform=`scaleX(${eOut(seg(p,.14+i*.08,.4+i*.08))})`;bar.style.transformOrigin='left'});
  const line=$('#wgs .wg.m path:nth-of-type(2)'),L=line.getTotalLength();line.style.strokeDasharray=L;line.style.strokeDashoffset=L*(1-seg(p,.5,.85));
 }};
+let fastingHours=16;
+renderers.fasting=function(p){
+ const host=$('#fastingDevice');if(!host)return;
+ const elapsed=fastingHours*seg(p,.08,.82),done=p>=.82;
+ const minutes=Math.round(elapsed*60),endHour=20+fastingHours-24;
+ const endText=(endHour===12?12:endHour%12)+':00 '+(endHour>=12?'PM':'AM');
+ $('[data-fasting-time]',host).textContent=String(Math.floor(minutes/60)).padStart(2,'0')+':'+String(minutes%60).padStart(2,'0');
+ $('[data-fasting-goal]',host).textContent='of '+fastingHours+' hours';
+ $('[data-fasting-state]',host).textContent=done?'Eating window':'Fasting window';
+ $('[data-fasting-end]',host).textContent=endText+' – 8:00 PM';
+ $('[data-fasting-next]',host).textContent=done?'Your eating window is open':'Your eating window opens at '+endText;
+ $('.df-fasting-arc',host).style.strokeDashoffset=1-seg(p,.08,.82);
+ $('.df-fasting-timeline span',host).style.width=(fastingHours/24*100)+'%';
+ $('.df-fasting-timeline i',host).style.transform='translateX('+((done?fastingHours+(24-fastingHours)*seg(p,.82,1):elapsed)/24*299).toFixed(2)+'px)';
+ host.classList.toggle('is-eating',done);
+};
+$$('[data-fasting-hours]').forEach(button=>button.addEventListener('click',()=>{
+ fastingHours=Number(button.dataset.fastingHours);
+ $$('[data-fasting-hours]').forEach(el=>el.setAttribute('aria-pressed',String(el===button)));
+ const section=button.closest('[data-demo]');renderers.fasting(Number(section.dataset.demoProgress)||0);
+}));
 const chapters=$$('[data-demo]');
 function fit(el){
   const stage=$('.df-feature-stage',el),device=$('.dv',el);
   const native=$('.df-native',el),mascot=$('.df-feature-peek.df-mascot',el);
   const sharedPhoneColumn=document.body.classList.contains('dietfit-home--en');
   const availableWidth=Math.max(1,sharedPhoneColumn?stage.clientWidth:(mascot?native.clientWidth:stage.clientWidth));
+  const maxScale=sharedPhoneColumn?Math.max(1.15,Math.min(2,1.15+(window.innerWidth-1440)*.000535714)):1.15;
   if(el.dataset.demo==='widgets'){
     const board=$('#wgs',el);
     if(mascot){
       board.style.width='460px';
-      const k=Math.min(1,availableWidth/460,Math.max(1,stage.clientHeight-24)/board.offsetHeight);
+      const k=Math.min(sharedPhoneColumn?maxScale:1,availableWidth/460,Math.max(1,stage.clientHeight-24)/board.offsetHeight);
       board.style.transform=`scale(${k})`;
       if(sharedPhoneColumn)stage.style.setProperty('--df-feature-visual-width',`${460*k}px`);
       stage.style.setProperty('--df-mascot-floor',`${(stage.clientHeight-board.offsetHeight*k)/2}px`);
@@ -273,7 +295,7 @@ function fit(el){
     return;
   }
   if(!device)return;
-  const k=Math.max(.1,Math.min(stage.clientHeight/832,(availableWidth-12)/395,1.15));
+  const k=Math.max(.1,Math.min(stage.clientHeight/832,(availableWidth-12)/395,maxScale));
   device.style.setProperty('--k',k.toFixed(4));
   if(sharedPhoneColumn)stage.style.setProperty('--df-feature-visual-width',`${395*k}px`);
   if(mascot)stage.style.setProperty('--df-mascot-floor',`${(stage.clientHeight-832*k)/2}px`);
@@ -292,14 +314,14 @@ chapters.forEach(el=>{
   actions.forEach(([selector,label,p])=>{const old=$(selector,el),b=document.createElement('button');b.className=old.className;b.id=old.id;b.type='button';b.innerHTML=old.innerHTML;b.setAttribute('aria-label',label);old.replaceWith(b);b.addEventListener('click',()=>{seek(p);if(p===.98)b.textContent='Logged in demo ✓'})});
  }
 });
-let raf=0;function render(){raf=0;for(const el of chapters){const box=el.getBoundingClientRect();el.classList.toggle('is-past',box.bottom<=104);if(el.dataset.manual)continue;if(box.bottom<0||box.top>innerHeight)continue;const sticky=$('.df-feature-sticky',el),small=matchMedia('(max-width:700px)').matches,top=small?88:parseFloat(getComputedStyle(sticky).top)||80,copyOffset=small?$('.df-feature-copy',el).offsetHeight+56:0,viewHeight=small?innerHeight-112:sticky.offsetHeight;draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):clamp((top-box.top-copyOffset)/Math.max(1,el.offsetHeight-viewHeight-copyOffset)));}}
+let raf=0;function render(){raf=0;for(const el of chapters){const box=el.getBoundingClientRect();el.classList.toggle('is-past',box.bottom<=104);if(el.dataset.manual)continue;if(box.bottom<0||box.top>innerHeight)continue;const sticky=$('.df-feature-sticky',el),small=matchMedia('(max-width:700px)').matches,top=small?88:parseFloat(getComputedStyle(sticky).top)||80,copyOffset=small?$('.df-feature-copy',el).offsetHeight+56:0,viewHeight=small?innerHeight-112:sticky.offsetHeight;draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1,fasting:.55}[el.dataset.demo]):clamp((top-box.top-copyOffset)/Math.max(1,el.offsetHeight-viewHeight-copyOffset)));}}
 function schedule(){if(!raf)raf=requestAnimationFrame(render)}
 addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});reduce.addEventListener('change',schedule);
 document.fonts.ready.then(()=>chapters.forEach(fit));
-chapters.forEach(el=>draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1}[el.dataset.demo]):0));schedule();
+chapters.forEach(el=>draw(el,reduce.matches?({scan:.88,coach:.8,plan:.22,health:.2,widgets:1,fasting:.55}[el.dataset.demo]):0));schedule();
 // Native hash navigation can precede the original v1 carousel's final measurement.
 // Align once after fonts/load, and always yield to the visitor's input.
-if(/^#dietfit-(product|scan|sara|plan|activity|widgets)$/.test(location.hash)){
+if(/^#dietfit-(product|scan|sara|plan|activity|widgets|fasting)$/.test(location.hash)){
  const initialHash=location.hash;let navigated=false;
  ['wheel','touchstart','keydown','pointerdown'].forEach(type=>addEventListener(type,()=>{navigated=true},{once:true,passive:true}));
  const align=()=>document.fonts.ready.then(()=>requestAnimationFrame(()=>{

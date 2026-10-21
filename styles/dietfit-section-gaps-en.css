@@ -1,0 +1,15 @@
+/* User-requested section rhythm: exactly 100 CSS px, independent of desktop type scale.
+   Sticky section heights remain their animation runway; margins separate the chapters. */
+.dietfit-home--en { --df-section-gap:100px; }
+.dietfit-home--en .dietfit-product { display:flow-root; }
+.dietfit-home--en main > :is(.dietfit-hero-wrap,.df-score-strip,.dietfit-product,.dietfit-progress-cta,.df-integrations,.dietfit-highlights,.dietfit-faq,.dietfit-final) { margin-block:0; }
+.dietfit-home--en main > :is(.dietfit-hero-wrap,.df-score-strip,.dietfit-product,.dietfit-progress-cta,.df-integrations,.dietfit-highlights,.dietfit-faq,.dietfit-final) { margin-top:var(--df-section-gap); }
+.dietfit-home--en :is(.df-score-strip__inner,.df-feature-intro,.dietfit-progress-cta__sticky,.df-integrations,.dietfit-highlights,.dietfit-faq) { padding-block:0; }
+.dietfit-home--en .df-feature-intro { margin-bottom:var(--df-section-gap); }
+.dietfit-home--en .df-feature + .df-feature { margin-top:var(--df-section-gap); }
+.dietfit-home--en .df-feature-sample-note { margin:0 auto; padding-top:20px; padding-bottom:0; }
+/* Static chapters keep the same rhythm without animation runway or relative offsets. */
+@media(prefers-reduced-motion:reduce) {
+  .dietfit-home--en .df-feature { min-height:0; padding-block:0; }
+  .dietfit-home--en .df-feature .df-feature-sticky { top:auto; min-height:0; }
+}

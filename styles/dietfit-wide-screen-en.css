@@ -1,0 +1,28 @@
+/* CSS pixels and viewport height, rather than unreliable physical-inch detection.
+   Preserve compact devices; grow type, space and visuals with the desktop frame. */
+@media(min-width:1440px) {
+  html:has(body.dietfit-home--en) { font-size:clamp(100%,calc(.6vw + .4375rem),150%); }
+  .dietfit-home--en { --df-section-space:clamp(3rem,5vw,4.5rem); --df-feature-top:clamp(80px,5.5vw,144px); }
+  .dietfit-home--en .df-feature .df-feature-sticky { top:var(--df-feature-top); min-height:calc(100svh - var(--df-feature-top) - 16px); padding-block:24px; gap:clamp(48px,6vw,180px); }
+  .dietfit-home--en .df-feature .df-feature-stage { height:min(1600px,calc(100svh - var(--df-feature-top) - 64px)); }
+  .dietfit-home--en .df-feature-copy h2 { font-size:var(--dietfit-type-section); }
+  .dietfit-home--en .df-kicker { font-size:.8125rem; }
+  .dietfit-home--en .dietfit-intro > p { font-size:clamp(1rem,1.4vw,1.15rem); }
+  .dietfit-home--en .df-integrations__intro { gap:clamp(64px,6vw,180px); }
+  .dietfit-home--en .df-integrations__description p { font-size:clamp(1rem,1.4vw,1.25rem); }
+  /* The scene must reserve the grid's full growing height, including Apple Health. */
+  .dietfit-home--en .df-integrations__scene { height:auto; aspect-ratio:11 / 7; }
+  .dietfit-home--en .df-integrations__apps { height:100%; aspect-ratio:auto; gap:clamp(8px,.5vw,16px); }
+  .dietfit-home--en .df-integrations__tile { padding:clamp(16px,1vw,28px); }
+  .dietfit-home--en .df-integrations__tile img { width:min(100%,clamp(72px,4.2vw,128px)); }
+  .dietfit-home--en .df-integrations__hub { width:clamp(176px,9vw,280px); padding:1.5rem 1rem 1.125rem; }
+  .dietfit-home--en .df-integrations__hub > img { width:clamp(64px,3.5vw,112px); height:auto; aspect-ratio:1; }
+  .dietfit-home--en .df-integrations__porter { --df-porter-size:clamp(180px,9vw,280px); width:var(--df-porter-size); height:var(--df-porter-size); }
+  .dietfit-home--en .df-integrations__porter--left { left:calc(50% - var(--df-porter-size) - 10px); }
+  .dietfit-home--en .df-integrations__porter--right { right:calc(50% - var(--df-porter-size) - 10px); }
+  .dietfit-home--en .df-hero-scan__label { font-size:clamp(.625rem,.8vw,.875rem); }
+  .dietfit-home--en .df-hero-finale__phone { height:min(calc(100% - 176px),1600px); }
+  .dietfit-home--en .df-hero-dashboard { width:min(clamp(620px,40vw,1200px),calc((100svh - 180px) * 1.04),88%); }
+  .dietfit-home--en .df-hero-finale__peek-window { width:clamp(128px,7vw,220px); }
+  .dietfit-home--en .df-score-strip__inner { padding-block:clamp(2.5rem,4vw,3.5rem) clamp(2rem,3vw,3rem); }
+}

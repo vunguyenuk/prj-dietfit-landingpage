@@ -19,7 +19,7 @@
 /* Peek from the inward edge, using the column gap instead of pushing outside
    the page container. The phone occludes the mascot's right side. */
 .dietfit-home--en .df-feature .df-feature-peek.df-mascot {
-  --df-mascot-width:min(220px,calc(var(--df-feature-visual-width,400px) * .52));
+  --df-mascot-width:min(13.75rem,calc(var(--df-feature-visual-width,400px) * .52));
   position:absolute;
   z-index:1;
   grid-column:auto;
@@ -34,5 +34,5 @@
   pointer-events:none;
 }
 .dietfit-home--en .df-feature--widgets .df-feature-peek.df-mascot {
-  --df-mascot-width:min(180px,calc(var(--df-feature-visual-width,400px) * .4));
+  --df-mascot-width:min(11.25rem,calc(var(--df-feature-visual-width,400px) * .4));
 }

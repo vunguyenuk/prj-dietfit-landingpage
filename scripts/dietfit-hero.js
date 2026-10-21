@@ -132,6 +132,7 @@
   }
 
   function resize() {
+    if (scan) scan.resize();
     if (finale) finale.resize();
     if (player && player.loaded && player.artboard) {
       player.resizeDrawingSurfaceToCanvas(window.devicePixelRatio || 1);

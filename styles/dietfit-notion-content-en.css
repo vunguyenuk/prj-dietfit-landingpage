@@ -1,0 +1,78 @@
+/* Approved EN copy from the user-supplied Notion export. */
+.dietfit-home--en .dietfit-hero-heading { font-size:clamp(2.75rem,5.2vw,5rem); }
+.dietfit-home--en .df-feature-body strong { display:inline-block; margin-top:.65em; font-weight:600; color:#110b20; }
+.df-feature--fasting { min-height:220svh; }
+.df-native .df-fasting-app { background:#fffaf6; font-size:14px; line-height:1.4; }
+.df-fasting-status { display:flex; justify-content:space-between; padding:22px 28px 0 40px; height:54px; font-size:15px; }
+.df-fasting-island { position:absolute; top:12px; left:50%; translate:-50% 0; width:116px; height:32px; border-radius:24px; background:#15130f; }
+.df-fasting-content { padding:22px 26px; }
+.df-native .df-fasting-content h3 { font-size:25px; font-weight:600; letter-spacing:-.025em; margin:0 0 8px; }
+.df-native .df-fasting-date { color:#8d8882; font-size:13px; }
+.df-fasting-schedules { display:flex; padding:4px; gap:4px; margin-top:24px; border-radius:24px; background:#f0e9e0; }
+.df-native .df-fasting-schedules button { flex:1; padding:9px; border-radius:22px; font-size:13px; min-height:40px; }
+.df-native .df-fasting-schedules button[aria-pressed="true"] { color:#fffaf6; background:#fe692e; }
+.df-fasting-clock { position:relative; width:230px; margin:24px auto 20px; aspect-ratio:1; }
+.df-fasting-clock svg { width:100%; height:100%; transform:rotate(-90deg); }
+.df-fasting-clock circle { fill:none; stroke-width:9; }
+.df-fasting-track { stroke:#f0e9e0; }
+.df-fasting-arc { stroke:#fe692e; stroke-linecap:round; stroke-dasharray:1; stroke-dashoffset:1; }
+.df-fasting-clock > div { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:10px; }
+.df-fasting-clock span { font-size:13px; color:#8d8882; }
+.df-fasting-clock strong { font-size:45px; line-height:1.1; letter-spacing:-.04em; font-variant-numeric:tabular-nums; }
+.df-fasting-clock small { font-size:12px; color:#8d8882; }
+.df-fasting-window { display:grid; grid-template-columns:1fr 1.3fr; gap:12px; }
+.df-fasting-window > span { display:grid; gap:7px; }
+.df-fasting-window i { width:8px; height:8px; border-radius:50%; background:#fe692e; }
+.df-fasting-window > span:last-child i { background:#abc53e; }
+.df-fasting-window small { color:#8d8882; font-size:11px; }
+.df-fasting-window b { font-size:12px; }
+.df-fasting-timeline { position:relative; height:8px; border-radius:8px; margin-top:22px; background:#abc53e; }
+.df-fasting-timeline span { display:block; height:100%; width:66.66%; background:#fe692e; border-radius:8px 0 0 8px; }
+.df-fasting-timeline i { position:absolute; top:-3px; left:0; width:12px; height:12px; border:2px solid #fff; background:#30261d; border-radius:50%; }
+.df-fasting-legend { display:flex; justify-content:space-between; color:#8d8882; font-size:10px; margin-top:9px; }
+.df-fasting-next { display:grid; gap:8px; padding:18px; margin-top:20px; border-radius:18px; background:#f4ede4; }
+.df-fasting-next > span { color:#8d8882; font-size:11px; }
+.df-fasting-next strong { font-size:14px; line-height:1.4; }
+.df-native .df-fasting-next p { font-size:11px; color:#8d8882; }
+.df-native .df-fasting-sample { color:#8d8882; font-size:10px; text-align:center; margin-top:12px; }
+.df-fasting-home { position:absolute; bottom:9px; left:50%; translate:-50% 0; width:122px; height:5px; background:#30261d; border-radius:8px; }
+.is-eating .df-fasting-arc { stroke:#8ca53b; }
+/* New level-two feature cards keep their live copy above a native product vignette. */
+.dietfit-highlights--en .df-habit-card { color:#211c29; background:#f3e9df; container-type:inline-size; }
+.dietfit-highlights--en .df-habit-card::before { display:none; }
+.dietfit-highlights--en .df-habit-card .dietfit-card-copy p { color:#625d6b; }
+.df-habit-art { position:absolute; inset:37% 7% 5%; display:flex; align-items:center; justify-content:center; font-family:var(--dietfit-font); }
+.df-habit-art > div { width:100%; }
+.df-habit-streak { padding:8%; border-radius:24px; background:#fffaf6; text-align:center; box-shadow:0 12px 40px rgb(68 40 14 / 8%); }
+.df-habit-streak > span { display:block; font-size:14cqw; }
+.df-habit-streak > strong { display:block; font-size:21cqw; line-height:1.1; letter-spacing:-.05em; }
+.df-habit-streak > b { display:block; margin-top:2%; font-size:4cqw; font-weight:500; }
+.df-habit-streak > div { display:flex; justify-content:space-between; margin-top:10%; gap:3%; }
+.df-habit-streak i { display:grid; place-items:center; width:10%; aspect-ratio:1; border-radius:50%; background:#fe692e; color:white; font-size:2.8cqw; font-style:normal; }
+.df-habit-streak i:last-child { background:#eee7df; color:#7a7166; }
+.df-habit-streak p { font-size:3cqw; margin:8% 0 0; color:#8d8882; }
+.dietfit-highlights--en .df-habit-card--challenge { background:#f4ead7; }
+.df-habit-challenge { padding:8%; background:#fffaf0; border-radius:24px; }
+.df-habit-challenge > span { display:block; color:#fe692e; font-size:13cqw; margin-bottom:8%; }
+.df-habit-challenge > small { font-size:2.8cqw; color:#8d7c5e; letter-spacing:.07em; }
+.df-habit-challenge > strong { display:block; margin-top:5%; font-size:7cqw; line-height:1.2; letter-spacing:-.03em; }
+.df-habit-challenge > div { margin-top:12%; font-size:3cqw; }
+.df-habit-challenge b { font-size:5cqw; margin-right:3%; }
+.df-habit-challenge i { display:block; height:8px; background:#efe5d4; border-radius:8px; margin-top:5%; }
+.df-habit-challenge em { display:block; width:57%; height:100%; background:#fe692e; border-radius:8px; }
+.df-habit-challenge p { font-size:3cqw; color:#9c6c26; margin:8% 0 0; }
+.dietfit-highlights--en .df-habit-card--reminder { background:#e8eee3; }
+.df-habit-reminder { display:grid; gap:18px; }
+.df-habit-reminder > div { display:grid; gap:8px; padding:9%; background:#fffaf6; border-radius:22px; }
+.df-habit-reminder img { width:11%; aspect-ratio:1; border-radius:8px; margin-bottom:5%; }
+.df-habit-reminder b { font-size:4.5cqw; }
+.df-habit-reminder span,.df-habit-reminder small { font-size:3cqw; color:#8d8882; }
+.df-habit-reminder strong { font-size:13cqw; line-height:1.1; letter-spacing:-.04em; }
+.dietfit-highlights--en .df-habit-card--together { background:#f5e4dc; }
+.df-habit-together { display:grid; gap:16px; }
+.df-habit-together > div { display:flex; align-items:center; gap:6%; padding:6%; border-radius:22px; background:#fffaf6; }
+.df-habit-together > div:last-child { margin-left:10%; }
+.df-habit-together img { width:38%; aspect-ratio:1; object-fit:cover; border-radius:15px; }
+.df-habit-together span { font-size:3.5cqw; font-weight:500; }
+.df-habit-together small { display:block; font-size:2.7cqw; color:#8d8882; font-weight:400; margin-top:6px; }
+@media(max-width:767px) { .dietfit-home--en .dietfit-hero-heading { font-size:clamp(2.25rem,9vw,3.25rem); } }
