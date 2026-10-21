@@ -73,3 +73,7 @@ Giữ nội dung Fasting; thay phone/timer bằng nguyên cụm Widgets & Streak
 - Bỏ fade theo scroll gây tay/món ăn bán trong suốt. Chỉ bo lại mép texture trong 160px đầu gần cùi chỏ, không sửa bàn tay, món ăn hay keyframe.
 - Hero lề 20px cả bốn phía khi pin; header đặt 20px vào trong hero ở trên/trái/phải. Không đổi container của các section khác.
 - Kiểm tra byte timeline desktop/compact, pixel/alpha vùng bàn tay+món ăn, scan geometry, safe fit, resize/reduced motion, syntax và build đều pass. Browser vẫn chưa kết nối nên chưa xác nhận render trang cuối.
+
+## Before/After trái, chữ phải, căn trên — 22/10
+
+Theo phản hồi mới nhất, đảo thứ tự DOM của section so sánh: ảnh Before/After bên trái, copy bên phải. Hai cột căn mép trên; heading, lead, body và CTA căn cùng mép trái bằng cách bỏ margin auto của heading. Tablet/mobile xếp ảnh trước, chữ sau và giữ cùng trục trái. Nội dung, ảnh gốc/tỷ lệ và reveal theo scroll được giữ. Build và kiểm tra cấu trúc qua; render browser vẫn chưa xác nhận qua kết nối của phiên.
