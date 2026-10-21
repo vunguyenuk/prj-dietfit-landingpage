@@ -1,13 +1,13 @@
 # Dietfit EN hero imagery
 
-## Current revision: real photography, 21 October 2026
+## Current revision: user-supplied photo, 21 October 2026
 
-The earlier generated chicken/quinoa and table imagery has been replaced. The current table and bowl use actual photographs by Brooke Lark, discovered through a Pinterest pin and traced to their original Unsplash/Wikimedia sources. See `photo-sources.json` for provenance and CC0 records.
+The previous Brooke Lark breakfast variant is replaced by the user's attached café-table photograph, showing a quinoa/roasted vegetable/egg bowl and an omelet plate on a green outdoor table.
 
-- `table-source.png`: proportionally cropped Breakfast at Dawn photograph.
-- `meal-hand-source.png`: cropped yogurt/fruit bowl photograph, masked to a transparent plate-shaped slot and composited with the existing hand from the original EN Rive export. This is a photographic composite, not an unedited photograph of someone holding this bowl.
-- `bg.webp`, `hands.webp`, `food.webp`, `scan.png`: derived with `tools/build-rive-us.cjs` so the same bowl appears in the scene, result image and camera thumbnail.
-- Result copy now reads “Yogurt & fruit bowl”; nutrition is illustrative sample data with six ingredient energies summing to 488 kcal.
-- Run `tools/build-rive-us.cjs` with the existing canvas/sharp dependencies, then `tools/build-rive-us.py` to rebuild the EN exports. Inputs are the checked-in source PNGs.
+- `table-source.png`: exact user-provided PNG, 1199×1799. Desktop background uses proportional cover cropping; the mobile fallback poster uses the portrait source directly.
+- `meal-hand-source.png`: top bowl cropped from that photograph, alpha-masked into the existing moving plate slot and composited with the existing hand. This is a photographic composite, not an untouched photograph of someone holding this bowl.
+- `bg.webp`, `hands.webp`, `food.webp`, `scan.png`: derived with `tools/build-rive-us.cjs`; the same bowl appears in the scene and app thumbnails.
+- Result copy: “Roast veggie bowl”, 620 kcal of illustrative sample portions. These values do not measure the photographer's actual meal.
+- Rebuild with `tools/build-rive-us.cjs` then `tools/build-rive-us.py`. Provenance is recorded in `photo-sources.json`.
 
-All original VI exports, runtime code, timelines and state machines remain unchanged. EN resource versions are advanced to avoid cached generated-food assets.
+Original VI exports, timelines, state machines and runtime remain unchanged. EN resources use `20261021-user-photo-1` to avoid cached previous imagery.

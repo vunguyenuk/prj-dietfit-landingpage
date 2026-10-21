@@ -1,27 +1,17 @@
 {
-  "revision": "20261021-photo-1",
-  "method": "Real food photographs, cropped and masked to the existing Rive image slots. The original hand layer and all animation/state-machine bytes are retained. No food pixels were generated with AI for this revision.",
-  "photos": [
-    {
-      "role": "surrounding breakfast table",
-      "author": "Brooke Lark",
-      "title": "Breakfast at Dawn",
-      "pinterest": "https://in.pinterest.com/pin/1058205243667747996/",
-      "original": "https://unsplash.com/photos/aGjP08-HbYY",
-      "download": "https://upload.wikimedia.org/wikipedia/commons/0/06/Breakfast_at_Dawn_%28Unsplash%29.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
-      "licenseRecord": "https://commons.wikimedia.org/wiki/File:Breakfast_at_Dawn_(Unsplash).jpg",
-      "license": "CC0 1.0; published on Unsplash before 5 June 2017",
-      "sourceDate": "2017-05-19"
-    },
-    {
-      "role": "yogurt, fruit and granola bowl; matching app thumbnails",
-      "author": "Brooke Lark",
-      "original": "https://unsplash.com/photos/nTZOILVZuOg",
-      "download": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Brooke_Lark_2017-05-10_%28Unsplash%29.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
-      "licenseRecord": "https://commons.wikimedia.org/wiki/File:Brooke_Lark_2017-05-10_(Unsplash).jpg",
-      "license": "CC0 1.0; published on Unsplash before 5 June 2017",
-      "sourceDate": "2017-05-10"
-    }
+  "revision": "20261021-user-photo-1",
+  "source": "User attachment codex-clipboard-f5c768c2-d0e7-4fb7-a4c9-101d0c2cafba.png",
+  "sourceDimensions": [
+    1199,
+    1799
   ],
-  "nutrition": "Illustrative sample portions, not nutritional analysis of the photographer's meal. Six sample ingredient energies sum to 488 kcal."
+  "sourceSha256": "16a835e990863bf50a90a3935b744123a4d42ee14628b8cff8cf6c08c2461795",
+  "roles": [
+    "Table background and poster",
+    "Top bowl cropped into moving hand/plate slot",
+    "Same bowl in app result photo and recent meal thumbnail"
+  ],
+  "method": "Source photograph retained without generative editing. Crop, alpha mask, resize and composite with existing hand layer. Source photo is stored byte-for-byte as table-source.png.",
+  "nutrition": "Roast veggie bowl: illustrative sample data, not measurement of the photographed meal. Six ingredient energies sum to 620 kcal.",
+  "animation": "Original timeline and state-machine bytes retained in both EN exports."
 }
