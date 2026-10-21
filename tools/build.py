@@ -228,7 +228,10 @@ def inject(page_html, block):
 # Trang chủ: FAQ lấy trực tiếp từ HTML để luôn khớp với nội dung hiển thị.
 # --------------------------------------------------------------------------
 def faq_from_html(page_html):
-    items = re.findall(r"<summary>(.*?)</summary>\s*<p>(.*?)</p>", page_html, re.S)
+    section = re.search(r'<section\b[^>]*\bid="dietfit-faq"[^>]*>(.*?)</section>', page_html, re.S)
+    if not section:
+        return []
+    items = re.findall(r"<summary>(.*?)</summary>\s*<p>(.*?)</p>", section.group(1), re.S)
     clean = lambda s: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s))).strip()
     return [
         {"@type": "Question", "name": clean(q), "acceptedAnswer": {"@type": "Answer", "text": clean(a)}}
