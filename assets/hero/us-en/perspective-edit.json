@@ -1,0 +1,23 @@
+{
+  "mode": "built-in image_gen edit",
+  "revision": "20261021-perspective-1",
+  "edits": [
+    {
+      "inputs": [
+        "hands.webp (previous composite)",
+        "table-source.png (photographic reference)"
+      ],
+      "output": "meal-hand-source.png",
+      "generatedOutput": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-1fcbea30-0a38-41ce-8b03-49d1b09a0669.png",
+      "prompt": "Precise perspective/hand-grip correction for a transparent website animation asset. Image 1 is the edit target with a badly composited hand and bowl. Image 2 is the real source photo; use ONLY its upper gray food bowl as the food/plate reference, including quinoa, orange roasted vegetables, kale, fried egg, lime and small metal sauce cup. Correct the bowl to the same near-overhead camera angle as Image 2, with a nearly circular rim, NOT the vertically squashed ellipse in Image 1. Correct the hand so the thumb and fingers physically grip the bowl rim at its upper-left edge; no floating finger, severed wrist, or fingers passing through the food. Keep the arm entering from the upper-left edge. The scene uses hard outdoor daylight from upper left, matching Image 2. Preserve real photographic food appearance, contents, arrangement and color; no added or missing ingredients. Keep the whole gray bowl visible. Composition target on a 1536x1055 transparent canvas: bowl roughly 730x730 pixels, centered about x917 y665, so rim extends about x552..1282 and y300..1030. Arm joins the upper left rim naturally, leaving open transparent space on right and no black/white cutout halo. Output ONLY the hand/forearm holding the round gray bowl, with genuine transparent background. Do not include the green bench, napkin, cutlery, lower omelet plate, drink, text, phone or other objects.",
+      "finishing": "Proportional fit on 1536×1055 transparent canvas; one-pixel alpha erosion removes edge fringe."
+    },
+    {
+      "input": "table-bench-clean.png (previous upper-bowl removal)",
+      "output": "table-bench-clean.png",
+      "generatedOutput": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-4c3a7f56-9fa1-4243-8631-be324867e686.png",
+      "prompt": "Precise object removal from this exact portrait photo. Remove the entire remaining lower omelet plate and all its contents and cast shadow (roughly x230–850 y890–1520 in the 1199x1799 photo). Reconstruct only the green metal bench slats, gaps, pavement and consistent existing sunlight underneath the plate. Keep the pink drink at lower left exactly as it is. Keep napkin, knife, fork, all surrounding bench edges, perspective, diagonal lines and pavement unchanged. The upper bowl has already been removed: keep that area empty. Final photograph must contain NO plates or bowls on the bench, just the cutlery/napkin/drink on the green slats. Preserve the full framing and natural photographic texture. No new food or objects.",
+      "finishing": "Full portrait edit resized to the original 1199×1799 background dimensions."
+    }
+  ]
+}

@@ -26,7 +26,7 @@ async function main(){
  await sharp(path.join(dir,'table-bench-clean.png')).resize(1448,1086,{fit:'cover',position:'centre'}).webp({quality:88}).toFile(path.join(dir,'bg.webp'));
  const hand=await loadImage(path.join(dir,'hands.webp')),table=await loadImage(await sharp(path.join(dir,'table-source.png')).resize(1448,1086,{fit:'cover',position:'centre'}).webp({quality:88}).toBuffer());
  // Shared food image crop: the same exact plate appears in the hand, result and thumbnail.
- function foodCrop(o,x,y,w,h){const c=o.c;c.drawImage(hand,560,400,710,650,x,y,w,h)}
+ function foodCrop(o,x,y,w,h){const c=o.c;c.drawImage(hand,525,250,710,710,x,y,w,h)}
  let o=surface(413,416);foodCrop(o,0,0,413,416);let g=o.c.createLinearGradient(0,300,0,416);g.addColorStop(0,'#ffffff00');g.addColorStop(1,'#ffffffff');o.c.fillStyle=g;o.c.fillRect(0,300,413,116);status(o,true);circle(o,43,89,20,'#ffffff55');text(o,'‹',33,72,29);circle(o,370,89,20,'#ffffff55');text(o,'⋮',366,73,25);save('food',o);await sharp(path.join(dir,'food.png')).webp({quality:92,alphaQuality:100}).toFile(path.join(dir,'food.webp'));fs.unlinkSync(path.join(dir,'food.png'));
  // Main meal result: same 404 x 1311 layout and information density as the original.
  o=surface(404,1311);rect(o,1,1,402,348,24,'#fff','#e4e4e4');rect(o,22,22,86,29,16,'#f5f5f5');text(o,'12:30 PM',32,28,13);text(o,'Roast veggie bowl',22,76,18,C.ink,600);circle(o,280,86,13,'#f5f5f5');text(o,'−',274,77,17);text(o,'1',318,77,18,C.ink,500);circle(o,368,86,13,'#f5f5f5');text(o,'+',362,77,17);rect(o,22,126,360,88,18,'#fff',C.line);flame(o,125,151,28);text(o,'620',164,147,38,C.ink,600);text(o,'kcal',252,162,16,C.muted);
