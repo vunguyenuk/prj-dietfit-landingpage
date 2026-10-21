@@ -1,7 +1,7 @@
 # EN feature carousel sizing
 
-The six original Figma cards remain between integrations and FAQ. Desktop (1024px and wider) shows four complete cards in the shared container, using a 16px gap and `flex-basis:calc((100% - 48px) / 4)`. At the 1240px page maximum, each card is 298px wide and 417.2px tall, retaining its original 5:7 artwork ratio.
+The six original Figma cards remain between integrations and FAQ. Desktop (1024px and wider) now prioritizes readable artwork and copy: three complete cards plus a portion of the next card, with a 20px gap and `flex-basis:calc((100% - 60px) / 3.2)`. At the shared 1240px maximum, each card is 368.75 × 516.25px, retaining its original 5:7 artwork ratio. This is about 24% larger in each dimension than the earlier four-card treatment.
 
-Desktop copy uses a 17–20px heading, 13px body and 14–20px padding. Tablet shows two complete cards; mobile retains one card with native touch scrolling. Original artwork and six-card order are unchanged. Desktop arrow controls use the existing Lenis scroll controller so native smooth scrolling does not compete with the page’s scroll animation. The pinned carousel content is vertically centered so its smaller cards do not sit at the top of a mostly empty sticky stage.
+Desktop headings are 20–24px; body copy is 16px with 1.5 line height, and padding is 20–24px. Tablet still shows two cards and mobile one. Original artwork, six-card order, pinned scroll and existing Lenis arrow navigation are preserved.
 
-Validation: live desktop measurement confirms four fully visible cards at the start of the carousel; 298px card width, 16px gaps, 1240px frame. Site build and diff whitespace checks pass.
+Validation: live desktop measurement confirms 368.75px card width, 516.25px height, 20px gaps, 24px headings and 16px body copy inside the shared frame. Site build and whitespace checks pass.
