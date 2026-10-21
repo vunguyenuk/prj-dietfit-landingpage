@@ -36,7 +36,7 @@
   const compactQuery = window.matchMedia('(max-width: 1024px)');
   // EN uses a separate US food/UI image set; the original VI exports remain untouched.
   const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-us-en' : '';
-  const heroVersion = langSuffix ? '20261021-perspective-1' : '20260918-1';
+  const heroVersion = langSuffix ? '20261021-cards-1' : '20260918-1';
   function currentHeroFile() {
     return compactQuery.matches
       ? 'dietfit-hero-responsive' + langSuffix + '.riv?v=' + heroVersion
