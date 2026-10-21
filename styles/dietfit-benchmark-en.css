@@ -1,0 +1,64 @@
+/* US trust section: measured evidence replaces market-specific creator videos. */
+.df-benchmark { padding:clamp(72px,8vw,128px) 24px; color:#110b20; background:#fff; scroll-margin-top:100px; }
+.df-benchmark__inner { width:min(100%,1200px); margin-inline:auto; }
+.df-benchmark__intro { display:grid; grid-template-columns:1.1fr 1fr; gap:clamp(32px,6vw,96px); align-items:end; margin-bottom:40px; }
+.df-benchmark__eyebrow { margin:0 0 18px; color:#a4431b; font-size:.8125rem; line-height:1.4; font-weight:500; letter-spacing:.08em; text-transform:uppercase; }
+.df-benchmark h2 { max-width:17ch; margin:0; font-size:var(--dietfit-type-section); font-weight:500; line-height:1.08; letter-spacing:-.04em; text-wrap:balance; }
+.df-benchmark__lead { max-width:43ch; margin:0 0 3px; color:#625d6b; font-size:clamp(17px,1.3vw,20px); line-height:1.65; }
+.df-benchmark__panel { display:grid; grid-template-columns:minmax(230px,.8fr) minmax(0,2fr); overflow:hidden; border:1px solid #e6e1dd; border-radius:28px; }
+.df-benchmark__summary { display:flex; flex-direction:column; align-items:start; padding:32px; background:#fff4ee; }
+.df-benchmark__brand { display:flex; align-items:center; gap:10px; font-size:1.25rem; font-weight:600; }
+.df-benchmark__brand img { width:32px; height:32px; border-radius:9px; }
+.df-benchmark__status { margin:28px 0 12px; padding:6px 10px; border:1px solid #e9c4b4; border-radius:20px; color:#8c3814; font-size:.75rem; line-height:1.4; font-weight:500; }
+.df-benchmark__summary h3 { margin:0 0 14px; max-width:12ch; font-size:clamp(28px,2.8vw,40px); font-weight:500; line-height:1.15; letter-spacing:-.035em; }
+.df-benchmark__summary p { margin:0 0 28px; color:#6a5147; font-size:.9375rem; line-height:1.6; }
+.df-benchmark__method-link { margin-top:auto; color:#110b20; font-size:.875rem; font-weight:500; text-underline-offset:4px; }
+.df-benchmark__results { padding:32px; min-width:0; }
+.df-benchmark__results h3 { margin:0 0 6px; font-size:1.125rem; font-weight:600; }
+.df-benchmark__results > p { margin:0 0 24px; color:#625d6b; font-size:.875rem; line-height:1.6; }
+.df-benchmark table { width:100%; border-collapse:collapse; font-size:.875rem; }
+.df-benchmark caption { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.df-benchmark :is(th,td) { padding:18px 10px; border-bottom:1px solid #eee9e5; text-align:right; vertical-align:middle; }
+.df-benchmark thead th { color:#625d6b; font-size:.75rem; font-weight:500; line-height:1.5; }
+.df-benchmark tr > :first-child { padding-left:0; text-align:left; }
+.df-benchmark tr > :last-child { padding-right:0; }
+.df-benchmark tbody th { width:51%; font-weight:500; }
+.df-benchmark tbody th span { display:block; margin-top:4px; color:#77717f; font-size:.75rem; font-weight:400; line-height:1.5; }
+.df-benchmark td { font-variant-numeric:tabular-nums; color:#77717f; }
+.df-benchmark tbody tr:last-child > * { border-bottom:0; }
+.df-benchmark__note { margin:18px 0 0!important; font-size:.75rem!important; line-height:1.6; }
+.df-benchmark__method { margin-top:24px; border-block:1px solid #e6e1dd; scroll-margin-top:104px; }
+.df-benchmark__method summary { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 0; list-style:none; cursor:pointer; font-size:1rem; font-weight:500; }
+.df-benchmark__method summary::-webkit-details-marker { display:none; }
+.df-benchmark__method summary::after { content:'+'; flex:none; font-size:1.5rem; font-weight:400; }
+.df-benchmark__method[open] summary::after { content:'−'; }
+.df-benchmark__method-body { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; padding-bottom:28px; }
+.df-benchmark__method-body h4 { margin:0 0 10px; font-size:.9375rem; font-weight:600; }
+.df-benchmark__method-body p { margin:0; color:#625d6b; font-size:.875rem; line-height:1.65; }
+.df-benchmark :is(a,summary):focus-visible { outline:3px solid #fe692e; outline-offset:5px; border-radius:3px; }
+@media(max-width:900px) {
+  .df-benchmark__intro { grid-template-columns:1fr; gap:24px; }
+  .df-benchmark__lead { max-width:60ch; }
+  .df-benchmark__panel { grid-template-columns:1fr; }
+  .df-benchmark__summary { display:grid; grid-template-columns:1fr 1fr; column-gap:32px; align-items:start; }
+  .df-benchmark__brand { grid-column:1; }
+  .df-benchmark__status { grid-column:2; grid-row:1; justify-self:end; margin:0; }
+  .df-benchmark__summary h3 { grid-column:1; max-width:18ch; margin-top:22px; }
+  .df-benchmark__summary p { grid-column:2; grid-row:2; margin:22px 0 0; }
+  .df-benchmark__method-link { grid-column:1 / -1; margin-top:12px; }
+}
+@media(max-width:600px) {
+  .df-benchmark { padding:64px 20px; }
+  .df-benchmark__intro { margin-bottom:28px; }
+  .df-benchmark__panel { border-radius:24px; }
+  .df-benchmark__summary { display:flex; padding:24px; }
+  .df-benchmark__status { margin:20px 0 12px; }
+  .df-benchmark__summary h3 { margin:0 0 12px; max-width:18ch; }
+  .df-benchmark__summary p { margin:0 0 20px; }
+  .df-benchmark__results { padding:24px 18px; }
+  .df-benchmark :is(th,td) { padding:16px 5px; }
+  .df-benchmark tbody th { width:48%; font-size:.8125rem; }
+  .df-benchmark tbody th span { font-size:.6875rem; }
+  .df-benchmark thead th { font-size:.6875rem; }
+  .df-benchmark__method-body { grid-template-columns:1fr; gap:24px; }
+}

@@ -1,0 +1,1 @@
+meal_id,category,input_type,scan_mode,app,app_version,tested_at,attempt,reference_source,reference_serving_g,reference_kcal,predicted_kcal,status,notes
