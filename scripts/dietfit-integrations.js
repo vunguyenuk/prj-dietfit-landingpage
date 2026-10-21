@@ -29,13 +29,13 @@
     animations.clear();
     section.classList.remove('is-delivery-ready');
     apps.forEach(function (app) {
-      app.classList.add('is-placed'); app.classList.remove('is-being-carried');
+      app.classList.add('is-placed'); app.classList.remove('is-being-carried','is-mounting');
       const tile = app.querySelector('.df-integrations__tile');
       tile.style.transform = ''; tile.style.opacity = '';
     });
     porters.forEach(function (porter) {
       porter.style.transform = ''; porter.classList.remove('is-working');
-      porter.classList.add('is-writing');
+      porter.classList.toggle('is-writing',!!porter.querySelector('.df-integrations__notetaker'));
       porter.querySelector('.df-integrations__facing').style.transform = '';
       porter.querySelector('.df-integrations__atlas').style.transform = cell(0);
     });
@@ -108,6 +108,14 @@
     if (token !== generation) return;
     const bounds = scene.getBoundingClientRect(),hubRect = hub.getBoundingClientRect();
     const tile = app.querySelector('.df-integrations__tile'),tileRect = tile.getBoundingClientRect();
+    const mount = app.querySelector('.df-integrations__mount');
+    if (mount) {
+      const parent = app.getBoundingClientRect();
+      mount.style.left = (tileRect.left - parent.left - 8).toFixed(2) + 'px';
+      mount.style.top = (tileRect.top - parent.top - 8).toFixed(2) + 'px';
+      mount.style.width = (tileRect.width + 16).toFixed(2) + 'px';
+      mount.style.height = (tileRect.height + 16).toFixed(2) + 'px';
+    }
     const origin = { x:hubRect.left - bounds.left + hubRect.width / 2,y:hubRect.top - bounds.top + hubRect.height / 2 };
     const rest = { x:tileRect.left - bounds.left + tileRect.width / 2,y:tileRect.top - bounds.top + tileRect.height / 2 };
     const pickup = { x:origin.x + side * (hubRect.width / 2 + 42),y:origin.y + 30 };
@@ -132,13 +140,14 @@
       x:limit(rest.x - rig.size * (carryingDir > 0 ? .78 : .22),8,bounds.width - rig.size - 8) - rig.home.x,
       y:limit(rest.y - rig.size * .61,8,bounds.height - rig.size - 8) - rig.home.y
     };
+    app.classList.add('is-mounting');
     await walk(rig,placingRoot,card,token);
     const reached = rest.y < card.point.y ? {x:rest.x,y:Math.max(rest.y,card.point.y - rig.size * .26)} : card.point;
     await Promise.all([
       pose(rig,[7,12,12,13,1],440,token),
       tween(tile,[cardFrame(card,card.point,.66,1),cardFrame(card,reached,.8,1),cardFrame(card,rest,1,1),cardFrame(card,rest,1,1)],440,token)
     ]);
-    app.classList.add('is-placed'); app.classList.remove('is-being-carried');
+    app.classList.add('is-placed'); app.classList.remove('is-being-carried','is-mounting');
     tile.style.transform = ''; tile.style.opacity = '';
     await walk(rig,{x:0,y:0},null,token);
     await pose(rig,[1,0],180,token);
@@ -167,7 +176,7 @@
           if (token !== generation) return;
           await deliver(scene.querySelector('.df-integrations__app--' + name),rig,job.side,token);
         }
-        if (token === generation) job.porter.classList.add('is-writing');
+        if (token === generation) job.porter.classList.toggle('is-writing',!!job.porter.querySelector('.df-integrations__notetaker'));
       }));
       if (token === generation) settle();
     } catch (_) { if (token === generation) settle(); }
