@@ -45,7 +45,7 @@
       })).then(function () { ready=true; measure(); paintScreen(); });
     }
     function wave(time) {
-      const keys = [[0,0],[550,0],[680,-4],[860,15],[1040,-6],[1230,12],[1430,-2],[1590,0],[2300,0]];
+      const keys = [[0,0],[550,0],[680,-8],[860,30],[1040,-14],[1230,27],[1430,-7],[1590,0],[2300,0]];
       for (let i=1;i<keys.length;i++) if(time<=keys[i][0]) {
         const a=keys[i-1],b=keys[i];return a[1]+(b[1]-a[1])*smooth((time-a[0])/(b[0]-a[0]));
       }

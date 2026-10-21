@@ -11,3 +11,5 @@ All finite animations use Web Animations transform/translate/rotate properties. 
 EN writing characters reference `assets/brand/mascots/3d/focused/writing-tongue.webp`: a built-in image_gen edit of the original writing pose with eyes directed toward the notebook and a small tongue at the screen-right mouth corner. Its original PNG and complete generation prompt are saved beside the production WebP. Original pose assets remain unchanged.
 
 Integration helpers keep their walking/carrying atlas while delivering app cards. After deliveries, the left helper uses the focused writing rig; the right uses the original empty-handed wave rig. Official logos, temporary glass targets and their paint order remain unchanged.
+
+EN waving poses use a clear three-swing greeting (−16° to +32° over 2.1–2.55s), with a small shoulder lift and grounded feet. Exercise poses retain their existing smaller arm gesture. The hero peek also uses a stronger two-wave greeting before it hides.

@@ -118,13 +118,14 @@
     const state = states.get(mascot);
     if (!state || !state.rig || state.gestureTimer || !mascot.classList.contains('is-mascot-active')) return;
     const rig = state.rig;
+    const waving = mascot.dataset.mascotPose === 'wave';
     const rest = first ? 450 + Math.random() * 1100 : (rig.writing ? 400 + Math.random() * 1100 : 3100 + Math.random() * 3900);
     state.gestureTimer = window.setTimeout(function () {
       state.gestureTimer = 0;
       if (!mascot.classList.contains('is-mascot-active')) return;
       state.gestures.forEach(function (animation) { animation.cancel(); }); state.gestures = [];
-      const duration = rig.writing ? 1900 + Math.random() * 700 : 2700 + Math.random() * 900;
-      const direction = Math.random() > .5 ? 1 : -1;
+      const duration = rig.writing ? 1900 + Math.random() * 700 : waving ? 2100 + Math.random() * 450 : 2700 + Math.random() * 900;
+      const direction = waving ? 1 : Math.random() > .5 ? 1 : -1;
       function play(element,frames) {
         if (!element) return;
         const animation = element.animate(frames.map(function (frame) {
@@ -137,7 +138,7 @@
       play(rig.body,[
         {translate:'0 0',rotate:'0deg',offset:0},
         {translate:(-.25 * direction) + '% .1%',rotate:(-.45 * direction) + 'deg',offset:.16},
-        {translate:(.6 * direction) + '% .2%',rotate:(1.15 * direction) + 'deg',offset:.43},
+        {translate:(waving ? '.8% -.45%' : (.6 * direction) + '% .2%'),rotate:(waving ? 1.8 : 1.15 * direction) + 'deg',offset:.43},
         {translate:(.25 * direction) + '% 0',rotate:(.35 * direction) + 'deg',offset:.77},
         {translate:'0 0',rotate:'0deg',offset:1}
       ]);
@@ -162,7 +163,12 @@
         {transform:'rotate(-.7deg)',offset:.63},{transform:'rotate(2deg)',offset:.72},
         {transform:'rotate(-1deg)',offset:.79},{transform:'rotate(.8deg)',offset:.88},{transform:'rotate(0)',offset:1}
       ]);
-      if (rig.arm) play(rig.arm,[
+      if (rig.arm) play(rig.arm,waving ? [
+        {transform:'rotate(0)',offset:0},{transform:'rotate(-8deg)',offset:.12},
+        {transform:'rotate(32deg)',offset:.26},{transform:'rotate(-16deg)',offset:.39},
+        {transform:'rotate(29deg)',offset:.52},{transform:'rotate(-13deg)',offset:.65},
+        {transform:'rotate(18deg)',offset:.78},{transform:'rotate(0)',offset:1}
+      ] : [
         {transform:'rotate(0)',offset:0},{transform:'rotate(-3deg)',offset:.15},
         {transform:'rotate(13deg)',offset:.32},{transform:'rotate(-5deg)',offset:.45},
         {transform:'rotate(9deg)',offset:.57},{transform:'rotate(1deg)',offset:.79},{transform:'rotate(0)',offset:1}
