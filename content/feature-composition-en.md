@@ -10,3 +10,12 @@ Earlier browser measurements confirmed equal phone sizes across the four precedi
 ## Alternating composition restored — 21 October, 21:25
 
 After the Notion chapter reorder, Connected Health retained its old flipped class and Meal Plan retained its old unflipped class, creating consecutive devices in the same column. The desktop sequence is now explicitly right / left / right / left / right for Deep Scan, AI Coach, Connected Health, Meal Plan and Fasting. The writing companion moves to the inward right edge of the left-side Meal Plan phone, preserving the original unmirrored artwork. Mobile retains its centered copy-then-device layout. Copy, phone scale, section gaps and scroll animations are unchanged.
+
+
+## Restored Widgets visual in the Fasting chapter
+
+Latest user feedback restores the former visual from the reference screenshot while retaining the Fasting heading, kicker, body and `#dietfit-fasting` anchor. The original EN stage markup from `0de06de^` is reused: Today calorie widget, dark Streak widget, full-width trend chart, meal photo and the exercise/waving companion. The section uses the existing `widgets` scroll renderer, including card/bar/chart reveal and reversal, instead of the fasting phone renderer.
+
+Desktop restores the wider visual column (.82/1.18 copy/visual ratio) and gives the companion its own lane. The widget fit calculation now measures its actual native column, reserving the companion's width; phone chapters retain their common sizing. Tablet/mobile retain the established single-column layout and companion hiding. VI markup and behavior remain unchanged.
+
+Validation compares the restored stage to the previous stage markup, verifies unchanged Fasting copy, four widgets and the companion, and exercises scroll reveal/reverse, reduced motion and mascot lifecycle. Build and syntax checks pass; full-browser verification remains unavailable through this session's connection.

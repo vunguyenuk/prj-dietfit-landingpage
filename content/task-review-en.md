@@ -52,3 +52,8 @@ Typography/card mới và mobile vẫn cần kiểm tra render. Công cụ brows
 - Bỏ đoạn xoay tay làm lộ mảnh tam giác, dùng tư thế hoàn chỉnh; bỏ camera/calculation crossfade có hai lớp UI chồng.
 - Cap khoảng trên/dưới hero 40px, cập nhật cache version cho mọi script/style đổi trong lượt này.
 - Build và kiểm tra logic/geometry qua; browser vẫn chưa kết nối để xác nhận full-page render mới.
+
+
+## Khôi phục visual Fasting theo ảnh mới
+
+Giữ nội dung Fasting; thay phone/timer bằng nguyên cụm Widgets & Streaks trước đó: Today, Streak, trend chart, ảnh bữa ăn và mascot bên phải. Desktop khôi phục visual column rộng hơn và lane riêng cho mascot; widget scale đo theo cột thực để không lấn nhân vật. Dùng lại renderer scroll/reverse widget. Đây là ngoại lệ mới theo yêu cầu người dùng cho ghi chú “năm phone đồng cỡ” trước đó: hiện còn bốn phone và một cụm widget.

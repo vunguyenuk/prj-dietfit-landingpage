@@ -40,3 +40,24 @@
 .dietfit-home--en .df-feature--widgets .df-feature-peek.df-mascot {
   --df-mascot-width:min(11.25rem,calc(var(--df-feature-visual-width,400px) * .4));
 }
+
+/* Restored widget visual: the companion has its own lane beside the cards,
+   rather than peeking from behind a phone. The chapter's Fasting copy stays. */
+@media(min-width:1025px) {
+  .dietfit-home--en .df-feature--widgets .df-feature-sticky { grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); }
+  .dietfit-home--en .df-feature--widgets .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    --df-widget-mascot-width:clamp(240px,23vw,340px);
+    grid-template-columns:minmax(0,1fr) var(--df-widget-mascot-width);
+    column-gap:clamp(12px,1.2vw,24px);
+  }
+  .dietfit-home--en .df-feature--widgets .df-feature-peek.df-mascot {
+    position:relative;
+    grid-column:2;
+    grid-row:1;
+    align-self:end;
+    width:var(--df-widget-mascot-width);
+    inset:auto;
+    margin:0 0 calc(var(--df-mascot-floor,0px) - var(--df-widget-mascot-width) * .05);
+    transform:none;
+  }
+}

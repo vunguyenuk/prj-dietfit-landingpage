@@ -284,7 +284,8 @@ function fit(el){
     const board=$('#wgs',el);
     if(mascot){
       board.style.width='460px';
-      const k=Math.min(sharedPhoneColumn?maxScale:1,availableWidth/460,Math.max(1,stage.clientHeight-24)/board.offsetHeight);
+      const widgetWidth=sharedPhoneColumn?native.clientWidth:availableWidth;
+      const k=Math.min(sharedPhoneColumn?maxScale:1,widgetWidth/460,Math.max(1,stage.clientHeight-24)/board.offsetHeight);
       board.style.transform=`scale(${k})`;
       if(sharedPhoneColumn)stage.style.setProperty('--df-feature-visual-width',`${460*k}px`);
       stage.style.setProperty('--df-mascot-floor',`${(stage.clientHeight-board.offsetHeight*k)/2}px`);
