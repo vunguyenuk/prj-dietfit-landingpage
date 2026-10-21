@@ -6,7 +6,7 @@ The EN hero uses a 900svh natural sticky runway. Capture and Deep Scan occupy th
 
 The finale is a pure function of scroll progress:
 
-- 0–24.5%: mascot peeks, waves and hides above the phone.
+- 0–24.5%: mascot peeks from the left side of the phone, greets with a gentle lean and retreats behind the same edge.
 - 27–38%: one calorie-budget panel moves out beside the phone.
 - The complete native Meal Detail screen is present from the start of the finale. It does not slide a second result UI over the old scrolled information screenshot.
 - 49–68%: colored nutrient dots move from the meal's macros to the budget; its ring, food total and macro values update. The reviewed 620 kcal meal changes food from 990 to 1,610 kcal, leaving 590 kcal against a 2,000 goal plus 200 activity calories.
@@ -31,3 +31,7 @@ The obsolete scrolled screenshot is removed from the DOM. One opaque native resu
 The hero's pinned top/bottom whitespace now equals the measured side gutter of the shared container, accounting for scrollbar width. The stage height is viewport height minus twice that gutter. Scroll progress uses the resulting stage height, so the finale still finishes before release. Insets also update on resize and in reduced-motion mode. Other section margins remain 100px.
 
 New DOM checks cover the Figma node, native SVG slots and nonempty local assets, removal of the old stacked UI, measured insets and VI isolation. Shared-panel transfer/freeze/reverse/resize checks, native scan geometry tests, JS syntax and the site build pass. Rendered browser geometry and screenshot comparison remain unverified because Browser use is disabled.
+
+## Side-peek correction
+
+The hero mascot now emerges horizontally from the left phone edge at 27% of its height, leaving the top of the viewport clear. The complete original waving image is used once. The separate masked/rotated arm layer and body cutout mask are removed, eliminating their tearing seam. Only the phone-side occlusion boundary clips the image; the other three sides have extra room for the greeting lean. It retreats before the budget panel appears, preserving the existing scroll timings, freeze and reversal. No timed animation is added.

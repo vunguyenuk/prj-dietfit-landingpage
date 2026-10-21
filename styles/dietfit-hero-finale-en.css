@@ -12,11 +12,11 @@
 .df-hero-finale__screen { position:absolute; inset:2.5% 5% 2%; overflow:hidden; border-radius:14% / 7%; background:transparent; }
 .df-hero-finale__screen > img { display:block; width:100%; height:auto; transform:translateY(-27.69%); }
 .df-hero-finale__hardware { position:absolute; inset:0; z-index:3; display:block; width:100%; height:100%; }
-.df-hero-finale__peek-window { position:absolute; z-index:1; left:50%; bottom:calc(100% - 8px); width:clamp(88px,9vw,128px); aspect-ratio:1 / .72; transform:translateX(-50%); overflow:hidden; }
-.df-hero-finale__mascot { position:relative; width:100%; aspect-ratio:1; transform:translateY(105%); transform-origin:50% 80%; }
+/* Peek horizontally from behind the left phone edge. Only that occlusion
+   edge clips; the complete original character has no arm/body cutout masks. */
+.df-hero-finale__peek-window { position:absolute; z-index:1; left:0; top:27%; width:clamp(88px,9vw,180px); aspect-ratio:1; transform:translateX(-100%); overflow:visible; clip-path:inset(-20% 0 -20% -20%); }
+.df-hero-finale__mascot { position:relative; width:100%; aspect-ratio:1; transform:translateX(105%); transform-origin:95% 65%; }
 .df-hero-finale__mascot img { display:block; width:100%; height:100%; object-fit:contain; }
-.df-hero-finale__mascot-base { mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='white' fill-rule='evenodd' d='M0 0H100V100H0ZM0 31H23L27 43V61H0Z'/%3E%3C/svg%3E"); mask-size:100% 100%; }
-.df-hero-finale__mascot-arm { position:absolute; inset:0; clip-path:polygon(0 31%,24% 31%,31% 42%,35% 49%,35% 61%,0 61%); transform-origin:31% 53%; }
 /* Shared opaque panels: the result and budget keep their identity while docking. */
 .df-hero-dashboard { position:absolute; z-index:3; left:50%; top:50%; width:min(620px,calc((100svh - 180px) * 1.04),88%); box-sizing:border-box; padding:16px; color:#211c29; transform:translate(-50%,-50%); font-family:var(--dietfit-font); font-size:0.75rem; }
 .df-hero-dashboard__surface { position:absolute; inset:0; border:1px solid #dedbd5; border-radius:24px; background:#f0eee8; clip-path:inset(0 0 100% round 24px); }

@@ -5,7 +5,7 @@
     if(!scene||!document.body.classList.contains('dietfit-home--en'))return null;
     const find=function(s){return scene.querySelector(s);};
     const phone=find('.df-hero-finale__phone'),hardware=find('.df-hero-finale__hardware');
-    const mascot=find('.df-hero-finale__mascot'),arm=find('.df-hero-finale__mascot-arm');
+    const mascot=find('.df-hero-finale__mascot');
     const screen=find('.df-hero-finale__screen'),logControl=find('.df-hero-result__log');
     const budget=find('.df-hero-dashboard__budget'),journal=find('.df-hero-dashboard__journal');
     const surface=find('.df-hero-dashboard__surface'),title=find('.df-hero-dashboard__title'),plan=find('.df-hero-dashboard__plan');
@@ -61,8 +61,8 @@
       hero.classList.toggle('is-hero-finale',ready&&!motion.matches&&p>0);
       if(!geometry)return;
       const g=geometry,peek=range(p,0,.045)*(1-range(p,.19,.245));
-      mascot.style.transform='translateY('+((1-peek)*105).toFixed(2)+'%) rotate('+(-1.5*peek).toFixed(2)+'deg)';
-      arm.style.transform='rotate('+wave(p).toFixed(2)+'deg)';
+      mascot.style.transform='translateX('+(105-73*peek).toFixed(2)+'%) rotate('+((-24+wave(p)*.12)*peek).toFixed(2)+'deg)';
+      mascot.style.visibility=peek>0?'visible':'hidden';
       // The same two opaque panels travel into the dashboard. No duplicate UI crossfade.
       const spread=range(p,.27,.38),transfer=range(p,.52,.68),dock=range(p,.72,.88);
       const x=mix(g.origin.x,g.floating.x,spread)*(1-dock),y=mix(g.origin.y,g.floating.y,spread)*(1-dock);
