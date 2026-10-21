@@ -180,7 +180,7 @@
   <link rel="stylesheet" href="/styles/dietfit-spacing-en.css?v=20261021-scroll-layout-1">
   <link rel="stylesheet" href="/styles/dietfit-responsive-en.css?v=20261021-1">
   <link rel="stylesheet" href="/styles/dietfit-containers-en.css?v=20261021-scroll-layout-1">
-  <link rel="stylesheet" href="/styles/dietfit-hero-finale-en.css?v=20261021-scroll-layout-1">
+  <link rel="stylesheet" href="/styles/dietfit-hero-finale-en.css?v=20261021-shared-motion-1">
   <link rel="stylesheet" href="/styles/dietfit-hero-scan-en.css?v=20261021-deep-scan-1">
 </head>
 
@@ -276,20 +276,33 @@
               <div class="df-hero-finale__backdrop"></div>
               <div class="df-hero-finale__phone">
                 <div class="df-hero-finale__peek-window"><div class="df-hero-finale__mascot"><img class="df-hero-finale__mascot-base" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"><img class="df-hero-finale__mascot-arm" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></div></div>
-                <div class="df-hero-finale__screen"><img src="/assets/hero/finale/food-information.png" alt="" width="404" height="1311" loading="lazy" decoding="async"></div>
+                <div class="df-hero-finale__screen"></div>
                 <img class="df-hero-finale__hardware" src="/assets/hero/finale/phone-frame.webp" alt="" width="899" height="1832" loading="lazy" decoding="async">
               </div>
-              <div class="df-hero-finale__cards">
-                <img class="df-hero-finale__card df-hero-finale__card--today-calories" src="/assets/hero/finale/today-calories.png" alt="" width="351" height="268" loading="lazy" decoding="async">
-              </div>
               <div class="df-hero-dashboard">
+                <div class="df-hero-dashboard__surface"></div>
                 <div class="df-hero-dashboard__title"><img src="/assets/images/dietfit-app-icon-192.png" alt="" width="192" height="192" loading="lazy"><span>Your nutrition, together.</span></div>
                 <div class="df-hero-dashboard__grid">
-                  <div class="df-hero-dashboard__budget"><img src="/assets/hero/finale/today-calories.png" alt="" width="351" height="268" loading="lazy" decoding="async"></div>
-                  <div class="df-hero-dashboard__plan"><h3>Meal plan</h3><p>Room for your taste.</p><div><img src="/assets/product/v2/scan/A-photo.jpg" alt="" width="80" height="80" loading="lazy"><span>Breakfast<small>A fresh start</small></span></div><div><img src="/assets/product/v2/scan/B-photo.jpg" alt="" width="80" height="80" loading="lazy"><span>Lunch<small>Made for your goal</small></span></div><div><img src="/assets/hero/deep-scan/meal.webp" alt="" width="710" height="710" loading="lazy"><span>Roast veggie bowl<small>620 kcal</small></span></div></div>
-                  <div class="df-hero-dashboard__journal"><h3>Food journal</h3><p>Today</p><img src="/assets/hero/deep-scan/meal.webp" alt="" width="710" height="710" loading="lazy" decoding="async"><strong>Roast veggie bowl</strong><span>620 kcal</span><div><span>Carbs <b>78g</b></span><span>Protein <b>23g</b></span><span>Fat <b>24g</b></span></div><small>6 ingredients · Reviewed by you</small></div>
+                  <div class="df-hero-dashboard__budget df-hero-finale__card">
+                    <h3><span>🔥</span> Calories today</h3>
+                    <div class="df-hero-budget__summary">
+                      <div class="df-hero-budget__dial"><svg viewBox="0 0 120 120"><circle class="df-hero-budget__track" cx="60" cy="60" r="50"/><circle class="df-hero-budget__ring" cx="60" cy="60" r="50" pathLength="1"/></svg><div><strong data-budget-left>1,210</strong><small>kcal left</small></div></div>
+                      <dl><div><dt>Goal</dt><dd>2,000</dd></div><div><dt>Food</dt><dd data-budget-food>990</dd></div><div><dt>Activity</dt><dd>+200</dd></div></dl>
+                    </div>
+                    <div class="df-hero-budget__macros"><div style="--macro:#abc53e"><span>Carbs</span><b data-budget-macro="carbs">140g</b><i><em></em></i></div><div style="--macro:#fa7866"><span>Protein</span><b data-budget-macro="protein">49g</b><i><em></em></i></div><div style="--macro:#edb342"><span>Fat</span><b data-budget-macro="fat">26g</b><i><em></em></i></div></div>
+                  </div>
+                  <div class="df-hero-dashboard__plan"><h3>Meal plan</h3><p>Room for your taste.</p><div><img src="/assets/product/v2/scan/A-photo.jpg" alt="" width="80" height="80" loading="lazy"><span>Breakfast<small>A fresh start</small></span></div><div><img src="/assets/product/v2/scan/B-photo.jpg" alt="" width="80" height="80" loading="lazy"><span>Lunch<small>Made for your goal</small></span></div><div class="df-hero-dashboard__logged-meal"><img src="/assets/hero/deep-scan/meal.webp" alt="" width="710" height="710" loading="lazy"><span>Roast veggie bowl<small>620 kcal · Logged ✓</small></span></div></div>
+                  <div class="df-hero-dashboard__journal">
+                    <div class="df-hero-finale__snapshot"><img src="/assets/hero/finale/food-information.png" alt="" width="404" height="1311" loading="lazy" decoding="async"></div>
+                    <div class="df-hero-result">
+                      <div class="df-hero-result__heading"><strong data-result-heading>Scan result</strong><span>Today</span></div>
+                      <div class="df-hero-result__photo"><img src="/assets/hero/deep-scan/meal.webp" alt="" width="710" height="710" loading="lazy" decoding="async"><span class="df-hero-result__tag df-hero-result__tag--egg">Fried egg</span><span class="df-hero-result__tag df-hero-result__tag--quinoa">Quinoa</span><span class="df-hero-result__tag df-hero-result__tag--veg">Vegetables</span></div>
+                      <div class="df-hero-result__sheet"><span class="df-hero-result__balanced">Balanced meal · 82/100</span><h3>Roast veggie bowl</h3><strong class="df-hero-result__calories">620 <small>kcal</small></strong><div class="df-hero-result__macros"><div data-result-macro="carbs" style="--macro:#abc53e"><i></i> Carbs<strong>78g</strong></div><div data-result-macro="protein" style="--macro:#fa7866"><i></i> Protein<strong>23g</strong></div><div data-result-macro="fat" style="--macro:#edb342"><i></i> Fat<strong>24g</strong></div></div><p>6 ingredients · Reviewed by you</p><div class="df-hero-result__log"><span data-result-log>Log meal</span><b>✓</b></div></div>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div class="df-hero-finale__nutrients"><i style="--macro:#abc53e"></i><i style="--macro:#abc53e"></i><i style="--macro:#abc53e"></i><i style="--macro:#fa7866"></i><i style="--macro:#fa7866"></i><i style="--macro:#fa7866"></i><i style="--macro:#edb342"></i><i style="--macro:#edb342"></i><i style="--macro:#edb342"></i></div>
             </div>
           </div>
         </div>
@@ -775,7 +788,7 @@
   <script src="/vendor/lenis/lenis.min.js"></script>
   <script src="/scripts/dietfit-scroll.js"></script>
   <script src="/scripts/dietfit-hero-scan-en.js?v=20261021-scroll-layout-1"></script>
-  <script src="/scripts/dietfit-hero-finale-en.js?v=20261021-scroll-layout-1"></script>
+  <script src="/scripts/dietfit-hero-finale-en.js?v=20261021-shared-motion-1"></script>
   <script src="/scripts/dietfit-hero.js?v=20261021-scroll-layout-1"></script>
   <script src="/scripts/dietfit-sections.js?v=20261021-four-cards-1"></script>
   <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>

@@ -1,21 +1,21 @@
-# EN hero: scroll-only meal-plans sequence
+# EN hero: shared-element meal-plans sequence
 
-Reference: user-supplied `/Users/vunguyen/Desktop/meal-plans.mp4` (6.47 seconds). Its choreography is capture → ingredient identification → one supporting macro card → phone result sheet → compact nutrition dashboard. Dietfit uses its own existing meal, phone and product artwork for the same sequence.
+Reference: user-supplied `/Users/vunguyen/Desktop/meal-plans.mp4` (6.47 seconds), examined frame by frame, including its nutrient transfer and phone-to-dashboard assembly. Dietfit retains its own meal, typography, product data and artwork.
 
-The EN hero now has a 900svh natural sticky runway. Progress starts only when the hero reaches the top of the viewport, rather than 188px before it. Capture and Deep Scan occupy the first 62% of that runway. The next 32% drives the greeting, result and dashboard; the final 6% holds the completed dashboard for reading before the sticky stage releases and the next section enters.
+The EN hero uses a 900svh natural sticky runway. Capture and Deep Scan occupy the first 62%. The next 32% drives the finale, then the final 6% holds the completed dashboard before the sticky stage releases.
 
 The finale is a pure function of scroll progress:
 
-- 0–4.5%: mascot peeks above the phone.
-- 4.5–19%: the larger hand waves follow scroll.
-- 19–24.5%: mascot hides completely.
-- 27–47%: one calorie-budget card emerges beside the phone.
-- 33–63%: the phone's ingredient result scrolls internally.
-- 66–85%: phone and supporting card move into the journal and budget positions of the compact dashboard, using measured target bounds and transform-only scaling.
-- 85–100%: completed dashboard stays readable.
+- 0–24.5%: mascot peeks, waves and hides above the phone.
+- 27–38%: one calorie-budget panel moves out beside the phone.
+- 31–49%: a meal photo and result sheet slide up inside the phone. Ingredient labels attach to the photo.
+- 49–68%: colored nutrient dots move from the meal's macros to the budget; its ring, food total and macro values update. The reviewed 620 kcal meal changes food from 990 to 1,610 kcal, leaving 590 kcal against a 2,000 goal plus 200 activity calories.
+- 72–88%: the **same budget and same result panel** translate and scale into their dashboard positions. Only the phone hardware fades away; the result and budget remain fully opaque. There is no second copy of either UI underneath them.
+- 83–93%: the enclosing dashboard surface expands behind those panels, the title is uncovered and Meal plan opens below the budget.
+- 93–100%: completed dashboard stays readable.
 
-The dashboard has a calorie budget, three-row meal plan and one food-journal entry. Nine of the previous ten floating cards have been removed from the DOM. No elapsed-time counters, autoplay, gesture timers, scroll cancellation or wheel interception drive this chapter. Stop scrolling and its state stops; scroll backward to reverse it. The original Rive exports are held before their native card burst and remain byte-identical. VI behavior is unchanged.
+This replaces the previous whole-phone/dashboard crossfade, which produced doubled translucent text and images at intermediate scroll positions. The dashboard does not have an opacity animation. Its budget and journal have exactly one DOM instance each throughout the sequence. Layout is measured only on setup, image decode and resize; per-frame movement uses transforms, small clip reveals and the hardware opacity. Existing Rive exports remain unchanged and pause before the native many-card burst. VI behavior is unchanged.
 
-The rounded background and UI layers remain separate, so the supporting card can extend beyond the black scene without clipping. Reduced-motion users retain the static poster.
+No timers, autoplay, wheel cancellation or scroll lock drive the finale. A stationary scroll position freezes all movement and counters, and reverse scrolling restores the earlier meal and budget state. Reduced motion retains the static poster. The rounded dark scene is separate from the shared panels, allowing the calorie card to extend beyond its edges.
 
-Validation: source checks, desktop/compact native handoff, deterministic stationary state, reverse playback, all phase boundaries, reduced motion, site build, and live Chrome inspection of the pinned stage and final dashboard.
+Validation: deterministic non-zero geometry tests cover shared identities, opaque docking at intermediate frames, nutrient flight, total arithmetic, stationary state, reversal, desktop/compact native handoff, resize and reduced motion. Deep Scan regression, syntax, site build and live browser checks are also run.
