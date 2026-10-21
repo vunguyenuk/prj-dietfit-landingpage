@@ -4,7 +4,7 @@
 
 | Yêu cầu | Kết quả hiện tại |
 | --- | --- |
-| Nền đen có khung, số liệu có khoảng thở | Hero có viền/bo góc riêng; khu số liệu được tách bằng khoảng cách section. |
+| Nền hero và khoảng thở | Theo yêu cầu mới nhất, cảnh dashboard dùng ảnh món scan làm mờ thay nền đen; hero giữ viền/bo góc và khoảng cách section. |
 | Footer CTA đưa lên cao hơn | Ảnh và nội dung CTA được nâng theo stylesheet EN. |
 | Mascot trái không che logo, viết sổ và lè lưỡi | Integration dùng vị trí nghỉ riêng và ảnh writing-tongue; chỉ nhân vật trái có sổ. |
 | Mascot phải không ghi chép | Nhân vật phải nghỉ/chào, không có notetaker. |
@@ -17,7 +17,7 @@
 | Before/after vừa màn hình, không sửa/bóp méo người | Gallery căn giữa, ảnh tối đa 76svh và có giới hạn theo viewport; ảnh gốc width:100%, height:auto. |
 | Deep Scan nằm trong phone trắng gốc | Overlay chỉ chứa đường viền/nhãn, đo theo native Rive; không có phone/ảnh thứ hai. |
 | Mascot ló ra, chào, thu lại rồi mới bung UI | Giữ trình tự scroll; mascot hiện ló từ cạnh trái phone bằng một ảnh nguyên, không tách tay. |
-| UI bung ra không crop trong nền đen | Layer nền và layer panel tách riêng; wrapper cho phép panel tràn. |
+| Phone và dashboard không vượt khung | Đã đổi native canvas sang FitHeight có vùng an toàn; dashboard đo theo chiều cao stage thực; bỏ nền vàng nhạt bao ngoài. Kiểm tra hình render vẫn chờ. |
 | Motion hero do scroll, hoàn tất rồi mới qua section sau | Hero pin 900svh; capture/scan → chào → budget → chuyển dinh dưỡng → dashboard → hold. Freeze/reverse đã qua kiểm tra logic. |
 | UI result theo Figma | Dùng Meal Detail 36627:85534 trong trang được gửi; icon gốc, native 375 × 812, nút đen; bỏ UI tự dựng và ảnh cũ chồng phía dưới. |
 | Card list giữa integration và FAQ | Đúng thứ tự trong HTML, giữ scroll/arrow navigation. |
@@ -41,3 +41,11 @@
 ## Phần chưa xác nhận
 
 Chưa có kiểm tra trực quan bản cuối trên browser ở desktop/mobile và màn hình lớn. Vì vậy độ khớp hình render với Figma/video meal-plans, cảm giác timing, text wrapping và crop/overflow thực tế vẫn chưa được chốt. Kết nối công cụ trình duyệt của phiên này từng trả lỗi quyền trái với cài đặt On mà người dùng đã cung cấp; không coi đây là lỗi cài đặt của người dùng và không yêu cầu bật lại.
+
+
+## Sửa theo phản hồi 21:06
+
+- Phone native bị crop do Cover phóng theo chiều ngang trong stage đã trừ gutter: đổi sang FitHeight có vùng an toàn và cập nhật cùng phép đo cho Deep Scan.
+- Dashboard vượt chiều cao vì lấy 100svh thay cho stage thực: giới hạn theo container height, giữ khoảng trống phía trên/dưới.
+- Thay nền đen bằng ảnh chính món vừa scan, làm mờ bằng CSS; xoá lớp nền vàng nhạt khỏi DOM và controller.
+- Kiểm tra logic/DOM, DPR/resize, freeze/reverse và build đã qua. Chưa có bằng chứng render browser cho bản sửa này.

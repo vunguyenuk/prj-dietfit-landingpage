@@ -1,14 +1,18 @@
 /* Keep the rounded scene background separate from its overflowing UI cards. */
 .dietfit-home--en .dietfit-hero-wrap { border:0; border-radius:0; overflow:visible; }
 .dietfit-home--en [data-component-name="scrollable-rive-hero"] { clip-path:none; overflow:visible; background:transparent; }
-.dietfit-home--en .dietfit-rive-canvas { clip-path:inset(0 round clamp(20px,2vw,32px)); }
-.dietfit-home--en .dietfit-hero-loading { border-radius:clamp(20px,2vw,32px); }
+.dietfit-home--en .dietfit-hero-stage { container-type:size; }
+.dietfit-home--en .dietfit-rive-canvas { clip-path:inset(0 round clamp(20px,2vw,32px)); background:url('/assets/hero/us-en/bg.webp') center/cover no-repeat; }
+.dietfit-home--en .dietfit-hero-loading { border-radius:clamp(20px,2vw,32px); background:url('/assets/hero/us-en/bg.webp') center/cover no-repeat; }
+.dietfit-home--en .dietfit-hero-poster img { object-fit:contain; padding:24px; box-sizing:border-box; }
 .dietfit-home--en .dietfit-hero-stage::after { content:""; position:absolute; inset:0; z-index:1; border:1px solid rgb(17 11 32 / 12%); border-radius:clamp(20px,2vw,32px); pointer-events:none; }
 .df-hero-finale { position:absolute; inset:0; z-index:2; overflow:visible; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 180ms linear; }
 .is-hero-finale .df-hero-finale { opacity:1; visibility:visible; }
 .dietfit-home--en [data-component-name="scrollable-rive-hero"].is-hero-finale .dietfit-rive-canvas { opacity:0; }
-.df-hero-finale__backdrop { position:absolute; inset:0; border:1px solid rgb(17 11 32 / 12%); border-radius:clamp(20px,2vw,32px); background:#1d1d1b url('/assets/hero/finale/dark-grid.webp') center/cover no-repeat; }
-.df-hero-finale__phone { position:absolute; z-index:5; left:50%; top:50%; height:min(calc(100% - 176px),980px); aspect-ratio:899/1832; transform:translate(-50%,-50%); }
+.df-hero-finale__backdrop { position:absolute; inset:0; border:1px solid rgb(17 11 32 / 12%); border-radius:clamp(20px,2vw,32px); overflow:hidden; background:#e6e8df; }
+.df-hero-finale__backdrop::before { content:""; position:absolute; inset:-48px; background:url('/assets/hero/deep-scan/meal.webp') center/cover no-repeat; filter:blur(24px); }
+.df-hero-finale__backdrop::after { content:""; position:absolute; inset:0; background:rgb(255 255 255 / 56%); }
+.df-hero-finale__phone { position:absolute; z-index:5; left:50%; top:50%; height:min(calc(100% - 96px),980px); aspect-ratio:899/1832; transform:translate(-50%,-50%); }
 .df-hero-finale__screen { position:absolute; inset:2.5% 5% 2%; overflow:hidden; border-radius:14% / 7%; background:transparent; }
 .df-hero-finale__screen > img { display:block; width:100%; height:auto; transform:translateY(-27.69%); }
 .df-hero-finale__hardware { position:absolute; inset:0; z-index:3; display:block; width:100%; height:100%; }
@@ -18,8 +22,9 @@
 .df-hero-finale__mascot { position:relative; width:100%; aspect-ratio:1; transform:translateX(105%); transform-origin:95% 65%; }
 .df-hero-finale__mascot img { display:block; width:100%; height:100%; object-fit:contain; }
 /* Shared opaque panels: the result and budget keep their identity while docking. */
-.df-hero-dashboard { position:absolute; z-index:3; left:50%; top:50%; width:min(620px,calc((100svh - 180px) * 1.04),88%); box-sizing:border-box; padding:16px; color:#211c29; transform:translate(-50%,-50%); font-family:var(--dietfit-font); font-size:0.75rem; }
-.df-hero-dashboard__surface { position:absolute; inset:0; border:1px solid #dedbd5; border-radius:24px; background:#f0eee8; clip-path:inset(0 0 100% round 24px); }
+.df-hero-dashboard { position:absolute; z-index:3; left:50%; top:50%; width:min(620px,calc(44px + (100cqh - 122px) * 750 / 812),88%); box-sizing:border-box; padding:16px; color:#211c29; transform:translate(-50%,-50%); font-family:var(--dietfit-font); font-size:0.75rem; }
+/* 74px title/padding + native 375:812 journal, with 24px breathing room per side.
+   Use the actual pinned stage height; viewport height ignores its white gutters. */
 .df-hero-dashboard__title { position:relative; display:flex; align-items:center; gap:10px; height:28px; margin-bottom:14px; font-size:0.875rem; font-weight:500; clip-path:inset(0 100% 0 0); }
 .df-hero-dashboard__title img { width:28px; height:28px; border-radius:8px; }
 .df-hero-dashboard__grid { position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto 1fr; gap:12px; align-items:stretch; }
@@ -110,10 +115,9 @@
   .dietfit-home--en .df-hero-finale { transition:none; }
 }
 @media(max-width:700px) {
-  .df-hero-finale__phone { left:62%; width:min(58%,240px); height:auto; }
+  .df-hero-finale__phone { left:62%; width:min(58%,240px,calc((100cqh - 48px) * 899 / 1832)); height:auto; }
   .df-hero-finale__peek-window { width:88px; }
-  .df-hero-dashboard { width:96%; padding:8px; }
-  .df-hero-dashboard__surface { border-radius:18px; }
+  .df-hero-dashboard { width:min(96%,calc(23px + (100cqh - 76px) * 750 / 812)); padding:8px; }
   .df-hero-dashboard__grid { gap:7px; }
   .df-hero-dashboard__title { font-size:10px; height:22px; margin-bottom:8px; gap:6px; }
   .df-hero-dashboard__title img { width:22px; height:22px; border-radius:6px; }

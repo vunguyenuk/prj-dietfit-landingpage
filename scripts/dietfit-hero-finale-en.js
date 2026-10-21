@@ -8,7 +8,7 @@
     const mascot=find('.df-hero-finale__mascot');
     const screen=find('.df-hero-finale__screen'),logControl=find('.df-hero-result__log');
     const budget=find('.df-hero-dashboard__budget'),journal=find('.df-hero-dashboard__journal');
-    const surface=find('.df-hero-dashboard__surface'),title=find('.df-hero-dashboard__title'),plan=find('.df-hero-dashboard__plan');
+    const title=find('.df-hero-dashboard__title'),plan=find('.df-hero-dashboard__plan');
     const result=find('.df-hero-result'),sheet=find('.df-hero-result__sheet');
     const particles=Array.from(scene.querySelectorAll('.df-hero-finale__nutrients i'));
     const sources=Array.from(scene.querySelectorAll('[data-result-macro]'));
@@ -90,7 +90,6 @@
       });
       log.textContent=transfer===1?'Meal logged':'Log meal';
       logControl.classList.toggle('is-logged',transfer===1);
-      surface.style.clipPath='inset(0 0 '+((1-range(p,.85,.92))*100).toFixed(2)+'% round 24px)';
       title.style.clipPath='inset(0 '+((1-range(p,.83,.91))*100).toFixed(2)+'% 0 0)';
       plan.style.clipPath='inset(0 0 '+((1-range(p,.82,.93))*100).toFixed(2)+'% round 16px)';
       plan.style.transform='translateY('+((1-range(p,.82,.93))*-24).toFixed(2)+'px)';

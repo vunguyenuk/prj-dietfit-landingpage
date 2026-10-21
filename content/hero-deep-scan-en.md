@@ -2,7 +2,7 @@
 
 Deep Scan is an overlay of ingredient contours, labels and a light scan band on the original white calculation screen inside the original Rive phone. It contains no photograph, second phone, screen background or replacement hardware. The original Rive files remain byte-for-byte unchanged.
 
-The existing roast-veggie bowl has six SVG regions (fried egg, roasted vegetables, quinoa, dressing, kale and chickpeas) and four staggered portion/calorie labels, consistent with the existing 620 kcal result. Overlay bounds derive from the native food image and parent transforms in each original 1920 × 1258 Rive artboard, using the same Cover / Center fit as the canvas. A resize recomputes those bounds.
+The existing roast-veggie bowl has six SVG regions (fried egg, roasted vegetables, quinoa, dressing, kale and chickpeas) and four staggered portion/calorie labels, consistent with the existing 620 kcal result. Overlay bounds derive from the native food image and parent transforms in each original 1920 × 1258 Rive artboard, using the same centered FitHeight safe viewport as the canvas (48px vertical reserve and a 700px native central frame constrained to the available width). A resize recomputes those bounds.
 
 The chapter occupies scroll progress .24–.44. The native timeline holds at desktop frame 199/539 or compact frame 274/1925 while contours draw, labels appear and the scan band passes. Continuing scroll resumes the same white screen's calculation and result. Reverse scroll erases the contours. No separate autoplay timer or animation frame loop is introduced.
 

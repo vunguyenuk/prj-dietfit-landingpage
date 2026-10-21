@@ -148,8 +148,26 @@
     if (finale) finale.resize();
     if (player && player.loaded && player.artboard) {
       player.resizeDrawingSurfaceToCanvas(window.devicePixelRatio || 1);
+      fitEnglishScene();
     }
     requestScrollUpdate();
+  }
+
+  function fitEnglishScene() {
+    if (!langSuffix || !player) return;
+    // Fit the artboard's height, rather than enlarging it to fill a wide stage.
+    // The 700px central safe frame includes the complete native phone. On a
+    // narrow screen, constrain that frame too, without shrinking to all 1920px.
+    const bounds=stage.getBoundingClientRect();
+    const height=Math.max(1,Math.min(bounds.height-48,(bounds.width-32)*1258/700));
+    const ratio=window.devicePixelRatio || 1;
+    const inset=(bounds.height-height)/2*ratio;
+    player.layout=new window.rive.Layout({
+      fit:window.rive.Fit.FitHeight,
+      alignment:window.rive.Alignment.Center,
+      minX:0,maxX:canvas.width,
+      minY:inset,maxY:canvas.height-inset
+    });
   }
 
   // Kéo wasm về ngay khi rive.js sẵn sàng, không đợi file .riv.
@@ -181,7 +199,7 @@
         enableRiveAssetCDN: false,
         isTouchScrollEnabled: true,
         layout: new window.rive.Layout({
-          fit: window.rive.Fit.Cover,
+          fit: langSuffix ? window.rive.Fit.FitHeight : window.rive.Fit.Cover,
           alignment: window.rive.Alignment.Center
         }),
         onLoad: function () {
@@ -210,6 +228,7 @@
             player.play(stateMachine);
           }
           player.resizeDrawingSurfaceToCanvas(window.devicePixelRatio || 1);
+          fitEnglishScene();
           if (compactQuery.matches && vm) {
             const mobileTrigger = vm.trigger('startMobile');
             if (mobileTrigger) mobileTrigger.trigger();
