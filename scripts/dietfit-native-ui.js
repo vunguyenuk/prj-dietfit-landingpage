@@ -253,7 +253,20 @@ const renderers={scan,coach,health:p=>{
  const line=$('#wgs .wg.m path:nth-of-type(2)'),L=line.getTotalLength();line.style.strokeDasharray=L;line.style.strokeDashoffset=L*(1-seg(p,.5,.85));
 }};
 const chapters=$$('[data-demo]');
-function fit(el){const stage=$('.df-feature-stage',el),device=$('.dv',el);if(el.dataset.demo==='widgets'){const native=$('.df-native',el),board=$('#wgs',el);native.style.width='460px';native.style.transform=`scale(${Math.min(1,stage.clientWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;return}if(!device)return;const k=Math.max(.1,Math.min(stage.clientHeight/832,(stage.clientWidth-12)/395,1.15));device.style.setProperty('--k',k.toFixed(4))}
+function fit(el){
+  const stage=$('.df-feature-stage',el),device=$('.dv',el);
+  const reserve=parseFloat(getComputedStyle(stage).getPropertyValue('--df-mascot-reserve'))||0;
+  const availableWidth=Math.max(1,stage.clientWidth-reserve);
+  if(el.dataset.demo==='widgets'){
+    const native=$('.df-native',el),board=$('#wgs',el);
+    native.style.width='460px';
+    native.style.transform=`scale(${Math.min(1,availableWidth/board.offsetWidth,Math.max(1,stage.clientHeight-24)/board.offsetHeight)})`;
+    return;
+  }
+  if(!device)return;
+  const k=Math.max(.1,Math.min(stage.clientHeight/832,(availableWidth-12)/395,1.15));
+  device.style.setProperty('--k',k.toFixed(4));
+}
 function draw(el,p){
  p=clamp(p);el.style.setProperty('--demo-p',p);el.dataset.demoProgress=p.toFixed(3);renderers[el.dataset.demo](p);
 }

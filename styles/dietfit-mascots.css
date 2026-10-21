@@ -29,15 +29,38 @@
 @keyframes df-mascot-meal { 0%,20%,100% { transform:rotate(0); } 8%,14% { transform:translateY(-2px) rotate(1deg); } }
 @keyframes df-mascot-writing { 0%,24%,100% { transform:rotate(0); } 6%,16% { transform:rotate(1.5deg); } 11%,21% { transform:rotate(.3deg); } }
 @keyframes df-mascot-approve { 0%,22%,100% { transform:translateY(0); } 8%,15% { transform:translateY(-3px) rotate(-1deg); } }
-/* New cutouts use a shared square canvas, with feet on the same baseline. */
-.df-feature-peek.df-mascot { width:clamp(90px,9vw,138px); }
-.df-feature--plan .df-feature-peek.df-mascot { width:clamp(86px,8vw,128px); }
-.df-feature--widgets .df-feature-peek.df-mascot { width:clamp(90px,9vw,136px); }
+/* Keep feature mascots out of the stage grid, beside the app visual. */
+.df-feature-peek.df-mascot {
+  position:absolute;
+  z-index:2;
+  width:clamp(192px,18vw,272px);
+  right:calc(-1 * clamp(16px,4.4vw,64px));
+  left:auto;
+  bottom:16%;
+  transform:none;
+}
+.df-feature--plan .df-feature-peek.df-mascot {
+  width:clamp(192px,18vw,272px);
+  left:calc(-1 * clamp(16px,4.4vw,64px));
+  right:auto;
+  bottom:16%;
+}
+.df-feature--widgets .df-feature-peek.df-mascot {
+  width:clamp(192px,18vw,272px);
+  right:calc(-1 * clamp(16px,4.4vw,64px));
+  bottom:12%;
+}
 .dietfit-easy__mascots:has(.df-mascot) { gap:clamp(0px,2vw,24px); }
 .dietfit-easy__mascots .df-mascot { flex:1 1 0; width:0; min-width:0; margin:0; }
 .dietfit-easy__mascots .dietfit-easy__mascot--workout.df-mascot { flex:1.12 1 0; width:0; }
 @media(max-width:700px) {
-  .df-feature-peek.df-mascot,.df-feature--plan .df-feature-peek.df-mascot,.df-feature--widgets .df-feature-peek.df-mascot { width:76px; }
+  .df-feature-peek.df-mascot,.df-feature--plan .df-feature-peek.df-mascot,.df-feature--widgets .df-feature-peek.df-mascot { width:clamp(128px,38vw,176px); right:-8px; left:auto; bottom:20%; }
+  .df-feature--plan .df-feature-peek.df-mascot { left:-8px; right:auto; }
+  .df-feature-stage:has(> .df-feature-peek.df-mascot) { --df-mascot-reserve:88px; }
+  .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native { box-sizing:border-box; padding-right:88px; }
+  .df-feature--plan .df-feature-stage > .df-native { padding-right:0; padding-left:88px; }
+  .df-feature--widgets .df-feature-stage > .df-native { padding:0; }
+  .df-feature--widgets .df-feature-peek.df-mascot { bottom:30%; }
   .dietfit-easy__mascots:has(.df-mascot) { gap:0; width:min(100%,480px); }
 }
 @media(prefers-reduced-motion:reduce) {
