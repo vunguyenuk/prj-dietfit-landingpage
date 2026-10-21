@@ -9,7 +9,7 @@
   mask-image:linear-gradient(#000 78%,transparent);
 }
 .dietfit-final--en .dietfit-final-cta {
-  --footer-content-lift:clamp(4rem,7vw,7rem);
+  --footer-content-lift:calc(clamp(4rem,7vw,7rem) + 2rem);
   min-height:0;
   justify-content:flex-end;
   padding-block:calc(clamp(19rem,35vw,34rem) - var(--footer-content-lift)) calc(4rem + var(--footer-content-lift));
@@ -23,6 +23,6 @@
 .dietfit-final--en .dietfit-final-cta h2 span { display:block; }
 @media(max-width:767px) {
   .dietfit-final--en .dietfit-final-image { height:36rem; aspect-ratio:auto; background-size:auto 36rem; }
-  .dietfit-final--en .dietfit-final-cta { padding-top:17.5rem; padding-bottom:5.5rem; }
+  .dietfit-final--en .dietfit-final-cta { padding-top:16.5rem; padding-bottom:6.5rem; }
   .dietfit-final--en .dietfit-final-cta h2 { font-size:clamp(1.625rem,8.3vw,2.5rem); }
 }
