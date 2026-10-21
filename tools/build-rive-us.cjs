@@ -23,8 +23,8 @@ function cross(o,x,y,color=C.ink){line(o,x-5,y-5,x+5,y+5,color,1.5);line(o,x+5,y
 function arc(o,x,y,r,start,end,color,width){const c=o.c;c.beginPath();c.arc(x,y,r,start,end);c.strokeStyle=color;c.lineWidth=width;c.lineCap='round';c.stroke()}
 async function main(){
  await sharp(path.join(dir,'meal-hand-source.png')).resize(1536,1055,{fit:'fill'}).webp({quality:90,alphaQuality:100}).toFile(path.join(dir,'hands.webp'));
- await sharp(path.join(dir,'table-source.png')).resize(1448,1086,{fit:'cover',position:'centre'}).webp({quality:88}).toFile(path.join(dir,'bg.webp'));
- const hand=await loadImage(path.join(dir,'hands.webp')),table=await loadImage(path.join(dir,'bg.webp'));
+ await sharp(path.join(dir,'table-bench-clean.png')).resize(1448,1086,{fit:'cover',position:'centre'}).webp({quality:88}).toFile(path.join(dir,'bg.webp'));
+ const hand=await loadImage(path.join(dir,'hands.webp')),table=await loadImage(await sharp(path.join(dir,'table-source.png')).resize(1448,1086,{fit:'cover',position:'centre'}).webp({quality:88}).toBuffer());
  // Shared food image crop: the same exact plate appears in the hand, result and thumbnail.
  function foodCrop(o,x,y,w,h){const c=o.c;c.drawImage(hand,560,400,710,650,x,y,w,h)}
  let o=surface(413,416);foodCrop(o,0,0,413,416);let g=o.c.createLinearGradient(0,300,0,416);g.addColorStop(0,'#ffffff00');g.addColorStop(1,'#ffffffff');o.c.fillStyle=g;o.c.fillRect(0,300,413,116);status(o,true);circle(o,43,89,20,'#ffffff55');text(o,'‹',33,72,29);circle(o,370,89,20,'#ffffff55');text(o,'⋮',366,73,25);save('food',o);await sharp(path.join(dir,'food.png')).webp({quality:92,alphaQuality:100}).toFile(path.join(dir,'food.webp'));fs.unlinkSync(path.join(dir,'food.png'));
@@ -49,7 +49,7 @@ async function main(){
  o=card(351,172);circle(o,26,38,5,'#9fc4ff');text(o,'Water',41,30,12,C.muted);for(const [x,t]of [[272,'−'],[315,'+']]){circle(o,x,39,16,'#f7f7f7');text(o,t,x-6,28,21)}text(o,'8',20,72,27,C.ink,600);text(o,'/ 64 fl oz',43,83,15,C.muted);for(let i=0;i<8;i++){const c=o.c;c.beginPath();c.moveTo(20+i*40,112);c.lineTo(47+i*40,112);c.lineTo(42+i*40,148);c.lineTo(26+i*40,148);c.closePath();c.fillStyle=i===0?'#95bbff':'#f0f5ff';c.fill()}save('water',o);
  o=card(383,398);text(o,'Average calories',20,26,19,C.ink,600);text(o,'1,810',20,57,29,C.ink,600);text(o,'kcal',106,70,14,C.muted);for(let j=0;j<5;j++){let y=111+j*40;line(o,52,y,365,y,'#efefef');text(o,String(2400-j*600),13,y-5,10,C.muted)}for(let i=0;i<7;i++){let x=67+i*42,h=[142,165,155,174,149,168,158][i];rect(o,x,271-h,22,h,9,'#ffcf86');rect(o,x,271-h*.7,22,h*.7,0,C.orange);rect(o,x,271-h*.35,22,h*.35,0,'#adcc50');text(o,['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][i],x-1,282,10,C.muted)}text(o,'● Carbs',79,317,11,'#91b33c');text(o,'● Protein',151,317,11,C.orange);text(o,'● Fat',242,317,11,'#d4aa60');rect(o,19,346,345,31,17,'#f7f7f7');rect(o,20,347,90,29,16,'#fff');text(o,'This week',31,354,11,C.ink,500);text(o,'Last week',123,354,11,C.muted);text(o,'2 weeks ago',206,354,11,C.muted);text(o,'3 weeks ago',297,354,10,C.muted);save('calorie-average',o);
  await sharp(path.join(dir,'bg.webp')).resize(1920,1200,{fit:'cover'}).webp({quality:88}).toFile(path.join(root,'assets/hero/dietfit-hero-poster-us-en.webp'));
- await sharp(path.join(dir,'table-source.png')).resize(780,1688,{fit:'cover'}).webp({quality:88}).toFile(path.join(root,'assets/hero/dietfit-hero-poster-mobile-us-en.webp'));
+ await sharp(path.join(dir,'table-bench-clean.png')).resize(780,1688,{fit:'cover'}).webp({quality:88}).toFile(path.join(root,'assets/hero/dietfit-hero-poster-mobile-us-en.webp'));
  console.log('Rendered localized Rive image assets and EN-only posters.');
 }
 main().catch(e=>{console.error(e);process.exitCode=1});

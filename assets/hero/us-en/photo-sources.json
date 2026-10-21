@@ -1,5 +1,5 @@
 {
-  "revision": "20261021-user-photo-1",
+  "revision": "20261021-bench-clean-1",
   "source": "User attachment codex-clipboard-f5c768c2-d0e7-4fb7-a4c9-101d0c2cafba.png",
   "sourceDimensions": [
     1199,
@@ -7,11 +7,11 @@
   ],
   "sourceSha256": "16a835e990863bf50a90a3935b744123a4d42ee14628b8cff8cf6c08c2461795",
   "roles": [
-    "Table background and poster",
-    "Top bowl cropped into moving hand/plate slot",
-    "Same bowl in app result photo and recent meal thumbnail"
+    "Edited bench background and posters with upper bowl removed",
+    "Original top bowl retained in moving hand/plate slot",
+    "Original bowl retained in app result photo and recent meal thumbnail"
   ],
-  "method": "Source photograph retained without generative editing. Crop, alpha mask, resize and composite with existing hand layer. Source photo is stored byte-for-byte as table-source.png.",
+  "method": "Original source photograph is retained byte-for-byte in table-source.png. Built-in imagegen removed only the upper background bowl and reconstructed the green bench. Its edited region was alpha-composited over the original photograph with the lower omelet plate protected; output is table-bench-clean.png. Moving food/hand and app imagery remain unchanged.",
   "nutrition": "Roast veggie bowl: illustrative sample data, not measurement of the photographed meal. Six ingredient energies sum to 620 kcal.",
   "animation": "Original timeline and state-machine bytes retained in both EN exports."
 }

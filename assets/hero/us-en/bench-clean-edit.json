@@ -1,0 +1,8 @@
+{
+  "mode": "built-in image_gen edit",
+  "input": "table-source.png",
+  "output": "table-bench-clean.png",
+  "generatedOutput": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-59dc6a5b-d8ef-4d76-8c9c-de6afda5a601.png",
+  "prompt": "Use case: precise-object-edit. Edit the supplied portrait photograph, preserve exactly the same framing and viewpoint. Remove ONLY the upper right large gray bowl containing quinoa, roasted orange vegetables, a fried egg and a little metal sauce cup (roughly x605\u20131107,y450\u2013950 in the 1199x1799 input). Remove the entire bowl, all of its food, and its associated cast shadow. Seamlessly reconstruct the green painted metal bench slats and the gaps/pavement visible behind them, matching their existing diagonal perspective, widths, surface texture and strong natural sunlight. Keep the lower omelet plate completely unchanged. Keep the pink drink, fork, knife, white printed napkin, pavement, bench, all other shadows and all colors/composition unchanged. No new food, no extra objects, no hand, no phone, no typography added. Preserve the actual photographed food in the lower plate; do not restyle or regenerate it. Output the edited full portrait photo with only the upper bowl removed.",
+  "preservation": "Only an elliptical region around the removed bowl/shadow is merged over the original. The lower plate is excluded from the edit mask."
+}
