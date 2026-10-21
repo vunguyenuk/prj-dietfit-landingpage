@@ -1,8 +1,9 @@
 /* Nomia's Loved by travelers composition: staggered imagery and floating copy.
    Content and visual assets remain Dietfit's, in their original locale. */
-.dietfit-highlights--bento {
+.dietfit-highlights.dietfit-highlights--bento {
   --bento-edge: clamp(24px, 3.33vw, 64px);
   --bento-gap: 80px;
+  height: auto;
   margin: 0 8px;
   padding: 88px 0 48px;
   border-radius: 32px;
@@ -10,7 +11,16 @@
   scroll-margin-top: 96px;
 }
 
-.dietfit-highlights--bento .dietfit-highlights-sticky { position: static; }
+/* Reset every pinned-carousel dimension, including when an older cached
+   controller briefly adds dietfit-scroll-scrub during a page update. */
+.dietfit-highlights.dietfit-highlights--bento .dietfit-highlights-sticky {
+  position: static;
+  display: block;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  overflow: visible;
+}
 .dietfit-bento-header { margin: 0 var(--bento-edge) 64px; }
 .dietfit-bento-eyebrow { margin: 0 0 24px; font-size: 15px; font-weight: 500; }
 .dietfit-bento-header h2 {
@@ -23,11 +33,15 @@
 }
 .dietfit-bento-header h2 span { color: #8b8990; }
 
-.dietfit-highlights--bento .dietfit-carousel {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-carousel {
   display: flex;
   align-items: center;
+  flex: none;
+  height: 552px;
+  min-height: 552px;
   gap: var(--bento-gap);
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 8px var(--bento-edge) 24px;
   scroll-padding-inline: var(--bento-edge);
   scroll-snap-type: x proximity;
@@ -35,10 +49,10 @@
   touch-action: auto;
   user-select: none;
 }
-.dietfit-highlights--bento .dietfit-carousel.is-dragging { cursor: grabbing; scroll-snap-type: none; }
-.dietfit-highlights--bento .dietfit-carousel:focus-visible { outline: 2px solid #fe692e; outline-offset: -4px; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-carousel.is-dragging { cursor: grabbing; scroll-snap-type: none; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-carousel:focus-visible { outline: 2px solid #fe692e; outline-offset: -4px; }
 
-.dietfit-highlights--bento .dietfit-bento-card {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card {
   position: relative;
   flex: 0 0 640px;
   width: 640px;
@@ -51,8 +65,8 @@
   color: #110b20;
   scroll-snap-align: start;
 }
-.dietfit-highlights--bento .dietfit-bento-card::before { display: none; }
-.dietfit-highlights--bento .dietfit-highlight-visual {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card::before { display: none; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-highlight-visual {
   position: absolute;
   top: 48px;
   left: 0;
@@ -63,10 +77,10 @@
   background-color: #fff0e5;
   background-position: center;
 }
-.dietfit-highlights--bento .dietfit-highlight-visual::before { display: none; }
-.dietfit-highlights--bento .df-card-ui--dashboard { top: 0; bottom: auto; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-highlight-visual::before { display: none; }
+.dietfit-highlights.dietfit-highlights--bento .df-card-ui--dashboard { top: 0; bottom: auto; }
 
-.dietfit-highlights--bento .dietfit-bento-copy {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-copy {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -92,7 +106,7 @@
   line-height: 1.4;
 }
 .dietfit-bento-label > span { font-variant-numeric: tabular-nums; color: #a09ba4; }
-.dietfit-highlights--bento .dietfit-bento-copy h3 {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-copy h3 {
   max-width: 24ch;
   margin: 0;
   font-size: 23px;
@@ -100,7 +114,7 @@
   line-height: 1.15;
   letter-spacing: -.025em;
 }
-.dietfit-highlights--bento .dietfit-bento-copy p {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-copy p {
   max-width: 34ch;
   margin: 0;
   color: #68646d;
@@ -108,48 +122,48 @@
   line-height: 1.5;
 }
 
-.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n + 2) { width: 624px; flex-basis: 624px; }
-.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n + 2) .dietfit-highlight-visual { top: 0; width: 400px; height: 500px; }
-.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n + 2) .dietfit-bento-copy { top: 192px; }
-.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n) { width: 656px; flex-basis: 656px; }
-.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n) .dietfit-highlight-visual { top: 16px; left: auto; right: 0; width: 384px; height: 480px; }
-.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n) .dietfit-bento-copy { top: 0; left: 0; right: auto; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n + 2) { width: 624px; flex-basis: 624px; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n + 2) .dietfit-highlight-visual { top: 0; width: 400px; height: 500px; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n + 2) .dietfit-bento-copy { top: 192px; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n) { width: 656px; flex-basis: 656px; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n) .dietfit-highlight-visual { top: 16px; left: auto; right: 0; width: 384px; height: 480px; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(3n) .dietfit-bento-copy { top: 0; left: 0; right: auto; }
 
-.dietfit-highlights--bento .dietfit-carousel-controls {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-carousel-controls {
   justify-content: flex-end;
   gap: 8px;
   margin: 8px var(--bento-edge) 0;
 }
-.dietfit-highlights--bento .dietfit-carousel-controls button {
+.dietfit-highlights.dietfit-highlights--bento .dietfit-carousel-controls button {
   width: 48px;
   height: 48px;
   border: 1px solid #dedce0;
   font-size: 22px;
 }
-.dietfit-highlights--bento .dietfit-carousel-controls button:hover { background: #efeded; }
-.dietfit-highlights--bento .dietfit-carousel-controls button:focus-visible { outline: 2px solid #fe692e; outline-offset: 3px; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-carousel-controls button:hover { background: #efeded; }
+.dietfit-highlights.dietfit-highlights--bento .dietfit-carousel-controls button:focus-visible { outline: 2px solid #fe692e; outline-offset: 3px; }
 .dietfit-bento-position { margin: auto 16px auto 0; color: #928c97; font-size: 13px; font-variant-numeric: tabular-nums; }
 .dietfit-bento-position [data-dietfit-current] { color: #110b20; }
 
 @media (max-width: 767px) {
-  .dietfit-highlights--bento { --bento-edge: 20px; --bento-gap: 24px; margin-inline: 8px; padding: 48px 0 32px; border-radius: 24px; }
+  .dietfit-highlights.dietfit-highlights--bento { --bento-edge: 20px; --bento-gap: 24px; margin-inline: 8px; padding: 48px 0 32px; border-radius: 24px; }
   .dietfit-bento-header { margin-bottom: 40px; }
   .dietfit-bento-eyebrow { margin-bottom: 20px; font-size: 13px; }
   .dietfit-bento-header h2 { max-width: 22ch; font-size: clamp(28px, 6vw, 36px); }
-  .dietfit-highlights--bento .dietfit-bento-card,
-  .dietfit-highlights--bento .dietfit-bento-card:nth-child(n) { flex-basis: min(560px, calc(100vw - 72px)); width: min(560px, calc(100vw - 72px)); height: 520px; }
-  .dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-highlight-visual { top: 0; left: 0; right: auto; width: min(85%, 360px); height: auto; aspect-ratio: 4 / 5; border-radius: 24px; }
-  .dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-bento-copy { top: auto; bottom: 0; left: auto; right: 0; width: 91%; min-height: 232px; padding: 24px; }
-  .dietfit-highlights--bento .dietfit-bento-copy h3 { font-size: 22px; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card,
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(n) { flex-basis: min(560px, calc(100vw - 72px)); width: min(560px, calc(100vw - 72px)); height: 520px; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-highlight-visual { top: 0; left: 0; right: auto; width: min(85%, 360px); height: auto; aspect-ratio: 4 / 5; border-radius: 24px; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-bento-copy { top: auto; bottom: 0; left: auto; right: 0; width: 91%; min-height: 232px; padding: 24px; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-bento-copy h3 { font-size: 22px; }
   .dietfit-bento-label { margin-bottom: 8px; }
-  .dietfit-highlights--bento .dietfit-carousel-controls { margin-top: 0; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-carousel-controls { margin-top: 0; }
 }
 
 @media (max-width: 380px) {
-  .dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-highlight-visual { width: 100%; }
-  .dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-bento-copy { width: 100%; padding: 20px; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-highlight-visual { width: 100%; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-bento-card:nth-child(n) .dietfit-bento-copy { width: 100%; padding: 20px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dietfit-highlights--bento .dietfit-carousel { scroll-behavior: auto; }
+  .dietfit-highlights.dietfit-highlights--bento .dietfit-carousel { scroll-behavior: auto; }
 }
