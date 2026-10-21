@@ -6,7 +6,7 @@ The shared frame started from the 1240px / 92vw reference observed at https://0x
 
 Above 1440px, type grows smoothly from the visitor's default to at most 150%. Phone fitting is shared by all five feature chapters and constrained by available width and viewport height. Integration tiles, icons and mascots grow within the same frame. The carousel retains its 5:7 artwork ratio and caps its height to the sticky viewport.
 
-The before/after gallery fills the frame using the original images with width:100% and height:auto. People are neither cropped nor redrawn, stretched or retouched. Narrow reading measures and phone proportions remain intentional inside the common frame.
+The before/after section keeps the shared outer frame. Per the later request to see the complete comparison, its inner gallery is centered and limited by image height: min(76svh, 100svh - 180px). Pair width derives from the two original 368 × 978 images and is also limited to available container width. Each original image retains width:100% and height:auto. People are neither cropped nor redrawn, stretched or retouched. Narrow reading measures and phone proportions remain intentional inside the common frame.
 
 `dietfit-section-gaps-en.css` is loaded last and sets 100 CSS px between top-level content sections, between the feature introduction and its chapters, and between adjacent feature chapters. It removes older additive vertical section padding. Pinned sections retain the scroll runway required to finish their animation before the next section; this runway is not extra inter-section margin.
 

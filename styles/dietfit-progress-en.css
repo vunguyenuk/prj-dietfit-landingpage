@@ -1,6 +1,8 @@
-/* Equal-width originals, shown in full at their natural aspect ratio. */
+/* Fit the full before/after pair below the fixed header, without cropping people. */
 .dietfit-progress-cta--en .dietfit-progress-cta__gallery {
-  width:100%;
+  --df-progress-photo-height:min(76svh,calc(100svh - 180px));
+  width:min(100%,calc(var(--df-progress-photo-height) * 736 / 978));
+  margin-inline:auto;
   grid-template-areas: none;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
