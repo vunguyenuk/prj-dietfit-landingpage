@@ -1,4 +1,4 @@
-/* English photo pair: live labels over the generated, text-free portraits. */
+/* EN photo pair: equal halves of the supplied 736 × 978 image. */
 .dietfit-progress-cta--en .dietfit-progress-cta__gallery figure { position: relative; }
 .dietfit-progress-cta--en figcaption {
   position: absolute;
@@ -16,3 +16,20 @@
   text-align: left;
 }
 .dietfit-progress-cta--en figcaption span { font-size: .75rem; color: #f7e9dd; }
+
+/* Preserve each half in full, without stretching or cropping the subject. */
+@media (min-width: 768px) {
+  .dietfit-progress-cta--en .dietfit-progress-cta__gallery figure {
+    width: clamp(8rem, calc((100svh - 27rem) * 368 / 978), 24rem);
+  }
+}
+@media (max-width: 767px) {
+  .dietfit-progress-cta--en .dietfit-progress-cta__gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+  }
+  .dietfit-progress-cta--en figcaption {
+    padding: .5rem .65rem;
+    font-size: .95rem;
+  }
+}
