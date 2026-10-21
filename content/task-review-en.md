@@ -4,7 +4,7 @@ Trạng thái hiện tại sau phản hồi 22:23 và yêu cầu kiểm tra ph�
 
 | Yêu cầu | Triển khai hiện tại |
 | --- | --- |
-| Hero có khoảng thở bốn phía bằng nhau | Gutter đo theo khung trang thực; stage trừ cùng gutter ở trên/dưới. |
+| Hero cao lại, top/bottom khoảng 100px (phản hồi 22:51) | Khoảng trên/dưới cap 100px, không tăng theo gutter ngang trên màn hình rộng; mobile giữ gutter nhỏ hơn. Phone tự lớn theo stage, giữ FitHeight an toàn. |
 | Không cắt phone và không ghép lệch nền ghế | Một lớp ảnh nền; Rive foreground EN dùng vùng FitHeight an toàn. Timeline/state machine gốc được giữ. |
 | Deep Scan trong phone gốc | Overlay 6 contour/4 nhãn, đo theo ảnh native; không thêm phone/ảnh thứ hai. |
 | UI result theo Figma | Meal Detail 36627:85534 trong file người dùng gửi, native 375 × 812, icon gốc và nút đen. |

@@ -12,3 +12,6 @@ Independent geometry checks derive the expected image bounds from the original R
 
 
 The late-evening foreground export removes only the two embedded background image layers and the static artboard fill; all original image/phone transforms and animation bytes are preserved. FitHeight now uses the complete stage height because the phone already has native internal margins, allowing the hand to enter through the scene edge. Overlay labels scale with the plate's width rather than the full desktop viewport, keeping portion/calorie text inside the white phone. Direct Chrome review at 2560 × 1318 confirmed the complete phone, continuous background and smaller labels. The latest typography changes were made after that review.
+
+
+After the 22:51 feedback, the EN hero's vertical gutter caps at 100 CSS px instead of matching the potentially much larger desktop side gutter. This restores stage/phone height on wide screens: at a 2560 × 1318 viewport with a 2080px page frame, stage height increases from 838px to 1118px. Compact viewports keep their smaller gutter. The canvas and scan overlay still use the same FitHeight measurement; native assets and motion timeline are unchanged.
