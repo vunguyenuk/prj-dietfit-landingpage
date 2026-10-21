@@ -1,32 +1,25 @@
-/* Match the existing “Understand your meals” container across the page shell. */
+/* Reference: https://0xcal.app/ — .wrap { width:min(1240px,92vw) }. */
 .dietfit-home--en {
-  --dietfit-page-max:90rem;
-  --dietfit-page-gutter:1.25rem;
+  --dietfit-page-max:1240px;
+  --dietfit-page-gutter:4vw;
+  --dietfit-page-width:min(var(--dietfit-page-max),92vw);
 }
-.dietfit-home--en :is(.dietfit-hero-wrap,.dietfit-highlights-sticky,.dietfit-final--en),
+/* One outer frame for every EN section. Never apply a second gutter inside it. */
+.dietfit-home--en :is(.container,.dietfit-hero-wrap,.dietfit-highlights-sticky,.dietfit-final--en,.dietfit-faq,.df-score-strip__inner,.df-integrations__inner,.dietfit-progress-cta__sticky),
+.dietfit-home--en .df-feature .df-feature-sticky,
 .dietfit-home--en #dietfit-header .dietfit-header-nav {
-  width:min(calc(100% - var(--dietfit-page-gutter) * 2),var(--dietfit-page-max));
-  margin-inline:auto;
-}
-/* Match the 1200px integrations inner container, including its responsive gutters. */
-.dietfit-home--en .dietfit-faq {
-  width:min(calc(100% - 48px),1200px);
-  margin-inline:auto;
-  padding-inline:0;
-}
-.dietfit-home--en .dietfit-faq-list { width:100%; max-width:none; }
-@media(max-width:700px) {
-  .dietfit-home--en .dietfit-faq { width:calc(100% - 40px); }
-}
-.dietfit-home--en [data-component-name="scrollable-rive-hero"] {
-  clip-path:inset(0 round var(--hero-corner-radius));
-}
-.dietfit-home--en .dietfit-hero-wrap {
   box-sizing:border-box;
-  border:1px solid rgb(17 11 32 / 12%);
-  border-radius:clamp(20px,2vw,32px);
-  overflow:clip;
+  width:var(--dietfit-page-width);
+  max-width:none;
+  margin-inline:auto;
 }
+.dietfit-home--en .df-integrations,
+.dietfit-home--en .dietfit-faq,
+.dietfit-home--en .dietfit-progress-cta__sticky,
+.dietfit-home--en .df-feature .df-feature-sticky { padding-inline:0; }
+.dietfit-home--en .dietfit-faq-list { width:100%; max-width:none; }
+.dietfit-home--en .dietfit-progress-cta__content { width:100%; max-width:none; }
+.dietfit-home--en .dietfit-footer { width:100%; max-width:none; }
 .dietfit-home--en .dietfit-hero-heading { width:100%; }
 .dietfit-highlights--en .dietfit-carousel {
   position:relative;
