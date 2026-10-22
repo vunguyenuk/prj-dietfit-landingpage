@@ -34,7 +34,14 @@
 .df-habit-points img { display:block; width:24px; height:24px; }
 :is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--challenge { background:#f0f3eb; }
 :is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--reminder { background:#fff1e8; }
-:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--together { background:#fff1e8; }
+/* Carry the Dietfit brand gradient through the whole shared-meals card. */
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--together {
+  background:#ff692b url('/assets/brand/gradient-black-v.svg') center / cover no-repeat;
+  color:#fff;
+}
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--together .dietfit-card-copy,
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--together .dietfit-card-copy h2,
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--together .dietfit-card-copy p { color:#fff; }
 /* Real lifestyle photographs fill Streak/Challenge just like the other photo cards. */
 :is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo { display:block; color:#fffaf6; background:#263325; }
 :is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo .df-habit-art { position:absolute; inset:0; }
@@ -78,7 +85,7 @@
 .df-standard-small img { display:block; width:100%; height:auto; aspect-ratio:1; border-radius:12.9%; box-shadow:0 4px 12px rgb(17 11 32 / 8%); }
 .df-widget-label-pair { display:grid; grid-template-columns:1fr 1fr; gap:6%; }
 /* A home-screen meal exchange, following the supplied UGC clip's three beats. */
-.df-habit-card--together .df-habit-art { background:#ff692b url('/assets/brand/gradient-black-v.svg') center / cover no-repeat; }
+.df-habit-card--together .df-habit-art { background:transparent; }
 .df-shared-homescreen { position:absolute; top:0; left:50%; translate:-50% 0; width:min(100%,108cqh); height:100%; container-type:inline-size; }
 .df-shared-time { position:absolute; top:6%; left:7%; width:25%; height:7%; color:white; font-size:6cqw; line-height:1; font-weight:600; }
 .df-shared-notification { position:absolute; top:18%; left:6%; width:88%; display:flex; align-items:center; gap:3cqw; padding:3cqw; background:rgb(245 249 252 / 95%); border-radius:4cqw; color:#171c28; opacity:0; transform:translateY(-8px); animation:df-widget-notification 15s ease infinite; animation-play-state:paused; box-shadow:0 6px 20px rgb(17 11 32 / 10%); }
