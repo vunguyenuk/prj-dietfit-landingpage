@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-22",
+  "tool": "Built-in image_gen for background extensions; Sharp for restoring original protected photographic pixels",
+  "canvas": [
+    1500,
+    2100
+  ],
+  "health": {
+    "source": "card-5.webp",
+    "output": "card-5-headroom.webp",
+    "backgroundSource": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-1acb9c37-d96d-429a-918b-67406ac48e12.png",
+    "originalPlacement": {
+      "left": 262,
+      "top": 735,
+      "width": 975,
+      "height": 1365
+    },
+    "protectedFaceInPlacement": {
+      "left": 350,
+      "top": 0,
+      "width": 570,
+      "height": 560
+    },
+    "identityCheck": "All RGB pixels in the protected face rectangle equal the original photograph resized for composition.",
+    "seam": "24px feather at non-face rectangle edges; face remains fully opaque."
+  },
+  "progress": {
+    "source": "card-6.webp",
+    "output": "card-6-headroom.webp",
+    "backgroundSource": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-3277a8c7-40c0-4159-903d-671ae9d95e9d.png",
+    "originalPlacement": {
+      "left": 0,
+      "top": 600,
+      "width": 1500,
+      "height": 1500
+    },
+    "identityCheck": "All original RGB pixels below the first 60px of pavement match exactly at their translated position, including phone, hand and visible person.",
+    "seam": "60px blend over pavement / very top hair only."
+  },
+  "encoding": "Lossless WebP. Original Figma artwork retained unchanged.",
+  "rebuild": "DIETFIT_NODE_MODULES=/absolute/node_modules node tools/build-card-headroom.cjs <health-generated.png> <progress-generated.png>"
+}
