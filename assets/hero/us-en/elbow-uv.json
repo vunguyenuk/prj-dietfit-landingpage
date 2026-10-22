@@ -1,8 +1,8 @@
 {
-  "method": "Lossless native source pixels only. No image generation, outpainting, texture extension or edited Rive asset.",
+  "method": "Lossless native source pixels only. No image generation, outpainting, texture extension or edited Rive asset. EN uses its original hands.webp. The VI hand texture is extracted losslessly from the original Rive file.",
   "en": {
     "source": "hands.webp",
-    "crop": [
+    "uv": [
       64,
       0,
       416,
@@ -11,7 +11,12 @@
   },
   "vi": {
     "source": "dietfit-hero.riv / hands",
-    "crop": [
+    "asset": "hands-native-vi.webp",
+    "dimensions": [
+      1536,
+      1055
+    ],
+    "uv": [
       128,
       30,
       416,

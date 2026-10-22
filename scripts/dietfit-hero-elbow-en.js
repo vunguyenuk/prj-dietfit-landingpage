@@ -80,11 +80,15 @@
         const bgY=small?633.377161026001:1201.897216796875+.9151623845100403*(-683.1980590820312);
         ctx.translate(g.width/2+(bgX-960)*g.fit,g.height/2+(bgY-629)*g.fit);ctx.scale(bgScale,bgScale);ctx.drawImage(background,-724,-543);ctx.restore();
       }
-      const h=162-top,uv=[{x:0,y:0},{x:416,y:0},{x:416,y:h},{x:0,y:h}];
+      // Use the complete native texture and its original UV coordinates.
+      // A cropped 416px bitmap introduced a visible curved seam at the elbow
+      // where the crop ended; the full texture lets the lower edge continue
+      // pixel-for-pixel into the untouched Rive render.
+      const h=162-top,uv=[{x:x,y:top},{x:x+416,y:top},{x:x+416,y:162},{x:x,y:162}];
       triangle(uv[0],uv[1],uv[2],fixed[0],fixed[1],fixed[2]);triangle(uv[0],uv[2],uv[3],fixed[0],fixed[2],fixed[3]);
     }
     function decoded(){loaded++;ready=loaded===(vi?2:1);const previous=last;last=-1;if(previous>=0)render(previous)}
-    image.onload=decoded;image.src='/assets/hero/us-en/elbow-band'+(vi?'-vi':'')+'.webp';
+    image.onload=decoded;image.src=vi?'/assets/hero/us-en/hands-native-vi.webp':'/assets/hero/us-en/hands.webp';
     if(background){background.onload=decoded;background.src='/assets/hero/us-en/elbow-bg-vi.webp'}
     resize();
     return {render,resize,reset:function(){last=-1;clear()}};
