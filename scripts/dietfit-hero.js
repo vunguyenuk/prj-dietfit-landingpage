@@ -135,12 +135,14 @@
       const nativeProgress = scan ? scan.render(langSuffix ? beforeFinale*scan.finaleEntry() : renderedScroll) : renderedScroll;
       const chapter = Math.max(0,Math.min(1,(renderedScroll-.62)/.32));
       const riveProgress = finale ? finale.progress(nativeProgress,chapter) : nativeProgress;
-      if(elbow)elbow.render(riveProgress);
       if (scrollAnimation) {
         player.scrub(scrollAnimation, riveProgress * scrollDuration);
       } else {
         scrollValue.value = riveProgress;
       }
+      // Keep the local elbow texture on the exact Rive frame just requested.
+      // Drawing it first left the repair one scrub behind during scroll.
+      if(elbow)elbow.render(riveProgress);
     }
     frame = requestAnimationFrame(animateScroll);
   }
