@@ -17,3 +17,10 @@
 .df-hero-scan__label--dressing { left:58%; top:62%; max-width:40%; }
 .df-hero-scan__beam { position:absolute; z-index:1; left:0; top:0; width:100%; height:16%; background:linear-gradient(transparent,rgb(255 250 237 / 10%) 90%,rgb(255 250 237 / 70%)); opacity:0; }
 @media(prefers-reduced-motion:reduce) { .df-hero-scan { display:none; } }
+
+/* Original VI meal: separate paths and label positions for cơm tấm. */
+.df-hero-scan--vi .df-hero-scan__label { font-size:clamp(8px,3cqw,14px); max-width:44%; }
+.df-hero-scan--vi .df-hero-scan__label--rice { left:53%; top:31%; }
+.df-hero-scan--vi .df-hero-scan__label--pork { left:4%; top:54%; }
+.df-hero-scan--vi .df-hero-scan__label--egg { left:47%; top:78%; }
+.df-hero-scan--vi .df-hero-scan__label--scallions { left:38%; top:17%; }

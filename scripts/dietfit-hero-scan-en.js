@@ -2,7 +2,8 @@
   'use strict';
   window.createDietfitHeroScan = function (hero) {
     const scene = hero.querySelector('.df-hero-scan');
-    if (!scene || !document.body.classList.contains('dietfit-home--en')) return null;
+    if (!scene || !document.body.matches('.dietfit-home--en,.dietfit-home--vi')) return null;
+    const originalVi = scene.classList.contains('df-hero-scan--vi');
     const compact = window.matchMedia('(max-width: 1024px)');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     const regions = Array.from(scene.querySelectorAll('[data-scan-region]'));
@@ -19,7 +20,7 @@
       // Analytics is a 417×894 texture with a transparent food window at
       // x36/y193, 344×425. Measure that window, not the complete UI texture.
       const bounds=stage.getBoundingClientRect();
-      const fit=Math.max(1,Math.min(bounds.height,(bounds.width-32)*1258/700))/1258;
+      const fit=originalVi ? Math.max(bounds.width/1920,bounds.height/1258) : Math.max(1,Math.min(bounds.height,(bounds.width-32)*1258/700))/1258;
       const photo=compact.matches
         ? {x:746.8418899,y:324.0055769,w:425.0804389,h:525.1720539,matrix:[.902469002,.000936185,-.000936185,.902469002,-144.377576,-56.386020]}
         : {x:743.2506904,y:307.1784222,w:432.2418090,h:534.0196768,matrix:[.848683071,-.013929955,.013929955,.848683071,-116.457111,-49.415322]};
@@ -29,7 +30,11 @@
       plate.style.top=(bounds.height/2+(photo.y+photo.h/2-629)*fit).toFixed(3)+'px';
       // Paths are traced in the shared 710×710 meal crop. This affine maps
       // that crop through the held hand/bowl pose into the native food window.
-      photoTransform.setAttribute('transform','matrix('+photo.matrix.join(' ')+')');
+      const m=photo.matrix;
+      // Original VI retains its unmodified 1536×1055 hand/meal texture. EN
+      // paths use a 710px crop placed at x587.25/y322.5 with scale .97.
+      const matrix=originalVi ? [m[0]/.97,m[1]/.97,m[2]/.97,m[3]/.97,m[4]-(m[0]*587.25+m[2]*322.5)/.97,m[5]-(m[1]*587.25+m[3]*322.5)/.97] : m;
+      photoTransform.setAttribute('transform','matrix('+matrix.join(' ')+')');
     }
     function prepare() {
       if(preparing)return;

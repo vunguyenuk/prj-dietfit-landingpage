@@ -49,7 +49,7 @@
   // EN uses a separate US food/UI image set; the original VI exports remain untouched.
   const langSuffix = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0 ? '-foreground-us-en' : '';
   const heroVersion = langSuffix ? '20261022-arm-continuation-1' : '20260918-1';
-  const scan = langSuffix && window.createDietfitHeroScan ? window.createDietfitHeroScan(hero) : null;
+  const scan = window.createDietfitHeroScan ? window.createDietfitHeroScan(hero) : null;
   const finale = langSuffix && window.createDietfitHeroFinale ? window.createDietfitHeroFinale(hero,stage) : null;
   function currentHeroFile() {
     return compactQuery.matches
@@ -131,7 +131,7 @@
         : renderedScroll + distance * smoothing;
       // Keep the scene pinned: capture + Deep Scan first, then a scroll-only finale.
       const beforeFinale = Math.min(1,renderedScroll/.62);
-      const nativeProgress = scan ? scan.render(beforeFinale*scan.finaleEntry()) : renderedScroll;
+      const nativeProgress = scan ? scan.render(langSuffix ? beforeFinale*scan.finaleEntry() : renderedScroll) : renderedScroll;
       const chapter = Math.max(0,Math.min(1,(renderedScroll-.62)/.32));
       const riveProgress = finale ? finale.progress(nativeProgress,chapter) : nativeProgress;
       if (scrollAnimation) {

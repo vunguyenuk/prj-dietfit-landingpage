@@ -33,8 +33,8 @@
 .df-habit-points { position:absolute; z-index:2; right:6%; bottom:12%; display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:100px; background:white; box-shadow:0 5px 20px rgb(17 11 32 / 12%); color:#111; font-size:14px; font-weight:600; line-height:20px; }
 .df-habit-points img { display:block; width:24px; height:24px; }
 .dietfit-highlights--en .df-habit-card--challenge { background:#f0f3eb; }
-.dietfit-highlights--en .df-habit-card--reminder { background:#eaf0ec; }
-.dietfit-highlights--en .df-habit-card--together { background:#e8eff6; }
+.dietfit-highlights--en .df-habit-card--reminder { background:#fff1e8; }
+.dietfit-highlights--en .df-habit-card--together { background:#fff1e8; }
 /* Real lifestyle photographs fill Streak/Challenge just like the other photo cards. */
 .dietfit-highlights--en .df-habit-card--photo { display:block; color:#fffaf6; background:#263325; }
 .dietfit-highlights--en .df-habit-card--photo .df-habit-art { position:absolute; inset:0; }
@@ -52,7 +52,7 @@
 .df-habit-card--reminder .df-habit-art::after,.df-habit-card--together .df-habit-art::after { display:none; }
 /* Upper half of the real phone shell, with unmodified supplied widget renders. */
 .df-widget-phone { position:absolute; width:min(88%,84cqh); aspect-ratio:899 / 1832; left:50%; translate:-50% 0; top:4%; container-type:inline-size; filter:drop-shadow(0 10px 12px rgb(17 11 32 / 18%)); }
-.df-widget-phone-screen { position:absolute; left:4.67%; top:1.85%; width:90.77%; height:96.2%; overflow:hidden; border-radius:14% / 6.8%; background:radial-gradient(ellipse at 110% 50%,#839e93,transparent 65%),linear-gradient(130deg,#e1e8d7,#a8c5ba 58%,#617d76); }
+.df-widget-phone-screen { position:absolute; left:4.67%; top:1.85%; width:90.77%; height:96.2%; overflow:hidden; border-radius:14% / 6.8%; background:#ff692b url('/assets/brand/gradient-black-v.svg') center / cover no-repeat; }
 .df-widget-phone-frame { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
 .df-widget-status { position:absolute; z-index:2; top:2.6%; left:11%; right:9%; display:flex; justify-content:space-between; color:white; font-size:3.5cqw; line-height:1; }
 .df-standard-widgets { position:absolute; top:12%; left:7%; width:86%; }
@@ -67,7 +67,7 @@
 .df-standard-small img { display:block; width:100%; height:auto; aspect-ratio:1; border-radius:12.9%; box-shadow:0 4px 12px rgb(17 11 32 / 8%); }
 .df-widget-label-pair { display:grid; grid-template-columns:1fr 1fr; gap:6%; }
 /* A home-screen meal exchange, following the supplied UGC clip's three beats. */
-.df-habit-card--together .df-habit-art { background:radial-gradient(ellipse at 100% 0,#061e50 0,transparent 61%),radial-gradient(ellipse at 5% 110%,#467f7c,transparent 70%),linear-gradient(125deg,#bddfe1,#90c0d3 42%,#3f68ba); }
+.df-habit-card--together .df-habit-art { background:#ff692b url('/assets/brand/gradient-black-v.svg') center / cover no-repeat; }
 .df-shared-homescreen { position:absolute; top:0; left:50%; translate:-50% 0; width:min(100%,108cqh); height:100%; container-type:inline-size; }
 .df-shared-time { position:absolute; top:6%; left:7%; width:25%; height:7%; color:white; font-size:6cqw; line-height:1; font-weight:600; }
 .df-shared-notification { position:absolute; top:18%; left:6%; width:88%; display:flex; align-items:center; gap:3cqw; padding:3cqw; background:rgb(245 249 252 / 95%); border-radius:4cqw; color:#171c28; opacity:0; transform:translateY(-8px); animation:df-widget-notification 15s ease infinite; animation-play-state:paused; box-shadow:0 6px 20px rgb(17 11 32 / 10%); }

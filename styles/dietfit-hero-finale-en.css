@@ -38,7 +38,7 @@
 /* The grid is measured to the screen, while the retained hardware extends
    42/816 of its screen width into the gap. Reserve that bezel plus 20px of
    visible air: gap=(visibleGap*2*816 + gridWidth*42)/(2*816+42). */
-.df-hero-dashboard__grid { position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto 1fr; row-gap:12px; column-gap:calc((var(--df-dashboard-visible-gap,20px) * 1632 + 100% * 42) / 1674); align-items:stretch; }
+.df-hero-dashboard__grid { position:relative; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:auto 1fr; row-gap:12px; column-gap:calc((var(--df-dashboard-visible-gap,20px) * 1632 + 100% * 42) / 1674); align-items:stretch; }
 .df-hero-dashboard__grid > div { min-width:0; border-radius:16px; background:#fff; }
 .df-hero-dashboard h3 { margin:0 0 4px; font-size:0.9375rem; line-height:1.4; font-weight:600; }
 .df-hero-dashboard p { margin:0 0 12px; font-size:0.6875rem; color:#77717f; }
@@ -70,7 +70,7 @@
 .df-hero-dashboard__plan img { justify-self:start; width:auto; height:auto; max-width:100%; max-height:100%; aspect-ratio:1; border-radius:12px; object-fit:cover; }
 .df-hero-dashboard__plan small { display:block; margin-top:4px; color:#77717f; font-size:clamp(10px,4.5cqw,16px); }
 .df-hero-dashboard__logged-meal small { color:#34834d; }
-.df-hero-dashboard__journal { position:relative; z-index:3; grid-column:2; grid-row:1 / 3; aspect-ratio:375 / 812; overflow:hidden; transform-origin:50% 0; isolation:isolate; }
+.df-hero-dashboard__journal { width:100%; align-self:start; position:relative; z-index:3; grid-column:2; grid-row:1 / 3; aspect-ratio:375 / 812; overflow:hidden; transform-origin:50% 0; isolation:isolate; }
 /* Native 375 × 812 Meal Detail from Figma 36627:85534.
    Meal name, image and nutrition are the current scan's data; UI geometry is native. */
 .df-hero-result { position:absolute; inset:0; overflow:hidden; background:#faf6f0; }
@@ -158,4 +158,24 @@
 @media(prefers-reduced-motion:reduce) {
   .df-hero-finale { display:none; }
   .dietfit-home--en [data-component-name="scrollable-rive-hero"].rive-ready .dietfit-hero-loading { opacity:1; }
+}
+/* Fit the two-panel summary in the smallest phones without widening its grid.
+   Secondary meal subtitles yield to the meal names and complete device frame. */
+@media(max-width:360px) {
+  .df-hero-dashboard__budget { padding:6px; }
+  .df-hero-dashboard__budget h3 { font-size:8px; gap:2px; }
+  .df-hero-budget__summary { gap:3px; margin-top:6px; }
+  .df-hero-budget__summary dl { gap:4px; }
+  .df-hero-budget__summary dt { font-size:6px; }
+  .df-hero-budget__summary dd { font-size:10px; }
+  .df-hero-budget__dial strong { font-size:14px; }
+  .df-hero-budget__dial small { font-size:6px; }
+  .df-hero-budget__macros { gap:3px; margin-top:6px; }
+  .df-hero-budget__macros span { font-size:6px; }
+  .df-hero-budget__macros b { font-size:8px; margin-top:2px; }
+  .df-hero-budget__macros i { height:2px; margin-top:3px; }
+  .df-hero-dashboard__plan { padding:6px; gap:4px; grid-template-rows:auto repeat(3,minmax(0,1fr)); }
+  .df-hero-dashboard__plan h3 { font-size:10px; }
+  .df-hero-dashboard__plan > p,.df-hero-dashboard__plan small { display:none; }
+  .df-hero-dashboard__plan > div { font-size:8px; gap:4px; }
 }

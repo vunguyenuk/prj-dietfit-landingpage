@@ -1,0 +1,19 @@
+/* Each FAQ column expands independently, with a shared heading above. */
+.dietfit-home--en .dietfit-faq-list {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  gap:clamp(32px,4vw,80px);
+}
+.dietfit-home--en .dietfit-faq-column { min-width:0; }
+.dietfit-home--en .dietfit-faq-column details:last-child { border-bottom:1px solid oklch(.86 .005 140); }
+.dietfit-home--en .dietfit-faq summary { gap:24px; padding-block:20px; font-weight:500; line-height:1.45; }
+.dietfit-home--en .dietfit-faq details p { margin:0 40px 24px 0; font-size:1rem; line-height:1.65; }
+.dietfit-home--en .dietfit-faq summary:focus-visible { outline:2px solid #fe692e; outline-offset:4px; }
+@media(max-width:767px) {
+  .dietfit-home--en .dietfit-faq-list { display:flex; flex-direction:column; gap:0; }
+  .dietfit-home--en .dietfit-faq-column { display:contents; }
+  .dietfit-home--en .dietfit-faq details { width:100%; }
+  .dietfit-home--en .dietfit-faq-column:first-child details:last-child { border-bottom:0; }
+  .dietfit-home--en .dietfit-faq details p { margin-right:24px; }
+}
