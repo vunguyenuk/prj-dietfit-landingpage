@@ -88,8 +88,8 @@
       triangle(uv[0],uv[1],uv[2],fixed[0],fixed[1],fixed[2]);triangle(uv[0],uv[2],uv[3],fixed[0],fixed[2],fixed[3]);
     }
     function decoded(){loaded++;ready=loaded===(vi?2:1);const previous=last;last=-1;if(previous>=0)render(previous)}
-    image.onload=decoded;image.src=vi?'/assets/hero/us-en/hands-native-vi.webp':'/assets/hero/us-en/hands.webp';
-    if(background){background.onload=decoded;background.src='/assets/hero/us-en/elbow-bg-vi.webp'}
+    image.onload=decoded;image.src=vi?'/assets/hero/elbow-hands-vi.webp':'/assets/hero/elbow-hands-en.webp';
+    if(background){background.onload=decoded;background.src='/assets/hero/elbow-bg-vi.webp'}
     resize();
     return {render,resize,reset:function(){last=-1;clear()}};
   };

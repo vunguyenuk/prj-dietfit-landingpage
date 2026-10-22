@@ -1,0 +1,37 @@
+{
+  "method": "Lossless native source pixels only. No image generation, outpainting, texture extension or edited Rive asset. Runtime textures are written beside the deployed Rive assets so the repair can load in production.",
+  "en": {
+    "source": "assets/hero/us-en/hands.webp",
+    "runtimeAsset": "elbow-hands-en.webp",
+    "uv": [
+      64,
+      0,
+      416,
+      162
+    ]
+  },
+  "vi": {
+    "source": "dietfit-hero.riv / hands",
+    "asset": "elbow-hands-vi.webp",
+    "dimensions": [
+      1536,
+      1055
+    ],
+    "uv": [
+      128,
+      30,
+      416,
+      132
+    ],
+    "sourceSha256": "4fbc922efd6e3714cf544f6a2ca1729de2b049eec646adc12c2f108b173fc65f"
+  },
+  "backgroundVI": {
+    "source": "dietfit-hero.riv / bg",
+    "asset": "elbow-bg-vi.webp",
+    "dimensions": [
+      1448,
+      1086
+    ],
+    "sourceSha256": "19ca42a1ba5e3b8b2892e9a77e6b4aa628824be3c49c13f81ad8586068d2ff26"
+  }
+}
