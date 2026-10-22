@@ -163,12 +163,7 @@
         {transform:'rotate(-.7deg)',offset:.63},{transform:'rotate(2deg)',offset:.72},
         {transform:'rotate(-1deg)',offset:.79},{transform:'rotate(.8deg)',offset:.88},{transform:'rotate(0)',offset:1}
       ]);
-      if (rig.arm) play(rig.arm,waving ? [
-        {transform:'rotate(0)',offset:0},{transform:'rotate(-8deg)',offset:.12},
-        {transform:'rotate(32deg)',offset:.26},{transform:'rotate(-16deg)',offset:.39},
-        {transform:'rotate(29deg)',offset:.52},{transform:'rotate(-13deg)',offset:.65},
-        {transform:'rotate(18deg)',offset:.78},{transform:'rotate(0)',offset:1}
-      ] : [
+      if (rig.arm) play(rig.arm,waving ? window.dietfitMascotWave.keyframes() : [
         {transform:'rotate(0)',offset:0},{transform:'rotate(-3deg)',offset:.15},
         {transform:'rotate(13deg)',offset:.32},{transform:'rotate(-5deg)',offset:.45},
         {transform:'rotate(9deg)',offset:.57},{transform:'rotate(1deg)',offset:.79},{transform:'rotate(0)',offset:1}

@@ -5,7 +5,7 @@
     if(!scene||!document.body.classList.contains('dietfit-home--en'))return null;
     const find=function(s){return scene.querySelector(s);};
     const phone=find('.df-hero-finale__phone'),hardware=find('.df-hero-finale__hardware');
-    const mascot=find('.df-hero-finale__mascot');
+    const mascot=find('.df-hero-finale__mascot'),arm=mascot.querySelector('.df-mascot__arm');
     const screen=find('.df-hero-finale__screen'),logControl=find('.df-hero-result__log');
     const budget=find('.df-hero-dashboard__budget'),journal=find('.df-hero-dashboard__journal');
     const title=find('.df-hero-dashboard__title'),plan=find('.df-hero-dashboard__plan');
@@ -51,18 +51,14 @@
         img.loading='eager';return img.decode?img.decode().catch(function(){}):Promise.resolve();
       })).then(function(){ready=true;last=-1;measure();});
     }
-    function wave(p){
-      const keys=[[0,0],[.055,0],[.075,-8],[.10,30],[.125,-14],[.15,27],[.175,-7],[.19,0],[1,0]];
-      for(let i=1;i<keys.length;i++)if(p<=keys[i][0]){
-        const a=keys[i-1],b=keys[i];return mix(a[1],b[1],smooth((p-a[0])/(b[0]-a[0])));
-      }
-      return 0;
-    }
     function paint(p){
       hero.classList.toggle('is-hero-finale',ready&&!motion.matches&&p>0);
       if(!geometry)return;
       const g=geometry,peek=range(p,0,.045)*(1-range(p,.19,.245));
-      mascot.style.transform='translateX('+(105-73*peek).toFixed(2)+'%) rotate('+((-24+wave(p)*.12)*peek).toFixed(2)+'deg)';
+      mascot.style.transform='translateX('+(105-73*peek).toFixed(2)+'%) rotate('+(-24*peek).toFixed(2)+'deg)';
+      // Reuse the helper's shoulder pivot and full arm gesture. Scroll owns the
+      // pose so stopping, reversing or hiding the hero never starts a timer.
+      if(arm)arm.style.transform='rotate('+window.dietfitMascotWave.angleAt(clamp((p-.055)/.135)).toFixed(3)+'deg)';
       mascot.style.visibility=peek>0?'visible':'hidden';
       // The same two opaque panels travel into the dashboard. No duplicate UI crossfade.
       const spread=range(p,.27,.38),transfer=range(p,.52,.68),dock=range(p,.72,.88);

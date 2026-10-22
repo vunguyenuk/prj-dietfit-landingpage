@@ -175,13 +175,13 @@
   <meta name="dietfit-source-revision" content="v1-feature-copy-clean-v9">
   <link rel="stylesheet" href="/styles/dietfit-features.css?v=9">
   <link rel="stylesheet" href="/styles/dietfit-native-ui.css?v=6">
-  <link rel="stylesheet" href="/styles/dietfit-mascots.css?v=20261021-lifelike-1">
+  <link rel="stylesheet" href="/styles/dietfit-mascots.css?v=20261022-shared-greeting-1">
   <link rel="stylesheet" href="/styles/dietfit-mascot-game-en.css?v=20261021-game-idle-1">
   <link rel="stylesheet" href="/styles/dietfit-spacing-en.css?v=20261021-2315-fixes-1">
   <link rel="stylesheet" href="/styles/dietfit-responsive-en.css?v=20261021-1">
   <link rel="stylesheet" href="/styles/dietfit-containers-en.css?v=20261021-fluid-desktop-1">
   <link rel="stylesheet" href="/styles/dietfit-feature-composition-en.css?v=20261021-widgets-restore-1">
-  <link rel="stylesheet" href="/styles/dietfit-hero-finale-en.css?v=20261022-small-screen-grid-1">
+  <link rel="stylesheet" href="/styles/dietfit-hero-finale-en.css?v=20261022-shared-greeting-1">
   <link rel="stylesheet" href="/styles/dietfit-hero-scan-en.css?v=20261022-vi-native-scan-1">
   <link rel="stylesheet" href="/styles/dietfit-wide-screen-en.css?v=20261021-single-background-1">
   <link rel="stylesheet" href="/styles/dietfit-notion-content-en.css?v=20261021-native-habit-cards-1">
@@ -189,7 +189,7 @@
   <link rel="stylesheet" href="/styles/dietfit-section-gaps-en.css?v=20261022-footer-frame-20px-1">
   <link rel="stylesheet" href="/styles/dietfit-type-scale-en.css?v=20261021-balanced-1">
   <link rel="stylesheet" href="/styles/dietfit-header-en.css?v=20261022-inset-20px-1">
-  <link rel="stylesheet" href="/styles/dietfit-faq-en.css?v=20261022-two-columns-1">
+  <link rel="stylesheet" href="/styles/dietfit-faq-en.css?v=20261022-intro-and-list-1">
 </head>
 
 <body class="dietfit-home--en">
@@ -277,7 +277,7 @@
             <div class="df-hero-finale" aria-hidden="true">
               <div class="df-hero-finale__backdrop"></div>
               <div class="df-hero-finale__phone">
-                <div class="df-hero-finale__peek-window"><div class="df-hero-finale__mascot"><img class="df-hero-finale__mascot-base" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></div></div>
+                <div class="df-hero-finale__peek-window"><div class="df-hero-finale__mascot df-wave-rig"><span class="df-mascot__body"><img class="df-hero-finale__mascot-base df-mascot__base" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"><img class="df-mascot__arm" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></span></div></div>
                 <div class="df-hero-finale__screen"></div>
                 <img class="df-hero-finale__hardware" src="/assets/hero/finale/phone-frame.webp" alt="" width="899" height="1832" loading="lazy" decoding="async">
               </div>
@@ -731,7 +731,13 @@
     </section>
 
 
-<section class="dietfit-faq" id="dietfit-faq"><h2>A few things you might wonder</h2><div class="dietfit-faq-list"><div class="dietfit-faq-column"><details>
+<section class="dietfit-faq" id="dietfit-faq">
+      <div class="dietfit-faq-intro">
+        <h2>A few things you might wonder</h2>
+        <p>Answers about scanning, Sara and your daily tracking. Still have a question? <a href="mailto:marketing@c0x12c.com">Get in touch with us</a>.</p>
+      </div>
+      <div class="dietfit-faq-list">
+        <details>
               <summary>
                 Are photo-based calorie estimates exact?
                 <span aria-hidden="true">
@@ -740,7 +746,8 @@
               <p>
                 No. Results depend on the photo and the visible ingredients and portions. Oils, sauces and hidden ingredients can be difficult to identify. Deep Scan lets you review ingredients and edit weights before logging.
               </p>
-            </details><details>
+            </details>
+        <details>
               <summary>
                 How do Quick Scan and Deep Scan differ?
                 <span aria-hidden="true">
@@ -749,7 +756,8 @@
               <p>
                 Quick Scan helps you log quickly. Deep Scan goes further: it outlines foods and shows individual ingredients and their calories. You can correct names or edit ingredients before saving.
               </p>
-            </details><details>
+            </details>
+        <details>
               <summary>
                 What does Sara use to answer my questions?
                 <span aria-hidden="true">
@@ -758,7 +766,8 @@
               <p>
                 Your goal and onboarding answers, meals you log, and activity from the health apps you choose to connect. What you share helps Sara offer guidance with more context.
               </p>
-            </details></div><div class="dietfit-faq-column"><details>
+            </details>
+        <details>
               <summary>
                 Does a meal plan automatically log my meals?
                 <span aria-hidden="true">
@@ -767,7 +776,8 @@
               <p>
                 No. A meal plan is a plan. Tick or log the meal you actually ate to record it. You can also swap meals, generate a new plan and review the history.
               </p>
-            </details><details>
+            </details>
+        <details>
               <summary>
                 Where can I connect activity data from?
                 <span aria-hidden="true">
@@ -776,7 +786,8 @@
               <p>
                 Dietfit connects with health apps and devices you use, such as Apple Health and Apple Watch. Activity sits beside calories in so you can follow food and movement together. Availability depends on the connections you enable in the app.
               </p>
-            </details><details>
+            </details>
+        <details>
               <summary>
                 Does Sara replace a medical professional?
                 <span aria-hidden="true">
@@ -785,7 +796,9 @@
               <p>
                 No. Sara is an AI coach that helps you understand meals and habits. Values are estimates, and guidance does not replace medical diagnosis, treatment or advice.
               </p>
-            </details></div></div></section>
+            </details>
+      </div>
+    </section>
     <section class="dietfit-final dietfit-final--en" data-dietfit-final>
       <div class="dietfit-final-image" data-background-src="/assets/images/final-cta-us-en-user-photo.webp" aria-hidden="true"></div>
       <div class="dietfit-final-shade" aria-hidden="true"></div>
@@ -815,15 +828,16 @@
 
   <script src="/vendor/lenis/lenis.min.js"></script>
   <script src="/scripts/dietfit-scroll.js?v=20261021-anchor-sync-1"></script>
+  <script src="/scripts/dietfit-mascot-wave.js?v=20261022-shared-greeting-1"></script>
   <script src="/scripts/dietfit-hero-scan-en.js?v=20261022-vi-native-scan-1"></script>
-  <script src="/scripts/dietfit-hero-finale-en.js?v=20261022-bezel-gap-1"></script>
+  <script src="/scripts/dietfit-hero-finale-en.js?v=20261022-shared-greeting-1"></script>
   <script src="/scripts/dietfit-hero.js?v=20261022-vi-native-scan-1"></script>
   <script src="/scripts/dietfit-habit-cards-en.js?v=20261021-native-1"></script>
   <script src="/scripts/dietfit-sections.js?v=20261021-four-cards-1"></script>
   <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>
   <script src="/scripts/dietfit-native-ui.js?v=20261021-widgets-restore-1"></script>
-  <script src="/scripts/dietfit-integrations.js?v=20261021-loop-1"></script>
-  <script src="/scripts/dietfit-mascots.js?v=20261021-strong-wave-1"></script>
+  <script src="/scripts/dietfit-integrations.js?v=20261022-delivery-reset-1"></script>
+  <script src="/scripts/dietfit-mascots.js?v=20261022-shared-greeting-1"></script>
 </body>
 
 </html>

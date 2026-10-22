@@ -48,8 +48,8 @@ Icon sizing update: desktop icons grow from 40px to 72px; tablet from 32px to 56
 
 ## Repeating delivery update
 
-The two delivery jobs now run in a continuous loop while visible. After all nine apps are placed, the complete grid remains readable for 3.5 seconds. Subsequent rounds fade only the app about to be collected; the rest of the grid stays in place. Both helpers return home each round; the left writes and the right rests during the pause.
+The two delivery jobs now run in a continuous loop while visible. After all nine apps are placed, the complete grid remains readable for 3.5 seconds. Every new round clears all nine logos before either helper starts moving. A logo becomes visible only when picked up, carried and placed; the unfilled grid slots stay empty. Both helpers return home each round; the left writes and the right rests during the pause.
 
 The resting interval is a pauseable Web Animations clock, not a background timeout. Offscreen scenes and hidden tabs pause both movement and the interval. Keyboard focus settles all links and blocks replay until focus leaves. Resize cancels stale geometry, shows all links and restarts after a pause when eligible. Page exit cancels the sequence. Mobile, reduced-motion and missing-API fallbacks remain static.
 
-Deterministic tests complete two full cycles and verify all nine deliveries, reading pause, next-round recall, visibility/tab pause-resume, focus cancellation/resume, page-exit cleanup, resize and reduced-motion behavior. Final browser rendering is not verified because this session's browser connection remains unavailable.
+Deterministic tests complete two full cycles and verify all nine deliveries, reading pause, all pending logos hidden at each round restart, visibility/tab pause-resume, focus cancellation/resume, page-exit cleanup, resize and reduced-motion behavior. Final browser rendering is not verified because this session's browser connection remains unavailable.

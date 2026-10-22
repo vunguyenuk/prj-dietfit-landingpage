@@ -1,19 +1,63 @@
-/* Each FAQ column expands independently, with a shared heading above. */
-.dietfit-home--en .dietfit-faq-list {
+/* Shared VI/EN FAQ: introduction on the left, one accordion list on the right. */
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq {
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
   align-items:start;
-  gap:clamp(32px,4vw,80px);
+  gap:clamp(40px,5vw,100px);
+  padding-block:0;
 }
-.dietfit-home--en .dietfit-faq-column { min-width:0; }
-.dietfit-home--en .dietfit-faq-column details:last-child { border-bottom:1px solid oklch(.86 .005 140); }
-.dietfit-home--en .dietfit-faq summary { gap:24px; padding-block:20px; font-weight:500; line-height:1.45; }
-.dietfit-home--en .dietfit-faq details p { margin:0 40px 24px 0; font-size:1rem; line-height:1.65; }
-.dietfit-home--en .dietfit-faq summary:focus-visible { outline:2px solid #fe692e; outline-offset:4px; }
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq-intro { min-width:0; }
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq-intro h2 {
+  max-width:20ch;
+  margin:0 0 20px;
+  font-size:var(--dietfit-type-section);
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-.035em;
+  text-align:left;
+  text-wrap:balance;
+}
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq-intro p {
+  max-width:38ch;
+  margin:0;
+  color:var(--dietfit-muted);
+  font-size:1rem;
+  line-height:1.65;
+}
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq-intro a {
+  color:inherit;
+  text-underline-offset:3px;
+}
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq-list {
+  display:block;
+  min-width:0;
+  width:100%;
+  max-width:none;
+  margin:0;
+}
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq summary {
+  gap:24px;
+  padding-block:20px;
+  min-height:80px;
+  font-size:1.125rem;
+  font-weight:500;
+  line-height:1.45;
+}
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq details p {
+  margin:0 40px 24px 0;
+  font-size:1rem;
+  line-height:1.65;
+}
+:is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq :is(summary,a):focus-visible {
+  outline:2px solid #fe692e;
+  outline-offset:4px;
+}
+/* The footer keeps its 20px outer frame, with a full section gap above it. */
+:is(.dietfit-home--en,.dietfit-home--vi) main > .dietfit-faq + .dietfit-final {
+  margin-top:var(--df-section-gap,100px);
+}
 @media(max-width:767px) {
-  .dietfit-home--en .dietfit-faq-list { display:flex; flex-direction:column; gap:0; }
-  .dietfit-home--en .dietfit-faq-column { display:contents; }
-  .dietfit-home--en .dietfit-faq details { width:100%; }
-  .dietfit-home--en .dietfit-faq-column:first-child details:last-child { border-bottom:0; }
-  .dietfit-home--en .dietfit-faq details p { margin-right:24px; }
+  :is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq { grid-template-columns:minmax(0,1fr); gap:32px; }
+  :is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq summary { font-size:1rem; }
+  :is(.dietfit-home--en,.dietfit-home--vi) .dietfit-faq details p { margin-right:24px; }
 }

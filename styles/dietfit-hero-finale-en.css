@@ -29,6 +29,11 @@
 .df-hero-finale__peek-window { position:absolute; z-index:1; left:0; top:27%; width:clamp(88px,9vw,180px); aspect-ratio:1; transform:translateX(-100%); overflow:visible; clip-path:inset(-20% 0 -20% -20%); }
 .df-hero-finale__mascot { position:relative; width:100%; aspect-ratio:1; transform:translateX(105%); transform-origin:95% 65%; }
 .df-hero-finale__mascot img { display:block; width:100%; height:100%; object-fit:contain; }
+/* Same layered arm and shoulder pivot as the greeting helper. The outer
+   wrapper owns the peek; only the arm waves, with no wall-clock animation. */
+.df-hero-finale__mascot .df-mascot__body { height:100%; animation:none; }
+.df-hero-finale__mascot .df-mascot__arm { transform-origin:31% 53%; animation:none; }
+
 /* Shared opaque panels: the result and budget keep their identity while docking. */
 .df-hero-dashboard { position:absolute; z-index:3; left:50%; top:50%; width:min(620px,calc(44px + (100cqh - 122px) * 750 / 812),88%); box-sizing:border-box; padding:16px; color:#211c29; transform:translate(-50%,-50%); font-family:var(--dietfit-font); font-size:0.75rem; }
 /* 74px title/padding + native 375:812 journal, with 24px breathing room per side.

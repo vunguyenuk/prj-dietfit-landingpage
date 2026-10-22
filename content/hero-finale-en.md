@@ -6,7 +6,7 @@ The EN hero uses a 900svh natural sticky runway. Capture and Deep Scan occupy th
 
 The finale is a pure function of scroll progress:
 
-- 0–24.5%: mascot peeks from the left side of the phone, greets with a gentle lean and retreats behind the same edge.
+- 0–24.5%: mascot peeks from the left side of the phone, waves its articulated arm using the same gesture as the Connected Health greeter, and retreats behind the same edge. The shared keyframe helper is sampled from scroll, preserving freeze and reverse behavior.
 - 27–38%: one calorie-budget panel moves out beside the phone.
 - The complete native Meal Detail screen is present from the start of the finale. It does not slide a second result UI over the old scrolled information screenshot.
 - 49–68%: colored nutrient dots move from the meal's macros to the budget; its ring, food total and macro values update. The reviewed 620 kcal meal changes food from 990 to 1,610 kcal, leaving 590 kcal against a 2,000 goal plus 200 activity calories.

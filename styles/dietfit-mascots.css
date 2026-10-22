@@ -16,11 +16,11 @@
 .df-mascot[data-mascot-pose="wave"] .df-mascot__arm { transform-origin:31% 53%; animation:df-mascot-wave 6.4s ease-in-out infinite paused; }
 .df-mascot[data-mascot-pose="exercise"] .df-mascot__arm { transform-origin:72% 50%; animation:df-mascot-arm-stretch 5.6s ease-in-out infinite paused; }
 .df-mascot.is-mascot-active .df-mascot__arm { animation-play-state:running; }
-.df-mascot--layered[data-mascot-pose="wave"] .df-mascot__base {
+:is(.df-mascot--layered[data-mascot-pose="wave"],.df-wave-rig) .df-mascot__base {
   mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='white' fill-rule='evenodd' d='M0 0H100V100H0ZM0 31H23L27 43V61H0Z'/%3E%3C/svg%3E");
   mask-size:100% 100%;
 }
-.df-mascot--layered[data-mascot-pose="wave"] .df-mascot__arm { clip-path:polygon(0 31%,24% 31%,31% 42%,35% 49%,35% 61%,0 61%); }
+:is(.df-mascot--layered[data-mascot-pose="wave"],.df-wave-rig) .df-mascot__arm { clip-path:polygon(0 31%,24% 31%,31% 42%,35% 49%,35% 61%,0 61%); }
 .df-mascot--layered[data-mascot-pose="exercise"] .df-mascot__base {
   mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='white' fill-rule='evenodd' d='M0 0H100V100H0ZM85 25H100V60H80V44Z'/%3E%3C/svg%3E");
   mask-size:100% 100%;

@@ -117,12 +117,6 @@
       x:pickup.x - rig.home.x - rig.size * (pickupDir > 0 ? .78 : .22),
       y:pickup.y - rig.home.y - rig.size * .61
     };
-    // On later rounds only recall the next app; the rest of the grid stays readable.
-    if (app.classList.contains('is-placed')) {
-      await tween(tile,[{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.94)'}],220,token);
-      app.classList.remove('is-placed');
-      tile.style.transform = ''; tile.style.opacity = '';
-    }
     app.classList.add('is-being-carried');
     rig.porter.classList.add('is-working');
     await walk(rig,pickupRoot,null,token);
@@ -167,6 +161,12 @@
       if (complete) await tween(scene,[{},{}],3500,token);
       while (token === generation && eligible() && !focusLocked) {
         complete = false;
+        // Every round starts with empty slots. Reveal each logo only as it is carried and placed.
+        apps.forEach(function (app) {
+          app.classList.remove('is-placed','is-being-carried');
+          const tile = app.querySelector('.df-integrations__tile');
+          tile.style.transform = ''; tile.style.opacity = '';
+        });
         section.classList.add('is-delivery-ready');
         porters.forEach(function (porter) {
           porter.classList.remove('is-resting','is-writing');
