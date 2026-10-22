@@ -1,0 +1,305 @@
+/* VI follows the approved EN page scale; native app text keeps its own metrics. */
+.dietfit-home--vi {
+  --dietfit-type-hero:clamp(2.5rem,4.1vw,3.75rem);
+  --dietfit-type-section:clamp(2rem,2.7vw,2.25rem);
+  --dietfit-type-subheading:clamp(1.25rem,1.5vw,1.5rem);
+  --dietfit-type-body:1rem;
+  --dietfit-page-max:clamp(1240px,calc(75vw + 160px),2400px);
+  --dietfit-page-width:min(var(--dietfit-page-max),92vw,92%);
+  --df-section-gap:100px;
+}
+.dietfit-home--vi :is(.container,.dietfit-highlights-sticky,.dietfit-progress-cta__sticky,.dietfit-faq,.dietfit-community__grid),
+.dietfit-home--vi .df-feature .df-feature-sticky {
+  width:var(--dietfit-page-width);
+  max-width:none;
+  margin-inline:auto;
+}
+.dietfit-home--vi .dietfit-hero-heading {
+  width:100%;
+  font-size:var(--dietfit-type-hero);
+  font-weight:600;
+  line-height:1.12;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.dietfit-home--vi :is(.df-feature-intro h2,.df-feature-copy h2,.dietfit-section-heading h2,.dietfit-progress-cta h2,.dietfit-community__intro h2,.dietfit-faq > h2,.dietfit-final-cta h2) {
+  font-size:var(--dietfit-type-section);
+  font-weight:600;
+  line-height:1.15;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.dietfit-home--vi :is(.dietfit-intro > p,.df-feature-body,.dietfit-section-heading > p,.dietfit-progress-cta__content > p,.dietfit-community__lead) {
+  max-width:60ch;
+  font-size:1rem;
+  line-height:1.6;
+  letter-spacing:-.006em;
+}
+.dietfit-home--vi .dietfit-intro { gap:24px; padding-top:64px; }
+.dietfit-home--vi .dietfit-product { display:flow-root; }
+.dietfit-home--vi main > :is(.dietfit-highlights,.dietfit-product,.dietfit-tiktok-section,.dietfit-progress-cta,.dietfit-video-section,.dietfit-community,.dietfit-faq) {
+  margin-block:var(--df-section-gap) 0;
+  padding-block:0;
+}
+.dietfit-home--vi .df-feature-intro { margin-bottom:var(--df-section-gap); padding-block:0; }
+.dietfit-home--vi .df-feature + .df-feature { margin-top:var(--df-section-gap); }
+.dietfit-home--vi .df-feature .df-feature-sticky { padding-inline:0; }
+.dietfit-home--vi .df-feature-copy { justify-self:stretch; max-width:none; gap:16px; }
+.dietfit-home--vi .df-feature-body { max-width:44ch; }
+.dietfit-home--vi .dietfit-section-heading { padding-inline:0; gap:20px; width:var(--dietfit-page-width); }
+.dietfit-home--vi .dietfit-community__intro { margin-bottom:40px; }
+.dietfit-home--vi .dietfit-community__intro h2 { margin-block:16px 24px; }
+.dietfit-home--vi .dietfit-community__content { padding:24px 24px 0; }
+.dietfit-home--vi .dietfit-community__content h3 { font-size:var(--dietfit-type-subheading); line-height:1.25; }
+.dietfit-home--vi .dietfit-community__link { margin:24px 24px 0; padding-block:20px 24px; }
+.dietfit-home--vi .dietfit-faq { padding-inline:0; }
+.dietfit-home--vi .dietfit-faq > h2 { margin-bottom:28px; }
+.dietfit-home--vi .dietfit-faq-list { max-width:none; }
+.dietfit-home--vi .dietfit-faq summary { font-size:1.125rem; font-weight:500; line-height:1.4; }
+.dietfit-home--vi .dietfit-faq details p { font-size:1rem; line-height:1.65; }
+
+/* Equal 20px outer frames for the hero and footer. Rive artwork is unchanged. */
+.dietfit-home--vi .dietfit-hero-wrap { width:calc(100% - 40px); margin:40px auto 0; }
+.dietfit-home--vi [data-component-name="scrollable-rive-hero"] {
+  clip-path:none;
+  border-radius:clamp(20px,2vw,32px);
+}
+.dietfit-home--vi .dietfit-hero-sticky { top:20px; height:calc(100svh - 40px); }
+.dietfit-home--vi .dietfit-hero-stage { overflow:hidden; border-radius:clamp(20px,2vw,32px); }
+.dietfit-home--vi main > .dietfit-final {
+  width:calc(100% - 40px);
+  min-height:calc(100svh - 40px);
+  margin:20px auto;
+  border-radius:clamp(20px,2vw,32px);
+}
+.dietfit-home--vi .dietfit-final-cta { padding-inline:24px; }
+.dietfit-home--vi .dietfit-final-cta h2 { max-width:24ch; }
+.dietfit-home--vi .dietfit-final-cta .dietfit-button { margin-top:24px; }
+.dietfit-home--vi .dietfit-footer { width:100%; max-width:none; }
+
+/* Navigation uses the same visual height and optical logo centering as EN. */
+.dietfit-home--vi #dietfit-header { padding-top:40px; }
+.dietfit-home--vi #dietfit-header .dietfit-header-nav {
+  width:calc(100% - 80px);
+  --header-height:clamp(54px,3.375rem,64px);
+  --header-cta-height:clamp(40px,2.5rem,46px);
+  --header-joined-width:min(calc(100vw - 80px),34rem);
+}
+.dietfit-home--vi #dietfit-header :is(.dietfit-header-blog-link,.dietfit-button--compact) { font-size:.875rem; line-height:1.25; }
+.dietfit-home--vi #dietfit-header .dietfit-header-cta-shell .dietfit-lang-switch a { font-size:.75rem; }
+.dietfit-home--vi #dietfit-header .dietfit-header-logo-content > a { display:inline-flex; align-items:center; line-height:0; }
+.dietfit-home--vi #dietfit-header .dietfit-header-logo-content img { display:block; width:102px; height:auto; }
+.dietfit-home--vi #dietfit-header .dietfit-header-logo-shell { left:50%; transform:translateX(calc(var(--header-joined-width) / -2)); }
+.dietfit-home--vi #dietfit-header .dietfit-header-cta-shell { right:50%; transform:translateX(calc(var(--header-joined-width) / 2)); }
+
+/* Artwork cards share EN's 5:7 proportions and readable copy density. */
+.dietfit-home--vi .dietfit-carousel { padding:0 0 16px; scroll-padding-inline:0; gap:20px; }
+.dietfit-home--vi .dietfit-card,
+.dietfit-home--vi .dietfit-scroll-scrub .dietfit-card {
+  flex:0 0 min(calc((100% - 60px) / 3),calc((100svh - 160px) * 5 / 7));
+  aspect-ratio:5 / 7;
+  min-height:0;
+  height:auto;
+  align-self:flex-start;
+  border-radius:20px;
+}
+.dietfit-home--vi .dietfit-card-copy { padding:clamp(20px,1.6vw,24px); gap:10px; }
+.dietfit-home--vi .dietfit-card-copy h2 { font-size:var(--dietfit-type-subheading); line-height:1.2; font-weight:600; }
+.dietfit-home--vi .dietfit-card-copy p { font-size:1rem; line-height:1.5; }
+
+/* Comparison images keep their full proportions inside the same visual column. */
+.dietfit-home--vi .dietfit-progress-cta__sticky {
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  align-items:start;
+  gap:clamp(48px,6vw,112px);
+  padding:0;
+}
+.dietfit-home--vi .dietfit-progress-cta__content { grid-column:2; grid-row:1; justify-items:start; text-align:left; gap:20px; }
+.dietfit-home--vi .dietfit-progress-cta__content > :is(h2,p) { max-width:42ch; margin:0; }
+.dietfit-home--vi .dietfit-progress-cta__content strong { font-weight:500; }
+.dietfit-home--vi .dietfit-progress-cta__gallery {
+  grid-column:1;
+  grid-row:1;
+  width:min(100%,calc(min(76svh,100svh - 180px) * 3376 / 2942));
+  align-self:start;
+  justify-self:start;
+}
+.dietfit-home--vi .dietfit-progress-cta__gallery figure { width:50%; }
+
+@media(min-width:768px) {
+  .dietfit-home--vi #dietfit-header.is-split .dietfit-header-logo-shell { left:0; transform:none; }
+  .dietfit-home--vi #dietfit-header.is-split .dietfit-header-cta-shell { right:0; transform:none; }
+  .dietfit-home--vi .dietfit-scroll-scrub .dietfit-highlights-sticky { top:88px; height:calc(100svh - 88px); padding-block:16px 24px; }
+  .dietfit-home--vi .dietfit-scroll-scrub .dietfit-carousel { flex:0 1 auto; }
+  .dietfit-home--vi .df-feature .df-feature-sticky { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(48px,7vw,112px); }
+}
+@media(min-width:768px) and (max-width:1023px) {
+  .dietfit-home--vi .dietfit-card,
+  .dietfit-home--vi .dietfit-scroll-scrub .dietfit-card { flex-basis:min(calc((100% - 16px) / 2),calc((100svh - 200px) * 5 / 7)); }
+}
+@media(min-width:1800px) {
+  .dietfit-home--vi .dietfit-card,
+  .dietfit-home--vi .dietfit-scroll-scrub .dietfit-card { flex-basis:min(calc((100% - 60px) / 3.6),calc((100svh - 160px) * 5 / 7)); }
+}
+@media(max-width:1024px) {
+  .dietfit-home--vi .df-feature-peek.df-mascot { display:none; }
+  .dietfit-home--vi .df-feature .df-feature-copy { justify-items:center; text-align:center; }
+  .dietfit-home--vi .dietfit-progress-cta__sticky { grid-template-columns:1fr; gap:40px; }
+  .dietfit-home--vi .dietfit-progress-cta__gallery { grid-column:1; grid-row:1; }
+  .dietfit-home--vi .dietfit-progress-cta__content { grid-column:1; grid-row:2; max-width:38rem; }
+}
+@media(max-width:767px) {
+  .dietfit-home--vi {
+    --dietfit-type-hero:clamp(2.125rem,8vw,2.75rem);
+    --dietfit-type-section:clamp(1.75rem,6.7vw,2.125rem);
+    --dietfit-type-subheading:1.25rem;
+  }
+  .dietfit-home--vi #dietfit-header .dietfit-header-nav { --header-joined-width:100%; }
+  .dietfit-home--vi #dietfit-header .dietfit-header-logo-shell { left:0; width:100%; transform:none; }
+  .dietfit-home--vi #dietfit-header .dietfit-mobile-menu-toggle { right:0; }
+  .dietfit-home--vi #dietfit-header .dietfit-mobile-menu { left:0; right:0; }
+  .dietfit-home--vi .dietfit-intro { padding-top:56px; }
+  .dietfit-home--vi .dietfit-card { flex-basis:100%; }
+  .dietfit-home--vi .dietfit-faq > h2 { margin-bottom:24px; }
+  .dietfit-home--vi .dietfit-faq summary { font-size:1rem; }
+  .dietfit-home--vi .df-feature .df-feature-sticky { width:calc(100% - 40px); }
+  .dietfit-home--vi .df-feature-copy { gap:12px; margin-bottom:24px; }
+  .dietfit-home--vi .dietfit-progress-cta__gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; }
+  .dietfit-home--vi .dietfit-progress-cta__gallery figure { width:100%; }
+  .dietfit-home--vi .dietfit-progress-cta__gallery::after { display:block; }
+  .dietfit-home--vi .dietfit-progress-cta__content { gap:16px; }
+  .dietfit-home--vi .dietfit-footer { padding:32px 20px; }
+  .dietfit-home--vi .dietfit-footer-links { gap:24px; }
+  .dietfit-home--vi .dietfit-footer-legal { gap:16px; margin-top:32px; padding-top:24px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .dietfit-home--vi [data-component-name="scrollable-rive-hero"] { height:calc(100svh - 40px); }
+  .dietfit-home--vi .df-feature { min-height:0; padding-block:0; }
+  .dietfit-home--vi .df-feature .df-feature-sticky { top:auto; min-height:0; }
+}
+
+/* Match EN app visual sizing and companion clearance without changing app UI. */
+/* The phone owns the same column and scale with or without a mascot. */
+@media(min-width:768px) {
+  .dietfit-home--vi .df-feature .df-feature-sticky {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:clamp(48px,7vw,112px);
+  }
+}
+.dietfit-home--vi .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+  grid-template-columns:minmax(0,1fr);
+  column-gap:0;
+  isolation:isolate;
+}
+.dietfit-home--vi .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native {
+  position:relative;
+  z-index:2;
+  grid-column:1;
+  grid-row:1;
+}
+/* Peek from the inward edge, using the column gap instead of pushing outside
+   the page container. The phone occludes the mascot's right side. */
+.dietfit-home--vi .df-feature .df-feature-peek.df-mascot {
+  --df-mascot-width:min(13.75rem,calc(var(--df-feature-visual-width,400px) * .52));
+  position:absolute;
+  z-index:1;
+  grid-column:auto;
+  grid-row:auto;
+  width:var(--df-mascot-width);
+  height:auto;
+  inset:auto;
+  left:calc(50% - var(--df-feature-visual-width,400px) / 2 - var(--df-mascot-width) * .78);
+  bottom:calc(var(--df-mascot-floor,0px) + 8px);
+  margin:0;
+  transform:none;
+  pointer-events:none;
+}
+/* Keep companions on the inward edge when their phone sits in the left column. */
+.dietfit-home--vi .df-feature.is-flipped .df-feature-peek.df-mascot {
+  left:calc(50% + var(--df-feature-visual-width,400px) / 2 - var(--df-mascot-width) * .22);
+}
+.dietfit-home--vi .df-feature--widgets .df-feature-peek.df-mascot {
+  --df-mascot-width:min(11.25rem,calc(var(--df-feature-visual-width,400px) * .4));
+}
+
+/* Widgets retain their own companion lane beside the original cards. */
+@media(min-width:1025px) {
+  .dietfit-home--vi .df-feature--widgets .df-feature-sticky { grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); }
+  .dietfit-home--vi .df-feature--widgets .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    --df-widget-mascot-width:clamp(240px,23vw,340px);
+    grid-template-columns:minmax(0,1fr) var(--df-widget-mascot-width);
+    column-gap:clamp(12px,1.2vw,24px);
+  }
+  .dietfit-home--vi .df-feature--widgets .df-feature-peek.df-mascot {
+    position:relative;
+    grid-column:2;
+    grid-row:1;
+    align-self:end;
+    width:var(--df-widget-mascot-width);
+    inset:auto;
+    margin:0 0 calc(var(--df-mascot-floor,0px) - var(--df-widget-mascot-width) * .05);
+    transform:none;
+  }
+}
+
+/* Mobile and tablet prioritize the app visual over decorative mascots. */
+@media(max-width:1024px) {
+  .dietfit-home--vi .df-feature-peek.df-mascot { display:none; }
+  .dietfit-home--vi .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    grid-template-columns:minmax(0,1fr);
+    column-gap:0;
+  }
+  .dietfit-home--vi .df-feature-stage:has(> .df-feature-peek.df-mascot) > .df-native {
+    grid-column:1;
+    padding:0;
+  }
+  .dietfit-home--vi .df-feature .df-feature-copy { justify-items:center; text-align:center; }
+  .dietfit-home--vi .df-feature-copy .df-resume { justify-self:center; }
+  .dietfit-home--vi .dietfit-final-cta { align-items:center; text-align:center; }
+  .dietfit-home--vi .dietfit-final-cta h2 { margin-inline:auto; }
+}
+/* Small screens give text and product visual one shared centered column. */
+@media(max-width:767px) {
+  .dietfit-home--vi .df-feature .df-feature-sticky {
+    display:block;
+    position:relative;
+    top:auto;
+    width:min(calc(100% - 40px),36rem);
+    min-height:inherit;
+    height:auto;
+    padding:28px 0;
+  }
+  .dietfit-home--vi .df-feature .df-feature-copy {
+    width:100%;
+    max-width:none;
+    margin:0 auto 24px;
+    justify-items:center;
+    gap:12px;
+    text-align:center;
+  }
+  .dietfit-home--vi .df-feature-copy .df-feature-body { max-width:42ch; }
+  .dietfit-home--vi .df-feature .df-feature-stage,
+  .dietfit-home--vi .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    position:relative;
+    top:auto;
+    width:100%;
+    height:min(620px,calc(100svh - 112px));
+    min-height:0;
+    max-height:none;
+    grid-template-columns:minmax(0,1fr);
+    column-gap:0;
+  }
+  .dietfit-home--vi .df-feature--widgets .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    height:min(480px,calc(100svh - 112px));
+  }
+}
+@media(max-width:767px) and (prefers-reduced-motion:no-preference) {
+  .dietfit-home--vi .df-feature .df-feature-stage,
+  .dietfit-home--vi .df-feature-stage:has(> .df-feature-peek.df-mascot) {
+    position:sticky;
+    top:88px;
+  }
+}
+@media(max-width:767px) and (prefers-reduced-motion:reduce) {
+  .dietfit-home--vi .df-feature .df-feature-sticky { min-height:0; }
+}

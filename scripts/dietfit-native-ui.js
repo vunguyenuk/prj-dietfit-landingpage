@@ -277,7 +277,7 @@ const chapters=$$('[data-demo]');
 function fit(el){
   const stage=$('.df-feature-stage',el),device=$('.dv',el);
   const native=$('.df-native',el),mascot=$('.df-feature-peek.df-mascot',el);
-  const sharedPhoneColumn=document.body.classList.contains('dietfit-home--en');
+  const sharedPhoneColumn=document.body.matches('.dietfit-home--en,.dietfit-home--vi');
   const availableWidth=Math.max(1,sharedPhoneColumn?stage.clientWidth:(mascot?native.clientWidth:stage.clientWidth));
   const maxScale=sharedPhoneColumn?Math.max(1.15,Math.min(2,1.15+(window.innerWidth-1440)*.000535714)):1.15;
   if(el.dataset.demo==='widgets'){
