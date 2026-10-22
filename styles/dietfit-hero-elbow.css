@@ -1,0 +1,7 @@
+/* Same original Rive motion in VI and EN; only its proximal cut edge is repaired. */
+.df-hero-native-window { position:absolute; inset:0; overflow:hidden; }
+.df-hero-native-window--en { border-radius:clamp(20px,2vw,32px); }
+.df-hero-elbow { position:absolute; inset:0 auto auto 0; pointer-events:none; opacity:0; }
+.rive-ready .df-hero-elbow { opacity:1; }
+.is-hero-finale .df-hero-elbow { display:none; }
+@media(prefers-reduced-motion:reduce) { .df-hero-elbow { display:none; } }

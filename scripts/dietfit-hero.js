@@ -78,6 +78,7 @@
   canvas.className = 'dietfit-rive-canvas';
   canvas.setAttribute('aria-hidden', 'true');
   stage.prepend(canvas);
+  const elbow=window.createDietfitHeroElbow ? window.createDietfitHeroElbow(hero,stage,canvas) : null;
 
   let scrollValue = null;
   let frame = 0;
@@ -134,6 +135,7 @@
       const nativeProgress = scan ? scan.render(langSuffix ? beforeFinale*scan.finaleEntry() : renderedScroll) : renderedScroll;
       const chapter = Math.max(0,Math.min(1,(renderedScroll-.62)/.32));
       const riveProgress = finale ? finale.progress(nativeProgress,chapter) : nativeProgress;
+      if(elbow)elbow.render(riveProgress);
       if (scrollAnimation) {
         player.scrub(scrollAnimation, riveProgress * scrollDuration);
       } else {
@@ -146,6 +148,7 @@
   function resize() {
     measureHeroInset();
     if (scan) scan.resize();
+    if (elbow) elbow.resize();
     if (finale) finale.resize();
     if (player && player.loaded && player.artboard) {
       player.resizeDrawingSurfaceToCanvas(window.devicePixelRatio || 1);
@@ -256,6 +259,7 @@
     if (!window.rive) return;
     if (frame) cancelAnimationFrame(frame);
     if (scan) scan.reset();
+    if (elbow) elbow.reset();
     if (finale) finale.reset();
     frame = 0;
     scrollValue = null;
@@ -288,6 +292,7 @@
     if (frame) cancelAnimationFrame(frame);
     if (player) player.cleanup();
     if (scan) scan.reset();
+    if (elbow) elbow.reset();
     if (finale) finale.destroy();
   }, { once: true });
 
