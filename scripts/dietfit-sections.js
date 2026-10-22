@@ -20,7 +20,7 @@
 
   function updateControls() {
     previous.disabled = carousel.scrollLeft <= 2;
-    if (highlights && highlights.classList.contains('dietfit-highlights--en')) {
+    if (highlights && highlights.matches('.dietfit-highlights--en,.dietfit-highlights--vi')) {
       const items = cards();
       const padding = parseFloat(getComputedStyle(carousel).scrollPaddingLeft) || 0;
       const lastPosition = items.length ? items[items.length - 1].offsetLeft - padding : 0;
@@ -35,22 +35,22 @@
     const items = cards();
     const current = carousel.scrollLeft;
     const padding = parseFloat(getComputedStyle(carousel).scrollPaddingLeft) || 0;
-    // EN card widths adapt to viewport height. Ignore the small end-padding
+    // Localized card widths adapt to viewport height. Ignore the small end-padding
     // offset so a mobile Previous click moves to the preceding card immediately.
-    const isEnglishHighlights = highlights && highlights.classList.contains('dietfit-highlights--en');
-    const tolerance = isEnglishHighlights ? 24 : 2;
+    const isLocalizedHighlights = highlights && highlights.matches('.dietfit-highlights--en,.dietfit-highlights--vi');
+    const tolerance = isLocalizedHighlights ? 24 : 2;
     const target = direction > 0
       ? items.find(function (card) { return card.offsetLeft - padding > current + tolerance; })
       : items.reverse().find(function (card) { return card.offsetLeft - padding < current - tolerance; });
     if (!target) return;
-    const targetLeft = isEnglishHighlights
+    const targetLeft = isLocalizedHighlights
       ? Math.min(Math.max(0, target.offsetLeft - padding), Math.max(0, carousel.scrollWidth - carousel.clientWidth))
       : target.offsetLeft - padding;
     if (scrubEnabled && highlights && sticky) {
       const sectionTop = highlights.getBoundingClientRect().top + window.scrollY;
       const verticalRange = highlights.offsetHeight - sticky.offsetHeight;
       const targetY = sectionTop + (targetLeft / Math.max(maxHorizontal, 1)) * verticalRange;
-      if (isEnglishHighlights && window.dietfitLenis) {
+      if (isLocalizedHighlights && window.dietfitLenis) {
         window.dietfitLenis.scrollTo(targetY,{duration:.55});
       } else {
         window.scrollTo({ top: targetY, behavior: 'smooth' });

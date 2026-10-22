@@ -1,0 +1,59 @@
+/* VI shares EN's ten-card carousel, 5:7 geometry and responsive sizing.
+   The photographic layers are unmodified real Asian stock photographs. */
+.dietfit-home--vi .dietfit-highlights--vi { background:#fff; padding-block:0; }
+.dietfit-home--vi .dietfit-highlights--vi .dietfit-carousel { position:relative; padding:0 0 16px; scroll-padding-inline:0; gap:20px; }
+.dietfit-home--vi .dietfit-highlights--vi .dietfit-card-copy h2 { font-size:var(--dietfit-type-subheading); font-weight:600; }
+.dietfit-home--vi .dietfit-highlights--vi .dietfit-card-copy { gap:8px; }
+.dietfit-highlights--vi .df-vi-photo { position:absolute; inset:0; overflow:hidden; background:var(--df-vi-photo-tone,#394a46); }
+.dietfit-highlights--vi .df-vi-photo .dietfit-card-art {
+  top:24%;
+  height:76%;
+  object-position:var(--df-vi-photo-position,50% 0%);
+  mask-image:linear-gradient(180deg,transparent,#000 8%);
+}
+.dietfit-highlights--vi .df-highlight--nutrition { --df-vi-photo-tone:#5a4d39; }
+.dietfit-highlights--vi .df-highlight--science { --df-vi-photo-tone:#5d625b; }
+.dietfit-highlights--vi .df-highlight--streak { --df-vi-photo-tone:#686055; }
+.dietfit-highlights--vi .df-highlight--health { --df-vi-photo-tone:#526351; --df-vi-photo-position:74% 0%; }
+.dietfit-highlights--vi .df-highlight--progress { --df-vi-photo-tone:#353f42; --df-vi-photo-position:38% 0%; }
+.dietfit-highlights--vi .df-highlight--health .dietfit-card-art,
+.dietfit-highlights--vi .df-highlight--progress .dietfit-card-art { top:28%; height:72%; }
+/* Crop only the opaque product panels from the exact EN Figma exports.
+   Photographic source pixels outside each rounded panel remain clipped. */
+.dietfit-highlights--vi .df-vi-ui-crop {
+  position:absolute;
+  z-index:2;
+  overflow:hidden;
+  border-radius:8%;
+  background:#fff;
+  filter:drop-shadow(0 4px 10px rgb(17 11 32 / 8%));
+  pointer-events:none;
+}
+.dietfit-highlights--vi .df-vi-ui-crop > img {
+  position:absolute;
+  display:block;
+  max-width:none;
+  width:var(--df-ui-source-width);
+  height:var(--df-ui-source-height);
+  left:var(--df-ui-source-left);
+  top:var(--df-ui-source-top);
+}
+.dietfit-highlights--vi .df-habit-card--streak .df-habit-art { background:#53675d; }
+.dietfit-highlights--vi .df-habit-card--challenge .df-habit-art { background:#6b5a47; }
+.dietfit-highlights--vi .df-habit-card--photo .df-habit-person {
+  position:absolute;
+  inset:auto 0 0;
+  height:76%;
+  object-position:50% 0%;
+  mask-image:linear-gradient(180deg,transparent,#000 10%);
+}
+@media(min-width:768px) {
+  .dietfit-highlights--vi.dietfit-scroll-scrub .dietfit-highlights-sticky { top:88px; height:calc(100svh - 88px); padding-block:16px 24px; justify-content:center; }
+  .dietfit-home--vi .dietfit-highlights--vi .dietfit-carousel { gap:16px; }
+}
+@media(min-width:1024px) {
+  .dietfit-home--vi .dietfit-highlights--vi .dietfit-carousel { gap:20px; }
+}
+@media(max-width:767px) {
+  .dietfit-home--vi .dietfit-highlights--vi .dietfit-card-en { flex-basis:100%; }
+}

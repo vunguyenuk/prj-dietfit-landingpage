@@ -92,21 +92,6 @@
 .dietfit-home--vi #dietfit-header .dietfit-header-logo-shell { left:50%; transform:translateX(calc(var(--header-joined-width) / -2)); }
 .dietfit-home--vi #dietfit-header .dietfit-header-cta-shell { right:50%; transform:translateX(calc(var(--header-joined-width) / 2)); }
 
-/* Artwork cards share EN's 5:7 proportions and readable copy density. */
-.dietfit-home--vi .dietfit-carousel { padding:0 0 16px; scroll-padding-inline:0; gap:20px; }
-.dietfit-home--vi .dietfit-card,
-.dietfit-home--vi .dietfit-scroll-scrub .dietfit-card {
-  flex:0 0 min(calc((100% - 60px) / 3),calc((100svh - 160px) * 5 / 7));
-  aspect-ratio:5 / 7;
-  min-height:0;
-  height:auto;
-  align-self:flex-start;
-  border-radius:20px;
-}
-.dietfit-home--vi .dietfit-card-copy { padding:clamp(20px,1.6vw,24px); gap:10px; }
-.dietfit-home--vi .dietfit-card-copy h2 { font-size:var(--dietfit-type-subheading); line-height:1.2; font-weight:600; }
-.dietfit-home--vi .dietfit-card-copy p { font-size:1rem; line-height:1.5; }
-
 /* Comparison images keep their full proportions inside the same visual column. */
 .dietfit-home--vi .dietfit-progress-cta__sticky {
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
@@ -133,14 +118,6 @@
   .dietfit-home--vi .dietfit-scroll-scrub .dietfit-carousel { flex:0 1 auto; }
   .dietfit-home--vi .df-feature .df-feature-sticky { grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(48px,7vw,112px); }
 }
-@media(min-width:768px) and (max-width:1023px) {
-  .dietfit-home--vi .dietfit-card,
-  .dietfit-home--vi .dietfit-scroll-scrub .dietfit-card { flex-basis:min(calc((100% - 16px) / 2),calc((100svh - 200px) * 5 / 7)); }
-}
-@media(min-width:1800px) {
-  .dietfit-home--vi .dietfit-card,
-  .dietfit-home--vi .dietfit-scroll-scrub .dietfit-card { flex-basis:min(calc((100% - 60px) / 3.6),calc((100svh - 160px) * 5 / 7)); }
-}
 @media(max-width:1024px) {
   .dietfit-home--vi .df-feature-peek.df-mascot { display:none; }
   .dietfit-home--vi .df-feature .df-feature-copy { justify-items:center; text-align:center; }
@@ -159,7 +136,6 @@
   .dietfit-home--vi #dietfit-header .dietfit-mobile-menu-toggle { right:0; }
   .dietfit-home--vi #dietfit-header .dietfit-mobile-menu { left:0; right:0; }
   .dietfit-home--vi .dietfit-intro { padding-top:56px; }
-  .dietfit-home--vi .dietfit-card { flex-basis:100%; }
   .dietfit-home--vi .dietfit-faq > h2 { margin-bottom:24px; }
   .dietfit-home--vi .dietfit-faq summary { font-size:1rem; }
   .dietfit-home--vi .df-feature .df-feature-sticky { width:calc(100% - 40px); }

@@ -1,5 +1,5 @@
-/* Exact Figma artwork with live copy over the image, as in the original carousel. */
-.dietfit-highlights--en .dietfit-card-en {
+/* Shared VI/EN carousel composition; each locale owns its photographic layers and live copy. */
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-card-en {
   isolation:isolate;
   flex:0 0 min(36rem,calc(100vw - 5rem));
   aspect-ratio:5 / 7;
@@ -48,31 +48,31 @@
 .dietfit-card-en.df-highlight--dashboard .dietfit-card-copy p { color:#625d6b; }
 /* Two cards on tablet; three readable desktop cards plus a hint of the next. */
 @media(min-width:768px) {
-  .dietfit-home--en .dietfit-highlights--en .dietfit-carousel { gap:16px; }
-  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-carousel { flex:0 1 auto; }
-  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en {
+  :is(.dietfit-home--en,.dietfit-home--vi) :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-carousel { gap:16px; }
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi).dietfit-scroll-scrub .dietfit-carousel { flex:0 1 auto; }
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi).dietfit-scroll-scrub .dietfit-card-en {
     flex:0 0 min(calc((100% - 16px) / 2),calc((100svh - 200px) * 5 / 7));
     height:auto;
     min-height:0;
     align-self:flex-start;
     border-radius:20px;
   }
-  .dietfit-home--en .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-highlights-sticky { justify-content:center; }
+  :is(.dietfit-home--en,.dietfit-home--vi) :is(.dietfit-highlights--en,.dietfit-highlights--vi).dietfit-scroll-scrub .dietfit-highlights-sticky { justify-content:center; }
 }
 @media(min-width:1024px) {
-  .dietfit-home--en .dietfit-highlights--en .dietfit-carousel { gap:20px; }
-  .dietfit-highlights--en .dietfit-card-en,
-  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en { flex:0 0 min(calc((100% - 60px) / 3),calc((100svh - 160px) * 5 / 7)); }
-  .dietfit-home--en .dietfit-highlights--en .dietfit-card-copy { padding:clamp(1.25rem,1.6vw,1.5rem); gap:.625rem; }
-  .dietfit-highlights--en .dietfit-card-copy h2 { font-size:clamp(1.25rem,1.6vw,1.5rem); line-height:1.2; }
-  .dietfit-highlights--en .dietfit-card-copy p { font-size:1rem; line-height:1.5; }
+  :is(.dietfit-home--en,.dietfit-home--vi) :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-carousel { gap:20px; }
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-card-en,
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi).dietfit-scroll-scrub .dietfit-card-en { flex:0 0 min(calc((100% - 60px) / 3),calc((100svh - 160px) * 5 / 7)); }
+  :is(.dietfit-home--en,.dietfit-home--vi) :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-card-copy { padding:clamp(1.25rem,1.6vw,1.5rem); gap:.625rem; }
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-card-copy h2 { font-size:clamp(1.25rem,1.6vw,1.5rem); line-height:1.2; }
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-card-copy p { font-size:1rem; line-height:1.5; }
 }
 /* Slightly larger cards retain a preview of the next item without shrinking UI. */
 @media(min-width:1800px) {
-  .dietfit-highlights--en .dietfit-card-en,
-  .dietfit-highlights--en.dietfit-scroll-scrub .dietfit-card-en { flex-basis:min(calc((100% - 60px) / 3.6),calc((100svh - 160px) * 5 / 7)); }
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-card-en,
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi).dietfit-scroll-scrub .dietfit-card-en { flex-basis:min(calc((100% - 60px) / 3.6),calc((100svh - 160px) * 5 / 7)); }
 }
 @media(max-width:767px) {
-  .dietfit-highlights--en .dietfit-card-en { flex-basis:calc(100vw - 2.5rem); }
+  :is(.dietfit-highlights--en,.dietfit-highlights--vi) .dietfit-card-en { flex-basis:calc(100vw - 2.5rem); }
   .dietfit-card-en .dietfit-card-copy h2 { font-size:1.5rem; }
 }

@@ -1,8 +1,8 @@
-/* Four EN habit cards. Native Figma components retain their 343 × 343 geometry. */
-.dietfit-highlights--en .df-habit-card { display:grid; grid-template-rows:max-content minmax(0,1fr); color:#211c29; background:#fff4ee; }
-.dietfit-highlights--en .df-habit-card::before { display:none; }
-.dietfit-highlights--en .df-habit-card .dietfit-card-copy { position:relative; inset:auto; padding-bottom:18px; }
-.dietfit-highlights--en .df-habit-card .dietfit-card-copy p { color:#625d6b; }
+/* Shared VI/EN habit cards. Native Figma components retain their 343 × 343 geometry. */
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card { display:grid; grid-template-rows:max-content minmax(0,1fr); color:#211c29; background:#fff4ee; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card::before { display:none; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card .dietfit-card-copy { position:relative; inset:auto; padding-bottom:18px; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card .dietfit-card-copy p { color:#625d6b; }
 .df-habit-art { position:relative; min-height:0; overflow:hidden; container-type:size; font-family:var(--dietfit-font); line-height:1.35; }
 .df-habit-person { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 28%; }
 .df-habit-art::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 65%,rgb(17 11 32 / 18%)); }
@@ -32,25 +32,25 @@
 .df-figma-icons span:nth-child(3) img { width:calc(40 * var(--u)); }
 .df-habit-points { position:absolute; z-index:2; right:6%; bottom:12%; display:flex; align-items:center; gap:8px; padding:10px 14px; border-radius:100px; background:white; box-shadow:0 5px 20px rgb(17 11 32 / 12%); color:#111; font-size:14px; font-weight:600; line-height:20px; }
 .df-habit-points img { display:block; width:24px; height:24px; }
-.dietfit-highlights--en .df-habit-card--challenge { background:#f0f3eb; }
-.dietfit-highlights--en .df-habit-card--reminder { background:#fff1e8; }
-.dietfit-highlights--en .df-habit-card--together { background:#fff1e8; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--challenge { background:#f0f3eb; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--reminder { background:#fff1e8; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--together { background:#fff1e8; }
 /* Real lifestyle photographs fill Streak/Challenge just like the other photo cards. */
-.dietfit-highlights--en .df-habit-card--photo { display:block; color:#fffaf6; background:#263325; }
-.dietfit-highlights--en .df-habit-card--photo .df-habit-art { position:absolute; inset:0; }
-.dietfit-highlights--en .df-habit-card--photo .df-habit-person { object-position:50% 0%; }
-.dietfit-highlights--en .df-habit-card--photo::before {
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo { display:block; color:#fffaf6; background:#263325; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo .df-habit-art { position:absolute; inset:0; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo .df-habit-person { object-position:50% 0%; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo::before {
   display:block;
   z-index:1;
   height:46%;
   background:linear-gradient(180deg,rgb(17 11 32 / 76%),rgb(17 11 32 / 36%) 48%,transparent);
 }
-.dietfit-highlights--en .df-habit-card--photo .dietfit-card-copy { position:absolute; inset:0 0 auto; z-index:3; }
-.dietfit-highlights--en .df-habit-card--photo .dietfit-card-copy p { color:rgb(255 250 246 / 94%); }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo .dietfit-card-copy { position:absolute; inset:0 0 auto; z-index:3; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--photo .dietfit-card-copy p { color:rgb(255 250 246 / 94%); }
 /* Keep the supplied skater photograph intact, with the face below the copy.
    A soft upper blend gives the text headroom without modifying the person. */
-.dietfit-highlights--en .df-habit-card--streak .df-habit-art { background:#526967; }
-.dietfit-highlights--en .df-habit-card--streak .df-habit-person {
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--streak .df-habit-art { background:#526967; }
+:is(.dietfit-highlights--en,.dietfit-highlights--vi) .df-habit-card--streak .df-habit-person {
   position:absolute;
   bottom:0;
   height:80%;

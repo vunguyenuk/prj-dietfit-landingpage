@@ -1,0 +1,163 @@
+{
+  "license": "https://www.pexels.com/license/",
+  "selection": "Asian subjects identified in the source photographer descriptions; real photography only. No image generation, retouching, face changes or generative background extensions.",
+  "processing": "Downloaded photographic JPEGs copied unchanged; headroom and overlays are HTML/CSS.",
+  "photos": [
+    {
+      "file": "nutrition.jpg",
+      "photographer": "Pragyan Bezbaruah",
+      "page": "https://www.pexels.com/photo/smiling-woman-sitting-with-cellphone-2029244/",
+      "image": "https://images.pexels.com/photos/2029244/pexels-photo-2029244.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "description": "Asian woman using her smartphone in a Hanoi café.",
+      "dimensions": [
+        1400,
+        2100
+      ],
+      "sha256": "a75ba574efe292eb8a98d47199adab13af5bdb4ee44431f5d671ab44f02e3894"
+    },
+    {
+      "file": "science.jpg",
+      "photographer": "Antoni Shkraba",
+      "page": "https://www.pexels.com/photo/sliced-cucumber-and-boiled-egg-in-ceramic-bowl-6823320/",
+      "image": "https://images.pexels.com/photos/6823320/pexels-photo-6823320.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "description": "Real quinoa, vegetables and egg bowl.",
+      "dimensions": [
+        1400,
+        2100
+      ],
+      "sha256": "e912b61db1b33eea82c5f99954de16d9795e4cacb2a65fe4d89c3f51fe70ecb7"
+    },
+    {
+      "file": "reward.jpg",
+      "photographer": "Mikhail Nilov",
+      "page": "https://www.pexels.com/photo/a-woman-eating-noodles-from-a-takeout-box-8102200/",
+      "image": "https://images.pexels.com/photos/8102200/pexels-photo-8102200.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "description": "Asian woman enjoying noodles.",
+      "dimensions": [
+        1400,
+        2100
+      ],
+      "sha256": "c46f5ef24ca116744aa4f8d0e5da4be9b132d5ec984d138fcd49b4cdfe5a4a95"
+    },
+    {
+      "file": "health.jpg",
+      "photographer": "Ketut Subiyanto",
+      "page": "https://www.pexels.com/photo/slim-asian-woman-using-smart-watch-and-smartphone-in-park-4436295/",
+      "image": "https://images.pexels.com/photos/4436295/pexels-photo-4436295.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "description": "Asian sportswoman using her watch and smartphone outdoors.",
+      "dimensions": [
+        1400,
+        1874
+      ],
+      "sha256": "49eb0f02caa8d6515ff95e976da85a4cde5cc01e20761e0bba1e50d962022fe5"
+    },
+    {
+      "file": "progress.jpg",
+      "photographer": "Allan Mas",
+      "page": "https://www.pexels.com/photo/positive-young-asian-woman-using-smartphone-while-resting-after-training-in-gym-5384001/",
+      "image": "https://images.pexels.com/photos/5384001/pexels-photo-5384001.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "description": "Asian sportswoman checking her smartphone during a gym break.",
+      "dimensions": [
+        1400,
+        933
+      ],
+      "sha256": "30e35da3c71e87dc142d57100f258f9a2a2950e530fb4ee01aaaa17c7a716d56"
+    },
+    {
+      "file": "streak.jpg",
+      "photographer": "Samson Katt",
+      "page": "https://www.pexels.com/photo/asian-young-man-smiling-and-using-smartphone-5225308/",
+      "image": "https://images.pexels.com/photos/5225308/pexels-photo-5225308.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "description": "Asian young man smiling while using his smartphone outdoors.",
+      "dimensions": [
+        1400,
+        933
+      ],
+      "sha256": "c6b3d5015b68b175afc3c6388e5d9eb9e5f45f62abebc1125c965ff370d16ddd"
+    },
+    {
+      "file": "challenge.jpg",
+      "photographer": "Kathrine Joy Sorongon",
+      "page": "https://www.pexels.com/photo/woman-holding-a-cellphone-smiling-beside-a-person-10188512/",
+      "image": "https://images.pexels.com/photos/10188512/pexels-photo-10188512.jpeg?auto=compress&cs=tinysrgb&w=1400",
+      "description": "Two Asian women smiling together with a smartphone.",
+      "dimensions": [
+        1400,
+        2100
+      ],
+      "sha256": "45bc0beadcf51e63273f99a4e5162e74c5ca463b00af739b21bd7013ff4c22b3"
+    }
+  ],
+  "productPanelCrops": {
+    "source": "Existing exact Figma EN exports under assets/cards/figma-sync; opaque UI only, original photographic layers clipped out in HTML/CSS.",
+    "coordinateSystem": [
+      1500,
+      2100
+    ],
+    "panels": [
+      {
+        "file": "card-3-v2.webp",
+        "rect": [
+          567,
+          621,
+          643,
+          349
+        ]
+      },
+      {
+        "file": "card-3-v2.webp",
+        "rect": [
+          42,
+          1202,
+          429,
+          333
+        ]
+      },
+      {
+        "file": "card-3-v2.webp",
+        "rect": [
+          888,
+          1328,
+          565,
+          597
+        ]
+      },
+      {
+        "file": "card-4.webp",
+        "rect": [
+          359,
+          719,
+          296,
+          366
+        ]
+      },
+      {
+        "file": "card-4.webp",
+        "rect": [
+          728,
+          1085,
+          298,
+          365
+        ]
+      },
+      {
+        "file": "card-5.webp",
+        "rect": [
+          668,
+          1208,
+          514,
+          240
+        ]
+      },
+      {
+        "file": "card-5.webp",
+        "rect": [
+          954,
+          1508,
+          523,
+          394
+        ]
+      }
+    ]
+  }
+}
