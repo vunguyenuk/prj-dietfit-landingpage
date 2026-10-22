@@ -69,7 +69,7 @@
   }
 }
 
-/* Comparison on the left, copy on the right, sharing the same top edge. */
+/* Comparison on the left; copy is vertically centered against the full image. */
 .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__sticky {
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
   align-items:start;
@@ -77,17 +77,19 @@
 }
 .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content {
   max-width:42ch;
+  align-self:center;
   justify-self:start;
   justify-items:start;
   gap:20px;
   text-align:left;
 }
 .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > h2 { max-width:17ch; margin:0; }
-.dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > p { max-width:42ch; margin:0; }
+.dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > p { max-width:42ch; margin:0; text-align:justify; text-align-last:left; }
 .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__lead { font-weight:500; color:#110b20; }
 .dietfit-home--en .dietfit-progress-cta--en .dietfit-button { margin-top:8px; }
 @media(max-width:1024px) {
   .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__sticky { grid-template-columns:1fr; gap:40px; }
   .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content { max-width:38rem; justify-self:start; justify-items:start; text-align:left; gap:16px; }
   .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > h2 { max-width:24ch; }
+  .dietfit-home--en .dietfit-progress-cta--en .dietfit-progress-cta__content > p { text-align:left; }
 }
