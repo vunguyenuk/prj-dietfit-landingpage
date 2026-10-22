@@ -47,6 +47,16 @@
 }
 .dietfit-highlights--en .df-habit-card--photo .dietfit-card-copy { position:absolute; inset:0 0 auto; z-index:3; }
 .dietfit-highlights--en .df-habit-card--photo .dietfit-card-copy p { color:rgb(255 250 246 / 94%); }
+/* Keep the supplied skater photograph intact, with the face below the copy.
+   A soft upper blend gives the text headroom without modifying the person. */
+.dietfit-highlights--en .df-habit-card--streak .df-habit-art { background:#526967; }
+.dietfit-highlights--en .df-habit-card--streak .df-habit-person {
+  position:absolute;
+  bottom:0;
+  height:80%;
+  object-position:50% 0%;
+  mask-image:linear-gradient(180deg,transparent,#000 10%);
+}
 .df-habit-card--photo .df-habit-tile { width:46%; left:6%; bottom:5%; }
 .df-habit-card--photo .df-habit-points { right:6%; bottom:14%; }
 .df-habit-card--reminder .df-habit-art::after,.df-habit-card--together .df-habit-art::after { display:none; }

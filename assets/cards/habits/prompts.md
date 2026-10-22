@@ -1,8 +1,7 @@
 # Human photo backgrounds
 
-Streak and Challenge now use real stock photography from Pexels, replacing the previously generated portraits. No image generation is used in the current two photo cards.
+Streak uses the exact user-supplied photograph of a young skater in a neon green shirt checking his phone. `streak-skater-user.png` is copied byte-for-byte from `codex-clipboard-d431c696-aa73-40cb-8721-50475d5013b5.png` (736 × 883). The person and face are unchanged; the top headroom, soft blend and crop are CSS.
 
-- Streak: Sound On, [young woman in orange and lilac taking a selfie](https://www.pexels.com/photo/photo-of-woman-holding-mobile-phone-3756812/).
-- Challenge: KoolShooters, [friends laughing over pizza](https://www.pexels.com/photo/two-young-women-having-fun-while-eating-their-pizza-7142963/).
+Challenge uses KoolShooters’ real [friends laughing over pizza](https://www.pexels.com/photo/two-young-women-having-fun-while-eating-their-pizza-7142963/) photograph, proportionally resized and encoded as WebP. Source details and its Pexels license are in `source.json`.
 
-Images are proportionally resized and encoded as WebP; composition and shading are CSS. Source details and the Pexels license link are in `source.json`. Product overlays retain the original Figma assets and geometry.
+No image generation is used. Product overlays retain the original Figma assets and geometry.

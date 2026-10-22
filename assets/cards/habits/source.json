@@ -36,23 +36,22 @@
     }
   },
   "humanPhotos": {
-    "type": "Real photographic stock; no generated people",
-    "license": "https://www.pexels.com/license/",
+    "type": "Real photography: user-supplied Streak image and stock Challenge image; no generated people",
     "streak": {
-      "file": "streak-genz-real.webp",
-      "photographer": "Sound On",
-      "page": "https://www.pexels.com/photo/photo-of-woman-holding-mobile-phone-3756812/",
-      "source": "https://images.pexels.com/photos/3756812/pexels-photo-3756812.jpeg",
-      "description": "Young woman in a lilac top and orange vest taking a selfie against a bright orange backdrop."
+      "file": "streak-skater-user.png",
+      "source": "User attachment: codex-clipboard-d431c696-aa73-40cb-8721-50475d5013b5.png",
+      "description": "Young man in a neon green shirt, cap and headphones smiling at his phone with a skateboard on his lap.",
+      "processing": "Original 736 × 883 PNG copied byte-for-byte. Headroom, crop and upper blend are CSS; no facial or pixel edits."
     },
     "challenge": {
       "file": "challenge-real-people.webp",
       "photographer": "KoolShooters",
       "page": "https://www.pexels.com/photo/two-young-women-having-fun-while-eating-their-pizza-7142963/",
       "source": "https://images.pexels.com/photos/7142963/pexels-photo-7142963.jpeg",
-      "description": "Two friends laughing over pizza on a mustard sofa."
+      "description": "Two friends laughing over pizza on a mustard sofa.",
+      "license": "https://www.pexels.com/license/"
     },
-    "processing": "Proportional resize to 1000 \u00d7 1500 and WebP encoding only. Full-bleed crop and readable text shading are CSS. Figma UI assets remain separate HTML overlays."
+    "processing": "Streak retains the exact user-supplied PNG. Challenge is proportionally resized to 1000 × 1500 and encoded as WebP. Full-bleed composition and text shading are CSS. Figma UI assets remain separate HTML overlays."
   },
   "mealStills": {
     "source": "User-provided ugc_widget_final.mp4",
