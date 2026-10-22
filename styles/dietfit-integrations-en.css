@@ -135,3 +135,25 @@
   .df-integrations__app--apple-health { grid-area:9 / 4; }
   .df-integrations__porter { display:none; }
 }
+
+/* Keep the complete desktop diagram in view, using real layout dimensions so
+   mascot delivery coordinates remain accurate. Compact phones keep their grid. */
+@media(min-width:701px) {
+  .dietfit-home--en .df-integrations .df-integrations__scene {
+    width:min(85%,calc((100svh - 160px) * 11 / 7));
+    height:auto;
+    aspect-ratio:11 / 7;
+    margin-inline:auto;
+    container-type:inline-size;
+  }
+  .dietfit-home--en .df-integrations .df-integrations__apps { height:100%; aspect-ratio:auto; gap:clamp(7px,.65cqw,14px); }
+  .dietfit-home--en .df-integrations .df-integrations__tile { padding:clamp(8px,1.17cqw,24px); }
+  .dietfit-home--en .df-integrations .df-integrations__tile img { width:min(100%,clamp(48px,5.6cqw,109px)); }
+  .dietfit-home--en .df-integrations .df-integrations__hub { top:32%; width:clamp(136px,15cqw,238px); padding:20px 14px 15px; }
+  .dietfit-home--en .df-integrations .df-integrations__hub > img { width:clamp(54px,4.6cqw,95px); height:auto; aspect-ratio:1; margin-bottom:10px; }
+  .dietfit-home--en .df-integrations .df-integrations__hub h3 { font-size:clamp(16px,1.05cqw,23px); }
+  .dietfit-home--en .df-integrations .df-integrations__hub .df-integrations__data { margin-top:10px; font-size:clamp(9px,.58cqw,13px); }
+  .dietfit-home--en .df-integrations .df-integrations__porter { --df-porter-size:clamp(128px,13cqw,238px); width:var(--df-porter-size); height:var(--df-porter-size); top:55%; }
+  .dietfit-home--en .df-integrations .df-integrations__porter--left { left:calc(50% - var(--df-porter-size) - 9px); }
+  .dietfit-home--en .df-integrations .df-integrations__porter--right { left:auto; right:calc(50% - var(--df-porter-size) - 9px); }
+}
