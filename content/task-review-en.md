@@ -83,3 +83,9 @@ Theo phản hồi mới nhất, đảo thứ tự DOM của section so sánh: �
 Cụm diagram desktop/tablet dùng 85% chiều rộng cột, cap chiều cao theo viewport trừ160px và giữ tỷ lệ11:7. Icon, hub và hai mascot co theo chiều rộng scene thật bằng container units; không scale transform lên parent nên tọa độ giao nhận vẫn đúng. Grid mobile7×9 giữ nguyên.
 
 Đã khởi động lại preview4180 và kết nối Chrome thành công. Tại1512×823, scene1041,85×662,99px; khi cuộn vào vị trí kiểm tra, top88,05/bottom751,04px, không tràn ngang. Xác nhận9 app, hai mascot di chuyển/giao nhận; kiểm tra tự động hai vòng lặp, pause/focus/resize/reduced motion và build đều qua. Ảnh render: `prj-dietfit-review-2026-10-20/integrations-compact-desktop.png` ngoài repo. Các ghi chú browser-unavailable trước đó là tình trạng lịch sử, kết nối hiện đã hoạt động lại cho lần kiểm tra này.
+
+## Footer cùng khung ngoài hero — 22/10
+
+Footer EN dùng width `100% − 40px`, margin20px trên/dưới, bo góc và min-height `100svh − 40px` như khung hero. Nội dung footer và CTA giữ nguyên.
+
+Chrome đo desktop: lề trái/phải20px, khoảng sauFAQ20px, cuối trang20,02px; mobile viewport390×844 (document width375px sau scrollbar): trái/phải20px, trên20px, dưới19,77px do làm tròn subpixel, không tràn ngang. Đã reset viewport sau kiểm tra. Build18 trang qua; ảnh xác nhận lưu ngoài repo: `prj-dietfit-review-2026-10-20/footer-frame-20px-desktop.png`.

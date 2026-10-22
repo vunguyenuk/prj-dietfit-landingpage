@@ -22,3 +22,12 @@
 @media(prefers-reduced-motion:reduce) {
   .dietfit-home--en [data-component-name="scrollable-rive-hero"] { height:calc(100svh - 2 * var(--df-hero-gutter)); }
 }
+
+/* Finish the page with the same 20px outer frame as the hero. */
+.dietfit-home--en main > .dietfit-final--en {
+  width:calc(100% - 40px);
+  max-width:none;
+  min-height:calc(100svh - 40px);
+  margin:20px auto;
+  border-radius:clamp(20px,2vw,32px);
+}
