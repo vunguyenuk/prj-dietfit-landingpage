@@ -35,6 +35,20 @@
 .dietfit-highlights--en .df-habit-card--challenge { background:#f0f3eb; }
 .dietfit-highlights--en .df-habit-card--reminder { background:#eaf0ec; }
 .dietfit-highlights--en .df-habit-card--together { background:#e8eff6; }
+/* Real lifestyle photographs fill Streak/Challenge just like the other photo cards. */
+.dietfit-highlights--en .df-habit-card--photo { display:block; color:#fffaf6; background:#263325; }
+.dietfit-highlights--en .df-habit-card--photo .df-habit-art { position:absolute; inset:0; }
+.dietfit-highlights--en .df-habit-card--photo .df-habit-person { object-position:50% 0%; }
+.dietfit-highlights--en .df-habit-card--photo::before {
+  display:block;
+  z-index:1;
+  height:46%;
+  background:linear-gradient(180deg,rgb(17 11 32 / 76%),rgb(17 11 32 / 36%) 48%,transparent);
+}
+.dietfit-highlights--en .df-habit-card--photo .dietfit-card-copy { position:absolute; inset:0 0 auto; z-index:3; }
+.dietfit-highlights--en .df-habit-card--photo .dietfit-card-copy p { color:rgb(255 250 246 / 94%); }
+.df-habit-card--photo .df-habit-tile { width:46%; left:6%; bottom:5%; }
+.df-habit-card--photo .df-habit-points { right:6%; bottom:14%; }
 .df-habit-card--reminder .df-habit-art::after,.df-habit-card--together .df-habit-art::after { display:none; }
 /* Upper half of the real phone shell, with unmodified supplied widget renders. */
 .df-widget-phone { position:absolute; width:min(88%,84cqh); aspect-ratio:899 / 1832; left:50%; translate:-50% 0; top:4%; container-type:inline-size; filter:drop-shadow(0 10px 12px rgb(17 11 32 / 18%)); }

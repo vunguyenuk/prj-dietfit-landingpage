@@ -1,7 +1,8 @@
-# Human photo backgrounds — built-in image_gen
+# Human photo backgrounds
 
-Output files: `streak-person.webp`, `challenge-person.webp`. Full asset provenance, Figma nodes/downloads and source-video crop coordinates are in `source.json` beside this file. UI is built separately from exact Figma components and assets; these photos contain no generated UI.
+Streak and Challenge now use real stock photography from Pexels, replacing the previously generated portraits. No image generation is used in the current two photo cards.
 
-Final prompt:
+- Streak: Ketut Subiyanto, [two women looking at a smartphone](https://www.pexels.com/photo/women-sitting-on-steps-in-front-of-a-house-and-looking-at-a-phone-screen-5047040/).
+- Challenge: KoolShooters, [friends laughing over pizza](https://www.pexels.com/photo/two-young-women-having-fun-while-eating-their-pizza-7142963/).
 
-> Use case: photorealistic-natural. Create ONE photographic diptych asset, landscape 3:2, two equally sized vertical photographs touching at the center with no border. These will be split into two separate landing page feature card photo backgrounds. LEFT photograph: candid young Vietnamese woman in her late 20s, wearing muted terracotta athletic top, sitting at a kitchen breakfast counter, looking down at the smartphone held naturally in one hand, a small proud joyful smile and relaxed fist of celebration in the other hand. RIGHT photograph: young Vietnamese man in his late 20s in a forest green casual shirt in a sunny kitchen, enjoying a joyful small victory after checking a smartphone, broad spontaneous grin, one hand holding the phone and other lightly raised. Warm natural daylight, editorial lifestyle photography, believable skin and hands, documentary unposed feeling, appetizing healthy meal glimpsed at the very bottom. COMPOSITION essential: each person framed from torso up in the upper two thirds of their own portrait, head completely visible at about 25 percent from top, bottom third mostly clothes and kitchen counter so white UI tiles can later overlay it. No interface, no graphics, no writing, no logos, no watermarks, no text. The phones are plain generic black viewed from rear. Full bleed realistic photographs only, no background cutout.
+Images are proportionally resized and encoded as WebP; composition and shading are CSS. Source details and the Pexels license link are in `source.json`. Product overlays retain the original Figma assets and geometry.

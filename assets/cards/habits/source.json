@@ -36,13 +36,23 @@
     }
   },
   "humanPhotos": {
-    "tool": "Built-in image_gen",
-    "source": "/Users/vunguyen/.codex/generated_images/01a14e6e-8cfc-78d1-ac44-d28e8ffc0070/exec-93c280bf-1917-48a1-a61b-ae1a97ebb542.png",
-    "output": [
-      "streak-person.webp",
-      "challenge-person.webp"
-    ],
-    "processing": "Split the diptych into portraits, resized to 750\u00d71000 and encoded WebP; native UI remains HTML plus original Figma assets."
+    "type": "Real photographic stock; no generated people",
+    "license": "https://www.pexels.com/license/",
+    "streak": {
+      "file": "streak-real-people.webp",
+      "photographer": "Ketut Subiyanto",
+      "page": "https://www.pexels.com/photo/women-sitting-on-steps-in-front-of-a-house-and-looking-at-a-phone-screen-5047040/",
+      "source": "https://images.pexels.com/photos/5047040/pexels-photo-5047040.jpeg",
+      "description": "Two women on terracotta steps looking at a phone, with olive clothing and garden plants."
+    },
+    "challenge": {
+      "file": "challenge-real-people.webp",
+      "photographer": "KoolShooters",
+      "page": "https://www.pexels.com/photo/two-young-women-having-fun-while-eating-their-pizza-7142963/",
+      "source": "https://images.pexels.com/photos/7142963/pexels-photo-7142963.jpeg",
+      "description": "Two friends laughing over pizza on a mustard sofa."
+    },
+    "processing": "Proportional resize to 1000 \u00d7 1500 and WebP encoding only. Full-bleed crop and readable text shading are CSS. Figma UI assets remain separate HTML overlays."
   },
   "mealStills": {
     "source": "User-provided ugc_widget_final.mp4",

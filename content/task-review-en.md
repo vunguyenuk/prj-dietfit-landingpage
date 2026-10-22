@@ -89,3 +89,11 @@ Cụm diagram desktop/tablet dùng 85% chiều rộng cột, cap chiều cao the
 Footer EN dùng width `100% − 40px`, margin20px trên/dưới, bo góc và min-height `100svh − 40px` như khung hero. Nội dung footer và CTA giữ nguyên.
 
 Chrome đo desktop: lề trái/phải20px, khoảng sauFAQ20px, cuối trang20,02px; mobile viewport390×844 (document width375px sau scrollbar): trái/phải20px, trên20px, dưới19,77px do làm tròn subpixel, không tràn ngang. Đã reset viewport sau kiểm tra. Build18 trang qua; ảnh xác nhận lưu ngoài repo: `prj-dietfit-review-2026-10-20/footer-frame-20px-desktop.png`.
+
+## 22 October — Streak and Challenge full photographic cards
+
+Replaced generated portraits with real Pexels photographs by Ketut Subiyanto (5047040) and KoolShooters (7142963). Sources, license and processing are recorded in `assets/cards/habits/source.json`. Photos retain their proportions and are encoded as 1000×1500 WebP. Removed the two unused generated portraits.
+
+Both cards now use full-bleed imagery with white live copy and the same dark top fade as adjacent photo cards. Figma tiles sit in the lower left at 46% card width, leaving the visible smiles clear; Fitpoints remains on the right. The six original photo cards, both animated widget cards and three exact Figma overlays are unchanged.
+
+Build and diff checks passed. Existing habit-card asset, pause/play, visibility and reduced-motion checks passed. Browser review at desktop 1512×823 and mobile 390×844 confirms complete photo coverage, loaded images, readable copy, unobscured expressions and no horizontal overflow. Mobile cards measure 345×483, copy occupies 161px and product tiles start at 300px. Screenshots: `habit-real-photos-desktop.png`, `habit-streak-real-photo-mobile.png`, `habit-challenge-real-photo-mobile.png` in `/Users/vunguyen/Desktop/prj-dietfit-review-2026-10-20/`.
