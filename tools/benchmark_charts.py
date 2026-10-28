@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def chart(kind, apps, categories):
     columns = []
+    highest = max(app["score"] for app in apps)
     for app_index, app in enumerate(apps):
         icon = ('/assets/benchmarks-page/landing/app-icon.png' if app['id'] == 'dietfit'
                 else '/assets/benchmarks-editorial/app-icons/' + app['id']
@@ -25,7 +26,8 @@ def chart(kind, apps, categories):
             detail = html.escape(detail, quote=True)
             label = html.escape(label, quote=True)
             points.append(f'<button class="bm-chart-dot" type="button" style="--score:{score};--shift:{shift}px" data-app="{name}" data-score="{score:.1f}" data-detail="{detail}" aria-label="{name}, {label}, {score:.1f}% accuracy"><span></span></button>')
-        columns.append(f'<div class="bm-chart-column {"bm-chart-column--dietfit" if app["id"] == "dietfit" else ""}"><div class="bm-chart-brand"><img src="{icon}" width="40" height="40" alt=""><span>{html.escape(app["name"])}</span><strong>{app["score"]:.1f}<small>%</small></strong></div><div class="bm-chart-plot">{"".join(points)}</div></div>')
+        rank = '<span class="bm-chart-rank" aria-label="Highest average"><span>Highest average</span><b aria-hidden="true">#1</b></span>' if app["score"] == highest else ""
+        columns.append(f'<div class="bm-chart-column {"bm-chart-column--dietfit" if app["id"] == "dietfit" else ""}">{rank}<div class="bm-chart-brand"><img src="{icon}" width="40" height="40" alt=""><span>{html.escape(app["name"])}</span><strong>{app["score"]:.1f}<small>%</small></strong></div><div class="bm-chart-plot">{"".join(points)}</div></div>')
     ticks = ''.join(f'<span style="--tick:{score}%">{score}</span>' for score in [100, 75, 50, 25, 0])
     return f'<div class="bm-chart-scroll" tabindex="0" role="region" aria-label="{kind.title()} accuracy dot plot. Scroll horizontally on smaller screens."><div class="bm-dot-chart bm-dot-chart--{kind}" style="--apps:{len(apps)}">{"".join(columns)}<div class="bm-chart-axis" aria-hidden="true">{ticks}</div><div class="bm-chart-tooltip" role="status" aria-live="polite" hidden></div></div></div>'
 
@@ -37,4 +39,12 @@ def compose_charts(template):
         if template.count(marker) != 1:
             raise ValueError('Missing benchmark chart slot: ' + kind)
         template = template.replace(marker, chart(kind, data[kind], data['categories']))
+        lead_marker = '<!-- benchmark:' + kind + '-lead -->'
+        if lead_marker in template:
+            dietfit = next(app for app in data[kind] if app['id'] == 'dietfit')
+            next_best = max((app for app in data[kind] if app['id'] != 'dietfit'), key=lambda app: app['score'])
+            lead = dietfit['score'] - next_best['score']
+            if lead <= 0:
+                raise ValueError('Update the Dietfit lead copy to match the recorded scores')
+            template = template.replace(lead_marker, f'<p class="bm-chart-lead"><strong aria-label="{lead:.1f} percentage points higher">+{lead:.1f} pts</strong> <span>vs {html.escape(next_best["name"])}</span></p>')
     return template

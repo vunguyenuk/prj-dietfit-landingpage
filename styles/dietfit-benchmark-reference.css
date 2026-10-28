@@ -30,13 +30,22 @@
 .df-benchmarks .bm-chart-heading h3 { margin: 0; color: var(--plot-ink); font-size: 17px; font-weight: 500; line-height: 1.4; letter-spacing: -.025em; }
 .bm-chart-heading p { margin: 0; color: var(--plot-muted); font-size: 11px; line-height: 1.5; }
 .bm-chart-scroll { overflow: auto; scrollbar-width: thin; scrollbar-color: #e8d3c880 transparent; padding: 0 2px 4px; }
-.bm-dot-chart { --plot-height: 220px; position: relative; display: grid; grid-template-columns: repeat(var(--apps), minmax(140px,1fr)); min-width: calc(var(--apps) * 140px + 28px); padding-right: 28px; padding-bottom: 20px; }
-.bm-dot-chart--photo { --plot-height: 174px; }
-.bm-chart-brand { display: flex; flex-direction: column; align-items: center; gap: 7px; height: 106px; font-size: 12px; color: var(--plot-muted); }
+.bm-dot-chart { --brand-height: 164px; --plot-height: 220px; position: relative; display: grid; grid-template-columns: repeat(var(--apps), minmax(140px,1fr)); min-width: calc(var(--apps) * 140px + 28px); padding-right: 28px; padding-bottom: 20px; }
+.bm-dot-chart--photo { --plot-height: 174px; min-width: 0; grid-template-columns: repeat(var(--apps), minmax(0,1fr)); }
+.bm-chart-column { position: relative; min-width: 0; }
+.bm-chart-column--dietfit::before { content: ""; position: absolute; inset: 0 6px -8px; border: 1px solid #fff4ee24; border-radius: 16px; background: #ffd2bd12; pointer-events: none; }
+/* Badge sits inside the column with 12px above and 16px before the logo. */
+.bm-chart-rank { position: absolute; z-index: 1; top: 12px; left: 50%; width: max-content; max-width: calc(100% - 14px); padding: 4px 9px; transform: translateX(-50%); border-radius: 999px; color: #4d2414; background: #ffd2bd; font-size: 10px; font-weight: 600; line-height: 1.4; white-space: nowrap; }
+.bm-chart-rank b { display: none; }
+.bm-chart-heading .bm-chart-lead { display: flex; align-items: baseline; flex-wrap: wrap; gap: 5px; color: var(--plot-muted); font-size: 12px; }
+.bm-chart-lead strong { color: #ffd2bd; font-size: 20px; font-weight: 600; letter-spacing: -.035em; line-height: 1.2; }
+.bm-chart-brand { position: relative; display: flex; flex-direction: column; align-items: center; gap: 7px; height: var(--brand-height); padding-top: 50px; font-size: 12px; color: var(--plot-muted); }
 .bm-chart-brand img { display: block; width: 38px; height: 38px; border: 2px solid #fff4ee; border-radius: 50%; object-fit: cover; }
-.bm-chart-brand strong { color: var(--plot-ink); font-size: 17px; font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
+.bm-chart-brand strong { color: var(--plot-ink); font-size: 19px; font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
 .bm-chart-brand strong small { font-size: 12px; opacity: .65; }
 .bm-chart-column--dietfit .bm-chart-brand img { box-shadow: 0 0 0 4px #ffbf6655; }
+.bm-chart-column--dietfit .bm-chart-brand > span { color: var(--plot-ink); font-weight: 600; }
+.bm-chart-column--dietfit .bm-chart-brand strong { color: #ffd2bd; font-size: 26px; font-weight: 600; }
 .bm-chart-plot { position: relative; height: var(--plot-height); background: repeating-linear-gradient(to top, #ffffff16 0px, #ffffff16 1px, transparent 1px, transparent 25%); border-top: 1px solid #ffffff16; border-bottom: 1px solid #ffffff16; }
 .bm-chart-column + .bm-chart-column .bm-chart-plot { border-left: 1px solid #ffffff16; }
 .bm-chart-dot { position: absolute; left: calc(50% + var(--shift)); bottom: calc(var(--score) * 1%); z-index: 1; display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 50%; transform: translate(-50%,50%); cursor: pointer; background: transparent; touch-action: manipulation; }
@@ -46,7 +55,7 @@
 .bm-chart-dot:is(:hover,:focus-visible,[data-active]) { z-index: 2; }
 .bm-chart-dot:is(:hover,:focus-visible,[data-active]) > span { opacity: 1; transform: scale(1.6); }
 .df-benchmarks .bm-chart-dot:focus-visible { outline: 2px solid #fff4ee !important; outline-offset: 2px; }
-.bm-chart-axis { position: absolute; top: 106px; right: 0; height: var(--plot-height); width: 24px; color: #e8d3c8; font-size: 10px; }
+.bm-chart-axis { position: absolute; top: var(--brand-height); right: 0; height: var(--plot-height); width: 24px; color: #e8d3c8; font-size: 10px; }
 .bm-chart-axis span { position: absolute; bottom: var(--tick); right: 0; transform: translateY(50%); }
 .bm-chart-tooltip { position: absolute; z-index: 4; width: max-content; max-width: 225px; padding: 12px 14px; border: 1px solid #110b2014; border-radius: 12px; background: #fff4ee; box-shadow: 0 8px 24px #110b2018; color: #110b20; font-size: 12px; pointer-events: none; }
 .bm-chart-tooltip[hidden] { display: none; }
@@ -123,9 +132,17 @@
   .bm-scoreboard .bm-result-panel__source { padding-top: 16px; gap: 10px; }
   .bm-chart-panel { padding: 20px 16px 16px; }
   .bm-chart-heading { margin-bottom: 24px; }
+  .bm-dot-chart--photo .bm-chart-rank { padding: 4px 8px; }
+  .bm-dot-chart--photo .bm-chart-rank > span { display: none; }
+  .bm-dot-chart--photo .bm-chart-rank > b { display: block; font-weight: 600; }
+  .bm-dot-chart--photo .bm-chart-brand { font-size: 11px; }
+  .bm-dot-chart--photo .bm-chart-brand img { width: 32px; height: 32px; }
+  .bm-dot-chart--photo .bm-chart-brand strong { font-size: 17px; }
+  .bm-dot-chart--photo .bm-chart-column--dietfit .bm-chart-brand strong { font-size: 22px; }
+  .bm-dot-chart--photo .bm-chart-brand strong small { font-size: 10px; }
   .df-benchmarks .bm-chart-heading h3 { font-size: 16px; }
   .bm-scoreboard-note { padding: 20px 8px 8px; font-size: 10px; }
-  .bm-chart-hint::after { content: " Swipe to compare apps →"; }
+  #text-overview .bm-chart-hint::after { content: " Swipe to compare apps →"; }
   .df-benchmarks > section[aria-labelledby="bm-photo"] { padding: 24px 16px; border-radius: 24px; }
   .df-benchmarks section[aria-labelledby="bm-photo"] h2 { font-size: 29px; }
   .bm-photo__comparison { grid-template-columns: 1fr; gap: 16px; }

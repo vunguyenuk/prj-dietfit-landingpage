@@ -7,26 +7,42 @@
 .bm-scan-phone__screen { position: absolute; top: 1.856%; left: 4.672%; width: 90.768%; height: 96.07%; overflow: hidden; border-radius: 13.5% / 6.25%; background: #f4f2ef; }
 .bm-scan-phone video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .bm-scan-phone__frame { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
-/* Dietfit vinyl stickers: expressive die-cut shapes and bold, short copy.
-   Keep the original reference's placements and clear space around the phone. */
-.bm-scan-sticker { position: absolute; aspect-ratio: 1; pointer-events: none; filter: drop-shadow(0 3px 2px #6b402016); }
-.bm-scan-sticker > svg,.bm-scan-sticker > img { display: block; width: 100%; height: 100%; overflow: visible; }
-.bm-scan-sticker .bm-sticker-type { font-family: inherit; font-size: 34px; font-weight: 900; letter-spacing: -1.8px; }
-.bm-scan-sticker .bm-sticker-caption { font-family: inherit; font-size: 18px; font-weight: 500; letter-spacing: -.5px; }
-.bm-scan-sticker .bm-sticker-type--ticket { font-size: 29px; letter-spacing: -1.2px; }
-.bm-scan-sticker .bm-sticker-type--wins { font-size: 26px; letter-spacing: -1px; }
-.bm-scan-sticker--meal { top: 27.5%; left: 9.2%; width: 11%; transform: rotate(-14deg); }
-.bm-scan-sticker--photo { top: 9.5%; right: 12.9%; width: 10%; aspect-ratio: 150 / 174; transform: rotate(15deg); }
-.bm-scan-sticker--edge-meal { top: 62%; left: -4.5%; width: 13.5%; transform: rotate(12deg); }
-.bm-scan-sticker--edge-wins { top: 60%; right: -4.5%; width: 15%; transform: rotate(-15deg); }
-.bm-scan-sticker--bottom { bottom: -6.5%; left: 11%; width: 18%; transform: rotate(-9deg); }
-.bm-scan-sticker--bottom img { filter: drop-shadow(3px 0 0 #fffaf4) drop-shadow(-3px 0 0 #fffaf4) drop-shadow(0 3px 0 #fffaf4) drop-shadow(0 -3px 0 #fffaf4); }
-.bm-scan-tag { position: absolute; display: flex; align-items: center; gap: 7px; padding: .6em .85em; border: 3px solid #fffaf4; border-radius: 12px; color: #fffaf4; background: #292420; box-shadow: 0 3px 2px #6b402016; font-size: clamp(10px,1.45cqw,18px); font-weight: 600; line-height: 1.2; white-space: nowrap; }
-.bm-scan-tag svg { flex: none; width: 1.3em; height: 1.3em; }
-.bm-scan-tag--scan { left: 17.6%; top: 51%; transform: rotate(-23deg); }
-.bm-scan-tag--scan svg { color: #ffac84; }
-.bm-scan-tag--run { right: 17.5%; bottom: 6.5%; color: #292420; background: #ffdb83; border-radius: 999px; transform: rotate(12deg); }
-.bm-scan-scribble { position: absolute; top: 35.7%; right: 9.6%; width: 14.2%; height: auto; }
+/* A food-to-nutrition collage with clear space around the original phone. */
+.bm-scan-sticker { position: absolute; aspect-ratio: 1; pointer-events: none; }
+.bm-scan-sticker > svg,.bm-scan-sticker > img { display: block; width: 100%; height: 100%; }
+.bm-sticker-orbit { fill: #80371f; font-family: inherit; font-size: 15px; font-weight: 500; letter-spacing: 2px; }
+.bm-sticker-note { fill: #80371f; font-family: inherit; font-size: 11px; font-weight: 400; letter-spacing: -.1px; }
+.bm-scan-sticker--meal { top: 24%; left: 7.5%; width: 18%; transform: rotate(-13deg); filter: drop-shadow(0 8px 8px #68422812); }
+.bm-scan-sticker--photo { top: 12%; right: 12.5%; width: 11.5%; transform: rotate(13deg); }
+.bm-scan-sticker--bottom { bottom: -4%; left: 5.5%; width: 20%; transform: rotate(-7deg); }
+.bm-scan-tag { position: absolute; display: flex; align-items: center; gap: 9px; padding: .65em 1.15em; border: 1px solid #80371f66; border-radius: 999px; color: #80371f; background: transparent; font-size: clamp(10px,1.45cqw,18px); font-weight: 400; letter-spacing: -.025em; line-height: 1.2; white-space: nowrap; }
+.bm-scan-tag svg { flex: none; width: 1.2em; height: 1.2em; }
+.bm-scan-tag--meal { top: 57%; left: 10%; transform: rotate(-13deg); }
+.bm-scan-tag--scan { right: 11%; bottom: 8%; transform: rotate(12deg); }
+.bm-scan-scribble { position: absolute; top: 31%; right: 8%; width: 11%; height: auto; color: #bf6b49; }
+/* Ingredient labels are illustrative names from the pictured bowl, not scores. */
+.bm-scan-sticker > .bm-meal-viewfinder { position: absolute; inset: -8%; width: 116%; height: 116%; }
+.bm-ingredient { position: absolute; display: flex; align-items: center; gap: 6px; padding: .45em .75em; border: 1px solid #e6cbb9; border-radius: 999px; color: #643a28; background: #fffaf4; box-shadow: 0 3px 8px #643a2809; font-size: clamp(9px,1.05cqw,13px); line-height: 1.2; white-space: nowrap; }
+.bm-ingredient i { width: 5px; height: 5px; border-radius: 50%; background: #fe692e; }
+.bm-ingredient--egg { top: 8%; right: -18%; transform: rotate(8deg); }
+.bm-ingredient--greens { bottom: 26%; left: -20%; transform: rotate(-5deg); }
+.bm-ingredient--grains { bottom: -9%; right: -10%; transform: rotate(14deg); }
+.bm-nutrition-slip { position: absolute; top: 42%; right: 8.5%; width: 18%; padding: 1.35cqw 1.5cqw; border: 1px solid #ebd7c8; border-radius: 12px 12px 4px 4px; background: #fffaf4; color: #593421; box-shadow: 2px 7px 0 -3px #ecd6c5, 0 10px 22px #59342109; transform: rotate(7deg); pointer-events: none; }
+.bm-nutrition-slip__top { display: flex; justify-content: space-between; align-items: center; color: #a36545; font-size: clamp(7px,.65cqw,9px); font-weight: 500; letter-spacing: .12em; }
+.df-benchmarks .bm-nutrition-slip > p { margin: .9cqw 0 1.2cqw; color: #593421; font-size: clamp(14px,2cqw,25px); font-weight: 500; line-height: 1.15; letter-spacing: -.055em; }
+.bm-nutrition-slip__macros { display: flex; flex-wrap: wrap; gap: 5px; }
+.bm-nutrition-slip__macros > span { display: flex; align-items: center; gap: 5px; padding: 5px 7px; border-radius: 999px; background: #f6e8dd; color: #74462e; font-size: clamp(8px,.85cqw,11px); line-height: 1; }
+.bm-nutrition-slip__macros i { width: 4px; height: 4px; border-radius: 50%; background: #fe692e; }
+.bm-nutrition-slip__macros > span:nth-child(2) { background: #ffe9bc; }
+.bm-nutrition-slip__macros > span:nth-child(3) { background: #ffd2bd; }
+.bm-nutrition-slip__base { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 1.3cqw; padding-top: .85cqw; border-top: 1px dashed #d8bca5; color: #a0765e; }
+.bm-nutrition-slip__base > span { max-width: 11ch; font-size: clamp(6px,.5cqw,7px); line-height: 1.5; letter-spacing: .04em; }
+.bm-nutrition-slip__base svg { flex: none; width: 3.4cqw; }
+.bm-scan-thought { position: absolute; top: 72%; left: 21%; padding: .85cqw 1.1cqw; border-radius: 16px 16px 16px 2px; color: #80371f; background: #ffd2bd; font-size: clamp(11px,1.2cqw,15px); font-weight: 400; line-height: 1.35; letter-spacing: -.025em; transform: rotate(-7deg); pointer-events: none; }
+.bm-scan-thought::after { content: ""; position: absolute; left: 0; bottom: -7px; width: 13px; height: 14px; background: #ffd2bd; clip-path: polygon(0 0,100% 0,0 100%); }
+.bm-scan-flourish { position: absolute; pointer-events: none; }
+.bm-scan-flourish--spark { top: 65%; left: 2.5%; width: 4%; color: #fe692e; transform: rotate(-12deg); }
+.bm-scan-flourish--orbit { inset: 0; width: 100%; height: 100%; color: #c9916f70; }
 .bm-scan-showcase__toggle { position: absolute; z-index: 2; right: 16px; bottom: 16px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 1px solid #29242024; border-radius: 50%; color: #292420; background: #fff9f3; cursor: pointer; }
 .bm-scan-showcase__toggle svg { grid-area: 1 / 1; }
 .bm-scan-showcase__toggle[data-playing="false"] .bm-demo-pause,.bm-scan-showcase__toggle[data-playing="true"] .bm-demo-play { display: none; }
@@ -61,13 +77,27 @@
   .bm-scan-showcase__stage { height: 520px; aspect-ratio: auto; border-radius: 24px; }
   .bm-scan-showcase__brand { width: 90px; top: 32px; }
   .bm-scan-phone { width: 64%; top: 22.45%; }
-  .bm-scan-sticker--meal { width: 72px; left: 1%; top: 28%; }
-  .bm-scan-sticker--photo { width: 68px; right: 4%; top: 13%; }
-  .bm-scan-sticker--edge-meal { width: 96px; left: -15%; top: 63%; }
-  .bm-scan-sticker--edge-wins { width: 96px; right: -18%; top: 65%; }
-  .bm-scan-sticker--bottom { width: 112px; left: 1%; bottom: -4%; }
+  .bm-scan-sticker--meal { width: 68px; left: -1%; top: 30%; }
+  .bm-scan-sticker--photo { width: 76px; right: 1%; top: 13%; }
+  .bm-scan-sticker--bottom { width: 105px; left: -3%; bottom: 1%; }
   .bm-scan-tag { display: none; }
-  .bm-scan-scribble { width: 66px; top: 40%; right: 1%; }
+  .bm-scan-scribble { width: 56px; top: 42%; right: 0; }
+  .bm-ingredient { font-size: 7px; padding: 3px 5px; gap: 3px; }
+  .bm-ingredient i { width: 3px; height: 3px; }
+  .bm-ingredient--egg { right: -8%; top: -16%; }
+  .bm-ingredient--greens { left: -8%; bottom: 3%; }
+  .bm-ingredient--grains { display: none; }
+  .bm-nutrition-slip { top: 61%; right: -4%; width: 20%; padding: 8px; transform: rotate(8deg); }
+  .bm-nutrition-slip__top { font-size: 5px; letter-spacing: 0; }
+  .bm-nutrition-slip__top svg { width: 9px; height: 9px; }
+  .df-benchmarks .bm-nutrition-slip > p { margin: 7px 0 8px; font-size: 10px; }
+  .bm-nutrition-slip__macros { gap: 3px; }
+  .bm-nutrition-slip__macros > span { padding: 3px; gap: 2px; font-size: 6px; }
+  .bm-nutrition-slip__macros i { width: 2px; height: 2px; }
+  .bm-nutrition-slip__base { display: none; }
+  .bm-scan-thought { left: 1%; top: 71%; padding: 7px 9px; font-size: 9px; }
+  .bm-scan-flourish--spark { width: 24px; left: 1%; top: 54%; }
+  .bm-scan-flourish--orbit { display: none; }
   .bm-scan-showcase__toggle { right: 10px; bottom: 10px; }
   .bm-scan-showcase .bm-method-details { grid-template-columns: minmax(0,1fr) minmax(0,.65fr); column-gap: 32px; padding: 44px 12px 16px; }
   .bm-scan-showcase .bm-method-formula > h3 { margin-bottom: 22px; font-size: 15px; }
