@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SEO:START — sinh bởi tools/build.py, đừng sửa tay -->
+  <title>Dietfit – App đếm calo bằng AI, chụp ảnh là biết calo</title>
+  <meta name="description" content="Hiểu bữa ăn cùng Dietfit: Deep Scan tách từng nguyên liệu, chỉnh khẩu phần, hỏi Sara AI Coach, lên meal plan và theo dõi vận động, tiến độ mỗi ngày.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://dietfit.health/vi/">
+  <link rel="alternate" hreflang="vi" href="https://dietfit.health/vi/">
+  <link rel="alternate" hreflang="en" href="https://dietfit.health/en/">
+  <link rel="alternate" hreflang="x-default" href="https://dietfit.health/en/">
+  <meta name="theme-color" content="#FE692E">
+  <meta name="apple-itunes-app" content="app-id=6747063701">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dietfit">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://dietfit.health/vi/">
+  <meta property="og:title" content="Dietfit – Track calo bằng AI, không lo ăn sai">
+  <meta property="og:description" content="Từ ảnh bữa ăn đến từng nguyên liệu. Thử Deep Scan, hỏi Sara AI Coach và khám phá cách Dietfit kết nối bữa ăn, vận động và mục tiêu của bạn.">
+  <meta property="og:image" content="https://dietfit.health/assets/og/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nhóm bạn trẻ vui vẻ cầm đồ ăn — Dietfit, app đếm calo bằng AI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dietfit – Track calo bằng AI, không lo ăn sai">
+  <meta name="twitter:description" content="Từ ảnh bữa ăn đến từng nguyên liệu. Thử Deep Scan, hỏi Sara AI Coach và khám phá cách Dietfit kết nối bữa ăn, vận động và mục tiêu của bạn.">
+  <meta name="twitter:image" content="https://dietfit.health/assets/og/og-home.jpg">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://dietfit.health/#organization",
+   "name": "Dietfit",
+   "url": "https://dietfit.health/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://dietfit.health/assets/images/dietfit-app-icon-192.png",
+    "width": 192,
+    "height": 192
+   },
+   "email": "marketing@c0x12c.com",
+   "sameAs": [
+    "https://www.tiktok.com/@dietfitvietnam",
+    "https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://dietfit.health/#website",
+   "url": "https://dietfit.health/",
+   "name": "Dietfit",
+   "inLanguage": [
+    "vi",
+    "en"
+   ],
+   "publisher": {
+    "@id": "https://dietfit.health/#organization"
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://dietfit.health/vi/#webpage",
+   "url": "https://dietfit.health/vi/",
+   "name": "Dietfit – App đếm calo bằng AI, chụp ảnh là biết calo",
+   "description": "Hiểu bữa ăn cùng Dietfit: Deep Scan tách từng nguyên liệu, chỉnh khẩu phần, hỏi Sara AI Coach, lên meal plan và theo dõi vận động, tiến độ mỗi ngày.",
+   "inLanguage": "vi",
+   "isPartOf": {
+    "@id": "https://dietfit.health/#website"
+   },
+   "about": {
+    "@id": "https://dietfit.health/#app"
+   },
+   "primaryImageOfPage": "https://dietfit.health/assets/og/og-home.jpg"
+  },
+  {
+   "@type": "MobileApplication",
+   "@id": "https://dietfit.health/#app",
+   "name": "Dietfit AI: Calorie Tracker",
+   "operatingSystem": "iOS",
+   "applicationCategory": "HealthApplication",
+   "description": "Hiểu bữa ăn cùng Dietfit: Deep Scan tách từng nguyên liệu, chỉnh khẩu phần, hỏi Sara AI Coach, lên meal plan và theo dõi vận động, tiến độ mỗi ngày.",
+   "url": "https://dietfit.health/vi/",
+   "downloadUrl": "https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701",
+   "installUrl": "https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701",
+   "image": "https://dietfit.health/assets/images/dietfit-app-icon-192.png",
+   "inLanguage": "vi",
+   "publisher": {
+    "@id": "https://dietfit.health/#organization"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://dietfit.health/vi/#faq",
+   "inLanguage": "vi",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Calo từ ảnh có chính xác tuyệt đối không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Không. Kết quả phụ thuộc vào ảnh, nguyên liệu và khẩu phần nhìn thấy được. Dầu, sốt hoặc phần thức ăn bị che có thể khó nhận diện. Deep Scan cho bạn kiểm tra từng nguyên liệu và sửa khối lượng trước khi ghi nhận."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Quick Scan và Deep Scan khác nhau thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Quick Scan giúp ghi nhận nhanh. Deep Scan đi sâu hơn: khoanh vùng thực phẩm, cho thấy từng nguyên liệu và calo của từng phần. Bạn có thể đổi tên hoặc chỉnh nguyên liệu trước khi lưu."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Sara dựa vào đâu để trả lời mình?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Mục tiêu và câu trả lời khi onboarding, bữa ăn đã log, cùng dữ liệu hoạt động từ những ứng dụng sức khỏe bạn chọn kết nối. Dữ liệu bạn chia sẻ giúp Sara đưa ra gợi ý có ngữ cảnh hơn."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Có thực đơn nghĩa là bữa ăn đã được log chưa?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chưa. Meal Plan là kế hoạch. Bạn cần tick hoặc log món đã ăn để bữa đó được ghi nhận. Bạn cũng có thể đổi món, tạo lại kế hoạch và xem lịch sử."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Có thể đồng bộ vận động từ đâu?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dietfit kết nối với các ứng dụng và thiết bị sức khỏe bạn sử dụng, như Apple Health và Apple Watch. Dữ liệu vận động được đặt cạnh calories in để bạn theo dõi cả bữa ăn lẫn hoạt động. Tính khả dụng phụ thuộc kết nối bạn bật trong app."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Sara có thay thế chuyên gia y tế không?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Không. Sara là AI Coach hỗ trợ hiểu bữa ăn và thói quen. Các con số là ước tính và gợi ý không thay thế chẩn đoán, điều trị hay tư vấn từ chuyên gia y tế."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+  <!-- SEO:END -->
+  <link rel="icon" href="/assets/images/dietfit-app-icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/images/dietfit-app-icon-192.png">
+  <!-- Rive hero: tải runtime, wasm và đúng một file .riv ngay từ <head>,
+       song song với CSS, thay vì đợi JS chạy xong mới bắt đầu tải. -->
+  <link rel="preload" href="/vendor/rive/rive.js" as="script">
+  <link rel="preload" href="/vendor/rive/rive.wasm" as="fetch" type="application/wasm" crossorigin>
+  <link rel="preload" href="/assets/hero/dietfit-hero.riv?v=20260918-1" as="fetch" crossorigin media="(min-width: 1025px)">
+  <link rel="preload" href="/assets/hero/dietfit-hero-responsive.riv?v=20260918-1" as="fetch" crossorigin media="(max-width: 1024px)">
+  <link rel="stylesheet" href="/vendor/lenis/lenis.css">
+  <link rel="stylesheet" href="/styles/dietfit-typography.css?v=30">
+  <link rel="stylesheet" href="/styles/dietfit-hero.css?v=20260918-1">
+  <link rel="stylesheet" href="/styles/dietfit-sections.css?v=59">
+  <link rel="stylesheet" href="/styles/dietfit-social.css?v=7">
+  <link rel="stylesheet" href="/styles/dietfit-mobile-menu.css?v=1">
+  <link rel="stylesheet" href="/styles/dietfit-lang-switch.css?v=1">
+  <meta name="dietfit-source-revision" content="v1-feature-copy-clean-v9">
+  <link rel="stylesheet" href="/styles/dietfit-features.css?v=9">
+  <link rel="stylesheet" href="/styles/dietfit-native-ui.css?v=6">
+  <link rel="stylesheet" href="/styles/dietfit-mascots.css?v=20261021-lifelike-1">
+  <link rel="stylesheet" href="/styles/dietfit-home-vi.css?v=20261022-lower-carousel-1">
+  <link rel="stylesheet" href="/styles/dietfit-highlights-en.css?v=20261022-bilingual-cards-1">
+  <link rel="stylesheet" href="/styles/dietfit-habit-cards-en.css?v=20261022-bilingual-cards-2">
+  <link rel="stylesheet" href="/styles/dietfit-faq-en.css?v=20261022-intro-and-list-1">
+  <link rel="stylesheet" href="/styles/dietfit-hero-elbow.css?v=20261022-elbow-uv-3">
+  <link rel="stylesheet" href="/styles/dietfit-hero-scan-en.css?v=20261022-vi-native-scan-1">
+<link rel="stylesheet" href="/styles/dietfit-streak-card.css">
+<link rel="stylesheet" href="/styles/dietfit-diary-card.css">
+<link rel="stylesheet" href="/styles/dietfit-progress-card.css">
+<link rel="stylesheet" href="/styles/dietfit-fasting-card.css">
+<link rel="stylesheet" href="/styles/dietfit-photo-cards.css">
+<link rel="stylesheet" href="/styles/dietfit-card-copy.css">
+<link rel="stylesheet" href="/styles/dietfit-home-cards-vi.css?v=1">
+</head>
+
+<body class="dietfit-home--vi dietfit-landing">
+  <header id="dietfit-header" class="dietfit-header-blur">
+    <div class="dietfit-header-blur-gradient" aria-hidden="true">
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-1"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-2"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-3"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-4"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-5"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-6"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-7"></div>
+      <div class="dietfit-header-blur-layer dietfit-header-blur-layer-8"></div>
+    </div>
+    <div class="dietfit-header-blur-overlay" aria-hidden="true"></div>
+    <nav class="dietfit-header-nav" aria-label="Điều hướng chính">
+      <div class="dietfit-header-logo-shell">
+        <div class="dietfit-header-surface"></div>
+        <div class="dietfit-header-logo-content">
+          <a href="/vi/" aria-label="Trang chủ Dietfit"><img src="/assets/images/dietfit-logo.webp" alt="Dietfit"
+              width="102" height="31"></a>
+        </div>
+      </div>
+      <div class="dietfit-header-cta-shell">
+        <a class="dietfit-header-blog-link" href="/about-us/">Về Dietfit</a>
+        <a class="dietfit-header-blog-link" href="/blog/">Blog</a>
+        <div class="dietfit-lang-switch" role="group" aria-label="Ngôn ngữ"><a href="/vi/" lang="vi" hreflang="vi" aria-current="true" aria-label="Tiếng Việt" data-lang-link>VI</a><a href="/en/" lang="en" hreflang="en" aria-label="English" data-lang-link>EN</a></div><a class="dietfit-button dietfit-button--compact"
+          href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+          rel="noopener noreferrer">Tải app ngay</a>
+      </div>
+      <button class="dietfit-mobile-menu-toggle" type="button" aria-label="Mở menu" aria-expanded="false"
+        aria-controls="dietfit-mobile-menu" data-dietfit-menu-toggle><span
+          class="dietfit-mobile-menu-toggle__icon" aria-hidden="true"></span></button>
+      <div class="dietfit-mobile-menu" id="dietfit-mobile-menu" aria-hidden="true" data-dietfit-mobile-menu>
+        <a class="dietfit-mobile-menu__link" href="/about-us/">Về Dietfit</a>
+        <a class="dietfit-mobile-menu__link" href="/blog/">Blog</a>
+        <div class="dietfit-lang-switch" role="group" aria-label="Ngôn ngữ"><a href="/vi/" lang="vi" hreflang="vi" aria-current="true" data-lang-link>Tiếng Việt</a><a href="/en/" lang="en" hreflang="en" data-lang-link>English</a></div><a class="dietfit-mobile-menu__link dietfit-mobile-menu__link--cta"
+          href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+          rel="noopener noreferrer">Tải app ngay</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="dietfit-intro container">
+      <h1 class="dietfit-hero-heading"><span>Track calo bằng AI</span> <span>Không lo ăn sai, để mai thêm đẹp</span></h1>
+      <p>Dùng cân tiểu ly quá rườm rà, Dietfit track calo chỉ bằng cách chụp ảnh!</p>
+      <a class="dietfit-app-store" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+        target="_blank" rel="noopener noreferrer">
+        <img src="/assets/images/apple.svg" alt="" width="24" height="24">
+        <span><small>Download on the</small>App Store</span>
+      </a>
+    </section>
+
+    <div class="dietfit-hero-wrap">
+      <section class="dietfit-rive-hero" data-component-name="scrollable-rive-hero"
+        aria-label="Minh họa Dietfit tương tác theo cuộn trang">
+        <div class="dietfit-hero-sticky">
+          <div class="dietfit-hero-stage">
+            <div class="dietfit-hero-loading" aria-hidden="true">
+              <picture class="dietfit-hero-poster">
+                <source media="(orientation: portrait)" srcset="/assets/hero/dietfit-hero-poster-mobile.webp" width="780" height="1688">
+                <img src="/assets/hero/dietfit-hero-poster.webp" alt="" width="1920" height="1200" fetchpriority="high" decoding="async">
+              </picture>
+            </div>
+            <div class="df-hero-scan df-hero-scan--vi" aria-hidden="true"><div class="df-hero-scan__plate"><svg class="df-hero-scan__regions" viewBox="0 0 344 425" fill="none"><g data-scan-photo-transform><path data-scan-region="rice" pathLength="1" style="--region:#ac73ff" d="M768 547 C794 516 842 499 883 507 C909 498 938 503 960 516 C998 515 1040 552 1060 583 L1077 619 C1073 651 1050 684 1028 704 L976 724 C953 703 916 691 874 688 L835 672 C811 637 788 602 768 547 Z"></path><path data-scan-region="pork" pathLength="1" style="--region:#ff9c55" d="M605 586 C636 566 665 565 698 576 L737 598 L771 624 L798 656 L831 695 L853 723 C831 750 812 784 817 828 L781 851 C743 850 717 842 689 825 L648 800 L615 763 C592 732 584 707 585 673 L591 628 Z"></path><path data-scan-region="egg" pathLength="1" style="--region:#f75ca1" d="M827 758 C845 726 899 705 946 694 C990 683 1047 697 1082 718 C1124 746 1156 778 1166 814 C1168 846 1136 875 1094 891 C1049 909 1002 908 959 906 C919 901 878 890 847 870 C821 845 808 811 827 758 Z"></path><path data-scan-region="cucumber" pathLength="1" style="--region:#22c6a6" d="M908 445 C931 425 965 431 992 441 L1034 456 L1076 478 L1118 504 L1150 529 L1169 554 L1151 583 L1118 584 L1089 568 L1059 554 L1029 538 L1002 519 L969 503 L943 480 Z"></path><path data-scan-region="egg-loaf" pathLength="1" style="--region:#e3c447" d="M729 412 L846 425 L808 468 L765 520 Z"></path><path data-scan-region="pickles" pathLength="1" style="--region:#55c4f1" d="M1078 562 C1105 548 1133 551 1152 569 C1187 580 1222 614 1234 643 L1236 682 L1216 717 L1191 746 L1163 729 L1131 706 L1081 688 L1086 649 L1068 609 Z"></path><path data-scan-region="shredded" pathLength="1" style="--region:#d0d654" d="M653 493 L680 469 L709 465 L744 467 L766 486 L770 514 L788 544 L784 575 L757 603 L724 585 L696 576 L664 571 L638 568 L631 536 Z"></path><path data-scan-region="scallions" pathLength="1" style="--region:#9bd254" d="M858 540 L886 519 L916 514 L942 526 L961 551 L954 576 L938 606 L908 617 L878 600 L856 580 Z"></path></g></svg><div class="df-hero-scan__label df-hero-scan__label--rice" style="--region:#ac73ff"><strong>Cơm</strong> <small>200g</small><b>278 kcal</b></div><div class="df-hero-scan__label df-hero-scan__label--pork" style="--region:#ff9c55"><strong>Sườn nướng</strong> <small>100g</small><b>183 kcal</b></div><div class="df-hero-scan__label df-hero-scan__label--egg" style="--region:#f75ca1"><strong>Trứng ốp la</strong> <small>1 quả</small><b>90 kcal</b></div><div class="df-hero-scan__label df-hero-scan__label--scallions" style="--region:#9bd254"><strong>Mỡ hành</strong> <small>10g</small><b>30 kcal</b></div><div class="df-hero-scan__beam"></div></div></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- PRODUCT STORY: v1 design + Gaia feature composition + isolated v2 app renderers. -->
+
+
+    <div class="dietfit-product">
+    <section class="df-feature-intro container" id="dietfit-product" aria-labelledby="df-product-title"><h2 id="df-product-title">Hiểu <em>bữa ăn của bạn.</em></h2></section>
+<section class="df-feature df-feature--scan" id="dietfit-scan" data-demo="scan" aria-labelledby="df-scan-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Deep Scan</p><h2 id="df-scan-title">Chụp một bữa ăn.<span class="df-title-break"> </span>Hiểu từng nguyên liệu.</h2><p class="df-feature-body">Không cần đoán cả một đĩa. Deep Scan tách từng nguyên liệu ngay trên ảnh để bạn kiểm tra khẩu phần trước khi ghi nhận.</p><button type="button" class="df-resume" hidden>Tiếp tục theo cuộn ↻</button></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="dv"><div class="dv-b"></div>
+<div class="app" id="app" aria-label="DietFit app: scanning a meal">
+  <div class="sb" id="sb"><span>9:41</span><span class="lv"><svg width="19" height="12" viewBox="0 0 19 12"><rect x="0" y="8" width="3.2" height="4" rx="1"/><rect x="5" y="5.5" width="3.2" height="6.5" rx="1"/><rect x="10" y="3" width="3.2" height="9" rx="1"/><rect x="15" y="0" width="3.2" height="12" rx="1"/></svg><svg width="17" height="12" viewBox="0 0 17 12"><path d="M8.5 2.3c2.4 0 4.6.9 6.2 2.5l1.2-1.2A10.4 10.4 0 0 0 8.5.6 10.4 10.4 0 0 0 1.1 3.6l1.2 1.2a8.7 8.7 0 0 1 6.2-2.5Zm0 3.4c1.5 0 2.8.5 3.8 1.5l1.2-1.2a7.1 7.1 0 0 0-10 0l1.2 1.2c1-1 2.3-1.5 3.8-1.5Zm0 3.4c.6 0 1.1.2 1.5.6L8.5 11.2 7 9.7c.4-.4.9-.6 1.5-.6Z"/></svg><i class="bat"></i></span></div>
+
+  <!-- 1 · Food Scan (camera) -->
+  <div class="scr on" id="a-cam">
+    <div class="cap"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt="The plate seen through the DietFit camera"></div>
+    <svg class="corners" viewBox="0 0 345 428" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"><path d="M5 46V30A25 25 0 0 1 30 5h16M299 5h16a25 25 0 0 1 25 25v16M340 382v16a25 25 0 0 1-25 25h-16M46 423H30A25 25 0 0 1 5 398v-16"/></svg>
+    <div class="tb"><span class="ibtn" data-ic="cancel"></span><div class="seg"><span class="on">Food</span><span>Label</span></div><span class="ibtn" data-ic="help"></span></div>
+    <div class="recent"><span class="th"><i style="background-image:url(/assets/product/v2/scan/D-photo.jpg)"></i><i style="background-image:url(/assets/product/v2/scan/A-photo.jpg)"></i><i style="background-image:url(/assets/product/v2/scan/C-photo.jpg)"></i></span>Recent meals<span data-ic="chev"></span></div>
+    <div class="bot"><span class="ibtn" data-ic="imgadd"></span><span class="shut" id="shut"><i></i></span><span class="ibtn" data-ic="flashoff"></span></div>
+  </div>
+
+  <!-- 2 · Analyzing + 3 · Ingredients (same capture, dimmed outside the scan box) -->
+  <div class="scr" id="a-ana">
+    <div class="cap"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""><svg class="food-regions" viewBox="0 0 848 1264" aria-label="Ingredient outlines around the chicken, farro, figs, eggs, olives and greens">
+      <path data-food="0" pathLength="1" style="--region:#b477fd" d="M349 354C387 340 440 365 477 374C530 381 594 405 624 436C654 466 664 512 661 550L676 616C685 649 715 663 705 687C699 710 666 712 644 694L618 644L594 590C573 573 546 563 529 541C507 565 480 585 438 584C390 582 357 557 350 522L338 430C329 397 330 368 349 354Z"/>
+      <path data-food="1" pathLength="1" style="--region:#ffac60" d="M460 635C492 614 555 618 599 630C647 646 685 682 703 738C724 798 698 863 649 904C611 932 546 938 498 916C470 897 464 864 455 826C436 776 423 733 433 689C436 666 443 650 460 635Z"/>
+      <path data-food="2" pathLength="1" style="--region:#2ab0f9" d="M184 434C203 431 209 444 228 445C282 435 329 461 339 502C349 550 320 584 280 590C239 594 202 560 191 519C183 495 191 470 182 454Z M120 553C139 544 149 561 168 564C216 553 264 586 269 627C277 672 251 708 213 715C172 720 134 691 122 652C112 619 124 590 120 553Z"/>
+      <path data-food="3" pathLength="1" style="--region:#21cbb2" d="M260 697C293 683 327 692 347 718C373 750 359 796 339 826C317 856 286 864 254 856C215 848 195 825 201 790C205 754 229 715 260 697Z M365 787C402 774 431 795 443 829C459 870 444 914 414 938C388 959 351 958 322 946C293 933 286 902 294 869C302 832 333 798 365 787Z"/>
+      <path data-food="4" pathLength="1" style="--region:#abc53e" d="M442 660C463 642 492 649 497 667C500 685 482 699 459 700C438 700 427 680 442 660Z M527 732C549 718 575 731 585 748C596 770 581 785 559 782C535 780 512 752 527 732Z M628 803C644 784 667 792 670 812C673 834 652 856 635 849C616 841 616 821 628 803Z M508 890C526 877 552 877 565 890C579 907 558 927 536 929C509 935 489 911 508 890Z"/>
+      <path data-food="5" pathLength="1" style="--region:#f563a7" d="M296 617L314 594L337 613L351 602L374 629L389 609L408 641L430 631L445 667L421 681L439 710L418 731L437 757L419 778L399 768L374 780L344 774L347 742L321 722L295 734L271 717L281 688L261 673L287 653Z"/>
+    </svg></div>
+    <div class="hole"></div>
+    <div class="bandclip"><div class="band" id="band"></div></div>
+    <div class="tb"><span class="ibtn s" data-ic="cancel"></span></div>
+    <div id="pops"></div>
+    <div class="sheet idf" id="idf"><div class="w"><span class="ai" data-ic="ai"></span><span>Identifying your meal…</span></div></div>
+    <img class="mascot" id="masc" src="/assets/brand/mascots/3d/glasses.webp" alt="">
+    <div class="sheet dsh" id="dsh"><div class="grab"></div><div class="wr"><h5 id="dname">Chicken with farro</h5>
+      <div class="rw"><span class="avs" id="avs"></span><span class="bt">Calculate calories<span data-ic="arrowR"></span></span></div></div></div>
+  </div>
+
+  <!-- 4 · Ingredients sheet -->
+  <div class="scr" id="a-lst">
+    <div class="cap"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""></div><div class="hole"></div>
+    <div class="ov"></div>
+    <div class="sheet lst" id="lst"><div class="grab"></div>
+      <div class="hd"><div class="t"><h4>Chicken with farro <span data-ic="edit"></span></h4><span class="ib24" data-ic="trash"></span></div><small>Today, 8:41 PM</small></div>
+      <div class="bd"><div class="st"><span>Ingredients <span data-ic="info"></span></span><em><span data-ic="add"></span>Add</em></div>
+        <ul id="ul"></ul>
+        <p class="hint">Tap an ingredient to edit it.<span class="df-title-break"> </span>Swipe left to delete.</p></div>
+      <div class="dock"><div class="wr"><span class="bt l"><span data-ic="ai"></span>Edit with AI</span><span class="bt">Calculate<span data-ic="arrowR"></span></span></div><div class="hs"></div></div>
+    </div>
+  </div>
+
+  <!-- 5 · Calculating -->
+  <div class="scr calc" id="a-calc">
+    <div class="back"><span class="ibtn s" data-ic="arrowL"></span></div>
+    <div class="card" id="ccard"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""><span class="chk" id="chk"><svg viewBox="0 0 38 38" fill="none" stroke="#111" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19.5l7 7 13-14"/></svg></span><i class="ring"></i></div>
+    <img class="egg" id="cegg" src="/assets/brand/mascots/3d/thumbs-up.webp" alt="">
+    <div class="msg"><span class="ai" data-ic="ai"></span><span id="cmsg">Calculating calories &amp; nutrition…</span></div>
+  </div>
+
+  <!-- 6 · Meal Detail -->
+  <div class="scr md" id="a-md">
+    <div class="scroll" id="mdS">
+      <div class="hero"><img class="mealimg" src="/assets/product/v2/meal.jpg" alt=""></div>
+      <div class="cards">
+        <div class="cd">
+          <span class="bdg">8:41 PM</span>
+          <div class="nm"><h4>Chicken with farro</h4><span class="stp"><span class="ib24" data-ic="remove"></span><span class="v">1</span><span class="ib24" data-ic="add"></span></span></div>
+          <div class="cal"><span data-ic="flame"></span><b id="mdK">558</b><span>kcal</span></div>
+          <div class="mac"><div><small><span data-ic="carb"></span>Carbs</small><b><span id="mdC">37</span>g</b></div><div><small><span data-ic="prot"></span>Protein</small><b><span id="mdP">41</span>g</b></div><div><small><span data-ic="fat"></span>Fat</small><b><span id="mdF">26</span>g</b></div></div>
+          <div class="dots"><i></i><i></i></div>
+        </div>
+        <div class="cd">
+          <div class="sc"><span>Meal score <span data-ic="info"></span></span><em><span id="mdS2">78</span><small>/100</small></em></div>
+          <div class="bar3"><i class="r"></i><i class="y"></i><i class="g"></i><b id="mdPin" style="left:78%"></b></div>
+          <p>A balanced plate: plenty of protein from the chicken and egg, fiber from the farro and greens. The skin and olives bring most of the fat. Fine for tonight; go lighter at lunch tomorrow.</p>
+          <span class="pos">High in protein</span>
+          <span class="ghost"><span data-ic="ai"></span>Ask Sara about this meal</span>
+        </div>
+      </div>
+    </div>
+    <div class="tb2"><span class="ibtn" data-ic="arrowL"></span><div><span class="ibtn" data-ic="share"></span><span class="ibtn" data-ic="more"></span></div></div>
+    <div class="stick"><span class="bt">Log meal</span></div>
+  </div>
+  <div class="flash" id="flash"></div>
+  <i class="hi" id="hi"></i>
+</div></div></div><span class="df-feature-peek df-mascot df-mascot--layered" data-mascot-pose="wave" aria-hidden="true"><span class="df-mascot__body"><img class="df-mascot__base" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"><img class="df-mascot__arm" src="/assets/brand/mascots/3d/wave.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></span></span></div></div></section>
+<section class="df-feature df-feature--coach is-flipped" id="dietfit-sara" data-demo="coach" aria-labelledby="df-coach-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">AI Coach</p><h2 id="df-coach-title">Có câu hỏi?<span class="df-title-break"> </span>Cứ hỏi Sara.</h2><p class="df-feature-body">Gửi ảnh một món ăn, hỏi bữa tối nên ăn gì. Sara đặt câu hỏi của bạn cạnh mục tiêu, bữa ăn đã log và hoạt động đã đồng bộ.</p><button type="button" class="df-resume" hidden>Tiếp tục theo cuộn ↻</button></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="coachDevice"><div class="dv-b"></div>
+      <div class="app coach-app" role="group" aria-label="DietFit app: conversation with Sara">
+        <div class="sb dk" aria-hidden="true"><span>9:41</span><span class="lv">•••• <i class="bat"></i></span></div>
+        <div class="run-island" aria-hidden="true"></div>
+        <div class="chatapp" id="chat">
+          <div class="ca-top"><span class="hb"><b></b><b></b><b></b></span><span class="t"><b>Sara</b><span>Your AI Coach</span></span>
+            <span class="ic"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h12M8 6V4h4v2M5.5 6l.8 10h7.4l.8-10"/></svg><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 5.5C8 4 5 4 3 4.5v11c2-.5 5-.5 7 1 2-1.5 5-1.5 7-1v-11c-2-.5-5-.5-7 1Zm0 0v11"/></svg></span></div>
+          <div class="ca-body"><div class="ca-scroll" id="caScroll">
+            <div class="m-me photo m-in" data-s="0"><span>Is this food healthy?</span><img src="/assets/product/v2/salmon.jpg" alt="Salmon sashimi on a glass plate"></div>
+            <div class="m-sa m-in" data-s="1" data-type="1"><img class="av" src="/assets/brand/mascots/3d/glasses-avatar.webp" alt=""><div><span class="typing"><i></i><i></i><i></i></span></div></div>
+            <div class="m-sa m-in" data-s="2"><img class="av" src="/assets/brand/mascots/3d/glasses-avatar.webp" alt=""><div><div class="bub" data-words>Yes, absolutely. Salmon sashimi is packed with high-quality protein, omega-3 fatty acids, and essential micronutrients, making it a great nutrient-dense choice. Pairing it with some carbs and healthy fats will help hit your calorie and muscle-building goals.</div>
+              <div class="fb"><svg viewBox="0 0 16 16" fill="#f2b13a"><path d="M5 7l3-5c1 0 1.6.7 1.4 1.8L9 6h4c.8 0 1.3.7 1.1 1.4l-1.3 5c-.2.6-.7 1-1.3 1H5z"/><rect x="1.5" y="7" width="2.5" height="6.5" rx=".6"/></svg><svg viewBox="0 0 16 16" fill="#e8a33a"><path d="M11 9l-3 5c-1 0-1.6-.7-1.4-1.8L7 10H3c-.8 0-1.3-.7-1.1-1.4l1.3-5c.2-.6.7-1 1.3-1H11z"/><rect x="12" y="2.5" width="2.5" height="6.5" rx=".6"/></svg><svg viewBox="0 0 16 16" fill="none" stroke="#8d8882" stroke-width="1.3"><rect x="5" y="5" width="8.5" height="8.5" rx="1.6"/><path d="M11 3.2V3a1.5 1.5 0 0 0-1.5-1.5h-6A1.5 1.5 0 0 0 2 3v6a1.5 1.5 0 0 0 1.5 1.5h.3"/></svg></div></div></div>
+            <div class="m-me m-in" data-s="3">What should I eat before bed?</div>
+            <div class="m-sa m-in" data-s="4" data-type="1"><img class="av" src="/assets/brand/mascots/3d/glasses-avatar.webp" alt=""><div><span class="typing"><i></i><i></i><i></i></span></div></div>
+            <div class="m-sa m-in" data-s="5"><img class="av" src="/assets/brand/mascots/3d/glasses-avatar.webp" alt=""><div><div class="bub"><span data-words>Since it's late and you're aiming to gain weight, go for something quick, protein-dense, and easy to digest. A bowl of Greek yogurt with a banana and peanut butter will easily add 300–500 quality calories and 25–35g of protein right before sleep.</span>
+              <div class="sum"><div class="h"><span style="color:#1d1c1a;font-weight:600">Today's Summary</span><span>Today</span></div>
+                <div class="two"><div><b>460<small>kcal</small></b><span>Eaten</span><em>of 2,910 goal</em></div><div><b>7,698</b><span>Steps</span><em>of 10,000 goal</em></div></div>
+                <div class="ln"><span>Active energy</span><b>102 kcal</b></div><div class="ln"><span>Sleep</span><b>7h 16m / 7h</b></div><div class="ln"><span>Workouts</span><b>running · 1h 24m</b></div></div></div></div></div>
+          </div></div>
+          <div class="chips" id="caChips"><span>Will eating before bed affect my sleep? →</span><span>How much protein do I need? →</span></div>
+          <div class="ca-in" id="caIn"><i class="glow"></i><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12.5 7.5l-5 5a2.5 2.5 0 0 1-3.5-3.5l6-6a1.7 1.7 0 0 1 2.4 2.4l-5.8 5.8"/></svg><span class="txt" id="caTxt"></span><span id="caPh">Ask Sara anything</span><span class="up" id="caUp"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" width="12"><path d="M7 11.5v-9M3 6l4-3.5L11 6"/></svg></span></div>
+          <div class="ca-disc">⚠ AI can make mistakes. For medical or health advice, talk to your doctor.</div>
+        </div>
+        <i class="run-home-indicator" aria-hidden="true"></i>
+      </div></div></div></div></div></section>
+<section class="df-feature df-feature--plan" id="dietfit-plan" data-demo="plan" aria-labelledby="df-plan-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Meal Plan</p><h2 id="df-plan-title">Ăn theo mục tiêu.<span class="df-title-break"> </span>Vẫn theo khẩu vị.</h2><p class="df-feature-body">Một kế hoạch có thể thay đổi cùng bạn. Đổi món nếu chưa hợp, rồi tick bữa đã ăn. Món được lên kế hoạch chỉ được tính khi bạn ghi nhận.</p><button type="button" class="df-resume" hidden>Tiếp tục theo cuộn ↻</button></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="planDevice"><div class="dv-b"></div>
+    <div class="app plan-app" role="group" aria-label="DietFit app: interactive meal plan">
+      <div class="sb dk" aria-hidden="true"><span>9:41</span><span class="lv">•••• <i class="bat"></i></span></div>
+      <div class="run-island" aria-hidden="true"></div>
+      <div class="panel" id="plan">
+        <div class="plan-h"><b>Meal plan<small>Today · goal 2,910 kcal</small></b><span class="ic" aria-hidden="true"><img src="/assets/product/v2/icons/exchange.svg" alt=""><img src="/assets/product/v2/icons/note.svg" alt=""></span></div>
+        <div id="slots" role="group" aria-label="Planned meals"></div>
+        <div class="plan-progress" role="progressbar" aria-label="Meals logged" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><i></i></div>
+        <div class="plan-foot"><span>Planned <b class="mono" id="planSum">1,843</b> kcal</span><span>Ticked <b class="mono" id="planTick">0</b> of 3</span></div>
+      </div>
+      <i class="run-home-indicator" aria-hidden="true"></i>
+    </div></div></div><span class="df-feature-peek df-mascot" data-mascot-pose="writing" aria-hidden="true"><span class="df-mascot__body"><img class="df-mascot__base" src="/assets/brand/mascots/3d/writing.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></span></span></div></div></section>
+<section class="df-feature df-feature--health is-flipped" id="dietfit-activity" data-demo="health" aria-labelledby="df-health-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Connected Health</p><h2 id="df-health-title">Ăn uống và vận động.<span class="df-title-break"> </span>Cùng một bức tranh.</h2><p class="df-feature-body">Bước chân, buổi chạy, năng lượng đã dùng. Kết nối dữ liệu hoạt động để Sara hiểu ngày của bạn trước khi gợi ý bữa tiếp theo.</p><button type="button" class="df-resume" hidden>Tiếp tục theo cuộn ↻</button></div><div class="df-feature-stage"><div class="df-native"><div class="dv" id="runDevice"><div class="dv-b"></div>
+    <div class="app run-app" id="activityApp" role="group" aria-label="Interactive DietFit activity and dinner demo">
+      <div class="sb dk" aria-hidden="true"><span>9:41</span><span class="lv">•••• <i class="bat"></i></span></div>
+      <div class="run-island" aria-hidden="true"></div>
+      <div class="run-pages">
+      <div class="panel run-screen" id="home" role="tabpanel" aria-labelledby="runHomeTab">
+        <div class="ph-head"><span class="av"><img src="/assets/brand/mascots/3d/glasses-avatar.webp" alt=""></span><span><small>Good evening</small><b>Marcus</b></span>
+          <span class="ic"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 2c1.5 3 4.5 4.6 4.5 8.6A4.5 4.5 0 0 1 10 15a4.5 4.5 0 0 1-4.5-4.4c0-2 1-3.2 1.8-4 .3 1.4 1 2.2 1.7 2.4C9 7 9.6 4.4 10 2Z"/></svg></span></div>
+        <div class="week" id="week"></div>
+        <div class="gauge-wrap">
+          <svg class="gauge" viewBox="0 0 170 120" role="img" aria-label="1,869 calories left of a 2,329 goal">
+            <path d="M18 104a67 67 0 1 1 134 0" fill="none" stroke="#efede9" stroke-width="12" stroke-linecap="round"/>
+            <path id="gArc" d="M18 104a67 67 0 1 1 134 0" fill="none" stroke="#1d1c1a" stroke-width="12" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100"/>
+            <text x="85" y="88" text-anchor="middle" font-family="GT Standard L, Arial" font-weight="600" font-size="30" fill="#1d1c1a" id="gLeft">1,869</text>
+            <text x="85" y="106" text-anchor="middle" font-family="GT Standard L, Arial" font-size="11" fill="#7c7873">Calories left</text>
+          </svg>
+          <div class="gstat"><span>Goal<b>2,329</b></span><span>Consumed<b id="gCons">460</b></span></div>
+        </div>
+        <div class="act">
+          <div><svg viewBox="0 0 16 16" fill="#6fae4a"><circle cx="9" cy="2.5" r="1.6"/><path d="M8 5l-3 3 1 1 2-1.5V10l-2 4h1.6L9 11l1.5 3H12l-2-4.5V7l1.5 1.5H14V7l-2.5-2z"/></svg>Steps<b>7,698</b></div>
+          <div><svg viewBox="0 0 16 16" fill="#f2a23a"><rect x="1" y="6" width="3" height="4" rx="1"/><rect x="12" y="6" width="3" height="4" rx="1"/><rect x="4" y="4" width="2" height="8" rx="1"/><rect x="10" y="4" width="2" height="8" rx="1"/><rect x="6" y="7.3" width="4" height="1.4"/></svg>Running<b>1h 24m</b></div>
+          <div><svg viewBox="0 0 16 16" fill="#e8574a"><path d="M8 14S1.5 10 1.5 5.6A3.3 3.3 0 0 1 8 4a3.3 3.3 0 0 1 6.5 1.6C14.5 10 8 14 8 14Z"/></svg>Heart rate<b>86</b></div>
+        </div>
+        <button class="run-cta" id="askDinner">Ask Sara about dinner <span aria-hidden="true">→</span></button>
+        <div class="run-logged" id="runLogged" hidden><img id="runLoggedPhoto" src="/assets/product/v2/scan/D-photo.jpg" alt=""><span><small>Dinner logged</small><b id="runLoggedName"></b></span><button id="undoDinner">Undo</button></div>
+      </div>
+      <div class="panel pick run-screen" id="pick" role="tabpanel" aria-labelledby="runSaraTab" hidden>
+        <div class="pk-h"><img src="/assets/brand/mascots/3d/glasses-avatar.webp" alt=""><span><b>Sara</b><small>After today's run · 1h 24m</small></span></div>
+        <p class="pk-q">Long run tomorrow. Which dinner tonight?</p>
+        <button class="pk-opt good" data-dinner="D" aria-pressed="true"><img src="/assets/product/v2/scan/D-photo.jpg" alt=""><span><b>Kabob platter with rice</b><small>685 kcal · rice, chicken, lamb, salad</small></span><em>Better pick</em></button>
+        <button class="pk-opt" data-dinner="A" aria-pressed="false"><img src="/assets/product/v2/scan/A-photo.jpg" alt=""><span><b>Steak &amp; eggs brunch plate</b><small>800 kcal · steak, eggs, potatoes</small></span><em class="dim">Rest-day meal</em></button>
+        <p class="pk-a">You burned about 428 kcal today. The kabob platter gives you more carbs from the rice for tomorrow and is lighter on fat than the brunch plate. Drink water with it.</p>
+        <button class="run-cta" id="logDinner">Log dinner · 685 kcal</button>
+        <small class="pk-n">Sample guidance. Sara's suggestions come from what you log and sync.</small>
+      </div>
+      </div>
+      <div class="run-nav" role="tablist" aria-label="DietFit demo screens">
+        <button id="runHomeTab" role="tab" aria-selected="true" aria-controls="home" data-run-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/></svg>Home</button>
+        <button id="runSaraTab" role="tab" aria-selected="false" aria-controls="pick" tabindex="-1" data-run-tab="pick"><img src="/assets/brand/mascots/3d/glasses-avatar.webp" alt="">Sara</button>
+      </div>
+      <span class="run-announcement" role="status" id="runAnnouncement"></span>
+      <i class="run-home-indicator" aria-hidden="true"></i>
+    </div></div></div></div></div></section>
+<section class="df-feature df-feature--widgets" id="dietfit-widgets" data-demo="widgets" aria-labelledby="df-widgets-title"><div class="df-feature-sticky container"><div class="df-feature-copy"><p class="df-kicker">Widgets & Streaks</p><h2 id="df-widgets-title">Một cái nhìn nhanh.<span class="df-title-break"> </span>Thêm một ngày đều đặn.</h2><p class="df-feature-body">Calo hôm nay, chuỗi ngày log và xu hướng từ nhật ký. Những nhắc nhớ nhỏ ngay trên Home Screen giúp bạn theo dõi mà không phải mở app liên tục.</p><button type="button" class="df-resume" hidden>Tiếp tục theo cuộn ↻</button></div><div class="df-feature-stage"><div class="df-native"><div class="wg-grid" id="wgs">
+      <div class="wg s"><small><img src="/assets/product/v2/logo-mark.png" alt="">Today</small><b>1,094<span> / 1,900</span></b><div class="mm"><i style="width:62%;background:#f2672e"></i><i style="width:48%;background:#9bbb4c"></i><i style="width:71%;background:#e8b04b"></i></div><em>806 kcal left</em></div>
+      <div class="wg s dk"><small>Streak</small><b class="big">12</b><em>days logged · 2 shields</em></div>
+      <div class="wg m"><small><img src="/assets/product/v2/logo-mark.png" alt="">At this pace · next 30 days</small>
+        <svg viewBox="-6 0 312 110" preserveAspectRatio="none" role="img" aria-label="Projected weight trend: current habits versus with your meal plan"><line x1="0" y1="96" x2="300" y2="96" stroke="#e7e3dc"/><path d="M0 40 C60 38 120 34 180 30 S260 22 300 20" fill="none" stroke="#c9c3ba" stroke-width="2.5" stroke-dasharray="5 5"/><path d="M0 40 C60 46 120 56 180 64 S260 76 300 80" fill="none" stroke="var(--df-orange-60)" stroke-width="3"/><circle cx="300" cy="80" r="4.5" fill="var(--df-orange-60)"/><circle cx="300" cy="20" r="4" fill="#c9c3ba"/></svg>
+        <div class="lg"><span><i style="background:#c9c3ba"></i>Current habits</span><span><i style="background:var(--df-orange-60)"></i>With your meal plan</span></div><em>A projection from your logs, not a promise.</em></div>
+      <div class="wg s ph"><img src="/assets/product/v2/meal.jpg" alt=""><span><small>Dinner · 8:41</small><b>558 kcal</b></span></div>
+    </div></div><span class="df-feature-peek df-mascot df-mascot--layered" data-mascot-pose="exercise" aria-hidden="true"><span class="df-mascot__body"><img class="df-mascot__base" src="/assets/brand/mascots/3d/exercise.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"><img class="df-mascot__arm" src="/assets/brand/mascots/3d/exercise.webp" alt="" width="1000" height="1000" loading="lazy" decoding="async"></span></span></div></div></section>
+<p class="df-feature-sample-note container">Các tính năng được minh hoạ bằng dữ liệu mẫu.</p>
+</div>
+    <section class="dietfit-tiktok-section" data-dietfit-tiktok-section>
+      <div class="dietfit-section-heading">
+        <h2>Bạn không cô đơn trên hành trình này</h2>
+        <p>Những người bạn của Dietfit vẫn luôn ở đây, vẫn track calo hàng ngày, và vẫn sống khoẻ mỗi ngày.</p>
+        <a class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+          target="_blank" rel="noopener noreferrer">Tải app ngay</a>
+      </div>
+      <div class="dietfit-tiktok-viewport" role="region" aria-label="Video trải nghiệm Dietfit từ cộng đồng">
+        <div class="dietfit-tiktok-grid">
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card dietfit-facebook-card">
+              <video muted loop playsinline preload="none"
+                data-poster="/assets/social/nguyen-tra-my-dietfit-facebook.jpg"
+                aria-label="Hành trình slimfit cùng Dietfit của Nguyễn Trà My">
+                <source data-src="/assets/social/nguyen-tra-my-dietfit-facebook.mp4" type="video/mp4">
+              </video>
+              <a class="dietfit-tiktok-credit"
+                href="https://www.facebook.com/watch/?v=3172002049663567&amp;extid=CL-UNK-UNK-UNK-IOS_GK0T-GK1C&amp;ref=sharing&amp;mibextid=wwXIfr"
+                target="_blank" rel="noopener noreferrer">Nguyễn Trà My · Dietfit Partner</a>
+            </article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7666480953052646677?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Video Dietfit từ @phthanhvan1412" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@phthanhvan1412/video/7666480953052646677"
+                target="_blank" rel="noopener noreferrer">@phthanhvan1412</a></article>
+          </div>
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7657920431386627335?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Video Dietfit từ @tunnynguyen" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@tunnynguyen/video/7657920431386627335"
+                target="_blank" rel="noopener noreferrer">@tunnynguyen</a></article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7660807882669296916?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Video Dietfit từ @gaythidoiten1910" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@gaythidoiten1910/video/7660807882669296916"
+                target="_blank" rel="noopener noreferrer">@gaythidoiten1910</a></article>
+          </div>
+          <div class="dietfit-tiktok-column">
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7665734390814625044?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Video Dietfit từ @jenmie.xx" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@jenmie.xx/video/7665734390814625044"
+                target="_blank" rel="noopener noreferrer">@jenmie.xx</a></article>
+            <article class="dietfit-tiktok-card"><iframe
+                data-src="https://www.tiktok.com/player/v1/7650428372425674004?autoplay=1&amp;loop=1&amp;muted=1&amp;controls=0"
+                title="Video Dietfit từ @dietfitvietnam" loading="lazy" allow="autoplay; fullscreen"></iframe><a
+                class="dietfit-tiktok-credit" href="https://www.tiktok.com/@dietfitvietnam/video/7650428372425674004"
+                target="_blank" rel="noopener noreferrer">@dietfitvietnam</a></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dietfit-progress-cta" id="dietfit-progress">
+      <div class="dietfit-progress-cta__sticky">
+        <div class="dietfit-progress-cta__content">
+          <h2>Bạn đẹp hơn bạn tưởng</h2>
+          <p><strong>Chưa thử 1 lần thay đổi bản thân, thì sao biết mình đẹp tới mức nào.</strong><br>Dietfit luôn ở
+            đây, giúp bạn có thêm động lực, giảm cân tiện lợi để đẹp hơn mỗi ngày.</p><a class="dietfit-button"
+            href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+            rel="noopener noreferrer">Dùng Dietfit ngay</a>
+        </div>
+        <div class="dietfit-progress-cta__gallery" aria-label="Hành trình thay đổi cùng Dietfit">
+          <figure><img src="/assets/images/dietfit-progress-before.webp?v=3" alt="Hình ảnh trước hành trình thay đổi"
+              loading="lazy" width="1688" height="2931"></figure>
+          <figure><img src="/assets/images/dietfit-progress-after.webp?v=3" alt="Hình ảnh sau hành trình thay đổi"
+              loading="lazy" width="1688" height="2942"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="dietfit-video-section" id="dietfit-video">
+      <div class="dietfit-section-heading">
+        <h2>Track calo chưa bao giờ tiện lợi đến thế</h2>
+        <p>Hãy để công nghệ số lo, còn bạn chỉ cần vui vẻ, sống khoẻ và track calo với Dietfit.</p><a
+          class="dietfit-button" href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701"
+          target="_blank" rel="noopener noreferrer">Hãy để Dietfit lo</a>
+      </div>
+      <figure class="dietfit-video-preview" data-youtube-id="fYZWilyeuHM" data-video-title="Track calo chưa bao giờ tiện lợi đến thế">
+        <button class="dietfit-video-play" type="button" aria-label="Phát video: Track calo chưa bao giờ tiện lợi đến thế">
+          <img src="https://i.ytimg.com/vi/fYZWilyeuHM/maxresdefault.jpg" alt="" loading="lazy" decoding="async"
+            data-fallback-src="https://i.ytimg.com/vi/fYZWilyeuHM/hqdefault.jpg">
+          <span aria-hidden="true"><img src="/assets/images/play.svg" alt=""></span>
+        </button>
+      </figure>
+    </section>
+
+    <section class="dietfit-community" id="dietfit-community" aria-labelledby="dietfit-community-title">
+      <div class="dietfit-community__intro">
+        <p class="dietfit-community__eyebrow">Cộng đồng Dietfit</p>
+        <h2 id="dietfit-community-title">Cùng nhau đẹp<br>mỗi ngày nhé</h2>
+        <p class="dietfit-community__lead">Nếu gặp khó khăn hay cần tìm thêm động lực, đừng ngần ngại mà theo dõi ngay
+          cộng đồng của chúng mình! Đây là nơi mà chúng ta yêu thương nhau.</p>
+      </div>
+      <div class="dietfit-community__grid">
+        <a class="dietfit-community__card" href="https://www.facebook.com/groups/2085834865680742" target="_blank"
+          rel="noopener noreferrer">
+          <div class="dietfit-community__media"><img src="/assets/community/community-dietfit-users.webp"
+              alt="Banner Hội những người dùng Dietfit VN" loading="lazy"></div>
+          <div class="dietfit-community__content">
+            <p class="dietfit-community__label">Facebook Group</p>
+            <h3>Hội những người dùng Dietfit VN</h3>
+            <p>Nơi chia sẻ kinh nghiệm sử dụng Dietfit, bữa ăn hằng ngày và những thay đổi nhỏ nhưng bền vững.</p>
+          </div><span class="dietfit-community__link">Tham gia cộng đồng <span aria-hidden="true">↗</span></span>
+        </a>
+        <a class="dietfit-community__card" href="https://www.facebook.com/groups/1688403659018395" target="_blank"
+          rel="noopener noreferrer">
+          <div class="dietfit-community__media"><img src="/assets/community/community-weight-loss.webp"
+              alt="Banner Hội giảm cân - bớt mỡ bớt buồn" loading="lazy"></div>
+          <div class="dietfit-community__content">
+            <p class="dietfit-community__label">Facebook Group</p>
+            <h3>Hội giảm cân - bớt mỡ bớt buồn</h3>
+            <p>Cùng hỏi đáp, tìm bạn đồng hành và giữ động lực để hành trình giảm cân nhẹ nhàng hơn.</p>
+          </div><span class="dietfit-community__link">Tham gia cộng đồng <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+
+<section class="dietfit-highlights dietfit-highlights--vi dietfit-highlights--en" id="dietfit-highlights" aria-label="Tính năng và thói quen mỗi ngày cùng Dietfit">
+      <div class="dietfit-highlights-sticky">
+        <div class="dietfit-carousel" data-dietfit-carousel="" role="region" tabindex="0" aria-label="Danh sách tính năng Dietfit">
+<article class="dietfit-card dietfit-card-en df-fasting-card df-habit-card--fasting"><div class="dietfit-card-copy"><h2>Nhịn ăn theo nhịp sống của bạn.</h2><p>Chọn lịch phù hợp. Dietfit theo dõi giờ ăn và giờ nhịn cho bạn.</p></div><div class="df-fasting-scene" aria-hidden="true"><img class="df-fasting-scene__person df-fasting-scene__person--soft" src="/assets/cards/fasting-reference/watch-forward.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-fasting-scene__sharp"><img class="df-fasting-scene__person" src="/assets/cards/fasting-reference/watch-forward.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"></div><div class="df-fasting-scene__focus"><i></i><i></i><i></i><i></i></div><div class="df-fasting-scene__timer"><div class="df-fasting-scene__timer-heading"><img src="/landing/app-icon.png" width="32" height="32" alt="" loading="lazy" decoding="async"><span>Nhịn ăn</span><b>16:8</b></div><strong>12g 08p</strong><small>trên mục tiêu 16 giờ</small><span class="df-fasting-scene__progress"><i></i></span><div class="df-fasting-scene__window"><span>Khung giờ ăn</span><b>12:00 – 20:00</b></div></div><div class="df-fasting-scene__status"><span>✓</span><strong>Đúng nhịp</strong><small>Theo cách bạn.</small></div><div class="df-fasting-scene__caption"><span>Hợp với</span><strong>nhịp sống của bạn.</strong></div></div></article>
+<article class="dietfit-card dietfit-card-en df-highlight--science"><img alt="Bữa ăn cùng các widget calo và dinh dưỡng Dietfit" loading="lazy" decoding="async" data-nimg="fill" class="dietfit-card-art" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" sizes="(min-width: 1800px) 26vw, (min-width: 1024px) 31vw, (min-width: 768px) 46vw, 92vw" srcset="/landing/v3/cards/figma-sync/card-3-v2.webp 256w, /landing/v3/cards/figma-sync/card-3-v2.webp 384w, /landing/v3/cards/figma-sync/card-3-v2.webp 640w, /landing/v3/cards/figma-sync/card-3-v2.webp 750w, /landing/v3/cards/figma-sync/card-3-v2.webp 828w, /landing/v3/cards/figma-sync/card-3-v2.webp 1080w, /landing/v3/cards/figma-sync/card-3-v2.webp 1200w, /landing/v3/cards/figma-sync/card-3-v2.webp 1920w, /landing/v3/cards/figma-sync/card-3-v2.webp 2048w, /landing/v3/cards/figma-sync/card-3-v2.webp 3840w" src="/landing/v3/cards/figma-sync/card-3-v2.webp"><div class="dietfit-card-copy"><h2>Có cơ sở khoa học</h2><p>Mức calo phù hợp với thể trạng, vận động và mục tiêu của bạn.</p></div><div class="df-science-widgets-vi" aria-hidden="true">
+  <div class="df-science-bmi"><strong>BMI của bạn <i>ⓘ</i></strong><b>25,3</b><p>Chỉ số từ hồ sơ của bạn</p><div class="df-science-bmi__scale"></div><small>15 <span>18,5</span><span>24,9</span><span>29,9</span><span>34,9</span><span>39,9</span></small><em>Xem chi tiết BMI ⌄</em></div>
+  <div class="df-science-calories"><strong>Calo hôm nay</strong><div><div class="df-science-calories__ring"><b>400</b><small>kcal vượt mức</small></div><dl><div><dt>Mục tiêu</dt><dd>2.000</dd></div><div><dt>Đã nạp</dt><dd>2.600</dd></div><div><dt>Đã đốt</dt><dd>200</dd></div></dl></div></div>
+  <div class="df-science-average"><strong>Calo trung bình</strong><b>307 <small>kcal</small></b><div class="df-science-average__bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="df-science-average__days"><span>CN</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span><span>T7</span></div><p><span>Tinh bột</span><span>Đạm</span><span>Béo</span></p><em>Tuần này <span>Tuần trước</span></em></div>
+</div></article>
+<article class="dietfit-card dietfit-card-en df-photo-card df-photo-card--reward df-highlight--reward"><div class="dietfit-card-copy"><h2>Phần thưởng cho sự kiên trì</h2><p>Ghi bữa ăn, giữ chuỗi ngày và hoàn thành thử thách để nhận Fitpoints.</p></div><div class="df-photo-scene" aria-hidden="true"><img class="df-photo-scene__image" src="/assets/cards/reward-reference/tennis-court.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-reward-calories df-reward-calories--yesterday df-reward-calories--vi"><div class="df-reward-widget-vi"><strong>Hôm qua</strong><div class="df-reward-widget-vi__ring"><span>🔥</span><small>Còn lại<br><b>150</b></small></div><p><b>350</b> / 500</p></div></div>
+<div class="df-reward-calories df-reward-calories--today df-reward-calories--vi"><div class="df-reward-widget-vi"><strong>Hôm nay</strong><div class="df-reward-widget-vi__ring"><span>🔥</span><em>↶ +200</em><small>Còn lại<br><b>150 <i>+200</i></b></small></div><p><b>350</b> / 500</p></div></div></div></article>
+<article class="dietfit-card dietfit-card-en df-photo-card df-photo-card--apple-health df-highlight--apple-health"><div class="dietfit-card-copy"><h2>Kết nối với Apple Health</h2><p>Đồng bộ vận động để mức calo mỗi ngày tự điều chỉnh theo bạn.</p></div><div class="df-photo-scene" aria-hidden="true"><img class="df-photo-scene__image" src="/assets/cards/apple-health-reference/active-friends.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-health-connected"><span class="df-health-connected__icon"><svg viewBox="0 0 32 32" fill="none"><path d="M16 27S4 19.6 4 11.7C4 5.6 11.3 3.5 16 9c4.7-5.5 12-3.4 12 2.7C28 19.6 16 27 16 27Z" fill="#fb526b"></path></svg></span><div><strong>Apple Health</strong><span><i>✓</i> Đã đồng bộ vận động</span></div></div></div></article>
+<article class="dietfit-card dietfit-card-en df-progress-card df-highlight--progress"><div class="dietfit-card-copy"><h2>Tiến bộ qua từng biểu đồ</h2><p>Theo dõi bữa ăn, vận động và thói quen để thấy mình tiến bộ mỗi ngày.</p></div><div class="df-progress-scene" aria-hidden="true"><div class="df-progress-scene__stage"><img class="df-progress-scene__photo" src="/assets/cards/progress-reference/phone-in-hand.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-progress-ui"><div class="df-progress-ui__status"><b>9:41</b><span>▮▮▮</span><i></i></div><div class="df-progress-ui__heading"><div><h3>Tiến độ</h3><p>Góp nhặt từng tiến bộ nhỏ.</p></div><span>+</span></div><div class="df-progress-ui__week"><span><b>T2</b><i>14</i></span><span><b>T3</b><i>15</i></span><span><b>T4</b><i>16</i></span><span><b>T5</b><i>17</i></span><span class="is-selected"><b>T6</b><i>18</i></span><span><b>T7</b><i>19</i></span><span><b>CN</b><i>20</i></span></div><div class="df-progress-ui__weight"><div class="df-progress-ui__section-heading"><strong>Cân nặng</strong><span>7 ngày qua ⌄</span></div><div class="df-progress-ui__weight-value"><strong>63,3 <small>kg</small></strong><span>↓ 1,5 kg</span></div><svg class="df-progress-ui__chart" viewBox="0 0 320 124" fill="none"><path d="M8 22H312M8 62H312M8 102H312" stroke="#ecece6" stroke-width="1"></path><path d="M8 24L58 35L108 30L158 56L208 66L258 75L308 98V113H8Z" fill="#fe692e14"></path><path d="M8 24L58 35L108 30L158 56L208 66L258 75L308 98" stroke="#fe692e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="308" cy="98" r="7" fill="#fe692e24"></circle><circle cx="308" cy="98" r="3.5" fill="#fe692e"></circle></svg><div class="df-progress-ui__chart-days"><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span></div><div class="df-progress-ui__insight"><span>✦</span><p>Mỗi ngày, tiến bộ một chút.</p></div></div><div class="df-progress-ui__calories"><div class="df-progress-ui__section-heading"><strong>Calo mỗi ngày</strong><span>Tuần này</span></div><div class="df-progress-ui__calorie-value"><strong>1.820</strong><span>kcal trung bình/ngày</span></div><div class="df-progress-ui__bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="df-progress-ui__chart-days"><span>T7</span><span>CN</span><span>T2</span><span>T3</span><span>T4</span><span>T5</span><span>T6</span></div></div></div></div></div></article>
+<article class="dietfit-card dietfit-card-en df-diary-card df-highlight--diary"><div class="dietfit-card-copy"><h2>Nhật ký ăn uống mỗi ngày</h2><p>Mọi bữa ăn được lưu cùng một chỗ, để bạn dễ dàng xem lại.</p></div><div class="df-diary-scene" aria-hidden="true"><img class="df-diary-scene__person" src="/assets/cards/diary-reference/phone-at-desk.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-diary-scene__breakfast"><img src="/assets/cards/diary-reference/avocado-breakfast.webp" width="640" height="640" alt="" loading="lazy" decoding="async"><span>Bữa sáng <b>320 kcal</b></span></div><div class="df-diary-scene__lunch"><small>Bữa trưa</small><strong>540<span> kcal</span></strong><i>✓</i></div><div class="df-diary-scene__photo"><img src="/assets/cards/diary-reference/salmon-grain-bowl.webp" width="640" height="640" alt="" loading="lazy" decoding="async"><span>Đã ghi nhật ký <b>✓</b></span></div><div class="df-diary-scene__dinner"><span class="df-diary-scene__fold"></span><small>Bữa tối</small><strong>610<span> kcal</span></strong><span class="df-diary-scene__dinner-date">Hôm nay</span></div><div class="df-diary-scene__saved"><img src="/landing/app-icon.png" width="48" height="48" alt="" loading="lazy" decoding="async"><div><strong>Đã lưu bữa ăn</strong><small>Mọi bữa ăn, cùng một chỗ.</small></div><span>✓</span></div></div></article>
+<article class="dietfit-card dietfit-card-en df-habit-card df-habit-card--photo df-habit-card--streak"><div class="dietfit-card-copy"><h2>Giữ chuỗi ngày, tạo thói quen.</h2><p>Ghi lại bữa ăn mỗi ngày, góp từng bước nhỏ thành thói quen tốt.</p></div><div class="df-habit-art df-streak-scene" aria-hidden="true"><img class="df-streak-scene__photo" src="/assets/cards/streak-reference/stretching-sky.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-streak-scene__footer"><div class="df-streak-scene__summary"><strong>Chuỗi 7 ngày</strong><span>Đều đặn mỗi ngày.</span></div><div class="df-streak-scene__week"><span><b>T2</b><i>✓</i></span><span><b>T3</b><i>✓</i></span><span><b>T4</b><i>✓</i></span><span><b>T5</b><i>✓</i></span><span><b>T6</b><i>✓</i></span><span><b>T7</b><i>✓</i></span><span class="is-today"><b>CN</b><i>✓</i></span></div></div><span class="df-streak-scene__flame">🔥</span><div class="df-streak-scene__meals"><div class="df-streak-scene__meals-heading"><strong>Mỗi ngày một chút</strong><span>•••</span></div><div class="df-streak-scene__meal"><span class="df-streak-scene__meal-icon">☀</span><div><b>Đã ghi bữa sáng</b><small>Khởi đầu ngày mới</small></div><i>✓</i></div><div class="df-streak-scene__meal"><span class="df-streak-scene__meal-icon">◒</span><div><b>Đã ghi bữa trưa</b><small>Tiếp tục giữ nhịp</small></div><i>✓</i></div><div class="df-streak-scene__meal"><span class="df-streak-scene__meal-icon">☾</span><div><b>Đã ghi bữa tối</b><small>Bạn làm được rồi!</small></div><i>✓</i></div></div><img class="df-streak-scene__mascot" src="/landing/v3/brand/mascots/3d/wave.webp" width="200" height="200" alt="" loading="lazy" decoding="async"><div class="df-streak-scene__today"><span>Thành quả hôm nay</span><strong>3 / 3</strong><small>bữa đã ghi</small><i>✓</i></div><span class="df-streak-scene__spark">✦</span></div></article>
+<article class="dietfit-card dietfit-card-en df-photo-card df-photo-card--challenge df-habit-card--challenge"><div class="dietfit-card-copy"><h2>Thử thách nhỏ, phần thưởng vui.</h2><p>Thử sức với những thử thách vui và nhận Fitpoints cho nỗ lực sống khỏe mỗi ngày.</p></div><div class="df-photo-scene" aria-hidden="true"><img class="df-photo-scene__image" src="/assets/cards/challenge-reference/football-pitch.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"></div><div class="df-challenge-frame" aria-hidden="true"><div class="df-challenge-frame__brand"><img src="/landing/app-icon.png" width="48" height="48" alt="" loading="lazy" decoding="async"><span>Thử thách hôm nay</span></div><div class="df-challenge-goals"><div><span>Cùng vận động</span><b>20 phút</b><i></i></div><div><span>Giữ nhịp đều đặn</span><b>3 / 5</b><i></i></div><div><span>Thành quả nhỏ</span><b>+50</b><i></i></div></div><div class="df-challenge-frame__footer"><strong>Vận động vui, nhận điểm.</strong><span>+50 Fitpoints</span></div></div></article>
+<article class="dietfit-card dietfit-card-en df-photo-card df-photo-card--reminder df-habit-card--reminder"><div class="dietfit-card-copy"><h2>Nhắc nhẹ một chút, đúng lúc.</h2><p>Giữ nhịp sinh hoạt với lời nhắc và bộ đếm giờ ngay trên màn hình chính.</p></div><div class="df-photo-scene" aria-hidden="true"><img class="df-photo-scene__image" src="/assets/cards/reminder-reference/green-phone.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-reminder-center"><div class="df-reminder-center__label"><span>Trung tâm thông báo</span><i>×</i></div><div class="df-reminder-notification"><img src="/landing/app-icon.png" width="64" height="64" alt="" loading="lazy" decoding="async"><div><div class="df-reminder-notification__heading"><strong>Dietfit</strong><span>bây giờ</span></div><b>Đến giờ ăn trưa rồi</b><p>Ghi lại bữa ăn, giữ nhịp ngày mới.</p></div></div></div></div></article>
+<article class="dietfit-card dietfit-card-en df-photo-card df-photo-card--together df-habit-card--together"><div class="dietfit-card-copy"><h2>Thói quen tốt, cùng nhau giữ.</h2><p>Chia sẻ bữa ăn qua widget màn hình chính, để mỗi bữa ăn lại gần nhau hơn.</p></div><div class="df-photo-scene" aria-hidden="true"><img class="df-photo-scene__image" src="/assets/cards/together-reference/friends-garden.webp" width="960" height="1200" alt="" loading="lazy" decoding="async"><div class="df-shared-notification"><img src="/landing/app-icon.png" width="192" height="192" alt="" loading="lazy" decoding="async"><span><b>Dietfit <small>bây giờ</small></b><strong>Mẹ vừa chia sẻ một bữa ăn</strong></span></div><div class="df-together-meals"><div class="df-shared-widget df-together-meals__you"><span class="df-shared-owner"><b>B</b> Bạn</span><div class="df-widget-phase"><img src="/assets/cards/together-reference/shrimp-avocado-salad.webp" width="640" height="640" alt="" loading="lazy" decoding="async"><p>Bữa trưa ở công ty 🥗</p></div></div><div class="df-shared-widget df-together-meals__mom"><span class="df-shared-owner"><b>M</b> Mẹ</span><div class="df-widget-phase"><img src="/assets/cards/together-reference/chicken-rice.webp" width="640" height="640" alt="" loading="lazy" decoding="async"><p>Con ăn gì chưa? 🧡</p></div></div></div></div></article>
+</div>
+        <div class="dietfit-carousel-controls" aria-label="Điều khiển danh sách tính năng">
+          <button type="button" data-dietfit-prev="" aria-label="Tính năng trước">←</button>
+          <button type="button" data-dietfit-next="" aria-label="Tính năng tiếp theo">→</button>
+        </div>
+      </div>
+    </section>
+
+<section class="dietfit-faq" id="dietfit-faq">
+      <div class="dietfit-faq-intro">
+        <h2>Những điều bạn có thể muốn biết</h2>
+        <p>Giải đáp về quét món ăn, Sara và theo dõi mỗi ngày. Bạn còn thắc mắc? <a href="mailto:marketing@c0x12c.com">Liên hệ với Dietfit</a>.</p>
+      </div>
+      <div class="dietfit-faq-list">
+        <details>
+              <summary>
+                Calo từ ảnh có chính xác tuyệt đối không?
+                <span aria-hidden="true">
+                </span>
+              </summary>
+              <p>
+                Không. Kết quả phụ thuộc vào ảnh, nguyên liệu và khẩu phần nhìn thấy được. Dầu, sốt hoặc phần thức ăn bị che có thể khó nhận diện. Deep Scan cho bạn kiểm tra từng nguyên liệu và sửa khối lượng trước khi ghi nhận.
+              </p>
+            </details>
+        <details>
+              <summary>
+                Quick Scan và Deep Scan khác nhau thế nào?
+                <span aria-hidden="true">
+                </span>
+              </summary>
+              <p>
+                Quick Scan giúp ghi nhận nhanh. Deep Scan đi sâu hơn: khoanh vùng thực phẩm, cho thấy từng nguyên liệu và calo của từng phần. Bạn có thể đổi tên hoặc chỉnh nguyên liệu trước khi lưu.
+              </p>
+            </details>
+        <details>
+              <summary>
+                Sara dựa vào đâu để trả lời mình?
+                <span aria-hidden="true">
+                </span>
+              </summary>
+              <p>
+                Mục tiêu và câu trả lời khi onboarding, bữa ăn đã log, cùng dữ liệu hoạt động từ những ứng dụng sức khỏe bạn chọn kết nối. Dữ liệu bạn chia sẻ giúp Sara đưa ra gợi ý có ngữ cảnh hơn.
+              </p>
+            </details>
+        <details>
+              <summary>
+                Có thực đơn nghĩa là bữa ăn đã được log chưa?
+                <span aria-hidden="true">
+                </span>
+              </summary>
+              <p>
+                Chưa. Meal Plan là kế hoạch. Bạn cần tick hoặc log món đã ăn để bữa đó được ghi nhận. Bạn cũng có thể đổi món, tạo lại kế hoạch và xem lịch sử.
+              </p>
+            </details>
+        <details>
+              <summary>
+                Có thể đồng bộ vận động từ đâu?
+                <span aria-hidden="true">
+                </span>
+              </summary>
+              <p>
+                Dietfit kết nối với các ứng dụng và thiết bị sức khỏe bạn sử dụng, như Apple Health và Apple Watch. Dữ liệu vận động được đặt cạnh calories in để bạn theo dõi cả bữa ăn lẫn hoạt động. Tính khả dụng phụ thuộc kết nối bạn bật trong app.
+              </p>
+            </details>
+        <details>
+              <summary>
+                Sara có thay thế chuyên gia y tế không?
+                <span aria-hidden="true">
+                </span>
+              </summary>
+              <p>
+                Không. Sara là AI Coach hỗ trợ hiểu bữa ăn và thói quen. Các con số là ước tính và gợi ý không thay thế chẩn đoán, điều trị hay tư vấn từ chuyên gia y tế.
+              </p>
+            </details>
+      </div>
+    </section>
+    <section class="dietfit-final" data-dietfit-final>
+      <div class="dietfit-final-image" data-background-src="/assets/images/final-cta.webp" aria-hidden="true"></div>
+      <div class="dietfit-final-shade" aria-hidden="true"></div>
+      <div class="dietfit-final-cta">
+        <h2>Ăn gì cũng được. Nhớ check Dietfit nha!</h2><a class="dietfit-button"
+          href="https://apps.apple.com/vn/app/dietfit-ai-calorie-tracker/id6747063701" target="_blank"
+          rel="noopener noreferrer">Tải Dietfit ngay</a>
+      </div>
+      <footer class="dietfit-footer">
+        <div class="dietfit-footer-links">
+          <div>
+            <h3>Sản phẩm</h3><a href="#main">Tính năng</a><a href="#dietfit-faq">Câu hỏi</a>
+          </div>
+          <div>
+            <h3>Công ty</h3><a href="/about-us/">Về Dietfit</a><a href="mailto:marketing@c0x12c.com">Liên hệ</a><a
+              href="mailto:marketing@c0x12c.com">Hỗ trợ</a>
+          </div>
+          <div>
+            <h3>Kết nối</h3><a href="#dietfit-community">Cộng đồng</a><a href="https://www.tiktok.com/@dietfitvietnam"
+              target="_blank" rel="noopener noreferrer">TikTok</a>
+          </div>
+        </div>
+        <div class="dietfit-footer-legal"><span>© 2026 Dietfit · All rights reserved</span><a href="#">Chính sách riêng
+            tư</a><a href="#">Điều khoản sử dụng</a></div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="/vendor/lenis/lenis.min.js"></script>
+  <script src="/scripts/dietfit-scroll.js"></script>
+  <script src="/scripts/dietfit-hero-elbow-en.js?v=20261022-elbow-uv-4"></script>
+  <script src="/scripts/dietfit-hero-scan-en.js?v=20261022-vi-native-scan-1"></script>
+  <script src="/scripts/dietfit-hero.js?v=20261022-elbow-uv-3"></script>
+  <script src="/scripts/dietfit-sections.js?v=20261022-bilingual-cards-1"></script>
+  <script src="/scripts/dietfit-social.js?v=6"></script>
+  <script src="/scripts/dietfit-mobile-menu.js?v=3"></script>
+  <script src="/scripts/dietfit-habit-cards-en.js?v=20261022-bilingual-cards-1"></script>
+  <script src="/scripts/dietfit-native-ui.js?v=20261022-shared-size-1"></script>
+  <script src="/scripts/dietfit-mascots.js?v=20261021-lifelike-1"></script>
+<script src="/scripts/dietfit-progress-card-vi.js" defer></script>
+</body>
+
+</html>

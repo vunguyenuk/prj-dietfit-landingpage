@@ -2,6 +2,11 @@
 .env*
 .DS_Store
 
+# Original Capture Studio export; the imported website lives at the root.
+dietfit-health-2026-10-27T03-18-56-616Z/
+dev-dietfit-health-2026-10-27T04-05-53-327Z/
+__pycache__/
+
 # Reference captures of third-party sites — never ship or commit these.
 shinta-clone/
 website-capture/

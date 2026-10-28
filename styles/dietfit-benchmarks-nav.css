@@ -1,0 +1,6 @@
+/* Make room for Benchmarks alongside the existing language switch and CTA. */
+@media (min-width: 768px) {
+  #dietfit-header nav[aria-label="Main navigation"]:has(a[href="/en/benchmarks/"]) {
+    --header-joined-width: min(calc(100vw - 2rem), 40rem);
+  }
+}

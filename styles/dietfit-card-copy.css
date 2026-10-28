@@ -1,0 +1,34 @@
+/* One text treatment for all feature-card headlines and descriptions. */
+:is(#dietfit-features, #dietfit-highlights) .dietfit-card-copy,
+:is(#dietfit-features, #dietfit-highlights) .dietfit-card-copy h2,
+:is(#dietfit-features, #dietfit-highlights) .dietfit-card-copy p { color: #fff; }
+
+/* Soft, muted tints blend the white copy into each photograph's palette. */
+:is(#dietfit-features, #dietfit-highlights) .df-fasting-card { --df-copy-shade: #9282a580; }
+:is(#dietfit-features, #dietfit-highlights) .df-diary-card { --df-copy-shade: #7f9bb280; }
+:is(#dietfit-features, #dietfit-highlights) .df-progress-card { --df-copy-shade: #8b939a80; }
+:is(#dietfit-features, #dietfit-highlights) .df-habit-card--streak { --df-copy-shade: #709fb580; }
+:is(#dietfit-features, #dietfit-highlights) .df-photo-card--reminder { --df-copy-shade: #739fb380; }
+:is(#dietfit-features, #dietfit-highlights) .df-photo-card--challenge { --df-copy-shade: #80a5bb80; }
+:is(#dietfit-features, #dietfit-highlights) .df-photo-card--apple-health { --df-copy-shade: #7fa6bb80; }
+:is(#dietfit-features, #dietfit-highlights) .df-photo-card--together { --df-copy-shade: #84967b66; }
+
+:is(#dietfit-features, #dietfit-highlights) :is(.df-fasting-card, .df-diary-card, .df-progress-card,
+  .df-habit-card--streak, .df-photo-card--reminder, .df-photo-card--challenge,
+  .df-photo-card--apple-health, .df-photo-card--together) .dietfit-card-copy {
+  isolation: isolate;
+  text-shadow: 0 1px 3px #19314055;
+}
+:is(#dietfit-features, #dietfit-highlights) :is(.df-fasting-card, .df-diary-card, .df-progress-card,
+  .df-habit-card--streak, .df-photo-card--reminder, .df-photo-card--challenge,
+  .df-photo-card--apple-health, .df-photo-card--together) .dietfit-card-copy::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 -100px;
+  pointer-events: none;
+  background: linear-gradient(var(--df-copy-shade) 0,
+    color-mix(in srgb, var(--df-copy-shade) 75%, transparent) 35%,
+    color-mix(in srgb, var(--df-copy-shade) 30%, transparent) 70%,
+    transparent 100%);
+}

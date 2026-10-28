@@ -41,8 +41,8 @@ esc = html.escape
 PAGES = {
     "home": {
         "vi": {
-            "path": "/",
-            "file": "index.html",
+            "path": "/vi/",
+            "file": "vi/index.html",
             "title": "Dietfit – App đếm calo bằng AI, chụp ảnh là biết calo",
             "description": "Hiểu bữa ăn cùng Dietfit: Deep Scan tách từng nguyên liệu, chỉnh khẩu phần, hỏi Sara AI Coach, lên meal plan và theo dõi vận động, tiến độ mỗi ngày.",
             "og_title": "Dietfit – Track calo bằng AI, không lo ăn sai",
@@ -160,6 +160,7 @@ def head_block(lang, meta, alternates, jsonld, og_type="website", extra=""):
     """alternates: dict lang -> path (vi, en)."""
     canonical = url(meta["path"])
     other = "en" if lang == "vi" else "vi"
+    default_path = alternates["en"] if alternates["en"] == PAGES["home"]["en"]["path"] else alternates["vi"]
     lines = [
         "<!-- SEO:START — sinh bởi tools/build.py, đừng sửa tay -->",
         f"<title>{esc(meta['title'])}</title>",
@@ -168,7 +169,7 @@ def head_block(lang, meta, alternates, jsonld, og_type="website", extra=""):
         f'<link rel="canonical" href="{canonical}">',
         f'<link rel="alternate" hreflang="vi" href="{url(alternates["vi"])}">',
         f'<link rel="alternate" hreflang="en" href="{url(alternates["en"])}">',
-        f'<link rel="alternate" hreflang="x-default" href="{url(alternates["vi"])}">',
+        f'<link rel="alternate" hreflang="x-default" href="{url(default_path)}">',
         f'<meta name="theme-color" content="{THEME}">',
         f'<meta name="apple-itunes-app" content="app-id={APP_STORE_ID}">',
         f'<meta property="og:type" content="{og_type}">',
@@ -243,6 +244,10 @@ def build_home(lang):
     meta = PAGES["home"][lang]
     path = ROOT / meta["file"]
     src = path.read_text()
+    # The imported landing keeps its own matching Next.js hydration metadata.
+    # Replacing only its <head> would make React restore stale SEO on load.
+    if "Dietfit landing v3: imported" in src:
+        return
     # H1 gồm 2 dòng <span>; thêm khoảng trắng để Google không đọc dính chữ.
     src = re.sub(r'(<h1 class="dietfit-hero-heading"><span>[^<]*</span>)(<span>)', r"\1 \2", src)
     app = {
@@ -463,6 +468,7 @@ def build_sitemap(posts):
     groups += [(post_path("vi", p["slug"]), post_path("en", p["slug"]), p.get("dateModified", p["datePublished"])) for p in posts]
     rows = []
     for vi, en, lastmod in groups:
+        default_path = en if en == PAGES["home"]["en"]["path"] else vi
         for loc in (vi, en):
             rows.append("  <url>")
             rows.append(f"    <loc>{url(loc)}</loc>")
@@ -470,8 +476,14 @@ def build_sitemap(posts):
                 rows.append(f"    <lastmod>{lastmod}</lastmod>")
             rows.append(f'    <xhtml:link rel="alternate" hreflang="vi" href="{url(vi)}"/>')
             rows.append(f'    <xhtml:link rel="alternate" hreflang="en" href="{url(en)}"/>')
-            rows.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url(vi)}"/>')
+            rows.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url(default_path)}"/>')
             rows.append("  </url>")
+    if (ROOT / "en/benchmarks/index.html").exists():
+        rows.extend([
+            "  <url>",
+            f"    <loc>{url('/en/benchmarks/')}</loc>",
+            "  </url>",
+        ])
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
            + "\n".join(rows) + "\n</urlset>\n")
@@ -489,6 +501,9 @@ def main():
         build_about(lang)
         build_blog(posts, lang)
     build_sitemap(posts)
+    if (ROOT / "en/benchmarks/index.html").exists():
+        from import_benchmarks import update_navigation
+        update_navigation()
     print("Built", 6 + 2 * len(posts), "pages + sitemap.xml + robots.txt")
 
 

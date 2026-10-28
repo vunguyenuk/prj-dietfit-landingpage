@@ -1,0 +1,65 @@
+/* A photographed device with editable UI projected onto its display. */
+.dietfit-landing .dietfit-highlights--en .df-progress-card { color: #1b211e; background: #dedede; }
+.dietfit-landing .dietfit-highlights--en .df-progress-card::before { display: none; }
+.dietfit-landing .dietfit-highlights--en .df-progress-card .dietfit-card-copy { position: absolute; inset: 0 0 auto; z-index: 3; color: #1b211e; }
+.dietfit-landing .dietfit-highlights--en .df-progress-card .dietfit-card-copy p { color: #5c625e; }
+.df-progress-scene { position: absolute; inset: 0; overflow: hidden; }
+.df-progress-scene__stage { position: absolute; left: 5%; bottom: -3%; width: 90%; aspect-ratio: 4 / 5; overflow: hidden; }
+.df-progress-scene__photo { position: absolute; inset: 0; width: 100%; height: 100%; }
+.df-progress-ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 420px;
+  height: 630px;
+  padding: 0 23px;
+  overflow: hidden;
+  transform-origin: 0 0;
+  opacity: 0;
+  color: #181d19;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.df-progress-ui[data-ready="true"] { opacity: 1; }
+.df-progress-ui__status { display: flex; align-items: center; gap: 6px; height: 80px; padding: 18px 7px 29px; }
+.df-progress-ui__status > b { font-size: 15px; font-weight: 650; }
+.df-progress-ui__status > span { margin-left: auto; font-size: 12px; letter-spacing: -2px; }
+.df-progress-ui__status > i { position: relative; width: 20px; height: 10px; margin-left: 3px; border: 1px solid #50534c; border-radius: 3px; }
+.df-progress-ui__status > i::before { content: ""; position: absolute; inset: 1px 3px 1px 1px; border-radius: 1px; background: #242820; }
+.df-progress-ui__status > i::after { content: ""; position: absolute; top: 2px; right: -3px; width: 1px; height: 4px; background: #50534c; }
+.df-progress-ui__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.df-progress-ui__heading h3 { margin: 0; font-size: 27px; font-weight: 600; letter-spacing: -0.04em; line-height: 1.2; }
+.df-progress-ui__heading p { margin: 7px 0 0; color: #787d76; font-size: 14px; }
+.df-progress-ui__heading > span { display: grid; place-items: center; width: 33px; height: 33px; border-radius: 50%; color: #fffefa; background: #232a24; font-size: 23px; font-weight: 400; }
+.df-progress-ui__week { display: flex; justify-content: space-between; gap: 8px; margin: 25px 0 22px; }
+.df-progress-ui__week > span { display: grid; justify-items: center; gap: 9px; }
+.df-progress-ui__week b { color: #8b9087; font-size: 11px; font-weight: 400; }
+.df-progress-ui__week i { display: grid; place-items: center; width: 42px; height: 47px; border-radius: 19px; color: #686e65; background: #fffefa; font-size: 17px; font-style: normal; }
+.df-progress-ui__week .is-selected b { color: #232820; font-weight: 600; }
+.df-progress-ui__week .is-selected i { color: #fffefa; background: #252b25; }
+.df-progress-ui__weight,
+.df-progress-ui__calories { padding: 20px; border-radius: 23px; background: #fffefa; }
+.df-progress-ui__section-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.df-progress-ui__section-heading > strong { font-size: 16px; font-weight: 600; }
+.df-progress-ui__section-heading > span { color: #93988d; font-size: 10px; }
+.df-progress-ui__weight-value { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 13px; }
+.df-progress-ui__weight-value > strong { font-size: 29px; font-weight: 600; line-height: 1.1; letter-spacing: -0.04em; }
+.df-progress-ui__weight-value small { color: #8d9487; font-size: 14px; font-weight: 400; letter-spacing: 0; }
+.df-progress-ui__weight-value > span { padding: 5px 8px; border-radius: 10px; color: #4d7756; background: #e8f0e6; font-size: 10px; }
+.df-progress-ui__chart { display: block; width: 100%; height: auto; margin-top: 13px; }
+.df-progress-ui__chart-days { display: flex; justify-content: space-between; color: #a0a597; font-size: 9px; }
+.df-progress-ui__insight { display: flex; align-items: center; gap: 8px; margin-top: 14px; padding: 9px 10px; border-radius: 11px; color: #ad602f; background: #fff2e7; }
+.df-progress-ui__insight > span { font-size: 17px; }
+.df-progress-ui__insight p { margin: 0; font-size: 10px; }
+.df-progress-ui__calories { margin-top: 15px; }
+.df-progress-ui__calorie-value { display: flex; align-items: baseline; gap: 7px; margin-top: 10px; }
+.df-progress-ui__calorie-value > strong { font-size: 24px; font-weight: 600; letter-spacing: -0.04em; }
+.df-progress-ui__calorie-value > span { color: #9ba18f; font-size: 10px; }
+.df-progress-ui__bars { display: flex; align-items: flex-end; justify-content: space-around; gap: 15px; height: 80px; margin: 14px 0 7px; }
+.df-progress-ui__bars > i { flex: 1; max-width: 24px; height: 64%; border-radius: 6px 6px 0 0; background: #fe9b6c; }
+.df-progress-ui__bars > i:nth-child(2) { height: 80%; }
+.df-progress-ui__bars > i:nth-child(3) { height: 68%; }
+.df-progress-ui__bars > i:nth-child(4) { height: 92%; }
+.df-progress-ui__bars > i:nth-child(5) { height: 75%; }
+.df-progress-ui__bars > i:nth-child(6) { height: 85%; }
+.df-progress-ui__bars > i:nth-child(7) { height: 71%; background: #fe692e; }

@@ -1,0 +1,9 @@
+# Food diary card cutout
+
+Created with the built-in ImageGen tool on 27 October 2026, using the user's attached BrandBrain composition as the edit target. The person and desk are a transparent photographic cutout; the large text, food photos and diary labels are separate HTML/CSS.
+
+Final web asset: `assets/cards/diary-reference/phone-at-desk.webp` (960 × 1200, with transparency). The generated PNG was converted to WebP for the website, preserving its alpha channel.
+
+## Final prompt
+
+Edit this reference into a premium clean PHOTOGRAPHIC CUTOUT with a truly transparent background, for a website card. Keep only the young East Asian woman with straight dark hair, small pale-green earrings, a vivid cobalt-blue blazer over a white button-down shirt, leaning toward and looking down at a dark smartphone in her hands, together with her light natural wood standing desk and black metal support. Preserve the realistic editorial photography, soft studio light, candid intent expression and original pose. Remove ALL typography including the giant BrandBrain text, every floating image tile and panel, all file icons, comment cards, labels, graphics and the entire white background. Naturally reconstruct the small portions of her blue blazer, fingers and desk that were obscured by the floating panels. The full top of her head, both arms/hands and smartphone must remain fully visible. Keep her head near horizontal center, phone just right of center, desk across the lower third. A portrait 4:5 cutout composition of woman and desk only, with generous transparent space above and to both sides; crop her lower body at the image bottom, no invented full legs. Absolutely no background, no text, no stickers, no UI, no ground shadow rectangle, no watermark. The website will place separate large typography and food-photo tiles behind and around this cutout later.

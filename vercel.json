@@ -28,7 +28,7 @@
   ],
   "headers": [
     {
-      "source": "/(assets|vendor)/(.*)",
+      "source": "/(assets|vendor|landing|_next/static)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

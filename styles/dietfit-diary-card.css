@@ -1,0 +1,155 @@
+/* Editorial photo cutout and meal collage, following the supplied reference. */
+.dietfit-landing .dietfit-highlights--en .df-diary-card {
+  color: #122a23;
+  background: #e4eef9;
+}
+.dietfit-landing .dietfit-highlights--en .df-diary-card::before { display: none; }
+.dietfit-landing .dietfit-highlights--en .df-diary-card .dietfit-card-copy {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 4;
+  color: #122a23;
+}
+.dietfit-landing .dietfit-highlights--en .df-diary-card .dietfit-card-copy p { color: #52645d; }
+.df-diary-scene { position: absolute; inset: 0; overflow: hidden; container-type: size; }
+.df-diary-scene__person {
+  position: absolute;
+  bottom: -2%;
+  left: -6%;
+  z-index: 2;
+  width: 112%;
+  max-width: none;
+  height: 83%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.df-diary-scene__breakfast {
+  position: absolute;
+  top: 42%;
+  left: 2%;
+  z-index: 3;
+  width: 29%;
+  height: 19%;
+  overflow: hidden;
+  border: 1px solid #fffefa;
+  border-radius: 1.4cqw;
+  background: #dce3c4;
+  transform: rotate(-5deg);
+}
+.df-diary-scene__breakfast > img { width: 100%; height: 100%; object-fit: cover; }
+.df-diary-scene__breakfast > span {
+  position: absolute;
+  inset: auto 1.4cqw 1.4cqw;
+  display: grid;
+  gap: 0.5cqw;
+  padding: 1.5cqw 1.8cqw;
+  border: 1px solid #fffefa90;
+  border-radius: 1cqw;
+  color: #122a23;
+  background: #fffefae0;
+  backdrop-filter: blur(4px);
+  font-size: 2cqw;
+}
+.df-diary-scene__breakfast b { font-size: 2.4cqw; font-weight: 600; }
+.df-diary-scene__lunch {
+  position: absolute;
+  top: 58%;
+  left: 7%;
+  z-index: 3;
+  display: grid;
+  gap: 1cqw;
+  width: 25%;
+  padding: 2.7cqw;
+  border: 1px solid #e6f7c3;
+  border-radius: 1.8cqw;
+  color: #24452c;
+  background: #d8efb5;
+  transform: rotate(4deg);
+}
+.df-diary-scene__lunch small { font-size: 2.6cqw; }
+.df-diary-scene__lunch strong { font-size: 5.8cqw; font-weight: 600; line-height: 1.1; }
+.df-diary-scene__lunch strong span { font-size: 2.3cqw; font-weight: 400; }
+.df-diary-scene__lunch i { position: absolute; top: 2.7cqw; right: 2.7cqw; font-size: 2.3cqw; font-style: normal; }
+.df-diary-scene__photo {
+  position: absolute;
+  top: 48%;
+  right: 2%;
+  z-index: 3;
+  width: 27%;
+  height: 18%;
+  overflow: hidden;
+  border: 1px solid #fffefa;
+  border-radius: 1cqw;
+  background: #829155;
+  transform: rotate(5deg);
+}
+.df-diary-scene__photo > img { width: 100%; height: 100%; object-fit: cover; }
+.df-diary-scene__photo > span {
+  position: absolute;
+  inset: auto 1.5cqw 1.7cqw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1cqw;
+  padding: 1.4cqw;
+  border: 1px solid #fffefa80;
+  border-radius: 1.4cqw;
+  color: #fffefa;
+  background: #173c2e65;
+  backdrop-filter: blur(4px);
+  font-size: 2cqw;
+}
+.df-diary-scene__photo b { font-size: 2.4cqw; font-weight: 500; }
+.df-diary-scene__dinner {
+  position: absolute;
+  top: 66%;
+  right: 1%;
+  z-index: 1;
+  display: grid;
+  align-content: end;
+  gap: 1.2cqw;
+  width: 30%;
+  height: 20%;
+  padding: 3cqw;
+  overflow: hidden;
+  border-radius: 1.6cqw;
+  color: #8c366d;
+  background: #f2c3e7;
+  transform: rotate(-3deg);
+}
+.df-diary-scene__fold {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8cqw;
+  height: 8cqw;
+  background: linear-gradient(45deg, #e1a8d7 50%, #e4eef9 50%);
+  border-bottom-left-radius: 1cqw;
+}
+.df-diary-scene__dinner small { font-size: 2.6cqw; }
+.df-diary-scene__dinner strong { font-size: 5.3cqw; font-weight: 600; line-height: 1.1; }
+.df-diary-scene__dinner strong span { font-size: 2.3cqw; font-weight: 400; }
+.df-diary-scene__dinner-date { font-size: 2cqw; }
+.df-diary-scene__saved {
+  position: absolute;
+  right: 8%;
+  bottom: 10%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  width: 48%;
+  padding: 2.6cqw;
+  border: 1px solid #dde4dc;
+  border-radius: 2.4cqw;
+  color: #20372c;
+  background: #fffefae8;
+  box-shadow: 0 1.5cqw 4cqw #1c302514;
+  backdrop-filter: blur(6px);
+  transform: rotate(-2deg);
+}
+.df-diary-scene__saved > img { width: 7cqw; height: 7cqw; border-radius: 1.8cqw; }
+.df-diary-scene__saved > div { display: grid; gap: 0.8cqw; }
+.df-diary-scene__saved strong { font-size: 2.8cqw; font-weight: 600; }
+.df-diary-scene__saved small { color: #7d897e; font-size: 1.8cqw; }
+.df-diary-scene__saved > span { margin-left: auto; color: #528064; font-size: 3cqw; }

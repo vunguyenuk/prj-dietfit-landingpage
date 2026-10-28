@@ -1,0 +1,164 @@
+{
+  "source": "Original supplied dev-dietfit-health capture, matching the detailed category table; this is not a live API refresh.",
+  "photo": [
+    {
+      "id": "dietfit",
+      "name": "Dietfit",
+      "score": 82.0,
+      "error": 78.9
+    },
+    {
+      "id": "cal-ai",
+      "name": "Cal AI",
+      "score": 80.0,
+      "error": 80.5
+    },
+    {
+      "id": "0xcal",
+      "name": "0xCal",
+      "score": 79.2,
+      "error": 81.1
+    }
+  ],
+  "text": [
+    {
+      "id": "dietfit",
+      "name": "Dietfit",
+      "score": 88.0
+    },
+    {
+      "id": "0xcal",
+      "name": "0xCal",
+      "score": 87.7
+    },
+    {
+      "id": "myfitnesspal",
+      "name": "MyFitnessPal",
+      "score": 65.8
+    },
+    {
+      "id": "fitatu",
+      "name": "Fitatu",
+      "score": 63.4
+    }
+  ],
+  "categories": [
+    {
+      "label": "Drinks \u00b7 2",
+      "scores": [
+        90.5,
+        88.6,
+        88.6,
+        97.3
+      ]
+    },
+    {
+      "label": "Dairy \u00b7 3",
+      "scores": [
+        100.0,
+        99.3,
+        88.2,
+        93.1
+      ]
+    },
+    {
+      "label": "Fast food \u00b7 3",
+      "scores": [
+        96.0,
+        94.5,
+        86.6,
+        89.2
+      ]
+    },
+    {
+      "label": "Fats and nuts \u00b7 3",
+      "scores": [
+        99.9,
+        99.6,
+        99.1,
+        98.4
+      ]
+    },
+    {
+      "label": "Fruit \u00b7 3",
+      "scores": [
+        100.0,
+        100.0,
+        83.5,
+        91.3
+      ]
+    },
+    {
+      "label": "Grains \u00b7 4",
+      "scores": [
+        96.3,
+        91.4,
+        86.0,
+        92.8
+      ]
+    },
+    {
+      "label": "Home cooking \u00b7 12",
+      "scores": [
+        82.6,
+        82.4,
+        67.7,
+        67.8
+      ]
+    },
+    {
+      "label": "International \u00b7 12",
+      "scores": [
+        84.7,
+        79.6,
+        66.0,
+        65.6
+      ]
+    },
+    {
+      "label": "Protein \u00b7 5",
+      "scores": [
+        92.0,
+        100.0,
+        91.4,
+        92.9
+      ]
+    },
+    {
+      "label": "Restaurant dishes \u00b7 12",
+      "scores": [
+        86.4,
+        88.4,
+        63.0,
+        65.5
+      ]
+    },
+    {
+      "label": "Special diets \u00b7 35",
+      "scores": [
+        86.8,
+        87.5,
+        71.1,
+        59.5
+      ]
+    },
+    {
+      "label": "Misspellings \u00b7 11",
+      "scores": [
+        83.7,
+        86.4,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "label": "Vegetables \u00b7 2",
+      "scores": [
+        99.8,
+        71.3,
+        72.8,
+        83.0
+      ]
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dietfit.health/</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://dietfit.health/"/>
+    <loc>https://dietfit.health/vi/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://dietfit.health/vi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://dietfit.health/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dietfit.health/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dietfit.health/en/"/>
   </url>
   <url>
     <loc>https://dietfit.health/en/</loc>
-    <xhtml:link rel="alternate" hreflang="vi" href="https://dietfit.health/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://dietfit.health/vi/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://dietfit.health/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://dietfit.health/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dietfit.health/en/"/>
   </url>
   <url>
     <loc>https://dietfit.health/about-us/</loc>
@@ -119,5 +119,8 @@
     <xhtml:link rel="alternate" hreflang="vi" href="https://dietfit.health/blog/xay-niem-tin-voi-co-the/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://dietfit.health/en/blog/xay-niem-tin-voi-co-the/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dietfit.health/blog/xay-niem-tin-voi-co-the/"/>
+  </url>
+  <url>
+    <loc>https://dietfit.health/en/benchmarks/</loc>
   </url>
 </urlset>

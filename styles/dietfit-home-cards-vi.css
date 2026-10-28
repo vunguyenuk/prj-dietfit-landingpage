@@ -1,0 +1,69 @@
+/* The current EN card art and composition, with native Vietnamese UI labels. */
+.dietfit-home--vi .dietfit-highlights--vi { background: #fff; padding-block: 0; }
+.dietfit-home--vi .dietfit-highlights--vi .dietfit-carousel { position: relative; padding: 0 0 16px; scroll-padding-inline: 0; gap: 20px; }
+.dietfit-home--vi .dietfit-highlights--vi .dietfit-card-copy { gap: 8px; }
+.dietfit-home--vi .dietfit-highlights--vi .dietfit-card-copy h2 { font-size: var(--dietfit-type-subheading); font-weight: 600; }
+.dietfit-home--vi .df-fasting-scene__timer > strong { font-size: 8cqw; }
+.dietfit-home--vi .df-progress-ui__section-heading > span { font-size: 9px; }
+.dietfit-home--vi .df-challenge-frame__footer > strong { font-size: 4.4cqw; }
+
+/* Translate the text baked into the science photograph with editable panels.
+   Coordinates match its original three widgets, so the photo is unchanged. */
+.df-science-widgets-vi { position: absolute; z-index: 2; inset: 0; pointer-events: none; container-type: size; color: #191c19; }
+.df-science-widgets-vi > div { position: absolute; overflow: hidden; border-radius: 1.4cqw; }
+.df-science-widgets-vi strong { font-weight: 600; }
+.df-science-bmi { left: 37.45%; top: 29.4%; width: 43.7%; height: 17.2%; padding: 2cqw; background: #e2ebe6; }
+.df-science-bmi > strong { display: flex; justify-content: space-between; align-items: center; font-size: 2.2cqw; }
+.df-science-bmi > strong i { font-size: 2cqw; font-style: normal; }
+.df-science-bmi > b { display: block; margin-top: 1.5cqw; font-size: 3.6cqw; line-height: 1.1; font-weight: 600; }
+.df-science-bmi p { margin: 1cqw 0 0; font-size: 1.6cqw; }
+.df-science-bmi__scale { height: 1.4cqw; margin-top: 2cqw; border-radius: 1cqw; background: linear-gradient(to right,#89c7ec 13%,#b2cf55 13% 38%,#ffcd8a 38% 56%,#ff8a39 56% 76%,#d54431 76%); }
+.df-science-bmi > small { display: flex; justify-content: space-between; margin-top: .5cqw; font-size: 1.2cqw; color: #777f76; }
+.df-science-bmi > em { display: block; width: max-content; margin: 1.3cqw auto 0; padding: .5cqw 1.5cqw; border-radius: 2cqw; background: #f7faf6; color: #6a716a; font-size: 1.5cqw; font-style: normal; }
+.df-science-calories { left: 2.5%; top: 56.8%; width: 29.4%; height: 16.3%; padding: 2cqw 1.6cqw; background: #fff; }
+.df-science-calories > strong { display: block; font-size: 1.9cqw; }
+.df-science-calories > div { display: flex; align-items: center; gap: 2cqw; margin-top: 2.8cqw; }
+.df-science-calories__ring { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; flex: none; width: 13cqw; height: 13cqw; border: .6cqw solid #ff8a4c; border-radius: 50%; }
+.df-science-calories__ring b { font-size: 3.5cqw; line-height: 1; }
+.df-science-calories__ring small { margin-top: .8cqw; color: #8e8e88; font-size: 1.05cqw; }
+.df-science-calories dl { display: grid; gap: 1cqw; margin: 0; }
+.df-science-calories dt { color: #82857d; font-size: 1.2cqw; }
+.df-science-calories dd { margin: .4cqw 0 0; font-size: 1.7cqw; font-weight: 600; }
+.df-science-average { left: 59.1%; top: 62.9%; width: 38.3%; height: 29.4%; padding: 3cqw; background: #f3f1ea; }
+.df-science-average > strong { display: block; font-size: 2.2cqw; }
+.df-science-average > b { display: block; margin-top: 1cqw; font-size: 3.3cqw; font-weight: 600; }
+.df-science-average > b small { font-size: 1.6cqw; font-weight: 400; }
+.df-science-average__bars { display: flex; align-items: end; justify-content: space-around; height: 15cqw; margin: 2.5cqw 0 0; border-bottom: 1px solid #d9dcd0; }
+.df-science-average__bars i { width: 3cqw; height: 1px; border-radius: 1cqw 1cqw 0 0; background: #ddd; }
+.df-science-average__bars i:first-child { height: 45%; background: linear-gradient(#ff8a34 30%,#b9d55c 30%); }
+.df-science-average__bars i:nth-child(2) { height: 96%; background: linear-gradient(#ffd28c 0 30%,#ff8a34 30% 55%,#b9d55c 55%); }
+.df-science-average__days { display: flex; justify-content: space-around; margin-top: .7cqw; color: #8b8f81; font-size: 1.1cqw; }
+.df-science-average > p { display: flex; justify-content: space-between; gap: 1cqw; margin: 1.5cqw 0 0; font-size: 1.3cqw; }
+.df-science-average > p > span::before { content: ""; display: inline-block; width: .9cqw; height: .9cqw; margin-right: .4cqw; border-radius: 50%; background: #b9d55c; }
+.df-science-average > p > span:nth-child(2)::before { background: #ffad83; }
+.df-science-average > p > span:last-child::before { background: #ffd28c; }
+.df-science-average > em { display: flex; gap: 2cqw; align-items: center; margin-top: 1.5cqw; padding: 1cqw; border-radius: 2cqw; background: #ffffffa6; font-size: 1.3cqw; font-style: normal; }
+.df-science-average > em > span { color: #85887d; }
+
+/* Keep the small Yesterday/Today calorie-ring widgets and clear body silhouette. */
+.df-reward-widget-vi { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; gap: .6cqw; padding: 1.8cqw 1cqw; background: #fff; color: #111; }
+.df-reward-widget-vi > strong { font-size: 2.8cqw; font-weight: 650; line-height: 1.2; }
+.df-reward-widget-vi__ring { position: relative; display: grid; place-items: center; flex: none; width: 16cqw; height: 16cqw; margin-top: .3cqw; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(#ff8a30 0 252deg,#efefed 252deg); }
+.df-reward-widget-vi__ring::before { position: absolute; content: ""; inset: .7cqw; border-radius: 50%; background: #fff; }
+.df-reward-widget-vi__ring > span { position: relative; font-size: 4.1cqw; }
+.df-reward-calories--yesterday .df-reward-widget-vi__ring { background: conic-gradient(#111 0 252deg,#efefed 252deg); }
+.df-reward-calories--yesterday .df-reward-widget-vi__ring > span { filter: grayscale(1) brightness(0); }
+.df-reward-widget-vi__ring > small { position: absolute; z-index: 1; top: 20%; left: -2cqw; padding: .7cqw 1cqw; border-radius: 1cqw; background: #111; color: #fff; font-size: 1.5cqw; line-height: 1.2; text-align: center; }
+.df-reward-widget-vi__ring > small b { font-size: 1.65cqw; font-weight: 500; }
+.df-reward-widget-vi__ring > small i { color: #49b983; font-style: normal; }
+.df-reward-calories--today .df-reward-widget-vi__ring > small { top: 63%; left: auto; right: -2cqw; }
+.df-reward-widget-vi__ring > em { position: absolute; top: 2%; left: -2cqw; z-index: 1; padding: .5cqw; border-radius: 1cqw; background: #f4f6f3; color: #49b983; font-size: 1.8cqw; font-style: normal; font-weight: 650; }
+.df-reward-widget-vi > p { margin: .4cqw 0 0; color: #8f8f8d; font-size: 2cqw; line-height: 1; }
+.df-reward-widget-vi > p b { color: #111; font-size: 4cqw; font-weight: 650; }
+
+@media(min-width:768px) {
+  .dietfit-highlights--vi.dietfit-scroll-scrub .dietfit-highlights-sticky { top: 88px; height: calc(100svh - 88px); padding-block: 16px 24px; justify-content: center; }
+  .dietfit-home--vi .dietfit-highlights--vi .dietfit-carousel { gap: 16px; }
+}
+@media(min-width:1024px) { .dietfit-home--vi .dietfit-highlights--vi .dietfit-carousel { gap: 20px; } }
+@media(max-width:767px) { .dietfit-home--vi .dietfit-highlights--vi .dietfit-card-en { flex-basis: 100%; } }

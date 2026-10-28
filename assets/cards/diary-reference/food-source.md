@@ -1,0 +1,16 @@
+# Food diary meal photographs
+
+Created with the built-in ImageGen tool. These food photos share ivory ceramics, pale-blue linen, light oak and natural daylight to match the card's blue blazer, pale-blue background and wooden desk. They are decorative meal illustrations; the card's labels remain separate HTML/CSS.
+
+## Final saved assets
+
+- `assets/cards/diary-reference/avocado-breakfast.webp` (640 × 640, optimized WebP).
+- `assets/cards/diary-reference/salmon-grain-bowl.webp` (640 × 640, optimized WebP).
+
+## breakfast — final prompt
+
+Create a photorealistic premium food-editorial photograph for a small square food-diary tile in a website card featuring a woman in a cobalt-blue blazer at a light oak desk, on a pale-blue background. Square 1:1 image. The dish is an elegant fresh breakfast: one slice of golden toasted sourdough with neatly fanned ripe avocado, a softly poached egg with a little golden yolk visible, a few roasted cherry tomatoes, delicate green microgreens and two strawberry halves arranged naturally on a warm ivory ceramic plate. A modest, realistic individual portion, appetizing handmade food, crisp bread texture, tender egg white, no plastic-looking ingredients. Photograph from a high three-quarter overhead angle, soft natural window light and gentle shadows. Keep the food centered in the upper-middle 65 percent of the image, with a little clean plate/table space along the lower 20 percent for a separate website caption. Pale cool-blue linen and a small amount of light natural oak surface around the plate; restrained styling, not a busy table. Harmonious colors: avocado green, coral-red tomatoes and berries, golden yolk, ivory plate and soft blue accents, naturally vivid rather than neon. Crisp detailed food, tasteful magazine styling, realistic color and texture. No people, no hands, no text, no logos, no watermark, no UI, no cutlery crossing the dish.
+
+## salmon — final prompt
+
+Create a photorealistic premium food-editorial photograph for a small square food-diary tile in a website card featuring a woman in a cobalt-blue blazer at a light oak desk, on a pale-blue background. Square 1:1 image. The dish is a beautifully composed individual salmon grain bowl: one modest piece of seared salmon with a golden crisp surface and natural coral-orange flesh, fluffy quinoa, neatly fanned avocado, small tender broccoli florets, fine ribbons of purple cabbage, edamame, a few cherry tomato halves and a small lemon wedge. Ingredients arranged in distinct balanced sections of a warm ivory shallow ceramic bowl, a tiny natural drizzle of dressing, realistic edible portions. Photograph from a high three-quarter overhead angle with soft natural window light and gentle shadows, matching a refined magazine food photograph. Keep the salmon and colorful vegetables clear in the upper-middle 65 percent of the image, leaving calmer bowl/table space near the lower 20 percent for a separate website caption. Pale cool-blue linen and a small amount of light natural oak around the bowl, no busy props. Harmonious palette of soft blue, ivory, fresh greens, salmon orange and a restrained purple accent. Naturally vivid color, moist salmon texture, delicate grain detail, appetizing real food rather than plastic or oversaturated CGI. No people, no hands, no text, no logos, no watermark, no UI, no utensils on top of the meal.

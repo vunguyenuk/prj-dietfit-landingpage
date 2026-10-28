@@ -1,0 +1,83 @@
+/* Reference photography with native, editable Dietfit overlays. */
+.dietfit-landing .dietfit-highlights--en .df-photo-card { color: #16382c; background: #94c3e3; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card::before { display: none; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card .dietfit-card-copy { position: absolute; inset: 0 0 auto; z-index: 4; color: #16382c; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card .dietfit-card-copy p { color: #214e40; }
+.df-photo-scene { position: absolute; inset: 0; overflow: hidden; container-type: size; }
+.df-photo-scene__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* Tennis editorial: the original copy sits in clear court space above the face. */
+.dietfit-landing .dietfit-highlights--en .df-photo-card--reward { color: #fffefa; background: #28748b; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card--reward .dietfit-card-copy { color: #fffefa; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card--reward .dietfit-card-copy p { color: #fffefaed; }
+.df-photo-card--reward .df-photo-scene::after { content: ""; position: absolute; inset: 0 0 auto; height: 38%; background: linear-gradient(#082d3866, #082d3800); }
+/* Original Yesterday/Today widgets, cropped with the source's own coordinates. */
+.df-reward-calories { position: absolute; z-index: 2; width: 25%; overflow: hidden; border-radius: 12% / 10%; box-shadow: 0 1.5cqw 4cqw #123d4421; }
+.df-reward-calories > img { position: absolute; max-width: none; }
+.df-reward-calories--yesterday { top: 44%; left: 5%; aspect-ratio: 296 / 366; }
+.df-reward-calories--yesterday > img { width: 506.7568%; height: 573.7705%; left: -121.2838%; top: -196.4481%; }
+.df-reward-calories--today { top: 70%; right: 5%; aspect-ratio: 298 / 365; }
+.df-reward-calories--today > img { width: 503.3557%; height: 575.3425%; left: -244.2953%; top: -297.2603%; }
+
+/* Translucent notification stack, kept below the subject's face. */
+.df-reminder-center { position: absolute; z-index: 2; top: 68%; left: 7%; right: 7%; }
+.df-reminder-center__label { display: flex; align-items: center; justify-content: space-between; margin: 0 3cqw 2cqw; color: #fff; font-size: 3.2cqw; text-shadow: 0 1px 7px #16382c60; }
+.df-reminder-center__label > i { display: grid; place-items: center; width: 4.7cqw; height: 4.7cqw; border-radius: 50%; color: #898f86; background: #fffefa; font-size: 4cqw; font-style: normal; text-shadow: none; }
+.df-reminder-notification { position: relative; display: flex; align-items: center; gap: 3cqw; padding: 4.3cqw; border: 1px solid #ffffffb0; border-radius: 4.2cqw; color: #183329; background: #fffefae8; box-shadow: 0 3cqw 8cqw #143e3a15; backdrop-filter: blur(14px); }
+.df-reminder-notification::before,
+.df-reminder-notification::after { content: ""; position: absolute; z-index: -1; height: 100%; border: 1px solid #ffffff70; border-radius: inherit; background: #fffefa80; }
+.df-reminder-notification::before { inset: 2.3cqw 3cqw auto; }
+.df-reminder-notification::after { inset: 4.6cqw 7cqw auto; background: #fffefa60; }
+.df-reminder-notification > img { flex: none; width: 11cqw; height: 11cqw; border-radius: 3cqw; }
+.df-reminder-notification > div { flex: 1; min-width: 0; }
+.df-reminder-notification__heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.1cqw; }
+.df-reminder-notification__heading > strong { font-size: 3.4cqw; font-weight: 600; }
+.df-reminder-notification__heading > span { color: #89928a; font-size: 2.8cqw; }
+.df-reminder-notification b { font-size: 3.1cqw; font-weight: 550; }
+.df-reminder-notification p { margin: 0.8cqw 0 0; color: #68766c; font-size: 2.9cqw; line-height: 1.4; }
+
+/* Reuse the original meal-sharing widgets over the two-friends photograph. */
+.dietfit-landing .dietfit-highlights--en .df-photo-card--together { color: #fffefa; background: #aec0a1; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card--together .dietfit-card-copy { inset: 0 0 auto; color: #fffefa; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card--together .dietfit-card-copy p { color: #fffefadb; }
+.df-photo-card--together .df-photo-scene__image { top: 24%; height: 76%; object-position: 50% 30%; mask-image: linear-gradient(transparent, #000 12%); }
+.dietfit-landing .df-photo-card--together .df-shared-notification { z-index: 3; top: auto; bottom: 6%; left: 7%; width: 86%; padding: 2.7cqw; gap: 2.4cqw; opacity: 1; animation: none; transform: none; backdrop-filter: blur(10px); }
+.df-together-meals { position: absolute; z-index: 2; inset: 0; }
+.dietfit-landing .df-together-meals .df-shared-widget { position: absolute; width: 32%; border: 1px solid #fffefa94; border-radius: 4.4cqw; box-shadow: 0 2cqw 7cqw #0c281c30; }
+.df-together-meals__you { top: 53%; left: 5%; transform: rotate(-5deg); }
+.df-together-meals__mom { top: 57%; right: 5%; transform: rotate(5deg); }
+.dietfit-landing .df-together-meals .df-widget-phase { opacity: 1; animation: none; }
+@container (max-width: 330px) {
+  .df-photo-card--together .df-photo-scene__image { top: 42%; height: 58%; }
+  .dietfit-landing .df-together-meals .df-shared-widget { width: 24%; }
+  .df-together-meals__you { top: 68%; }
+  .df-together-meals__mom { top: 64%; }
+  .dietfit-landing .df-photo-card--together .df-shared-notification { bottom: 3%; }
+}
+
+/* A training photograph framed like the supplied challenge interface. */
+.dietfit-landing .dietfit-highlights--en .df-photo-card--challenge { display: grid; grid-template-rows: max-content minmax(0, 1fr); container-type: inline-size; background: #8ebff0; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card--challenge .dietfit-card-copy { position: relative; inset: auto; padding-bottom: 0; }
+.df-photo-card--challenge .df-photo-scene { position: relative; grid-area: 2 / 1; min-height: 0; mask-image: linear-gradient(transparent, #000 4cqw); }
+.df-challenge-frame { position: relative; grid-area: 2 / 1; z-index: 2; display: flex; flex-direction: column; gap: 2.4cqw; min-height: 0; margin: clamp(12px, 3cqw, 18px) 12% 8.4cqw; padding: 4cqw 5.8cqw; border: 2px solid #fffefa; border-radius: 8cqw; color: #fffefa; }
+.df-challenge-frame__brand { display: flex; align-items: center; gap: 2cqw; flex: none; font-size: 2.6cqw; text-shadow: 0 1px 6px #193a2b; }
+.df-challenge-frame__brand > img { width: 7cqw; height: 7cqw; border-radius: 2cqw; }
+.df-challenge-goals { display: grid; gap: 2.4cqw; flex: none; margin-block: auto 0; }
+.df-challenge-goals > div { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.1cqw; font-size: 2.5cqw; }
+.df-challenge-goals span { font-weight: 550; text-shadow: 0 1px 6px #173820; }
+.df-challenge-goals b { padding: 0.5cqw 1.1cqw; border-radius: 1.4cqw; color: #143b26; background: #56ed8b; font-size: 2.5cqw; font-weight: 600; }
+.df-challenge-goals i { grid-column: 1 / -1; height: 0.75cqw; border-radius: 2cqw; background: linear-gradient(90deg, #54ed8b 86%, #fffefa60 86%); }
+.df-challenge-goals > div:nth-child(2) i { background: linear-gradient(90deg, #54ed8b 60%, #fffefa60 60%); }
+.df-challenge-goals > div:nth-child(3) i { background: #54ed8b; }
+.df-challenge-frame__footer { display: grid; gap: 2.4cqw; flex: none; }
+.df-challenge-frame__footer > strong { font-size: 5.6cqw; font-weight: 600; line-height: 1.15; letter-spacing: -0.035em; text-shadow: 0 1px 6px #294a2350; }
+.df-challenge-frame__footer > span { display: grid; place-items: center; padding: 2.1cqw 3cqw; border-radius: 8cqw; color: #1a3326; background: #fffefa; font-size: 3cqw; font-weight: 600; }
+
+/* Keep the lively court photo dominant; the integration state stays compact. */
+.df-health-connected { position: absolute; right: 6%; bottom: 6%; display: flex; align-items: center; gap: 2.7cqw; padding: 3cqw 3.8cqw; border: 1px solid #ffffffbd; border-radius: 3.5cqw; color: #27372d; background: #fffefae8; box-shadow: 0 1.5cqw 5cqw #26433517; backdrop-filter: blur(10px); }
+.df-health-connected__icon { display: grid; place-items: center; width: 10cqw; height: 10cqw; border-radius: 2.5cqw; background: #fff; }
+.df-health-connected__icon > svg { width: 7cqw; height: 7cqw; }
+.df-health-connected > div { display: grid; gap: 1cqw; }
+.df-health-connected strong { font-size: 3.7cqw; font-weight: 600; }
+.df-health-connected div > span { color: #788476; font-size: 2.6cqw; }
+.df-health-connected i { margin-right: 0.5cqw; color: #5b976b; font-style: normal; }

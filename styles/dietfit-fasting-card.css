@@ -1,0 +1,82 @@
+/* Selective focus and floating fasting UI follow the supplied photo reference. */
+.dietfit-landing .dietfit-highlights--en .df-fasting-card { color: #211c2d; background: #e9e1f7; }
+.dietfit-landing .dietfit-highlights--en .df-fasting-card::before { display: none; }
+.dietfit-landing .dietfit-highlights--en .df-fasting-card .dietfit-card-copy {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+  color: #211c2d;
+}
+.dietfit-landing .dietfit-highlights--en .df-fasting-card .dietfit-card-copy p { color: #635d6c; }
+.df-fasting-scene { position: absolute; inset: 0; overflow: hidden; container-type: size; }
+.df-fasting-scene__person {
+  position: absolute;
+  bottom: -1%;
+  left: -2%;
+  width: auto;
+  max-width: none;
+  height: 77%;
+}
+.df-fasting-scene__person--soft { filter: blur(0.72cqw); }
+.df-fasting-scene__sharp { position: absolute; inset: 0; clip-path: inset(54% 5% 11% 42%); }
+.df-fasting-scene__focus {
+  position: absolute;
+  inset: 40% 5% 11% 42%;
+  border: 1px solid #bbb4c44d;
+}
+.df-fasting-scene__focus > i {
+  position: absolute;
+  width: 0.9cqw;
+  height: 0.9cqw;
+  border: 1px solid #d3cbd9;
+  background: #fcfbff;
+}
+.df-fasting-scene__focus > i:nth-child(1) { top: -0.5cqw; left: -0.5cqw; }
+.df-fasting-scene__focus > i:nth-child(2) { top: -0.5cqw; right: -0.5cqw; }
+.df-fasting-scene__focus > i:nth-child(3) { bottom: -0.5cqw; left: -0.5cqw; }
+.df-fasting-scene__focus > i:nth-child(4) { bottom: -0.5cqw; right: -0.5cqw; }
+.df-fasting-scene__timer {
+  position: absolute;
+  top: 43%;
+  right: 7%;
+  width: 33%;
+  padding: 3.1cqw 2.7cqw;
+  border: 1px solid #f2ebffb0;
+  border-radius: 4cqw;
+  color: #fffaff;
+  background: #a083ec;
+  box-shadow: inset 0 1px 0 #fffaff80, 0 2cqw 6cqw #44237d19;
+  transform: perspective(90cqw) rotateY(-12deg) rotate(7deg);
+}
+.df-fasting-scene__timer-heading { display: flex; align-items: center; gap: 1.2cqw; margin-bottom: 2.5cqw; }
+.df-fasting-scene__timer-heading > img { width: 4cqw; height: 4cqw; border-radius: 1.2cqw; }
+.df-fasting-scene__timer-heading > span { font-size: 2.1cqw; }
+.df-fasting-scene__timer-heading > b { margin-left: auto; font-size: 1.9cqw; font-weight: 500; }
+.df-fasting-scene__timer > strong { display: block; font-size: 5.2cqw; font-weight: 550; line-height: 1.2; letter-spacing: -0.04em; white-space: nowrap; }
+.df-fasting-scene__timer > small { display: block; margin-top: 1cqw; color: #f3ecff; font-size: 2cqw; }
+.df-fasting-scene__progress { display: block; height: 1.1cqw; margin-block: 2.8cqw; overflow: hidden; border-radius: 2cqw; background: #f7edff40; }
+.df-fasting-scene__progress > i { display: block; width: 75.83%; height: 100%; border-radius: inherit; background: #fffaff; }
+.df-fasting-scene__window { display: grid; gap: 0.7cqw; }
+.df-fasting-scene__window > span { color: #f3ecff; font-size: 1.8cqw; }
+.df-fasting-scene__window > b { font-size: 2.2cqw; font-weight: 500; }
+.df-fasting-scene__status {
+  position: absolute;
+  top: 53%;
+  left: 41%;
+  display: grid;
+  justify-items: center;
+  gap: 1.3cqw;
+  width: 17%;
+  padding: 2.7cqw 1.3cqw;
+  border: 1px solid #e0d7f49c;
+  border-radius: 3.3cqw;
+  color: #fdfaff;
+  background: #ad91dca1;
+  backdrop-filter: blur(9px);
+  transform: perspective(70cqw) rotateY(-15deg) rotate(-10deg);
+}
+.df-fasting-scene__status > span { display: grid; place-items: center; width: 6cqw; height: 6cqw; border: 1px solid #f4eaff70; border-radius: 50%; background: #9367e8; font-size: 3.6cqw; }
+.df-fasting-scene__status > strong { font-size: 2.2cqw; font-weight: 500; }
+.df-fasting-scene__status > small { font-size: 1.8cqw; }
+.df-fasting-scene__caption { position: absolute; right: 6%; bottom: 5%; display: grid; gap: 0.5cqw; color: #696371; font-size: 2.2cqw; line-height: 1.2; text-align: right; }
+.df-fasting-scene__caption > strong { color: #211c2d; font-weight: 550; }

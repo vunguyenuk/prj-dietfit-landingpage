@@ -1,0 +1,163 @@
+/* A photographic streak scene inspired by the user's supplied composition. */
+.dietfit-landing .dietfit-highlights--en .df-habit-card--streak {
+  color: #132b3b;
+  background: #91c9e2;
+}
+.dietfit-landing .dietfit-highlights--en .df-habit-card--streak::before,
+.dietfit-landing .dietfit-highlights--en .df-streak-scene::after {
+  display: none;
+}
+.dietfit-landing .dietfit-highlights--en .df-habit-card--streak .dietfit-card-copy {
+  color: #132b3b;
+}
+.dietfit-landing .dietfit-highlights--en .df-habit-card--streak .dietfit-card-copy p {
+  color: #28485a;
+}
+.dietfit-landing .dietfit-highlights--en .df-habit-card--streak .df-streak-scene {
+  position: absolute;
+  inset: 0;
+  background: #91c9e2;
+  container-type: size;
+}
+.df-streak-scene__photo {
+  position: absolute;
+  inset: 20% 0 0;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  -webkit-mask-image: linear-gradient(transparent, #000 12%);
+  mask-image: linear-gradient(transparent, #000 12%);
+}
+.df-streak-scene__footer {
+  position: absolute;
+  inset: auto 23% 7%;
+  padding: 2.7cqw;
+  border: 1px solid #ffffffb0;
+  color: #172d36;
+  background: #fffefae8;
+  border-radius: 4.2cqw;
+  box-shadow: 0 2cqw 6cqw #143e3a15;
+  backdrop-filter: blur(14px);
+}
+.df-streak-scene__summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1cqw;
+  margin-bottom: 1.6cqw;
+}
+.df-streak-scene__summary strong { font-size: 2.8cqw; font-weight: 600; }
+.df-streak-scene__summary > span { color: #67777b; font-size: 1.8cqw; }
+.df-streak-scene__week {
+  display: flex;
+  justify-content: space-between;
+  gap: .7cqw;
+}
+.df-streak-scene__week > span { display: grid; justify-items: center; gap: 1cqw; }
+.df-streak-scene__week b { color: #67777b; font-size: 1.9cqw; font-weight: 500; }
+.df-streak-scene__week i {
+  display: grid;
+  place-items: center;
+  width: 3.6cqw;
+  height: 3.6cqw;
+  border-radius: 50%;
+  color: #fffefa;
+  background: #fe692e;
+  font-size: 2.2cqw;
+  font-style: normal;
+  font-weight: 600;
+}
+.df-streak-scene__week .is-today i { outline: 1px solid #fe692e; outline-offset: 0.5cqw; }
+.df-streak-scene__flame {
+  position: absolute;
+  top: 40.5%;
+  left: 11%;
+  font-size: 11cqw;
+  line-height: 1;
+  transform: rotate(-9deg);
+  filter: drop-shadow(0 3px 2px #3b536322);
+}
+.df-streak-scene__meals {
+  position: absolute;
+  top: 28%;
+  right: 5%;
+  width: 38%;
+  padding: 3.1cqw 2.7cqw;
+  border: 1px solid #fffefa90;
+  border-radius: 4cqw;
+  color: #173343;
+  background: #f8fdffe0;
+  backdrop-filter: blur(8px);
+}
+.df-streak-scene__meals-heading { display: flex; align-items: center; justify-content: space-between; gap: 1cqw; margin-bottom: 1cqw; }
+.df-streak-scene__meals-heading strong { font-size: 2.35cqw; font-weight: 600; }
+.df-streak-scene__meals-heading > span { font-size: 1.8cqw; letter-spacing: 0.2cqw; }
+.df-streak-scene__meal { display: flex; align-items: center; gap: 1.4cqw; padding-block: 1.8cqw; }
+.df-streak-scene__meal + .df-streak-scene__meal { border-top: 1px solid #87a3b226; }
+.df-streak-scene__meal-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 5.1cqw;
+  height: 5.1cqw;
+  border-radius: 50%;
+  color: #b34c23;
+  background: #fce6d4;
+  font-size: 3.1cqw;
+}
+.df-streak-scene__meal > div { display: grid; gap: 0.55cqw; }
+.df-streak-scene__meal b { font-size: 2.15cqw; font-weight: 550; }
+.df-streak-scene__meal small { color: #71848d; font-size: 1.7cqw; }
+.df-streak-scene__meal > i { margin-left: auto; color: #42916a; font-size: 2.5cqw; font-style: normal; }
+.df-streak-scene__mascot {
+  position: absolute;
+  top: 21%;
+  right: 2%;
+  width: 17%;
+  height: auto;
+  transform: rotate(12deg);
+}
+.df-streak-scene__today {
+  position: absolute;
+  top: 58%;
+  left: 5%;
+  display: grid;
+  justify-items: start;
+  width: 25%;
+  padding: 3cqw 2.6cqw;
+  border: 1px solid #f2fbff65;
+  border-radius: 3.6cqw;
+  color: #fffefa;
+  background: #eef9ff30;
+  backdrop-filter: blur(12px);
+}
+.df-streak-scene__today > span { font-size: 2.05cqw; }
+.df-streak-scene__today strong { margin-top: 2.5cqw; font-size: 7.3cqw; font-weight: 600; line-height: 1; }
+.df-streak-scene__today small { margin-top: 1.4cqw; font-size: 2cqw; }
+.df-streak-scene__today > i {
+  display: grid;
+  place-items: center;
+  width: 4.4cqw;
+  height: 4.4cqw;
+  margin-top: 3cqw;
+  border: 1px solid #fffefab3;
+  border-radius: 50%;
+  font-size: 2.7cqw;
+  font-style: normal;
+}
+.df-streak-scene__spark {
+  position: absolute;
+  right: 10%;
+  bottom: 24%;
+  display: grid;
+  place-items: center;
+  width: 10cqw;
+  height: 10cqw;
+  border: 1.1cqw solid #fffefa;
+  border-radius: 50%;
+  color: #fffefa;
+  background: #fe692e;
+  font-size: 7cqw;
+  line-height: 1;
+  transform: rotate(12deg);
+}

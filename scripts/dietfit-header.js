@@ -4,7 +4,8 @@
   var header = document.getElementById('dietfit-header');
   if (!header) return;
 
-  var mobileQuery = window.matchMedia('(max-width: 600px)');
+  var importedHeader = header.querySelector('[data-header-shell]');
+  var mobileQuery = window.matchMedia(importedHeader ? '(max-width: 767.98px)' : '(max-width: 600px)');
   var ticking = false;
 
   function updateHeader() {
