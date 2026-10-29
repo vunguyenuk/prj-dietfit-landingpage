@@ -88,10 +88,16 @@ def localize_cards():
     script = '<script src="/scripts/dietfit-progress-card-vi.js" defer></script>'
     if script not in text:
         text = text.replace('</body>', script + '\n</body>', 1)
+    script = '<script src="/scripts/dietfit-diary-card-vi.js" defer></script>'
+    if script not in text:
+        text = text.replace('</body>', script + '\n</body>', 1)
     page.write_text(text)
     controller = (ROOT / 'content/components/progress-card-controller.js').read_text()
     (ROOT / 'scripts/dietfit-progress-card-vi.js').write_text(controller + '\n' +
         "document.querySelectorAll('#dietfit-highlights .df-progress-card').forEach(createDietfitProgressCard);\n")
+    controller = (ROOT / 'content/components/diary-card-controller.js').read_text()
+    (ROOT / 'scripts/dietfit-diary-card-vi.js').write_text(controller + '\n' +
+        "document.querySelectorAll('#dietfit-highlights .df-diary-card').forEach(createDietfitDiaryCard);\n")
     return len(localized)
 
 

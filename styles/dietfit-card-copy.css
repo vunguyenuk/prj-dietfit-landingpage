@@ -5,13 +5,13 @@
 
 /* Soft, muted tints blend the white copy into each photograph's palette. */
 :is(#dietfit-features, #dietfit-highlights) .df-fasting-card { --df-copy-shade: #9282a580; }
-:is(#dietfit-features, #dietfit-highlights) .df-diary-card { --df-copy-shade: #7f9bb280; }
+:is(#dietfit-features, #dietfit-highlights) .df-diary-card { --df-copy-shade: #5e493dcc; }
 :is(#dietfit-features, #dietfit-highlights) .df-progress-card { --df-copy-shade: #8b939a80; }
 :is(#dietfit-features, #dietfit-highlights) .df-habit-card--streak { --df-copy-shade: #709fb580; }
 :is(#dietfit-features, #dietfit-highlights) .df-photo-card--reminder { --df-copy-shade: #739fb380; }
-:is(#dietfit-features, #dietfit-highlights) .df-photo-card--challenge { --df-copy-shade: #80a5bb80; }
+:is(#dietfit-features, #dietfit-highlights) .df-photo-card--challenge { --df-copy-shade: #61574dcc; }
 :is(#dietfit-features, #dietfit-highlights) .df-photo-card--apple-health { --df-copy-shade: #7fa6bb80; }
-:is(#dietfit-features, #dietfit-highlights) .df-photo-card--together { --df-copy-shade: #84967b66; }
+:is(#dietfit-features, #dietfit-highlights) .df-photo-card--together { --df-copy-shade: #24353dcc; }
 
 :is(#dietfit-features, #dietfit-highlights) :is(.df-fasting-card, .df-diary-card, .df-progress-card,
   .df-habit-card--streak, .df-photo-card--reminder, .df-photo-card--challenge,

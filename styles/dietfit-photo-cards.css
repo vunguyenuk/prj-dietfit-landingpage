@@ -36,11 +36,11 @@
 .df-reminder-notification b { font-size: 3.1cqw; font-weight: 550; }
 .df-reminder-notification p { margin: 0.8cqw 0 0; color: #68766c; font-size: 2.9cqw; line-height: 1.4; }
 
-/* Reuse the original meal-sharing widgets over the two-friends photograph. */
-.dietfit-landing .dietfit-highlights--en .df-photo-card--together { color: #fffefa; background: #aec0a1; }
+/* Keep the meal-sharing widgets over the supplied salad photograph. */
+.dietfit-landing .dietfit-highlights--en .df-photo-card--together { color: #fffefa; background: #31434a; }
 .dietfit-landing .dietfit-highlights--en .df-photo-card--together .dietfit-card-copy { inset: 0 0 auto; color: #fffefa; }
 .dietfit-landing .dietfit-highlights--en .df-photo-card--together .dietfit-card-copy p { color: #fffefadb; }
-.df-photo-card--together .df-photo-scene__image { top: 24%; height: 76%; object-position: 50% 30%; mask-image: linear-gradient(transparent, #000 12%); }
+.df-photo-card--together .df-photo-scene__image { top: 0; height: 100%; object-position: 50% 40%; }
 .dietfit-landing .df-photo-card--together .df-shared-notification { z-index: 3; top: auto; bottom: 6%; left: 7%; width: 86%; padding: 2.7cqw; gap: 2.4cqw; opacity: 1; animation: none; transform: none; backdrop-filter: blur(10px); }
 .df-together-meals { position: absolute; z-index: 2; inset: 0; }
 .dietfit-landing .df-together-meals .df-shared-widget { position: absolute; width: 32%; border: 1px solid #fffefa94; border-radius: 4.4cqw; box-shadow: 0 2cqw 7cqw #0c281c30; }
@@ -48,7 +48,6 @@
 .df-together-meals__mom { top: 57%; right: 5%; transform: rotate(5deg); }
 .dietfit-landing .df-together-meals .df-widget-phase { opacity: 1; animation: none; }
 @container (max-width: 330px) {
-  .df-photo-card--together .df-photo-scene__image { top: 42%; height: 58%; }
   .dietfit-landing .df-together-meals .df-shared-widget { width: 24%; }
   .df-together-meals__you { top: 68%; }
   .df-together-meals__mom { top: 64%; }
@@ -56,9 +55,11 @@
 }
 
 /* A training photograph framed like the supplied challenge interface. */
-.dietfit-landing .dietfit-highlights--en .df-photo-card--challenge { display: grid; grid-template-rows: max-content minmax(0, 1fr); container-type: inline-size; background: #8ebff0; }
+.dietfit-landing .dietfit-highlights--en .df-photo-card--challenge { display: grid; grid-template-rows: max-content minmax(0, 1fr); container-type: inline-size; background: #a99b8c; }
 .dietfit-landing .dietfit-highlights--en .df-photo-card--challenge .dietfit-card-copy { position: relative; inset: auto; padding-bottom: 0; }
-.df-photo-card--challenge .df-photo-scene { position: relative; grid-area: 2 / 1; min-height: 0; mask-image: linear-gradient(transparent, #000 4cqw); }
+.df-photo-card--challenge .df-photo-scene { position: absolute; inset: 0; min-height: 0; }
+.df-photo-card--challenge .df-photo-scene__image { object-position: 50% 45%; }
+.df-photo-card--challenge .df-photo-scene::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, #332b2555); pointer-events: none; }
 .df-challenge-frame { position: relative; grid-area: 2 / 1; z-index: 2; display: flex; flex-direction: column; gap: 2.4cqw; min-height: 0; margin: clamp(12px, 3cqw, 18px) 12% 8.4cqw; padding: 4cqw 5.8cqw; border: 2px solid #fffefa; border-radius: 8cqw; color: #fffefa; }
 .df-challenge-frame__brand { display: flex; align-items: center; gap: 2cqw; flex: none; font-size: 2.6cqw; text-shadow: 0 1px 6px #193a2b; }
 .df-challenge-frame__brand > img { width: 7cqw; height: 7cqw; border-radius: 2cqw; }
