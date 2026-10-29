@@ -1,7 +1,7 @@
 /* A photographic streak scene inspired by the user's supplied composition. */
 .dietfit-landing .dietfit-highlights--en .df-habit-card--streak {
   color: #132b3b;
-  background: #91c9e2;
+  background: #5b86a2;
 }
 .dietfit-landing .dietfit-highlights--en .df-habit-card--streak::before,
 .dietfit-landing .dietfit-highlights--en .df-streak-scene::after {
@@ -16,7 +16,7 @@
 .dietfit-landing .dietfit-highlights--en .df-habit-card--streak .df-streak-scene {
   position: absolute;
   inset: 0;
-  background: #91c9e2;
+  background: #5b86a2;
   container-type: size;
 }
 .df-streak-scene__photo {
@@ -71,8 +71,8 @@
 .df-streak-scene__week .is-today i { outline: 1px solid #fe692e; outline-offset: 0.5cqw; }
 .df-streak-scene__flame {
   position: absolute;
-  top: 40.5%;
-  left: 11%;
+  top: 43%;
+  right: 9%;
   font-size: 11cqw;
   line-height: 1;
   transform: rotate(-9deg);
@@ -81,7 +81,7 @@
 .df-streak-scene__meals {
   position: absolute;
   top: 28%;
-  right: 5%;
+  left: 5%;
   width: 38%;
   padding: 3.1cqw 2.7cqw;
   border: 1px solid #fffefa90;
@@ -112,7 +112,7 @@
 .df-streak-scene__mascot {
   position: absolute;
   top: 21%;
-  right: 2%;
+  left: 36%;
   width: 17%;
   height: auto;
   transform: rotate(12deg);
