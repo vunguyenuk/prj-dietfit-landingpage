@@ -141,6 +141,9 @@ def import_capture(source):
         return original
 
     page = re.sub(r'/_next/image\?([^\s"<>]+)', image_url, page)
+    # User-supplied Home CTA photograph; update SSR and Flight together.
+    page = page.replace("/landing/v3/images/final-cta-us-en-user-photo.webp",
+                        "/assets/images/final-cta-shared-table.webp")
     # Keep visible copy and its hydration messages in sync on every import.
     for original, replacement in COPY_OVERRIDES.items():
         page = page.replace(original, replacement)

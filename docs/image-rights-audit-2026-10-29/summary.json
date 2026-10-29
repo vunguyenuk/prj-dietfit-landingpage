@@ -1,0 +1,39 @@
+{
+  "url_count": 141,
+  "local_unique_hashes": 133,
+  "external_count": 2,
+  "main_routes": 8,
+  "viewports": [
+    1440,
+    390
+  ],
+  "metadata_pages": 24,
+  "groups": {
+    "Figma-photo": 8,
+    "user-supplied-watermark": 2,
+    "competitor-app-icon": 4,
+    "AI-edited-food-reference": 2,
+    "Nutrition5k-attributed-photo": 1,
+    "Dietfit-brand": 7,
+    "product-media-with-photo": 15,
+    "hero-or-product-art": 7,
+    "blog-photo": 6,
+    "Dietfit-mascot": 10,
+    "Dietfit-design-export": 18,
+    "AI-edit-reference": 9,
+    "AI-generated-food": 4,
+    "community-artwork": 2,
+    "third-party-brand": 12,
+    "before-after-people": 4,
+    "footer-people-photo": 1,
+    "social-preview": 10,
+    "social-UGC": 2,
+    "team-portrait": 16,
+    "captured-people-brand-photo": 1
+  },
+  "priorities": {
+    "P2": 110,
+    "P1": 18,
+    "P3": 13
+  }
+}

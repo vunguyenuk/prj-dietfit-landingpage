@@ -1,0 +1,2756 @@
+{
+  "date": "2026-10-29",
+  "base": "http://127.0.0.1:4180",
+  "viewport": [
+    390,
+    844
+  ],
+  "pages": [
+    {
+      "route": "/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/landing/logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/logo.webp",
+          "type": "srcset",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/logo.webp",
+          "type": "srcset",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/apple.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-poster-mobile-us-en.webp?v=20261021-placement-1",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/meal-plan/A-photo.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/meal-plan/B-photo.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/03a68.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2b6a2.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2f9ff.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/171e9.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/8e3a5.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/9a4c2.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2aea6.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/29c53.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/0918a.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c97e6.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/e1ed7.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c3024.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "img",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "img",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/garmin.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/oura.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/whoop.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/polar.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/google-health.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/vesync.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/withings.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/strava.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/apple-health.jpg",
+          "type": "img",
+          "alt": "Apple Health"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/delivery/walk-carry-atlas.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/delivery/walk-carry-atlas.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "img",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/reward-reference/tennis-court.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-4.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-4.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/apple-health-reference/active-friends.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/progress-reference/phone-in-hand.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/phone-at-desk.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/avocado-breakfast.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/salmon-grain-bowl.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/streak-reference/stretching-sky.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/challenge-reference/football-pitch.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/reminder-reference/green-phone.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/friends-garden.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/shrimp-avocado-salad.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/chicken-rice.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-barcode.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-sara.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-mealplan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-barcode.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-sara.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-mealplan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-poster-mobile-us-en.webp?v=20261021-placement-1",
+          "type": "css::before",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+          "type": "css::before",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/%23f",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/%23f",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "css",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/landing/logo.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-poster-mobile-us-en.webp?v=20261021-placement-1",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-barcode.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-sara.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-mealplan.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+        "http://127.0.0.1:4180/landing/apple.svg",
+        "http://127.0.0.1:4180/landing/app-icon.png",
+        "http://127.0.0.1:4180/landing/v3/hero/meal-plan/A-photo.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/meal-plan/B-photo.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/171e9.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/0918a.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c97e6.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/e1ed7.svg",
+        "http://127.0.0.1:4180/landing/v3/shared/wave.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/03a68.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2b6a2.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2f9ff.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/8e3a5.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/9a4c2.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2aea6.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/29c53.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c3024.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-responsive-foreground-us-en-v2.riv?v=20261022-app-ui-2",
+        "http://127.0.0.1:4180/landing/v3/hero/us-en/elbow-band.webp",
+        "blob:http://127.0.0.1:4180/c9bb6aa7-ba1e-4a70-9448-4f252db8160f",
+        "blob:http://127.0.0.1:4180/06407ff8-ad77-4b87-ae58-35d08503318c",
+        "blob:http://127.0.0.1:4180/480fa7d0-e8ae-4445-a872-63cc0bb6d7cd",
+        "blob:http://127.0.0.1:4180/db617a6d-d50b-4be6-ab9c-118538cfaa86",
+        "blob:http://127.0.0.1:4180/d73d0c08-64f9-48a3-8284-939f43caedf1",
+        "blob:http://127.0.0.1:4180/ee8149ae-9aec-447c-b26e-73dd6e0b2ed1",
+        "blob:http://127.0.0.1:4180/24634981-336d-4d3d-9895-352cd2513fb3",
+        "blob:http://127.0.0.1:4180/e142f196-cbb6-4b2f-925f-d9bcfceaa279",
+        "blob:http://127.0.0.1:4180/e33d28da-5660-47eb-aad1-559642a42a6a",
+        "blob:http://127.0.0.1:4180/4e9654c5-ee2e-4e45-a760-094874dde1ce",
+        "blob:http://127.0.0.1:4180/cd7e3280-43a7-440a-822b-20caecf20082",
+        "blob:http://127.0.0.1:4180/150023c3-177d-4d2b-b92b-c469c788cc26",
+        "blob:http://127.0.0.1:4180/91b3999b-3ae4-476c-9521-ee7b37bce4a5",
+        "blob:http://127.0.0.1:4180/6ccd0288-6146-4edf-a3b8-dc8c350402c3",
+        "blob:http://127.0.0.1:4180/3fbb23ef-ae53-4be9-874e-eaa0a6123832",
+        "blob:http://127.0.0.1:4180/bd986a6b-7318-43e6-b3cc-de9fd2f27fee",
+        "blob:http://127.0.0.1:4180/cefbee26-6274-4357-bdb9-ed841a7e081e",
+        "blob:http://127.0.0.1:4180/83177f25-bbb2-4723-95cd-437ca6925dcc",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-sara.mp4?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-mealplan.mp4?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+        "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.mp4?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/garmin.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/oura.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/whoop.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/polar.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/google-health.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/vesync.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/withings.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/strava.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/apple-health.jpg",
+        "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+        "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp"
+      ]
+    },
+    {
+      "route": "/en/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/landing/logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/logo.webp",
+          "type": "srcset",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/logo.webp",
+          "type": "srcset",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/apple.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-poster-mobile-us-en.webp?v=20261021-placement-1",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/meal-plan/A-photo.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/meal-plan/B-photo.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/03a68.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2b6a2.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2f9ff.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/171e9.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/8e3a5.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/9a4c2.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2aea6.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/29c53.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/0918a.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c97e6.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/e1ed7.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c3024.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "img",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+          "type": "srcset",
+          "alt": "Before: a lean young man taking a mirror selfie at the gym"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "img",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+          "type": "srcset",
+          "alt": "After: the same man, visibly more muscular, in the same gym mirror"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/garmin.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/oura.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/whoop.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/polar.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/google-health.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/vesync.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/withings.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/strava.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/integrations/official/apple-health.jpg",
+          "type": "img",
+          "alt": "Apple Health"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/delivery/walk-carry-atlas.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/delivery/walk-carry-atlas.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "img",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "A meal with Dietfit calorie and nutrition summaries"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/reward-reference/tennis-court.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-4.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-4.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/apple-health-reference/active-friends.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/progress-reference/phone-in-hand.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/phone-at-desk.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/avocado-breakfast.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/salmon-grain-bowl.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/streak-reference/stretching-sky.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/challenge-reference/football-pitch.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/reminder-reference/green-phone.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/friends-garden.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/shrimp-avocado-salad.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/chicken-rice.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp",
+          "type": "srcset",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-barcode.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-sara.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-mealplan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-barcode.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-sara.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-mealplan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-poster-mobile-us-en.webp?v=20261021-placement-1",
+          "type": "css::before",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+          "type": "css::before",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/en/%23f",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/en/%23f",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/focused/writing-tongue.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "css",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/landing/logo.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-poster-mobile-us-en.webp?v=20261021-placement-1",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-barcode.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-sara.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-mealplan.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/shared/phone-frame.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/deep-scan/meal.webp",
+        "http://127.0.0.1:4180/landing/apple.svg",
+        "http://127.0.0.1:4180/landing/app-icon.png",
+        "http://127.0.0.1:4180/landing/v3/hero/meal-plan/A-photo.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/meal-plan/B-photo.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/171e9.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/0918a.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c97e6.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/e1ed7.svg",
+        "http://127.0.0.1:4180/landing/v3/shared/wave.webp",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/03a68.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2b6a2.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2f9ff.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/8e3a5.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/9a4c2.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/2aea6.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/29c53.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/figma-meal-detail/c3024.svg",
+        "http://127.0.0.1:4180/landing/v3/hero/dietfit-hero-responsive-foreground-us-en-v2.riv?v=20261022-app-ui-2",
+        "http://127.0.0.1:4180/landing/v3/hero/us-en/elbow-band.webp",
+        "blob:http://127.0.0.1:4180/d49f84f8-d198-4c7c-82cd-3b3f66db3d58",
+        "blob:http://127.0.0.1:4180/5aeaf3ca-bbc7-4d26-9fbc-8193856c39b3",
+        "blob:http://127.0.0.1:4180/43433029-f60d-4f9b-9ac9-453f5807fa6c",
+        "blob:http://127.0.0.1:4180/a82f0d21-4a3f-4eec-a113-a5bf470e0a97",
+        "blob:http://127.0.0.1:4180/509c54b9-8360-44ef-be0a-74ed6ecaa3f3",
+        "blob:http://127.0.0.1:4180/accbabbe-d559-4a71-a336-34e913b5ebb2",
+        "blob:http://127.0.0.1:4180/619c5e34-6eb4-4226-8c24-e270e5bc4efa",
+        "blob:http://127.0.0.1:4180/2c52c103-d425-4612-b13a-7b32a514914a",
+        "blob:http://127.0.0.1:4180/6b721489-84b9-4a4a-9e11-cf61622ca096",
+        "blob:http://127.0.0.1:4180/8f1dd936-d6bf-468f-b9c2-8569439e9435",
+        "blob:http://127.0.0.1:4180/078979f2-e082-4dd3-9625-8a67e1c9e34d",
+        "blob:http://127.0.0.1:4180/e49e1fd7-dd8f-4d6e-b39a-cdece0708b37",
+        "blob:http://127.0.0.1:4180/41963296-ba6c-41a7-ac14-25d20cc476d3",
+        "blob:http://127.0.0.1:4180/a88b72f4-7770-463d-99f5-83bea747c2b7",
+        "blob:http://127.0.0.1:4180/cb641b71-8dd2-4cee-b1ef-3525410414ed",
+        "blob:http://127.0.0.1:4180/88b40bf9-4d5f-4557-a604-2ebeef80a26f",
+        "blob:http://127.0.0.1:4180/1f6a6bf8-244a-4c87-978c-8a0ad394c1c0",
+        "blob:http://127.0.0.1:4180/afb5e28f-bf23-4007-a6de-ae8cbcfd7647",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.mp4?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-barcode.mp4?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/images/progress-en-before.webp",
+        "http://127.0.0.1:4180/landing/v3/images/progress-en-after.webp",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-reminders.mp4?v=20261022-4",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/garmin.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/oura.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/whoop.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/polar.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/google-health.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/vesync.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/withings.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/strava.jpg",
+        "http://127.0.0.1:4180/landing/v3/integrations/official/apple-health.jpg",
+        "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+        "http://127.0.0.1:4180/landing/v3/images/final-cta-us-en-user-photo.webp"
+      ]
+    },
+    {
+      "route": "/vi/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/apple.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/hero/dietfit-hero-poster-mobile.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "img",
+          "alt": "The plate seen through the DietFit camera"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/thumbs-up.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/salmon.jpg",
+          "type": "img",
+          "alt": "Salmon sashimi on a glass plate"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/icons/exchange.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/icons/note.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/E-photo.jpg",
+          "type": "img",
+          "alt": "Street tacos, three ways"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/icons/calorie.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/C-photo.jpg",
+          "type": "img",
+          "alt": "Miso ramen with chashu"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/icons/calorie.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/B-photo.jpg",
+          "type": "img",
+          "alt": "Grilled pork chop & broken rice"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/icons/calorie.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/writing.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/writing.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/writing.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/D-photo.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/D-photo.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/A-photo.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/logo-mark.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/logo-mark.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/exercise.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/exercise.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/exercise.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/exercise.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-progress-before.webp?v=3",
+          "type": "img",
+          "alt": "Hình ảnh trước hành trình thay đổi"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-progress-after.webp?v=3",
+          "type": "img",
+          "alt": "Hình ảnh sau hành trình thay đổi"
+        },
+        {
+          "url": "https://i.ytimg.com/vi/fYZWilyeuHM/maxresdefault.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/play.svg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/community/community-dietfit-users.webp",
+          "type": "img",
+          "alt": "Banner Hội những người dùng Dietfit VN"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/community/community-weight-loss.webp",
+          "type": "img",
+          "alt": "Banner Hội giảm cân - bớt mỡ bớt buồn"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "img",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+          "type": "srcset",
+          "alt": "Bữa ăn cùng các widget calo và dinh dưỡng Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/reward-reference/tennis-court.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/apple-health-reference/active-friends.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/progress-reference/phone-in-hand.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/phone-at-desk.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/avocado-breakfast.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/diary-reference/salmon-grain-bowl.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/streak-reference/stretching-sky.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/brand/mascots/3d/wave.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/challenge-reference/football-pitch.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/reminder-reference/green-phone.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/friends-garden.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/shrimp-avocado-salad.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/cards/together-reference/chicken-rice.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/social/nguyen-tra-my-dietfit-facebook.jpg",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/D-photo.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/A-photo.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/scan/C-photo.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/wave.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/wave.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/writing.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/writing.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/exercise.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/exercise.webp",
+          "type": "css",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/final-cta.webp",
+          "type": "css",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/assets/hero/dietfit-hero-responsive.riv?v=20260918-1",
+        "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+        "http://127.0.0.1:4180/assets/images/apple.svg",
+        "http://127.0.0.1:4180/assets/hero/dietfit-hero-poster-mobile.webp",
+        "http://127.0.0.1:4180/assets/product/v2/meal.jpg",
+        "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses.webp",
+        "http://127.0.0.1:4180/assets/brand/mascots/3d/thumbs-up.webp",
+        "http://127.0.0.1:4180/assets/product/v2/salmon.jpg",
+        "http://127.0.0.1:4180/assets/brand/mascots/3d/glasses-avatar.webp",
+        "http://127.0.0.1:4180/assets/product/v2/icons/exchange.svg",
+        "http://127.0.0.1:4180/assets/product/v2/icons/note.svg",
+        "http://127.0.0.1:4180/assets/product/v2/scan/D-photo.jpg",
+        "http://127.0.0.1:4180/assets/product/v2/scan/A-photo.jpg",
+        "http://127.0.0.1:4180/assets/product/v2/logo-mark.png",
+        "http://127.0.0.1:4180/assets/images/play.svg",
+        "http://127.0.0.1:4180/assets/product/v2/scan/C-photo.jpg",
+        "http://127.0.0.1:4180/assets/hero/elbow-hands-vi.webp",
+        "http://127.0.0.1:4180/assets/hero/elbow-bg-vi.webp",
+        "http://127.0.0.1:4180/assets/product/v2/icons/calorie.svg",
+        "http://127.0.0.1:4180/assets/product/v2/scan/P-photo.jpg",
+        "blob:http://127.0.0.1:4180/001c3f93-2a72-4d28-b326-0073f5d1a48d",
+        "blob:http://127.0.0.1:4180/5c8159c6-765b-41af-8825-37d324dbc48d",
+        "blob:http://127.0.0.1:4180/62cb3c50-b31b-4da7-801c-1268a46679b6",
+        "blob:http://127.0.0.1:4180/55cbc018-a411-4572-b2cd-1d3ebeafe4a2",
+        "blob:http://127.0.0.1:4180/2e25963f-5fa5-4492-833a-3e5a5da1965f",
+        "blob:http://127.0.0.1:4180/535615bc-25a4-47ab-baf7-30d354d1a962",
+        "blob:http://127.0.0.1:4180/ac348faf-f130-4d9d-8eb5-cfe90d531b7a",
+        "blob:http://127.0.0.1:4180/1940946d-8d31-40bd-a0a5-fb5aea3ea7f7",
+        "blob:http://127.0.0.1:4180/f9d42c6f-c181-4647-af60-bfbf95a7fa4b",
+        "blob:http://127.0.0.1:4180/9f9e9b62-f1a2-4193-bb24-0fcf34c2456a",
+        "blob:http://127.0.0.1:4180/f6fd251a-7560-47dc-a227-899593f84458",
+        "blob:http://127.0.0.1:4180/54c9528e-d829-4ecc-9d28-656a0919a7a5",
+        "blob:http://127.0.0.1:4180/0bea6f8e-ed30-4ef6-b9dd-815d9521d0e8",
+        "blob:http://127.0.0.1:4180/183ae6f5-9b16-4006-b36e-3683a23cf792",
+        "blob:http://127.0.0.1:4180/c6a0b723-6a7a-448f-b674-a8df393f07d8",
+        "blob:http://127.0.0.1:4180/36f08ab3-9ca3-40de-97e2-1b44d71ad4e0",
+        "blob:http://127.0.0.1:4180/ce9bd958-bc19-4b8e-8d01-b840ec0662da",
+        "blob:http://127.0.0.1:4180/af9d3648-1371-4927-a8fe-277be41d56ca",
+        "http://127.0.0.1:4180/assets/brand/mascots/3d/wave.webp",
+        "http://127.0.0.1:4180/assets/brand/mascots/3d/writing.webp",
+        "http://127.0.0.1:4180/assets/brand/mascots/3d/exercise.webp",
+        "http://127.0.0.1:4180/assets/product/v2/scan/E-photo.jpg",
+        "http://127.0.0.1:4180/assets/product/v2/scan/B-photo.jpg",
+        "http://127.0.0.1:4180/assets/images/dietfit-progress-before.webp?v=3",
+        "http://127.0.0.1:4180/assets/images/dietfit-progress-after.webp?v=3",
+        "http://127.0.0.1:4180/assets/social/nguyen-tra-my-dietfit-facebook.jpg",
+        "http://127.0.0.1:4180/assets/social/nguyen-tra-my-dietfit-facebook.mp4",
+        "https://i.ytimg.com/vi/fYZWilyeuHM/maxresdefault.jpg",
+        "http://127.0.0.1:4180/assets/community/community-dietfit-users.webp",
+        "http://127.0.0.1:4180/assets/community/community-weight-loss.webp",
+        "http://127.0.0.1:4180/landing/v3/cards/figma-sync/card-3-v2.webp",
+        "http://127.0.0.1:4180/assets/cards/reward-reference/tennis-court.webp",
+        "http://127.0.0.1:4180/assets/cards/fasting-reference/watch-forward.webp",
+        "http://127.0.0.1:4180/landing/app-icon.png",
+        "http://127.0.0.1:4180/assets/images/final-cta.webp"
+      ]
+    },
+    {
+      "route": "/about-us/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp.webp",
+          "type": "img",
+          "alt": "Đội ngũ Dietfit cùng ăn trưa và trò chuyện tại văn phòng"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp.webp",
+          "type": "srcset",
+          "alt": "Đội ngũ Dietfit cùng ăn trưa và trò chuyện tại văn phòng"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp@2x.webp",
+          "type": "srcset",
+          "alt": "Đội ngũ Dietfit cùng ăn trưa và trò chuyện tại văn phòng"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/pasta-together.webp",
+          "type": "img",
+          "alt": "Một bạn trẻ đang ăn tô phở"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/everyday-treat.webp",
+          "type": "img",
+          "alt": "Mâm cơm Việt bày trên bàn gỗ"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/chicken-wings.webp",
+          "type": "img",
+          "alt": "Rổ bánh nậm, bánh bột lọc gói lá"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/breakfast-plate.webp",
+          "type": "img",
+          "alt": "Ổ bánh mì kẹp đầy nhân"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/burger.webp",
+          "type": "img",
+          "alt": "Tô phở bò đang chan nước dùng"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/shrimp-rice-bowl.webp",
+          "type": "img",
+          "alt": "Gà nướng nguyên con trên đĩa"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-01-chan-nguyen.webp",
+          "type": "img",
+          "alt": "Ảnh Chan Nguyen, Founder & CEO tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-02-diep-pham.webp",
+          "type": "img",
+          "alt": "Ảnh Diep Pham, Chief Operating Officer tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-03-dai-nguyen.webp",
+          "type": "img",
+          "alt": "Ảnh Dai Nguyen, Staff Software Engineer tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-04-minh-nguyen.webp",
+          "type": "img",
+          "alt": "Ảnh Minh Nguyen, Software Engineer tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-05-lam-tran-le-hoang.webp",
+          "type": "img",
+          "alt": "Ảnh Lam Tran Le Hoang, Software Engineer tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-06-thinh-bui.webp",
+          "type": "img",
+          "alt": "Ảnh Thinh Bui, AI Engineer tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-07-ngan-vuong-nami.webp",
+          "type": "img",
+          "alt": "Ảnh Ngan Vuong (Nami), Software Engineer tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-08-an-nguyen-ella.webp",
+          "type": "img",
+          "alt": "Ảnh An Nguyen (Ella), Product Manager tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-09-trang-do.webp",
+          "type": "img",
+          "alt": "Ảnh Trang Do, Social Media Specialist tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-10-ngoc-hoang-net.webp",
+          "type": "img",
+          "alt": "Ảnh Ngoc Hoang (Net), Marketing Manager tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-11-tuyet-anh-truong-nh-m.webp",
+          "type": "img",
+          "alt": "Ảnh Tuyet Anh Truong (Nhím), Product Design tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-12-quynh-le.webp",
+          "type": "img",
+          "alt": "Ảnh Quynh Le, Employer Branding Specialist tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-13-nathan-tran.webp",
+          "type": "img",
+          "alt": "Ảnh Nathan Tran, Growth Marketing tại Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-14-khanh-phan.webp",
+          "type": "img",
+          "alt": "Ảnh Khanh Phan, thành viên đội ngũ Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-15-mai-nguyen.webp",
+          "type": "img",
+          "alt": "Ảnh Mai Nguyen, thành viên đội ngũ Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-16-phu-le-van.webp",
+          "type": "img",
+          "alt": "Ảnh Phu Le Van, thành viên đội ngũ Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp.webp",
+          "type": "img",
+          "alt": "Một người đàn ông nhìn qua những chồng bát đĩa trong căn bếp"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp.webp",
+          "type": "srcset",
+          "alt": "Một người đàn ông nhìn qua những chồng bát đĩa trong căn bếp"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp@2x.webp",
+          "type": "srcset",
+          "alt": "Một người đàn ông nhìn qua những chồng bát đĩa trong căn bếp"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg",
+          "type": "video-poster",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp.webp",
+        "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg",
+        "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+        "http://127.0.0.1:4180/assets/about-figma/pasta-together.webp",
+        "http://127.0.0.1:4180/assets/about-figma/burger.webp",
+        "http://127.0.0.1:4180/assets/about-figma/everyday-treat.webp",
+        "http://127.0.0.1:4180/assets/about-figma/chicken-wings.webp",
+        "http://127.0.0.1:4180/assets/about-figma/breakfast-plate.webp",
+        "http://127.0.0.1:4180/assets/about-figma/shrimp-rice-bowl.webp",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.mp4",
+        "http://127.0.0.1:4180/assets/team/team-01-chan-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-02-diep-pham.webp",
+        "http://127.0.0.1:4180/assets/team/team-03-dai-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-04-minh-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-05-lam-tran-le-hoang.webp",
+        "http://127.0.0.1:4180/assets/team/team-06-thinh-bui.webp",
+        "http://127.0.0.1:4180/assets/team/team-07-ngan-vuong-nami.webp",
+        "http://127.0.0.1:4180/assets/team/team-08-an-nguyen-ella.webp",
+        "http://127.0.0.1:4180/assets/team/team-09-trang-do.webp",
+        "http://127.0.0.1:4180/assets/team/team-10-ngoc-hoang-net.webp",
+        "http://127.0.0.1:4180/assets/team/team-11-tuyet-anh-truong-nh-m.webp",
+        "http://127.0.0.1:4180/assets/team/team-12-quynh-le.webp",
+        "http://127.0.0.1:4180/assets/team/team-13-nathan-tran.webp",
+        "http://127.0.0.1:4180/assets/team/team-14-khanh-phan.webp",
+        "http://127.0.0.1:4180/assets/team/team-15-mai-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-16-phu-le-van.webp",
+        "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp.webp"
+      ]
+    },
+    {
+      "route": "/en/about-us/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp.webp",
+          "type": "img",
+          "alt": "Friends sharing lunch around a table at the office"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp.webp",
+          "type": "srcset",
+          "alt": "Friends sharing lunch around a table at the office"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp@2x.webp",
+          "type": "srcset",
+          "alt": "Friends sharing lunch around a table at the office"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/pasta-together.webp",
+          "type": "img",
+          "alt": "Two friends enjoying pasta together"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/everyday-treat.webp",
+          "type": "img",
+          "alt": "A woman enjoying a drink and a sweet treat"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/chicken-wings.webp",
+          "type": "img",
+          "alt": "Glazed chicken wings with fresh herbs"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/breakfast-plate.webp",
+          "type": "img",
+          "alt": "A colorful breakfast with eggs, toast and orange juice"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/burger.webp",
+          "type": "img",
+          "alt": "A woman taking a bite of a burger"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-figma/shrimp-rice-bowl.webp",
+          "type": "img",
+          "alt": "A rice bowl with shrimp, edamame and cucumber"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-01-chan-nguyen.webp",
+          "type": "img",
+          "alt": "Photo of Chan Nguyen, Founder & CEO at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-02-diep-pham.webp",
+          "type": "img",
+          "alt": "Photo of Diep Pham, Chief Operating Officer at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-03-dai-nguyen.webp",
+          "type": "img",
+          "alt": "Photo of Dai Nguyen, Staff Software Engineer at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-04-minh-nguyen.webp",
+          "type": "img",
+          "alt": "Photo of Minh Nguyen, Software Engineer at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-05-lam-tran-le-hoang.webp",
+          "type": "img",
+          "alt": "Photo of Lam Tran Le Hoang, Software Engineer at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-06-thinh-bui.webp",
+          "type": "img",
+          "alt": "Photo of Thinh Bui, AI Engineer at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-07-ngan-vuong-nami.webp",
+          "type": "img",
+          "alt": "Photo of Ngan Vuong (Nami), Software Engineer at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-08-an-nguyen-ella.webp",
+          "type": "img",
+          "alt": "Photo of An Nguyen (Ella), Product Manager at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-09-trang-do.webp",
+          "type": "img",
+          "alt": "Photo of Trang Do, Social Media Specialist at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-10-ngoc-hoang-net.webp",
+          "type": "img",
+          "alt": "Photo of Ngoc Hoang (Net), Marketing Manager at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-11-tuyet-anh-truong-nh-m.webp",
+          "type": "img",
+          "alt": "Photo of Tuyet Anh Truong (Nhím), Product Design at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-12-quynh-le.webp",
+          "type": "img",
+          "alt": "Photo of Quynh Le, Employer Branding Specialist at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-13-nathan-tran.webp",
+          "type": "img",
+          "alt": "Photo of Nathan Tran, Growth Marketing at Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-14-khanh-phan.webp",
+          "type": "img",
+          "alt": "Photo of Khanh Phan, member of the Dietfit team"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-15-mai-nguyen.webp",
+          "type": "img",
+          "alt": "Photo of Mai Nguyen, member of the Dietfit team"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/team/team-16-phu-le-van.webp",
+          "type": "img",
+          "alt": "Photo of Phu Le Van, member of the Dietfit team"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp.webp",
+          "type": "img",
+          "alt": "A man looking between stacks of dishes in a kitchen"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp.webp",
+          "type": "srcset",
+          "alt": "A man looking between stacks of dishes in a kitchen"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp@2x.webp",
+          "type": "srcset",
+          "alt": "A man looking between stacks of dishes in a kitchen"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg",
+          "type": "video-poster",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/assets/about-photos/office-lunch-crisp.webp",
+        "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.jpg",
+        "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+        "http://127.0.0.1:4180/assets/about-figma/pasta-together.webp",
+        "http://127.0.0.1:4180/assets/about-figma/burger.webp",
+        "http://127.0.0.1:4180/assets/about-figma/everyday-treat.webp",
+        "http://127.0.0.1:4180/assets/about-figma/chicken-wings.webp",
+        "http://127.0.0.1:4180/assets/about-figma/breakfast-plate.webp",
+        "http://127.0.0.1:4180/assets/about-figma/shrimp-rice-bowl.webp",
+        "http://127.0.0.1:4180/landing/v3/demos/en/dietfit-demo-deepscan.mp4",
+        "http://127.0.0.1:4180/assets/team/team-01-chan-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-02-diep-pham.webp",
+        "http://127.0.0.1:4180/assets/team/team-03-dai-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-04-minh-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-05-lam-tran-le-hoang.webp",
+        "http://127.0.0.1:4180/assets/team/team-06-thinh-bui.webp",
+        "http://127.0.0.1:4180/assets/team/team-07-ngan-vuong-nami.webp",
+        "http://127.0.0.1:4180/assets/team/team-08-an-nguyen-ella.webp",
+        "http://127.0.0.1:4180/assets/team/team-09-trang-do.webp",
+        "http://127.0.0.1:4180/assets/team/team-10-ngoc-hoang-net.webp",
+        "http://127.0.0.1:4180/assets/team/team-11-tuyet-anh-truong-nh-m.webp",
+        "http://127.0.0.1:4180/assets/team/team-12-quynh-le.webp",
+        "http://127.0.0.1:4180/assets/team/team-13-nathan-tran.webp",
+        "http://127.0.0.1:4180/assets/team/team-14-khanh-phan.webp",
+        "http://127.0.0.1:4180/assets/team/team-15-mai-nguyen.webp",
+        "http://127.0.0.1:4180/assets/team/team-16-phu-le-van.webp",
+        "http://127.0.0.1:4180/assets/about-photos/dinner-shelf-crisp.webp"
+      ]
+    },
+    {
+      "route": "/blog/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-01.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-02.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-03.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-04.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-05.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-06.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-01.webp",
+        "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+        "http://127.0.0.1:4180/assets/blog/blog-02.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-03.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-04.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-05.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-06.webp"
+      ]
+    },
+    {
+      "route": "/en/blog/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-01.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-02.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-03.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-04.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-05.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/blog/blog-06.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/assets/images/dietfit-logo.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-01.webp",
+        "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+        "http://127.0.0.1:4180/assets/blog/blog-02.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-03.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-04.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-05.webp",
+        "http://127.0.0.1:4180/assets/blog/blog-06.webp"
+      ]
+    },
+    {
+      "route": "/en/benchmarks/",
+      "images": [
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/logo.webp",
+          "type": "srcset",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/logo.webp",
+          "type": "srcset",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/cal-ai.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/0xcal.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/app-icon.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/0xcal.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/myfitnesspal.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/fitatu.jpg",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/benchmarks/plate_1563216440.jpg",
+          "type": "img",
+          "alt": "Breaded chicken, white rice and broccoli on a white plate, seen from above"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/benchmarks/plate_1563216440.jpg",
+          "type": "srcset",
+          "alt": "Breaded chicken, white rice and broccoli on a white plate, seen from above"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/benchmarks/plate_1563216440.jpg",
+          "type": "srcset",
+          "alt": "Breaded chicken, white rice and broccoli on a white plate, seen from above"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/logo.webp",
+          "type": "img",
+          "alt": "Dietfit"
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-editorial/stickers/meal-no-hand.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/mascots/3d/eating.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/v3/shared/phone-frame.webp",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+          "type": "img",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/benchmarks-page/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+          "type": "video-poster",
+          "alt": ""
+        },
+        {
+          "url": "http://127.0.0.1:4180/assets/brand/production/gradient-dark.png",
+          "type": "css",
+          "alt": ""
+        }
+      ],
+      "requested": [
+        "http://127.0.0.1:4180/assets/benchmarks-page/landing/logo.webp",
+        "http://127.0.0.1:4180/assets/benchmarks-page/landing/app-icon.png",
+        "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/cal-ai.jpg",
+        "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/0xcal.png",
+        "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/myfitnesspal.jpg",
+        "http://127.0.0.1:4180/assets/benchmarks-editorial/app-icons/fitatu.jpg",
+        "http://127.0.0.1:4180/assets/benchmarks-page/landing/v3/demos/en/dietfit-demo-deepscan.jpg?v=20261022-4",
+        "http://127.0.0.1:4180/assets/images/dietfit-app-icon-192.png",
+        "http://127.0.0.1:4180/assets/brand/production/gradient-dark.png"
+      ]
+    }
+  ]
+}
