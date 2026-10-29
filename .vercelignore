@@ -16,3 +16,6 @@ everfit-io-2026-10-20T09-50-03-403Z/
 
 # Source art/UI for rebuilding EN Rive exports; final .riv files embed these.
 assets/hero/us-en/
+
+# Local image-rights research is archived outside the website repository.
+docs/image-rights-audit-*/
