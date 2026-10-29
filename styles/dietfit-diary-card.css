@@ -1,4 +1,4 @@
-/* Supplied phone photograph with a native, perspective-matched Dietfit Home. */
+/* Supplied home-cooking photograph with editable diary widgets. */
 .dietfit-landing .dietfit-highlights--en .df-diary-card {
   color: #122a23;
   background: #b39a83;
@@ -12,14 +12,14 @@
 }
 .dietfit-landing .dietfit-highlights--en .df-diary-card .dietfit-card-copy p { color: #52645d; }
 .df-diary-scene { position: absolute; inset: 0; overflow: hidden; container-type: size; }
-.df-diary-scene__stage { position: absolute; top: 0; left: -35%; width: 175%; aspect-ratio: 2 / 3; }
-.df-diary-scene__person {
+.df-diary-scene__image {
   position: absolute;
   inset: 0;
   width: 100%;
   max-width: none;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
+  object-position: center;
 }
 .df-diary-scene__breakfast {
   position: absolute;
@@ -152,94 +152,9 @@
 .df-diary-scene__saved small { color: #7d897e; font-size: 1.8cqw; }
 .df-diary-scene__saved > span { margin-left: auto; color: #528064; font-size: 3cqw; }
 
-/* Keep the phone unobstructed while retaining the diary's meal collage. */
+/* Keep the cooking scene visible alongside the meal collage. */
 .df-diary-scene__breakfast { top: 39%; left: auto; right: 4%; width: 23%; height: 15%; }
 .df-diary-scene__lunch { top: 53%; left: auto; right: 7%; width: 24%; }
 .df-diary-scene__photo { top: 67%; right: 3%; width: 24%; height: 16%; }
 .df-diary-scene__dinner { top: 64%; right: 5%; width: 22%; height: 19%; }
 .df-diary-scene__saved { left: 7%; right: 7%; bottom: 4%; width: auto; }
-
-@font-face { font-family: DFHome; src: url('/assets/fonts/be-vietnam-pro-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
-@font-face { font-family: DFHome; src: url('/assets/fonts/be-vietnam-pro-500.woff2') format('woff2'); font-weight: 500; font-display: swap; }
-@font-face { font-family: DFHome; src: url('/assets/fonts/be-vietnam-pro-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
-@font-face { font-family: DFHome; src: url('/assets/fonts/be-vietnam-pro-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
-/* Figma Home 36819:82720; fixed source coordinates before projection. */
-.df-diary-ui { position: absolute; top: 0; left: 0; width: 375px; height: 812px; overflow: hidden; border-radius: 32px; color: #111; background: #fff url('/assets/cards/diary-reference/home-ui/background.svg') center / 100% 100% no-repeat; font: 400 14px/20px DFHome, sans-serif; transform-origin: 0 0; opacity: 0; pointer-events: none; }
-.df-diary-ui[data-ready='true'] { opacity: 1; }
-.df-diary-ui *, .df-diary-ui *::before, .df-diary-ui *::after { box-sizing: border-box; }
-.df-diary-ui img { display: block; max-width: none; object-fit: contain; }
-.df-diary-ui b, .df-diary-ui strong { font-weight: 600; }
-.df-diary-ui i { font-style: normal; }
-.df-diary-ui__status { position: absolute; inset: 0 0 auto; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 8px 30px 0 47px; }
-.df-diary-ui__status > b { font: 700 17px/22px Arial, sans-serif; }
-.df-diary-ui__status > div { display: flex; align-items: center; gap: 7px; }
-.df-diary-ui__status img:first-child { width: 19.2px; height: 13px; }
-.df-diary-ui__status img:nth-child(2) { width: 17.14px; height: 12px; }
-.df-diary-ui__status i { position: relative; width: 25px; height: 13px; border: 1px solid #1116; border-radius: 4px; background: #111; box-shadow: inset 0 0 0 2px #fff; }
-.df-diary-ui__status i::after { content: ''; position: absolute; right: -3px; top: 4px; width: 2px; height: 4px; background: url('/assets/cards/diary-reference/home-ui/battery-cap.svg') center / contain no-repeat; }
-.df-diary-ui__header { position: absolute; top: 74px; left: 16px; right: 16px; display: flex; align-items: center; gap: 8px; }
-.df-diary-ui__avatar { width: 36px; height: 36px; border-radius: 50%; }
-.df-diary-ui__header > div { display: grid; flex: 1; }
-.df-diary-ui__header span { color: #6a6a6a; font-size: 14px; line-height: 20px; }
-.df-diary-ui__header strong { font-size: 16px; line-height: 24px; }
-.df-diary-ui__header > i { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #fff; }
-.df-diary-ui__header > i img { width: 20px; height: 20px; }
-.df-diary-ui__header > i:last-child img { width: 30px; height: 30px; }
-.df-diary-ui__month { position: absolute; left: 16px; top: 150px; display: flex; align-items: center; gap: 4px; height: 32px; padding: 6px 8px; border-radius: 99px; background: #fff; font-size: 13px; line-height: 16px; }
-.df-diary-ui__month img:first-child { width: 17px; height: 18px; margin-right: 2px; }
-.df-diary-ui__month img:last-child { width: 9px; height: 5px; margin: 0 4px; }
-.df-diary-ui__week { position: absolute; top: 192px; left: 16px; width: 343px; display: flex; justify-content: space-between; }
-.df-diary-ui__day { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 8px; border-radius: 16px; }
-.df-diary-ui__day > span { color: #6a6a6a; font-size: 12px; line-height: 16px; }
-.df-diary-ui__day > b { display: grid; place-items: center; width: 32px; height: 32px; border: 1.5px dashed #e3e3e3; border-radius: 50%; font-size: 14px; font-weight: 500; }
-.df-diary-ui__day.is-success > b { border-style: solid; border-color: #16a34a; }
-.df-diary-ui__day.is-over > b { border-style: solid; border-color: #dc2626; }
-.df-diary-ui__day.is-selected { background: #fff; box-shadow: 0 0 6px #1111110d; }
-.df-diary-ui__day.is-selected > b { border-style: solid; background: url('/assets/cards/diary-reference/home-ui/day-progress.svg') center / 100% 100% no-repeat; }
-.df-diary-ui__day.is-future { color: #a3a3a3; }
-.df-diary-ui__day.is-future > b { border-style: solid; }
-.df-diary-ui__day.is-future > span { color: inherit; }
-.df-diary-ui__calories { position: absolute; top: 296px; left: 16px; width: 343px; height: 252px; padding: 20px; border-radius: 16px; background: #fff; box-shadow: 0 0 12px #1111110d; }
-.df-diary-ui__title { display: flex; align-items: center; justify-content: space-between; height: 24px; margin-bottom: 16px; }
-.df-diary-ui__title > strong { font-size: 18px; line-height: 24px; }
-.df-diary-ui__title > img { width: 15px; height: 15px; margin-right: 4px; }
-.df-diary-ui__summary { display: flex; align-items: center; justify-content: center; gap: 40px; }
-.df-diary-ui__ring { position: relative; width: 140px; height: 140px; margin: 0 auto 10px; }
-.df-diary-ui__ring-track { position: absolute; inset: 0; width: 140px; height: 140px; transform: rotate(-90deg); }
-.df-diary-ui__ring-progress { position: absolute; inset: 0; transform: rotate(-90deg); }
-.df-diary-ui__ring-progress > img { position: absolute; left: 0; bottom: 0; width: 140px; height: 71.59px; }
-.df-diary-ui__ring > div:last-child { position: absolute; inset: 40px 0 auto; display: grid; justify-items: center; }
-.df-diary-ui__ring strong { font-size: 36px; font-weight: 700; line-height: 44px; }
-.df-diary-ui__ring span { color: #6a6a6a; font-size: 12px; line-height: 16px; }
-.df-diary-ui__scan { display: flex; align-items: center; justify-content: center; gap: 8px; width: 148px; height: 36px; border-radius: 99px; background: #1c1c1c; color: #fff; font-size: 14px; }
-.df-diary-ui__scan > img { width: 18px; height: 18px; }
-.df-diary-ui__values { display: grid; gap: 16px; }
-.df-diary-ui__values > div { display: grid; gap: 4px; }
-.df-diary-ui__values > div > span { color: #6a6a6a; font-size: 12px; line-height: 16px; }
-.df-diary-ui__values strong { display: flex; align-items: center; gap: 4px; font-size: 16px; font-weight: 500; line-height: 24px; }
-.df-diary-ui__values small { display: flex; align-items: center; gap: 2px; padding: 2px 4px; border-radius: 99px; background: #fafafa; color: #6a6a6a; font-size: 10px; line-height: 12px; }
-.df-diary-ui__values small img { width: 8px; height: 8px; }
-.df-diary-ui__macros { position: absolute; top: 556px; left: 16px; width: 343px; display: flex; gap: 8px; }
-.df-diary-ui__macro { display: grid; align-content: center; gap: 8px; width: 109px; height: 128px; padding: 20px 12px; border-radius: 16px; background: #fff; box-shadow: 0 0 6px #1111110d; }
-.df-diary-ui__macro > div { display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
-.df-diary-ui__macro img { width: 14px; height: 14px; }
-.df-diary-ui__macro span { font-size: 12px; font-weight: 500; line-height: 16px; }
-.df-diary-ui__macro strong { font-size: 14px; line-height: 20px; white-space: nowrap; }
-.df-diary-ui__macro > i { height: 4px; border-radius: 99px; background: linear-gradient(90deg, #cea875 40%, #f8f2ea 40%); }
-.df-diary-ui__macro--protein > i { background: linear-gradient(90deg, #e3a496 50%, #f9ece8 50%); }
-.df-diary-ui__macro--fat > i { background: linear-gradient(90deg, #f1d7ab 80%, #fcf6ec 80%); }
-.df-diary-ui__macro small { color: #6a6a6a; font-size: 10px; line-height: 12px; }
-.df-diary-ui__pagination { position: absolute; top: 704px; left: 0; right: 0; display: flex; justify-content: center; gap: 4px; }
-.df-diary-ui__pagination > * { width: 4px; height: 4px; border-radius: 50%; background: #e3e3e3; }
-.df-diary-ui__pagination > b { background: #111; }
-.df-diary-ui__bottom { position: absolute; bottom: 32px; left: 16px; right: 16px; display: flex; align-items: center; justify-content: space-between; }
-.df-diary-ui__nav { display: flex; align-items: center; width: 267px; height: 64px; padding: 4px; border: 2px solid #fff; border-radius: 99px; background: #fffC; box-shadow: 0 2px 4px #1111110d; }
-.df-diary-ui__nav > div { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 4px; height: 100%; border-radius: 99px; }
-.df-diary-ui__nav .is-selected { background: #f2f2f2; }
-.df-diary-ui__nav img { width: 22px; height: 22px; }
-.df-diary-ui__nav > div:last-child img { width: 24px; height: 24px; border-radius: 50%; }
-.df-diary-ui__nav span { color: #6a6a6a; font-size: 8px; line-height: 12px; }
-.df-diary-ui__nav .is-selected > span { color: #111; font-weight: 500; }
-.df-diary-ui__add { display: grid; place-items: center; width: 56px; height: 56px; border: 2px solid #212121; border-radius: 50%; background: #1c1c1c; }
-.df-diary-ui__add img { width: 18px; height: 18px; }
-.df-diary-ui__home-indicator { position: absolute; bottom: 8px; left: 118px; width: 139px; height: 5px; border-radius: 99px; background: #111; }

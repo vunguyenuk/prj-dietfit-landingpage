@@ -3,14 +3,40 @@
 Only the card list and its scoped dependencies change. The rest of /vi/ stays
 on its existing static implementation; no Next runtime is loaded there.
 """
+import hashlib
 import json
 import re
 from pathlib import Path
+from urllib.parse import quote
 
 from benchmark_overview import SSRMarkup, render
 
 ROOT = Path(__file__).resolve().parent.parent
 STYLES = ['streak-card', 'diary-card', 'progress-card', 'fasting-card', 'photo-cards', 'card-copy']
+
+
+def version_home_assets():
+    """Refresh cached Home dependencies whenever their local contents change.
+
+    The imported Next chunk keeps its capture filename after patching. Version
+    both its script URL and Flight references so cached code cannot restore old
+    cards over the updated static HTML.
+    """
+    assets = [f'styles/dietfit-{name}.css' for name in STYLES]
+    assets += ['scripts/dietfit-progress-card-vi.js',
+               '_next/static/chunks/app/[locale]/page-a22fe37dbadd41a9.js']
+    versions = {}
+    for asset in assets:
+        # Flight lists chunks relative to /_next/, while script tags use /_next/.
+        url = quote(asset.removeprefix('_next/'), safe='/')
+        digest = hashlib.sha256((ROOT / asset).read_bytes()).hexdigest()[:12]
+        versions[url] = url + '?v=' + digest
+    for relative in ['index.html', 'en/index.html', 'vi/index.html']:
+        page = ROOT / relative
+        text = page.read_text()
+        for url, versioned in versions.items():
+            text = re.sub(re.escape(url) + r'(?:\?v=[0-9a-f]+)?', lambda _: versioned, text)
+        page.write_text(text)
 
 
 def walk(node):
@@ -80,24 +106,20 @@ def localize_cards():
     text = re.sub(r'<link\b[^>]*href="/styles/dietfit-highlights-vi.css[^\"]*"[^>]*>\s*', '', text)
     for name in STYLES:
         link = f'<link rel="stylesheet" href="/styles/dietfit-{name}.css">'
-        if link not in text:
+        if f'href="/styles/dietfit-{name}.css' not in text:
             text = text.replace('</head>', link + '\n</head>', 1)
     link = '<link rel="stylesheet" href="/styles/dietfit-home-cards-vi.css?v=1">'
     if link not in text:
         text = text.replace('</head>', link + '\n</head>', 1)
     script = '<script src="/scripts/dietfit-progress-card-vi.js" defer></script>'
-    if script not in text:
+    if 'src="/scripts/dietfit-progress-card-vi.js' not in text:
         text = text.replace('</body>', script + '\n</body>', 1)
-    script = '<script src="/scripts/dietfit-diary-card-vi.js" defer></script>'
-    if script not in text:
-        text = text.replace('</body>', script + '\n</body>', 1)
+    text = re.sub(r'<script\b[^>]*src="/scripts/dietfit-diary-card-vi\.js[^\"]*"[^>]*></script>\s*', '', text)
     page.write_text(text)
     controller = (ROOT / 'content/components/progress-card-controller.js').read_text()
     (ROOT / 'scripts/dietfit-progress-card-vi.js').write_text(controller + '\n' +
         "document.querySelectorAll('#dietfit-highlights .df-progress-card').forEach(createDietfitProgressCard);\n")
-    controller = (ROOT / 'content/components/diary-card-controller.js').read_text()
-    (ROOT / 'scripts/dietfit-diary-card-vi.js').write_text(controller + '\n' +
-        "document.querySelectorAll('#dietfit-highlights .df-diary-card').forEach(createDietfitDiaryCard);\n")
+    version_home_assets()
     return len(localized)
 
 

@@ -25,9 +25,7 @@ def apply_diary_card(page):
     parser.feed(markup)
     if len(parser.root) != 1:
         raise ValueError("Expected one diary card root")
-    component = react_element(parser.root[0]).replace('{"className":', '{"ref":diaryRef,"className":', 1)
-    controller = (ROOT / "content/components/diary-card-controller.js").read_text()
-    render = 'function dfDiaryCard(){const diaryRef=(0,l.useRef)(null);(0,l.useEffect)(()=>createDietfitDiaryCard(diaryRef.current),[]);return ' + component + '}'
+    render = 'function dfDiaryCard(){return ' + react_element(parser.root[0]) + '}'
     bundle = ROOT / "_next/static/chunks/app/[locale]/page-a22fe37dbadd41a9.js"
     code = bundle.read_text()
     original = 'case"app":return(0,n.jsx)(A,{card:t});'
@@ -37,6 +35,6 @@ def apply_diary_card(page):
     marker = 'function I(e){let{card:t}=e;switch(t.kind)'
     if code.count(marker) != 1:
         raise ValueError("Feature renderer signature changed; run the Home importer first")
-    code = code.replace(marker, controller + render + marker, 1)
+    code = code.replace(marker, render + marker, 1)
     bundle.write_text(code.replace(original, replacement, 1))
     return page

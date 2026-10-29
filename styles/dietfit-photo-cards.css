@@ -54,25 +54,24 @@
   .dietfit-landing .df-photo-card--together .df-shared-notification { bottom: 3%; }
 }
 
-/* A training photograph framed like the supplied challenge interface. */
-.dietfit-landing .dietfit-highlights--en .df-photo-card--challenge { display: grid; grid-template-rows: max-content minmax(0, 1fr); container-type: inline-size; background: #a99b8c; }
-.dietfit-landing .dietfit-highlights--en .df-photo-card--challenge .dietfit-card-copy { position: relative; inset: auto; padding-bottom: 0; }
-.df-photo-card--challenge .df-photo-scene { position: absolute; inset: 0; min-height: 0; }
-.df-photo-card--challenge .df-photo-scene__image { object-position: 50% 45%; }
-.df-photo-card--challenge .df-photo-scene::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, #332b2555); pointer-events: none; }
-.df-challenge-frame { position: relative; grid-area: 2 / 1; z-index: 2; display: flex; flex-direction: column; gap: 2.4cqw; min-height: 0; margin: clamp(12px, 3cqw, 18px) 12% 8.4cqw; padding: 4cqw 5.8cqw; border: 2px solid #fffefa; border-radius: 8cqw; color: #fffefa; }
-.df-challenge-frame__brand { display: flex; align-items: center; gap: 2cqw; flex: none; font-size: 2.6cqw; text-shadow: 0 1px 6px #193a2b; }
-.df-challenge-frame__brand > img { width: 7cqw; height: 7cqw; border-radius: 2cqw; }
-.df-challenge-goals { display: grid; gap: 2.4cqw; flex: none; margin-block: auto 0; }
-.df-challenge-goals > div { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1.1cqw; font-size: 2.5cqw; }
-.df-challenge-goals span { font-weight: 550; text-shadow: 0 1px 6px #173820; }
-.df-challenge-goals b { padding: 0.5cqw 1.1cqw; border-radius: 1.4cqw; color: #143b26; background: #56ed8b; font-size: 2.5cqw; font-weight: 600; }
-.df-challenge-goals i { grid-column: 1 / -1; height: 0.75cqw; border-radius: 2cqw; background: linear-gradient(90deg, #54ed8b 86%, #fffefa60 86%); }
-.df-challenge-goals > div:nth-child(2) i { background: linear-gradient(90deg, #54ed8b 60%, #fffefa60 60%); }
-.df-challenge-goals > div:nth-child(3) i { background: #54ed8b; }
-.df-challenge-frame__footer { display: grid; gap: 2.4cqw; flex: none; }
-.df-challenge-frame__footer > strong { font-size: 5.6cqw; font-weight: 600; line-height: 1.15; letter-spacing: -0.035em; text-shadow: 0 1px 6px #294a2350; }
-.df-challenge-frame__footer > span { display: grid; place-items: center; padding: 2.1cqw 3cqw; border-radius: 8cqw; color: #1a3326; background: #fffefa; font-size: 3cqw; font-weight: 600; }
+/* Mountain runner, a small reward receipt and a compact daily challenge. */
+.dietfit-landing .dietfit-highlights--en .df-photo-card--challenge { container-type: inline-size; background: #3c72b9; }
+.df-photo-card--challenge .df-photo-scene__image { object-position: 50% 100%; }
+.df-challenge-reward { position: absolute; z-index: 2; top: 30%; left: 7%; display: flex; align-items: baseline; gap: 1.3cqw; padding: 2cqw 2.7cqw; border: 1px solid #fff7ecaa; border-radius: 3cqw; color: #693c25; background: #fff0df; }
+.df-challenge-reward > span { font-size: 5cqw; line-height: 1; font-weight: 650; letter-spacing: -0.03em; }
+.df-challenge-reward > strong { font-size: 2.7cqw; line-height: 1.3; font-weight: 500; }
+.df-challenge-summary { position: absolute; z-index: 2; left: 7%; right: 7%; bottom: 3%; display: grid; gap: 2cqw; padding: 3cqw 3.5cqw; border: 1px solid #fff9ef; border-radius: 4cqw; color: #292b25; background: #fffaf0; box-shadow: 0 1cqw 4cqw #19251e1a; }
+.df-challenge-summary__heading { display: flex; align-items: center; gap: 2.3cqw; }
+.df-challenge-summary__heading > img { flex: none; width: 8cqw; height: 8cqw; border-radius: 2cqw; }
+.df-challenge-summary__heading > div { display: grid; gap: 0.6cqw; flex: 1; min-width: 0; }
+.df-challenge-summary__heading small { color: #767362; font-size: 2.4cqw; line-height: 1.3; }
+.df-challenge-summary__heading strong { font-size: 3.5cqw; line-height: 1.2; font-weight: 600; }
+.df-challenge-summary__heading > b { flex: none; padding: 1.1cqw 1.8cqw; border: 1px solid #e5ddce; border-radius: 2cqw; color: #544f3f; font-size: 2.9cqw; line-height: 1.25; font-weight: 550; }
+.df-challenge-summary__progress { display: flex; align-items: center; gap: 2.5cqw; }
+.df-challenge-summary__progress > div { display: flex; flex: 1; gap: 1cqw; }
+.df-challenge-summary__progress i { flex: 1; height: 0.9cqw; border-radius: 1cqw; background: #e8e1d4; }
+.df-challenge-summary__progress .is-complete { background: #fe692e; }
+.df-challenge-summary__progress > span { color: #767362; font-size: 2.6cqw; line-height: 1.3; font-weight: 500; }
 
 /* Keep the lively court photo dominant; the integration state stays compact. */
 .df-health-connected { position: absolute; right: 6%; bottom: 6%; display: flex; align-items: center; gap: 2.7cqw; padding: 3cqw 3.8cqw; border: 1px solid #ffffffbd; border-radius: 3.5cqw; color: #27372d; background: #fffefae8; box-shadow: 0 1.5cqw 5cqw #26433517; backdrop-filter: blur(10px); }
